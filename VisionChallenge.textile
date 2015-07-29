@@ -22,7 +22,7 @@ We will tally the people’s vote !images/Vote5.png! for the paper you’d most 
 Prizes will be awarded in two stages:
 * A modest award for winning and
 * a larger award for presenting the code as a pull request to OpenCV by December 1st 2015 as Detailed here:
-** http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+** https://github.com/Itseez/opencv/wiki/How_to_contribute
 
 *Prizes:*
 * 1st winner: $500; Submit code: $6000
@@ -58,13 +58,13 @@ There were many favorited tutorials!  They cannot win the Vision Challenge, but 
 
 Results will be listed on OpenCV’s website:
 * (user) http://opencv.org/ and
-* (developer) http://code.opencv.org/projects/opencv/wiki
+* (developer) https://github.com/Itseez/opencv/wiki
 
 h2. (2) State of the Art Vision Challenge
 
 Our aim is to make available state of the art vision in OpenCV. We thus ran a vision challenge to meet or exceed the state of the art in various areas. We will present the results, some of which are quite compelling. The contest details are available at:
 
-http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+https://github.com/Itseez/opencv/wiki/VisionChallenge
 
 *Prizes:*
 * Win: $1000; Submit code: $3000
@@ -193,7 +193,7 @@ You may explicitly enter code for any work you have submitted to CVPR 2015 or it
 
 Winners and prizes are at the sole discretion of the committee.
 
-*List of selected datasets and other details described here:* "OpenCV Vision Challenge":http://code.opencv.org/attachments/1672/OpenCVVisionChallenge.pdf
+*List of selected datasets and other details described here:* "OpenCV Vision Challenge":images/OpenCVVisionChallenge.pdf
 
 ??* We will have a professional programmer assist people with their pull requests. Awards are at the prize committee's sole discretion??
 
@@ -238,4 +238,4 @@ This may be just the first one of a series of challenges and we want to hear fro
 
 h3. Back to Developer page:
 
-"OpenCV":http://code.opencv.org/projects/opencv/wiki
+"OpenCV":https://github.com/Itseez/opencv/wiki

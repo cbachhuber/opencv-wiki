@@ -1,6 +1,6 @@
 h1. 2013 OpenCV Meeting notes for 2013 year
 
-Template is at http://code.opencv.org/projects/opencv/wiki/Template
+Template is at https://github.com/Itseez/opencv/wiki/Template
 http://code.opencv.org/help/wiki_syntax
 
 
@@ -502,7 +502,7 @@ _*Agenda*_
 _*Vadim*_
 <pre>
 [2.4.4 beta is out; 2.4.4 gold is on schedule]
-Despite the recent reorganizations 2.4.4 beta has been released and 2.4.4 final will very likely be released on March 1st - thanks to the NV team! The beta changelog is here http://code.opencv.org/projects/opencv/wiki/ChangeLog, announce is here http://opencv.org. The remaining weeks before the final release will be spent in further stabilization of the code and improving the packaging (e.g. the current package for Windows is plain huge).
+Despite the recent reorganizations 2.4.4 beta has been released and 2.4.4 final will very likely be released on March 1st - thanks to the NV team! The beta changelog is here https://github.com/Itseez/opencv/wiki/ChangeLog, announce is here http://opencv.org. The remaining weeks before the final release will be spent in further stabilization of the code and improving the packaging (e.g. the current package for Windows is plain huge).
 
 [HOG Optimization: Ilya]
 Ilya Lavrenov continues SSE2 optimization of HOG. Last week he implemented 2 tests for the HOG regression testing and fixed several bugs discovered by the tests.
@@ -1586,7 +1586,7 @@ _*Agenda*_
 We want to get all the students to do early pull requests just to get them into the "mode", not necessarily to accept, just to learn. Ask students to do this
 
 Create a separate branch from opencv master.  Create a pull request.
-see http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+see https://github.com/Itseez/opencv/wiki/How_to_contribute
 
 They can use (open and free) SourceTree to help with this.
 

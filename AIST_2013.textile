@@ -1,9 +1,5 @@
 h1. АИСТ 2013
 
-!http://code.opencv.org/attachments/949/bug.png| Some text!
-
-!http://code.opencv.org/attachments/949/bug.png(some text)!
-
 Докладчик: Кирилл Корняков
 
 h2. Предварительная подготовка

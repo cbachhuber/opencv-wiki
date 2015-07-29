@@ -1,6 +1,6 @@
 h1. OpenCV Meeting notes for 2012 year
 
-Template is at http://code.opencv.org/projects/opencv/wiki/Template
+Template is at https://github.com/Itseez/opencv/wiki/Template
 http://code.opencv.org/help/wiki_syntax
 http://code.opencv.org/help/wiki_syntax.html
 
@@ -1889,7 +1889,7 @@ _*Agenda*_
 ** This attack was from China.  Stop it.
 ** Alexander cleaned it up
 * Beta release is out. Final release by end of month
-** Change log  http://code.opencv.org/projects/opencv/wiki/ChangeLog
+** Change log  https://github.com/Itseez/opencv/wiki/ChangeLog
 ** On ROS side, Fuerty.  Some build problems with the farm,
 *** SURF and SIFT was moved to "non-free" and this messed up the ROS build.  But OK
 ** but Vincent will sync final release to this
@@ -1914,7 +1914,7 @@ _*Vadim*_
 OpenCV 2.4 beta is out [OpenCV team]
 OpenCV 2.4 beta is finally out. Here is the announce:
 http://tech.groups.yahoo.com/group/OpenCV/message/87261 and
-here is the changelog: http://code.opencv.org/projects/opencv/wiki/ChangeLog
+here is the changelog: https://github.com/Itseez/opencv/wiki/ChangeLog
 
 OpenCV Documentation hackathon is over [Ilya and others]
 Last week we had documentation hackathon. Since beta 2.4 has been delayed by one week, and so we had some overlap in schedule, it was not as effective as the bug fixing hackaton. Still, we closed 24 documentation-related tickets in our tracker, 19 of which was closed by Ilya! The documentation will further be improved until and after the final 2.4.
@@ -2267,7 +2267,7 @@ _*Agenda*_
 
 *_Minutes_*
 
-* Release 2.4 is out!!! "2.4 Packages":http://code.opencv.org/projects/opencv/wiki/ChangeLog|Change log]], [[http://sourceforge.net/projects/opencvlibrary/files
+* Release 2.4 is out!!! "2.4 Packages":https://github.com/Itseez/opencv/wiki/ChangeLog|Change log]], [[http://sourceforge.net/projects/opencvlibrary/files
 ** On the ROS side it is released as well ("ROS Fuerte":http://www.willowgarage.com/pages/software/ros-platform)!
 * New website
 ** Designer is on vacation, mock site is up
@@ -2296,7 +2296,7 @@ OpenCV 2.4.0 is out [All the team + GPU + Tegra guys]
 
 Finally, we have shipped it! Thanks to everybody who participated!
 The changelog is here:
-http://code.opencv.org/projects/opencv/wiki/ChangeLog
+https://github.com/Itseez/opencv/wiki/ChangeLog
 The packages are here:
 http://sourceforge.net/projects/opencvlibrary/files
 
@@ -2867,7 +2867,7 @@ The students have just started the work; there is no meaningful reports yet; the
 OpenCV site [Alexander Shishkov + our contracted web masters]
 Another final draft :) of  http://opencv.alekcac.webfactional.com/. It addressed some of the concerns and requests, but not all. Still, the internal representation is pretty simple (wordpress-based) and can be easily edited by us (which needs to be done anyway). Today we had meeting at Itseez regarding the further steps.
 
-Other than that, wiki has been partially converted to redmine format: meeting notes (http://code.opencv.org/projects/opencv/wiki/Meeting_notes), Changelog  (http://code.opencv.org/projects/opencv/wiki/ChangeLogHistory)
+Other than that, wiki has been partially converted to redmine format: meeting notes (https://github.com/Itseez/opencv/wiki/Meeting_notes), Changelog  (https://github.com/Itseez/opencv/wiki/ChangeLogHistory)
 
 </pre>
 
@@ -4023,7 +4023,7 @@ _*Agenda*_
 
 * Install AVG -- no.
 * OpenCV 2.4.2 has been released on July 4th:
-** "Change log Release 2.4.2":http://code.opencv.org/projects/opencv/wiki/ChangeLog
+** "Change log Release 2.4.2":https://github.com/Itseez/opencv/wiki/ChangeLog
 * GSoC
 ** "Nice tracking video (Youtube)": http://www.youtube.com/watch?v=FirtmYcC0Vc
 ** Student evals in
@@ -4059,7 +4059,7 @@ _*Vadim*_
 <pre>
 [OpenCV 2.4.2: Tegra & OpenCV teams]
 OpenCV 2.4.2 has been released on July 4th:
-http://code.opencv.org/projects/opencv/wiki/ChangeLog
+https://github.com/Itseez/opencv/wiki/ChangeLog
 
 [GSoC2012, iOS: Eduard & Charu]
 Eduard and Charu continue work on the OpenCV for iOS samples.
@@ -6329,7 +6329,7 @@ _*Agenda*_
 
 *_Minutes_*
 
-* Release candidate 2.4.3 is out http://code.opencv.org/projects/opencv/wiki/ChangeLog#243-rc
+* Release candidate 2.4.3 is out https://github.com/Itseez/opencv/wiki/ChangeLog#243-rc
 * Chinese Academy of Science working on OpenCL with ...
 * Mobile I-chips
 ** Port, tune flags
@@ -6358,7 +6358,7 @@ _*Agenda*_
 _*Vadim*_
 <pre>
 [OpenCV 2.4.3rc]
-The release candidate has been released. The changelog is here: http://code.opencv.org/projects/opencv/wiki/ChangeLog#243-rc
+The release candidate has been released. The changelog is here: https://github.com/Itseez/opencv/wiki/ChangeLog#243-rc
 The final 2.4.3 is expected on Nov 2nd. Big thanks to Tegra team who helped with the release (as they do regularly during this year)!
 
 [Development process]

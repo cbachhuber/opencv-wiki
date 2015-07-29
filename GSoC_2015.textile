@@ -43,7 +43,7 @@ h2. General Information:
 
 *Resources:*
 
-* "OpenCV Developers Site":http://code.opencv.org/projects/opencv/wiki
+* "OpenCV Developers Site":https://github.com/Itseez/opencv/wiki
 * "OpenCV User's Site":http://opencv.org
 * "How_to_do_a_pull_request/How_to_Contribute_Code":How_to_contribute
 * Source Code can be found at "GitHub":https://github.com/Itseez/opencv.
@@ -371,7 +371,7 @@ h2. OpenCV Org. Application to GSoC 2015
 
 h2. Previous Years
 
-* 2014 "GSoC 2014 Ideas Page":http://code.opencv.org/projects/opencv/wiki/GSoC_2014
+* 2014 "GSoC 2014 Ideas Page":https://github.com/Itseez/opencv/wiki/GSoC_2014
 ** "The 2014 Movie":https://www.youtube.com/watch?v=3f76HCHJJRA
 * 2013 "GSoC 2013 Ideas Page":http://code.opencv.org/projects/gsoc2013/wiki
 ** "The 2013 Movie":https://www.youtube.com/watch?v=_TTtN4frMEA

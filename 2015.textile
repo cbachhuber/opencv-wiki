@@ -1,6 +1,6 @@
 h1. 2015 OpenCV Meeting notes for 2015 year
 
-Template is at http://code.opencv.org/projects/opencv/wiki/Template
+Template is at https://github.com/Itseez/opencv/wiki/Template
 http://code.opencv.org/help/wiki_syntax
 
 [[Meeting_notes]]
@@ -123,7 +123,7 @@ h3. *_Minutes_*
 * GSoC need pull requests in
 ** See waterfall -- If pull request is building: http://pullrequest.opencv.org/#/summary/contrib
 ** Fill out your evaluations here: https://www.google-melange.com/gsoc/dashboard/google/gsoc2015#evaluations
-** How to do a pull request: http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+** How to do a pull request: https://github.com/Itseez/opencv/wiki/How_to_contribute
 ** Github for opencv_contrib: https://github.com/Itseez/opencv_contrib
 * Qualcomm
 ** Initial assesment of complexity for qualcomm
@@ -131,7 +131,7 @@ h3. *_Minutes_*
 * Book
 ** Next couple of chapters
 * Need to distribute awards
-** http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+** https://github.com/Itseez/opencv/wiki/VisionChallenge
 
 
 h3. *_Reports_*
@@ -349,7 +349,7 @@ h3. *_Minutes_*
 h3. *_Reports_*
 
 *OpenCV:*
-* OpenCV 3.0 is ready. Very likely it will be packaged and released tomorrow. The number of closed bug reports exceeded 200. Preliminary version of the changelog is here, as usual: http://code.opencv.org/projects/opencv/wiki/ChangeLog
+* OpenCV 3.0 is ready. Very likely it will be packaged and released tomorrow. The number of closed bug reports exceeded 200. Preliminary version of the changelog is here, as usual: https://github.com/Itseez/opencv/wiki/ChangeLog
 * PR for the new Android OpenCV Manager (created by Maksim) is pending. It's written in Java, it's much simpler than the previous Manager (because it's in Java and because it makes use of all the nover features of Android 4.x and Google Play).
 * pthread-based cv::parallel_for_ has been integrated. It passes all the tests.
 * Slides for CVPR 2015 tutorial are in progress. The link to the draft version has been sent separately.
@@ -425,7 +425,7 @@ h3. *_Minutes_*
 **** http://arxiv.org/pdf/1502.05908v2.pdf
 **** all the network protocal produced w/blender
 ** All results will go continuously into opencv_contrib. Contrib is only tested on buildbot for master branch
-* "CVPR tutorial":http://code.opencv.org/projects/opencv/wiki/OpenCV_Tutorial_CVPR_2015
+* "CVPR tutorial":https://github.com/Itseez/opencv/wiki/OpenCV_Tutorial_CVPR_2015
 ** Add ppt slides to google drive and send Vadim the links.
 ** 0.45: intro talk.
 ** 0.05: future directions
@@ -1166,7 +1166,7 @@ h3. *_Action Items_*
 * Send out emails to students (there are lots!) to register their ideas on the GSoC site for OpenCV
 ** http://www.google-melange.com/gsoc/homepage/google/gsoc2015
 * Send out calls to enter the CVPR OpenCV contest
-** http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+** https://github.com/Itseez/opencv/wiki/VisionChallenge
 
 *Vincent*
 
@@ -1304,7 +1304,7 @@ h3. *_Minutes_*
 * GSoC
 ** Final payments for 2014 going out
 ** Movie almost ready for GSoC 2014
-** See project ideas at http://code.opencv.org/projects/opencv/wiki/GSoC_2015#2015-Project-Ideas
+** See project ideas at https://github.com/Itseez/opencv/wiki/GSoC_2015#2015-Project-Ideas
 ** We need to get mentors signed up
 *** Go to GSoC 2015 https://www.google-melange.com/gsoc/homepage/google/gsoc2015
 ***
@@ -1333,7 +1333,7 @@ h3. *_Reports_*
 * better, more universal Java support in opencv and opencv_contrib.
 * The other team has prepared OpenCV 2.4.11, which should be out on Feb 24th or 25th.
 * Another 25+ pull requests have been merged last week.
-* Prepared brief list of possible GSoC 2015 projects at http://code.opencv.org/projects/opencv/wiki/GSoC_2015
+* Prepared brief list of possible GSoC 2015 projects at https://github.com/Itseez/opencv/wiki/GSoC_2015
 
 *OpenCV plans:*
 * Put in the faster float=>int conversion on ARM (should improve performance).

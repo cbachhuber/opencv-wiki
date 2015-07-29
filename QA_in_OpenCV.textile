@@ -6,11 +6,11 @@ This page describes QA and continuous integration in the OpenCV project. OpenCV 
 
 h2. C++ tests
 
-You can start from the section 9 in "OpenCV Coding Style Guide":http://code.opencv.org/projects/opencv/wiki/CodingStyleGuide.
+You can start from the section 9 in "OpenCV Coding Style Guide":https://github.com/Itseez/opencv/wiki/CodingStyleGuide.
 
 The same tests are used on every supported platform: Windows, Linux, MacOS and Android. Majority of testing is performed on C++ level, because it is the major language in OpenCV project. As mentioned above, they are implemented on top of Google's unit-testing framework, named GoogleTest. There are two major types of C++ tests: accuracy=regression tests and performance tests. C++ tests are compiled into console applications, two for every module: @opencv_test_<MODULE_NAME>@ and @opencv_perf_<MODULE_NAME>@. These applications may be built for every supported platform (Win/Lin/Mac/Android) and be run in a shell. On Android "adb":http://developer.android.com/guide/developing/tools/adb.html shell is used.
 
-Please note that you should set @OPENCV_TEST_DATA_PATH@ environment variable (see section 9 in "OpenCV Coding Style Guilde":http://code.opencv.org/projects/opencv/wiki/CodingStyleGuide). On Android you should copy test data to the @/sdcard/opencv_testdata@ directory:
+Please note that you should set @OPENCV_TEST_DATA_PATH@ environment variable (see section 9 in "OpenCV Coding Style Guilde":https://github.com/Itseez/opencv/wiki/CodingStyleGuide). On Android you should copy test data to the @/sdcard/opencv_testdata@ directory:
 <pre>git clone git://github.com/Itseez/opencv_extra.git .
 adb push ./testdata /sdcard/opencv_testdata</pre>
 

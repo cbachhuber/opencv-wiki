@@ -17,4 +17,4 @@ h1. Workshops
 
 h3. Home
 
-"OpenCV":http://code.opencv.org/projects/opencv/wiki
+"OpenCV":https://github.com/Itseez/opencv/wiki

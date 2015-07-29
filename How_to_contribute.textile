@@ -56,7 +56,7 @@ h2. FAQ
 
 h3. Q1. I was asked to change the target branch for my pull request, but why?
 
-Please read "this":http://code.opencv.org/projects/opencv/wiki/How_to_contribute#The-instruction-in-brief, read the "Choose a base branch..." section.
+Please read "this":https://github.com/Itseez/opencv/wiki/How_to_contribute#The-instruction-in-brief, read the "Choose a base branch..." section.
 
 h3. Q2. I was asked to change the target branch for my pull request, how can I do that?
 

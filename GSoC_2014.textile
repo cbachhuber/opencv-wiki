@@ -34,7 +34,7 @@ h2. General Information:
 
 *Resources:*
 
-* "OpenCV Developers Site":http://code.opencv.org/projects/opencv/wiki
+* "OpenCV Developers Site":https://github.com/Itseez/opencv/wiki
 * "OpenCV User's Site":http://opencv.org
 * "How_to_Contribute_Code":How_to_contribute
 * Source Code can be found at "GitHub":https://github.com/Itseez/opencv.

@@ -1,26 +1,17 @@
-h1. *ATTENTION!*
-
-Issue tracker is closed!
-All new tickets should be created on GitHub: https://github.com/Itseez/opencv/issues
-
-Wiki is closed!
-You can find migrated pages on GitHub: https://github.com/Itseez/opencv/wiki
-
 h1. OpenCV Wiki
-
 
 
 !http://opencv.org/wp-content/themes/opencv/images/logo.png!
 
 OpenCV (Open Source Computer Vision) is a library of programming functions for realtime computer vision. It uses a "BSD license":http://opensource.org/licenses/BSD-3-Clause and hence it's free for both academic and commercial use. It has C++, C, Python and Java (Android) interfaces and supports Windows, Linux, Android, iOS and Mac OS. It has more than 2500 optimized algorithms. Adopted all around the world, OpenCV has more than 7 million downloads growing by nearly 200K/month. Usage ranges from interactive art, to mines inspection, stitching maps on the web on through advanced robotics.
 
-* "Wiki map":http://code.opencv.org/projects/opencv/wiki/index
+* "Wiki map":https://github.com/Itseez/opencv/wiki/index
 * "Roadmap":http://www.code.opencv.org/projects/opencv/roadmap
 
 
 h2. GSoC 2015
 
-" !images/GSoCOpenCV2015.jpg! ":http://code.opencv.org/projects/opencv/wiki/GSoC_2015
+" !images/GSoCOpenCV2015.jpg! ":https://github.com/Itseez/opencv/wiki/GSoC_2015
 
 * *"OpenCV_Google_Summer_of_Code_2015_Project_Page":GSoC_2015*
 * "We are an accepted organization in GSoC 2015!":http://www.google-melange.com/gsoc/org2/google/gsoc2015/opencv
@@ -34,7 +25,7 @@ h3. General
 
 * "User site":http://opencv.org/, "News":http://opencv.org/category/news and "Help":http://answers.opencv.org.
 * *Documentation:* http://opencv.org/documentation.html, including "Books":http://opencv.org/books.html, "Reference manual":http://docs.opencv.org/, "Tutorials":http://docs.opencv.org/doc/tutorials/tutorials.html and "Cheatsheet":http://docs.opencv.org/opencv_cheatsheet.pdf
-* "ChangeLog":http://code.opencv.org/projects/opencv/wiki/ChangeLog for the latest releases
+* "ChangeLog":https://github.com/Itseez/opencv/wiki/ChangeLog for the latest releases
 
 h3. Development
 
