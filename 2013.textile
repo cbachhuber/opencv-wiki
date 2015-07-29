@@ -1,0 +1,2233 @@
+h1. 2013 OpenCV Meeting notes for 2013 year
+
+Template is at http://code.opencv.org/projects/opencv/wiki/Template
+http://code.opencv.org/help/wiki_syntax
+
+
+
+
+h2. 2013-01-15
+
+_*Agenda*_
+
+* Convolution
+
+*_Minutes_*
+
+* Uses of IPP
+** IPP with Convolution is faster than alone because of state of the art FFT
+** For Vincent talk on 25th
+* Rectification & Descriptors
+** DAFT Gassow. Tried it below.
+** ASIFT better at super high angles
+*** Binarize
+** DARP
+* Vincent back Feb 15th - March. Arrange talks P and N
+* coverity -- static analysis of code http://www.coverity.com
+** http://scan.coverity.com/all-projects.html
+*** Mostly shows that OpenCV is pretty good. Old code has some problems
+* Open Source prize?
+* % of sales of books on opencv books on site --
+** encourage but don't require
+* Foundation link started
+
+
+
+_*Vadim*_
+<pre>
+[OpenCV 2.5: Vadim]
+Vadim continues work on OpenCV 2.5. Quite difficult geometry module, which includes a lot of old C
+code, has been refactored (many functions have been rewritten in C++); calib module was renamed
+to camera module and some relevant functionality was moved there (like solvePnP and such).
+
+Since it's really a lot of changes between 2.4 and 2.5, there is a big danger that 2.5 will be very unstable.
+To minimize the risk, tegra guys suggested to put the refactored (rewritten in C++) functions to the
+master branch and use our automated testing system to catch regressions as early as possible. Then the
+radical module reorganization step should be less painful to make.
+
+[Matas paper implementation: Evgeny]
+Evgeny finished draft version of the first, most time-consuming preprocessing step of the Matas & Neumann
+algorithm for text extraction. The algorithm was not integrated to master yet, it's been developed in a
+separate branch in Evgeny's repository at github. For now the speed is significantly lower than claimed in
+the paper (few hundreds milliseconds per hd frame), but there are many opportunities for optimization.
+Evgeny is now trying to unroll the small loops and switch to more efficient data structures to speedup the
+execution. As soon as it's done, the next step would be to add classification and non-maxima suppression
+that will eliminate most extremal regions.
+
+[Misc]
+The beginning of January were holidays in Russia; and Ilya Lavrenov is still preparing for and taking exams.
+</pre>
+
+_*Anatoly*_
+<pre>
+WR
+</pre>
+
+_*Ilya*_
+<pre>
+Transparent objects [Ilya]:
+
+Our paper "Pose Estimation of Rigid Transparent Objects in Transparent Clutter" by Ilya
+Lysenkov and Vincent Rabaud was accepted at ICRA 2013. The conference will be held on
+May 6 – 10 in Karlsruhe, Germany.
+
+Developed model capture of transparent objects from a single RGBD image. Reconstruction
+from one image is a highly under-constrained problem so several assumptions are made to
+solve it:
+1. The object has rotation symmetry.
+2. The object stays on a support plane in upright orientation.
+3. The object is hollow, has open top and doesn't have any other concavities.
+This algorithm is much more robust than our more generic model capture of transparent
+objects but it requires some user input (it takes ~30 seconds per model).
+Attached results of the algorithm (please note that circles grids are not used at all in the
+algorithm and it will work with any table). The models have noticeable artifacts but they are
+good enough for experiments with pose estimation. Error for the glass is 3mm for 80% points
+(for comparison we had error 1mm for 80% points when we used 200 train images instead of one).
+
+Devised a new approach to the problem of reconstruction of transparent objects. This problem
+can be casted as the Maximum Satisfiability problem (MAX-SAT), that is the problem of determining
+the maximum number of clauses, of a given Boolean formula, that can be satisfied by some
+assignment. In turn, this problem can be casted as Integer Linear Programming with binary
+variables. Both problems are NP-hard but polynomial algorithms are known in some cases similar
+to ours. Going to get preliminary results of this approach by using the relaxation trick: binary
+variables are substituted by real variables in [0, 1] and the problem is solved with e.g. a usual
+simplex method.
+Started to implement this model capture of transparent objects based on Integer Linear
+Programming.
+
+
+Model capture [Maria]:
+
+Made several improvements of our odometries:
+- Found and fixed a bug in the Rgbd odometry that was affected in case of far frames
+only (point cloud of the source frame had to transformed before each iteration).
+- Made the odometries more stable when the correspondences count is small on some
+pyramid level (it's possible e.g. due to resizing a mask).
+- Optimized our odometries up to ~20% by changing the way how to accumulate matrices
+for the least-squares method
+- Added new parameter for the RgbdOdometry to limit a count of using points. Before we
+selected the points with high intensity gradient (for well-textured images there were a lot of
+such points). Now we use a subset of such points only. This did not decrease the quality of
+the odometry on the TUM benchmark, but decrease its average time up to 0.043s on the
+TUM dataset (still there is no SSE and multithreading support in the code).
+
+Tested a quality of the Rgbd odomerty between far frames when we pass an initial pose into it.
+The goal was to check if the Rgbd odometry is suitable for refining the poses from e.g.
+features2D + 3Dto3D. The odometry between one frame and another frame given by warping
+the first one is stable and well enough. But the odometry between far frames from real video
+sequence is unstable even if we pass very accurate initial pose. The most likely reason of this is
+a changing lighting, glares, shadows, etc. It seems impossible to make dense Rgbd odometry
+stable to such things. But to stabilize camera tracking and loop closure detection we need to
+compute the transformation between far frames too, so now we also want as good as possible
+sparse Rgbd-based odometry like features2D + ICP.
+
+Read more papers related to the problem. Current decision is to move to Rgbd SLAM for the
+pose graph construction and use for the camera pose estimation our Rgbd odometry combined
+with features2d (for better stability).
+Looked for the approach that is able to get stable pose estimation between distant frames.
+Implemented the obvious decision that uses features2d with 3-point RANSAC. Experimented with
+OpenCV features but all of them did not give the required quality of matching for our type of scenes.
+Their main problem of OpenCV features is that they are not affine invariant. Experimented with some
+another features:
+- DAFT. Unfortunately it also did not give enough count of good matches because RGB resolution was too low.
+- ASIFT. It gave good matching even for large transformations and rotations between frames of our
+datasets using the author's demo. So implemented cpp version of this affine adapter for features. But this
+affine adaptation takes ~3-4 sec to find keypoints and compute descriptors for one frame (the demo also).
+Tried the idea to use normals of the table plane to generate only subset of affine warping but it reduced the
+number of inliers too much because a tilt of each 3D point of the table depends on its 3D coordinate and can
+be too different from the tilt computed from a table normal.
+So current decision is to use ASIFT for the pose estimation between distant frames.
+
+Added ability to continue model reconstruction even if a loop closure was not detected in the initial stage.
+This did not reduce the quality of models in our experiments because when the last pose became close to the
+first one (during optimization) we also add ICP edges between them.
+
+</pre>
+
+!images/TransparentModel.png!
+
+*_Action Items_*
+
+*Gary*
+
+* Contact KM for board
+* What would it take for full time QA person?
+
+*Vincent*
+
+* Do write up for code prize to CVPR
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-01-22
+
+_*Agenda*_
+
+* .
+
+*_Minutes_*
+
+* closed 20 pull requests
+* text detection is shaping up
+* OpenCL is shaping up, Java from Eric Christiansen will be out in 2.4.4
+* porting to C++: half is done. Still needs to be checked
+* collaboration with blender, Gimp: computational photography
+
+_*Vadim*_
+<pre>
+[OpenCV 2.5: Vadim]
+I changed the tactics of moving towards 2.5. Instead of developing the new branch ("2.5_concept") with all
+the modifications applied at once, I decided (as suggested by tegra guys) to make some implementation-level
+changes right in the master, as a set of pull request, which are applied sequentially (and thanks to our
+automated QA system each PR is tested thoroughly). It will allow us to avoid painful debugging when
+
+dozens of tests suddenly start failing.
+
+Most of the currently applied implementation-level changes do the following:
+
+before
+void cvFoo(...) { /* actual algorithm implementation using OpenCV 1.x API */ }
+void cv::foo(...) { /* 1. convert args to CvMat's etc. 2. call cvFoo(), 3. postprocess the results if needed */ }
+
+after
+void cv::foo(...) { /* the updated algorithm implementation using OpenCV 2.x */ }
+void cvFoo(...) { /* 1. convert args to cv::Mat's etc. 2. call cv::foo(). 3. postprocess the results if needed */ }
+
+i.e. we reverse the dependency from cv::foo=>cvFoo to cvFoo=>cv::foo.
+
+After it's done, the old C API can be moved to a different "compatibility" or "legacy" module.
+So far I prepared the first pull request with reimplementation of 8 computational geometry functions in imgproc.
+
+[Matas paper implementation: Evgeny]
+Evgeny continues to improve speed of the first phase of Matas region analysis & text detection algorithm.
+He managed to bring the execution time from ~100ms down to ~13ms on his benchmarks. It's definitely a
+good progress, but there are more opportunities for even better performance (though, Evgeny will also work on functionality, i.e.
+further phases of the algorithm)
+
+[Hackaton 2.4.4]
+Next week we have bug hunting session prior to 2.4.4 release. The bug list for the hackathon, a subset of the whole bug list,
+is now being composed.
+</pre>
+
+_*Ilya*_
+<pre>
+Transparent objects [Ilya]
+Implemented reconstruction of transparent objects based on Integer Linear Programming. The GLPK library is used
+(through the OpenOpt interface) to solve the relaxed problem by the simplex algorithm. Even for moderate parameters of
+resolution we have the problem with >1 000 000 constraints and ~300 000 variables. RAM constraints are satisfied by
+exploiting sparse matrices but the simplex method didn't converge to the global optimum in 3 days on our Core i7.
+Implemented construction of another Linear Programming problem which is suitable for coarse voxel grids (e.g. with
+length of a voxel side >1cm). The algorithm worked successfully in this case and produced adequate results. However,
+the resulted model is too coarse and have artifacts due to this.
+
+Plans:
+Implement coarse-to-fine optimization where a solution from the previous step will be used as initialization for the
+simplex method on the next step.
+Other:
+Switched one working day from this Monday to next Saturday.
+
+Model capture [Maria]
+Threaded affine adaptor of features.
+Tried to combine the affine adaptor with descriptor from Vincent. For some reason it did not give enough inliers with
+such adaptation on our base.
+Captured several datasets with arbitrary camera trajectories. Ran them through the parts of current pipeline to identify
+problems. Implementation of the initial simple version of arbitrary graph construction is in progress (it'll be based on
+RgbdOdometry and affine adapted features for a start).
+Played with calcOpticalFlowPyrLK but there is not final decision how we can get improvement from it to our pipeline
+(back to this after getting results and intuition from the initial version of the algorithm).
+
+Plans
+Finish the implementation of initial version of arbitrary graph construction, investigate how it copes with identified
+problems on the captured datasets.
+</pre>
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-29-01
+
+_*Agenda*_
+
+* should we contact mexopencv ? (as a use case for the new wrappers)
+* http://www.mathworks.fr/discovery/matlab-opencv.html
+* A. talk report and feedback (Vincent)
+
+*_Minutes_*
+
+* IplImage supported tile images. Will not be supported in OpenCV for now.
+* mexopencv: the time is not right yet. Maybe have a GSOC do it.
+* we need to explore specularities in transparent objects.
+
+
+_*Vadim*_
+<pre>
+[2.4.4 Hackathon: opencv-dev-all]
+Last week we selected the tickets for the hackathon, 103 tickets in total. So far (on Friday, Monday and Tuesday) we
+closed 24 of them + fixes for a few more tickets are waiting for review and buildbot verification. For most of the
+bugs in the library we write a new test or extend an existing one.
+
+Main areas for the hackathon: patches from users (various modules), features2d, highgui, documentation, objdetect,
+python bindings.
+
+[Matas paper implementation: Evgeny]
+Evgeny continued implementation of the Matas' paper. The first stage is mostly finished - the tests for it pass and it's
+1.4x faster than the version a week ago.
+
+[OpenCV infrastructure: Evgeny]
+Added ccache for ubuntu-precommit builder (buildbot builder on Ubuntu that's executed on each pull request). It
+accelerated the builder by ~50%.
+Added handling of cases when some new or modified test data (which now resides in a separate repository opencv_extra)
+is required for a pull request to opencv. Buildbot now looks for a branch with the same name in opencv_extra as in pull
+request for opencv and uses it (after merging) to run tests.
+
+[Some Github statistics]
+Last week we (opencv core team + tegra & gpu teams) closed 43 pull requests.
+</pre>
+
+_*Ilya*_
+<pre>
+Transparent objects [Ilya]
+Revamped our ICRA paper according to reviewers' comments. Prepared a slide for the ICRA Digest.
+Experimented with initial solutions in Mixed Integer Programming (MIP). It has turned out that efficient usage of an initial
+solution is not trivial in MIP and it is poorly supported in software packages. Added export of the MIP problem to a
+widespread MPS file format and experimented with different solvers. Evaluated them for our problem when voxel size is
+2cm (it gives a problem with ~10 000 variables, ~40 000 constraints, ~100 000 non-zeros), different formulations were
+used (Linear Programming or Mixed Integer Programming):
+--------------------------------------------------------------------
+Solver                 Formulation          Time to find
+the global optimum (sec)
+--------------------------------------------------------------------
+solver_1                    LP                   46
+solver_2                    LP                    5
+solver_1                   MIP                19426
+solver_3                   MIP                  415
+solver_3 (with
+initialization in          MIP                  556
+global optimum)
+---------------------------------------------------------------------
+Solution of LP provides only an approximate reconstruction of transparent object and it is better to solve the
+MIP problem. Surprisingly, even initialization in global optimum doesn't help the algorithm (this is specific of
+MIP problems).
+Tried to cast our problem into the convex optimization framework. Derived different formulations but either
+we get a non-convex objective function or non-linear equality constraints or lower bound on convex functions.
+Standard algorithms cannot be applied in these cases so returned to the Integer Programming formulation.
+Started to participate in the OpenCV 2.4.4 Hackathon.
+
+
+Model capture [Maria]
+Finished implementation of a simple approach to construct an arbitrary graph. It inserts the frames with
+unbroken RgbdOdometry into one segment of a trajectory and sets edges between segments using features2d + 3-point
+RANSAC. As before, it also adds ICP edges during global optimization if frames get close to each other geometrically.
+Ran the algorithm on our datasets with an arbitrary trajectory (such trajectories are usually longer than one turn around
+the table). The algorithm was able to construct the initial graph correctly. But we got much more keyframes when the
+parameters of our previous pipeline were used. For such count of keyframes it was impossible to check our previous
+global optimization because it takes too much time and RAM. So selection of a subset of keyframes was added
+(based on the Douglas-Peucker algorithm for camera translations). But the resulted models had artifacts for the new
+data. Possible reasons: larger distance between keyframes for ICP edges, unrequired loop closure in the initial graph structure,
+high FPS of used data (more frames are processed, the larger drift is accumulated), etc.
+Improved a table masker (the old masker sometimes chose the other part of a room as a table on new datasets).
+Now the masker selects a plane basing on overlap with the table mask of previous frame.
+</pre>
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2013-02-05
+
+_*Agenda*_
+
+* mexopencv
+* GSoC
+* Barcode
+
+*_Minutes_*
+
+* Prep GSoC
+** mexopencv sounds good -- if he's still a student, great.
+** more tutorial
+** cooperation with other open source projects.  GIMP filters? zxing? Mexopencv? Things like that
+** Bar code support
+*** Working with zxing
+* DAFT -- unwarp
+** Instead of warping the patch, warp comparision
+** ASIFT warps the points (faster)
+*** General enough to do this with any descriptor?
+** But use something like Lucid
+* New header wrapper generator
+* Work with huge images on disk
+** But soooo specialized for particular images
+* ceres bundle adj ... but big dependencies
+* libmv  ... from GSoC might put this in for 2.5.
+** Have replaced image format
+** Eigen dependencies that could be replaced for compactness
+* Vincent is working on autocalibration.
+
+* If Gary get's his Visa, he's off to Russia Friday through Tuesday.  Will miss next meeting, Vincent to head.
+
+
+_*Vadim*_
+<pre>
+[2.4.4 Hackathon is over: opencv-dev-all]
+The hackathon is over. It was the most successful OpenCV hackathon (out of the 3), we managed to close 76 tickets out of 103!
+Thanks a lot of Tegra team who closed the majority of the tickets. Also, big thanks to Kirill, Andrey and Evgeny, who created this
+pull request testing system that allowed us to avoid sudden regressions and broken builds during such intensive bug fixing process.
+Its value for the steady library progress can not be overestimated.
+
+[Infrastructure: Evgeny]
+- switched to the latest Visual Studio 2012 in some of the Windows builders
+- fixed a few sudden buildbot problems and failures during the hackathon.
+- improved performance of the pre-commit builders by eliminating duplicated builds.
+
+[Misc]
+Ilya Lavrenov got back to work after passing exams. He resumed the work on SSE optimization of the HOG (even though HOG is not
+the state of the art anymore, HOG features are still used in more advanced detection algorithms)
+
+Vadim is on sick leave since today (Tuesday). It will probably take couple more days to recover.
+
+</pre>
+
+_*Ilya*_
+<pre>
+Transparent objects [Ilya]
+Participated in the OpenCV hackathon. Resolved several issues:
+#2560, #2330, #2677, #2644, #2440, #1747, #1907, #2470.
+
+Wrote a description of our video for ICRA.
+Added export of our integer programming problem in the LP format. It allows us to export large
+problems (before we had export of dense matrices only so we could work only with "small" problems).
+Implemented a better approach for ray-casting when constructing the integer programming problem.
+It allows to construct large problems when there are more voxels and considered pixels.
+
+Other:
+Arranged the travel to Moscow to attend Skolkovo Robotics conference and apply documents for the
+German visa (to attend ICRA).
+Plans:
+Experiment with large-scale problems using external MIP solvers.
+
+
+Model capture [Maria]
+
+Сaught and fixed (finally I hope) the problem with Nans on the last stage of global refinement which
+occurred for some objects during the demo preparation.
+
+Improved the refinement (even for the circular trajectory):
+1) use the pyramids in the global stage too,
+2) filter correspondences by normals (in the stage where ICP edges are added),
+3) allow more distant correspondences.
+
+Added drawing a camera trajectory (to our previous way to show a model using pcl visualizer).
+
+Added caching the results of initial graph construction to reduce the time of further experiments with its global
+refinement (especially if ASurf+RANSAC were used intensively during the construction).
+
+Investigated some reasons of model artifacts of our simple algorithm for an arbitrary trajectory:
+1) At least one (final) loop closure in initial graph is required to get more predictable result. Now we always try to set
+an edge between the first and the last poses using ASurf+RANSAC (it's simple temporary solution).
+2) Using the original resolution of frames was not enough for the full convergence of the global ICP because for an arbitrary
+trajectory we can get less accurate initial graph than we had for the circular trajectory. Now we use the pyramids (see above).
+3) Each pose must have ICP edges to poses of both previous and next parts of a trajectory. Otherwise we can not guarantee
+the consistency of sequential point clouds. This was true for the circular trajectories and was not satisfied when we started to
+select a subset of initial set of keyframes (to fit in RAM).
+
+Made experiment to check that our previous global refinement (without selection of keyframes subset) works for an arbitrary
+trajectory. For this I had to reduce a frames resolution to QVGA (for RAM and time reasons). 168 keyframes were selected and used.
+The tested dataset was hard: ornate trajectory; table and object were absent in several frames; the big object overlapped a large part
+of table with the texture from several views. But the resulted model is well. See the attachment: big red point is a start pose; a line
+from each pose is a translation to the previous pose (truncated by 5 cm); the color of pose points degrades from red to white over time.
+</pre>
+
+!images/Screen_shot_2013-02-05_at_10.12.26_AM.png!
+
+!images/CapturedModel2013-02-05.png!
+
+*_Action Items_*
+
+*Gary*
+
+* Think up GSoC projects
+* Contact ZXing(?)
+* Kevin Murphy
+* Draft for foundation
+
+*Vincent*
+
+* Think up GSoC projects
+
+*Ilya*
+
+* Think up GSoC projects
+
+*Vadim*
+
+* Think up GSoC projects
+
+*Victor*
+
+* Think up GSoC projects
+
+*Vincent*
+
+* Think up GSoC projects
+* Contact mexopencv guy
+
+*Adrian*
+* Think up GSoC projects
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-02-12
+
+Cancelled as everybody is at the conference in Moscow.
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-02-19
+
+_*Agenda*_
+
+* SfM visualizer in OpenCV ? simple pure OpenGL one
+* which version should we put in the next ROS ?
+* how to do parallel installs ?
+* GSOC 2013
+
+_*Vadim*_
+<pre>
+[2.4.4 beta is out; 2.4.4 gold is on schedule]
+Despite the recent reorganizations 2.4.4 beta has been released and 2.4.4 final will very likely be released on March 1st - thanks to the NV team! The beta changelog is here http://code.opencv.org/projects/opencv/wiki/ChangeLog, announce is here http://opencv.org. The remaining weeks before the final release will be spent in further stabilization of the code and improving the packaging (e.g. the current package for Windows is plain huge).
+
+[HOG Optimization: Ilya]
+Ilya Lavrenov continues SSE2 optimization of HOG. Last week he implemented 2 tests for the HOG regression testing and fixed several bugs discovered by the tests.
+
+[Matas paper implementation: Evgeny]
+Evgeny implemented construction of the tree - hierarchy of the connected components, which is necessary for non-maxima suppression after the first classification round. The next step is to collect the training database for the classifier, training it and applying classifier to compute p(region_is_character) function.
+
+[OpenCV 2.5, C=>C++: Vadim]
+another 5 functions from imgproc: houghlines, distancetransform, watershed, pyrmeanshiftfiltering and moments have been converted to C++. All the tests pass and the code is merged to master. There are few more functions in imgproc yet to be converted: contours, emd etc. but for now I decided to switch to more important calib3d, video and ml modules and do them first. calib3d is in progress: Levenberg-Marquardt, findhomography and other point set registration functions have been rewritten in C++ and now being debugged.
+
+[github statistics]
+14 pull requests have been closed during the last week. Thanks again to NV team for doing majority of the work
+</pre>
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-02-26
+
+_*Agenda*_
+
+* GSOC
+
+*_Minutes_*
+
+* ICC compiler: tests are failing: can be due to accuracy but sometimes, output is totally inaccurate. Currently supported compilers: 32-64 gcc 4.6, Visual Studio 2010 and 2012, Android cross-compiler, clang 3.1
+* OpenCV 2.4.4 on track for the release on March  1st
+* GSOC ideas:
+** barcodes: 1D and 2D with 2D and 3D cameras (a zebra-crossing wrapper most likely)
+** more Qt integration
+*** need precision from Adrian
+*** multiwin
+*** visual output for certain algorithm during the execution (for the different steps)
+** visualizer for SfM (basic OpenGL and Qt integration), e.g. : http://www.youtube.com/watch?v=jZlhnguoBag
+** more computational photography (tilt shift maybe) + collaboration with GIMP
+** Ceres integration (we need some BA stuff). It depends on Eigen but they just changed their license and that could be a micro-module
+** Matlab integration: we could have somebody writing samples/testing the latest wrapper.
+Needs: OpenCV knowledge a bit, Python knowledge. Write a script that takes output from parser
+(list of classes/methods/functions) and generates C code that is Matlab wrappers (mex knowledge).
+Find solution to deal with row-major/col major
+** multi-camera calibration: keep libmv as micro-module
+** RGBD functions (we have a pretty strong module, maybe we could add a few things (octrees, plane-plane ICP ...).
+
+_*Vadim*_
+<pre>
+[HOG Optimization: Ilya]
+Ilya Lavrenov has finished SSE2 optimization of HOG and submitted pull request at github. The overall improvement is ~1.5x on several images that Ilya tried. Since the classifier used in HOG detector is super-fast linear SVM, which is applied to each candidate window, the performance should not depend on the actual image content.
+
+[Matas paper implementation: Evgeny]
+Evgeny has nearly finished implementation and tuning of the Matas algorithm. This week is devoted to the API work - there should be a convenient API for such a general purpose algorithm. And yet the API should be convenient and impose a minimal overhead.
+
+[OpenCV 2.5, C=>C++: Vadim]
+7 calib3d functions and 4 classes: findHomography, findFundamentalMat, findEssentialMat, estimateEffine3D, computeCorrespondEpilines, convertPointsTo/FromHomogeneous, LevMarq, ModelEstimator, RANSAC estimator, LMeDS estimator have been converted to C++. The pull request has been submitted. Hopefully, this week calib3d module will be finished.
+
+[OpenCV + Intel Compiler: Vadim]
+OpenCV has been built with the latest 64-bit Intel Compiler from Intel Composer XE 2013 and ran on Ubuntu 12.04 x64. While the initial goal was to estimate the possible performance benefits of using ICC, it appeared that there are some issues with correctness of the produced code. In other words, when OpenCV is built with ICC with quite modest default settings ("-O3 -DNDEBUG"), many tests fail (the same tests pass on the same machine when OpenCV is built with GCC 4.6.x). Here is some statistics:
+
+Module name       #failed/total
+================================
+core                 17/121
+imgproc              17/134
+features2d            2/38
+nonfree               0/20
+ml                    2/17
+calib3d              12/39
+video                 4/14 (1 test crashed)
+photo                 1/5
+objdetect             0/3
+highgui               1/23 (jpeg 2000 codec failed)
+stitching             1/2
+
+So, before the performance numbers are collected, some more research needs to be done on whether those failures can be corrected by passing special flags.
+
+[github statistics]
+Over 40 pull requests have been closed during the last week. A lot of work has been done by the ocl contributors and developers, so there is a big chance that 2.4.4 will include quite solid OpenCL support.
+</pre>
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-03-05
+
+*_Minutes_*
+
+* GSOC, GSOC, GSOC
+
+
+_*Vadim*_
+<pre>
+[OpenCV 2.4.4: Evgeny + Tegra team]
+OpenCV 2.4.4 is out! Here is the announce: http://opencv.org/opencv-2-4-4-is-out.html
+Big thanks to Tegra team, who took responsibility over the release process (and do that very well) and Evgeny who
+helped a lot, in parallel with the work on the text detection algorithm.
+
+At the same time, the number of downloads from sf.net/projects/opencvlibrary exceeded 6,000,000!
+
+2.4.5 will almost certainly be released around June 1st, i.e. ~the same time as 2.5.0 (if 2.5.0 is on time)
+
+[OpenCV 2.5: Vadim]
+Stereo correspondence classes in calib3d have been refactored. Now they have the same class StereoMatcher - the change
+requested by Adrian and several other people.
+
+The whole module video has been refactored too: Meanshift, Camshift and motion templates have been rewritten in C++,
+background subtractor classes have been cleaned too to adhere OpenCV 2.5 principles.
+
+The document "Towards OpenCV 2.5" has been written. This is initial todo list and discussion of the key things that
+should be done by 2.5.0. The basic idea is that we should do as much of necessary API changes by 2.5.0 as possible,
+since after that we can not break API for a very long time. Everything else, i.e. implementation-related things, can be
+done in 2.5.x. We already discussed a bit possible modifications in the base Algorithm class.
+
+[Bilateral filter optimization: Ilya]
+Ilya Lavrenov got back to his previous work - optimization of the bilateral filter. By optimizing the memory access
+pattern he managed to squeeze some more performance (~10% for floating-point images, ~20% for 8-bit images).
+
+[Text detection: Evgeny]
+I finally realized that it's not quite fair to call this a Matas algorithm, since the first author of the paper is his
+student Neumann. So, let's call it NM text detection algorithm. And this is how it's called in the code (more exactly
+ERFilterNM1, 1 is for the first stage).
+Evgeny is finishing work on the 1st stage of the NM algorithm and will switch to another task next week. Convenient and
+flexible API has been developed. Basically, user supplies image an callback (the "classifier") that takes extremal
+region (ER) and returns probability - the measure of how good it is. On output the algorithm gives the list of survived
+extremal regions. Following the paper philosophy, each ER, regardless of its area and shape, takes O(1) space and O(1)
+time to process. The actual region mask can then be extracted using cv::floodfill or cv::threshold + cv::findContours
+functions.
+
+[github statistics]
+Over 35 pull requests have been closed during the last week.
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* File GSOC application
+
+*Vincent*
+
+* Start the GSOC 2013 project
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2013-03-12
+
+_*Agenda*_
+
+* GSOC !
+
+*_Minutes_*
+
+* discuss topics and administrative stuff
+* 2.5 API for high level functionalities has been finalized
+* base algorithm class independent from the STL: people can use their own STL (hiding STL allows for higher compatibility)
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* prioritize list of GSOC projects, contact mentors
+
+*Vincent*
+
+* send website for review
+
+*Vadim*
+
+* prioritize list of GSOC projects, contact mentors
+* ask Alexander: gsoc mailing list
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-04-09
+
+_*Agenda*_
+
+* Funding website
+* Facebook page
+* GSoC
+* 2.5
+
+*_Minutes_*
+
+* Facebook page: https://www.facebook.com/opencvlibrary
+<pre>
+Congratulations!
+
+Your Organization Application for "Open Source Computer Vision Library (OpenCV)"
+in Google Summer of Code 2013 has been accepted.
+</pre>
+
+* Suggested (NOT FINAL) funding levels
+
+<pre>
+Support (an answer within the amount of opening days):
+level 0: 1K support within 1 week
+level 1: 5K support within 1 week and dedicated machine on build farm
+level 2: 10K support within 3 days and dedicated machine on build farm
+level 3: 20K support within 24h and dedicated machine on build farm
+level 4: 30K support within 24h, dedicated machine on build farm and fixes when errors happen on the machine
+
+Sponsorship:
+Diamond      $250K             Level 4 support. Can direct OpenCV development/Strategy/priorities. Board position.Able to brainstorm
+
+solutions to proprietary problems with the team.  Front page logos
+
+Platinum    $100K             Level 3. Board position, strong influence on priorities real time support as above. Front page logos
+Gold               $50K           Level 2. Advisory board (suggest priorities). Quarterly brainstorm
+Silver             $25K            Level 1. Advisory board. bi-yearly brainstorm logo on workshops
+Titanium        $10K             Level 0. Logo on prize sponsorship
+Bronze            $5K             logo on bounties
+Contributor      <$1K           Contributor page
+</pre>
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Ping the car company
+* Mentors
+
+*Vincent*
+
+* Website
+* Mentors
+
+*Vadim*
+
+* Fix up GSoC OpenCV Foundation site
+* Mentors
+
+*Victor*
+
+* Go over the contribution lists
+* Mentors
+
+_*From Last Time*_
+
+*Gary*
+
+*
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+*
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-04-16
+
+_*Agenda*_
+
+* 2.5
+* Contribution levels list
+* GSoC
+** Mentors
+** Ideas
+** Go over list
+
+*_Minutes_*
+
+* GSoC
+** 2 new mentors, will add them
+** Kick the mentors to sign up on Melange
+** Make sure all queries are answered on our list mailto:opencv-gsoc-2013@googlegroups.com
+***  https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013
+
+* Funding level suggestions ... still working on:
+<pre>
+
+SUPPORT (an answer within the amount of opening days):
+level 0:   1K support within 1 week
+level 1:   5K support within 1 week and dedicated machine on build farm
+level 2: 10K support within 3 days and dedicated machine on build farm
+level 3: 20K support within 24h and dedicated machine on build farm
+level 4: 30K support within 24h, dedicated machine on build farm and fixes when errors happen on the machine
+
+SPONSORSHIP:
+Diamond     $250K         Level 4 support. Can direct OpenCV development/Strategy/priorities. Board position.Able to brainstorm
+solutions to proprietary problems with the team.  Front page logos
+
+Platinum    $100K           Level 3. Board position, strong influence on priorities real time support as above. Front page logos
+Gold            $50K           Level 2. Advisory board (suggest priorities). Quarterly brainstorm    3 Development sprints
+Silver           $25K           Level 1. Advisory board. bi-yearly brainstorm logo on workshops    2 Development sprints
+Titanium      $10K           Level 0. Logo on prize sponsorship                                                  1 Development sprint
+Bronze           $5K           Logo on bounties
+Contributor <$1K           Contributor page
+
+</pre>
+** KS
+
+* 2.5
+** We will actually probably move to 3.0. It's changing enough enough to warrant a break
+** Preparing slides for this new release
+** Beta July 1
+** Release Sept. 1
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Write Adrian
+* Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013
+* Talk with Stefan
+
+*Vincent*
+
+* Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013
+
+
+*Vadim*
+
+* Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013
+* Get 3.0 slides to Gary
+
+
+*Victor*
+
+* Look at the funding level suggestions and adjust as needed.
+* Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013
+
+
+_*From Last Time*_
+
+*Gary*
+
+* Ping the car company
+* Mentors
+
+*Vincent*
+
+* Website
+* Mentors
+
+*Vadim*
+
+* Fix up GSoC OpenCV Foundation site
+* Mentors
+
+*Victor*
+
+* Go over the contribution lists
+* Mentors
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-04-23
+
+_*Agenda*_
+
+* GSoC go through list
+* 3.0
+* Talks
+
+*_Minutes_*
+
+* Encourage all the people chatting about projects to actually submit proposals. We have 40 or more on the chat and only 5 submitted right now.
+*
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Send Stefano a message about mentoring
+* Encourage students to submit
+
+*Vincent*
+
+* Encourage students to submit
+* Send slides
+* Notes for website
+
+
+*Vadim*
+
+* Encourage students to submit
+
+
+*Victor*
+
+* Encourage students to submit
+
+
+_*From Last Time*_
+
+*Gary*
+
+* -Write Adrian-
+* -Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013-
+* -Talk with Stefan-
+
+*Vincent*
+
+* -Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013-
+
+
+
+*Vadim*
+
+* -Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013-
+* -Get 3.0 slides to Gary-
+
+
+*Victor*
+
+* Look at the funding level suggestions and adjust as needed.
+* -Help with GSoC mailing list https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2013-
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-04-30
+
+_*Agenda*_
+
+* GSoC go through list
+* Linemod
+* 3.0
+* Support models. New Intel support.
+* Barcodes  2D
+* Model capture
+* Conferences ...
+
+*_Minutes_*
+
+* Connection with Intel project going well
+** See if we can go to stage 2
+* Linemod
+** We have color modality from
+* Parts based object recognition (Deva's method)
+** HOG + Decision tree. (Should work with with CUDA well)
+** Regular code speed;
+*** 10Hz on Intel cpu
+*** 1Hz on ARM
+* 3.0
+** Moving slowly because Vadim is doing another project
+** A subteam working on this around gpu & ocl modules
+** C++ 11 ... not yet since we support many compilers
+* Haven't switched the website to RST
+* Barcodes
+** Datamatrix (James Bowman) In object recognition findDatamatrix (not in docs)
+** Existing code is very limit,
+** only codes for 3 symbols
+* Model capture
+* Match time covariance
+* LUCID
+** NIPS paper
+** Code to Victor and Maria
+* 3D Model capture Maria and Ilya pipeline
+** Working. With robot and hand held device
+** Colored pt cloud
+** Textured mesh
+
+
+_*Vadim*_
+<pre>
+On other project for now
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Vet projects
+
+*Vincent*
+
+* Get website up
+* Send
+** Gary 3D capture code link,
+** Lucid link
+** Colored pt cloud to mesh
+
+*Vadim*
+
+* Vet projects
+
+*Victor*
+
+* Vet projects
+
+_*From Last Time*_
+
+*Gary*
+
+* -Send Stefano a message about mentoring-
+* -Encourage students to submit-
+
+*Vincent*
+
+* -Encourage students to submit-
+* -Send slides-
+* Notes for website
+
+
+*Vadim*
+
+* -Encourage students to submit-
+
+
+*Victor*
+
+* -Encourage students to submit-
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-05-07
+
+_*Agenda*_
+
+* Russian holidays, post GSoC selection hangovers
+* GSoC
+* Funding
+
+*_Minutes_*
+
+* Have 20 quite strong candidates, asked for 15 stretch to 20.
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Select students
+
+*Vincent*
+
+* Select students
+
+*Vadim*
+
+* Select students
+
+*Victor*
+
+* Select students
+
+_*From Last Time*_
+
+*Gary*
+
+* -Vet projects-
+
+*Vincent*
+
+* -Get website up-
+* Send
+** -Gary 3D capture code link-
+** -Lucid link-
+** Colored pt cloud to mesh
+
+*Vadim*
+
+* -Vet projects-
+
+*Victor*
+
+* -Vet projects-
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-05-14
+
+_*Agenda*_
+* Meet Luis Goncalves.
+* GSoC
+
+
+*_Minutes_*
+
+* Luis Goncalves is from CalTech and with Evolution, helping with funding
+* GSoC
+** Projects
+** Matlab
+python tutorials
+PTAM
+Text Detection
+Computational Photography
+Barcode
+Hand tracking
+Long term optical tracking
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-06-11
+
+_*Agenda*_
+
+* GSoC
+* License -- Go to Apache 2.0 for OpenCV 3.0
+
+*_Minutes_*
+
+* Apache 2.0 for OpenCV 3.0?
+** It's not so easy, but it's compatible and protects against patent attacks
+** I want a license that gives a legal right to use in whole or in part, but not the MORAL right unless you contribute something.
+* GSoC
+** Final mentor list.
+*** write students for availability!
+** LSD algorithm
+*** Transfer someone to work on
+** Barcode connect to ZXing
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-06-18
+
+_*Agenda*_
+
+* GSoC issues
+
+*_Minutes_*
+
+* .
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-06-25
+
+_*Agenda*_
+
+* CVPR 2013 So far
+* GSoC
+* Release 3.0
+
+*_Minutes_*
+
+* CVPR Of interest
+** Large-Scale Visual Recognition
+*** Anti-sparse coding, ASILOMAR'11
+*** Product Quantization, Fleet, Ge He, Qe, Sun
+*** Hamming Embedding, ISCASSP'12  Furon Fuchs
+*** Jegon'11
+* GSoC
+** Hilton starting up
+** Tracking fine MIL,
+** gBp going.  Texton
+** LSD refactored
+*** Both the above ahead of schedule so may do other things
+*** At the end of the month ... ptam?
+**** BRISK and FREAK
+** Barcode have trouble
+** Text detection has speedup (extremal region speed up by several factors)
+** API for linear solver
+** HDR (high dynamic range) going well
+** Shape descriptors ...
+** Photometric calibration -- no report, talk to Adrian
+** Python tutorials progressing well
+** Visualization vtk. Going, but mentor on vacation right now
+** Hand tracking ?
+** Image inpainting ?
+** Android examples  (Android) need to ask
+** Maybe put up milestones on code.opencv.org, use mailing list
+** Computational photography
+* Optimization on more architectures coming ... can't reveal yet.
+* Funding possibilities are being worked on.
+** Agreed to work with DARPA and data synthesis and algorithm analysis hosting and promotion
+
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Set up weekly reports
+
+*Vincent*
+
+* Send out message
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-07-09
+
+_*Agenda*_
+
+* GSoC
+
+*_Minutes_*
+
+* GSoC
+** Line segmentation detector going well
+** Segmentation (Malik) 2/3 implemented  need sparse SVD ... use Eigen
+** Tracking API going well
+** Optimization simplex method done
+** Text detection  1&2nd stage done. Need to work on detection quality
+** 3D Visualization looking good, Affine 3D
+** Spape context completed all the primary steps for the Shape Matching with Shape Contexts
+** Android examples. Markerless AR
+** Barcode ?? Ground truth
+** HDR imaging Exposure fusion is completed and commited, I'm still working on gdc.
+** inpainting -- not reported
+** matlab -- not reported
+** python -- Going well/tutorials, samples
+** computational photography -- no report
+** hand tracking
+** gPb going OK
+** Computational photography
+* OpenCV 3.0  Postponed until Dec
+* License change to Apache 2.0?  Stronger for patent protection
+** Unclear on actual benefit ... what do we really gain, what does it take?
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-07-16
+
+_*Agenda*_
+
+* GSoC
+*
+
+*_Minutes_*
+
+* GSoC regular reports but no reports from:
+** Adrian (photometric calibration/comp photog) and
+** Eric (inpainting)
+** But, both projects seem to be making progress.
+* Learning OpenCV version 2.0 is say 90%++ complete.
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-07-23
+
+_*Agenda*_
+
+* GSoC
+* does Vincent make the PR for the RGBD module ?
+* why don't we have .rst doc for LINEMOD ?
+* can't we have a "samples" folder per module in 3.0 ?
+
+*_Minutes_*
+
++*GSOC:*+
+
+* Vincent need to make a PR for RGDB
+* no doc for LINEMOD: needs to be fixed
+* 3.0 will have a per module sample folder: to be standardized
+* Segmentation going well
+* LSD pull request
+** These are PTAM capable, can go on to other projects
+* Matlab good
+* Barcode we'll see
+* SfM great progress
+* Text getting PR ready -- fast filter for text and logos regions
+* Python tutorials -- going well, many
+* Hand tracking, lots of progress
+* Shape context going well
+* HDR 2 guys implemented same algorithm, need to avoid intersection, but going well
+* Long term tracking going really well
+* Photometric seems OK, but opposite -- test and doc before code
+
++*PULL REQUEST from GSoC:*+
+
+We want to get all the students to do early pull requests just to get them into the "mode", not necessarily to accept, just to learn. Ask students to do this
+
+Create a separate branch from opencv master.  Create a pull request.
+see http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+
+They can use (open and free) SourceTree to help with this.
+
+* lsd
+* text
+* optimization
+
+
++*MISC:*+
+
+* Linemod warper -- 2D or 3D warping OpenCV 2D, OpenGL 3D
+** where to put?
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* Send students prep for pull requests
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-08-20
+
+_*Agenda*_
+
+* GSoC
+* 3.0
+
+*_Minutes_*
+
+* .
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-09-03
+
+_*Agenda*_
+
+* GSoC
+* Kickstart
+
+*_Minutes_*
+
+* GSoC
+** Matlab bindings has a pull request
+** LSD has pull request, off to PTAM
+** Text detection
+** SfM visualization
+** Tracking API
+** gPb holding off on pull
+** Photometric calibration
+
+** Barcode
+**
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Ask Adrian on his student
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-09-17
+
+_*Agenda*_
+
+* User poll spreadsheet
+* Crowd funding
+* Pull requests
+
+*_Minutes_*
+
+* Spreadsheet of responses: 454 posts so far
+** Good: speed of work, bug fixes better
+***  wants: 2D, 3D features, segmentation, tracking, object recognition, vlfleet, engines
+** Not good
+*** Documentation, bugs
+* OpenCV 3.0
+** Want to capture user contribution that we don't maintain other than build bot
+*** Already here https://github.com/itseez/opencv_contrib
+* Conference capture app
+** Prize for paper voted "most want open sourced
+*** much bigger prize if they do this
+*** But 2 main problems
+**** Money
+**** Pull request people
+***** Get more funding for reviewer
+* Team we should have
+** Full time documentation/QA engineer -- build bot, country models
+** Someone to make sure bug requests get done
+** Full time web-person
+
+# QA engineer (could be more junior)
+# FT engineer (pull requests, algorithm dev)
+# Web person, documentation
+# Contests, questioneers, "push to high school", PR
+
+* Vision is changing. It's worth money now. Implies
+** Higher quality prof. code demanded
+*** But now computer vision is monatized ... more closed, more specialized to problems domains
+*** We could "push to high school
+*** NIST for standard
+* Brain storm
+* Kickstarter
+** Selfstarter is crowd funding w/o kickstarter
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Contact Grace about BAVM
+
+*Vincent*
+
+* Get videos and code to Grace and I
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* BAVM
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-10-08
+
+_*Agenda*_
+
+* Pull requests from summer of code
+* Program manager
+
+*_Minutes_*
+
+* Pull requests
+** Most pull requests are integrated
+** Computational photography has merge conflicts, need to resolve such as split and merge. He's going through it
+*** Encourage to keep going
+* *GSOC Results*
+** High Dynamic Range Imaging: +Fedor Morozov+. Incorporated
+** Android examples. +Oli Wikie+. Done, no pull request yet
+** Matlab code generator for OpenCV. +Hilton Bristow+. Incorporated.
+** gPb port (Malik's human like segmentation). +Di Yang+. Done, working on pull request.
+** Line Segment Detection. +Daniel Angelov+. Incorporated.
+** Computational Photography and more. +Siddharth Kherada+. Done, working on pull request.
+** Shape Context Descriptor. +Juan Manuel Perez Rua+. Incorporated
+** Hand tracking with kinect. +Ozan Tonkal+. Status?
+** SfM visualizer. +Ozan Tonkal+ Incorporated.
+** Numerical optimization module. +Alex Leontiev+. Incorporated.
+** Text detection in scenes. +Lluis Gomez i Bigord+. Incorporated.
+** Optical tracking API. +Antonella Cascitelli+. Incorporated.
+** OpenCV Python Tutorials. +Abid Rahmank+. Incorporated.
+* OpenCV poll went out 1 month ago
+** Have > 1600 responses already
+* Kickstarter
+** 2D, 3D, Object Rec
+** Raise on one or several of these -- pay the consultant to implement
+** Offer services at higher levels of donations
+
+
+
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+
+h2. 2013-10-29
+
+_*Agenda*_
+
+* Survey
+* CVPR Course
+* Kickstart
+* Funding ... fedCV site
+
+*_Minutes_*
+
+* The survey is basically done, over 2K responses.
+** Results https://docs.google.com/forms/d/1-fmuyGnQGOtBAUQ0MV5Ly6P4KaBKvQAES6d6VOMCtOU/viewanalytics
+* We are thinking of using this as a basis for a Kickstarter campaign. Focus on infrastructure etc
+* We have submitted a proposal for a CVPR 2014 Tutorial.
+** Overview OpenCV in general
+** Go through OpenCV 3.0
+** Brain storm on the survey and what people want to see
+** Problem solving walk through in 4 areas using Python and C++
+* Probably go ahead with Berkeley partnership to put up fedCV site off of OpenCV. Public datasets plus cloud services
+
+* Vadim was out this week (remember timezone change
+* Grace out next week
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Get caught up on
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-11-05
+
+_*Agenda*_
+
+* Kick starter
+* AMD dev conference, Vadim in town: Nov 8th - 16
+
+*_Minutes_*
+
+* Kickstarter
+** Video ready
+** Pole closed, >2K responses.
+** People to interview
+* 2.4.7 Release this week
+** Visualization package.
+** Most work is on OpenCL
+** Most of Google Summer of Code is slated for 3.0
+** Chinese Academy of Science contributed OpenCL work
+*** OpenCL tests have to cover a lot of hardware, there were fails, fixing but not all tests pass yet
+*** 3.0 will do a lot more work on this. But OpenCL will vanish and be put into automatic acceleration in the other modules
+**** It will accelerate automatically if you use "umat" (Universal Matrix).
+**** Tests often show 10 to 100x acceleration on GPU
+*** If user casts to umat and pass to functions, it will use GPU acceleration if available achieving the speedup.
+**** Data is not copied in conversion back and forth between mat and umat. Use mat if you want pixel access.
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* Get back to Intel, now have potential project managers
+* See whom we can get for kickstarted video
+
+*Vincent*
+
+* Multi-camera extrinsic calib with livmv
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-12-10
+
+_*Agenda*_
+
+* CVPR Tutorial
+* Ongoing intern
+
+
+*_Minutes_*
+
+* Tutorial for CVPR
+** Apache server to run code
+** Java script
+** or send python script to execute
+*** Maybe have intern code this
+* Head finding 1.2MB
+** Soft cascade
+* Intern ongoing
+** Siddarth
+* Deep learning
+** Convolutional Nets
+* Gesture
+** RGBD marked hands
+**
+
+
+
+_*Vadim*_
+<pre>
+WR
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-01-14
+
+_*Agenda*_
+
+* GSoC pre-pre-pre planning …
+* Website
+* Positions
+* Intel
+
+*_Minutes_*
+
+* GSoC pre-planning
+** We looked at who performed, who didn't and why
+*** Some geographies will now require a programming test
+*** We will in general favor programming over vision. Given the short span of time, a student has to hit the ground running and it's turned out that programming trumps vision knowledge. However, getting both is the ideal.
+* We are updating the website. It's a tad dry. Vincent on this.
+* Positions (send bios to Vincent)
+** Gary -- CEO
+** Vincent -- Treasurer
+** Grace -- Director of Development
+** Vadim -- Chief architecture
+** Achin -- Contact him. Role
+* Grace has been dealing with Intel to get our payments straightened out
+** We need to get more open, less SoW funding from them if possible.
+** Contacts with other companies and DARPA in progress
+
+
+
+*_Action Items_*
+
+*Gary*
+
+* Look into contacts with Caffe http://caffe.berkeleyvision.org
+* Look into UC Berkeley grant
+* Get bios
+
+*Vincent*
+
+* Website
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* Intel
+* Berkeley
+* Bio
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+[[Meeting_notes]]

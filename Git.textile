@@ -1,0 +1,47 @@
+h1. Working with OpenCV git repository.
+
+Git (http://en.wikipedia.org/wiki/Git_(software)) is distributed source code management system, which we now use to develop OpenCV. Therefore, OpenCV developers and contributors should have git installed and learn at least some basics of it. Of course, in the case of a small patch one may simply create a ticket at http://code.opencv.org/projects/opencv/issues and attach the patch there, but our practice shows that going through the pull request mechanism (see [[How_to_contribute]]) is much more efficient and for that you need git.
+
+h2. Installing Git
+
+* Windows users: take msysgit from http://code.google.com/p/msysgit/downloads/list. Also install "TortoiseGit":http://code.google.com/p/tortoisegit/, a convenient git front-end, which integrates right into Windows Explorer
+* Linux users: install command-line git utility using your package manager, e.g. <pre>apt-get install git</pre> on Ubuntu and Debian. You can use "SmartGit":http://www.syntevo.com/smartgithg/index.html as a GUI client. SmartGit is cross-platform, btw.
+* Mac users: if you installed Xcode (which you will need anyway), you already have git. You can use "SourceTree":http://www.sourcetreeapp.com/ as a very good GUI client.
+
+h2. Using Git
+
+Most developers and contributors will work with their personal copy (a fork) of OpenCV repository at GitHub. That is,
+* In a browser, go to "the OpenCV repository":https://github.com/Itseez/opencv
+* And fork it as described in these Git instruction on "how to fork":https://help.github.com/articles/fork-a-repo
+Then, if you use command-line git utility, you can clone the repository to your computer by running:
+
+<pre>git clone https://github.com/<username>/opencv.git</pre>
+
+where &lt;username&gt; is your login at github. After that you can work on code, submit changes via pull requests, and so on as described at [[How_to_contribute]].
+
+h1. Instruction for core developers
+
+Most developers should just use github and submit pull requests with their changes. Below are the instructions for the OpenCV maintainers (2-3 people at the moment) who should be able to push changes (or rather merge the pull requests) to the main repository. This is just for reference.
+
+h2. Configuring git
+
+h3. Instruction for Ubuntu users:
+
+* Upload ssh-key to the server. If you haven't created any, do it with the following command: <pre>ssh-keygen -t rsa -f ~/.ssh/id_rsa</pre> Leave the Passphrase empty. Then copy contents of the file  ~/.ssh/id_rsa.pub to the Key field on the  http://code.opencv.org/my/account page. Press Create. Run <pre>ssh-add ~/.ssh/id_rsa</pre> command. It may be critical on some versions of Ubuntu.
+
+* Clone the repository as described in the section above. Run the following command in local repository folder to be able to push changes
+
+<pre>git remote set-url origin --push gitolite@code.opencv.org:opencv.git</pre>
+
+h3. Instruction for Windows users:
+
+* Download and install an up-to-date version of msysgit from its official site: http://code.google.com/p/msysgit/downloads/list. There is also the portable version (_PortableGit-1.7.11-preview20120710.7z_), which you need only to unpack to get access to the console version of Git. Supposing that for some of us it could be quite enough.
+* Download and install the GUI for Git, TortoiseGit or SmartGit
+* Generate SSH access key:
+** Launch Git Bash (file git-bash.bat in msysgit folder).
+** Run <pre>ssh-keygen -t rsa -C  "Your.Mail@itseez.com"</pre>  with the console. The output will contain information on where it stored the keys.
+** Go to that directory and open the public key (id_rsa.pub) with any text editor.
+** Copy contents of the file id_rsa.pub to the Key field on the  http://code.opencv.org/my/account page. Press Create.
+* Clone repository, using 'quick' read-only protocol  (git://code.opencv.org/opencv.git).
+* Launch Git Bash again and go to the folder that you've cloned the repository to ('.git' folder should have appeared there). Run the following command: <pre>git remote set-url origin --push gitolite@code.opencv.org:opencv.git</pre> to be able to push changes to the repository.
+* That's it. You may try making some changes to commit and push them for the test run.

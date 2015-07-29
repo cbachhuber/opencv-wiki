@@ -1,0 +1,34 @@
+h1. Windows RT
+
+This page describes how to get sources and build OpenCV for Windows RT. Windows RT support is experimental. It passes all accuracy tests, but we do not recommend you to use it in production code.
+
+Known issues:
+* TBB is not supported;
+* Highgui video I/O and camera are not supported;
+* Highgui UI is not supported.
+
+h2. Prerequisites
+
+* Host PC running MS Windows 8;
+* MS Visual Studio 2012 for Windows 8 (Express edition is OK);
+* Latest MS Windows Platform SDK;
+* CMake (tested with 2.8.10.2);
+* Ninja (optionally).
+
+h2. Get sources
+
+Get release source or clone Github repo and checkout '2.4.6' tag:
+<pre>
+git clone https://github.com/Itseez/opencv.git
+git checkout -b 2.4.6 origin/2.4.6
+</pre>
+
+h2. Build steps for public OpenCV
+
+1. Open Visual Studio development console.
+2. cd @<opencv_source_dir>/platforms/winrt/@
+3. run @scripts/cmake_winrt.cmd@
+4. run @ninja@
+
+Alternatively you can use @nmake@ instead of @ninja@.
+You need to edit @cmake_winrt.cmd@ and change project generator from @-GNinja@ to @-G "NMake Makefiles"@.

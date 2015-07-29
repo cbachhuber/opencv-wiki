@@ -1,0 +1,241 @@
+h1. OpenCV’s People’s Vote Winning Papers and State of the Art Vision Challenge Winners
+
+* Sponsored by Intel*
+
+This is a 2-for-1 "CVPR 2015 Workshop":http://www.pamitc.org/cvpr15/workshops.php covering
+* People’s choice awards for winning papers from CVPR 2015
+** _Vote on the CVPR 2015 papers that you most want to see implemented and we'll pay the winners to implement it in_ "opencv_contrib":https://github.com/Itseez/opencv_contrib
+* Winning algorithms of the OpenCV Vision Challenge
+** _Start collecting implementations of the best in class algorithms in_ "opencv_contrib":https://github.com/Itseez/opencv_contrib
+
+This is a short workshop, one hour before lunch, to announce and describe winners of two separate contests:
+
+<pre>
+Location: Room 101
+Time: 11am-12pm
+</pre>
+
+h2. (1) CV Community Top Paper Award: CVPR 2015
+
+We will tally the people’s vote !images/Vote5.png! for the paper you’d most like to see implemented (you may vote for as many as you want). We'll describe the 5 top winners.
+
+Prizes will be awarded in two stages:
+* A modest award for winning and
+* a larger award for presenting the code as a pull request to OpenCV by December 1st 2015 as Detailed here:
+** http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+
+*Prizes:*
+* 1st winner: $500; Submit code: $6000
+* 2nd winner: $300; Submit code: $4000
+* 3rd winner: $100; Submit code: $3000
+* 4th winner: $50; Submit code: $3000
+* 5th winner: $50; Submit code: $3000
+* 6th winner: $50: Submit code: $2000
+
+h3. *Winners:*
+
+* *1st:* Yuting Zhang, Kihyuk Sohn, Ruben Villegas, Gang Pan, Honglak Lee
+** Improving Object Detection With Deep Convolutional Networks via Bayesian Optimization and Structured Prediction
+* *2nd:* Richard A. Newcombe, Dieter Fox, Steven M. Seitz
+** DynamicFusion: Reconstruction and Tracking of Non-Rigid Scenes in Real-Time
+* *3rd:* Anh Nguyen, Jason Yosinski, Jeff Clune
+** Deep Neural Networks Are Easily Fooled: High Confidence Predictions for Unrecognizable Images
+* *4th:* Bharath Hariharan, Pablo Arbeláez, Ross Girshick, Jitendra Malik
+** Hypercolumns for Object Segmentation and Fine-Grained Localization
+* *TIE 5th:* Anton van den Hengel, Chris Russell, Anthony Dick, John Bastian, Daniel Pooley, Lachlan Fleming, Lourdes Agapito
+** Part-Based Modelling of Compound Scenes From Images
+* *TIE 5th:* Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich
+** Going Deeper With Convolutions
+
+There were many favorited tutorials!  They cannot win the Vision Challenge, but they are listed here along with their votes:
+* *TIE 1st:* Applied Deep Learning for Computer Vision with Torch (19 votes)
+* *TIE 1st:* DIY Deep Learning: A Hands-On Tutorial With Caffe (19 votes)
+* *2nd:* ImageNet Large Scale Visual Recognition Challenge Tutorial (13 votes)
+* *TIE 3rd:* OpenCV 3.0 Technical Tutorials: Beginner to Specialist (7 votes)
+* *TIE 3rd:* Energy Minimization and Discrete Optimization (7 votes)
+* *TIE 3rd:* Open Source Structure-from-Motion (7 votes)
+* *TIE 3rd:* Sparse and Low-Rank Modeling for High-Dimensional Data Analysis (7 votes)
+
+Results will be listed on OpenCV’s website:
+* (user) http://opencv.org/ and
+* (developer) http://code.opencv.org/projects/opencv/wiki
+
+h2. (2) State of the Art Vision Challenge
+
+Our aim is to make available state of the art vision in OpenCV. We thus ran a vision challenge to meet or exceed the state of the art in various areas. We will present the results, some of which are quite compelling. The contest details are available at:
+
+http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+
+*Prizes:*
+* Win: $1000; Submit code: $3000
+* Win: $1000; Submit code: $3000
+* Win: $1000; Submit code: $3000
+* Win: $1000; Submit code: $3000
+* Win: $1000; Submit code: $3000
+
+
+h3. *Winners by Categories (all are winners, this isn't in order of priority):*
+
+*Tracking*
+* Martin Danelljan, Gustav Häger, Fahad Shahbaz Khan, Michael Felsberg (Discriminative Scale Space Tracker) - DCFSIR, DSST, fDSST
+** Took first place on more correct general table and also has modifications with worse performance, but faster speed.
+** No pull request yet
+
+*Image registration*	
+* Gil Levi and Tal Hassner - LATCH descriptor
+**  State-of-the-art for binary descriptors for accuracy (its speed slower). It also outperforms several floating point descriptors and works much faster.
+** Pull request done!
+
+* Olexa Bilaniuk, Hamid Bazargani, and Robert Laganière - RHO for findHomography()
+** Comparable results to RANSAC with 25x speedup.
+** Already in OpenCV!
+
+*Image segmentation*
+* Beat Kueng, Alex Locher, Michael Van den Bergh, Gemma Roig, Xavier Boix, Luc Van Gool - SEEDS Superpixel
+** State-of-the-art superpixel algorithm in terms of accuracy and computational performance
+** Already in OpenCV!
+
+*Gesture recognition*
+* Natalia Neverova, Christian Wolf, Graham Taylor and Florian Nebout - ModDrop: adaptive multi-modal gesture recognition
+** State-of-the-art for ChaLearn 2014 gesture challenge (ChaLearn Looking at People (ECCV 2014).
+** No pull request. Will be dependent on GSoC’s 2015 ability to read in any deep net and run it.
+
+h3. More Details
+
+Results for submitted functions on VOT 2014 (algorithms are described "in this paper":http://www.votchallenge.net/vot2014/download/vot_2014_paper.pdf):
+Top-10 results from general table with all available algorithms:
+!images/full-top10.png!
+Results for algorithms submitted for the contest:
+!images/VOC_submitted_results.png!
+
+
+h2. Proposers
+
+* *Dr. Gary Rost Bradski,* Chief Scientist, Computer Vision and AI at Magic Leap, Inc.
+** gbradski@magicleap.com
+* *Vadim Pisarevsky*, Principal Engineer at Itseez
+** vadim.pisarevsky@itseez.com
+* *Vincent Rabaud*, Perception Team Manager at Aldebaran Robotics
+** vincent.rabaud@gmail.com
+* *Grace Vesom*, 3D Vision Senior Engineer at Magic Leap, Inc.
+** grace.vesom@gmail.com
+
+h2. Presenters
+
+*Dr. Gary Rost Bradski* is Chief Scientist of Computer Vision at Magic Leap.  Gary founded OpenCV at Intel Research in 2000 and is currently CEO of nonprofit OpenCV.org.  He ran the vision team for Stanley, the autonomous vehicle that completed and won the $2M DARPA Grand Challenge robot race across the desert.  Dr. Bradski helped start up NeuroScan (sold to Marmon), Video Surf (sold to Microsoft), and Willow Garage (absorbed into Suitable Tech).  In 2012, he founded Industrial Perception (sold to Google, August 2013).  Gary has more than 100 publications and more than 30 patents and is co-author of a bestseller in its category Learning OpenCV: Computer Vision with the OpenCV Library, O'Reilly Press.
+
+*Vadim Pisarevsky* is the chief architect of OpenCV.  He graduated from NNSU Cybernetics Department in 1998 with a  Master’s degree in Applied Math.  Afterwards, Vadim worked as software engineer and the team leader of OpenCV project at Intel Corp in 2000-2008.  Since May 2008 he is an employee of Itseez corp and now works full time on OpenCV under a Magic Leap contract.
+
+*Vincent Rabaud* is the perception team manager at Aldebaran Robotics.  He co-founded the non-profit OpenCV.org with Gary Bradski in 2012 while a research engineer at Willow Garage.  His research interests include 3D processing, object recognition and anything that involves underusing CPUs by feeding them fast algorithms.  Dr. Rabaud completed his PhD at UCSD, advised by Serge Belongie.  He also holds a MS in space mechanics and space imagery from SUPAERO and a MS in optimization from the Ecole Polytechnique.
+
+*Grace Vesom* is a senior engineer in 3D vision at Magic Leap and Director of Development for the OpenCV Foundation.  Previously, she was a research scientist at Lawrence Livermore National Laboratory working on global security applications and completed her DPhil at the University of Oxford in 2010.
+
+
+h1. (1) Details of the People's Choice Winning Paper -- vote using the CVPR app
+
+You may vote for as many papers as you want. This is the people's choice of the algorithms they'd most like to have. We will award the winners and encourage them to submit their working code to "opencv_contrib":https://github.com/Itseez/opencv_contrib
+
+h2. Voting instructions:
+
+On your phone,
+* search for the official CVPR app, it's name is CVF (Computer Vision Foundation). Down load it.
+* on your computer, go to the online app "http://www.cvfapp.org":http://www.cvfapp.org/
+
+Open the app, you'll have to log in the first time.
+
+On the homescreen:
+
+!images/App11.png!
+
+Click on the  the calendar view (lower left blue icon), then scroll down to the day your are on:
+
+!images/Day22.png!
+
+Find the talk, paper, demo that you like:
+
+!images/Chose33.png!
+
+Click on the PeoplesChoiceVote square:
+
+!images/Vote44.png!
+
+We will record this vote. Vote for the papers you'd really love/need to see implementation. We will award extra money to encourage people to submit working code for these popular algorithms!
+
+h1. (2) Details of the State of the Art Vision Challenge:
+
+OpenCV is launching a community-wide challenge to update and extend the OpenCV library with state of the art algorithms. An award pool of $20,000 will be provided to the best performing algorithms in the following 11 CV application areas:
+
+# image segmentation
+# image registration
+# human pose estimation
+# SLAM
+# multi-view stereo matching
+# object recognition
+# face recognition
+# gesture recognition
+# action recognition
+# text recognition
+# tracking
+
+We prepared code to read from existing data sets in each of these areas: "modules/datasets":http://docs.opencv.org/master/modules/datasets/doc/datasets.html
+
+h2. Conditions:
+
+The OpenCV Vision Challenge Committee will judge up to five best entries.
+
+# You may submit a new algorithm developed by yourself.
+# You may submit an existing algorithm *whether or not developed by yourself* (as long as you own or re-implement it yourself).
+# Up to 5 winning algorithms will receive $1000 each.
+# For an additional $3000 to $15,000*, you must submit your winning code as an OpenCV pull request under a BSD or compatible license by December 1st.
+** You acknowledge that your code may be included, with citation, in OpenCV.
+
+You may explicitly enter code for any work you have submitted to CVPR 2015 or its workshops. We will not unveil it until after CVPR.
+
+Winners and prizes are at the sole discretion of the committee.
+
+*List of selected datasets and other details described here:* "OpenCV Vision Challenge":http://code.opencv.org/attachments/1672/OpenCVVisionChallenge.pdf
+
+??* We will have a professional programmer assist people with their pull requests. Awards are at the prize committee's sole discretion??
+
+h2. Timeline:
+
+*Submission Period:*
+_Now - May 15th 2015_
+
+*Winners Announcement:*
+_June 8th 2015 at CVPR 2015_
+
+*Submit pull request:*
+_December 1st, 2015_
+
+h2. Contact:
+
+vision-challenges@opencv.org
+
+h2. Q&A:
+
+*Q.:* _What should be in performance evaluation report? Shall we send any report or paper along with the code?_
+*A.:* Participants are required to send source code and a performance evaluation report of their algorithms. Report should be in the standard form of a paper with algorithm description. Evaluation should be performed on at least one of the chosen benchmark datasets associated with the building block. Evaluation methodology should be the same as specified by author of each dataset, this includes using the same train\validation\test splits, evaluation metrics, etc. In additional, we ask to report running time of algorithm and platform details to help with their comparison. Algorithm's accuracy should be compared with state-of-the-art algorithms. In addition, it’ll be useful to compare it with algorithms implemented in OpenCV whenever possible. Source code and supplied documentation should contain clear description on how to reproduce evaluation results. Source code have to be compiled and run under Ubuntu 14.
+
+*Q.:* _Can I participate in this Vision Challenge by addressing building blocks different from the current 11 categories?_
+*A.:* For this Vision Challenge, we have selected 11 categories and 21 supporting datasets. To participate in the Vision Challenge you need to address at least one of the building blocks we have selected and get results in at least one of the chosen associated datasets. Results on additional datasets (e.g., depth channel) will be evaluated accordingly by the awarding committee.
+This may be just the first one of a series of challenges and we want to hear from the vision community which building blocks should come next, for the possible next challenges. Please, send your suggestions to our e-mail: vision-challenges@opencv.org.
+
+*Current propositions list:*
+* Background Subtraction - 1 vote
+* Point Cloud Registration - 1 vote
+* Pedestrian Detection - 1 vote
+* Text Recognition for Arabic language - 1 vote
+
+*Q.:* _Which external algorithms or libraries can we use?_
+*A.:* All used 3rd party code should have Permissive free software licence. The most popular such licenses are: BSD, Apache 2.0, MIT.
+
+*Q.:* _I don't find the tracking dataset loading in opencv_contrib/modules/datasets module._
+*A.:* We are not implemented loading-evaluation code for VOT tracking dataset, because it already has its own "toolkit":http://www.votchallenge.net/vot2014/participation.html.
+
+*Q.:* _Where I can find the Dataset Benchmarks?_
+*A.:* They are placed with samples in "modules/datasets/samples":https://github.com/Itseez/opencv_contrib/tree/master/modules/datasets/samples.
+
+h3. Back to Developer page:
+
+"OpenCV":http://code.opencv.org/projects/opencv/wiki

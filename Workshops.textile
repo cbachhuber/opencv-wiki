@@ -1,0 +1,20 @@
+h1. Workshops
+
+* "CVPR2015 Workshops":http://www.pamitc.org/cvpr15/workshops.php
+** OpenCV Vision Challenge and People's Choice Workshop
+** _Gary Bradski, Grace Vesom, Vincent Rabaud, Vadim Pisarevsky_
+** [[VisionChallenge]]
+
+* *The OpenCV Open Source Computer Vision Library: Latest Developments*
+** _Gary Bradski, President and CEO, OpenCV Foundation_
+** At the Embedded Vision Summit, *May 12th, 2015* in Santa Clara, California:  http://www.embedded-vision.com/summit
+** [[CVPR2014]]
+
+
+
+
+
+
+h3. Home
+
+"OpenCV":http://code.opencv.org/projects/opencv/wiki

@@ -1,0 +1,90 @@
+h1. Android Java API tests
+
+*This page is under construction!!!*
+
+http://opencv.willowgarage.com/wiki/OpenCV2.3.1JavaAPIcoverage
+
+h2. Running tests from Eclipse
+
+# Open the Eclipse, create a new workspace and select a path to Android SDK: _Eclipse Menu -> Window -> Preferences -> Android -> SDK Location_.
+# Import the OpenCV Java API project (OpenCV project):
+** Select _Eclipse Menu -> File -> Import -> General -> Existing project into Workspace_.
+** Select root directory -- point Eclipse to your @opencv_trunk/android/build@ (or @opencv_trunk/android/build_armeabi@ folder)
+** Press _Finish_
+# Import the OpenCV Java API Test project (Test project):
+** Select _Eclipse Menu -> File -> Import -> General -> Existing project into Workspace_
+** Select root directory -- point Eclipse to your @opencv_trunk/modules/java/android_test@
+** Press _Finish_
+# For Test project set the reference to OpenCV project: _Project properties -> Android -> Library -> Add_ and point to OpenCV project.
+# Fix project properties: _Eclipse Menu -> Project -> Build All_, _Eclipse Menu -> Project -> Clean_, _F5_.
+# Right click on _Test project_ and choose _Run as -> Android JUnit Test_.
+
+h2. Test project structure
+
+* Tests in repository: http://github.com/Itseez/opencv/tree/master/modules/java/android_test
+* class @OpenCVTestCase@ has/implements the all stuff needed for OpenCV testing
+** all the OpenCV test classes are subclasses of @OpenCVTestCase@
+** test_1 (candidate for termination) is for adb log formatting, it allows separate tests from different modules.
+* Each OpenCV module has a major test class with static methods: @coreTest@, @imgprocTest@, ...
+* Some OpenCV classes also have their own test class: @MatTest@
+
+If you want more details, just open the code in Eclipse. Its self-documented ;)
+
+h2. Running tests from the command line
+
+* If you have built OpenCV, you can find apk with tests in @opencv_trunk/android/build/bin@ directory.
+* Working folder for test application on device @/data/data/org.opencv.test/files@.
+* How to work with tests from command line: http://developer.android.com/guide/developing/testing/testing_otheride.html.
+<pre>
+adb uninstall org.opencv.test
+adb install bin/opencv_test_java.apk
+adb shell am instrument -w org.opencv.test/.OpenCVTestRunner
+</pre>
+
+Show all errors and failures except "Not yet implemented"
+
+<pre>
+adb shell am instrument -w org.opencv.test/.OpenCVTestRunner | grep -E "junit.frameworklException" -A4 | sed -e '/Not yet implemented/,+5d'
+</pre>
+
+To run modules independently
+
+<pre>
+adb shell am instrument -w -e package org.opencv.test.core org.opencv.test/.OpenCVTestRunner
+adb shell am instrument -w -e package org.opencv.test.imgproc org.opencv.test/.OpenCVTestRunner
+...
+adb shell am instrument -w -e package org.opencv.test.<MODULE_NAME> org.opencv.test/.OpenCVTestRunner
+</pre>
+
+h2. Running tests with @run.py@
+
+Running the whole test package:
+<pre>
+python run.py . -a -t java
+</pre>
+
+Running tests for specific module:
+<pre>
+python run.py . -a -t java --package .core
+</pre>
+
+
+h2. Some tips
+
+* JUnit window allows you to run a single test or tests from one test class (@coreTest@, @imgprocTest@). This is useful during the test development.
+** you can call them from JUnit view pane
+** from source code: right click on test method name
+* _Ctrl + F11_ will run opened test case
+* Linux tips
+** Calculate test coverage
+<pre>
+(cd android/build && python ../../modules/java/check-tests.py ./src ../../modules/java/android_test/src)
+</pre>
+** Build tests only
+<pre>
+make -j8 opencv_test_java_android_project
+</pre>
+** To get blacklist, run
+<pre>
+find -name "*.java" | xargs grep XXX
+</pre>

@@ -1,0 +1,27 @@
+h1. Open Source Vision Software, Intro and Training (CVPR 2010)
+
+This tutorial was lead by
+
+*(_VLFeat:_) Andrea Vedaldi, Brian Fulkerson,
+* (_Generic Image Library:_) Hailin Jin, Lubomir Bourdev,
+* (_OpenCV:_) Gary Bradski, Vadim Pisarevsky and
+* (_PCL:_) Radu Rusu,
+
+see the "tutorial page":http://vlfeat.org/cvpr10/Open_Source_Vision_Software,_Intro_and_Training.
+
+* "OpenCV_Tutorial_CVPR2010.pptx":images/OpenCV_Tutorial_CVPR2010.pptx Foils (.pptx, 13.4M) for the OpenCV talk by Gary Bradski
+* "CVPR2010_ProgrammingExercise.odp":images/CVPR2010_ProgrammingExercise.odp Programming excercise description foils by Vadim Pisarevsky
+
+The programming exercise is now included in OpenCV download in
+<code> .../opencv/samples/cpp/select3dobj.cpp</code></pre>
+
+This program allows you to:
+
+# Put down a calibration chessboad
+# Draw a 3D box around the object you want to capture
+# As you move the camera (as long as both the calibration pattern and the object can be seen), the program will output a
+* 3D bounding box in the calibration coordinate sys.
+** given as 4 points, 3 on the ground plane and one point that gives the “Z” height from the plane.
+* For each object view:
+** R,T of the bounding box points
+** File name of the tight grab cut segmented image

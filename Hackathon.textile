@@ -1,0 +1,42 @@
+h1. Hackathon
+
+_+hackathon=hack+marathon+_
+
+A hackathon is an event in which computer programmers and others in the field of software development collaborate intensively on software-related projects.
+
+h3. The Purpose
+
+For this hackathon, our goal is increasing code stability to make the library steady as possible.
+
+* Improve library stability and quality of the documentation
+* Provide feedback to our customers
+
+h3.  Organization
+
+Hackathon duration is one week. For itseez employees - you should try to be in the office from 11 a.m. to 6 p.m. All communication activities will be at this time.
+
+Each developer get own area of ​​responsibility.
+
+Issues priorities in descending order:
+* bug with provided solution (Patch with High priority)
+* bug (from High to Low priorities)
+* patch (implementing a new feature)
+* feature
+
+h3.  Hacker Guide
+
+You should write a test before the bug fix. This is very important to see your test failing, because later it will control regressions. Then, if you see it failing, you can fix the bug. This idea is very close to TDD's "Reg-Green-Refactor":http://blog.goyello.com/2011/09/13/red-green-refactor-cycle/ mantra.
+
+Preferred sequence of actions:
+* assign issue to yourself. You should choose some issue from the list of "hackathon issues":http://code.opencv.org/projects/opencv/issues?query_id=30
+* reproduce problem first, if it's a bug. If possible, add the test that reproduces the problem.
+* fix problem. When you have compiling but failing test you can modify OpenCV to satisfy the test
+* commit changes to the repository. In commit message you should use #$$$$ template to link it with the issue.
+* change issue status to _Done_. You should use commit:<6-digit git commit hash> template in issue updating. Please don't change _Target version_.
+
+If in doubt, please, assign the ticket to vadim pisarevsky before or after commit.
+
+h3. Links
+
+* "OpenCV hackathon slides":https://docs.google.com/a/itseez.com/presentation/d/1IvUOXAJ7FYO2NhplYTGJ0MvTjzKhJnSRano22yuaho4/edit#slide=id.gae260d7_1_17
+* "About hackathon":http://en.wikipedia.org/wiki/Hackathon

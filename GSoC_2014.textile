@@ -1,0 +1,393 @@
+h1. *Ideas Page for OpenCV Google Summer of Code 2014 (GSoC 2014)*
+
+*OpenCV winning the Everingham Award at ICCV 2013 for contributions furthering progress in the computer vision community as a whole.*
+!images/EveringhamAward.jpg!
+
+----
+
+h2. General Information:
+
+* "GSoC 2014 site: http://www.google-melange.com/gsoc/homepage/google/gsoc2014":http://www.google-melange.com/gsoc/homepage/google/gsoc2014
+* Mailing list for OpenCV GSOC 2014: opencv-gsoc-2014@googlegroups.com
+** Group site https://groups.google.com/forum/#!forum/opencv-gsoc-2014
+* "Timeline for GSoC 2014":http://www.google-melange.com/gsoc/events/google/gsoc2014
+** *Next important dates:*
+*** -March 21: Final call to register with GSoC and submit a project to OpenCV-
+*** -Interim period all mentors go to https://www.google-melange.com/gsoc/proposal/list/org/google/gsoc2014 and rate the proposals-
+*** -April 6 OpenCV Request how many slots we want-
+*** -April 9 Slot allocations published-
+*** -Talk amongst your orgs for slots-
+*** -April 18: *All mentors must be signed up. Deduplication Meeting*-
+*** -April 21 Project selections announced-
+*** -May 19 Coding starts!-
+*** -June 23-27 Midterm-
+*** -Aug 11 Documentation, Youtube video (*MUST BE DONE*)-
+*** -Aug 18 It's over folks-
+*** -Aug 25 Results are posted-
+*** Oct 23-26 Mentor summit
+
+* we'll create a video just like we did last year http://www.youtube.com/watch?v=_TTtN4frMEA
+
+*Times:*
+*  UTC to PDT (Pacific Daylight Time == Daylight savings time. In winter it's PST).
+** "utc time converter":http://weatherarc.com/utc-time-conversion
+
+*Resources:*
+
+* "OpenCV Developers Site":http://code.opencv.org/projects/opencv/wiki
+* "OpenCV User's Site":http://opencv.org
+* "How_to_Contribute_Code":How_to_contribute
+* Source Code can be found at "GitHub":https://github.com/Itseez/opencv.
+** To get the source code, point your git client to @git://github.com/Itseez/opencv.git@. Here are "instructions":Working_with_OpenCV_git_repository.
+<pre>
+git clone git://github.com/Itseez/opencv.git
+</pre>
+** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: git://code.opencv.org/opencv_attic.git.
+** Also OpenCV Extra was put to a separate repository: git://code.opencv.org/opencv_extra.git.
+* [[OpenCV_Development_Process]]
+** "Developer_meeting_notes":Meeting_notes
+
+h2. For students or mentors interested in applying
+
+* You *must* already know how to program well in C++
+** Some projects may require Python or Matlab skills
+* Discuss projects below or other ideas with us https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2014
+
+h1. Accepted Projects for OpenCV GSoC 2014:
+
+OpenCV GSoC 2014 students, projects, mentors are below.
+Mentor "link to spreadsheet and email is here":https://docs.google.com/spreadsheet/ccc?key=0AqJ64DhFuODLdFF1ZnRWSFhTd1NLcHdNaFgtU2M5ekE&usp=sharing .
+
+<pre>
+Student                 Project                                           Mentor(s)
+=======                 =======                                           ========
+Lluis Gomez             Improve Scene Text Detection module in OpenCV     Stefano Fabri, Vadim Pisarevsky
+Abid Rahman             Extend of OpenCV-Python Bindings and Tutorials    Vadim Pisarevsky
+Fedor Morozov	       Local feature descriptors                         Pablo Alcantarilla
+Siddharth Kherada       Computational Photography: Image Decomp  Color    spmallick
+Daniel Angelov	      Custom Calibration Pattern                        Sid Bao
+Vitaly Lyudvichenko     New edge-aware filters for OpenCV	             Alexander Mordvintsev
+Alex Leontiev 	      Learning based trackers 	                      Gary Bradski
+Tolga Bridle            Rec & Pose Est of 3D Objects via 3D Features	  Bence Magyar
+Francesco Puja          Saliency improvement for tracking                 Antonella Cascitelli
+edgarriba               Real Time Pose Est Tutorial and DLS impl.         Alexander Shishkov
+Yuri Gitman	         P. Dollar segmentation algorithm                  Alexander Shishkov
+Vlad Shakhuro	       Fastest Pedestrian Detector in the West           Alexander Bovyrin
+biagio	              Geometrical-primitives based localization system  Manuele Tamburrano
+Tomasz Pietruszka	   Optical Flow Estimation – state-of-the-art        Prasanna Krishnasamy
+Paul Foster	         Dense Tracking and Mapping (DTAM) for OpenCV      Vincent Rabaud
+</pre>
+
+Project notes are compiled "here":https://sites.google.com/a/opencv.org/opencv/gsoc-2014-project-notes .
+
+h1. Project Ideas summary:
+
+*Students may propose their own projects (give us a clear summary and why you can do this project). However, below are some of our priorities for this year*
+
+Contact us and/or discuss ideas at https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2014
+
++These are not in order of priority+
+
+* Finger print detection (Prasanna Krishnasamy)
+** Implement the detectors associated with MINDTCT and other algorithms
+** Full recognition pipeline as done by NIST
+*** Some description can be found here: http://www.nist.gov/itl/iad/ig/nbis.cfm
+
+* Quadrotor / quadcopter computer vision (Gary Bradski)
+** Implement hovering, tracking other algorithms
+** Due to the nature of this, you should have a working quad rotor craft with camera and feedback to work with
+
+* Expand the Matlab port from GSoC 2013
+** Matlab will likely continue to mentor
+** http://www.mathworks.com/discovery/matlab-opencv.html
+
+* Graphics rendering expert: Create a data set generator for OpenCV
+** We want to take a 3D scan or CAD model of a rigid object, and
+*** render it 1000's of times
+*** in different lightings
+*** using settable camera parameters (OpenCV structure)
+*** outputting the rendered image and the ground truth mask and 6DOF pose
+** We also want to do the same thing with humans and/or hands
+*** Use makehuman + blender + poser or any other tool
+*** Create humans/hands in 1000's of poses, lightings etc
+
+* We would like to create a "High school robotics competition intelligent vision package" to allow high school robot competitions to be more autonomous
+** In Python
+*** Calibration
+*** Stereo
+*** Planar object detection and tracking
+*** Object tracking (such as balls)
+
+* Expand 3D processing in OpenCV already in the "RGBD module":https://github.com/Itseez/opencv_contrib/tree/master/modules/rgbd
+** Surface curvature
+** Basic 3D features
+** ICP step to improve LINE-MOD
+
+* Expand OpenCV Viz module
+** +Mentor:+ Anatoly Baksheev
+** Integration message loops highgui & viz. For now they are handled separately by waitKey & Viz3d::spin()
+** More widgets (like human body/hand/skeletons visualization, need to generate more ideas)
+** More widgets (free-fly mode, possible will be done before GSoC by me)
+
+* Code up Piotr Dollár's method of segmentation, make it fast
+** Matlab implementation:
+*** http://vision.ucsd.edu/~pdollar/toolbox/doc/
+** http://vision.ucsd.edu/~pdollar/files/papers/DollarICCV13edges.pdf
+** http://research.microsoft.com/en-us/downloads/389109f6-b4e8-404c-84bf-239f7cbf4e3d/default.aspx
+
+* Code up Piotr Dollár's __The Fastest Pedestrian Detector in the West__
+** Paper: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.310.8578&rep=rep1&type=pdf
+
+* Automatically generating comics:
+** See http://www.physorg.com/news/2012-03-software-automatically-movie-comic.html
+** Do effects like comic life http://plasq.com/products/comiclife/win
+
+* Finish off OpenCV's Soft Cascades, use it to detect faces in many orientations
+** Existing OpenCV code documentation: http://docs.opencv.org/trunk/modules/objdetect/doc/soft_cascade.html
+** Original paper: http://www.lubomir.org/academic/softcascade.pdf
+*** training, new features, detection
+*** interframe interpolation and smoothing
+*** outlier supression
+
+* Continue on and expand the computational photography project from GSoC 2013
+** http://docs.opencv.org/trunk/doc/py_tutorials/py_photo/py_table_of_contents_photo/py_table_of_contents_photo.html
+** http://docs.opencv.org/modules/photo/doc/photo.html
+** Help support the growth of mobile cameras on tablets and phones. Fun stuff and important
+*** tilt-shift images and movies,
+*** high dynamic range images by composition with different shutter times
+**** another important topic on HDR imaging is squeezing all information from 10-12-14bit raw file into 8-bit, in other words, single-shot HDR. It's true that many modern video cameras have quite small sensor and quite small dynamic range, but we can still try to recover highlight details by careful demosaicing combined with dynamic range optimization.
+*** Fun effects -- converting images and videos to line drawings
+*** Color balance, take a Macbeth color chart and fill in the 3x3 transform look up matrix, implement something like http://graphics.ucsd.edu/~neel/publications/masters_thesis.pdf
+
+* Mobile vision app development:
+** Vision apps on phone and tablet. We want a very clear examples to build on to make it easier for the rest to start developing mobile vision applications. People can apply for:
+*** iOS (iPhone) examples
+*** Android example
+
+* Tracking -- predator (tracking, detection + learning) or Alien type tracker
+** Basically: learning based trackers
+*** Draw box, resize
+*** Box distortion
+*** Look for candidates
+
+* Update solvePnP (fundamental algorithm)
+** http://www-users.cs.umn.edu/~joel/index.php?page=software
+
+* Update to state of the art Optical flow
+** State of art http://www.ingentaconnect.com/content/klu/visi/2014/00000106/00000002/00000644
+** Prepare testing framework for quality
+*** Have frameworks for features and stereo already
+
+* Mech Turk Interface
+** Easily label images for train test in OpenCV
+
+* OpenCL Optmization:
+** We have contributors already, get one or more of them to be GSoC students
+
+* Object Recognition
+** New, post Line-Mod object recognition
+** +Menor:+ Manuele Tamburano
+*** Binarizzation of a new line descriptor[1] and adapting
+*** "Fast exact nearest neighbor search in Hamming distance on binary codes with Multi-index hashing" code[2].
+**** [1]http://www.sciencedirect.com/science/article/pii/S1047320313000874
+**** [2]https://github.com/norouzi/mih
+** write a trainer for Deva Ramanan's parts-based detector https://github.com/wg-perception/PartsBasedDetector
+
+* Camera based 1D and 2D Barcode readers. OpenCV needs this, robotics needs this
+** +Mentor:+ Claudia Rapuano
+** We have a basic datamatrix reader.  Expand to other kinds of barcodes (1D, other 2D).
+
+*  Improve tracking API module in contrib created for Gsoc 2013.
+** +Mentor:+ Antonella Cascitell
+** Add Reidentification on the tracking (allows tracking to re-find the object if lost)
+** Add camera network activity sub-modual
+** Add saliency module for the tracking modual
+
+* Natural barcodes:
+* +Mentor:+ Gary Bradski
+** OpenCV can read calibration patterns.
+*** Calibrate a camera,
+*** rectify it's output.
+*** Put a picture next to a calibration pattern in a scene.
+*** Find 2D interest points with features2D.
+*** Measure them in the image using the calibration pattern.
+*** Use the pattern of interest points and their measures to turn the picture into a calibration pattern/barcode so that the computer recognizes the picture and knows where it is in relation to the iamge.
+** Stretch goal, embeded and retrieve watermarks in the image.
+
+* Ego-centric vision:
+** maybe something like "Pixel-level Hand Detection for Ego-centric Videos." in CVPR 2013
+** Combine with depth sensing from the kinect
+
+* Geometry:
+** DTAM implementation
+** write tutorials for the libmv integration from the previous years (on "GitHub":https://github.com/wg-perception/libmv), improve the CERES integration
+** create a structure for camera matrix information (K, D, colorspace ...)
+
+* Tutorials:
+** Continue with "OpenCV Tutorials":http://docs.opencv.org/doc/tutorials/tutorials.html
+
+* OpenCV Documentation:
+** Add to the general documentation for all platforms: C++, CUDA, OpenCL, Python 2/3, Java, ... and smart search.
+** Help create an _*inverted index*_ of functionality to functions.  That is, say, _edge detection_ would list Sobel, Scharr, Canny etc.
+
+* Course-ware:
+** We want to start offering vision courses using OpenCV.
+*** If you are expert in a topic (say it's your area of graduate research, or you've just finished a project or course in a particular topic and can explain it well)
+*** Write up the topic, the math and then develop a step by step example of it using OpenCV.
+
+* Expose OpenCV GPU functionality into Python API
+** Current Python OpenCV wrappers use @cv::Mat@ <=> Numpy array mapping for passing data between C++ and Python worlds. Aim of this project is to adopt "PyCuda GPUArray":http://documen.tician.de/pycuda/array.html as a counterpart of @GpuMat@.
+** This would allow to extend cv2 wrapper generator to expose CUDA-powered OpenCV functions.
+** Project requires good knowledge of C++ and Python and willingness to dive into the internals of OpenCV, Python and PyCuda.
+** Expect all sorts of gotchas, subtle issues and design discussion with mentors.
+** The resulting design decisions can be used to wrap the OpenCV's OpenCL functionality with "PyOpenCL":http://mathema.tician.de/software/pyopencl
+
+
+
+h2. Mentors
+
+*Actual signed up mentors*
+
+* Alexander Mordvintsev	zzznah(+)gmail.com
+* Sid Bao	ybao(+)magicleap.com
+* Vincent Rabaud	vincent.rabaud(+)gmail.com
+* Vadim Pisarevsky	vadim.pisarevsky(+)gmail.com
+* Adrian Kaehler	therealadrian(+)gmail.com
+* Terry Boult	tboult(+)vast.uccs.edu
+* spmallick	spmallick(+)taaz.com
+* Serge Belongie	sjb344(+)cornell.edu
+* Stefano	s.fabri10(+)gmail.com
+* Prasanna	pras.bits(+)gmail.com
+* Pablo Alcantarilla	pablofdezalc(+)gmail.com
+* Bence Magyar	mw.mzperx(+)gmail.com
+* Manuele	manuele.tamburrano(+)gmail.com
+* Grace Vesom	grace.vesom(+)gmail.com
+* Open Source Computer Vision Library (OpenCV)	garybradski(+)gmail.com
+* Douglas Lee	dougabug(+)gmail.com
+* Claudia Rapuano	c.rapuano(+)gmail.com
+* Antonella Cascitelli	antonellacascitelli(+)gmail.com
+* Anatoly Baksheev	anatoly.baksheev(+)itseez.com
+* Alexander	alexander.shishkov(+)itseez.com
+* Alexander Bovyrin	alexander.bovyrin(+)itseez.com
+
+
+
+In the below, get rid of the ''-delete-'' to make the emails work.
+
+Anatoly Baksheev
+Researcher, Vision Algorithms on GPU
+Argus/Itseez
+-delete-Anatoly.Baksheev@-delete-itseez.com
+
+Alexander Bovyrin
+PhD, Senior Researcher
+Argus/Itseez founder
+NNU Lecturer
+-delete-alexander.bovyrin@-delete-itseez.com
+
+Gary Bradski
+Founder, Industrial Perception Inc.
+Consulting Prof. Stanford U.
+OpenCV Founder, Technical Content Owner, GSoC Admin
+Co-author of Learning OpenCV Book
+http://www.willowgarage.com/pages/people/gary-bradski-senior-researcher
+-delete-garybradski@-delete-gmail.com
+
+Antonella Cascitelli
+Grad student, University of Rome
+-delete-antonellacascitelli@gmail.com
+
+Eric Christiansen
+PhD, UCSD
+-delete-echristiansen@-delete-cs.ucsd.edu
+
+Stefano Fabri
+CRR Team leader, University of Rome
+-delete-s.fabri10@gmail.com
+
+Victor Eruhimov
+OpenCV founding team/Senior Researcher
+Argus/Itseez founder
+NNU Lecturer
+-delete-relrotciv@-delete-googlemail.com
+
+Adrian Kaehler
+Principle Engineer, Applied Minds
+Co-author of Learning OpenCV Book.
+-delete-therealadrian@-delete-gmail.com
+
+Peter Karasev
+PhD Student, MINERVA Research Group
+Georgia Tech
+-delete-karasevpa@-delete-gmail.com
+
+Vadim Pisarevsky
+OpenCV founding team/Czar
+-delete-Vadim.-delete-Pisarevsky@-delete-gmail.com
+
+Manuele Tamburrano
+Grad Student, University of Rome
+-delete-manuele.tamburrano@gmail.com
+
+Vincent Rabaud
+Principle Engineer, Aldebaran Robotics
+-delete-vincent.rabaud@-delete-gmail.com
+
+Claudia Rapuano
+Grad student, University of Rome
+-delete-c.rapuano@gmail.com
+
+Grace Vesom
+Lawrence Livermore
+-delete-grace.vesom@-delete_gmail.com
+
+Bence Magyar
+Pal Robotics
+-delete-bence.magyar@-delete-pal-robotics.com
+
+Pablo Alcantarilla
+Toshiba Research Europe Ltd.
+-delete-pablofdezalc@-delete-gmail.com
+
+h3.  Back up Mentors
+
+Mark Asbach
+Fraunhofer IAIS
+Schloss Birlinghoven
+Sankt Augustin, Germany
+http://mmprec.iais.fraunhofer.de/asbach.html
+-delete-mark.asbach@-delete-iais.fraunhofer.de
+
+
+Nicolas Saunier, Ph.D.
+Assistant Professor
+Civil, Geological and Mining Department (CGM)
+École Polytechnique de Montréal
+http://nicolas.saunier.confins.net
+-delete-nicolas.saunier@-delete-polymtl.ca
+
+
+Alexander Mordvintsev
+Software Engineer
+http://znah.net
+-delete-zzznah@-delete-gmail.com
+
+Andrey Morozov
+Software Engineer
+Argus/Itseez
+-delete-andrey.morozov@-delete-itseez.com
+
+h2. OpenCV Org. Application to GSoC 2014
+
+"OpenCV GSoC Application":http://code.opencv.org/projects/gsoc2013/wiki/GSoC2013OpenCVApplication
+
+h2. Previous Years
+
+* "Google Summer of Code 2013 (GSoC 2013) Ideas Page":http://code.opencv.org/projects/gsoc2013/wiki
+* 2012 Ideas site http://code.opencv.org/projects/gsoc2012/wiki/Wiki/
+* 2011 Ideas site http://opencv.willowgarage.com/wiki/GSOC_OpenCV2011
+** 2011 Application GSoC page is http://opencv.willowgarage.com/wiki/GSoC2011OpenCVApplication
+* 2010 Ideas site http://opencv.willowgarage.com/wiki/GSOC_OpenCV2010
+** 2010 Application page http://opencv.willowgarage.com/wiki/ApplicationGSOC2010
+
+----

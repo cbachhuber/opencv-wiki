@@ -1,0 +1,140 @@
+h1. POSIT tutorial
+
+h2. Pose Estimation
+
+h3. "Javir Barandiaran":https://sites.google.com/site/jbarandiaran/
+
+
+In this tutorial we will see how to estimate the pose of a 3D object in a single image using the function cvPOSIT. This function implements the POSIT algorithm (DeMenthon & Davis 1995). Also we will make some tests and see the result of the algorithm using OpenGL.
+The pose P of a 3D object is a combination of its orientation R (a 3D rotation matrix) and its position T (a 3D translation vector) relative to the camera. So the pose P = [ R | T ] is a 3x4 matrix.
+
+Given some 3D points (in object coordinate system) of the object, at least four non-coplanar points, their corresponding 2D projections in the image, and the focal length of the camera, the algorithm is able to estimate the object's pose.
+
+We will estimate the pose of a virtual cube. As the real pose of the cube is already known we can calculate the projections of the corners, then estimate the pose with POSIT and compare it with the real one.
+
+h2. 3D Model Points
+
+First of all, the POSIT object must be created with the model points; we will use four cube corners. The first point of the array passed to cvCreatePOSITObject must be ( 0, 0, 0 ). This point is known as the reference point of the object. POSIT returns the translation from the camera to this point.
+
+<pre>
+float cubeSize = 10.0;
+std::vector<CvPoint3D32f> modelPoints;
+modelPoints.push_back(cvPoint3D32f(0.0f, 0.0f, 0.0f));
+modelPoints.push_back(cvPoint3D32f(0.0f, 0.0f, cubeSize));
+modelPoints.push_back(cvPoint3D32f(cubeSize, 0.0f, 0.0f));
+modelPoints.push_back(cvPoint3D32f(0.0f, cubeSize, 0.0f));
+CvPOSITObject *positObject = cvCreatePOSITObject( &modelPoints[0], static_cast<int>(modelPoints.size()) );
+</pre>
+
+
+h2. Image Points
+
+We must create an array with the corresponding 2D image points. The image points must be placed in the array in the same order as the model points. In other words, the first point of this array must correspond to the projection of the first model point. The origin of the coordinates of the image is situated at the centre.
+
+For each model point, its coordinates in the camera space are calculated, i.e. they are transformed by the real pose. Then the projection is calculated using the perspective model.
+
+<pre>
+std::vector<CvPoint2D32f> projectedPoints;
+...
+CvMat poseMatrix = cvMat( 4, 4, CV_32F, pose );
+for ( size_t  p=0; p<modelPoints.size(); p++ )
+{
+float modelPoint[] =  { modelPoints[p].x, modelPoints[p].y, modelPoints[p].z, 1.0f };
+CvMat modelPointMatrix = cvMat( 4, 1, CV_32F, modelPoint );
+float point3D[4];
+CvMat point3DMatrix = cvMat( 4, 1, CV_32F, point3D )
+//Transform the points from model space coordinates to camera space
+//The pose must be transposed because is in OpenGL format
+cvGEMM( &poseMatrix, &modelPointMatrix, 1.0, NULL, 0.0, &point3DMatrix, CV_GEMM_A_T );
+//Project the transformed 3D points
+CvPoint2D32f point2D = cvPoint2D32f( 0.0, 0.0 );
+if ( point3D[2] != 0 )
+{
+point2D.x = cvmGet( intrinsics, 0, 0 ) * point3D[0] / point3D[2];
+point2D.y = cvmGet( intrinsics, 1, 1 ) * point3D[1] / point3D[2];
+}
+projectedPoints.push_back( point2D );
+}
+</pre>
+
+The real pose is @float[16]@ array representing a 4x4 matrix in OpenGL format (column-major order).
+
+The rotation matrix is:
+
+| @poseReal[0]@ | @poseReal[4]@ | @poseReal[8]@ |
+| @poseReal[1]@ | @poseReal[5]@ | @poseReal[9]@ |
+| @poseReal[2]@ | @poseReal[6]@ | @poseReal[10]@ |
+
+and the translation vector is:
+
+| @poseReal[12]@ | @poseReal[13]@ | @poseReal[14]@ |
+
+h2. Pose Estimation
+
+Now that we have the model and image points we can compute the pose:
+
+<pre>
+CvMatr32f rotation_matrix = new float[9];
+CvVect32f translation_vector = new float[3];
+CvTermCriteria criteria = cvTermCriteria(CV_TERMCRIT_EPS | CV_TERMCRIT_ITER, 100, 1.0e-4f);
+cvPOSIT( positObject, &imagePoints[0], FOCAL_LENGTH, criteria, rotation_matrix, translation_vector );
+createOpenGLMatrixFrom( rotation_matrix, translation_vector);
+...
+delete rotation_matrix;
+delete translation_vector;
+</pre>
+
+h2. OpenGL
+
+In order to draw the model using OpenGL we must build the modelView (pose) matrix and the projection matrix.
+
+h2. OpenGL ModelView Matrix
+
+This matrix must be in column-major order, so the rotation matrix must be transposed
+
+<pre>
+for (int f=0; f<3; f++)
+for (int c=0; c<3; c++)
+posePOSIT[c*4+f] = rotation_matrix[f*3+c];      //transposed
+posePOSIT[3] = 0.0;
+posePOSIT[7] = 0.0;
+posePOSIT[11] = 0.0;
+posePOSIT[12] = translation_vector[0];
+posePOSIT[13] = translation_vector[1];
+posePOSIT[14] = translation_vector[2];
+posePOSIT[15] = 1.0;
+</pre>
+
+h2. OpenGL Projection Matrix
+
+This is a standard OpenGL perspective projection matrix built with the intrinsic parameters(focalLength(X,Y),principal point(pX,pY)), image resolution(iamgeWidth,imageHeight) and far and near plane values. Important OpenGL considerations:
+
+OpenGL uses a right-handed coordinate system, so the camera looks down the negative Z-axis.
+The projection matrix maps the view frustum into a unit cube (@[-1,1] x [-1,1] x [-1,1]@).
+The matrix must be stored in column-major order.
+
+| 2.0 * focalX / imageWidth | 0 | 2.0 * ( pX / imageWidth ) - 1.0 | 0 |
+| 0 | 2.0 * focalY / imageHeight | 2.0 * ( pY / imageHeight ) - 1.0 | 0 |
+| 0 | 0 | -( farPlane+nearPlane ) / ( farPlane - nearPlane ) | -2.0 * farPlane * nearPlane / ( farPlane - nearPlane ) |
+| 0 | 0 | -1 | 0 |
+
+h2. Drawing the Model
+
+<pre>
+glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+glViewport(0, 0, imageWidth, imageHeight );
+glMatrixMode( GL_PROJECTION );
+glLoadMatrixd( projectionMatrix );
+glMatrixMode( GL_MODELVIEW );
+glScalef( 1.0f, 1.0f, -1.0f);
+glMultMatrixf( posit.posePOSIT );
+drawModel();
+</pre>
+
+h2. References
+
+The algorithm is described in "Daniel DeMenthon":http://www.cfar.umd.edu/~daniel/Site_2/Welcome.html and Larry S. Davis, "'Model-Based Object Pose in 25 Lines of Code'":http://www.cfar.umd.edu/~daniel/daniel_papersfordownload/Pose25Lines.pdf, International Journal of Computer Vision, 15, pp. 123-141, June 1995.
+
+h2. Code
+
+"Download":http://opencv.org/wp-content/uploads/2013/04/POSIT.rar (Code tested in Windows XP and Ubuntu 8.04.)

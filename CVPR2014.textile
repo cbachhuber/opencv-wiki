@@ -1,0 +1,143 @@
+h1. Open CV 3.0: Solving Problems
+
+The third major release of OpenCV is aimed at building solid ground for computer vision development.  C++ and Python will be covered here.  OpenCV 3.0 enables:
+* more algorithms to be integrated (of which we will showcase the latest)
+* more supported languages (Matlab, Ruby, Haskell)
+* more optimizations (NEON, OpenVX)
+* a new and modular way of participating to the core development
+
+While showcasing the aforementioned features, we will focus building end-to-end vision pipelines through several application walk-throughs.  Code, instructions, and mobile applications will be available online before the tutorial.
+
+"Video from last summer of code":https://www.youtube.com/watch?feature=player_detailpage&v=_TTtN4frMEA
+
+h1. Schedule
+
+h2. Morning Session: _OpenCV 3.0 Walkthrough_
+
+_8:30-9:00_
+* *Introduction (Gary Bradski)*
+** Welcome
+** New book out soon from O'Reilly Learning OpenCV
+** Announcing the "OpenCV Vision Challenge":http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+
+_9:00-9:30_
+* source:OpenCVOverviewCVPR2014.pptx
+* *Library Overview (Gary Bradski)*
+** History, License (BSD)
+** Content Overview
+** Documentation
+** Interfaces: C++, Matlab, Java, Python
+** Platforms:
+*** Windows
+*** Mac
+*** Linux
+*** iOS
+*** Android
+** Acceleration: Cuda, OpenCL, IPP
+
+_9:30-10:00_
+"OpenCV3_0_CVPR_2014.pptx":images/OpenCV3_0_CVPR_2014.pptx
+* *OpenCV 3.0 ... OpenCV grows up and further opens up (Vincent Rabaud, Gary Bradski)*
+** Modules
+** User Contrib, how to submit
+** How to develop for OpenCV
+*** Development Cycle
+*** Pull requests
+** Class factories
+
+_10:00-10:30_
+* *COFFEE BREAK*
+
+_10:30-11:00_
+* *Past and Current OpenCV Google Summer of Code (Vincent Rabaud)*
+** Projects
+** Videos
+
+_11:00-12:00_
+* *Open Question/Brainstorm /Feature Request Session (Vincent Rabaud, Grace Vesom)*
+** we had a discussion at CVPR 2011 with great exchanges and lasting impact on OpenCV
+
+_12:00-1:30_
+* *LUNCH*
+
+h2. Afternoon Session: _Problem Solving Tutorials_
+
+_1:30-2:15_
+"RGBD_CVPR_2014.pdf":images/RGBD_CVPR_2014.pdf
+* *The RGBD Module in OpenCV 3.0 (Vincent Rabaud)*
+** Basics
+** Normals
+** Planes
+** Odometry
+** 3d Visualization
+** Future
+
+_2:15-3:00_
+Code at https://github.com/pokeefe/RGBDTutorial-CVPR2014
+* *RGBD Tutorial (Patrick O'Keefe)*
+** Acquire 3D data, options. Occipital Sensor
+** Process for normals/planes
+** Register depth data to external, high-resolution RGB camera
+** Track motion with RGBD odometry
+
+_3:00-3:30_
+* *COFFEE BREAK*
+
+_3:30-4:15_
+* *The art of stereo camera calibration (Grace Vesom)*
+** Utilizing new fisheye calibration model in OpenCV 3.0
+** Best practices
+** Partial capture / using aruco boards as calibration boards
+** Calibrating wide angle stereo systems
+
+_4:15-5:00_
+"CompPhoto_CVPR_2014.pdf":images/CompPhoto_CVPR_2014.pdf
+* *Computational photography (Vincent Rabaud)*
+** HDR
+** Cloning
+** Non-photorealistic rendering
+** Visualization
+
+_5:00-5:45_
+* *Appearance Based SLAM: OpenFABMap (Gary Bradski)*
+** Overview of FABMap
+** Walk through how to use OpenFABMap in OpenCV
+** Demo
+
+_5:45-6:15_
+* *Concluding panel/Q&A (All)*
+
+
+h2. Links
+
+* "CVPR 2014 Tutorials":http://www.pamitc.org/cvpr14/tutorials.php
+* "OpenCV Documentation":http://docs.opencv.org/
+* "OpenCV Developer Site":http://code.opencv.org/projects/opencv/wiki
+* "OpenCV User Site":http://opencv.org/
+* "OpenCV Library Downloads":http://opencv.org/downloads.html
+* "How to contribute to OpenCV":http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+
+h2. Lecturers
+
+*Dr. Gary Rost Bradski*
+!images/GaryBradski.jpg!
+is VP of Perception and Core Software at Magic Leap.  Gary founded OpenCV at Intel Research in 2000 and is currently CEO of non-profit OpenCV.org.  He ran the vision team for Stanley, the autonomous vehicle that completed and won the $2M DARPA Grand Challenge robot race across the desert.  Dr. Bradski helped start up NeuroScan (sold to Marmon), Video Surf (sold to Microsoft), and Willow Garage (absorbed into Suitable Tech).  Most recently, he founded Industrial Perception (sold August 2013).  Gary has more than 100 publications and more than 30 patents and is co-author of a best seller in its category Learning OpenCV: Computer Vision with the OpenCV Library, O'Reilly Press.
+
+*Patrick O'Keef*
+!images/PatOKeefeS.png!
+is a computer vision engineer at Occipital. He loves and works on everything related to RGBD and the Structure Sensor (from firmware to SLAM), and holds an MSEE from the University of Michigan in Signal Processing."
+
+*Vincent Rabaud*
+!images/vincent.jpg!
+is the perception team manager at Aldebaran Robotics.  He co-founded the non-profit OpenCV.org with Gary Bradski in 2012 while a research engineer at Willow Garage.  His research interests include 3D processing, object recognition and anything that involves underusing CPUs by feeding them fast algorithms.  Dr. Rabaud completed his PhD at UCSD, advised by Serge Belongie.  He also holds a MS in space mechanics and space imagery from SUPAERO and a MS in optimization from the Ecole Polytechnique.
+
+*Grace Vesom*
+!images/grace.jpg!
+is a computer vision engineer at Magic Leap. Previously, she was a research scientist at Lawrence Livermore National Laboratory working on computer vision and machine learning algorithms for global security applications.  She completed her DPhil at the University of Oxford with Alison Noble and Mike Brady in 2010.
+
+
+h2. Back
+
+"Workshops":Workshops
+
+"OpenCV":http://code.opencv.org/projects/opencv/wiki

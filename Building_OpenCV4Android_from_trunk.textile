@@ -1,0 +1,348 @@
+h2. Building OpenCV4Android from trunk
+
+
+
+The new android build is based on android-cmake project originally developed by Ethan Rublee.
+You can find the latest version of his project at http://code.google.com/p/android-cmake/
+
+h2. Prerequisites
+
+* git client
+* cmake tool http://www.cmake.org/
+* Android NDK (revision !r5 or newer) http://developer.android.com/sdk/ndk/index.html
+* OpenCV master: git://code.opencv.org/opencv.git. Github mirror: git://github.com/itseez/opencv.git. You can clone repo with the following command:
+<pre>git clone git://code.opencv.org/opencv.git</pre>
+
+h2. Additional requirements for Java wrapper and Android samples
+
+* JDK 6 http://www.oracle.com/technetwork/java/javase/downloads/index.html
+* Android SDK http://developer.android.com/sdk/index.html
+** "Android SDK Tools, revision 14" or newer is recommended
+** "SDK platform Android 2.2, API 8" or newer package installed (for the Java API and tests)
+** "SDK platform Android 3.0, API 11" or newer for the samples (they can run on Android 2.2 but require API 11 at compile time)
+* Apache Ant 1.8.0 or newer http://ant.apache.org
+* Python 2.6 or newer (but not 3.x) http://www.python.org/
+
+h2. Windows additional prerequisites
+
+At the moment OpenCV cross compilation under @cygwin@ is *not supported*.
+
+However you can cross-compile OpenCV on Windows using '''native port of make'''.
+Android NDK !r7 and newer already includes the make executable.
+If you need to build OpenCV with older NDK, then you can get it from NDK or use one of alternative downloads. These two are tested to work for OpenCV:
+* http://gnuwin32.sourceforge.net/packages/make.htm
+* http://code.google.com/p/mingw-and-ndk/ (see "make-3.7z" under the Downloads section)
+
+h1. OpenCV build
+
+By default OpenCV and the most of Android samples are configured for modern @ARM-v7a@ architecture.
+If you want to compile OpenCV for emulator or older device, or want to build with NEON support please read the "Android_targets":Trunk_OpenCV_for_Android#Android-hardware-targets section for instructions.
+
+h2. Linux (Ubuntu) and Mac OS (10.6.7)
+
+Export full path to your copy of NDK
+<pre>
+export ANDROID_NDK=~/android-ndk-r8e
+</pre>
+
+Alternatively to build with standalone toolchain extracted from NDK you can export toolchain location
+<pre>
+export ANDROID_STANDALONE_TOOLCHAIN=~/android-toolchain
+</pre>
+
+If you have not declared any of these variables then build scripts will try to find NDK under the @/opt@ folder
+(so if you have placed your NDK to @/opt/android-ndk-r8e/@ then it will be detected automatically).
+
+There is a @scripts@ folder in the @android@ folder for running cmake with the proper cache
+variables set. It is recommended that you use this to setup a cmake build directory.
+<pre>
+cd opencv/platforms
+sh ./scripts/cmake_android_arm.sh
+</pre>
+
+You should now see a build directory, that is ready to be made
+<pre>
+cd build_android_arm
+make -j8
+</pre>
+
+That will build most of the OpenCV modules, except for those that don't make sense on android - @gpu@, @ocl@, @python@ wrapper etc..
+
+h2. Windows (native)
+
+Define the following environment variables:
+* @ANDROID_NDK@ - full path to the Android NDK. This path should not have tailing slash;
+* Add path to @cmake@ and @make@ tools to @PATH@ environment variable.
+
+Instead of modifying your environment you can create file @opencv\android\scripts\wincfg.cmd@ and put all settings into this file. OpenCV provides a template for this file named @opencv\android\scripts\wincmd.cfg.tmpl@. Please note that settings from @wincfg.cmd@ takes precedence over global environment variables.
+
+Then open Windows console (@cmd.exe@) and go to @opencv\platforms@ folder. There is no ready script for Windows platform, you need to build OpenCV step by step:
+<pre>
+cd opencv\platfroms\
+mkdir build_android_arm
+cd build_android_arm
+cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=..\android\android.toolchain.cmake ..\..
+make
+</pre>
+When script finishes you will have OpenCV compiled.
+
+h3. Troubleshooting
+
+First, make sure that paths to OpenCV sources, Android NDK and @make.exe@ do not contain spaces and other suspicious symbols.
+
+If @make@ fails with message similar to
+<pre>
+*** target pattern contains no `%'.  Stop.
+</pre>
+Then you are probably using @cygwin@ tools instead of their native ports. Remove @cygwin@ from your @PATH@, delete @build@ directory and rebuild.
+
+Or if @make@ fails with Java related messages, then make sure your version of python is a Windows app instead of the @cygwin@ one, such as "ActiveState Python v2.7":http://www.activestate.com/activepython/downloads.
+
+
+h1. Building console "Hello World" with OpenCV
+
+This application is not usual Android application. This is a Unix console which may be used as a template for development. Console application is much more convenient for development, debugging and performance optimization stages. Then, if you are finished with your CV algorithm, you can switch to normal Android development with Java + NDK.
+
+h2. Prerequisites
+
+First of all you need an Android device with root privileges. The goal is to have ability to run console applications on Android device using @adb shell@. Even @chmod@ is not available by default (for example on Nexus One). You have the following options:
+* Use emulator
+* Enable root access to your device. Use ''Google'':http://google.com to find instructions for your device.
+* Use developer device, for example NVidia Tegra devkits have root access by default.
+
+If the device allows you to do @chmod@ and run executables, then follow the instructions below.
+
+Second, you need OpenCV compiled for your device. *This sample is configured for emulator. It is different from default settings for OpenCV.* Read "Android_ABIs":Trunk_OpenCV_for_Android#Android-hardware-targets to know how to build OpenCV for emulator.
+Also you need some free space on sdcard to run the @HelloAndroid@ application - it will write small image to @/mnt/sdcard@. *Please note*, that even with emulator you need a sdcard. You can create it with @AVD Manager@ from Android SDK.
+
+h2. Linux (Ubuntu) and Mac OS (10.6.7)
+
+Export full path to your copy of NDK
+<pre>
+export ANDROID_NDK=~/android-ndk-r8b
+</pre>
+or path to standalone toolchain
+<pre>
+export ANDROID_STANDALONE_TOOLCHAIN=~/android-toolchain
+</pre>
+
+Run the following commands to build project
+<pre>
+cd opencv/samples/android/hello-android
+sh ./cmake_android.sh
+cd ./build_armeabi
+make
+cd ..
+</pre>
+
+Connect to your device with @adb@ tool from Android SDK and run the application
+<pre>
+sh ./run.sh
+</pre>
+
+If you can see @HelloAndroid.png@ in your current directory and @Hello Android!@ message in the console - you've arrived.
+
+If you want to build this sample for @ARM-v7a@ device (with or without NEON support) you need to edit @cmake_android.sh@ script. Change @BUILD_DIR@ path and @ANDROID_ABI@ CMake parameter.
+
+h2. Windows
+
+Set the same environment variables as needed for OpenCV build (variables set in @opencv\android\scripts\wincfg.cmd@ work as well).
+If you are using @wincfg.cmd@ file then ensure that @ANDROID_ABI@ and @BUILD_DIR@ are set to correct values. Use the following values for emulator:
+<pre>
+SET BUILD_DIR=build_armeabi
+SET ANDROID_ABI=armeabi
+</pre>
+
+When all variables are set run the commands
+<pre>
+cd opencv\samples\android\hello-android
+cmake_android.cmd
+</pre>
+
+Connect to your device with @adb@ tool from Android SDK and run the script
+<pre>
+run.cmd
+</pre>
+
+If you can see @HelloAndroid.png@ in your current directory and "Hello Android!" message in console - you've arrived.
+
+h3. Troubleshooting
+
+If you see error message similar to
+<pre>
+ld: cannot find -lopencv_contrib
+</pre>
+or (on Windows)
+<pre>
+ld.exe: cannot find -lopencv_contrib240
+</pre>
+It means that CMake failed to find OpenCV compiled for Android. Check that all paths are set to correct values, remove @build@ directory and try to rebuild the application.
+
+h1. Native camera support in OpenCV
+
+Native interface of Android camera is platform-dependent. So OpenCV isolates platform-dependent part of code into separate shared library and provides several prebuilt libraries for native camera:
+* @libnative_camera_r2.2.0.so@
+* @libnative_camera_r2.3.3.so@
+* @libnative_camera_r3.0.1.so@
+* @libnative_camera_r4.0.0.so@
+* @libnative_camera_r4.0.3.so@
+* @libnative_camera_r4.1.1.so@
+
+These libraries are tested to work for Android 2.2.0, 2.2.1, 2.2.2, 2.3.3, 2.3.4, 3.0.1, 3.2.1, 4.0.0, 4.0.3, 4.1.1.
+You should include these libraries into your .apk to get camera working. OpenCV will automatically load one of these libraries compatible with your Android OS version.
+
+h2. Use native camera in your Android project (Java)
+
+See android samples for example of native camera application.
+This one - @opencv/samples/android/tutorial-2-opencvcamera@ is a good point to start.
+
+h2. Use native camera in your NDK project (C++)
+
+Tutorial is coming...
+
+h2. Use native camera in your cmake project (C++)
+
+Include the @highgui.hpp@ header to you source
+<pre><code class="cpp">
+#include "opencv2/highgui/highgui.hpp"
+</code></pre>
+
+Create a new instance of @VideoCapture@ and start grabbing frames
+<pre><code class="cpp">
+cv::VideoCapture capture(CV_CAP_ANDROID + 0);
+//cv::VideoCapture capture(CV_CAP_ANDROID + 1);//front camera for Android 2.3.3 or newer
+
+if( !capture.isOpened() )
+return;
+
+capture.set(CV_CAP_PROP_FRAME_WIDTH, 640);
+capture.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
+
+for(int i=0; i < 100; ++i)
+{
+cv::Mat frame;
+
+capture >> frame;
+if( !frame.empty() )
+yourfunction::processFrame(frame);
+}
+</code></pre>
+
+Finally, add following lines to your cmake
+<pre>
+if (COMMAND COPY_NATIVE_CAMERA_LIBS)
+COPY_NATIVE_CAMERA_LIBS(${PROJECT_NAME})
+endif()
+</pre>
+Where @PROJECT_NAME@ variable contains name of module that uses native camera.
+
+*Warning: Native camera from OpenCV does not work inside console applications.*
+
+h2. Advanced: build your camera wrapper
+
+If prebuilt libraries don't work for you for whatever reason then you can build your own camera wrapper lib.
+
+To build your lib you have to download sources for your version of Android and build entire OS first.
+See http://source.android.com/source/downloading.html and ''google'' for instructions.
+
+When you finish with Android OS run cmake for OpenCV (@scripts/cmake_android.sh@ will run it for you). You should see following line in its output
+<pre>
+--     AndroidNativeCamera:        use prebuilt libraries
+</pre>
+
+Next, you need to set cmake cache variable @ANDROID_SOURCE_TREE@ to the path to Android OS source tree and rerun cmake. (You can set this variable with @cmake-gui@ application, or editing @build/CMakeCache.txt@ file with text editor, or passing it as cmake argument).
+
+If path is set correctly then you should see line similar to following in cmake output
+<pre>
+--     AndroidNativeCamera:        build for Android 2.3.4
+</pre>
+
+Run @make@ command to compile the sources.
+
+Most probably you will need to make changes in file @opencv/modules/androidcamera/camera_wrapper/camera_wrapper.cpp@ to fix compiler errors.
+If you do some changes please post your patch to "OpenCV_issue_tracker":WikiStart to help with OpenCV development.
+
+h3. Example
+
+Building wrapper library for Android 4.0.3:
+
+<pre>
+cd openvc/android
+mkdir build_camera
+cd build_camera
+cmake -DCMAKE_TOOLCHAIN_FILE=../android.toolchain.cmake -DANDROID_SOURCE_TREE=~/Android/4.0.3/src -DANDROID_NATIVE_API_LEVEL=14 -DANDROID_USE_STLPORT=ON ../../
+make native_camera_r4.0.3
+</pre>
+
+h1. Advanced build options
+
+h2. Using OpenCV in your own CMake projects
+
+Use the CMake find script for OpenCV
+<pre>
+find_package(OpenCV REQUIRED)
+</pre>
+Export path to OpenCV source tree
+<pre>
+export OPENCV_ROOT=~/opencv
+</pre>
+Then when you run cmake, use:
+<pre>
+cmake -DOpenCV_DIR=$OPENCV_ROOT/android/build -DCMAKE_TOOLCHAIN_FILE=$OPENCV_ROOT/android/android.toolchain.cmake ..
+</pre>
+
+And direct your cmake cache for @OpenCV_DIR@ to the path where you built OpenCV for Android.
+something like : @opencv/android/build@
+
+To avoid setting the cmake cache for @OpenCV_DIR@, you can just "install" OpenCV to your
+Android toolchain/NDK. Run the following from the @opencv/android/build@ path:
+<pre>
+make install/strip
+</pre>
+
+h2. Android hardware targets
+
+You may wish to build OpenCV and samples for multiple hardware targets.
+
+Just change the cmake cache @ANDROID_ABI@ to either:
+* @armeabi@
+* @armeabi-v7a@
+* @armeabi-v7a with NEON@
+* @armeabi-v7a with VFPV3@
+* @armeabi-v6 with VFP@
+* @x86@
+* @mips@
+
+h2. Android API levels
+
+You may wish to build OpenCV and samples for different level of Android native API.
+
+Just change the cmake cache @ANDROID_NATIVE_API_LEVEL@ to appropriative value.
+
+The following levels are currently supported:
+
+|_. Platform Version |_. SDK API Level |_. NDK API Level|_. Version Code|
+|Android 4.2|=.17|/8=.14|"JELLY_BEAN_MR1":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#JELLY_BEAN_MR1|
+|Android 4.1.1|/2=.16|/2."JELLY_BEAN":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#JELLY_BEAN|
+|Android 4.1|
+|Android 4.0.4|/2=.15|/2."ICE_CREAM_SANDWICH_MR1":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#ICE_CREAM_SANDWICH_MR1|
+|Android 4.0.3|
+|Android 4.0.2|/3=.14|/3."ICE_CREAM_SANDWICH":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#ICE_CREAM_SANDWICH|
+|Android 4.0.1|
+|Android 4.0|
+|Android 3.2|=.13|/8=.9|"HONEYCOMB_MR2":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#HONEYCOMB_MR2|
+|Android 3.1.x|=.12|"HONEYCOMB_MR1":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#HONEYCOMB_MR1|
+|Android 3.0.x|=.11|"HONEYCOMB":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#HONEYCOMB|
+|Android 2.3.4|/2=.10|/2."GINGERBREAD_MR1":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#GINGERBREAD_MR1|
+|Android 2.3.3|
+|Android 2.3.2|/3=.9|/3."GINGERBREAD":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#GINGERBREAD|
+|Android 2.3.1|
+|Android 2.3|
+|Android 2.2.x|=.8|=.8|"FROYO":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#FROYO|
+|Android 2.1.x|=.7|/3=.5|"ECLAIR_MR1":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#ECLAIR_MR1|
+|Android 2.0.1|=.6|"ECLAIR_0_1":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#ECLAIR_0_1|
+|Android 2.0|=.5|"ECLAIR":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#ECLAIR|
+|Android 1.6|=.4|=.4|"DONUT":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#DONUT|
+|Android 1.5|=.3|=.3|"CUPCAKE":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#CUPCAKE|
+|Android 1.1|=.2|/2=.-|"BASE_1_1":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#BASE_1_1|
+|Android 1.0|=.1|"BASE":http://developer.android.com/reference/android/os/Build.VERSION_CODES.html#BASE|

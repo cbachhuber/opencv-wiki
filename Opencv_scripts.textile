@@ -1,0 +1,30 @@
+h1.  OpenCV python scripts reference
+
+* @modules/gpu/misc/mark_nvidia.py@
+* @modules/python/src2/gen2.py@
+* @modules/python/src2/cv.py@
+* @modules/python/src2/gen.py@
+* @modules/python/src2/hdr_parser.py@
+* @modules/java/generator/rst_parser.py@
+* @modules/java/generator/src/java/android+sync.py@
+* @modules/java/generator/gen_javadoc.py@
+* @modules/java/generator/gen_java.py@
+* @modules/ts/misc/chart.py@
+* @modules/ts/misc/run.py@
+* @modules/ts/misc/color.py@
+* @modules/ts/misc/concatlogs.py@
+* @modules/ts/misc/table_formatter.py@
+* @modules/ts/misc/summary.py@
+* @modules/ts/misc/report.py@
+* @android/scripts/cmake_android_all_cameras.py@
+* @android/scripts/ABI_compat_generator.py@
+* @android/service/push_native.py@
+* @android/service/all.py@
+* @android/service/doc/build_uml.py@
+* @doc/check_docs.py@
+* @doc/check_docs2.py@
+* @doc/conf.py@
+* @doc/patch_refman_latex.py@
+* @doc/ocv.py@
+* @doc/reformat.py@
+* @ios/build_framework.py@

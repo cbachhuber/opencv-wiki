@@ -1,0 +1,512 @@
+h1. Face Detection using OpenCV
+
+*Note:* This tutorial uses the OpenCV 1 interface and (as far as I can tell) is not compatible with the version of `haarcascade_frontalface_alt.xml` included in the OpenCV 2 code source. See http://doc.opencv.org/doc/tutorials/objdetect/cascade_classifier/cascade_classifier.html for the OpenCV 2 version of the tutorial which is compatible with the current XML files.
+
+How to compile and run the *facedetect.c* is one of the frequently asked question in the OpenCV Yahoo! Groups. I'll try to explain it to my best. Feel free to edit it if you have some more details..
+
+*Haar Like Features:* What is that?
+
+A recognition process can be much more efficient if it is based on the detection of features that encode some information about the class to be detected. This is the case of Haar-like features that encode the existence of oriented contrasts between regions in the image. A set of these features can be used to encode the contrasts exhibited by a human face and their spacial relationships. Haar-like features are so called because they are computed similar to the coefficients in Haar wavelet transforms.
+
+The object detector of OpenCV has been initially proposed by Paul Viola and improved by Rainer Lienhart. First, a classifier (namely a cascade of boosted classifiers working with haar-like features) is trained with a few hundreds of sample views of a particular object (i.e., a face or a car), called positive examples, that are scaled to the same size (say, 20x20), and negative examples - arbitrary images of the same size.
+
+After a classifier is trained, it can be applied to a region of interest (of the same size as used during the training) in an input image. The classifier outputs a "1" if the region is likely to show the object (i.e., face/car), and "0" otherwise. To search for the object in the whole image one can move the search window across the image and check every location using the classifier. The classifier is designed so that it can be easily "resized" in order to be able to find the objects of interest at different sizes, which is more efficient than resizing the image itself. So, to find an object of an unknown size in the image the scan procedure should be done several times at different scales.
+
+The word "cascade" in the classifier name means that the resultant classifier consists of several simpler classifiers (stages) that are applied subsequently to a region of interest until at some stage the candidate is rejected or all the stages are passed. The word "boosted" means that the classifiers at every stage of the cascade are complex themselves and they are built out of basic classifiers using one of four different boosting techniques (weighted voting). Currently Discrete Adaboost, Real Adaboost, Gentle Adaboost and Logitboost are supported. The basic classifiers are decision-tree classifiers with at least 2 leaves. Haar-like features are the input to the basic classifers.The feature used in a particular classifier is specified by its shape , position within the region of interest and the scale (this scale is not the same as the scale used at the detection stage, though these two scales are multiplied).
+
+Ok. Enough of the theory part. Now to the coding part: (This code might have a memory leak. Scroll down to the bottom of the page for information on how to fix it.)
+
+Here is my commented facedetect.c file:
+
+<pre><code class="cpp">
+// OpenCV Sample Application: facedetect.c
+
+// Include header files
+#include "cv.h"
+#include "highgui.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <math.h>
+#include <float.h>
+#include <limits.h>
+#include <time.h>
+#include <ctype.h>
+
+// Create memory for calculations
+static CvMemStorage* storage = 0;
+
+// Create a new Haar classifier
+static CvHaarClassifierCascade* cascade = 0;
+
+// Function prototype for detecting and drawing an object from an image
+void detect_and_draw( IplImage* image );
+
+// Create a string that contains the cascade name
+const char* cascade_name =
+"haarcascade_frontalface_alt.xml";
+/*    "haarcascade_profileface.xml";*/
+
+// Main function, defines the entry point for the program.
+int main( int argc, char** argv )
+{
+
+// Structure for getting video from camera or avi
+CvCapture* capture = 0;
+
+// Images to capture the frame from video or camera or from file
+[[IplImage]] *frame, *frame_copy = 0;
+
+// Used for calculations
+int optlen = strlen("--cascade=");
+
+// Input file name for avi or image file.
+const char* input_name;
+
+// Check for the correct usage of the command line
+if( argc > 1 && strncmp( argv[1], "--cascade=", optlen ) == 0 )
+{
+cascade_name = argv[1] + optlen;
+input_name = argc > 2 ? argv[2] : 0;
+}
+else
+{
+fprintf( stderr,
+"Usage: facedetect --cascade=\"<cascade_path>\" [filename|camera_index]\n" );
+return -1;
+/*input_name = argc > 1 ? argv[1] : 0;*/
+}
+
+// Load the [[HaarClassifierCascade]]
+cascade = (CvHaarClassifierCascade*)cvLoad( cascade_name, 0, 0, 0 );
+
+// Check whether the cascade has loaded successfully. Else report and error and quit
+if( !cascade )
+{
+fprintf( stderr, "ERROR: Could not load classifier cascade\n" );
+return -1;
+}
+
+// Allocate the memory storage
+storage = cvCreateMemStorage(0);
+
+// Find whether to detect the object from file or from camera.
+if( !input_name || (isdigit(input_name[0]) && input_name[1] == '\0') )
+capture = cvCaptureFromCAM( !input_name ? 0 : input_name[0] - '0' );
+else
+capture = cvCaptureFromAVI( input_name );
+
+// Create a new named window with title: result
+cvNamedWindow( "result", 1 );
+
+// Find if the capture is loaded successfully or not.
+
+// If loaded succesfully, then:
+if( capture )
+{
+// Capture from the camera.
+for(;;)
+{
+// Capture the frame and load it in [[IplImage]]
+if( !cvGrabFrame( capture ))
+break;
+frame = cvRetrieveFrame( capture );
+
+// If the frame does not exist, quit the loop
+if( !frame )
+break;
+
+// Allocate framecopy as the same size of the frame
+if( !frame_copy )
+frame_copy = cvCreateImage( cvSize(frame->width,frame->height),
+IPL_DEPTH_8U, frame->nChannels );
+
+// Check the origin of image. If top left, copy the image frame to frame_copy.
+if( frame->origin == IPL_ORIGIN_TL )
+cvCopy( frame, frame_copy, 0 );
+// Else flip and copy the image
+else
+cvFlip( frame, frame_copy, 0 );
+
+// Call the function to detect and draw the face
+detect_and_draw( frame_copy );
+
+// Wait for a while before proceeding to the next frame
+if( cvWaitKey( 10 ) >= 0 )
+break;
+}
+
+// Release the images, and capture memory
+cvReleaseImage( &frame_copy );
+cvReleaseCapture( &capture );
+}
+
+// If the capture is not loaded succesfully, then:
+else
+{
+// Assume the image to be lena.jpg, or the input_name specified
+const char* filename = input_name ? input_name : (char*)"lena.jpg";
+
+// Load the image from that filename
+IplImage* image = cvLoadImage( filename, 1 );
+
+// If Image is loaded succesfully, then:
+if( image )
+{
+// Detect and draw the face
+detect_and_draw( image );
+
+// Wait for user input
+cvWaitKey(0);
+
+// Release the image memory
+cvReleaseImage( &image );
+}
+else
+{
+/* assume it is a text file containing the
+list of the image filenames to be processed - one per line */
+FILE* f = fopen( filename, "rt" );
+if( f )
+{
+char buf[1000+1];
+
+// Get the line from the file
+while( fgets( buf, 1000, f ) )
+{
+
+// Remove the spaces if any, and clean up the name
+int len = (int)strlen(buf);
+while( len > 0 && isspace(buf[len-1]) )
+len--;
+buf[len] = '\0';
+
+// Load the image from the filename present in the buffer
+image = cvLoadImage( buf, 1 );
+
+// If the image was loaded succesfully, then:
+if( image )
+{
+// Detect and draw the face from the image
+detect_and_draw( image );
+
+// Wait for the user input, and release the memory
+cvWaitKey(0);
+cvReleaseImage( &image );
+}
+}
+// Close the file
+fclose(f);
+}
+}
+
+}
+
+// Destroy the window previously created with filename: "result"
+cvDestroyWindow("result");
+
+// return 0 to indicate successfull execution of the program
+return 0;
+}
+
+// Function to detect and draw any faces that is present in an image
+void detect_and_draw( IplImage* img )
+{
+int scale = 1;
+
+// Create a new image based on the input image
+IplImage* temp = cvCreateImage( cvSize(img->width/scale,img->height/scale), 8, 3 );
+
+// Create two points to represent the face locations
+[[CvPoint]] pt1, pt2;
+int i;
+
+// Clear the memory storage which was used before
+cvClearMemStorage( storage );
+
+// Find whether the cascade is loaded, to find the faces. If yes, then:
+if( cascade )
+{
+
+// There can be more than one face in an image. So create a growable sequence of faces.
+// Detect the objects and store them in the sequence
+CvSeq* faces = cvHaarDetectObjects( img, cascade, storage,
+1.1, 2, CV_HAAR_DO_CANNY_PRUNING,
+cvSize(40, 40) );
+
+// Loop the number of faces found.
+for( i = 0; i < (faces ? faces->total : 0); i++ )
+{
+// Create a new rectangle for drawing the face
+CvRect* r = (CvRect*)cvGetSeqElem( faces, i );
+
+// Find the dimensions of the face,and scale it if necessary
+pt1.x = r->x*scale;
+pt2.x = (r->x+r->width)*scale;
+pt1.y = r->y*scale;
+pt2.y = (r->y+r->height)*scale;
+
+// Draw the rectangle in the input image
+cvRectangle( img, pt1, pt2, CV_RGB(255,0,0), 3, 8, 0 );
+}
+}
+
+// Show the image in the window named "result"
+cvShowImage( "result", img );
+
+// Release the temp image created.
+cvReleaseImage( &temp );
+}
+
+</code></pre>
+
+Hope you understood what the code meant.
+
+How to run this code? As said in the code, you have to specify the exact location of the haar classifier xml file. It is normally present in the _*/OpenCV/data/haarcascades_* location. You should verify that the file *haarcascade_frontalface_alt.xml* is present inside the folder or not.
+
+Suppose that you have installed OpenCV in its default location: _*C:/Program Files.*_ Then, the exact location of the classifier is: _*"C:/Program Files/OpenCV/data/haarcascades/haarcascade_frontalface_alt.xml"*_ Now, you can run the facedetect sample with this command in the prompt: *facedetect --cascade="C:/Program Files/OpenCV/data/haarcascades/haarcascade_frontalface_alt.xml"*
+
+If you are using an IDE, and want to play with the source code, you'll need to add the classifier location to the additional command line arguments. In Visual C++, you can go to _*Project->Debugging->Command Arguments*_ In Additional Options tab, enter this: *--cascade="C:/Program Files/OpenCV/data/haarcascades/haarcascade_frontalface_alt.xml"* Now, the source code will compile and run fine.
+
+You can optionally specify the avi file or image file to the command prompt, after specifying the classifier. For example, If you have your own image: _face.jpg_, then you can add that to the command line like this:
+
+_--cascade="C:/Program Files/OpenCV/data/haarcascades/haarcascade_frontalface_alt.xml face.jpg_
+
+
+h2. On Linux
+
+# Go to the directory: opencv-0.9.7/samples/c/
+
+# Change the permissions of build_all.sh file: chmod 777 build_all.sh
+
+# Run the build_all.sh file: ./build_all.sh
+
+# Run facedetect: ./facedetect --cascade="/home/bob/opencv-0.9.7/data/haarcascades/haarcascade_frontalface_alt.xml"
+## (make sure you specify the exact path of an xml file!!!)
+
+# To run with a parameter: ./facedetect --cascade="/home/bob/opencv-0.9.7/data/haarcascades/haarcascade_frontalface_alt.xml" baboon.jpg
+
+
+h2. What if you want to add this as a part of your source code?
+
+Pass your image to the detect_and_draw function . Thats it.... Here is a sample code:
+
+<pre><code class="cpp">// Sample Application to demonstrate how Face detection can be done as a part of your source code.
+
+// Include header files
+#include "cv.h"
+#include "highgui.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <math.h>
+#include <float.h>
+#include <limits.h>
+#include <time.h>
+#include <ctype.h>
+
+
+// Create a string that contains the exact cascade name
+const char* cascade_name =
+"C:/Program Files/OpenCV/data/haarcascades/haarcascade_frontalface_alt.xml";
+/*    "haarcascade_profileface.xml";*/
+
+
+// Function prototype for detecting and drawing an object from an image
+void detect_and_draw( IplImage* image );
+
+// Main function, defines the entry point for the program.
+int main( int argc, char** argv )
+{
+
+// Create a sample image
+[[IplImage]] *img = cvLoadImage("face.jpg");
+
+// Call the function to detect and draw the face positions
+detect_and_draw(img);
+
+// Wait for user input before quitting the program
+cvWaitKey();
+
+// Release the image
+cvReleaseImage(&img);
+
+// Destroy the window previously created with filename: "result"
+cvDestroyWindow("result");
+
+// return 0 to indicate successfull execution of the program
+return 0;
+}
+
+// Function to detect and draw any faces that is present in an image
+void detect_and_draw( IplImage* img )
+{
+
+// Create memory for calculations
+static CvMemStorage* storage = 0;
+
+// Create a new Haar classifier
+static CvHaarClassifierCascade* cascade = 0;
+
+int scale = 1;
+
+// Create a new image based on the input image
+IplImage* temp = cvCreateImage( cvSize(img->width/scale,img->height/scale), 8, 3 );
+
+// Create two points to represent the face locations
+[[CvPoint]] pt1, pt2;
+int i;
+
+// Load the [[HaarClassifierCascade]]
+cascade = (CvHaarClassifierCascade*)cvLoad( cascade_name, 0, 0, 0 );
+
+// Check whether the cascade has loaded successfully. Else report and error and quit
+if( !cascade )
+{
+fprintf( stderr, "ERROR: Could not load classifier cascade\n" );
+return;
+}
+
+// Allocate the memory storage
+storage = cvCreateMemStorage(0);
+
+// Create a new named window with title: result
+cvNamedWindow( "result", 1 );
+
+// Clear the memory storage which was used before
+cvClearMemStorage( storage );
+
+// Find whether the cascade is loaded, to find the faces. If yes, then:
+if( cascade )
+{
+
+// There can be more than one face in an image. So create a growable sequence of faces.
+// Detect the objects and store them in the sequence
+CvSeq* faces = cvHaarDetectObjects( img, cascade, storage,
+1.1, 2, CV_HAAR_DO_CANNY_PRUNING,
+cvSize(40, 40) );
+
+// Loop the number of faces found.
+for( i = 0; i < (faces ? faces->total : 0); i++ )
+{
+// Create a new rectangle for drawing the face
+CvRect* r = (CvRect*)cvGetSeqElem( faces, i );
+
+// Find the dimensions of the face,and scale it if necessary
+pt1.x = r->x*scale;
+pt2.x = (r->x+r->width)*scale;
+pt1.y = r->y*scale;
+pt2.y = (r->y+r->height)*scale;
+
+// Draw the rectangle in the input image
+cvRectangle( img, pt1, pt2, CV_RGB(255,0,0), 3, 8, 0 );
+}
+}
+
+// Show the image in the window named "result"
+cvShowImage( "result", img );
+
+// Release the temp image created.
+cvReleaseImage( &temp );
+}
+</code></pre>
+
+h1. How to make the Face Detector work in MFC Application:
+
+Contributed by*Salman Aslam*
+
+If you're working with an MFC application, follow these steps to get your Haar Facial Detector working:
+
+*Step 1* Install Intel OpenCV.  I will assume it's installed in the default directory : c:\program files\opencv
+
+*Step 2* Create a standard MFC application using the AppWizard.
+
+*Step 3* In Project Settings (Alt+F7), go to the C/C++ tab, then select Category Preprocessor, and for Additional Include directories, add the following: C:\Program Files\opencv\cv\include,C:\Program Files\opencv\otherlibs\highgui,C:\Program Files\opencv\cxcore\include,C:\Program Files\opencv\cvaux\include
+
+*Step 4* In Project Settings (Alt+F7),  go to the Link tab, then select Category "Input", and for "Object/library modules:", add the following: cxcored.lib cvd.lib highguid.lib (see that there are no commas like in Step 3 above)
+
+*Step 5* While staying in the Link tab, and Category "Input", for the "Additional Library path:", add the following: C:\Program Files\opencv\lib
+
+*Step 6* In your main application file, eg Simple.cpp, include the following files: #include "cv.h" #include "highgui.h"
+
+*Step 7* In the same file, go to the InitInstance() function.  Right after you see the lines:
+
+<pre><code class="cpp">m_pMainWnd->ShowWindow(SW_SHOW);
+m_pMainWnd->UpdateWindow();</code></pre>
+
+and before the line
+
+<pre><code class="cpp">  return TRUE;</code></pre>
+
+add the following lines of code
+
+<pre><code class="cpp">  //declarations
+CvHaarClassifierCascade* cascade;
+CvMemStorage* storage;
+[[IplImage]] *image;
+CvSeq* faces;
+const char* file_name;
+int i;
+
+//initializations
+storage=cvCreateMemStorage(0);
+cvFirstType();
+file_name="haarcascade_frontalface_alt.xml";
+cascade = (CvHaarClassifierCascade*)cvLoad(file_name,NULL, NULL, NULL);
+image = cvLoadImage("lena.jpg", 1 );
+faces = cvHaarDetectObjects( image, cascade, storage, 1.2, 2,
+CV_HAAR_DO_CANNY_PRUNING,cvSize(0, 0));
+
+//draw rectangles
+for(i=0;i<(faces ? faces->total:0); i++ )
+{
+CvRect* r = (CvRect*)cvGetSeqElem( faces, i );
+[[CvPoint]] pt1 = { r->x, r->y };
+[[CvPoint]] pt2 = { r->x + r->width, r->y + r->height };
+cvRectangle( image, pt1, pt2, CV_RGB(255,0,0), 3, 8, 0 );
+}
+
+// create window and show the image with outlined faces
+cvNamedWindow( "faces", 1 );
+cvShowImage( "faces", image );
+cvSaveImage("Result.jpg", image);
+
+cvWaitKey();
+cvReleaseImage( &image );      // after a key pressed, release data
+cvReleaseHaarClassifierCascade( &cascade );
+cvReleaseMemStorage( &storage );</code></pre>
+
+*Step 8* Now go to c:\program files\opencv\bin, and copy the following files to the folder where your MFC files reside:
+_cv097d.dll cxcore097d.dll highgui097d.dll_
+
+*Step 9* Now go to c:\program files\opencv\samples\c and copy lena.jpg to the folder where your MFC files reside.
+
+*Step 10* Go to c:\program files\opencv\data\haarcascades, and copy the following file to the folder where your MFC files reside: haarcascade_frontalface_alt.xml
+
+*Step 11* Run your application.
+
+A lot of people have been receiving an error while executing the following line:
+
+<pre><code  class="cpp">cascade = (CvHaarClassifierCascade*)cvLoad(file_name,NULL, NULL, NULL);</code></pre>
+
+The error looks like this: Unspecified error (The node does not represent a user object (unknown type?)) in function cvRead, C:\Program Files\OpenCV\cxcore\src\cxpersistence.cpp (5040)
+
+The solution is to use cxcored.lib, cvd.lib and highguid.lib instead of cxcored_i7.lib, cv.lib and highgui.lib.
+You can use highgui.lib, but you get an error after the face detected image has been displayed and you're unloading it.
+
+
+Another simple workaround is to call any function from cv.lib before the call to cvLoad. For example: create a dummy empty image, apply cvErode to it and release the image.
+
+
+*The above code (function detect and draw) has a serious memory leak when run in an infinite for loop for real time face detection. Please add "cvReleaseMemStorage(&storage);" after you release the temp image in the detect and draw function. The cvClearMemStorage only clears the previous set of values but does not free memory. I did not modify the initial code as it is simply not mine. I have also cleared "faces" using cvClearSeq in my process of trying to find the memory leak as the program would quickly crash for 640x480 res 30fps video. I am very thankful to the original programmer for the code. Please let me know if this helps.*
+AbhinayE
+
+*Tested on:*
+
+* OpenCV Beta 5
+* Microsoft Visual C++
+* Windows XP

@@ -1,0 +1,50 @@
+h1. АИСТ 2013
+
+!http://code.opencv.org/attachments/949/bug.png| Some text!
+
+!http://code.opencv.org/attachments/949/bug.png(some text)!
+
+Докладчик: Кирилл Корняков
+
+h2. Предварительная подготовка
+
+Для практического занятия по OpenCV необходимо предварительно проделать следующее:
+
+# Установить OpenCV согласно инструкции для вашей платформы, руководства находятся "здесь":http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html#table-of-content-introduction.
+# Запустить на своей машине один из простейших сэмплов, например "этот":http://docs.opencv.org/doc/tutorials/introduction/load_save_image/load_save_image.html#load-save-image.
+# Основное время будет посвящено задаче нахождения плоского текстурного объекта, руководствуясь следующим "уроком":http://docs.opencv.org/doc/tutorials/features2d/feature_homography/feature_homography.html#feature-homography. Для тех, кто с данной задачей знаком, предлагается "выбрать себе":http://docs.opencv.org/doc/tutorials/tutorials.html урок по душе, и пройти его самостоятельно, при необходимости обращаясь за помощью.
+
+h2. План занятия
+
+h3. Теоретическая часть
+
+# Ответы на вопросы
+# Вводная информация
+** Понятие локальных особенностей, детекторы и дескрипторы
+** Практическое применение features2d модуля (AR, stitching, TOD)
+# Разбор приложения для практического занятия
+
+h3. Практическая часть
+
+# Запустить простое OpenCV приложение на своей машине ("пример":http://docs.opencv.org/doc/tutorials/introduction/load_save_image/load_save_image.html#load-save-image).
+# Запустить приложение для детектирования плоского текстурного объекта согласно "инструкции":http://docs.opencv.org/doc/tutorials/features2d/feature_homography/feature_homography.html#feature-homography. Тестовые изображения прикреплены к данной странице ниже.
+# Задания:
+## Запустить приложение на собственном изображении. Для этого нужно сделать 2 снимка: плоское изображение объекта (скан) и его изображение в сцене. Стоит выбрать крупный объект с "богатой" текстурой, а также аккуратно вырезать эталонное изображение.
+## Преобразовать приложение таким образом, чтобы поиск объекта осуществлялся на видео. Для работы с камерой необходимо использовать класс "@VideoCapture@":http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture.
+## Вставить замер времени работы алгоритма ("@getTickCount@":http://docs.opencv.org/modules/core/doc/utility_and_system_functions_and_macros.html#gettickcount, "@getTickFrequency@":http://docs.opencv.org/modules/core/doc/utility_and_system_functions_and_macros.html#gettickfrequency).
+## Сократить время работы за счет вынесения подсчета дескрипторов для эталонной картинки из тела цикла.
+## Попробовать "@BFMatcher@":http://docs.opencv.org/modules/features2d/doc/common_interfaces_of_descriptor_matchers.html#bfmatcher. Внимание: следует использовать метрики сравнения, соответствующие выбранным дескрипторам.
+## Попробовать другие детекторы особых точек, например SIFT, ORB ("features2d":http://docs.opencv.org/modules/features2d/doc/feature_detection_and_description.html, "nonfree":http://docs.opencv.org/modules/nonfree/doc/feature_detection.html).
+# Дополнительные примеры (https://github.com/Itseez/opencv/blob/2.4/samples/cpp/):
+## matching_to_many_images.cpp
+## brief_match_test.cpp
+## descriptor_extractor_matcher.cpp
+## detector_descriptor_evaluation.cpp
+## detector_descriptor_matcher_evaluation.cpp
+## freak_demo.cpp
+## generic_descriptor_match.cpp
+## matcher_simple.cpp
+## video_homography.cpp
+## Python: samples/python2/feature_homography.py, http://www.youtube.com/watch?v=FirtmYcC0Vc
+
+h2. Приложения

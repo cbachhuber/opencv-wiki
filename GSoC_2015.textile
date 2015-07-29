@@ -1,0 +1,384 @@
+h1. *Ideas Page for OpenCV Google Summer of Code 2015 (GSoC 2015)*
+
+"We are an accepted organization in GSoC 2015!":http://www.google-melange.com/gsoc/org2/google/gsoc2015/opencv
+
+
+*OpenCV 3D recognition and pose from last year.*
+!images/3D_recog.jpg!
+
+----
+
+h2. General Information:
+
+* "GSoC 2015 site: http://www.google-melange.com/gsoc/homepage/google/gsoc2015":http://www.google-melange.com/gsoc/homepage/google/gsoc2015
+* Mailing list for OpenCV GSOC 2015: opencv-gsoc-2015@googlegroups.com
+** Group site https://groups.google.com/forum/#!forum/opencv-gsoc-2015
+* "Timeline for GSoC 2015":http://www.google-melange.com/gsoc/events/google/gsoc2015
+
+** *Next important dates:*
+*** -Feb 20 19:00 UTC: Organization Application Deadline.- *DONE!*
+*** -Mar 02 19:00 UTC: List of accepted Organizations.- *We're in!*
+*** -Mar 16 16:00 UTC: Student Application period begins!- *Students Apply!*
+*** -Mar 27 19:00 UTC: Student Application period ends!- *Closed*
+*** -Apr 13 Deadline for OpenCV to request # of slots.- *Submitted*
+*** -Apr 15 Google publishes how many slots we get.- *Excellent!*
+*** -Apr 21 Try to eliminate duplication of students.-
+*** -Apr 24 IRC for OpenCV to resolve all duplications.-
+*** -Apr 27 19:00 UTC: Accepted students announced.-
+*** -May 25 Let Coding begin!-
+*** -Jun 26 19:00 UTC: Mid term evaluation begins.- *Pull requests must be in*
+*** -Jul 03 19:00 UTC:  Mid term end.-
+*** Aug 21 19:00 UTC: Coding stop; Pull requests must be in; Mentors: final evaluation begins...
+*** Aug 28 19:00 UTC: Final evaluation deadline; Students begin submitting code.
+*** Sept 25 19:00 UTC: Deadline for Google Code submission
+*** Oct 24-25: Mentor Summit!
+
+* we'll create a video just like we did in the
+** "OpenCV GSoC 2014 Movie":https://www.youtube.com/watch?v=3f76HCHJJRA
+** "OpenCV GSoC 2013 Movie":http://www.youtube.com/watch?v=_TTtN4frMEA
+
+*Times:*
+*  UTC to PDT (California uses PST in the winter (from Nov 1st) and PDT in the summer (from March 8)).
+** "utc time converter":http://www.timebie.com/std/gmt.php
+
+*Resources:*
+
+* "OpenCV Developers Site":http://code.opencv.org/projects/opencv/wiki
+* "OpenCV User's Site":http://opencv.org
+* "How_to_do_a_pull_request/How_to_Contribute_Code":How_to_contribute
+* Source Code can be found at "GitHub":https://github.com/Itseez/opencv.
+** To get the source code, point your git client to @git://github.com/Itseez/opencv.git@. Here are "instructions":Working_with_OpenCV_git_repository.
+<pre>
+git clone git://github.com/Itseez/opencv.git
+</pre>
+** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: git://code.opencv.org/opencv_attic.git.
+** Also OpenCV Extra was put to a separate repository: git://code.opencv.org/opencv_extra.git.
+* [[OpenCV_Development_Process]]
+** "Developer_meeting_notes":Meeting_notes
+
+h2. How you will be evaluated if you are an accepted student
+
+* Student projects to be paid only if:
+** *Midterm:*
+*** You must generate a pull request
+**** That builds
+**** Has at least stubbed out functionality
+**** With appropriate Doxygen documentation
+**** Has at least stubbed out unit test
+**** Has a stubbed out example of use that builds
+** *End of summer:*
+*** A full pull request
+**** Full Doxygen documentation
+**** A good unit test
+**** Example of use code
+*** Create a (short!) Movie (preferably on Youtube, but any movie) that demonstrates your code
+**** We use this to create an overall summary. Past years:
+***** "The 2014 Movie":https://www.youtube.com/watch?v=3f76HCHJJRA
+***** "The 2013 Movie":https://www.youtube.com/watch?v=_TTtN4frMEA
+
+
+h2. For students interested in applying
+
+# You *must* already know how to program well in C++
+** Some projects may require Python or Matlab skills
+# Discuss projects below or other ideas with us https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2015
+# Go to the "GSoC site":http://www.google-melange.com/gsoc/homepage/google/gsoc2015 and sign up
+# Post the project from below or your own agreed on project on the GSoC site to the Open Source Computer Vision organization
+
+h2. For computer vision professionals interested in mentoring
+
+# Go to the "GSoC site":http://www.google-melange.com/gsoc/homepage/google/gsoc2015 and sign up.
+# Request to be a mentor for OpenCV there.
+# We accept or reject you
+# Students submit projects and you
+** find a project you want to mentor (several students might try for the same project)
+** contact us about it through opencv-gsoc-2015@googlegroups.com so we can be sure there is not someone already handling that project
+** contact the students to assess which one if any are capable of coding that up in a summer.
+# We get a slot allocation from Google, the administrators then _"spend"_ the slots in order of priority
+# Students must finally actually accept to do that project (some sign up for multiple organizations and then choose)
+
+*If* you are accepted as a mentor *and* you find a suitable student *and* we give you a slot *and* the student signs up for it, +*then*+ you are a mentor.
+** It sounds harder than it is.
+
+
+<pre>
+\/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/
+</pre>
+
+h1. 2015 Project Ideas:
+
+*Students may propose their own projects (give us a clear summary and why you can do this project). However, below are some of our priorities for this year* Contact us and/or discuss ideas at https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2015
+
+_These are not in order of priority_
+
+*1 Google Cardboard*
+* Do visual odometry, SLAM etc for Google Cardboard
+
+*2 Projection mapping (Projected Augmented Reality)*
+* Calibrate a camera to a projector
+* Put out structured light to learn the 3D map of what's in front of the camera
+* Project the camera image, suitably rotated and shifted onto the scene
+* Unity or some other program to start transforming the scene for projection mapping
+** See http://www.creativebloq.com/video/projection-mapping-912849 to get ideas of what you can do with this
+
+*3 Update OpenCV file storage so that it's readable by Python in OpenCV (move to YAML 1.2 Edition 3)*
+* Mentor Prasanna
+* OpenCV C++ writes out its own YAML tags which makes it incompatible with it's own Python and with external python readers
+* Speedup fs reading/writing, add JSON support, add base64 (+RLE) support for large amounts of numerical data
+* References
+** YAML http://www.yaml.org
+** Problem statement: http://stackoverflow.com/questions/11141336/filestorage-for-opencv-python-api
+
+*4 Stereo correspondence improvements*
+* More accurate and faster stereo correspondence (StereoBM/StereoSGBM) by using LBP/BRIEF/DAISY etc. per-pixel descriptors instead of sum-of-absolute-differences.
+
+*5 Self-contained video codec(s)*
+* There is draft version of self-contained motion jpeg encoder to be integrated to OpenCV.
+* We will also need decoder, 12-bit jpeg support, multi-threaded encoder and decoder.
+* There are some other codecs, like libvpx, which we can support and link right into highgui, without dependency from ffmpeg/libav.
+
+*6 Deep learning*
+* It would be cool if OpenCV could load and run deep networks trained with popular DNN packages like Caffe, Theano or Torch.
+* GPU/OpenCL optimization and/or other optimizations (that can partly be contributed back to the upstream projects) are also encouraged.
+
+*7 Better interactive camera calibration*
+* Modern algorithms would allow us to recompute camera parameters after almost each frame, compute reprojection error, compute confidence intervals for the parameters.
+* the partially occluded calibration patterns could be handled somehow to, especially if we want to estimate intrinsic parameters only.
+* the application may show us the areas where the corner borders have been shown so that user can see how good are the data
+
+*8 Create a much better calibration target, we will call it "Charuco*
+* We know how to combine Aruco targets with checker boards to create a "super calibration" object
+* It also can express ~1 billion distinct codes
+* Implement  this for OpenCV
+** "Aruco target finding description":http://www.uco.es/investiga/grupos/ava/node/26
+** Great overview
+*** "Automatic generation and detection of highly reliable fiducial markers under occlusion":http://www.uco.es/investiga/grupos/ava/sites/default/files/GarridoJurado2014.pdf
+** A similar system to Arcuo: "AprilTag: A robust an dflexible visual fiducial system":http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5979561&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5979561
+
+*9 Color Calibration and white balance*
+* With McBeth chart and with gray world algorithm (improve exisiting color constancy algorithms)
+* Possibly collect deep learning way of doing this (needs large training set)
+
+*10 Realtime image preprocessing algorithms (real time on mobile)*
+* We and many other OpenCV users would definitely enjoy very fast denoising, color improvements, white balance etc. algorithms.
+
+*11 Tracking improvements*
+* TLD algorithm is implemented in OpenCV, but it needs improvements and optimizations.
+* ASM/AAM can also be implemented, as well as the particle filter.
+
+
+*12 PBM (part-based models) improvements*
+* There is latentsvm package in opencv_contrib that needs to be improved (quality-wise and speed-wise).
+* Adding training, even if it involves execution of external svmperf or other tool, is definitely appreciated too.
+
+*13 Improving ICF/ACF + <some>Boost training and detection*
+* In opencv_contrib there is initial version of the training application and detector based on integral channel features and boosting. Further improvements of this part would be really useful.
+
+*14 lua+OpenCV*
+* the other language that is now used more often for ML and CV (thanks to Torch) is Lua; there are old bindings for a tiny part of OpenCV; could be useful to extend our autogenerated bindings to Lua.
+
+*15 human interaction*
+* gesture recognition
+* human skeleton based on 2d or 3d
+
+*16 SfM*
+* update libmv to OpenMVG and get the 3d viz from OpenCV
+* Make the Structure from Motion Module coherent
+
+*17 Quad Rotor Contrib*
+* Apply much of the above into a quad rotor drone automatic tracking, mapping navigation etc module
+
+
+
+<pre>
+/\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\ /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\
+</pre>
+
+
+h1. Accepted Projects for OpenCV GSoC 2015:
+
+OpenCV GSoC 2015 students, projects, mentors are below. *WHEN THEY ARE KNOWN*
+
+
+*GSoC Progress. Need Pull requests (don't have to be complete) to pass by July 3rd*
+
+*Mailing Lists (only for use of Mentors and Students, please to not request to join these lists otherwise):*
+* Mentors
+** opencv-gsoc2015-mentors
+* Students
+** opencv-gsoc2015-students
+
+* "How_to_do_a_pull_request":How_to_contribute
+
+*Pre-Midterm status:*
+* *Pull Request In* Antonella Cascitelli - Vladimir Tyan (terran.itx@gmail.com): TLD improvements - https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/auron/5629499534213120.
+* *Pull Request In* Bo Li - Baisheng Lai (laibaisheng@gmail.com). Omnidirectional Cameras Calibration and Stereo 3D Reconstruction. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/baisheng/5629499534213120
+* _*No Pull Request*_ Vincent Rabaud - Edgar Riba (edgar.riba@gmail.com). Structure From Motion module. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/edgarriba/5693417237512192
+* *Pull Request In* Bence Magyar - Jiaolong Xu (jiaolongxu@gmail.com). Improving PBM in OpenCV. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/jiaolong/5718998062727168
+* *Pull Request In* Fernando J. Iglesias Garcia - Laksono Kurnianggoro (kurnianggoro@gmail.com). Real-time Multi-object Tracking using Kernelized Correlation Filter. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/kurnianggoro/5629499534213120
+* _*No Pull Request*_, but previously Vadim Pisarevsky - Lluis Gomez (lgomez@cvc.uab.es). Improve and expand Scene Text Detection module in OpenCV. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/lluisgomez/5751725713522688
+* _*No Pull Request*_ Michael Harville, Gary Bradski - Naoto Hieda (micuat@gmail.com). Projection mapping (Projected Augmented Reality). https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/micuat/5707702298738688
+* *Pull Request In* Sergei.Nosov@itseez.com - Mircea Paul Muresan (mmp_mircea@yahoo.com). Stereo correspondence improvements. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/mmp131316/5741031244955648[Andrey can not mentor the student. Does anyone want to take one?]
+* *Pull Request In* Delia, Stefano Fabri, Claudia Rapuano - RobertaRavanelli (roberta.ravanelli@uniroma1.it). Structured-Light System Calibration for OpenCV. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/roberta_ravanelli/5676830073815040
+* "done" Pull Maksim Shabunin - Alexander Bokov (sbokov01@gmail.com). Recent advances in edge-aware filtering. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/sbokov/5629499534213120
+* _*No Pull Request*_ Prasanna, Gary Bradski - Sergio Garrido (sgarrido2011@gmail.com). Charuco board: Chessboard+ArUco for camera calibration. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/sgarrido/5629499534213120
+* _*No Pull Request*_ Alexander Bovyrin - Vlad Shakhuro (shahurik@gmail.com). ICF detector improvements. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/shahurik/5717271485874176
+* *Pull Request In* Vadim Pisarevsky - Seon-Wook Park (seon.wook@swook.net). Real-time image preprocessing on ARM. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/swook/5798429187899392
+* *Pull Request In* Anatoly Baksheev, Douglas Lee - Vitaliy Lyudvichenko (ludv1x@yandex.ru). Implementation of universal interface for deep neural network frameworks. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/vludv/5657382461898752
+* *Pull Request In* Manuele Tamburrano, Stefano Fabri - Yida Wang (wangyida37@gmail.com). Deep Learning & GPU Implementation Proposal. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/wangyida/5629499534213120
+
+Project notes will be compiled "here":https://sites.google.com/a/opencv.org/opencv/gsoc-2015-project-notes .
+
+
+
+h2. Mentors
+
+*Actual signed up mentors*
+
+* Alexander Mordvintsev	zzznah(+)gmail.com
+* Sid Bao	ybao(+)magicleap.com
+* Vincent Rabaud	vincent.rabaud(+)gmail.com
+* Vadim Pisarevsky	vadim.pisarevsky(+)gmail.com
+* Adrian Kaehler	therealadrian(+)gmail.com
+* Terry Boult	tboult(+)vast.uccs.edu
+* spmallick	spmallick(+)taaz.com
+* Serge Belongie	sjb344(+)cornell.edu
+* Stefano	s.fabri10(+)gmail.com
+* Prasanna	pras.bits(+)gmail.com
+* Pablo Alcantarilla	pablofdezalc(+)gmail.com
+* Bence Magyar	mw.mzperx(+)gmail.com
+* Manuele	manuele.tamburrano(+)gmail.com
+* Grace Vesom	grace.vesom(+)gmail.com
+* Open Source Computer Vision Library (OpenCV)	garybradski(+)gmail.com
+* Douglas Lee	dougabug(+)gmail.com
+* Claudia Rapuano	c.rapuano(+)gmail.com
+* Antonella Cascitelli	antonellacascitelli(+)gmail.com
+* Anatoly Baksheev	anatoly.baksheev(+)itseez.com
+* Alexander	alexander.shishkov(+)itseez.com
+* Alexander Smorkalov	alexander.smorkalov(+)itseez.com
+* Alexander Bovyrin	alexander.bovyrin(+)itseez.com
+
+
+
+In the below, get rid of the ''-delete-'' to make the emails work.
+
+Anatoly Baksheev
+Researcher, Vision Algorithms on GPU
+Argus/Itseez
+-delete-Anatoly.Baksheev@-delete-itseez.com
+
+Alexander Bovyrin
+PhD, Senior Researcher
+Argus/Itseez founder
+NNU Lecturer
+-delete-alexander.bovyrin@-delete-itseez.com
+
+Gary Bradski
+Founder, Industrial Perception Inc.
+Consulting Prof. Stanford U.
+OpenCV Founder, Technical Content Owner, GSoC Admin
+Co-author of Learning OpenCV Book
+http://www.willowgarage.com/pages/people/gary-bradski-senior-researcher
+-delete-garybradski@-delete-gmail.com
+
+Antonella Cascitelli
+Grad student, University of Rome
+-delete-antonellacascitelli@gmail.com
+
+Eric Christiansen
+PhD, UCSD
+-delete-echristiansen@-delete-cs.ucsd.edu
+
+Stefano Fabri
+CRR Team leader, University of Rome
+-delete-s.fabri10@gmail.com
+
+Victor Eruhimov
+OpenCV founding team/Senior Researcher
+Argus/Itseez founder
+NNU Lecturer
+-delete-relrotciv@-delete-googlemail.com
+
+Adrian Kaehler
+Principle Engineer, Applied Minds
+Co-author of Learning OpenCV Book.
+-delete-therealadrian@-delete-gmail.com
+
+Peter Karasev
+PhD Student, MINERVA Research Group
+Georgia Tech
+-delete-karasevpa@-delete-gmail.com
+
+Vadim Pisarevsky
+OpenCV founding team/Czar
+-delete-Vadim.-delete-Pisarevsky@-delete-gmail.com
+
+Manuele Tamburrano
+Grad Student, University of Rome
+-delete-manuele.tamburrano@gmail.com
+
+Vincent Rabaud
+Principle Engineer, Aldebaran Robotics
+-delete-vincent.rabaud@-delete-gmail.com
+
+Claudia Rapuano
+Grad student, University of Rome
+-delete-c.rapuano@gmail.com
+
+Grace Vesom
+Senior Software Engineer, Magic Leap
+-delete-grace.vesom@-delete_gmail.com
+
+Bence Magyar
+Pal Robotics
+-delete-bence.magyar@-delete-pal-robotics.com
+
+Pablo Alcantarilla
+Toshiba Research Europe Ltd.
+-delete-pablofdezalc@-delete-gmail.com
+
+h3.  Back up Mentors
+
+Mark Asbach
+Fraunhofer IAIS
+Schloss Birlinghoven
+Sankt Augustin, Germany
+http://mmprec.iais.fraunhofer.de/asbach.html
+-delete-mark.asbach@-delete-iais.fraunhofer.de
+
+
+Nicolas Saunier, Ph.D.
+Assistant Professor
+Civil, Geological and Mining Department (CGM)
+École Polytechnique de Montréal
+http://nicolas.saunier.confins.net
+-delete-nicolas.saunier@-delete-polymtl.ca
+
+
+Alexander Mordvintsev
+Software Engineer
+http://znah.net
+-delete-zzznah@-delete-gmail.com
+
+Andrey Morozov
+Software Engineer
+Argus/Itseez
+-delete-andrey.morozov@-delete-itseez.com
+
+h2. OpenCV Org. Application to GSoC 2015
+
+"OpenCV GSoC Application":http://code.opencv.org/projects/gsoc2013/wiki/GSoC2013OpenCVApplication
+
+h2. Previous Years
+
+* 2014 "GSoC 2014 Ideas Page":http://code.opencv.org/projects/opencv/wiki/GSoC_2014
+** "The 2014 Movie":https://www.youtube.com/watch?v=3f76HCHJJRA
+* 2013 "GSoC 2013 Ideas Page":http://code.opencv.org/projects/gsoc2013/wiki
+** "The 2013 Movie":https://www.youtube.com/watch?v=_TTtN4frMEA
+* 2012 Ideas site http://code.opencv.org/projects/gsoc2012/wiki/Wiki/
+* 2011 Ideas site http://opencv.willowgarage.com/wiki/GSOC_OpenCV2011
+** 2011 Application GSoC page is http://opencv.willowgarage.com/wiki/GSoC2011OpenCVApplication
+* 2010 Ideas site http://opencv.willowgarage.com/wiki/GSOC_OpenCV2010
+** 2010 Application page http://opencv.willowgarage.com/wiki/ApplicationGSOC2010
+
+----

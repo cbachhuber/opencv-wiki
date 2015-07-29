@@ -1,0 +1,195 @@
+
+
+h1. Windows 7 and TortoiseGit contribution guide
+
+h2. Prerequisites
+
+h3. *System configuration*
+
+* Windows 7 x64 bit operating system.
+* Git 1.8.1 & TortoiseGit 1.8.4.
+
+h3. *Setting up*
+
+# Register at GitHub.
+# Download & install "Git":http://code.google.com/p/msysgit/downloads/list.
+# Download & install "TortoiseGit":http://code.google.com/p/tortoisegit/wiki/Download.
+
+h2. Forking OpenCV repository
+
+Firstly, *configure your GitHub page* to fork the original OpenCV repository:
+
+# Go to GitHub.
+# Open the "Itseez OpenCV page":https://github.com/Itseez/opencv.
+# Press the fork icon on the right hand top side of the page:
+
+!images/press_fork_button.png!
+
+Create a folder on your system to *sync up the OpenCV source code* from your fork:
+
+* Create a folder named 'opencv_source' in your systems root path (or your own selection).
+* Right click on the folder, selecting the Git Clone option:
+
+!images/git_clone.png!
+
+* Fill in the proper information into the configuration panel. Replace "StevenPuttemans" username with your GitHub username and remove the extra opencv folder that is added to the directory structure:
+
+!images/clone_existing_repository.png!
+
+* Press OK and let the folder sync up, until full synchronization has passed:
+
+!images/synchronization_with_Itseez_git.png!
+
+* Open the @.git\hooks@ subfolder and rename @pre-commit.sample@ to @pre-commit@:
+
+!images/git_hook.png!
+
+h2. Making changes
+
+h3. *Creating new branch*
+
+Create a new branch on your Git repository, to apply changes. Do not forget to create a new branch for every single update you want to do! _These branches are local, but will be pushed to github after editing the source code._
+
+* Right click on folder.
+* Select TortoiseGit > Create Branch:
+
+!images/create_branch.png!
+
+Select the correct options, choose a correct name for your branch, base it on the *master branch* for complete *new functionality*, or for *minor fix*, base it on *2.4 branch*:
+
+!images/choose_base_branch.png!
+
+* Hit the OK button and let it configure your repository. Changes might not change immediatly on the GitHub page, because it sync's in a lapsed time interval. Don't worry about that.
+
+!images/switched_to_branch.png!
+
+h3. *Modifying existing source*
+
+Select the file you want to adapt (in our case it's an adding extra comment to a source code file), adapt the the file accordingly.
+
+* In your configured GitHub folder on your machine, adapt the file you want.
+* In our case, we open up the file *C:\opencv_source\apps\traincascade\traincascade.cpp*.
+* Add your lines of code to the source code:
+
+!images/modify_opencv_source.png!
+
+
+* Save the file so that your adaptations are stored onto the system.
+* Your folder will indicate that a change has been made, by placing an exclamation mark:
+
+!images/opencv_source_folder_has_changed_files.png!
+
+h3. *Committing and pushing changes*
+
+* Commit your adapted file to GitHub by selecting the commit->bugfix_1 option:
+
+!images/commit_changes.png!
+* The first time, the system will ask you to input your username and email, giving the following warning. Press *Yes*, fill in credentials and press *OK*:
+
+!images/set_username_alert.png!
+
+!images/set_username_and_email.png!
+
+* A commit window of TortoiseGit will appear, showing you the files that were adapted. It requires you to give a complete but brief description of your adaptation, then allows you to push the file. Select only the files you want to commit to the repository!
+
+!images/commit_window.png!
+
+* At the next window, explicitly tell the software to push the adaptations!
+
+!images/select_push_changes.png!
+
+* An interface will pop up to push the data and local branches (which you made earlier). Be sure to select the option to push all branches:
+
+!images/push_changes.png!
+
+h2. Opening a pull request
+
+h3. *Finding your branch on GitHub*
+
+Your system is now *all sync'd up with GitHub*, lets make sure by checking.
+
+* The branch you created for the fix should be visible in the branch setup. Select the one you just created:
+
+!images/check_branch_with_bugfix_on_github.png!
+
+* Check the file and see if adaptations worked. Also check if other branches stay clear of changes, which should be if you did everything correct:
+
+!images/check_commit_on_github.png!
+
+h3. *Creating a pull request*
+
+* Go to the GitHub website and open your own repository.
+* Click on the pull-requests button:
+
+!images/click_on_pull_requests.png!
+
+* Push the 'new pull request' button:
+
+!images/push_new_pull_request_button.png!
+
+Since we have only a comment to add, we would like to select the 2.4 branch, not the master branch, which is for future functionality mainly, not for small bugfixes.
+
+* Start by selecting the option to compare over forks:
+
+!images/edit_branches_for_pull_request.png!
+
+* Then select the correct branches of each fork to compare. For StevenPuttemans/opencv it's 'bugfix_1' and '2.4' for the Itseez/opencv:
+
+!images/select_branches_for_pull_request.png!
+
+* Immediatly we can see, that there is a single file found, which is different between the current '2.4' branch on Itseez/opencv and the 'bugfix_1' branch on StevenPuttemans/opencv. We now assign a pull request at this change (which is basically asking to upload your code to the sourcecode of OpenCV).
+* Click to create a pull request at the designated button (see previous image).
+* Do not forget to add some explanation on what your add-on does exactly. Then click the send pull request button:
+
+!images/add_pull_request_description.png!
+
+* *This all will result in an actual pull request being pushed towards the source code manager*. *Congratulations!* Now wait and go check from time to time, to make sure the developpers don't ask you to change something drastically:
+
+!images/pull_request_created.png!
+
+A last step you should consider, is going back to the "Issue tracker":http://code.opencv.org and add the link to your pull request at the actual bugfix task.
+The bug will be then -automatically- closed, once your pull request has been merged.
+
+h2. Keeping your fork up-to-date
+
+_When creating a fork to the GitHub repository, you fork it as it is on that moment. However, when adding pull requests, on a later moment, you might want to add changes to merged stuff. Then you notice all of a sudden your fork doesn't contain new commits from OpenCV repository, so you need to update your fork._
+
+h3. *Tracking the OpenCV repository*
+
+* Go to your openCV folder that is linked with your TortoiseGIT/GIT client.
+* Open the GIT bash client (which is way less complicated than the TortoiseGIT interface for this.
+
+!images/open_git_bash.png!
+
+* If your GIT doesn't start up on the master branch, make sure to type in the command
+
+!images/checkout_master.png!
+
+* Create the upstream connection to be able to retrieve all changes
+
+!images/add_upstream.png!
+
+h3. *Pulling new changes to your local copy*
+
+* Retrieving the changes of the remote master to your local master branch is easy by the following command
+
+!images/pull_master.png!
+
+* Identical for the 2.4 branch of the remote to your local 2.4 branch. Do not forget to first checkout to the 2.4 branch, else this will screw up your master
+
+!images/pull_2_4.png!
+
+h3. *Updating your fork*
+
+* Close down the git bash client. Updating is identical to pushing changes of a bugfix.
+* Right click on the folder and select push from TortoiseGIT interface.
+
+!images/update_fork.png!
+
+* Make sure to select the push all branches. Press OK.
+
+!images/push_all_branches.png!
+
+* Output will tell you that update of master and 2.4 branch was successful.
+
+!images/successful_update.png!

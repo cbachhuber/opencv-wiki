@@ -1,0 +1,36 @@
+h1. MSER
+
+h2. OpenCV functions for MSER extraction
+
+(From the source code: src/cv/cvmser.cpp):
+
+# there are two different implementation of MSER: one for grey image, one for color image
+# the grey image algorithm is taken from: Linear Time Maximally Stable Extremal Regions; the paper claims to be faster than union-find method; it actually get 1.5~2m/s on my centrino L7200 1.2GHz laptop.
+# the color image algorithm is taken from: Maximally Stable Colour Regions for Recognition and Match; it should be much slower than grey image method ( 3~4 times ); the chi_table.h file is taken directly from paper's source code which is distributed under GPL.
+# though the name is *contours*, the result actually is a list of point set.
+
+h2. Parameters description
+
+(From the source code: features2d/features2d.hpp):
+
+<pre>
+int delta; //! delta, in the code, it compares (size_{i}-size_{i-delta})/size_{i-delta}
+
+int maxArea; //! prune the area which bigger than maxArea
+
+int minArea; //! prune the area which smaller than minArea
+
+float maxVariation; //! prune the area have simliar size to its children
+
+float minDiversity; //! trace back to cut off mser with diversity < min_diversity
+
+The next few params for MSER of color image:
+
+int maxEvolution; //! for color image, the evolution steps
+
+double areaThreshold; //! the area threshold to cause re-initialize
+
+double minMargin; //! ignore too small margin
+
+int edgeBlurSize; //! the aperture size for edge blur
+</pre>

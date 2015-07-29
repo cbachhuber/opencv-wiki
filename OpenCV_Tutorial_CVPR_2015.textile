@@ -1,0 +1,36 @@
+h1. OpenCV Tutorial CVPR 2015
+
+Welcome to the CVPR 2015 OpenCV 3.0 tutorial!
+
+*Description:* We will overview the new OpenCV 3.0 Release -- What's changed, what's improved, what's added. We will then step you through hands-on with a series of exercises from simple to complex. All coding will be done via local connection to a server. You only need a browser.
+
+Bring your laptop, we will be doing hands on work hosted on a local server through your web browser.
+
+h2. Location & Time
+
+*Time:* 08:30-12:30 (Half Day -- Morning)
+*Location:* Room 202
+
+h2. Program
+
+<under construction>
+
+** *08:30-08:50:* OpenCV 3.0 overview, architecture, what's in it: http://is.gd/niZvJu
+** *08:50-09:00:* Current GSOC projects, Future directions of OpenCV
+** *09:00-10:00:* Speed session -- OpenCV HAL, T-API (OpenCL), performance tips & tricks: http://is.gd/ShvMZE
+** *10:00-10:15:* _*Break*_
+** *10:15-11:15:* OpenCV modules -- The cool stuff you likely don't know about: http://is.gd/izlOrM
+** *11:15-11:30:* _*Break*_
+** *11:30-12:30:* Hands-on session -- Beginners introduction, exercises coded through a browser with code running on a local server
+*** Run code on the server through your browser http://bit.ly/opencv_runbox
+
+
+h2. Presenters
+
+*Dr. Gary Rost Bradski* is Chief Scientist of Computer Vision at Magic Leap.  Gary founded OpenCV at Intel Research in 2000 and is currently CEO of nonprofit OpenCV.org.  He ran the vision team for Stanley, the autonomous vehicle that completed and won the $2M DARPA Grand Challenge robot race across the desert.  Dr. Bradski helped start up NeuroScan (sold to Marmon), Video Surf (sold to Microsoft), and Willow Garage (absorbed into Suitable Tech).  In 2012, he founded Industrial Perception (sold to Google, August 2013).  Gary has more than 100 publications and more than 30 patents and is co-author of a bestseller in its category Learning OpenCV: Computer Vision with the OpenCV Library, O'Reilly Press.
+
+*Vadim Pisarevsky* is the chief architect of OpenCV.  He graduated from NNSU Cybernetics Department in 1998 with a  Master’s degree in Applied Math.  Afterwards, Vadim worked as software engineer and the team leader of OpenCV project at Intel Corp in 2000-2008.  Since May 2008 he is an employee of Itseez corp and now works full time on OpenCV under a Magic Leap contract.
+
+*Vincent Rabaud* is the perception team manager at Aldebaran Robotics.  He co-founded the non-profit OpenCV.org with Gary Bradski in 2012 while a research engineer at Willow Garage.  His research interests include 3D processing, object recognition and anything that involves underusing CPUs by feeding them fast algorithms.  Dr. Rabaud completed his PhD at UCSD, advised by Serge Belongie.  He also holds a MS in space mechanics and space imagery from SUPAERO and a MS in optimization from the Ecole Polytechnique.
+
+*Grace Vesom* is a senior engineer in 3D vision at Magic Leap and Director of Development for the OpenCV Foundation.  Previously, she was a research scientist at Lawrence Livermore National Laboratory working on global security applications and completed her DPhil at the University of Oxford in 2010.

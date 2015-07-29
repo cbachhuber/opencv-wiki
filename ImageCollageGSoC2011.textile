@@ -1,0 +1,40 @@
+h1. Photo Collage
+
+*MENTOR:* _Gary Bradski_
+
+Like many people these days, I take far too many digital pictures to even look back through. As a result, after a family trip or  some other occasion, I collect the pictures and produce a "collage":http://www.google.com/search?sourceid=chrome&ie=UTF-8&q=define:collage overlaying the "pictures together":http://images.google.com/images?um=1&hl=en&tbs=isch:1&q=collage&sa=N&start=0&ndsp=18&social=false complete with text and often times "speech bubbles":http://images.google.com/imgres?imgurl=http://z.about.com/d/graphicssoft/1/5/F/C/speechballoonex.jpg&imgrefurl=http://graphicssoft.about.com/od/photoshop/ss/textballoons.htm&usg=__72CkWAux3jWIkh_vvjyALzZSvOI=&h=392&w=400&sz=24&hl=en&start=57&sig2=34Sv30Es8pTDSXrGQ8jgSQ&um=1&itbs=1&tbnid=JU7iqyHFzO4rzM:&tbnh=122&tbnw=124&prev=/images%3Fq%3Dspeech%2Bbubbles%26start%3D54%26um%3D1%26hl%3Den%26sa%3DN%26ndsp%3D18%26tbs%3Disch:1&ei=Rz6lS5GrDI7itQPbjIi9BA such as done in comic strips. I have used power point on windows and "comic life" on mac to do my collages. Neither of them do quite what I want, both have limits.  OpenCV has many algorithms that can be used to play with and improve images. I want to create an _*Open Collage*_ application using OpenCV.
+
+More on the project since many people seem to think I have some kind of exact "work specification" for this project.  I do not. People who have only experience rote learning or worked by specific orders will not do well at this. The goal of applicants should not be to "please the Prof" (me) it should be "I can make this really cool".
+
+Written to another:
+One of the "problems" is that there aren't very many details that I can specify. For those with lots of cameras on smart phones and high and low end cameras who produce lots of images (with my wife, kids and I, we probably produce >5000 images/year). We never really look through them, instead I've been just using powerpoint or Apple's Comic life to summarize trips. Sometimes using stitching to produce panorama. I'd like some software that makes it easy and fast to find images (keypoints, probably our new ORB descriptor/detector which is replacing SIFT/SURF to find similar scenes, and of course by time and geolocation), makes it easy to segment people or parts of images (GrabCut), alpha blend images or segments together, or easily move them, process images to expand or shrink, remove parts, people, put in parts, graphics, render into them, overlay text or render text into planar surfaces in a scene, or make comic book type of text. Maybe this should work in a browser, but it should have a very intuitive interface -- no reading how to run.  The final idea is to make story-summaries of trips and special events.
+
+This project does not have tight/school project like specs.
+
+h2. PROJECT: Open Collage
+
+h4. Project Description
+
+The framework should be set up to be easy to expand, intuitive to use (should be very simple to figure out even without instructions how to do most functions) and and easy to document the functionality in the program.  It should work well on the web and export to various formats.
+
+* *Worker:*
+** The worker(s) here must have
+** Artistic sense
+** C++
+** Web experience.
+
+This project may have 2 parts, Part A and Part B.
+
+The first may have more to do with automatic organization of image data, the second with user interface, segmentation and annotation.
+
+* *Demo:*
+** Be able to view image directories fast, grab and drop images, annotate with text and bubbles, segment out objects, blend them  in with other scenes and graphics.
+* *Short term:*
+** View many images, grab and drop in, add text lables, output in different file formats (I'd like pdf, the other formats are easy/already available in OpenCV).
+* *Medium goal:*
+** Add text bubbles
+** Add in ability to segment (use grabcut), perspective distortions, red-eye removal
+** other imaging effects.  Be creative but keep it intuitive.
+** Be able to link things (text, image, segmented images together) move them, align them, layer them
+* *Long goal:*
+** Image stitching, panoramas, face and object finding.

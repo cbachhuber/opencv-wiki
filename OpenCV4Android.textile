@@ -1,0 +1,32 @@
+h1. Android
+
+OpenCV4Android homepage is here: http://opencv.org/android. This wiki is for co-developers.
+
+h2. Submitting a bug
+
+Have you done your homework? Let's check it:
+
+# Please check that you use the "latest version":http://opencv.org/downloads.html of OpenCV4Android. Please also check "Release_Notes":Android_Release_Notes.
+# Please check the open "Android issues":http://code.opencv.org/projects/opencv/issues?query_id=4 on the tracker.
+# Ask "community":http://www.answers.opencv.org/ about your problem. May be your question was already "asked":http://www.answers.opencv.org/questions/scope:all/sort:activity-desc/tags:android/page:1/?
+
+If you submit a ticket, please provide the correct "Category" name - @android@. If you could not identify the cause of the error, please provide the following information in your ticket:
+* Version number of Android platform (all 3 components of the version - for example: 4.0.4). If you use custom ROM, name and version, for example cyanogenmod 9;
+* Full device model, for example Nexus 7 3G.
+* Exact CPU model of your device ("@adb shell cat /proc/cpuinfo@" command);
+* Output of "@adb logcat@" command. See section bellow how to get it in the right way;
+* Name of a sample if the problem is reproducible for any of the samples included into the binary package. Your own reproducer will be useful too.
+* If you can create a failing "JUnit_test":Android_Java_API_tests, it may greatly help us.
+
+h2. Logcat output
+
+1. Open console (cmd.exe for Windows, Konsole, terminal on Linux and Mac OS X)
+2. Clear logcat log by command adb logcat -c
+3. Redirect logcat output to file by command adb logcat > [path_to_log]/app_crash.log
+4. Run application and reproduce its crash
+5. Interrupt log file writing by pressing Ctrl+C in terminal, where logcat was running
+6. Attach log to the ticket as text file or in archive.
+
+h2. Developer documentation
+
+* "Building_OpenCV4Android_from_trunk":Building_OpenCV4Android_from_trunk.

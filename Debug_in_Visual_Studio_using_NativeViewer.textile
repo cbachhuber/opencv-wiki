@@ -1,0 +1,33 @@
+h1. Debug in Visual Studio using NativeViewer
+
+_This article is about debugging native C++ projects using Visual Studio 2010._
+
+Quick links: NativeViewer at "SourceForge":https://sourceforge.net/projects/nativeviewer/ and at "Visual Studio Gallery":http://visualstudiogallery.msdn.microsoft.com/657956e4-8e02-4764-8022-72a0c9cc5b17.
+
+We all spend a lot of time during debug of our projects. In Visual Studio we have such nice tools as "Watches" window and debugger tool-tips in the editor. These allow us to observe the values of variables determining state of our program.
+
+But what about images? How do we observe image content during debug? Usually the functions like "@imwrite@":http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html?highlight=imwrite#imwrite or "@imshow@":http://docs.opencv.org/modules/highgui/doc/user_interface.html#imshow are injected into code to spy over a certain image. But this approach has an obvious drawback: it requires a program rebuild to observe an image for which we don't have such instructions. In this article a tool named NativeViewer is described, which allows to view an image content in the same way the usual variables are sought. See the screenshot of the thumbnail image displayed during debug in Visual Studio 2010.
+
+!images/NativeViewer_screenshot_x0.5.png!
+
+h2. How to use
+
+NativeViewer is a Visual Studio 2010 extension in the form of VSIX package. Check the links at the top of this page to find downloads. Don't forget to go through the "Quick Start Guide":https://sourceforge.net/p/nativeviewer/wiki/QuickStartGuide before using. The project page at SourceForge is the homepage of the extension. Check it for the newer versions or the updated documentation.
+
+h2. When to use
+
+NativeViewer only works within the following conditions:
+
+* Native C++ code
+* Visual Studio 2010
+* Both x86 or x64 target platforms
+* Images of the @cv::Mat@ type with @CV_TYPE@ equal to @CV_8UC1@ or @CV_8UC3@
+* Colored images format @BGR@ or @RGB@
+
+The first constraint is by design. The others might be relaxed in the future versions.
+
+h2. How it works
+
+To get the underlying image content, NativeViewer uses the "Debugging Expression Evaluator Add-In":http://msdn.microsoft.com/en-us/library/8fwk67y3(v=vs.80).aspx. It exploits the @autoexp.dat@ file located in the Visual Studio directory and used for formatting debugger expansion strings. E.g. this file is the reason why you see the @std::vector@ content so well-formatted. The syntax of the @autoexp.dat@ allows calling an external library to format an expansion string. The access to the value of a formatted variable is provided to this library. The rest is paperwork.
+
+This approach has a bunch of drawbacks, so if you know the better solution - please, share it using the SourgeForge "discussions":https://sourceforge.net/p/nativeviewer/discussion or in any other appropriate way.

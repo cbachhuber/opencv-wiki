@@ -1,0 +1,284 @@
+
+
+h1.  !images/android_ocv_small.png! OpenCV for Android Release Notes
+
+h2. version:2.4.7
+
+_November, 2013_
+
+*Updates since 2.4.6*
+
+* Android NDK-r9 (x86, x86_64) support;
+* Android 4.3 support: hardware detector (Bugs #3124, #3265, #3270) and native camera (Bug #3185);
+* Fixed JavaCameraView slowdown (Bug #3033);
+
+*Known issues*
+
+* Native camera doesn't work on some devices (#1244, #2359, #2516, #3113, #3240, #3327)
+* Examples does not work on Android 2.2 emulator due to unsupported frame format (Android Emulator issue)
+* All open issues on Android: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+h2. version:2.4.6
+
+_July, 2013_
+
+*Updates since 2.4.5*
+
+* Correct front/back camera selection in Android app framework (#2839)
+* Android SDK r22 support
+* Android toolchain for CMake improved with Linaro NDK support and fixes for MIPS
+* various minor fixes (#2962, #2941, etc)
+
+*Known issues*
+
+* Native camera doesn't work on some devices (#1244, #2359, #2516)
+* Examples does not work on Android 2.2 emulator due to unsupported frame format (Android Emulator issue)
+* All open issues on Android: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+
+h2. version:2.4.5
+
+_April, 2013_
+
+*Updates since 2.4.4*
+
+* NDK r8e support
+* native activity sample using OpenCV Manager (#2062, #2855)
+* a couple of fixes in Java bindings (#2901, #2912)
+* minor updates in Android applications framework (#2840, #2876)
+
+*Known issues*
+
+* Native camera doesn't work on some devices (#1244, #2359, #2516)
+* Examples does not work on Android 2.2 emulator due to unsupported frame format (Android Emulator issue)
+* All open issues on Android: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+
+h2. version:2.4.4
+
+_March, 2013_
+
+*Updates since 2.4.3.2*
+
+* Android applications framework is updated. Extra color conversion to gray-scale is not needed now (#2594)
+* Android tutorial is updated
+* Data race in Java samples is fixed (#2593)
+* Android samples are reorganized, duplications are removed
+* Building of two OpenCV-dependent JNI libraries in a single 'Android.mk' is enabled (#2202)
+* OpenCV Manager local reference table overflow is fixed (#2759)
+* Eclipse import error on 'TargetApi annotation' is fixed
+* The 'OpenCV.mk' errors when building user JNI libs via 'ndk-build' and 'cmake' with non-default options are fixed
+
+*Known issues*
+
+* Native camera doesn't work on some devices (#1244, #2359, #2516)
+* Examples does not work on Android 2.2 emulator due to unsupported frame format (Android Emulator issue)
+* All open issues on Android: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+h2. version:2.4.3.2
+
+_December, 2012_
+
+*Updates since 2.4.3.1*
+
+* Android NDK r8d support.
+* Android documentation and tutorials updates.
+* New Tutorial-5 example demonstrating custom camera control.
+* Minor bug fixes and improvements in OpenCV Manager UI (#2565, #2595, #2660).
+* @JavaCameraView@ fix for Android 2.3.3 emulator (#2656).
+* General OpenCV library fixes (@imread@ #2602, @equalizeHist@, @cvStereoRectifyUncalibrated@ #2643).
+
+*Known issues*
+
+* There is data race in Tutorial 2 and 4 samples. It may result in application crash with assertion in @cvtColor@ function (#2593).
+* Native camera doesn't work on some devices (#1244, #2359, #2391, #2144).
+* Examples does not work on Android 2.2 emulator due to unsupported frame format (Android Emulator issue).
+* All android issues: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+h2. version:2.4.3.1
+
+_December, 2012_
+
+*Updates since 2.4.3*
+
+* Native camera fixed on Android 4.2.
+* SDK was updated for the latest Android developments tools (SDK r21, NDK r8c). OpenCV now can be compiled with clang.
+
+*Known issues*
+
+* There is data race in Tutorial 2 and 4 samples. It may result in application crash with assertion in @cvtColor@ function.
+* Native camera doesn't work on some devices (#1244, #2359, #2391, #2144).
+* All android issues: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+h2. version:2.4.3
+
+_November, 2012_
+
+*Updates since 2.4.3 rc*
+
+* OpenCV Manager now requires much less clicks from an end-user! Here is an overview of what was done. The OpenCV Manager now comes with OpenCV binaries inside, and separate OCV binary packages are not used anymore (can be removed from devices). We will keep them on market for a while, but please switch to 2.4.3 version. Also OpenCV-dependent application doesn't require restart after installation of Manager.
+* Fast Java camera/Native camera switching is implemented in _"Tutorial 2"_ sample application.
+* Updated Android "tutorials":http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html.
+
+*Known issues*
+
+* Native camera doesn't work on some devices (#1244, #2359, #2391, #2144).
+* All android issues: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+h2. version:2.4.3 rc
+
+_October, 2012_
+
+*Modifications and improvements*
+
+* Android Jelly Bean is now supported. Native camera for Jelly Bean is stable now. There are some issues with Java camera, they will be fixed before the official 2.4.3 release.
+* New Java samples framework. Samples are significantly refactored, we recommend you to look into the new architecture, because it resolves some issues of the old framework. New framework provides unified base for CV application including any of Java or Native cameras, custom view layout, easy Manager-based OpenCV initialization, proper application event handling: pause, resume, rotation, etc.
+* "Android tutorials":http://docs.opencv.org/doc/tutorials/introduction/android_binary_package/android_dev_intro.html are significantly improved. Javadoc "documentation":http://docs.opencv.org/java/ was also slightly updated.
+* MIPS architecture is now supported. OpenCV and OpenCV Manager are ready for MIPS devices. Native camera for Android 4.0.3 and 4.0.4 is supported.
+* More performance optimizations, especially on Tegra 3, check "OpenCV Tegra Demo":https://play.google.com/store/apps/details?id=org.opencv.imgdemo#?t=W251bGwsMSwxLDIxMiwib3JnLm9wZW5jdi5pbWdkZW1vIl0 application.
+
+*Known issues*
+
+* Native camera doesn't work on some devices (#1244, #2359, #2391, #2144).
+* Java camera is unstable. StartPreview crashes on some JB devices.
+* Fast Java camera/Native camera switching is not implemented yet.
+* All android issues: "query":http://code.opencv.org/projects/opencv/issues?query_id=4.
+
+h2. version:2.4.2
+
+_July, 2012_
+
+The main change in this release is an introduction of a new *library distribution model* (aka *OpenCV Manager*).
+Our goals and your benefits of the new model are described in " these slides.":https://docs.google.com/a/itseez.com/presentation/d/1EO_1kijgBg_BsjNp2ymk-aarg-0K279_1VZRcPplSuk/present#slide=id.p
+The *OpenCV Manager* (an Android service based solution) allows sharing a single instance of OpenCV library across many app-s (that diagrammatically decreases your app-s packages size), downloads the best matching to the target device binaries (e.g. *armeabi-v7a*) instead of all possible target platforms, allows OpenCV team deploying bugfixes/updates to the library via Google Play Market without re-installation of your app-s.
+
+The "package":http://sourceforge.net/projects/opencvlibrary/files/opencv-android/2.4.2/OpenCV-2.4.2-android-sdk.zip/download is totally reworked:
+* '.tar.bz2' format is changed to '.zip' because "most of our users":http://sourceforge.net/projects/opencvlibrary/files/opencv-android/stats/os use Windows
+* all the samples changed to use the *OpenCV Manager* API, they don't keep OpenCV binaries inside
+* all the samples Eclipse projects having JNI parts (@face-detector@, @tutorial 3@ and @tutorial 4@) contain CDT Builder configured for building the native libraries
+(look at the "tutorials":http://docs.opencv.org/doc/tutorials/introduction/android_binary_package/android_binary_package.html for details)
+* the *OpenCV Manager* and *binary packages* for *armeabi*, *armeabi-v7a* and *x86* arch-s are available on Google Play Market and will be installed on the first launch,
+but for devices _without_ internet access or _without_ Google Play Market (dev kits) we provided the necessary APKs in the @OpenCV-2.4.2-android-sdk/apk@ folder
+* the "tutorials":http://docs.opencv.org/doc/tutorials/introduction/android_binary_package/android_binary_package.html were updated
+
+
+h2. version:2.4.1
+
+_June, 2012_
+
+No significant Android-specific changes since 2.4.0.
+"~45 various bug fixes":http://code.opencv.org/projects/opencv/issues?fixed_version_id=5&set_filter=1&status_id=5 across the library
+See general OpenCV [[ChangeLog]] for details.
+
+
+h2. version:2.4.0
+
+_April, 2012_
+
+Binary package can be downloaded here: http://sourceforge.net/projects/opencvlibrary/files/opencv-android/2.4.0/.
+
+*Modifications and improvements*
+
+* Android native camera support for Android 3.x and 4.0.x. Better integration with standard Java camera, now the @SurfaceTexture@ class is used.
+
+* Android-x86 support.
+
+* Enabled multi-threading support with TBB (just few functions are optimized at the moment).
+
+* Javadoc documentation is added to the package (#1847).
+
+* Numerous Java API enhancements:
+** Improved Mat/Bitmap conversion
+** List<E> replaced with MatOfE for better performance
+** Added wrappers for more C++ functions
+** Reduced the number of overloads for methods
+** Numerous bug fixes
+
+* Updated "Java_samples":AndroidSamples
+** Samples are now compatible with Android 2.2 - 4.x
+** New modes for _image-manupilations_ sample (histograms and posterization)
+** Bug fix for _15-puzzle_ (#1853)
+
+*Limitations*
+
+* Video input/output is not supported
+* Work with N-dimensional matrices is limited (#1447)
+
+*Known Problems*
+
+The full list of open bugs on Android can be found "here":http://code.opencv.org/projects/opencv/issues?set_filter=1&f%5B%5D=status_id&op%5Bstatus_id%5D=o&v%5Bstatus_id%5D%5B%5D=1&f%5B%5D=tracker_id&op%5Btracker_id%5D=%3D&v%5Btracker_id%5D%5B%5D=1&f%5B%5D=category_id&op%5Bcategory_id%5D=%3D&v%5Bcategory_id%5D%5B%5D=15&f%5B%5D=&c%5B%5D=status&c%5B%5D=priority&c%5B%5D=subject&c%5B%5D=assigned_to&c%5B%5D=updated_on&group_by=category. Among them:
+* #1244 Native camera doesn't work on some Motorola devices
+
+h2. 2.3.1 (beta2)
+
+_August, 2011_
+
+*Modifications and improvements since 2.3.1 beta1*
+
+* Java API is greatly expanded. Currently about 700 unique OpenCV methods/functions are available in Java.
+** Java names for some functions and classes are changed for better compliance with Java coding guidelines
+*** @org.opencv.android@ class is moved&renamed to @org.opencv.android.Utils@
+*** @org.opencv.utils is@ class is moved&renamed to @org.opencv.utils.Converters@
+** Helper methods useful on Android platform are added:
+*** @org.opencv.android.Utils.loadResource@ - can read your image as Mat directly from project resources
+*** @org.opencv.android.Utils.exportResource@ - return full disc path to your drawable or raw resource (method copies resource to private application storage)
+
+* Fixed numerous bugs in Java bindings.
+
+* Color conversion constant @COLOR_YUV420i2RGBA@ is replaced with @COLOR_YUV420sp2RGBA@ which is correct name.
+
+* Added OpenCV native camera support for @armv5te@ devices.
+
+* Added two detailed tutorials for quick start of development with OpenCV for Android (Please, take a look at our "basic":http://docs.opencv.org/doc/tutorials/introduction/android_binary_package/android_binary_package.html and "advanced":http://docs.opencv.org/doc/tutorials/introduction/android_binary_package/android_binary_package_using_with_NDK.html tutorials)
+
+* Also Android pack includes all the improvements from the major OpenCV 2.3.1. See "OpenCV_Change_Log":ChangeLog#231 for the details.
+
+*Known Problems/Limitations*
+
+* Native camera for Android 2.2 and 2.3 fails after initialization on some phones.
+
+* OpenCV Mat to Android Bitmap conversion and vice versa is supported only for @ARGB_8888@ Bitmap and @CV_8UC4@ Mat formats.
+
+h2. 2.3.1 (beta1)
+
+_July, 2011_
+
+*What was done in release 2.3.1 (beta1)*
+
+* Created Android Java API for OpenCV. 332 OpenCV functions are now available in Java. We implemented an automatic wrappers generator, which is embedded into OpenCV build process. This integration allows to easily update Java wrappers.
+
+* Javadoc documentation. Official OpenCV documentation http://docs.opencv.org is parsed and inserted into the generated Java wrappers. This enables Eclipse to show you all required information about OpenCV functions.
+
+* OpenCV native camera interface for Android API 8 and higher. See "@VideoCapture@ class":http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture for video capturing documentation.
+
+* Made OpenCV distribution model more convenient for Android developers. OpenCV for Android is distributed as a tarball, containing Eclipse library project for development in pure Java and an @OpenCV.mk@ file for compilation with NDK. Samples are also added to this package.
+
+* Updated "set_of_samples":AndroidSamples. These set contains several tutorials, which allow developer to start from high-level Java interface and to continue with advanced native programming techniques. There are also some additional samples: image manipulations with OpenCV, basic face detection and a simple computer game "fifteen puzzle". Please note that older samples are removed and not supported anymore.
+
+* Continuous integration. Android build is introduced into major OpenCV CI infrastructure http://buildbot.itseez.com. Set of unit-tests for Java API had been developed. Every night buildbot checkouts the latest code, builds it and runs a set of native and Java OpenCV tests.
+
+* Other updates
+** Windows/Linux/MacOS support as a host development platform.
+** Updated OpenCV build system.
+
+*Known Problems/Limitations*
+
+* Android for OpenCV doesn't support multi-threading at the moment. The good news is that Intel TBB had been build for Android and tested with some OpenCV samples. But the integration is yet ready.
+
+* Optimization. Some OpenCV functions work slowly on ARM, we know it and it is our top priority for the second half of the year. OpenCV will be deeply optimized for NVIDIA Tegra platform.
+
+* Java API
+** We wrapped only those OpenCV part, which is marked up for wrapping. Actually the coverage is similar to Python API. We are going to analyze what is also important on Android and to provide it in Java.
+** We didn't try to run Java wrappers on a desktop, because our target platform is Android. Platform-dependent code is localized, so it will not take much time to call OpenCV from desktop Java. But, we are not sure that this item will have a large priority in OpenCV for Android task list.
+
+h2. 2.3
+
+_June, 2011_
+
+With support from NVIDIA, OpenCV Android port has been greatly improved. Now it is not a separate branch of OpenCV, it shares the same code tree with additional build scripts. Few demos were developed. Camera support has been added as well.
+
+h2. 2.2
+
+_2010_
+
+OpenCV can now be built for Android (GSoC 2010 project), thanks to Ethan Rublee! There are some samples too, see "Android2.2":http://opencv.willowgarage.com/wiki/Android2.2.

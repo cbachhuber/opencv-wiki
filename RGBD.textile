@@ -1,0 +1,37 @@
+h1. RGBD (Color data with depth processing)
+
+*_This page discusses what utilities OpenCV should have for handling dense depth data_*
+
+_____________________________________________________________________
+
+h3. Input/Output
+
+* convert a uint16 Kinect depth image to the float version (divide by 1000 and replace 0/max to NaN)
+* go from a depth image to a structured set of points using K (deals with mask and OutputArray). We have code for that in ecto_opencv
+* 3d visualizer
+
+h3. Geometry
+
+* Fast normals/curvature calculation. Ethan has this, completely real time even on a CPU
+* Compute *R,t*, Rodriques, Quarternion to rotate one vector in 3D so that all points in one scene may be rotated to another.
+** All these forms should be easily convertible from/to each other.
+
+h3. Applications
+
+* Plane segmentation. Kurt on this.
+* Template on surface
+** First, just take a 2D template and project what it would look like on a surface in a scene, assuming that place of projection is planar
+*** This is to perspectively warp, say, templates for correlation based mapping
+*** Next, map the template to the actual surface
+** warp a 3d scene from one view point to another as done by Maria
+
+
+
+
+
+
+
+
+__________________________________________________
+
+[[New_functionality_discussion]]

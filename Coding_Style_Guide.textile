@@ -1,0 +1,311 @@
+
+
+h1. The OpenCV Coding Style Guide
+
+The document is a short guide on code style, used in OpenCV. The core libraries (@core@, @imgproc@, etc) are written in C++, so the document concerns only the codes written in C++.
+
+h2. Files
+
+All the functionality must be put into one or more _.cpp_ and _.hpp_ files into the appropriate "module of OpenCV":https://github.com/Itseez/opencv/tree/2.4/modules, or a new module should be created if the contributed functionality is a rather large piece of code, or if it does not fit any existing module.
+
+* All the file names are written in lower case for better compatibility with both POSIX and Windows.
+* C++ interface headers have _.hpp_ extension
+* Implementation files have _.cpp_ extension
+* The implementation is put to @opencv/modules/<module_name>/src@, interface is added to the header files in @opencv/modules/<module_name>/include/opencv2/<module_name>@. There is no need to add the files to the module explicitly, just rerun CMake and it will add the files automatically.
+* Sample code in C++, if any, is put to @opencv/samples/cpp@ (with exception of @gpu@ and @ocl@ modules, which have dedicated sample directories), sample code in Python - to @opencv/samples/python2@.
+* Documentation is put to @opencv/modules/<module_name>/doc@, into one of the existing files or a new file/chapter is added there. In the latter case the file name should be listed in the TOC (table of content) file @opencv/modules/<module_name>/doc/<module_name>.rst@
+* Tests are put to @opencv/modules/<module_name>/test@. When a new test source file is added, rerun CMake. If the test needs some data, put it to the separate "top-level directory":http://github.com/Itseez/opencv_extra/tree/master/testdata. For @ml@ module the test data is put to @opencv_extra/testdata/ml@ subdirectory, for other modules - to @opencv_extra/testdata/cv@ subdirectory. Please, limit size of your test data files within a few megabytes, the smaller the better. If some existing test data can be used for your tests (like @lena.jpg@ etc.), please, re-use it.
+
+h2. File Structure
+
+Every source file, except for the samples, starts with BSD-compatible license, which template can be found "here":https://github.com/Itseez/opencv/blob/master/LICENSE. The extra/different copyright clauses are possible, as long as the license stays BSD-compatible.
+
+Other rules for both header and implementation files include:
+
+* All the functionality must be put into @cv@ namespace, or, possibly, some nested namespace, e.g. @cv::vslam@
+* Code lines should not be very long. Normally, they should be limited to 100 characters.
+* No tabulation should be used. Set your editor to use spaces instead.
+* Only English text is allowed. Do not put comments or string literals in other languages.
+* Indentation is 4 spaces.
+* Header files must use guarding macros, protecting the files from repeated inclusion:
+
+<pre>
+#ifndef _OPENCV_your_header_name_HPP_
+#define _OPENCV_your_header_name_HPP_
+#ifdef __cplusplus
+namespace cv { namespace mynamespace {
+...
+}}
+#endif
+#endif
+</pre>
+
+* Source files must include @precomp.hpp@ header before other headers, in order to make precompiled headers mechanism in Visual C++ work properly.
+
+h2. Naming conventions
+
+* OpenCV uses mixed-case style identifiers for external functions, types and class methods.
+* Class names start with a capital letter.
+* methods' and functions' names start with a small latter, unless they are named after the author of the algorithm, e.g. @cv::Sobel()@, in which case they can start with a capital letter.
+* Macros and enumeration constants are written with all capital letters. Words are separated by underscore.
+* All external functions and classes must use @CV_EXPORTS@, otherwise there will be linking errors on Windows. For functions/classes which you want to expose in Python, Java etc. you should use @CV_EXPORTS_W@ instead of @CV_EXPORTS@, but please be careful with overloaded functions and methods, with non-standard parameter types etc.
+
+h2. Designing functions and class interfaces
+
+It is important to design function interface is a way, consistent with the rest of the library. The elements of function interface include:
+
+* Functionality
+* Name
+* Return value
+* Type of arguments
+* Order of arguments
+* Default values for some arguments
+
+h3. Functionality
+
+The functionality must be well defined and non-redundant. The function should be easy embedded into different processing pipelines that use other OpenCV functions.
+
+h3. Name
+
+The name should basically reflect the function purpose. There are a few common naming patterns in OpenCV:
+
+* Majority of function names have form: @<actionName><Object><Modifiers>@, e.g. @calibrateCamera@, @calcOpticalFlowPyrLK@.
+* Sometimes the function may be called by the algorithm name it implements or result object name it produces, e.g. @Sobel@, @Canny@, @Rodrigues@, @sqrt@, @goodFeaturesToTrack@.
+
+h3. Return value
+
+It should be chosen to simplify function usage. Generally, a function that creates/computes a value should return it. It is the good practice to do so for the functions returning scalar values. However, in case of image processing function this would lead to frequent allocation/deallocation of large memory blocks. Image processing functions often modify an output image, which is passed as a parameter (by reference) instead of creating and returning result images.
+
+Functions should not use return value for signaling about critical errors, such as null pointers, division by zero, bad argument range, unsupported image format etc. Instead, they should throw an exception, an instance of @cv::Exception@ or its derivative class. On the other hand, it is recommended to use a return value for signalizing about quite normal run-time situations that can happen in a correctly working system (e.g. tracked object goes outside of the image etc.)
+
+h3. Types of arguments
+
+Argument types are preferably chosen from the already existing set of OpenCV types: @Mat@ for raster images and matrices, @vector<Mat>@ for collection of images, @vector<Point>@, @vector<Point2f>@, @vector<Point3f>@, @vector<KeyPoint>@ for point sets, contours or collections of key points, @Scalar@ for 1- to 4-element numerical tuples (like colors, quaternions etc.) It is not recommended to use plain pointers and counters, because it makes the interface lower-level, meaning more probable typing errors, memory leaks etc. For passing complex objects into functions, methods, please, consider @Ptr<>@ smart pointer template class.
+
+A consistent argument order is important because it becomes easier to remember the order and it helps programmer to avoid errors, connecting with wrong argument order. The usual order is: _*<input parameters>, <output parameters>, <flags & optional parameters>.*_
+
+Input parameters usually have @const@ qualifiers. Large objects are normally passed by a constant reference; primitive types and small structures (int, double, Point, Rect) are passed by value.
+
+Optional arguments often simplify function usage. Because C++ allows optional arguments in the end of parameters list only, it also may affect decisions on argument order—the most important flags go first and less important—after.
+
+For example function and class declarations, take a look at http://github.com/Itseez/opencv/blob/master/modules/core/include/opencv2/core/core.hpp.
+
+h4. Using @InputArray@, @OutputArray@ etc.
+
+In 2.4 we introduced new "proxy" datatypes in OpenCV to support multiple array types simultaneously. For example, in some cases it's more convenient a point set as vector<Point3f>, in other cases - as a matrix. In some cases it's more convenient to store homography matrix as @Mat@, in other - as @Matx33f@. If a parameter of your function has type @Mat@, @Matx<>@, @vector<Point...>@, @vector<Mat>@ or @vector<vector<Point...> >@, please, consider using @InputArray@, @OutputArray@ etc. types instead.
+
+* @InputArray@ - used for input arrays; you can only read from the arrays and do not modify or reallocate them. For example, parameter of @cv::determinant()@ function is InputArray.
+* @InputOutputArray@ - used for both input/output arrays, i.e. arrays which are modified inside the functions. For example, in all drawing functions, like @cv::line@, @cv::drawContours@ etc. the image is of @InputOutputArray@ type.
+* @OutputArray@ - used for output arrays. The function can not assume that the array has the proper size and type, or that its content is somehow initialized. Instead, it should call @OutputArray::create()@ method to ensure the correct size and type. You can also call @create()@ on input/output arrays, if you want, but normally you do not have to.
+
+All the types are called proxy classes because they are not real arrays. They just store pointers to the actual arrays and the "kind" of array (@Mat@, @Matx@, @vector<>@ etc.). So when you see some function that takes such a parameter, it means that it can take @Mat@, @Matx@ or @vector<>@. Since those Array types are proxy classes, you *should not* declare local variables of those types unless you are expert in C++ and know exactly what you are doing.
+
+In fact, @InputArray@ is the base class for @OutputArray@ and @InputOutputArray@ is synonym for @OutputArray@. But you should use the proper names in the function arguments to assist the automatic wrapper generators.
+
+Inside the functions that take @InputArray/InputOutputArray/OutputArray@ you just call @.getMat()@ method to get the underlying matrix. In the case of @OutputArray@ you should call @OutputArray::create()@ method before @.getMat()@.
+
+User may want to omit certain input and/or output arrays. In this case he passes @noArray()@ instead of the actual array. In the case of @InputArray@ or @InputOutputArray@ it can easily be checked with @Mat::empty()@ method for the matrix that you retrieve with @.getMat()@. In the case of @OutputArray@ you should use @OutputArray::needed()@ method to check if user really wants this output array to be computed.
+
+h2. High-level C++ interface. Algorithms
+
+In some cases you may want to represent your algorithm as a class, not a function. For example, the algorithm may include certain state that is updated with time (e.g. background/foreground subtractor with its background statistics). Or the algorithm may have too many parameters to put them into a single call. Some algorithms may have include several steps (e.g. training and prediction in machine learning methods) etc.
+
+If you decide to make your algorithm a class, you should follow OpenCV Algorithm concept.
+
+h3. Rationale and principles of the Algorithm-based design
+
+* We want our API to stay stable when the implementation changes.
+* We want to preserve not only source-level compatibility, but binary-level compatibility as well.
+* We want to keep the header files clean and easily track changes in API.
+* We want to keep our tools that parse OpenCV headers simple and robust (such as doc checker and automatic wrapper generators)
+* We want OpenCV to build fast.
+
+To address those goals, we physically separate interface and implementation part of our C++ classes. That is, we only expose interfaces, i.e. classes without constructors, without data members and with all purely virtual methods. The actual implementation is put into classes derived from those interfaces. The actual construction of the class is done by an exposed function. It returns smart pointer to the interface. There can be multiple "constructor" or "factory" functions, not necessarily placed in the same module. Users can add their own implementations of the same interface and provide the corresponding constructor functions. See @calib3d@ "module":https://github.com/Itseez/opencv/blob/master/modules/calib3d/include/opencv2/calib3d.hpp and the stereo correspondence algorithms (stereo matchers) as example of such classes.
+
+h3. Steps to make your class following this style
+
+* Derive your class from Algorithm or from its direct or indirect derivative class, e.g. @StereoMatcher@ if you add another stereo correspondence algorithm.
+* Make abstract base class for your actual implementation, e.g.
+
+<pre>
+...
+namespace cv { namespace mynamespace {
+class MyStereoMatcher : public StereoMatcher
+{
+public:
+virtual void setLambda(double lambda) = 0;
+virtual double getLambda() const = 0;
+...
+};
+}}
+</pre>
+
+That is, put there extra methods and properties that your algorithm will have. "Getters" should start with "get" word, "Setters" - with "set". You *do not* need to repeat declarations of virtual methods of @StereoMatcher@, @Algorithm@ etc., since you will implement them in your actual class anyway.
+
+* Also, add the constructor function that will return smart pointer to your base class:
+
+<pre>CV_EXPORTS Ptr<MyStereoMatcher> createMyStereoMatcher(<params...>);</pre>
+
+The constructor name follows @create<classname>[optional_suffix]@ pattern. There can be several constructors if you want.
+
+* In _.cpp_ file put a class that implements your interface and the constructor function:
+
+<pre>
+/* <OpenCV license with your copyright added> */
+#include "precomp.hpp"
+
+namespace cv { namespace mynamespace {
+class MyStereoMatcherImpl : MyStereoMatcher
+{
+MyStereoMatcherImpl(...) { ... }
+virtual ~MyStereoMatcherImpl() { ... }
+...
+double getLambda() const { return lambda; } // implement getters and setters
+void setLambda(double l) const { CV_Assert(l >= 0); lambda = l; }
+
+void compute(InputArray _left, InputArray _right, OutputArray _disp) // implement necessary methods from StereoMatcher, Algorithm etc.
+{
+Mat left = _left.getMat(), right = _right.getMat();
+_disp.create(left.size(), CV_16S);
+Mat disp = _disp.getMat();
+...
+}
+...
+double lambda;
+};
+
+Ptr<MyStereoMatcher> createMyStereoMatcher(<args>) { return new MyStereoMatcherImpl(<args>); }
+}}
+</pre>
+
+That's it. You class is ready.
+
+h3. Extending/modifying algorithms
+
+Say, you contributed the new algorithm to OpenCV, which was implemented as shown above, and it was integrated.
+Then, sometime later you want to modify it. What do you do?
+
+# As long as you do not modify header, all the changes are fine. Just submit them as pull request.
+# If you want to add some new properties to the algorithm or modify signatures of the methods *and* there was no official OpenCV release yet with your code included - that's fine too; do your modifications and submit pull request.
+# If the previous variant of your algorithm has been already released, then you actually can not modify interface. Create new interface, derived from the previous one, add more properties there and add new constructor function:
+
+<pre>
+namespace cv { namespace mynamespace {
+
+class MyStereoMatcher : public StereoMatcher {...};
+CV_EXPORTS Ptr<MyStereoMatcher> createMyStereoMatcher(<params...>);
+
+// new extended interface
+class MyPyrStereoMatcher : public MyStereoMatcher
+{
+public:
+// more properties ...
+virtual void setNPyramidLevels(int nlevels) = 0;
+virtual double getNPyramidLevels() const = 0;
+...
+};
+
+// new contractor(s)
+CV_EXPORTS Ptr<MyPyrStereoMatcher> createMyPyrStereoMatcher(<new_params...>);
+}}
+</pre>
+
+then modify the implementation class so that it derives from the new class (if you want to have one implementation class, not two), e.g. @MyStereoMatcherImpl@ will be derived from @MyPyrStereoMatcher@. Everything else stays the same and thanks to some @Ptr<>@ magic you can pass @Ptr<MyPyrStereoMatcher>@ anywhere where you passed @Ptr<MyStereoMatcher>@.
+
+That's it. It means that OpenCV implements the concept of immutable API, the same thing as Microsoft does with COM.
+
+h2. Code Layout
+
+There is a single strict coding guideline in OpenCV: each single file must use a consistent formatting style.
+
+Currently used in OpenCV and recommended formatting style looks as follows:
+<pre><code class="cpp">
+if( a > 5 )
+{
+int b = a*a;
+c = c > b ? c : b + 1;
+}
+else if( abs(a) < 5 )
+{
+c--;
+}
+else
+{
+printf( "a=%d is far to negative\n", a );
+}
+</code></pre>
+
+Other styles might be also accepted if only the above rule is met. That is, if one changes written by others code, he (she) should use the same coding style.
+
+h2. Portability, External Dependencies
+
+Formally, the code must comply with the C++ 98 standard. It's not recommended yet to use C++ 11 or TR1 extensions at the implementation level and it's forbidden to use it in the external headers.
+
+One should get rid of compiler-dependent or platform-dependent constructions and system calls, such as:
+
+* Compiler pragma's
+* Specific keywords, e.g. @__stdcall@, @__inline@, @__int64@ (or @long long@). Use @CV_INLINE@ (or simple @inline@ in C++ code), @CV_STDCALL@ (try to avoid it if possible), @int64@, respectively, instead.
+* Compiler extensions, e.g. special macros for min and max, overloaded macros etc.
+* Inline assembly
+* Unix or Win32-specific calls, e.g. @bcopy@, @readdir@, @CreateFile@, @WaitForSingleObject@ etc.
+* Concrete data sizes instead of @sizeof@'s (@sizeof(int)@ rather than 4), byte order ( @*(int*)"\x1\x2\x3\x4"@ is 0x01020304 or 0x04030201 or what?), simple @char@ instead of @signed char@ or @unsigned char@ anywhere except for text strings. Use short forms @uchar@ for @unsigned char@ and @schar@ for signed char. Use preprocessor directives for surrounding non-portable pieces of code.
+
+h2. Writing documentation on functions
+
+The documentation for contributed functions is written in "ReStructured Text":http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html and built using tool. To build documentation, you need a full Live Tex or compatible distribution installed (e.g. texlive-full on Ubuntu, "MacTex":http://sphinx.pocoo.org/ on Mac, MiKTeX on Windows) and Sphinx, which can be installed with @easy_install@ utility (@easy_install -U Sphinx@).
+
+Use the existing documentation as example. Normally, each function/method description includes:
+
+* the declaration in C/C++
+* short description
+* all the parameters explained; e.g. specify, which image types are accepted, what would be the recommended values for the parameter and how they affect the algorithm etc.
+* the full description with short use samples (or links to the big complete samples in OpenCV repository), references to papers, formulas, etc
+
+h2. Implementing tests
+
+* For tests we use "GoogleTest":http://code.google.com/p/googletest/ framework. Please, check the documentation at the project site.
+* Each test source file should include @precomp.hpp@ first.
+* All the test code is put to @cvtest@ namespace.
+* Declare your Google tests as following:
+
+<pre>
+TEST(<module_name>_<tested_class_or_function>, <test_type>) { <test_body> }
+</pre>
+
+For example: <pre><code>TEST(Imgproc_Watershed, regression) { ... } </code></pre>
+
+* To access test data, use @cvtest::TS::ptr()->get_data_path()@ method. For example, if you put your test file to @opencv_extra/testdata/cv/myfacetracker/clip.avi@, you can use @cvtest::TS::ptr()->get_data_path() + "myfacetracker/clip.avi"@ to get full path to the file. To make it work properly, set the environment variable @OPENCV_TEST_DATA_PATH@ to @<your_local_copy_of_opencv_extra>/testdata@
+
+h2. Appendixes
+
+*Appendix A. References*
+
+The document is not a complete style guide. Far more detailed and well-written papers on this topic are listed below:
+
+* Recommended C Style and Coding Standards (updated version of Indian Hill C Style and Coding Standards). Henry Spencer et al. Rev. 6.0, 1990.
+* Programming in C++. Rules and Recommendations. Mats Henricson, Erik Nyquist. Ellemtel Communications Systems Laboratories. 1990-1992.
+* GNU Coding Standards. Richard Stallman. GNU Project – Free Software Foundation. 2000
+* Notes On Writing Portable Programs in C. A. Dolenc, A. Lemmke, D. Keppel, G.V. Reilly. 1990. Links to many of these documents can be found at http://www.softpanorama.org/Lang/c.html.
+
+*Appendix B. The brief list of rules*
+
+* Filenames are written in lower-case letters.
+* Headers have _.hpp_ extension.
+* Implementation files have _.cpp_ extension
+* Every file includes BSD-compatible license in the beginning
+* Do not use tabulation. Indentation is 4 spaces. Lines should not be much longer than ~100 characters.
+* Keep consistent formatting style in each particular source file (especially if you modify the existing code).
+* Each source file includes @"precomp.hpp"@ as the first header.
+* The code is put into cv or nested namespace. Test code is put into cvtest namespace.
+* Only English should be used in comments and string literals.
+* External function names and data type names are written in mixed case. Classes start with capital letter, functions start with small letter. External macros are written in upper case.
+* Use @CV_EXPORTS@ macro within external functions and classes declarations.
+* Do not use conditional compilation in headers.
+* Keep the external interface as compact as possible. Do not export internal-use classes or functions which are not essential and could be hidden.
+* Exposed classes should be abstract, derived from Algorithm. The actual implementation must be hidden in .cpp.
+* Try to make your code easily wrappable for Python, Java etc. That is, try not to introduce new types. Limit the use of callbacks.
+* Use @CV_Error@ to report about incorrect parameters and/or use @CV_Assert@ to verify some conditions, e.g. @CV_Assert(inputImage.type() == CV_8UC3)@.
+* Be compliant with the C/C++ standards. Avoid compiler-dependent, OS-dependent and platform-dependent constructions. Do not use TR1 extensions yet.
+* Try not to use malloc/free, new/delete. Use @cv::Mat@, @std::vector@, @std::map@, @cv::AutoBuffer@, @cv::Ptr@ instead. Those classes handle the memory automatically.
+* Provide GTest-based tests for your code.
+* Provide documentation for your code in RST format. Doxygen comments do not count (yet).

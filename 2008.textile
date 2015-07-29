@@ -1,0 +1,864 @@
+h1. OpenCV Meeting notes for 2008 year
+
+
+
+h2.  2008-07-21
+
+*_Agenda_*
+
+Current Goals in Priority Order
+
+# 3D Vision
+## Stereo Rectification (Vadim)
+## Stereo Correspondence
+### Fast Version using correlation windows (Vadim)
+###  "Kolmogorov Graph Cut Energy Minimization Method":http://www.cs.cornell.edu/People/vnk/recon.html (Victor and Sergey)
+## Regression tests for chessboard finder, calibration, stereo calibration and rectification
+# Feature Toolbox (Alex)
+# Improve Python interface (Vadim)
+# Google OpenCV Wrappers (Vadim, Daniel Filip)
+
+*_Minutes_*
+
+*Vadim*
+
+* Google OpenCV Wrappers (done)
+* Jean-Yves style rectification (this week)
+* Correlation stereo correspondence (next week)
+
+*Victor and Sergey*
+
+* Kolmogorov first pass and first optimization (done)
+* Reorganize code for OpenCV compatibility and add in correspondence constraints (2 weeks)
+
+*Alex*
+
+* Has 3 versions of SIFT and 1 SURF, writing a keypoint stability analysis/regression test tool (this week)
+
+*Gary*
+
+* Get kids party rectified stereo data to Alex (this week)
+* Get feature citations to Alex (this week)
+* Get Jack's MSER and Code to Alex ( this week)
+
+*Kurt*
+
+* Get stereo correspondence code to Vadim (this week)
+
+*_Action Items_*
+
+* Get whole stereo toolchain going with regression tests
+* DoG, MSER, Harris, SURF, Star Keypoint detectors
+* SIFT, SURF, DAISY, Lepetit, PHOG, PHOW features
+
+h2.  2008-07-28
+
+*_Agenda_*
+
+Update of calibration and stereo, start of feature toolbox
+
+*_Minutes_*
+
+*Vadim*
+
+* Checked in Stereo calibration and rectification code to OpenCV! Sent me calibration code example.
+
+*Victor/Sergey*
+
+* Timing analysis of Kolmogorov's method.
+
+*Alex*
+
+* Analysed SIFT vs SURF on dataset
+* Sent proposed keypoint detector/descriptor function
+
+*Kurt*
+
+* Sent correspondence code example.
+
+*_Action Items_*
+
+* *Vadim* to
+** fix any issues that come up in stereo calibration and rectification code,
+** look over book doc of these functions and
+** start working on stereo correspondence.
+
+* *Victor/Sergey*:
+** Literature and code search of energy minimization.
+** Decide on reimplement graph minimization or BP or to drop
+
+* *Gary*:
+** Get Alex data examples of party plates, left and right views.
+** Start desired features list.
+** WG detector code to Russia.
+** Discuss changing contract with WG and Argus to focus on features and recognition along with fast stereo.
+** Set out better long term plans.
+
+* *Kurt*:
+** Look at stereo calibration and rectification results.
+
+* *Alex*:
+** Surf and SIFT into OpenCV as start of key detectors and key descriptors toolbox
+** Run on WG detector.
+** Convert PHOG/PHOW for use on Opencv
+
+h2. 2008-09-15
+
+*_Agenda_*
+
+* Progress report
+* Hiring for full time team
+* Feature and 3D code going in
+* Release
+
+*_Minutes_*
+
+* Progress
+** Stereo now works for Vadim using the patched 1394 code.  Issue is whether to just build that in and bypass 1394 or get the patch into 1394
+** Vadim fixed an orientation bug in SURF and also sped it up 2.5X
+** Kolmogorov: RCG looking it over, will hear reports on progress this week
+* Hiring
+** Might be easy to find people with test experience in NN
+** One of the experts, Victor, Alex or Sergey has to decide who will come over full time
+*** This position will be full time
+*** Involve interesting work, and have research as well as practical output.  At least one conference visit/year, possible onsite (at WG) working sessions
+*** Kurt needs fast SLAM, I need work on near by object detection, recognition and segmentation
+*** This contract is intended to be long term, first decision point will come at 10 months.  It will be long term as long as it is productive (I depend on this too)
+* Feature and 3D code
+** We need a working SURF with demo added
+** The Star feature should go in this week
+** JD's 3D to 3D point projection is getting ready, he needs to talk about the interace with Vadim
+* Release
+** OpenCV 1.0 is getting stale
+** We need at least a 1.1 release with Stereo for the book (otherwise there will be missing functionality that will cause bug reports/bad experiences for users).
+** Mark's group has a preliminary 1.1 release
+* FUTURE
+** 3D features
+
+*_Action Items_*
+
+* *Gary*
+** Talk to Jeremy about getting the patch into the official 1394 driver
+** Get book code into OpenCV samples as a subdirectory
+* *JD*
+** Send 3D interface API
+* *Patrick*
+** Be ready to answer questions if any on star feature if Vadim needs
+* *Vadim*:
+** Get SURF into CVS
+** Get Mark's 1.1 including Stereo and with book demos up as 1.1 release before Oct 1st
+** Get Star detector first pass into OpenCV form (it will need optimization probably for performance) and include test and sample code
+** Consider stereo HighGUI interface
+** Possible help with getting book and associated code pointers to the OpenCV sites
+
+h2. 2008-09-22
+
+*_Agenda_*
+
+* Just Updates
+
+*_Minutes_*
+
+*Vadim*
+
+* SURF Integration to OpenCV is done
+* Preparing a libdc patch for stereo camera integration
+** Issue is of use of libdc2 (which this patch uses, but most people don't use yet: future use) or libdc (current)
+* Kolmogorov
+** Dimitry is working on porting 2nd part of code
+** 1st part: MaxFlow takes 80-90% of computation (finished)
+** 2nd part: Graph construction (still some re-write to separate from Kolmogorov)
+** Already significantly faster, "normal" 640x480 scene with small 10s of disparity takes 7 seconds on an older laptop
+*** Can have the ability to apply to specific parts of image (mix fast and slow stereo)
+*** Speed depends on parameters: ~n^3 running time in number of pixels.  Depends also on # of disparity levels
+**** Hierarchical method will improve therefor on both of these bottlenecks
+** This week expected for finish
+
+*Victor*
+
+* Hiring status
+** Interviewed 1 RCG and 1 more this week
+*** Possible: Specialist 2nd week Oct. of Anatoli Backsh  (worked for Argus calibrating multi-projectors)
+*** Possible: Dimitry (?) Was working on Kolmogorov as RCG is possilbe: Good mathematician, not fast programmer.  So still considering.
+*** Will probably wait to interview more over next 2 weeks
+** Expert to be decided by mid-Oct.  Will start in November.
+
+*_Action Items_*
+
+*Gary*
+
+* Send Vadim new cvx_background code
+
+h2. 2008-09-29
+
+*_Agenda_*
+
+* Release
+* Kolmogorov
+* Background code
+* Hiring
+* New 3D package
+
+*_Minutes_*
+
+*Release Issues*
+
+* Video writing on Linux -- might have to add a video writer since not implemented in gstreamer
+** sample for stereo calibration and correspondence.
+** Release should be out by next Monday.
+* Kolmogorov is in CVS (2.4 seconds on Tsukuba 52x288 images with maximum disparity == 16, we think later this can go to 0.33 sec)
+** Sample use needs to be done (very quick, will be done today)
+* Background codebook modeling is ready for CVS, need to check API
+
+*Hiring*
+* Several RCG interviewed
+** Final candidate list (7 total) this week
+** Decide (maybe Thrusday)
+** 2 weeks later starting (mid to late October)
+* Specialist
+** Anatoli
+** Start in November
+
+*3D*
+* Two issues as to how to include since it right now is a large class
+** Simplify it down to 2 functions
+** Keep it as a separate complete package
+
+*_Action Items_*
+
+* Get the release out
+
+h2. 2008-10-06
+
+*_Agenda_*
+
+* Release Status
+** Matrix bug
+* Hiring Status
+** Alex visit
+* Priorities
+** Visual Odometery
+** Object rec
+*** Person rec
+** Python
+
+*_Minutes_*
+
+*Release*
+* Vadim sick
+* Patches
+* For fundamental matrix
+** 32FC2 or 32FC3 for regular or homogenious coordinates
+* Windows 2 days.
+** Stereo calibration, final testing
+* Linux by end of the week
+
+*Hiring*
+* Specialist
+** Anatoly joining in a month, mid-November
+* RCG (interviewed 2 people)
+** Alexi full time in two week (Finishing MS thesis)
+** Andri (undecided, available in one month)
+
+*Alex*
+* Will be at WG Oct 16th
+** arrive SJ 10:30 AM, taxi to WG
+
+*Priorities*
+* Python
+** Automatically generated by SWIG
+** Might give to Alexi or Andri
+** Should build OK now
+
+*_Action Items_*
+
+* *Gary*
+** Fix fundamental matrix point arrays bug in example code
+** Send Vadim Learning  OpenCV Code examples
+** Ask Victor what he knows about hiring.
+** Ask Adrian at AM about python contribution?  Works with SWIG?
+* *Vadim get*
+** Better from (human not software) virus
+** Windows version out in 2 days
+** Linux by end of week
+
+h2. 2008-10-13
+
+*_Agenda_*
+
+# Release -- if there are problems with tests or bugs, we can delay further
+
+* Should we think about separating data from the rest of the package?
+* Remind me what's in (full stereo I know is yes):
+** SURF (I think so)
+** Star detector
+** Book Example code
+*** Stereo example code is there, should it be modified?
+** JD's 3D Rot and translation code (I think not?)
+** Kolmogorov.  With sample demo?
+# Of course -- hiring status update
+# Interface -- people here are talking about wanting a more modern interface to OpenCV
+
+* Some are building on wImage -- what is in Daniel's utils?
+* They (JD and Patrick) want type safe, templates instead of macros etc
+* One (James) wants a more abstract image -- for data that might exist on arbitrary manifolds
+** abstract reference to pixels, so they can reside say on a GPU etc
+** I think if we do this, it has to be a new image type and separate functionality to use it.  I don't see the "demand" for this right now
+* (I insert for Daniel) Creating opencv with smaller footprint.  (Is this in already?)
+* This is just a heads up.  We will  set up another meeting to discuss
+# OpenCV wiki.  Scott is on vacation but I left a message asking him about hosting at Willow Garage.  This is probably fine using moinmoin
+# General schedule of post release priorities (what are they/when are they).  Some "whats":
+
+* 3D pipeline (for 3D slam etc)
+** JD Chen's 3D point to point estimation code
+** Optimized Star
+** Bundle adjustment
+* Object recognition
+** Spin features
+** Boundary fragments
+** Pyramid Kernels, perhaps extended to 3D
+** Possibly simpler  (Zisserman or LePetit type) Random Forests in machine learning.
+
+*_Minutes_*
+
+*Release*
+
+* Functionality wise, it's complete
+* Didn't try python wrappers, or 64 bit Windows
+** SURF, codebook is in,
+** New sample code:
+*** Stereo calibration
+*** Background subtraction
+*** (possibly birdseye)
+*** SURF demo
+*** Octave example directory
+* No star detector in.
+* Kolmogorov in
+** Good to have example
+
+*Hiring status*
+
+* Alexi (RCG) Oct 20th
+* Other (Andre) RCG, still in negotiation ... in Nov
+* Anatoli Nov 1st or delayed week.
+
+*New interface*
+
+* Will be discussed on Thrusday
+
+*OpenCV Wiki*
+
+* Probably at Willow Garage with MoinMoin
+
+*Future Priorities*
+
+* Object recognition
+** Star detector optimized and in
+** Boundary features
+** Regularized stereo
+** Spin features need to be speeded
+** Machine learning
+* Interface C++
+* 3D pipeline
+* Look at recognition architecture in last CVPR robot competition.
+
+*_Action Items_*
+
+*Vadim*
+
+* Release Windows next 2 days
+* Release Linux version after Mark in Germany tests it.
+
+*Gary*
+
+* Get wiki up -- might happen next week because Scott is on vacation.
+
+h2. 2008-10-20
+
+*_Agenda_*
+
+* Future release possibilities:
+** Visual slam, and full 3D pipeline support in, Dense notes
+** Object recognition for the robot support in
+** Robot shipping * Plans for exploring OpenCV's API: Templates, easy matrix access
+* Python support and how it interacts with the above
+* OpenCV Wiki
+* Hiring update status
+* Research
+** Object recognition
+** Spin images
+* New OpenCV license to add Willow Garage
+
+*_Minutes_*
+
+*Future release*
+
+* 1.1pre1 (goes to 1.1 or 1.2 with more testing)
+** Approximate nearest neighbor cvFeatureTree
+*** David Lowe's appoximate NN
+* Hiring
+** Alexi has now joined
+** Made offer to Andri
+** Victor or Alex as senior TBD by Mid Nov.
+** Anatoli by Mid Nov
+* Start interface API work on easy matrix
+* Research items
+** need to emphasize obj rec.
+** Star detector ready soon.
+
+*_Action Items_*
+
+* Vadim send Lowe's fast NN link
+** Will send matrix API (send by email at first)
+* Gary set up SVN for API work
+** -OpenCV Wiki - will talk with Scott-  See "OpenCV Wiki":http://OpenCV.willowgarage.com
+** -Set up dense stereo bags on public data directory- Scott will set this up, until then I will send one or two point cloud and image "bags" to play with.
+** -SVN for Argus-WG OpenCV development- Again, I talked with Scott and this will be set up.  Until then, send emails
+** Send spin feature code (send notes about it)
+** Send compare RF with Zisserman Random Forests
+* NN team familiarize with ROS
+
+h2. 2008-10-27
+
+*_Agenda_*
+
+* wiki
+* Alexi
+* Anatoly
+* Gary
+* Features
+
+*_Minutes_*
+
+* Alexi is becoming familiar with API by writing test codes etc
+* Anatoly will be on spin images as of tomorrow
+* Vadim working on Matrix API prototype, 2-3 more days
+* Gary working on background subtraction combined with stereo
+** then on to boundary fragments
+* New stereo algorithm from Kurt will be needed soon
+** Until then, use pen to texture objects for Videri stereo
+* For fast stereo use fixed point
+
+*_Action Items_*
+
+*Vadim*
+
+* Get Alexander to switch opencv.org
+* Send Kurt fast stereo example
+
+*Kurt*
+
+* Get Regularized stereo
+
+*Gary*
+
+* Send feature papers
+* post to wiki
+
+*General wiki info*
+# You can sign up right now at: http://opencv.<our company>.com/wiki/
+For right now, there is no protection, so only tell people whom we want top level access (The top levels will become for only a select group later).
+You can start moving the wiki over now.
+# Apparently Alexander Kurinov (I'm spelling this wrong) "has" the domain www.opencv.org
+
+Can we get him to point it to 15 7.  22.  1 9.  1   8
+
+Once that's done, Scott can put in Catcha protection and then I'll follow with top level admin protection.
+
+h2. 2008-11-03
+
+*_Agenda_*
+
+* Eliminating auto-generated files from CVS
+* Make dependencies ... if you make twice in a row, the 2nd make should not build anything.
+* Alexander Kurinov change of where www.opencv.org points?
+* Object recognition needs
+** Spin feature progress
+** Boundary fragment fitting
+* Update on current work
+** Vadim
+** Alexi
+** Gary
+
+*_Minutes_*
+
+*_Action Items_*
+
+h2. 2008-11-10
+
+*_Agenda_*
+
+* Status update
+** Hiring
+* Robot Needs:
+** Spin feature progress
+** Boundary fragments (Gary)
+*** Fast boundary fragment comparison
+** Finding outlets
+** Colandar features (coming)
+*** Hausdorff (fine feature alignment)
+*** Warpable templates
+** Build with ROS and "ROS releases"
+* General needs
+** Near and Far image stitching (probably using Colandar features)
+* OpenCV Apps
+
+*_Minutes_*
+
+*Staffing*
+
+* Victor from Dec 1st, can start working full time
+* Specialist Anatoli -- (now full time)
+** On spin images
+*** Gary will turn in object capture system this week
+*** CMake might move to him
+** Need to have a CVS control person
+
+*Robots needs*
+
+* Matching boundary fragments
+** Boundary matches give distance, not optimal alignments
+** Lowe paper on curve fitting?
+* Wall outlet finding Near and Far
+** Far finding template matching
+*** Use Colandar features first
+** Near finding
+*** Template matching
+*** Hausdorff distance
+*** Sub-pixel peak localization for normalized correlation
+* C++ templates for matrices
+** Is a harder task than thought
+** Created basic set of operations, but extensions take too much code
+*** Few more days to study using more compact techniques.
+
+*_Action Items_*
+
+*Gary*
+
+* Send Anatoli spin image point clouds
+* Check in data collection application
+* Set up application contribution area for OpenCV
+* Find out who to interface with for Cmake
+* Hausdorf finding references to Vadim
+** http://cgm.cs.mcgill.ca/~godfried/teaching/cg-projects/98/normand/main.html
+* Put image stitching up on OpenCV wiki
+
+*Vadim*
+
+* CMake (Alexi) conversion to Anatoli
+* Assign a "ROS" master
+* Send matrix templates
+* Study and implement Hausdorf distance
+* Study boundary fragments fitting, maybe from Lowe?
+
+h2. 2008-11-17
+
+*_Agenda_*
+
+* Udates
+* Workshops etc
+* Need for working with ROS
+* Pattern recognition needs
+* Interface (templates etc)
+* wImage
+
+*_Minutes_*
+
+*Updates*
+
+* Vadim
+** Matrix nearly finished, will send code and docs
+*** Functionally it compares well with other template packages
+*** and converts well to CvMat, performance is OK for small
+*** for big matrices, most time is spent processing, so overhead doesn't mater.
+*** Matrix class, remembers its position within the container class
+*** Next: Finding outlets or Mech Turk
+* Got a CMake contribution by Jose Luis Blanco. Great help but doesn't do configuration
+** Anatoli is working on configuration
+** Alexi extending to Windows
+** Early next week, we'll have CMake
+*** Next week
+* Victor
+** Have candidate for second RCG position.  Good in CS, concerns in program
+** Possibly hire short term at first
+
+*Pattern recognition*
+
+* Outlets
+** See list and images of "outlet types":http://en.wikipedia.org/wiki/Domestic_AC_power_plugs_and_sockets
+** Far range (3M)
+*** Viola-Jones
+*** Calander/LePeit
+*** Normed Crosscorrelation.
+*** Near range (0.5M) for camera in "elbow" of arm
+*** Finding the orientation of the plug
+* Doorknob detection
+** Hope to collect
+* More general object recognition
+** Boundary feature
+** spin images
+** 3D shape context
+
+*Workshops*
+
+* CVPR Nov 30th deadline ... will submit something involving Mech Turk, imagery, dense depth (?0
+* Train synthetic work on real, maybe part of the workshop
+
+*_Action Items_*
+
+* *Vadim*
+** Finish CMake for OpenCV
+* For next week, we'll need to establish ROS build
+* *Victor*
+** try template matching technique with and without chessboards.
+* *Gary*: On outlets
+** Collect data
+** Running Viola Jones
+** Running Calendar
+
+h2. 2008-11-24
+
+*_Agenda_*
+
+* Some update
+** Gary:
+*** Working on Mechanical Turk interface
+*** Pattern recognition functions (have outlet detector now)
+** Vadim, Victor
+* CMake and build with ROS
+** We need to put out tagged ROS "releases", maybe every 2 weeks to clean the ROS build.
+* Interface issues
+** Progress on Matrix
+** Extend alpha channels, especially for projection and bit operators
+* Research issues
+** Will need 3D rendering
+** Mesh
+** Extremely random forests with:
+*** Variable importance
+*** Random node decisions, and random linear separators
+*** Cross validation (for every function)
+*** Robust plane detection, warping.
+* Examples
+** wImage needs simple example program
+** SURF example
+* New features
+** Star descriptor from ROS (good now)
+** C descriptor soon
+** Extremely random forests in very flexible accessible way
+** General use of cross validation in ML
+* Wish list
+** Better image stitching
+** Alpha channel support (as above)
+
+*_Minutes_*
+
+* Victor collected 100 outlets
+** Collected > 100 outlets
+** Normalized cross correlation
+*** works better on office
+**** Many false positives
+**** Did literature search
+***** Use adaboost or cross correlation + edge features
+***** Champfer matching
+* Vadim has finished the Matrix cvmatrix
+** Has test example used by JD Chen
+*** Slower than cv and 82, but can be optimized
+* CMake
+** Anatoly added lib support
+*** Configuration much better
+*** Merging windows
+** Added this week to CVS
+** Target date done with ROS, maybe this week.
+*** Linux version ready
+
+*_Action Items_*
+
+* Gary get outlet data to Victor
+
+h2. 2008-12-04
+
+*_Agenda_*
+
+*Active Issues*
+
+* Status of CMake
+** Need to set up a meeting to integrate it into ROS, possibly with Jeremy
+*** Set a known cvs tag, and then we can use that to unify the ROS build.
+* Update from Vadim
+** Status of spin features
+
+*Priorities*
+
+* Python is great, we should have better/accessible python bindings
+* Robust plane detection from point cloud (many needs for this. methods in ROS)
+
+*Research*
+
+* Approach to outlet detection (which of course is resolution dependent)
+** FAR RANGE:
+*** Star detector + C-descriptors (all in ROS right now),
+**** then possibly geometric confirm.
+** NEAR RANGE/VISUAL SERVO
+*** Sub pixel Hausdorf, correlation
+** Plug orientation ??? Again, resolution dependent
+* Doorknobs
+* General need: We'll be working with Michael Black and his 3D fitting methods
+** but enhanced because we have 3D
+** Eigen shape decomposition of common objects (he did for humans)
+** 3D Rendering of objects for training
+
+*_Updates_*
+
+*Gary*
+
+* First version of "real time" Mech Turk segment/labeler is working
+* Focus detector "done", except it should deal with
+** ROI and
+** Chessboard
+
+*Victor*
+
+* Outlet studies with
+** Correlation
+** Connected Components ... and then use Adaboost
+* Starting studies of doorknobs with Adaboost detector
+
+*Vadim*
+
+* CMake work
+
+*_Minutes_*
+
+*CMake*
+
+* Still lacks Haar module and python
+* Already committed to CVS
+** Builds all libs and tests
+* Finished with python in one or two days
+* Anatoli
+** Loaded ROS
+
+*Chessboard (Kurt)*
+
+* If chessboard isn't found, takes a long time in search
+* Should it have a real time tracking mode (?)
+
+*Fast rectification*
+
+* Seg fault
+* Vadim sent just C code
+
+*Spin features are postponed for CMake work*
+
+* Looked at the code
+* Brings up the need for how to deal with point clouds in OpenCV.
+* In ROS point clouds are
+** Unordered vector of points
+** Array
+** Radu Rusu spatial histogram
+
+*Python*
+
+* For now just trying to get existing python rappers
+* Using new C++ interface: New matrix
+
+*Plane finding*
+
+* Radu working on putting in tools
+* vtk good for manipulating 3D (Open source status).
+
+*_Action Items_*
+
+*Gary*
+
+* -Converting Mech Turk labeler to a ROS node for NIPS demo-
+* Document Focus and Star detector
+* -Outlet data to Victor-
+* -Talk to Radu about migrating tools-
+
+*Vadim*
+
+* Check chessboard finder search mode
+* Check with gcc earlier than 4.2 that sse is enabled
+* Send Kurt C code for fast seg
+
+*Kurt*
+
+* Check C code
+
+*Move into OpenCV*
+
+* Star Detector, Patrick sent
+* Focus detector, Gary sent
+* Shadow Detector, Gary to send
+
+*Collected doorknobs*
+
+h2. 2008-12-15
+
+*_Agenda_*
+
+* Updates
+** ROS compatibility
+* Approx NN
+* Data
+
+*_Minutes_*
+
+*Vadim*
+
+* CMake works and is complete
+** All features from Linux and Windows are supported now
+** Previous system kept
+** OpenCV moved to SVN, posted to developers list
+*** opencv_latest_tested is the "know good for ROS" tag
+* Now support Videri camera in High GUI
+
+*Star Detector*
+
+* Just started looking at star detector
+
+*Victor*
+
+* Outlets
+** Connected components method
+*** Showed similar results.  Frontal views good ~100%. Side views not as good.
+*** European dataset has rich texture and is harder
+* Chessboard rectangle
+** Application is working, but getting error
+*** Either bug or interlacing error
+*** Working with simple digital camera
+*** Hope to track down on Tuesday
+
+*Gary*
+
+* Used mechanical turk
+
+*Set up Application area for OpenCV*
+
+* Each has own Make file
+* Need rules
+
+*Scanning*
+
+* What's available?  Commercial companies are too expensive
+* We'll handle this in the US, not in Russia
+
+*_Action Items_*
+
+*Vadim*
+
+* Post SVN notice to user group
+* Post SVN instructions to Source forge
+* send Gary download instructions and tag name
+
+*Gary*
+
+* Tell Brian about CMake progress and get integrated
+* Get star detector and C-descriptor info to Victor
+* Doorknob data and maybe Mech Turk
+* Send Vadim first example application
+
+*Victor*
+
+* Finish rectangle labeler

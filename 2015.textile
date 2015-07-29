@@ -1,0 +1,1887 @@
+h1. 2015 OpenCV Meeting notes for 2015 year
+
+Template is at http://code.opencv.org/projects/opencv/wiki/Template
+http://code.opencv.org/help/wiki_syntax
+
+[[Meeting_notes]]
+
+
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-07-21
+
+h3. _*Agenda*_
+
+* SoW
+* GSoC
+* Book
+
+h3. *_Minutes_*
+
+* SOW based on spreadsheet "here":https://docs.google.com/spreadsheets/d/19d_fcFw4v0FBPnkWVrk34T9NC6owrSQgSim7O2fqNfQ/edit#gid=0
+** We take a group of functions or similar functions,
+** we put fastCV calls for these functions into OpenCV,
+** We detect fastCV at compile stage and use it if it is there,
+** we run accuracy tests, performance tests,
+** add missing performance and accuracy test,
+** we disable functions that fail accuracy tests that cannot be solved in an easy way,
+** if performance drops -- we disable the use of that function.
+** Produce performance report
+** 6K or more
+* GSoC ... most projects moving along
+* Book -- Go Vadim go.
+
+h3. *_Reports_*
+
+* . Vadim
+
+After quite intensive May & June with 3.0 release and CVPR July has been quite slow month. This  is the joint report for 4 weeks.
+
+*OpenCV:*
+* We plan to migrate our git repository, bug tracker and wiki to github. This should solve completely rare but still possible bandwidth and backup problems, and would allow us to get rid of code.opencv.org and associated maintenance efforts. That is basically within the common trend "everything's in the cloud".
+** Maksim developed necessary scripts to convert all the wiki pages and all the bug tracker issues from chiliproject (used by code.opencv.org) to github format. For wiki github uses markdown (and wiki is stored as git repository, so we have all the history!).
+*** This is the converted wiki: https://github.com/mshabunin/test/wiki
+*** This is the converted bug tracker database: https://github.com/mshabunin/test2/issues
+*** The repository conversion is trivial - we will just modify our pullrequest.opencv.org engine to push the patches directly to github instead of github repository.
+** The actual conversion is expected in the end of this week or next week
+* Also Maksim has put beta version of OpenCV Android Manager to GooglePlay. With 3.0 we offered standalone .apk with the manager for local tests, now it's available from GooglePlay. Here is the announcement: http://opencv.org/opencv-manager-beta-testing.html
+* Alexander A made several improvements in buildbot, some of which required patching buildbot code. Now several steps are executed in parallel, just like parallel make builds multiple files in parallel:
+* Parallel buildbot:
+
+!images/parallel_buildbot.png!
+
+This is realtime web output from builtbot and the currently executed jobs are displayed in yellow. It should dramatically improve the testing speed, because most tests are single-threaded.
+
+* Some more useful improvements in the infrastructure: ffmpeg bindings for Windows (opencv_ffmpeg*.dll) are now cross-compiled on Linux (apparently, mingw on Linux is much more stable than native Windows version) and the binaries are now placed in a separate opencv_3rdparty repository.
+* Alexander Kalistratov finished parallel motion jpeg encoder and at once tested pthread-based parallel for, which he implemented earlier. The parallel encoder demonstrates quite good scalability - 3x faster encoding on 4-core machine. Why we spent that much time on the motion jpeg codec? Because on mobile devices it's often much more convenient to capture and store various videos and then play with the videos on desktop using a convenient IDE. It's true that Android and iOS may encode video using H264, but usually the quality of individual frames is quite low. As opposite to that, motion jpeg does not use any motion prediction, and so fast motion is captured very well there are no any other compression artefacts. Besides, this thing is completely cross-platform. Even single-threaded codec was able to encode HD (720p) video @30fps. Multi-threaded codec can capture FullHD @30fps.
+
+*GSoC:*
+** Midterm evaluation is over. 14/15 students have passed it. One of Vadim's student failed midterm because of insufficient performance.
+** Maksim's student Alexander Bokov mostly finished his "bonus" task, as he's already done with the planned activities. He implemented draft version of parallel 3-directional SGBM. Such variant of SGBM is 2.5-3x faster than single-threaded 5-directional SGBM and yet still delivers decent quality of the depth map (in the image below are multiple cases from middlebury: left image, result from 5-dir single-threaded SGBM, result from 3-dir multi-threaded SGBM:
+
+!images/depth.jpg!
+
+** Vadim's student Lluis Gomez prepared preliminary implementation CNN-based OCR algorithm, a part of long-term text detection project in OpenCV. The results are pretty good, comparable with Tesseract, as long as 1) the words are well segmented and 2) there is limited dictionary used (say, a few hundreds words). The speed is quite low, though. Now Lluis is preparing detailed comparison with Tesseract and tries to reuse existing text module functionality to properly segment words in automatic way.
+About 40 PR's have been merged since the end of June.
+
+*OpenCV Plans:*
+* Finish migration to github.
+* In July-August try to extend OpenCV HAL to several dozens of functions, at least.
+
+*Numl:*
+* Still working on the type checker. Adding classes and other smaller syntax extensions required quite a lot of refactoring work. Now the type checker is almost complete, and within a week or two it should be finihsed and tested.
+* Alexander A will participate part-time in the numl compiler activities. We really need to speedup and try to make working compiler + runtime + basic standard library by the end of summer.
+* Here is the current state of the compiler:
+** https://github.com/vpisarev/numl/tree/complete_syntax_no_tgen
+
+*Numl Plans:*
+* Finish the type checker, proceed with K-normalization and other parts.
+
+*Misc:*
+* Maksim was on vacation for 2 weeks in the first half of July.
+* Alexander Kalistratov finished his internship at OpenCV dev team and moved to another team within Itseez. Good job, Alexander, thank you and all the best to you!
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* Ask Alexander Shishkov about how to get statistics for websites
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-06-30
+
+h3. _*Agenda*_
+
+* GSoC ratings
+* Book
+* Qualcomm
+* Awards
+
+h3. *_Minutes_*
+
+* GSoC need pull requests in
+** See waterfall -- If pull request is building: http://pullrequest.opencv.org/#/summary/contrib
+** Fill out your evaluations here: https://www.google-melange.com/gsoc/dashboard/google/gsoc2015#evaluations
+** How to do a pull request: http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+** Github for opencv_contrib: https://github.com/Itseez/opencv_contrib
+* Qualcomm
+** Initial assesment of complexity for qualcomm
+** SOW needed from us and to ping them
+* Book
+** Next couple of chapters
+* Need to distribute awards
+** http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Ping qualcomm. SOW
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* -Reminders to Vlad adn Seon-Wook-
+* Book
+
+*Grace*
+
+* Collect names and emails of winners
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2015-06-23
+
+h3. _*Agenda*_
+
+* GSoC midterm grading starts Friday June 26, must be complete by Friday July 3
+**  https://www.google-melange.com/gsoc/events/google/gsoc2015
+* Contest. Have to contact, pay out. Waiting on Intel's funding...
+** https://www.google-melange.com/gsoc/events/google/gsoc2015
+* Book
+
+h3. *_Minutes_*
+
+*Contest*
+* Grace getting list of email contacts of the winners.
+* Intel Invoice was sent in, probably 25 days ..., but money to pay now exists.
+
+*Schwag*
+* We have enough money to order some more scwag
+
+*GSoC Progress. Need Pull requests (don't have to be complete) to pass by July 3rd*
+
+* Mentors
+** opencv-gsoc2015-mentors
+* Students
+** opencv-gsoc2015-students
+
+* *Pull Request In* Antonella Cascitelli - Vladimir Tyan (terran.itx@gmail.com): TLD improvements - https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/auron/5629499534213120.
+* *Pull Request In* Bo Li - Baisheng Lai (laibaisheng@gmail.com). Omnidirectional Cameras Calibration and Stereo 3D Reconstruction. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/baisheng/5629499534213120
+* _*No Pull Request*_ Vincent Rabaud - Edgar Riba (edgar.riba@gmail.com). Structure From Motion module. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/edgarriba/5693417237512192
+* *Pull Request In* Bence Magyar - Jiaolong Xu (jiaolongxu@gmail.com). Improving PBM in OpenCV. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/jiaolong/5718998062727168
+* *Pull Request In* Fernando J. Iglesias Garcia - Laksono Kurnianggoro (kurnianggoro@gmail.com). Real-time Multi-object Tracking using Kernelized Correlation Filter. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/kurnianggoro/5629499534213120
+* _*No Pull Request*_, but previously Vadim Pisarevsky - Lluis Gomez (lgomez@cvc.uab.es). Improve and expand Scene Text Detection module in OpenCV. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/lluisgomez/5751725713522688
+* _*No Pull Request*_ Michael Harville, Gary Bradski - Naoto Hieda (micuat@gmail.com). Projection mapping (Projected Augmented Reality). https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/micuat/5707702298738688
+* *Pull Request In* Sergei.Nosov@itseez.com - Mircea Paul Muresan (mmp_mircea@yahoo.com). Stereo correspondence improvements. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/mmp131316/5741031244955648[Andrey can not mentor the student. Does anyone want to take one?]
+* *Pull Request In* Delia, Stefano Fabri, Claudia Rapuano - RobertaRavanelli (roberta.ravanelli@uniroma1.it). Structured-Light System Calibration for OpenCV. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/roberta_ravanelli/5676830073815040
+* "done" Pull Maksim Shabunin - Alexander Bokov (sbokov01@gmail.com). Recent advances in edge-aware filtering. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/sbokov/5629499534213120
+* _*No Pull Request*_ Prasanna, Gary Bradski - Sergio Garrido (sgarrido2011@gmail.com). Charuco board: Chessboard+ArUco for camera calibration. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/sgarrido/5629499534213120
+* _*No Pull Request*_ Alexander Bovyrin - Vlad Shakhuro (shahurik@gmail.com). ICF detector improvements. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/shahurik/5717271485874176
+* *Pull Request In* Vadim Pisarevsky - Seon-Wook Park (seon.wook@swook.net). Real-time image preprocessing on ARM. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/swook/5798429187899392
+* *Pull Request In* Anatoly Baksheev, Douglas Lee - Vitaliy Lyudvichenko (ludv1x@yandex.ru). Implementation of universal interface for deep neural network frameworks. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/vludv/5657382461898752
+* *Pull Request In* Manuele Tamburrano, Stefano Fabri - Yida Wang (wangyida37@gmail.com). Deep Learning & GPU Implementation Proposal. https://www.google-melange.com/gsoc/proposal/review/org/google/gsoc2015/wangyida/5629499534213120
+
+*Book*
+* Next 2 weeks
+* Vadim for form, Gary for edits
+
+h3. *_Reports_*
+
+*Vadim*
+
+*OpenCV:*
+* OpenCV 3.0 is out! The announce has been published
+* Prepared and delivered OpenCV 3.0 tutorial at CVPR 2015. The slides are available here:
+** http://is.gd/niZvJu (Introduction to OpenCV 3.0)
+** http://is.gd/ShvMZE (Speeding up with OpenCV 3.0)
+** http://is.gd/izlOrM (Some cool features in 3.0 and opencv_contrib).
+
+* There has been also test run of the practical session using web-OpenCV. With more time and care the approach could be very successful. Overall, the tutorial went pretty good.
+* Over 30 PRs have been merged since 3.0 final; About a dozen of bugs have been fixed
+* ffmpeg wrapper got H264 support via BSD openh264 lib from Cisco. As opposite to GPLed x264, this new feature gives OpenCV users more liberal way to encode videos with h264.
+* Android support is still being improved. The final version of OpenCV Manager for Android should be ready next week and then after more testing it will be published at Google Play.
+* GSoC projects go very well.
+** Maksim's student submitted all the PR's with edge-aware filters for disparity map. Basically, he mostly finished the planned GSoC program and will now look at possible StereoSGBM improvements.
+** Lluis Gomez (mentored by Vadim) is working on self-contained text recognition tool. It already gives promising results and the PR should be ready by midterm.
+** Seon-Wook Park's patch with fast improved grayworld white balance algorithm has been merged. The initial version of spatialGradient function (already twice faster than 2xSobel) is ready and is being further improved now.
+** Several other projects demonstrated good progress as well: omni-directional camera calibration, binary features for stereo correspondence improvement, deep learning support etc.
+
+*OpenCV Plans:*
+* During July we plan to migrate our repository to github, together with wiki and the bug tracker.
+* Alexander is working on speeding up buildbot testing infrastructure, we plan to speedup build and especially the regression tests by running multiple jobs.
+* Other multiple improvements in buildbot are planned, e.g. adding regression tests for opencv_contrib to the precommit builders.
+
+*Numl:*
+* Resumed work on the compiler. The language syntax has been extended to something like 99% of the initially planned features - added classes, interfaces, array comprehensions, type cast operation, string interpolations etc. Some other elements have been refined too. Of course, extended syntax requires substantial modification of all the compiler stages. For now the lexer, parser, AST and the pretty printer have been updated. Started work on extending one of the most complex part - the type checker. The latest snapshot can be found at
+** https://github.com/vpisarev/numl/tree/complete_syntax
+
+*Numl Plans:*
+* Update the type checker, proceed with K-normalization and other parts.
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-06-16
+
+h3. _*Agenda*_
+
+* GSoC
+* Contest
+* NUML
+* Book
+
+h3. *_Minutes_*
+
+
+* GSoC
+** Submitted PO
+** This time won't wait for mentor conference travel receipts. Will pay promptly and bill the remainder after travel is in.
+* Contest
+** Submitted payment request to Intel. Then can pay out awards
+* Next
+** OpenCV contrib, adding regression tests. 5 machines to run tests (2 arm, 1 mac, 1 linux, 1 windows). Want to optimize the regression tests
+** Need to update the cheetsheet. Need to reference doxygen.
+** NUML
+*** High level bugs only
+*** Matix expressions easy
+*** Can convolution be easily expressed?
+* Book
+** Ch 1-3 done
+** Where should OpenCL, IPP (free)
+*** Umat has to be used carefully, because overhead makes small matrices much slower. Only UMat large images
+** parallel for
+** OpenCL
+** Machine learning is hardest, Ch13 will wait. But interface has changed a lot.
+* Looking at 50 pull requests
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-06-04
+
+h3. _*Agenda*_
+
+* OpenCV Contest
+* OpenCV People's Choice Best Paper
+* Workshop
+* GSoC
+
+h3. *_Minutes_*
+
+* OpenCV Contest
+* OpenCV People's Choice Best Paper
+* Workshop
+* GSoC
+
+h3. *_Reports_*
+
+*OpenCV:*
+* OpenCV 3.0 is ready. Very likely it will be packaged and released tomorrow. The number of closed bug reports exceeded 200. Preliminary version of the changelog is here, as usual: http://code.opencv.org/projects/opencv/wiki/ChangeLog
+* PR for the new Android OpenCV Manager (created by Maksim) is pending. It's written in Java, it's much simpler than the previous Manager (because it's in Java and because it makes use of all the nover features of Android 4.x and Google Play).
+* pthread-based cv::parallel_for_ has been integrated. It passes all the tests.
+* Slides for CVPR 2015 tutorial are in progress. The link to the draft version has been sent separately.
+* Alexander Alekhin more or less finished web-OpenCV app:
+
+!images/runbox-texts.jpg!
+
+users can choose one of pre-defined opencv samples, edit, run, see the result images, upload their own images as inputs. C/C++ and Python are supported.
+
+* played with 2 contributions out of 17 for the challenge (LATCH binary descriptor and RHO algorithm for computing homography). They both have been contributed to OpenCV and they both appear to be quite good algorithms.
+
+* *GSoC:*
+* there are first results already from Alexander Bokov (mentored by Maksim):
+** https://github.com/Itseez/opencv_contrib/pull/239
+* text detection (Lluis Gomez, mentored by Vadim) - Lluis will finish and prepare PR on the simple CNN-based text recogniser. Right now we can only recognize text using 3rd-party Tesseract.
+* optimized for ARM image preprocessing (Seon-Wook Park, mentored by Vadim) - the student is working on optimized grayworld white balance implementation, will submit PR soon.
+* improved stereo correspondence using binary descriptors (Mircea Paul Muresan, mentored by Sergei Nosov) - the plans have been finalized, student started working on implementing simple dense binary descriptors (such as Census).
+
+*OpenCV Plans:*
+* Release OpenCV 3.0, publish announcement.
+* Add more material to the tutorial.
+* After 3.0 release continue QA work -
+** add new builders to the buildbot,
+** extend existing (in particular, run some opencv_contrib tests),
+** repair Java tests, ...
+
+*Numl:*
+* not much progress on the numl during these 3 weeks.
+* The latest snapshot is at:
+* https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2015-05-26
+
+h3. _*Agenda*_
+
+* GSoC 2015
+* CVPR tutorial
+* CVPR challenge
+* CVPR People's Choice Best Paper
+
+h3. *_Minutes_*
+
+* GSoC 2015
+** Deep learning task,
+*** Contacted author of paper
+*** "Learning Descriptors for Object Recognition and 3D Pose Estimation":http://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wohlhart_Learning_Descriptors_for_2015_CVPR_paper.html
+**** http://arxiv.org/pdf/1502.05908v2.pdf
+**** all the network protocal produced w/blender
+** All results will go continuously into opencv_contrib. Contrib is only tested on buildbot for master branch
+* "CVPR tutorial":http://code.opencv.org/projects/opencv/wiki/OpenCV_Tutorial_CVPR_2015
+** Add ppt slides to google drive and send Vadim the links.
+** 0.45: intro talk.
+** 0.05: future directions
+** 1h: Vadim, internal. HAL, GMat, faster, since.
+** 1h: the new API. Mat, Mat_, GMat, Algorithm, OpenCV2, imgproc, Python, (OpenCV3),
+** 1h: GSOC, inpainting, RGBD, tutorials. => exercises: USB keys with OpenCV3, .debian
+* CVPR challenge
+** On last week we got 17 submissions on the Challenge in 5 categories:
+*** tracking: 8
+*** image segmentation: 2 + 2 foreground detection
+*** image registration: 3
+*** gesture recognition: 1
+*** object recognition: 1
+* CVPR People's Choice Best Paper
+** template for voting results
+** export results as xml files (but papers by unique ID)
+*** need to get ID to papers, Grace will get from Terry Boult
+*** big archive from Dmitry with 17 contributions
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+*OpenCV:*
+* The work on stabilization of OpenCV 3.0-pre continues. During the past 3 weeks *we've merged over 60 pull requests, closed ~150 bug reports!* In particular, such areas as documentation, building and installation, python bindings, core, imgproc, features2d, calib3d have been improved. We've even fixed some 2-years-old, 3-years-old bugs.
+* We've also regenerated and uploaded the new 3.0rc Android package where some files were missing.
+* *OpenCV 3.0 final is going to be released in the beginning of June, just before CVPR.*
+* The work on several GSoC projects has been started:
+** there is preliminary document on DLNN package (by Vitaliy Lyudovichenko and Anatoly)
+** Seon-Wook Park (mentored by Vadim) will be preparing PR for grayworld white balance algorithm, then he will work on fast image gradient function and then on speeding up non-local means denoising algorithm
+** Alexander Bokov (mentored by Maksim Shabunin) will be working on a fast weighted median filter that can be used for disparity map post-processing
+** Mircea Paul Muresan (mentored by Sergei Nosov) will be working on dense binary descriptors and their applications to stereo matching
+** Vlad Shakuro (mentored by Alex Bovyrin) will be working on improving WaldBoost and ICF/ACF features, and then on their application to pedestrian detection.
+** Lluis Gomez (mentored by Vadim) will be working on further improvements & optimizations in the text detection module.
+** Alexander Kalistratov continues working on pthread-based parallel_for implementation. It now works quite stable, but the performance is not good enough yet.
+* Starting from May 18th, *Alexander Alekhin*, who created the current version of "pullrequest.opencv.org":http://pullrequest.opencv.org/ , *has joined ML/OpenCV team* and will be working on improving OpenCV. Alexander already created prototype of Javascript+CGI web application that allows to run OpenCV code, created/edited by user, on a server and show the results. This should help us to demonstrate OpenCV 3.0 efficiently at CVPR.
+* Dmitry Anisimov prepared the initial report on 17 submissions for the OpenCV Challenge (sent separately). Someone should evaluate them.
+
+*OpenCV Plans:*
+* Keep fixing bugs. Currently, there are ~550 open bugs; ideally, the number could be reduced to ~500, but in more realistic scenario it will be ~520-530.
+* Release 3.0 final
+* Finish the web-OpenCV application
+* Prepare slides for CVPR
+
+*Numl:*
+* not much progress on the numl during these 3 weeks.
+* The latest snapshot is at:
+** https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* resume the work on the language in June, after CVPR.
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-05-19
+
+h3. _*Agenda*_
+
+* GSoC
+* CVPR
+
+h3. *_Minutes_*
+
+* workshop: many entries
+* review app API
+* 8h30 to 12h30: OpenCV workshop. Let's get started.
+* ideas for tutorial: intro talk (30 min). 1h: Vadim, internal. HAL, GMat, faster, since. 1h: the new API. Mat, Mat_, GMat, Algorithm, OpenCV2, imgproc, Python, (OpenCV3), 1h: GSOC, inpainting, RGBD, tutorials. => exercises: USB keys with OpenCV3, .debian
+* OpenCV3: 750 bugs down to 600
+* Stefano: GSOC question on registration. Needs to split the problem
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* get schwag for CVPR
+
+*Vadim*
+
+* create wiki page for blog
+
+*Grace*
+
+* .
+
+
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-05-12
+
+h3. _*Agenda*_
+
+* Go over embedded vision talk
+* GSoC
+* CVPR
+
+h3. *_Minutes_*
+
+* GSoC
+** Need alternate mentor for improved stereo matching
+** Replace matching algorithm that eliminates need to match whole blocks in block matching.
+** Also use brief descriptors so that it's more robust or slice of deep features
+*** who to mentor him?  Grace V?  Or co-mentor with Itseez or Stefano?
+* CVPR
+** Looks like we may have at least 5 entries to the contest
+** Going ahead with people's choice best paper
+* Giving a talk at Emedded Vison Conference
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Resolve the stereo co-mentoring needs
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-05-05
+
+h3. _*Agenda*_
+
+* HW company
+** Expand support for OpenCV:
+***  https://software.intel.com/en-us/opencv
+
+h3. *_Minutes_*
+
+* .
+
+h3. *_Reports_*
+
+* . Vadim
+
+*OpenCV:*
+* OpenCV 3.0 rc is finally out! See http://opencv.org/opencv-3-0-rc1.html
+* The other good news: OpenCV has reached (and exceeded) 10,000,000 of downloads!
+* We are now entered bug fixing mode. Right after 3.0rc the bug tracker at code.opencv.org listed ~760 open bugs. During the previous week we cleaned it a bit, now there are ~680 open bugs. We will keep fixing bugs during May.
+* Maksim is working on OpenCV Manager for Android that would support both 2.4 and 3.0
+* Alexander Kalistratov has implemented draft version of parallel_for_ loop using pthreads. This should make opencv available on platforms without TBB.
+
+*OpenCV Plans:*
+* Keep fixing bugs.
+* Release 3.0 final
+
+*Numl:*
+* not much progress on the numl during these 2 weeks.
+* The latest snapshot is at:
+* https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* finish the "lambda-lifting" step after which there is no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-05-04
+
+h3. _*HW co*_
+
+HW co is thinking about making OpenCV better. We have just released a binary version of OpenCV with integration into our development tools for Windows and Android.
+See here:
+
+https://software.intel.com/en-us/opencv
+
+h3. _*Developing long-term plans for OpenCV*_
+
+Some of our goals:
+* Want to support more
+* Client and mobile uses
+* Will present at Embedded Vision Summit
+** Make easier to use for production code
+** More people want OpenCV, survey
+*** IP clearance
+*** Better coverage
+*** Better contrib model
+*** Better performance
+* Meet at Embedded vision summit
+
+OpenCV Goals:
+# *Good Install:* People want a good install experience on their given platform. That should just work seemlessly. Install & they have what they need to run.
+# *Performance++:*, always important.
+# *People's Choice Best Paper:* I want to implement "People's Choice" Best paper/paper they'd most want to see implemented in open code (I am doing a small trial run of this at CVPR 2015):
+## A voting app that people can vote for their best paper/the paper they most want to see implemented
+## A small award for the People's Choice Best paper(s)
+## A much bigger award if the algorithm described in that paper is implemented as a pull request in OpenCV-contrib
+# *Deep nets:* OpenCV is already working on a universal deep net reader that:
+## Would read in deep nets from Torch, Caffe, Theano (i.e. training is done via external libraries)
+## Run them efficiently (implement generalized matrix multiply effectively, approximate nets by separable convolution etc)
+# *Bigger Pieces:*  Somewhat like Qualcomm's Vuforia, we should implement more complete vision functions that AR, games and performance artists want. E.g.:
+## Pre-trained deep nets in:
+### Face, People, Gesture, Cars, Features as below, Pets, Signs, Indoor Scenes, Scenic items (windows, walls, ceiling, floor, doors, chairs, tables, ...) These would be ready to run, pre-trained nets and probably become very popular.
+## Use of features from pre-trained nets -- a cross section of deep learned features from which to do SLAM, Visual odometry etc
+## SLAM, with good EKF models for integrating IMU too
+## 3D Capture using SLAM + Depth
+## Much improved and expanded calibration
+## Much improved augmented reality type markers (ARUCO type 2D bar codes)
+## All bar codes
+## Use of textured planar objects as calibration and camera pose markers.
+## 2D and 3D object trackers
+## Eye detection and tracking
+## Face detection and tracking
+# Anything that enables *robotics and drones*. I'd like to see an effort to expand the capability for these kinds of high school and college robotics. Help make the robots smarter by giving better building blocks. As I tried to wave a flag for mobile during my later period at _I_. Don't neglect robotics now.
+# *Documentation, Tutorials* ... Can always be improved.
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-04-28
+
+h3. _*Agenda*_
+
+* CVPR
+* GSoC Mentors and Interns
+* OpenCV 3.0
+
+h3. *_Minutes_*
+
+* CVPR
+** Competition
+*** text detection
+**
+* GSoC
+** All mentors start summer with
+*** pull request stub
+*** By midterms, judged on pull request content
+*** Final,
+**** must have a pull request that implements the functionality,
+**** documented via doxygen
+**** unit test
+**** example of use
+**** Youtube video
+* OpenCV 3.0
+** Release candidate is out 4/24/15
+** Final out in several weeks
+
+
+h3. *_Reports_*
+
+*Numl:*
+* no progress on the numl during these 2 weeks.
+* The latest snapshot is at:
+* https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* finish the "lambda-lifting" step after which there is no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+We are finally approaching OpenCV 3.0rc very closely. Our major show stopper issues/features (Android, HAL) are done and unless something unexpected happens, we will release 3.0rc this week.
+
+* The other 27 PR have been merged during the last 2 weeks. Notably, users seem to understand the situation and submit some valuable bug fixes and other nice patches for even better 3.0.
+* Maksim greatly improved Windows and Android builds, namely:
+** *Windows Mega Pack:*
+*** Removed old and big PDF docs, we now send users to docs.opencv.org with up-to-date docs
+*** Removed Visual Studio 2010 binaries, leaving only VS2012 and VS2013.
+*** Updated licenses
+*** Updated readme where users instructed on how to start with OpenCV; added simple CMake-based project, which users may use as playground.
+** *Android:*
+**** Added nightly build of "Android megapack", which is greatly extended variant of precommit Android builder. Fixed the remaining issues with building OpenCV samples on Android.
+**** Renamed OpenCV Manager to OpenCV3 Manager and briefly tested it on simulator and real device.
+* We added some early version of OpenCV HAL (Hardware Acceleration Layer) that includes hopefully very useful "universal intrinsics", using which one can
+*** write,
+*** compile
+*** and debug
+** vectorized code on desktop (which will compile into SSE instructions)
+** and the very same code will compile into equivalent NEON instructions on ARM.
+** In theory it's portable to MIPS and other similar engines.
+* NVidia team said at least for now they will substantially reduce their participation in OpenCV development. In particular means that the core OpenCV team needs to take care of Android.
+
+*OpenCV Plans:*
+* Check iOS build, check Linux and Windows builds more tightly.
+* Prepare the final OpenCV 3.0rc Windows, Android and iOS packages
+* Update the 2.4=>3.0 transition guide (e.g. add describe the new ML module).
+* Finally, release 3.0rc.
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Contact Rubius for web voting app
+* Mentor-Student startup email
+* Get May 12 Embedded. Start OpenCV 3.0 notes w/ vadim
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-04-21
+
+h3. _*Agenda*_
+
+* QQ
+* GSoC
+
+h3. *_Minutes_*
+
+* OpenCVHW layer. Close to fastCV
+* QQ
+** Write SOW
+** find resources
+** Compatibility problems -- subtle differences in low level functions propogate through many higher functions
+*** put 250 fastcv functions, then have to comment out 200 for this reason. Needs to be checked
+*** especially in machine learning this can happen
+* FFMPEG compile problem. Newer API for Ubuntu end of last year version and upcomming one.
+* GSoC
+** Pretty much have the list of students ...
+** and 23 potential mentors to cover them(!), so some doubling up.
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+*Numl:*
+* no progress on the numl during these 2 weeks.
+* The latest snapshot is at:
+* https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* finish the "lambda-lifting" step after which there is no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+* We are finally approaching OpenCV 3.0rc very closely. Our major show stopper issues/features (Android, HAL) are done and unless something unexpected happens, we will release 3.0rc this week.
+* The other 27 PR have been merged during the last 2 weeks. Notably, users seem to understand the situation and submit some valuable bug fixes and other nice patches for even better 3.0.
+* Maksim greatly improved Windows and Android builds, namely:
+** *Windows Mega Pack:*
+*** Removed old and big PDF docs, we now send users to docs.opencv.org with up-to-date docs
+*** Removed Visual Studio 2010 binaries, leaving only VS2012 and VS2013.
+*** Updated licenses
+*** Updated readme where users instructed on how to start with OpenCV; added simple CMake-based project, which users may use as playground.
+** *Android:*
+*** Added nightly build of "Android megapack", which is greatly extended variant of precommit Android builder. Fixed the remaining issues with building OpenCV samples on Android.
+*** Renamed OpenCV Manager to OpenCV3 Manager and briefly tested it on simulator and real device.
+*** We added some early version of OpenCV HAL that includes hopefully very useful "universal intrinsics", using which one can write, compile and debug vectorized code on desktop (which will compile into SSE instructions) and
+*** the very same code will compile into equivalent NEON instructions on ARM. In theory it's portable to MIPS and other similar engines.
+* NVidia team said at least for now they will substantially reduce their participation in OpenCV development. In particular means that the core OpenCV team needs to take care of Android.
+
+*OpenCV Plans:*
+* Check iOS build, check Linux and Windows builds more tightly.
+* Prepare the final OpenCV 3.0rc Windows, Android and iOS packages
+* Update the 2.4=>3.0 transition guide (e.g. add describe the new ML module).
+* Finally, release 3.0rc.
+
+h3. *_Action Items_*
+
+*Gary*
+
+* -Set meeting to get SOW to QQ this Thursday-
+* Thursday meeting for SOW
+
+*Vincent*
+
+* Thursday meeting for SOW
+
+*Vadim*
+
+* Thursday meeting for SOW
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-04-14
+
+h3. _*Agenda*_
+
+* GSoC
+* Contest
+* Theano
+* New full time support
+
+h3. *_Minutes_*
+
+* GSoC
+** Asked for 15-18
+** Discussed what to do with deep net support:
+*** insert opencv layers (Caffe)
+*** work with same menory space as Theano
+*** Check with Yann if he's got someone
+*** Pull in networks and run them efficiently
+**** Make available pre-trained layers
+** We get slots (2 days)
+*** Select students that we want
+*** Never tell students whether they are in or not until official
+**** But, assuming they are in, what is the exact plan
+* Vadim
+** Release FC of OpenCV 3.0
+** Next week book
+** CVPR tutorial from may
+* Contest
+** Just a few contributions
+** Most come close to end
+** 5-6 people
+* New guy starts May 5th
+* user contrib
+** Load in
+** click on and off what you want to build
+** Smaller builds: build static with what you use
+* QQ
+** Itseez should handle w/OpenCV finder fee
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Ping KP on OpenCV.com
+
+*Vincent*
+
+* Schwag plans for OpenCV
+
+
+*Grace*
+
+* Schwag plans for OpenCV
+* Contest
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-03-31
+
+h3. _*Agenda*_
+
+* GSoC
+
+h3. *_Minutes_*
+
+* GSoC
+** Go through all the proposals
+** Connection to deep networks
+** With Theano, maybe tri-mentor, maybe quad-mentor
+*** Gary, Anatoly, maybe Andrew for Vitaliy or Yida
+** For Caffe others?
+* QQ
+** Need statement of work Alexi Myakov
+** We need to get the wheels rolling
+* Interface using OpenCV using binaries for FastCV, MARE, and QBLAS
+* OpenCV 3.0
+** Release candidate
+** 4 chapters of the book
+** next
+
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+*Numl:*
+* A little progress on K-form transformations. Most of the time was spent on OpenCV.
+* The latest snapshot is at:
+** https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* finish the "lambda-lifting" step after which there is no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+* Maksim has fixed one serious bug in Python bindings (probably recently introduced) that made methods of base classes unaccessible from Python. Another bugfix was on the masterpack for Windows; we are slowly moving towards good quality packages for Windows, Android and iOS, necessary to release good quality 3.0rc.
+* There is also initial version of OpenCV HAL. While we will probably not be able to include full-featured OpenCV HAL into 3.0, it's important to squeeze at least the early version of it into 3.0.
+* We added self-contained motion jpeg encoder to OpenCV 3.0pre. Motion jpeg decoder is in progress. That will give us some independence from ffmpeg and true portability of many samples.
+* Another 20+ PR have been merged.
+* GSoC 2015 proposal evaluation period has started. Most candidate have got at least 1 evaluation; I evaluated ~50 candidates out of 85; also contacted some good students from the past GSoC and they managed to submit their applications on time, which is great! There are also some contacts with applicants in order to check their skills.
+
+*OpenCV Plans:*
+* Cleanup OpenCV and 3rd-party licenses;
+* Check and try to merge most important opencv and opencv_contrib PRs.
+* Prepare OpenCV 3.0rc Windows and Android packages
+* Update the 2.4=>3.0 transition guide (e.g. add describe the new ML module).
+* Finally, release 3.0rc.
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Get moving on QQ
+
+*Vincent*
+
+* Send Alexi email for SOW
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-03-24
+
+h3. _*Agenda*_
+
+* GSoC
+* Numl -- new functional language
+
+h3. *_Minutes_*
+
+* Go through message threads
+** https://groups.google.com/forum/#!forum/opencv-gsoc-2015
+* Need to get more mentors to sign up ( "have 18 now":http://www.google-melange.com/gsoc/dashboard/google/gsoc2015#participants )
+* Want to see done:
+** Cardboard
+** Projection mapping
+** Stereo correspondence improvements
+** Anyhting with deep networks
+*** Andrew R
+** Better camera calibration
+** Charuco and Charuco tag
+** color calibration
+** Real time image processing on mobile (need right student)
+** Tracking improvements
+** PBM
+** improve ICF/ACF
+** SfM
+** Quadrotor
+* Numl -- allow efficient code generation
+** Show to Itseez and Magic Leap people
+** output of compilier willl be specialized C++ code (unrolled loops, neon intrinsics and so on
+
+h3. *_Reports_*
+
+Vadim
+
+*Numl:*
+* Implemented "k-normal form" pretty printer; debugged k-normalization part; started implementation of the lambda lifting and other basic transformations of k-normal form.
+* The latest snapshot is at:
+** https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* finish the "lambda-lifting" step after which there is no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+* Maksim has fixed th*e Android packages; now they are functional (including OpenCV Manager; however, the Manager supports 3.0 only; it's planned by 3.0 final release to extend the Manager to include and support both 2.4.x and 3.0).
+* Initial version of the the transition guide (2.4=>3.0) is ready: https://github.com/mshabunin/opencv/blob/transition-guide/doc/tutorials/introduction/transition_guide/transition_guide.markdown
+* Added binary compatibility checker in the precommit builder.
+* Another 20+ PR have been merged.
+* GSoC 2015 conversation is ongoing.
+
+*OpenCV Plans:*
+* Cleanup OpenCV and 3rd-party licenses;
+* Check and try to merge most important opencv and opencv_contrib PRs.
+* Prepare OpenCV 3.0rc Windows and Android packages
+* Update the 2.4=>3.0 transition guide (e.g. add describe the new ML module).
+* Finally, release 3.0rc.
+
+
+h3. *_Action Items_*
+
+
+* Send out a submit project proposal notice to all students
+
+*Gary*
+
+* Get Michaael Harville in for projected mapping
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2015-03-17
+
+h3. _*Agenda*_
+
+* GSoC
+
+h3. *_Minutes_*
+
+* .
+
+h3. *_Reports_*
+
+* . Vadim
+
+*Numl:*
+
+* Finished the k-normalization part; not debugged yet. Actually, not much time was spent on the compiler during the past 2 weeks.
+* The latest snapshot is at:
+* https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+
+* debug the k-normalized form
+* implement the "lambda-lifting" step after which there is no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+
+* OpenCV 2.4.11 is out.
+* Maksim has integrated fast round on ARM (a little piece of inline assembly). Quite many functions, especially in the imgproc domain, have got noticeable speedup (10-20%, sometimes up to 2-3x).
+* Android build for OpenCV 3.0pre is ready (including the unsigned OpenCV manager; it's enough to install OpenCV manager locally and test). However the built shared libraries can not be loaded for some reason (unresolved symbols); the problem is being studied.
+* Several build and test failures on Linux and Windows have been resolved; now the buildbot is "all green" (at least the pre-commit builders)
+* Over 20 PR have been merged.
+* GSoC 2015 conversa*tion is ongoing. Looks like there are good candidates (and also some mentors) for a substantial part of the projects.
+
+*OpenCV Plans:*
+
+* Cleanup OpenCV and 3rd-party licenses;
+* Check and try to merge most important opencv and opencv_contrib PRs.
+* Prepare OpenCV 3.0rc Windows and Android packages
+* Update the 2.4=>3.0 transition guide (e.g. add describe the new ML module).
+* Finally, release 3.0rc.
+
+
+
+h3. *_Action Items_*
+
+*ALL*
+
+* Join as mentor at GSoC
+** http://www.google-melange.com/gsoc/homepage/google/gsoc2015
+* Send out emails to students (there are lots!) to register their ideas on the GSoC site for OpenCV
+** http://www.google-melange.com/gsoc/homepage/google/gsoc2015
+* Send out calls to enter the CVPR OpenCV contest
+** http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-03-10
+
+h3. _*Agenda*_
+
+* GSoC 2015
+
+h3. *_Minutes_*
+
+* "We are an accepted organization in GSoC 2015!":http://www.google-melange.com/gsoc/org2/google/gsoc2015/opencv
+* GSoC, we are in and starting
+** *March 16* Student applications begin!
+** Might be worth talking to the deep learning library to see if they want joint projects
+** Gesture recognition
+* Proposed ideas
+** 1 Cardboard -- good "give back" for Google
+** 2 Projection mapping. Might have someone good.
+** 3 File storage Good mentor.
+** 4 Stereo ... always good if good candidates
+** 5 Self contained video  ... We have 8 bit encoder. Parallelize. Add decoder. 12 bit support good (video from kinect)
+** 6 Deep learning connections -- high priority!
+*** Contact other contributors to these libraries, work together.
+*** Torch/Lua https://github.com/tomaka/luawrapper  C++ wrapper
+*** Theano (uses numpy, so should be easy)
+*** Caffee (expand)
+** 7 Better calibration ... always
+** 8 Charuco, or Magic Leap will open source
+** 9 Color calibration good to have
+** 10 fast mobile algorithms always
+** 11 Tracking imrovements
+** 12 PBM (part based models)
+** 13 Integral Channel Features
+** 14 numl+OpenCV, lua+OpenCV Vadim can drive
+** 15 Gestures -- Implement some Shotton approaches (patents?)
+** 16 SfM If we can get the right students...
+** 17 Quadrotors Cool, but student will have to already be a fanatic about it
+** Documentation better methods, always good.
+* Student projects to be paid only if:
+** They must generate a pull request at end of summer
+*** By midterm a draft prototype
+*** By the end a full pull request
+** Full Doxygen documentation
+** Unit test
+** Example code
+** Movie
+*** From last year https://www.youtube.com/watch?v=7WUZA_KIIRA&feature=youtu.be
+* OpenCV 3.0
+** continue to work on release candidate
+** couldn't spend much time
+** Maxim updated script to build 3.0
+** eliminated several test failure
+** Getting much closer
+** 2 weeks
+** Final version 3 weeks from there
+
+h3. *_Reports_*
+
+h4. *_March 3_*
+
+*Numl:*
+* Mostly finished, but not debugged yet the k-normalization part, where the complex original syntax, represented (using the parser) by AST (abstract syntax tree) and checked by the syntax/type checker, is converted into much more simple "k-normalized" syntax tree, where each variable has unique name, each subexpression is stored into a temporary variable, chained if statement as well as complex logical conditions are converted into atomic if-then-else, basic operations are represented as calls to builtin functions etc.
+
+The latest snapshot is at:
+https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* implement the k-normalized form pretty printer for debugging
+* finish and test k-normalization
+* implement the "lambda-lifting" step after which there are no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+* Maksim unified and simplified even further the wrapper generation mechanism, where in each module CMake's script we specify which bindings we want (python and java are supported now), and where the module-specific parts are located in the module subdirectory (e.g. opencv_contrib/modules/bioinspired/misc/java/...).
+* He also tried experimental much faster round on ARM, and we've also got patch from the other team (by Marina Kolpakova) with even better implementation. Just this tiny function should noticeably improve performance of many OpenCV functions on ARM.
+* We've integrated over 20 PR during last week.
+
+*OpenCV plans:*
+* Clean the PR list even more
+* Build OpenCV master on Android. We do it with each patch, but we have full-fledged script that builds OpenCV for many different Android platforms (ARM, x86, MIPS) that works well for 2.4 and we are going to adjust it for the master/3.0
+* Prepare and release 3.0rc. Estimated time is still 2 weeks or less. The focus now is on the final packaging and testing.
+
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-02-24
+
+h3. _*Agenda*_
+
+* GSoC
+
+h3. *_Minutes_*
+
+* GSoC
+** Final payments for 2014 going out
+** Movie almost ready for GSoC 2014
+** See project ideas at http://code.opencv.org/projects/opencv/wiki/GSoC_2015#2015-Project-Ideas
+** We need to get mentors signed up
+*** Go to GSoC 2015 https://www.google-melange.com/gsoc/homepage/google/gsoc2015
+***
+
+h3. *_Reports_*
+
+* . Vadim
+
+*Numl:*
+* Tested the syntax/type checker more thoroughly, fixed a few bugs. Now it handles well some (but not all) rather complex constructions like recursive and mutually recursive functions, template types, overloaded functions, nested functions, operations on array slices etc.
+* Continue the k-normalization part.
+* The latest snapshot is at:
+* https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* finish k-normalization
+* implement the "lambda-lifting" step after which there are no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+* Maksim continues the work on OpenCV 3.0:
+* now OpenCV 3.0, just like 2.4, is built with STL support completely enabled. In OpenCV 3.0pre we made some attempts to get rid of STL dependency, and so we introduced "NOSTL" build option, where std::string is replaced with our own String class etc. But since we have not finished this activity and therefore we still need STL, we decided to make STL-compatible mode the default one, which should improve 3.0<=>2.4 compatibility.
+* Finished Algorithm refactoring, as well as all the necessary changes in opencv and opencv_contrib.
+* better, more universal Java support in opencv and opencv_contrib.
+* The other team has prepared OpenCV 2.4.11, which should be out on Feb 24th or 25th.
+* Another 25+ pull requests have been merged last week.
+* Prepared brief list of possible GSoC 2015 projects at http://code.opencv.org/projects/opencv/wiki/GSoC_2015
+
+*OpenCV plans:*
+* Put in the faster float=>int conversion on ARM (should improve performance).
+* Clean the PR list
+* Prepare and release 3.0rc. Estimated time is still ~2 weeks. The focus now is on the final packaging (try Android as well) and testing.
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Collect GSoC 2015 emails
+* Update GSoC 2014 Blog
+*
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-02-17
+
+h3. _*Agenda*_
+
+* GSoC
+** Vadim sign up for org admin
+
+h3. *_Minutes_*
+
+* GSOC
+** Vadim signed up so we are now an official applicant
+* Ideas
+** Latent SVM: Make work, add training, optimize prediction using GPU
+* Deep learning
+** Connection to Torch 7/Lua, see response from Yann
+** Better connection to Caffee
+** Better connection to Theano http://deeplearning.net/software/theano/
+
+* Finding students for better connection to Torch/Lua. Yann LeCun writes:
+<pre>
+A tiny piece of OpenCV is already hooked into Torch https://github.com/marcoscoffier/lua---opencv
+But it would be great to have a more complete interface.
+Also, the current interface doesn’t take advantage of the Foreign Function Interface (FFI) features in LuaJIT, which greatly facilitates this kind of job.
+
+A number of mentors could be found for this from Facebook or DeepMind.
+</pre>
+
+h3. *_Reports_*
+
+Latest Advances in OpenCV and experiments with functional language recode
+
+*Numl:*
+
+* Mostly debugged the type/syntax checker; It handles simple programs well.
+* Started the k-normalization part.
+
+The latest snapshot is at:
+https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+
+* finish k-normalization
+* implement the "lambda-lifting" step after which there are no nested functions anymore.
+* generate C++ code from the output of the previous step.
+* implement runtime, so that the produced C++ programs can be compiled and run.
+* build and run numl's "hello world"-like program.
+
+*OpenCV:*
+
+* Maksim refactored ml modules: <StatModel>::Params structures have been replaced with individual getters/setters - better for long-term maintenance.
+* He also removed the Algorithm class factory and string-based getters/setters.
+
+*OpenCV plans:*
+
+* Put in the faster float=>int conversion on ARM (should improve performance).
+* Build OpenCV with "no-stl" flag
+* Clean the PR list
+* Prepare and release 3.0rc. Estimated time is still ~2 weeks. The focus now is on the final packaging (try Android as well) and testing.
+
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-02-10
+
+h3. _*Agenda*_
+
+* Functional language
+* GSoC
+* Contest
+
+h3. *_Minutes_*
+
+* GSoC
+** We set up a new mailing list for GSoC 2015:
+*** OpenCV-GSoC-2015@googlegroups.com
+
+*Numl (functional language comprehending arrays as backbone for vision):*
+
+* Completed the syntax and type checker.
+* Refactored and extended the numl standard library (declarations only, no implementations yet) to make it much more compact using generic (template) declarations. That allowed to add some basic operations on lists.
+* Right now the parser and the type checker handle the functional part of the language; there are no object-oriented features or loop comprehensions yet .
+
+* The syntax/type checker not only checks the syntax, it resolves all the names, e.g. when the program accesses a record field, local variable or a function from a module. Each name gets a unique identifier, each intermediate value or a sub-expression gets a type. When a user calls user-defined (i.e. non-builtin) template function, it's body is duplicated and properly typed as well.
+
+* Since this is all done, the conversion to the simplified (aka k-normal) form should be pretty straightforward.
+
+* The latest snapshot is at:
+** https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+
+* test the syntax & type checker with generic types & functions support thoroughly.
+* implement the conversion of AST => K-normal form
+
+*OpenCV:*
+
+* >20 patches have been merged during the past 2 weeks.
+* Maksim finished the work on the iOS framework for opencv_contrib and fixed several bugs.
+
+*OpenCV plans:*
+
+* Finish the cv::Algorithm refactoring. Put in the faster float=>int conversion on ARM (should improve performance).
+* Prepare and release 3.0rc. Estimated time is still ~2 weeks. The focus now is on the final API cleanup, even better compatibility with 2.4 and the extensive testing of course.
+
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-02-03
+
+h3. _*Agenda*_
+
+* GSoC
+
+h3. *_Minutes_*
+
+*
+* GSoC
+** OpenCV persistence YMAL latest, remove OpenCV comment flags so that it can be read in by regular YMAL readers
+*** JSON format also. Simpler
+** FLANN
+** Industrial
+** Doxygen documentation (python in rst)
+** Python further extension
+** Accelerate on Xeon
+** Stereo -- use brief like descriptors (hamming compare) instead of sum of absolute differences
+*** Daisy descriptor  with L2 or L1 between to compare blocks
+** Deep learning
+*** Unroll and accelerate w/o dependency to run
+*** Or patch to Caffe or Torch
+*** In Lua, we could call modules in OpenCV from Torch/Lua
+*** Replace complex with simpler
+*** lower level optimization
+** LSD SLAM with BSD
+** Ceres with OpenCV
+** Create Charuco calib pattern
+** Interactive calibration -- real time calibration update w confidence intervals
+*** Confidence intervals, so they can say reprojection is X and parameters
+** Update solvePnP 4-5 variants (epnp)  Grace T found a paper that explores a bunch of local minima
+** Stereo correpsondence w/Brief or Daisy
+** Quadrotor support
+** DTAM
+*** Camera poses for certain # of frames w/R,t
+*** 1st frame reference, depth in each frame
+*** Guess an XYZ, then project to all other views and compute cost function of the resulting (patch around pixels, say 3x3 or 5x5)
+*** Cost cloud of missmatched texture. Then it's optimization time: Total variation L1 in first paper (slow). Can use each frame.
+*** Real time on GPU (hefty one)
+*** Need VO on input images
+** PTAM or method of VO
+** Kinect or RGBD module we have VO in "RGBD module here":https://github.com/Itseez/opencv_contrib/blob/master/modules/rgbd/include/opencv2/rgbd.hpp
+*** Implements: Odometry based on the paper "Real-Time Visual Odometry from Dense RGB-D Images",
+* F. Steinbucker, J.
+** VO
+** Monoslam
+
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Update page
+* Create CVPR tutorial on wiki
+* Create GSoC entry
+* Where is the contest
+* Contact Yann about torch + OpenCV
+* Quadrotor
+
+*Vincent*
+
+* Video
+* Pull request for DTAM
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-01-26
+
+h3. _*Agenda*_
+
+* CVPR
+* GSoC
+
+h3. *_Minutes_*
+
+* CVPR Tutorial
+** 3 levels of lessons
+** Status update
+*** Beginners, basics, quick tips, data structures umat, useful but not obvious data parallel for, matx small matrices
+*** New modules
+*** Problem solving
+*** How to contribute more
+*** New modules
+* GSoC
+** OpenCV persistence YMAL latest, remove OpenCV comment flags so that it can be read in by regular YMAL readers
+*** JSON format also. Simpler
+** FLANN
+** Industrial
+** Doxygen documentation (python in rst)
+** Python further extension
+** Accelerate on Xeon
+** Stereo -- use brief like descriptors (hamming compare) instead of sum of absolute differences
+*** Daisy descriptor  with L2 or L1 between to compare blocks
+** Deep learning
+*** Unroll and accelerate w/o dependency to run
+*** Or patch to Caffe or Torch
+*** In Lua, we could call modules in OpenCV from Torch/Lua
+*** Replace complex with simpler
+*** lower level optimization
+** LSD SLAM with BSD
+** Ceres with OpenCV
+** Create Charuco calib pattern
+** Interactive calibration -- real time calibration update w confidence intervals
+** Update solvePnP 4-5 variants (epnp)  Grace T found a paper that explores a bunch of local minima
+** Stereo correpsondence w/Brief or Daisy
+** Quadrotor support
+
+h3. *_Reports_*
+
+* Vadim
+
+*Numl:*
+* Extended the parser to support generic types and functions
+* Adding support for generic types and functions in the syntax checker
+* Added initial version of numl standard library (prototypes only for now, in order to resolve the built-in operation names successfully in the syntax checker. The library includes basic operations on scalar numbers and numerical arrays, some matrix operations, text string manipulations, basic OS services and input/output operations.
+* It appeared that the support for generic types and functions (aka templates in C++) is critical to make something useful. The reason is the following:
+** numl supports multiple numeric types (8/16/32/64-bit integers, 32/64-bit floats) and also have built-in 1D/2D/... dense array types, and
+** for all those types it's necessary to have basic operations built in (such as +, -, *, /, transpose, flip, matrix product etc.).
+*** So if you multiply the number of operations by the number of possible operand types, the number of basic functions becomes huge.
+** To overcome this problem, I decided to add generic types right away and even allow generic built-in operations.
+*** Besides, some basic functions, like operations on lists, are inherently generic and can not be defined at all without using generic functions.
+*** The support for generic types and functions took adding 2 basic 'meta-types', TGen() and TApp(), as well as some (surprisingly, rather small) modification of the type checker.
+
+* The latest snapshot is at:
+https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+* debug the syntax & type checker with generic types & functions support.
+* implement the conversion of AST => K-normal form
+
+*OpenCV:*
+* ~15 patches have been merged in last week.
+* Maksim continues the work on the joint opencv_contrib world-like module
+** this is binary, e.g. a static lib, that combines all the modules from opencv_contrib, similarly to opencv_world, which combines all the modules from the main OpenCV.
+* Maksim is on the sick leave now (since Friday).
+
+*OpenCV plans:*
+* Prepare and release 3.0rc. Estimated time is ~2 weeks. The focus now is on the final API cleanup, even better opencv_contrib support, even better compatibility with 2.4 and the extensive testing of course.
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* Create CVPR tutorial on wiki
+* Create GSoC entry
+* Where is the contest
+* Contact Yann about torch + OpenCV
+* Quadrotor
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-01-19
+
+h3. _*Agenda*_
+
+* QQ proposal
+* GSoC
+* Write Sergey about wire info
+* OpenVX 1.0 Standard is out wi
+
+h3. *_Minutes_*
+
+* Met with QQ
+** Mare
+** Fast
+** Need to get proposal together
+* OpenVX 1.0 Standard is out with reference implementation and test (40 functions)
+** No advanced pipelines, but 8 bit image processing type things
+* GSoC ideas
+** Industrial
+** Doxygen documentation (python in rst)
+** Python further extension
+** Accelerate on Xeon
+** Stereo -- use brief like descriptors (hamming compare) instead of sum of absolute differences
+*** Daisy descriptor  with L2 or L1 between to compare blocks
+** Deep learning
+*** Unroll and accelerate
+** LSD SLAM with BSD
+* Email for payment
+
+h3. *_Reports_*
+
+* Vadim
+
+*Numl:*
+
+* The syntax/type checker has been finished and is being debugged now. In order to make it work, I've added some preliminary list of built-in types and functions, mostly repeating stdint.h, math.h, stdlib.h etc.
+
+* The latest snapshot is at:
+** https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+*Numl Plans:*
+
+* debug the syntax & type checker
+* implement the conversion of AST => K-normal form
+
+*OpenCV:*
+
+* Over 20 patches have been merged last week.
+* Maksim continues the work on OpenCV 3.0rc:
+** opencv_contrib's variant of the "world" module is in progress.
+** OpenCL info has been published at opencv.org (http://opencv.org/platforms/opencl.html). Thanks to Andrey Pavlenko for the text.
+** the draft version of 2.4=>3.0 transition guide has been prepared: https://github.com/mshabunin/opencv/blob/f5a1b0da01120646189cd0ad9bdd5c9d47f89cbe/doc/tutorials/introduction/transition_guide/transition_guide.markdown
+* People from other teams at Itseez, as well as contributors keep working on OpenCV 3.0 as well:
+** Some more CUDA refactoring (Vlad Vinogradov)
+** More SSE & NEON optimization (Ilya Lavrenov)
+
+*OpenCV plans:*
+
+* Prepare and release 3.0rc. Estimated time is ~2 weeks. The focus now is on the final API cleanup, even better opencv_contrib support, even better compatibility with 2.4 and the extensive testing of course.
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* QQ proposal
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2015-01-12
+
+h3. _*Agenda*_
+
+* Post holiday progress
+* GSOC money is probably in
+
+h3. *_Minutes_*
+
+*OpenCV 3.0*
+
+* Release candidate planned now Feb 1
+** Final release before March
+* Merging multiple passes
+* Optimization
+* Maxim working on
+* Improved Machine Learning headers, backwards compatible
+* Smart pointers. 3.0 slightly modified to improved compatibility
+* Modified OpenCV 2.4 to improve backward compatibillity to make migration to 3.0 easier
+* Vincent had easy migrating experience
+** Maxim
+** Searching for 2nd OpenCV developer
+* Deep learning support
+** Caffe
+** Lua+Torch
+** Speed ups
+*** Train seperable filters from non-seperable
+*** Train auto-encoders to
+*** Categorical layer at the end to minimize difference
+* Dimitry working on the contest
+
+
+NY holidays are over, continuing working on Numl and OpenCV 3.0.
+
+h3. _*Reports*_
+
+*Numl*:
+* The syntax & type checker has been almost finished (~90% finished). Once it's finished, it will cover the complete language except for 3 big parts:
+** OOP (classes, interfaces),
+** templates (aka polymorphic functions and types) and
+** array comprehensions (this part should be relatively easy to add).
+* I took a look at implementations of various functional languages and it appears that this part is often quite large, ranging from a few thousands to even dozens of thousands of lines of code.
+** My version is less than 1000 lines so far, and as I said it's nearly complete, but the code is quite dense.
+
+The latest "snapshot is here.":https://github.com/vpisarev/numl/tree/alt_syntax/src
+
+
+*Numl Plans:*
+* finish the syntax & type checker
+* implement the conversion of AST => K-normal form
+
+*OpenCV:*
+* Maksim made some good progress on preparing OpenCV 3.0rc:
+> * machine learning module has got support for the trained models (XMLs/YAMLs) from 2.4.x. It automatically recognized the old format and handles it properly.
+> * The tutorial on writing Doxygen-friedly documentation has been composed: http://docs.opencv.org/ref/master/d4/db1/tutorial_documentation.html
+> * The old RST docs have been completely removed from repository, not to interfere with the new Doxygen-based docs
+> * The iOS framework for the contributed modules (opencv_contrib) can now be built. It has been a hack and now Maksim is working on better solution.
+* People from other teams at Itseez, as well as contributors keep working on OpenCV 3.0 as well:
+> * OpenCV Manager on Android is being updated to support 3.0.
+> * CUDA part of OpenCV has been refactored. A part of it has been moved to opencv_contrib.
+
+*OpenCV plans:*
+* Prepare and release 3.0rc. Estimated time is ~2 weeks.
+** The focus now is on the final API cleanup,
+** even better opencv_contrib support,
+** even better compatibility with 2.4 and the
+** extensive testing of course.
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+*
+
+*Vincent*
+
+*
+
+*Vadim*
+
+* .
+
+*Grace*
+
+*
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+[[Meeting_notes]]

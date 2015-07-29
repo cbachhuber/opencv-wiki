@@ -1,0 +1,1600 @@
+h1. 2014 OpenCV Meeting notes for 2014 year
+
+Template is at http://code.opencv.org/projects/opencv/wiki/Template
+http://code.opencv.org/help/wiki_syntax
+
+
+
+
+h2. 2013-01-14
+
+_*Agenda*_
+
+* GSoC pre-pre-pre planning …
+* Website
+* Positions
+* Intel
+
+*_Minutes_*
+
+* GSoC pre-planning
+** We looked at who performed, who didn't and why
+*** Some geographies will now require a programming test
+*** We will in general favor programming over vision. Given the short span of time, a student has to hit the ground running and it's turned out that programming trumps vision knowledge. However, getting both is the ideal.
+* We are updating the website. It's a tad dry. Vincent on this.
+* Positions (send bios to Vincent)
+** Gary -- CEO
+** Vincent -- Treasurer
+** Grace -- Director of Development
+** Vadim -- Chief architecture
+** Achin -- Contact him. Role
+* Grace has been dealing with Intel to get our payments straightened out
+** We need to get more open, less SoW funding from them if possible.
+** Contacts with other companies and DARPA in progress
+
+
+
+*_Action Items_*
+
+*Gary*
+
+* Look into contacts with Caffe http://caffe.berkeleyvision.org
+* Look into UC Berkeley grant
+* Get bios
+
+*Vincent*
+
+* Website
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* Intel
+* Berkeley
+* Bio
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Victor*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-01-28
+
+_*Agenda*_
+
+* GSoC 2014, Feb 3 - 14 Org applications!
+
+*_Minutes_*
+
+* Need to figure out themes
+** http://www.google-melange.com/gsoc/homepage/google/gsoc2014
+* Code into OpenCV Contrib instead of main. Then 3rd party such as a linear algebra
+* Code from Pieter Dollar segmentation
+** Matlab
+*** http://vision.ucsd.edu/~pdollar/toolbox/doc/
+** http://vision.ucsd.edu/~pdollar/files/papers/DollarICCV13edges.pdf
+** http://research.microsoft.com/en-us/downloads/389109f6-b4e8-404c-84bf-239f7cbf4e3d/default.aspx
+* Sparse Matices
+* Segmentation (Dollar)
+* Pedestrian detection, human detection
+** Face detection -- advance the state
+*** In opencv extra, large data set 24x24 (several 1000 faces)
+*** http://www.i-programmer.info/news/105-artificial-intelligence/5062-alien-facehugger-v-predator-face-tracking-hots-up.html
+*** http://www.micc.unifi.it/pernici/
+** Soft cascade (half cascade in OpenCV)
+*** Needs to be improve
+** Fastest pedestrian detection in the west
+*** training, new features, detection
+*** interframe interpolation and smoothing
+*** outlier supression
+* DTAM
+* Tracking -- predator (tracking, detection + learning)
+** Was pretty rudimentary
+*** Draw box, resize
+*** Box distortion
+*** Look for candidates
+* solvePnP update
+** http://www-users.cs.umn.edu/~joel/index.php?page=software
+* Optical flow
+** State of art http://www.ingentaconnect.com/content/klu/visi/2014/00000106/00000002/00000644
+** Prepare testing framework for quality
+*** Have frameworks for features and stereo already
+* Improve Matlab wrappers from last year
+* 3D  --
+* livmv finally integrated
+
++
+
+* LSD
+* Python
+* computational photography
+* Matlab
+* Matas text detection (can detect road signs etc)
+
+*_Action Items_*
+
+*Gary*
+
+* Set up the website for 2014. Use "OpenCVGSoC13":http://code.opencv.org/projects/gsoc2013/wiki
+* Contribute ideas
+
+*Vincent*
+
+* Contribute ideas
+
+*Vadim*
+
+* Contribute ideas
+
+*Grace*
+
+* Contribute ideas
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2013-02-11
+
+_*Agenda*_
+
+* GSoC we are applied, we find out Feb 24th
+** Mentors
+** Ideas http://code.opencv.org/projects/opencv/wiki/GSoC_2014
+* Toyota
+* CVPR
+
+*_Minutes_*
+
+* Mentors
+** Add alexander shishkov
+** Add Stefano Fabri and his students
+**
+* CVPR https://docs.google.com/document/d/1iEjpar0fO_BYwnQoSpXFJzqcT11Q1KhDblu8pV5G87g/edit
+** http://www.pamitc.org/cvpr14/tutorials.php
+** Start prep
+** Who goes
+** Tutorials ideas
+*** Tilt shift, full process to pull request
+*** ML: Linemod, softcascades, random forests/extremely
+*** OCR app, as a web app
+* Need a coding test for students in GSoC. Simple one
+
+
+
+*_Action Items_*
+
+*Gary*
+
+* -Transfer Stefano's GSoC ideas across and his students-
+* -Write Ethan about-
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-02-18
+
+_*Agenda*_
+
+* GSoC 2014
+* Foundations website changed
+
+
+*_Minutes_*
+
+* GSoC 2014
+** "Our ideas page":http://code.opencv.org/projects/opencv/wiki/GSoC_2014
+*** http://code.opencv.org/projects/opencv/wiki/GSoC_2014
+** Most projects should be done in OpenCV contrib. From there we can migrate top stuff to core
+*** In 3.0, we are trying to simplify core and put other things in contrib
+*** Sparse matrices -- basic operations can't do with them. Right now, they are just storage structures. They aren't efficient for operations. Dense row or Dense column format for multiplication for example.
+*** Bundle adjustment would be good for the core
+** Guide for "making contribution":http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+*** http://code.opencv.org/projects/opencv/wiki/How_to_contribute
+** Docs, unit test, example, youtube videos.
+** Good to just have projects generating example and more docs of existing code such as livmv
+*** "GSoC 2013 Video of Results":http://www.youtube.com/watch?v=_TTtN4frMEA
+** Visualization: http://web.mit.edu/vondrick/ihog/
+* Mentors
+** 2 more added to Wiki. 17 mentors with 2 backups
+* Adding an object to describe a camera. But it's hard because of
+** Single camera
+** Stereo
+** RGBD
+* "Foundation's website":http://vrabaud.github.io/foundation_site/ changed
+** http://vrabaud.github.io/foundation_site/
+* Need ongoing funding for pull requests and admin functions
+
+
+
+*_Action Items_*
+
+*Gary*
+
+* Write up Blog for GSoC "Good mentor/student story" Founded a company
+* Funding: high school bring down. Intel. Google. Samsung. Buidu
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-03-11
+
+_*Agenda*_
+
+* GSoC
+
+*_Minutes_*
+
+* Go through list https://groups.google.com/forum/#!forum/opencv-gsoc-2014
+** Email to mentors to sign up
+** Email Students to get applications in http://www.google-melange.com/gsoc/events/google/gsoc2014
+* Really want
+** http://www.robesafe.com/personal/pablo.alcantarilla/kaze.html
+** 3D
+*** normals, features …
+
+
+*_Action Items_*
+
+*Gary*
+
+* email to mentors
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* -Email to mentors "Please get on, choose projects …"-
+
+*Vincent*
+
+* -Email to students "Please officially apply"-
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-03-18
+
+_*Agenda*_
+
+* GSoC
+* Vadim back from mysterious "holiday" in the _former_ Ukraine areas
+* Grace still there on Vacation
+* Payment received from ...
+
+*_Minutes_*
+
+* GSoC. Some of note
+** aKaze (features 2D)
+** new PNP
+**  Python tutorial
+** Computational photography -> image decomposition
+** Improve pictorial images. Felsenshwalb pictorial image, Deva Ramanam's method
+** P. Dollar
+** Pedestrian detection
+** Predator
+** Anything relevant to person detection and tacking
+* 3D stuff
+** Fast normals, plane finder OpenCV extra
+** 3D features or primitives
+* Improve line mod in OpenCV
+* Libmv
+* Caffe
+* Money is in from youknowwho. Can pay our OpenCV summer of code guy or his sister
+
+*_Action Items_*
+
+*Gary*
+
+* Joining in deep learning, CNN. Contact them
+* -Update ideas page-
+
+*Vincent*
+
+* Final call for GSoC to Facebook
+* Find out about paying our private OpenCV summer of code guy
+
+*Vadim*
+
+* Last reminder to the list
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* -Email to mentors "Please get on, choose projects …"-
+
+*Vincent*
+
+* -Email to students "Please officially apply"-
+
+*Vadim*
+
+* -First reminder to get in projects to mail list-
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-03-25
+
+_*Agenda*_
+
+* GSoC
+* … payment is in. Need to pay Itseez
+
+*_Minutes_*
+
+Only 2 items:
+* Mentors have to sign up for OpenCV https://www.google-melange.com/gsoc/homepage/google/gsoc2014
+* Interim period all mentors go to https://www.google-melange.com/gsoc/proposal/list/org/google/gsoc2014 and rate the proposals
+
+
+*_Action Items_*
+
+
+*All*
+
+* Send out messages to mentors to sign up, and rank proposals
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-04-08
+
+_*Agenda*_
+
+* GSoC
+* OpenCV mini-challenges
+
+*_Minutes_*
+
+GSOC
+
+* Priority to students who performed well in previous years
+* Soft cascades patented, need to use close variant
+** Boosting chain, better
+* aKaze
+* Scene text detection Louise Gormez
+* We will have a special mentor this meeting to do student selection.
+
+OpenCV Mini-Challenges
+
+* Funding to support interaction
+* Choose features/goal/classifiers to work on
+* Prize money
+
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-04-22
+
+OpenCV GSoC 2014 students, projects, mentors:
+
+<pre>
+Student                 Project                                           Mentor(s)
+Lluis Gomez             Improve Scene Text Detection module in OpenCV     Stefano Fabri, Vadim Pisarevsky
+Abid Rahman             Extend of OpenCV-Python Bindings and Tutorials    Vadim Pisarevsky
+Fedor Morozov	       Local feature descriptors                         Pablo Alcantarilla
+Siddharth Kherada       Computational Photography: Image Decomp  Color    spmallick
+Daniel Angelov	      Custom Calibration Pattern                        Sid Bao
+Vitaly Lyudvichenko     New edge-aware filters for OpenCV	             Alexander Mordvintsev
+Alex Leontiev 	      Learning based trackers 	                      Gary Bradski
+Tolga Bridle            Rec & Pose Est of 3D Objects via 3D Features	  Bence Magyar
+Francesco Puja          SALIENCY IMPROVEMENTS FOR TRACKING                Antonella Cascitelli
+edgarriba               Real Time Pose Est Tutorial and DLS impl.         Alexander Shishkov
+Yuri Gitman	         P. Dollar segmentation algorithm                  Alexander Shishkov
+Vlad Shakhuro	       Fastest Pedestrian Detector in the West           Alexander Bovyrin
+biagio	              Geometrical-primitives based localization system  Manuele Tamburrano
+Tomasz Pietruszka	   Optical Flow Estimation – state-of-the-art        Prasanna Krishnasamy
+Paul Foster	         Dense Tracking and Mapping (DTAM) for OpenCV      Vincent Rabaud
+</pre>
+
+* Bill DARPA
+* Help set up contests
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2014-05-06
+
+_*Agenda*_
+
+* GSoC
+* CVPR
+* OpenCV 3.0
+* Kickstarter
+
+*_Minutes_*
+
+* GSoC
+** Some students already moving
+* CVPR
+** need to register
+** Vadim can't attend
+*** Will deliver slides
+** Need to look for extra support
+* OpenCV 3.0
+** Beta by CVPR
+** Sept final thing
+* Kickstarter
+** Simple video
+** Shave our heads until we make our goal
+
+
+*_Action Items_*
+
+* Mentor email
+** all in touch. all confirm
+* Set up for CVPR workshop
+
+_*From Last Time*_
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-05-13
+
+_*Agenda*_
+
+* Who is going to the mentor summit?
+** My email https://mail.google.com/mail/u/1/#inbox/145f210b78e5342f
+* CVPR workshop
+** Wrote Cat
+* Go over challenge file
+** https://drive.google.com/file/d/0B4UgujoQOxIAX25ZbUgtTUhZSVgxSTlKV3JSUlBCTDBKNnVn/edit?usp=sharing
+
+
+*_Minutes_*
+
+* Mentor summit
+** A Shishkov
+** Gary
+* CVPR
+** Contests
+** Most want to implement conference vote
+** Put up workshop page on wiki
+** Get schwag
+** Fill in high level outline slides of workshop.
+* Coding starts May 19
+* We received PO from Google
+
+
+
+*_Action Items_*
+
+*Gary*
+
+* -Mentor and Student coding start-
+* -Set up common report docs-
+* -Videos set up-
+* -Start wiki page for coding-
+
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-08-26
+
+_*Agenda*_
+
+After a long hiatus for summer vacations, we're back
+
+* Functional Programming
+* Machine learning
+* OpenCV Contest
+* GSoC 2014
+
+*_Minutes_*
+
+* Functional Programming
+** We will look into working with Kunle Olukotun's Pervasive Parallel Computing group to begin exploring a functional coding of OpenCV/Vision to enable long term optimization and keeping up with new types of hardware
+** Vadim is developing a functional language taken from others that specializes in array comprehension
+* Machine learning
+** The machine learning side of OpenCV is a bit dated/stale
+** Vadim has recoded much of it (not some of the boosting) and this will begin to show up in 3.0
+** We are also going to work on taking learned deep learning architectures expressed as XML files and compiling them to OpenCL for optimal runtime performance.
+* OpenCV Contest
+** We now have a full time programer, Dimitry to support the OpenCV contest.
+** He is working on a standard way to access image datasets
+*** We will promote this way/format to others so that datasets may have more uniform access in the future
+*** Basically code or translate via script the data to an XML format and we'll provide standard reader/writers from there
+* GSoC 2014
+** We need to collect all the student videos
+** Gary needs to write the blog
+** Finalize on the mentor summit
+
+
+*_Action Items_*
+
+*Gary*
+
+* -Finalize mentor summit-
+* Write GSoC blog
+* -Contact Kunle-
+* -Contact Silvio-
+* -Contact Fei-Fei-
+* -Transfer my BMVC poster etc to Grace-
+
+*Vincent*
+
+* Edit videos
+
+*Vadim*
+
+* -Send links to videos he knows about-
+
+*Grace*
+
+* Assemble videos
+* Present at BMVC
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-09-02
+
+_*Agenda*_
+
+* GSoC analysis
+* Functional coding
+
+*_Minutes_*
+
+* OpenCV GSoC 2014
+** Most successful summer ever: 15 students resulting in 14 pull requests
+*** A pull request this year includes documentation and videos
+** Gary, Vadim will write up what was accomplished for the Google Summer of Code blog
+** Vincent will edit the contributed videos into a retrospective
+** Summit attendees
+*** Gary
+*** Alexander
+* Functional coding
+** This effort is to improve the code base of OpenCV so that:
+*** There will be one code source only
+*** The code, once compiled, tends to be much more robust against bugs, corner cases
+*** Functional programs are much easier for compilers to optimize
+**** To C++, to Python
+**** To OpenCL
+**** And to embedded architectures which are proliferating and hard to keep up with. This way, the manufacturer can make sure the compiler will optimize code to their own architecture.
+** Vadim will start work on this October 15
+
+
+*_Action Items_*
+
+*Gary*
+
+* Write GSoC 2014 blog entry
+
+*Vincent*
+
+* Edit the videos from the students
+
+*Vadim*
+
+* Help bring out the utility of each GSoC entry
+
+*Grace*
+
+* Get videos to Vadim
+* -Invoice to Berkeley for work on coding contest-
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-09-09
+
+_*Agenda*_
+
+* OpenCV Challenge
+* GSoC Video
+* OpenCV 3.0 for ROS
+
+*_Minutes_*
+
+* OpenCV Challenge
+** Data set readers prepared
+** Todos
+*** Establish approximate state of the art thesholds
+*** Update https://docs.google.com/a/magicleap.com/document/d/1aCKmUpwpDxozC7cmIcokKRqQdcA9cckXTb1G8WOLYmI/edit#
+*** By Friday, get the document ready
+*** Announce the contest by Monday
+** Contestants must meet or exceed, self reported
+** Among the top 5 (by our jury decision), we will verify their code and announce the winners
+** Those who submit accepted OpenCV pull requests, will get large allocated amount, otherwise they'll get $100
+* Vincent is working on the GSoC 2014 Video (14/15 resulted in accepted pull requests), but it will not be ready this week
+* ROS is being updated to use OpenCV 3.0!
+
+*_Action Items_*
+
+*Gary*
+
+* Figure out state of the art
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2014-09-18
+
+_*Agenda*_
+
+* OpenCV Challenge
+* GSoC Video
+
+*_Minutes_*
+
+* 2.4.10 : out this week
+* opencv tested on ARM. Some NEON optimizations
+* 2.x: support for Java (better: smart pointers are handled)
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* DARPA announcement
+* Contact Qualcomm
+
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-09-23
+
+_*Agenda*_
+
+* GSoC
+* Contest: Prepare state of the art.
+** 5 categories for challenge
+** Select such for minimum support needs
+*** SLAM 1.3%
+
+*_Minutes_*
+
+* GSoC
+** Alexander coming to the mentor summit
+** Need to finalize invoice to Google
+* Contest
+** Focus on gestures, 3D data
+** Gary to send list
+** Dimitry to come up with graphics simulated examples
+** https://docs.google.com/a/magicleap.com/document/d/1aCKmUpwpDxozC7cmIcokKRqQdcA9cckXTb1G8WOLYmI/edit#
+
+Proposed gestures list:
+
+* Thumbs up, down, right, left
+* "L" facing away
+* "L" facing towards
+* Fingers up facing away: 1, 2, 3, 4 (separated)
+* Fingers up facing towards: 1, 2, 3, 4 (separated)
+* Open palm away (fingers separated)
+* Open palm towards (fingers separated)
+* Open palm away (fingers lined up)
+* Open palm towards (fingers lined up)
+* Open palm held out (fingers separated)
+* Open palm held out (fingers lined up)
+* Pinch
+* Fist closed facing away
+* Fist closed facing towards
+
+* QC
+** Snapdragon optimization
+** OpenCV 3.0 => FastCV
+** Binary
+** Run time switch
+**
+
+*_Action Items_*
+
+*Gary*
+
+* Send list of gestures
+
+*Vincent*
+
+* GSoC Videos!
+
+*Dimitry*
+
+* Graphically generated examples
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-10-14
+
+_*Agenda*_
+
+* Contest
+
+*_Minutes_*
+
+* Contest
+** Now have 13 datasets that can be read
+** Contact
+* 3.0
+** To do
+*** Primary goal is to finalize the API, some not backward compatible
+*** Basic functionality API will stay unchanged from 2.X, load, store ...
+*** High level interfaces will change sightly
+*** Reference manual switching to Doxygen
+**** Place general ref in dox that ... similar to RST
+** Alpha is released
+** Beta end of October
+** Full release: End of year
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-10-28
+
+_*Agenda*_
+
+* Contest
+* Code
+* Our site is down
+
+*_Minutes_*
+
+* Site is down. Shishkov is back on Thursday to repair
+*  Contest info https://docs.google.com/document/d/1B3q2uDDwKlfen8nIPGUYl_j3cXK3mjar1USUrEUpGLA/edit#heading=h.iakcszekqaak
+** Contest information is at: https://docs.google.com/document/d/1B3q2uDDwKlfen8nIPGUYl_j3cXK3mjar1USUrEUpGLA/edit#heading=h.iakcszekqaak
+** Have access to all 21 datasets (19 datasets plus one replacement plus on tracking set that has its own validation framework)
+*** Documentation and examples done
+**** Need a few more days to finish scripts
+** Need to wait to Thursday for site to come back up
+** Try to announce contest on Friday
+*** On Thursday, send out emails to verify
+* OpenCV 3.0
+** Close to release of 3.0 Beta
+*** Release first week of Nov
+*** National unity day holidays in Russia
+** ARM optimization, bug fix, pull requests,
+*** Most new functionality in OpenCV contrib
+**** Need notes on how to do this add contrib on build
+***** See change log
+** Documentation is next concentration, switch to doxygen
+*** Maxim is adding doxygen for 3.0 final
+* Functional recode
+*** https://docs.google.com/spreadsheets/d/1dL2MYJpJ6AVnggtsrX0XjzF9cjajUgoy6Ta1jfqLdaU/edit#gid=0
+** Goal to produce programming efficiency WITH optimal code
+** Was out sick with flu
+** Spent time on the language
+*** Major StandardML
+**** Close to C++ syntax
+** Stages
+*** 1st Language speed like java, mainly functionality, better than python. Compiler for subset such as object training
+*** 2nd templates loop and array comprehension ... might need some cross platform intrinsics (on Intel, ARM ...)
+*** 3rd optimization loop fusion for speedup, expand inline functions -- machine independent .
+*** 4th optimization is to hardware -- go to "enriched C with intrinsics" (Neon, SSE ...)
+** Stage 1, EOY
+** Git Magic Leap
+** Apache 2.0
+** Target for this
+*** At least as powerful as Matlab
+*** Achieve high efficiency code, C level, especially on mobile
+** Target other platforms: GPU
+***
+
+*_Action Items_*
+
+*Gary*
+
+* Send out emails on Thursday for contest
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-11-05
+
+_*Agenda*_
+
+* PO
+* Contest
+* OpenCV.org back up, was spammed.
+
+*_Minutes_*
+
+* Contest
+** Need to be announced this week
+*** Announcement proposal https://docs.google.com/document/d/1aCKmUpwpDxozC7cmIcokKRqQdcA9cckXTb1G8WOLYmI/edit#heading=h.mpvtirb42db1
+*** Datasets https://docs.google.com/document/d/1B3q2uDDwKlfen8nIPGUYl_j3cXK3mjar1USUrEUpGLA/edit#heading=h.iakcszekqaak
+* Since numl is much closer to StandardML (SML) than to OCaml, and I'm not proficient in either, and since we just started, I decided to spend a few extra days and convert the whole existing compiler code from OCaml to SML. The work has been nearly finished and now I'm debugging the extended parser (that supports new features, such as obligatory type declarations and such):
+* OpenCV 3.0
+** Nov 7 release of 3.0 Beta
+*** new optimization
+*** OpenCL optimization
+*** GSoC 2014 results included in this release (in contrib and in the core part)
+*** AKAZE, Computational Photography bits
+* OpenCV 4.x work is started in functional language. Similar to StandardML (SML). First version due in December
+
+
+*_Action Items_*
+
+*Gary*
+
+* PO to Google for GSoC and Mentor summit
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-11-12
+
+_*Agenda*_
+
+* OpenCV 3.0 Beta
+* GSoC
+* Contest
+
+*_Minutes_*
+
+* OpenCV 3.0 Beta
+** Release is out: http://opencv.org/opencv-3-0-beta.html
+** Final release early Jan
+*** 40 new functions optimized on Neon (resize, color converstion, arithmetic ...)
+** Before EOY, release final candidate will come out
+*** 14 GSoC projects included
+* GSoC
+** Need to invoice Google
+** Have travel expenses, need to reimburse
+* Contest
+** Need to get the announcement out
+** Have Dmitry to support
+** Hope to send this out on Nov 13, 2014
+* Functional language
+** Preparing Beta
+** Parser
+* Plans
+** OpenCV benchmarks in progress
+**
+
+
+
+Report from Vadim
+
+<pre>
+Numl:
+I continue stabilizing and extending the new version of Numl compiler, rewritten in StandardML.
+The lexer and the parser part have been debugged, they seem to handle small test programs correctly.
+The next step will be to add the module support and other new language features planned for phase 1.
+
+https://github.com/vpisarev/numl/tree/sml_test_parser
+
+OpenCV (put here for completeness, even though it's not the part of my paid contract):
+beta 3.0 is out:
+
+http://opencv.org/opencv-3-0-beta.html
+</pre>
+
+
+
+
+
+*_Action Items_*
+
+*Gary*
+
+* PO to Google for GSoC and Mentor summit
+* Contest announcement needs to go out
+
+*Dmitry*
+
+* Se
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+h2. 2014-11-18
+
+_*Agenda*_
+
+* Contest
+* OpenCV 3.0 is out in Beta!
+
+*_Minutes_*
+
+* OpenCV 3.0 Beta http://opencv.org/opencv-3-0-beta.html
+* OpenCV 3.0 Final should be out in January
+
+* Contest
+** Get contest out as widely as possible
+
+<pre>
+OpenCV Vision Challenge
+
+OpenCV Foundation with support from DARPA and Intel Corporation are launching a community-wide challenge to update and extend the OpenCV library with state-of-art algorithms. An award pool of $50,000 is provided to reward submitters of the best performing algorithms in the following 11 CV application areas: (1) image segmentation, (2) image registration, (3) human pose estimation, (4) SLAM, (5) multi-view stereo matching, (6) object recognition, (7) face recognition, (8) gesture recognition, (9) action recognition, (10) text recognition, (11) tracking.
+
+Conditions:
+
+The OpenCV Vision Challenge Committee will judge up to five best entries.
+
+You may submit a new algorithm developed by yourself or your implementation of an existing algorithm even if you are not the author of the algorithm.
+You may enter any number of categories.
+If your entry wins the contest you will be awarded $1K. To win an additional $7.5 to $9K, you must contribute the source code as an OpenCV pull request under a BSD license
+You acknowledge that your contributed code may be included, with your copyright, in OpenCV
+
+You may explicitly enter code for any work you have submitted to CVPR 2015 or its workshops. We will not unveil it until after CVPR.
+
+Winners and prizes are at the sole discretion of the committee.
+
+Timeline:
+
+Submission Period: Now - May 8th 2015
+Winners Announcement: June 8th 2015 at CVPR 2015
+
+Detailed information can be found here:
+http://code.opencv.org/projects/opencv/wiki/VisionChallenge
+http://code.opencv.org/attachments/1664/OpenCVVisionChallenge.pdf
+
+Questions and the results should be sent to:
+vision-challenges@opencv.org
+
+Thank you,
+
+OpenCV Vision Challenge Committee
+
+</pre>
+
+<pre>
+
+Numl:
+No noticeable progress during last week; I concentrated on the plans on OpenCV 3.0. Will resume the work on the language (and hopefully spend full 2 weeks on it) starting this Wednesday.
+
+
+OpenCV:
+
+3.5 documents have been prepared on the OpenCV-related tasks (the document on HAL and optimizations is in progress)
+
+</pre>
+
+
+*_Action Items_*
+
+*Gary*
+
+* Write Hinton about X-Prize
+* Find out what Baidu wants/could do.
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* Get in GSoC invoice
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-11-25
+
+_*Agenda*_
+
+* Contest
+
+*_Minutes_*
+
+* Contest: announcement is out
+** Spread in Europe and China/Asia
+* Contacts for OpenCV
+** Anan Peleg
+** Visual computing institute: Europe
+** NIST
+*** OpenVX is a possibility
+**** 40 algorithms
+* OpenCV 3.0 Beta was released last week
+** Plans for 3.0 final, end of December
+*** January for 3.0 final release
+*** Reference manual converted to Doxygen
+*** http://docs.opencv.org/ref/master/
+* Qcom fastcv discussion
+* NVidia Representitive for Europe Marketing
+
+
+<pre>
+Vision Challenge
+
+We (OpenCV Foundation) are running a computer vision contest. The goal is to get state of the art algorithms in at least
+5 of 11 vision categories. We will have a workshop at CVPR 2015 to go over the winning entries. The code will then be
+available in OpenCV contrib. It is OK to duplicate existing state of the art in an OpenCV compliant framework under a BSD
+license or to develop new algorithms/code. It is OK if you have submitted the work elsewhere or currently submitted to this
+CVPR, we will not leak entries early. This contest is for anybody, or any group, corporate, academic or private. There will
+be a $50K award pool to distribute to the winners in the 5 top categories.
+
+Please distribute and encourage people you know to enter!  You do not have to attend CVPR to enter the contest.
+
+
+http://opencv.org/opencv-vision-challenge.html
+
+Thank you
+
+Gary Bradski
+CEO OpenCV
+
+</pre>
+
+Progress report
+<pre>
+Numl:
+After the delay related to OpenCV 3.0 beta release and the further plan development, the work on numl was resumed.
+Learnt the useful MoscowML module PP (pretty printer generators) and implemented the pretty printer for the Numl
+abstract syntax, which should be very useful to debug various compiler steps. The module can also be used to generate
+the final nicely indented C code out of its hierarchical representation.
+Using the AST pretty printer checked that the lexer and parser work fine after conversion to MoscowML.
+Then, at the lexer/parser level added the following new stuff (this one is still not finished):
+many primitive operations (almost complete set of Matlab/C++ operations, except for augmenting "+=" etc.)
+more primitive types: single- and double- precision floating-point, 8-, 16-, 32-bit signed and unsigned integers, text strings
+complex types: references, lists, multi-dimensional arrays, records, tagged variants and the syntax to define new types
+mutually recursive functions
+basic syntax for defining and throwing exceptions (no exception handling yet)
+extended "if" statement with zero or more "elif"'s and optional "else".
+import statement for using other modules
+The latest snapshot is available here: https://github.com/vpisarev/numl/tree/sml_test_parser/src
+
+Numl Plans:
+add some more elements to the lexer and parser:
+switch (pattern matching) statement
+exception handling syntax
+accessing array slices
+array literals
+external c functions
+finish such a parser, check it using updated pretty printer
+parse the imported modules
+implement syntax verification and type checking part, at least for the subset of the syntax
+implement conversion to the simplified (k-normal) AST representation
+after all this is done, the only 2 non-trivial things to implement would be the C code generator and the runtime.
+all the other components can be adopted from the min-caml sources.
+
+OpenCV:
+Finished the document on possible OpenCV optimizations
+Maxim Shabunin continues the work on semi-automatic RST=>Doxygen conversion. Some first results are available
+here: http://docs.opencv.org/ref/master/
+
+</pre>
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2014-12-09
+
+_*Agenda*_
+
+*_Minutes_*
+
+* Contest:
+** Dmitriy: more contacts with people that participate
+** answer more questions to help people
+
+*_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+_*From Last Time*_
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+[[Meeting_notes]]
