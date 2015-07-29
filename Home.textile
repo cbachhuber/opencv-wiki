@@ -31,11 +31,10 @@ h3. Development
 * "How to Contribute":How_to_contribute
 * Source Codes can be found at "GitHub":https://github.com/Itseez/opencv. The main OpenCV repository was converted to git and compactified. History now begins with the famous “atomic bomb” commit, that dates back to May the 11th, 2010.
 ** To get the source code, point your git client to @git://github.com/Itseez/opencv.git@. Here are "instructions":Git.
-<pre>
+bc.
 git clone git://github.com/Itseez/opencv.git
-</pre>
-** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: git://code.opencv.org/opencv_attic.git.
-** Also OpenCV Extra was put to a separate repository: git://code.opencv.org/opencv_extra.git.
+** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: @git://code.opencv.org/opencv_attic.git@.
+** Also OpenCV Extra was put to a separate repository: @git://code.opencv.org/opencv_extra.git@.
 * "OpenCV Development Process":OpenCV_Development_Process
 ** "Developer meeting notes":Meeting_notes
 
@@ -45,13 +44,13 @@ Please note that OpenCV project, as any open-source project, welcomes contributi
 
 h3. Creating new tickets
 
-All new tickets should be created on GitHub: https://github.com/Itseez/opencv/issues and https://github.com/Itseez/opencv_contrib/issues
+All new tickets should be created on GitHub: "opencv":https://github.com/Itseez/opencv/issues and "opencv_contrib":https://github.com/Itseez/opencv_contrib/issues
 
-Old issue tracker will be moved to read-only state: http://code.opencv.org/projects/opencv/issues
+"Old issue tracker":http://code.opencv.org/projects/opencv/issues will be moved to read-only state.
 
 h3. Reporting bugs
 
-* First of all ask about the issue at the Q&A forum: http://answers.opencv.org. Then try to debug it in your own environment, because it may take forever to just reproduce the issue on other workstation. If you succeed, submit the fix as a pull request, and your fix may be included to the very next OpenCV release! But if you can't debug it, please do as follows...
+* First of all ask about the issue at the "Q&A forum":http://answers.opencv.org. Then try to debug it in your own environment, because it may take forever to just reproduce the issue on other workstation. If you succeed, submit the fix as a pull request, and your fix may be included to the very next OpenCV release! But if you can't debug it, please do as follows...
 
 * Please, specify your platform (Windows 32/64bit, Linux x86/x64/ppc/..., MacOSX 32/64bit/ppc); compiler version; OpenCV version/revision; whether IPP, OpenMP, MMX, SSE ... have been enabled or not, and any other information that let us reproduce the environment, identify and localize the problem.
 
