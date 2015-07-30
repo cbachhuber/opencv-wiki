@@ -10,7 +10,7 @@ OpenCV (Open Source Computer Vision) is a library of programming functions for r
 
 h2. GSoC 2015
 
-!images/GSoCOpenCV2015.jpg!
+!wiki/images/GSoCOpenCV2015.jpg!
 
 * "OpenCV Google Summer of Code 2015 Project Page":GSoC_2015
 * "We are an accepted organization in GSoC 2015!":http://www.google-melange.com/gsoc/org2/google/gsoc2015/opencv
