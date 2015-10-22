@@ -5,7 +5,7 @@ h2. Pose Estimation
 h3. "Javir Barandiaran":https://sites.google.com/site/jbarandiaran/
 
 
-In this tutorial we will see how to estimate the pose of a 3D object in a single image using the function cvPOSIT. This function implements the POSIT algorithm (DeMenthon & Davis 1995). Also we will make some tests and see the result of the algorithm using OpenGL.
+In this tutorial we will see, how to estimate the pose of a 3D object in a single image using the function cvPOSIT. This function implements the POSIT algorithm (DeMenthon & Davis 1995). Also we will make some tests and see the result of the algorithm using OpenGL.
 The pose P of a 3D object is a combination of its orientation R (a 3D rotation matrix) and its position T (a 3D translation vector) relative to the camera. So the pose P = [ R | T ] is a 3x4 matrix.
 
 Given some 3D points (in object coordinate system) of the object, at least four non-coplanar points, their corresponding 2D projections in the image, and the focal length of the camera, the algorithm is able to estimate the object's pose.
