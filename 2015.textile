@@ -22,7 +22,7 @@ h3. _*Agenda*_
 
 h3. *_Minutes_*
 
-* SOW based on spreadsheet "here":https://docs.google.com/spreadsheets/d/19d_fcFw4v0FBPnkWVrk34T9NC6owrSQgSim7O2fqNfQ/edit#gid=0
+* The proposal is based on the developed table
 ** We take a group of functions or similar functions,
 ** we put fastCV calls for these functions into OpenCV,
 ** We detect fastCV at compile stage and use it if it is there,
