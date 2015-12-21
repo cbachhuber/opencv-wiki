@@ -97,6 +97,7 @@ Special thanks goes to all the GSoC 2015 students and mentors, who created a lot
 *Contributors*
 
 *opencv*
+
 <pre>
 git shortlog --no-merges -ns 3.0.0..3.1.0
    146	Vladislav Vinogradov
