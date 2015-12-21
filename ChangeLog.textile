@@ -8,7 +8,7 @@ This is the first stabilization update in 3.x series. It shall be reminded that 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !gsoc2015.jpg!
+p((((. !images/gsoc2015.jpg!
 
 * There have been many successful projects this year (student and mentor(s) are listed after the project name), and the results are available as a part of OpenCV 3.1 (partially in the main repository, but mostly opencv_contrib):
 ** *Omnidirectional Cameras Calibration and Stereo 3D Reconstruction* - opencv_contrib/ccalib module (Baisheng Lai, Bo Li)
@@ -27,7 +27,7 @@ p((((. !gsoc2015.jpg!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !thank_you.jpg!
+p((((. !images/thank_you.jpg!
 
 * Besides GSoC, we have multiple contributions from the community; below is the partial list of contributed functionality:
 ** plot module - Nuno Moutinho
@@ -49,28 +49,28 @@ p((((. !thank_you.jpg!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !http://code.opencv.org/attachments/948/100px-Apple_iOS_icon.png!
+p((((. !images/100px-Apple_iOS_icon.png!
 * The iOS framework (opencv2.framework) can now be configured to include both opencv and opencv_contrib functionality. Previously, there were 2 separate frameworks, but because of the include directory names ("opencv2/...", regardless of whether some module is from opencv or from opencv_contrib), the produced opencv_contrib was unusable.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !http://code.opencv.org/attachments/960/android_ocv_small.png!
+p((((. !images/android_ocv_small.png!
 * TBD (faster round, Android 5 support, ...)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !win10.png! !elcapitan.png! 
+p((((. !images/win10.png! !images/elcapitan.png! 
 
 * OpenCV 3.1 supports fresh OSes from Microsoft and Apple, as well as the newest development tools (VS2015 and Xcode 7, respectively). 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !Intel_IPP_logo.png!
+p((((. !images/Intel_IPP_logo.png!
 * IPPICV (a specially-for-opencv free-of-charge subset of IPP (https://software.intel.com/en-us/intel-ipp) that has been kindly provided by Intel Corporation) is now based on IPP 9.0.1, which should make OpenCV even faster on modern Intel chips.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !OpenCL.jpg!
+p((((. !images/OpenCL.jpg!
 * There are multiple new features in the OpenCL layer, resulted from our collaboration with Intel Corporation
 ** Improved/extended interoperability with DirectX 9, 10, 11. That includes conversions between DX Surface and UMat, with number of copying operations reduced where possible. See opencv/samples/directx.
 ** Interoperability with Video Acceleration API on Linux. This feature requires Intel Media Server Studio (https://software.intel.com/en-us/intel-media-server-studio/try-buy) and uses Intel's cl_intel_va_api_media_sharing extension to OpenCL. See opencv/samples/va_intel
@@ -83,14 +83,14 @@ p((((. !OpenCL.jpg!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !hal.jpg!
+p((((. !images/hal.jpg!
 * HAL (Hardware Acceleration Layer), as a separate OpenCV module, opencv_hal, lived a short yet a bright life; we decided to split it by parts and move the parts into the respective regular OpenCV modules (core, imgproc etc.). It will help us to keep the dependency graph clean and sane.
 * Added 2 examples (see opencv/samples/hal) on how to provide external accelerated versions of the HAL functions; note that an external implementation does not have to implement all of the HAL. The supplied README explains how to build the custom HAL accelerator, and how to build OpenCV with such a custom HAL replacement: https://github.com/Itseez/opencv/tree/master/samples/hal
 * Added some more few functions to the HAL (arithmetic operations, split, merge); much more to come in OpenCV 3.2
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !github2.png!
+p((((. !images/github2.png!
 * Over 420 pull requests to opencv and over 100 pull requests to opencv_contrib have been merged in since 3.0.0. Big thanks to all the people who submitted bug fixes, new functionality and other small and big improvements!
 Special thanks goes to all the GSoC 2015 students and mentors, who created a lot of great functionality!
 
