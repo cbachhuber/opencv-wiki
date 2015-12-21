@@ -1,6 +1,420 @@
 h1. OpenCV Change Logs
 
+h2. version:3.1
 
+__December, 2015__
+
+This is the first stabilization update in 3.x series. It shall be reminded that since OpenCV 3.0 we've changed the version enumeration scheme, so that 3.1 is the same sort of update to 3.0 as 2.4.1 was to 2.4.0.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !gsoc2015.jpg!
+
+* There have been many successful projects this year (student and mentor(s) are listed after the project name), and the results are available as a part of OpenCV 3.1 (partially in the main repository, but mostly opencv_contrib):
+** *Omnidirectional Cameras Calibration and Stereo 3D Reconstruction* - opencv_contrib/ccalib module (Baisheng Lai, Bo Li)
+** *Structure From Motion* - opencv_contrib/sfm module (Edgar Riba, Vincent Rabaud)
+** *Improved Deformable Part-based Models* - opencv_contrib/dpm module (Jiaolong Xu, Bence Magyar)
+** *Real-time Multi-object Tracking using Kernelized Correlation Filter* - opencv_contrib/tracking module (Laksono Kurnianggoro, Fernando J. Iglesias Garcia)
+** *Improved and expanded Scene Text Detection* - opencv_contrib/text module (Lluis Gomez, Vadim Pisarevsky)
+** *Stereo correspondence improvements* - opencv_contrib/stereo module (Mircea Paul Muresan, Sergei Nosov)
+** *Structured-Light System Calibration* - opencv_contrib/structured_light (Roberta Ravanelli, Delia, Stefano Fabri, Claudia Rapuano)
+** *Chessboard+ArUco for camera calibration* - opencv_contrib/aruco (Sergio Garrido, Prasanna, Gary Bradski)
+** *Implementation of universal interface for deep neural network frameworks* - opencv_contrib/dnn module (Vitaliy Lyudvichenko, Anatoly Baksheev)
+** *Recent advances in edge-aware filtering, improved SGBM stereo algorithm* - opencv/calib3d and opencv_contrib/ximgproc (Alexander Bokov, Maksim Shabunin)
+** *Improved ICF detector, waldboost implementation* - opencv_contrib/xobjdetect (Vlad Shakhuro, Alexander Bovyrin)
+** *Multi-target TLD tracking* - opencv_contrib/tracking module (Vladimir Tyan, Antonella Cascitelli)
+** *3D pose estimation using CNNs* - opencv_contrib/cnn_3dobj (Yida Wang, Manuele Tamburrano, Stefano Fabri)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !thank_you.jpg!
+
+* Besides GSoC, we have multiple contributions from the community; below is the partial list of contributed functionality:
+** plot module - Nuno Moutinho
+** ni-black thresholding algorithm - ximgproc, Samyak Datta
+** Superpixel segmentation using Linear Spectral Clustering, SLIC superpixels - ximgproc, Balint Cristian
+** HDF (HDF5) support module - Balint Cristian
+** Depth to external RGB camera registration - rgbd, Pat O'Keefe
+** Computing normals for a point cloud - rgbd, Félix Martel-Denis
+** Fuzzy image processing module - Pavel Vlasanek
+** Rolling guidance filter - ximgproc, Zhou Chao
+** 3x faster SimpleFlow - optflow, Francisco Facioni
+** Code and docs for CVPR 15' paper "DNNs are easily fooled" - Anh Nguyen
+** Efficient Graph-based image segmentation algorithm - ximgproc, Maximilien Cuony
+** Sparse-to-dense optical flow - optflow, Sergey Bokov
+** Unscented Kalman Filter (UKF) and Augmented UKF - tracking, Svetlana Filicheva
+** Fast Hough Transform - ximgproc, xolodilnik
+** Improved performance of haartraining - Teng Cao
+** Python samples made compatible with Python 3 - bastelflp
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !http://code.opencv.org/attachments/948/100px-Apple_iOS_icon.png!
+* The iOS framework (opencv2.framework) can now be configured to include both opencv and opencv_contrib functionality. Previously, there were 2 separate frameworks, but because of the include directory names ("opencv2/...", regardless of whether some module is from opencv or from opencv_contrib), the produced opencv_contrib was unusable.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !http://code.opencv.org/attachments/960/android_ocv_small.png!
+* TBD (faster round, Android 5 support, ...)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !win10.png! !elcapitan.png! 
+
+* OpenCV 3.1 supports fresh OSes from Microsoft and Apple, as well as the newest development tools (VS2015 and Xcode 7, respectively). 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !Intel_IPP_logo.png!
+* IPPICV (a specially-for-opencv free-of-charge subset of IPP (https://software.intel.com/en-us/intel-ipp) that has been kindly provided by Intel Corporation) is now based on IPP 9.0.1, which should make OpenCV even faster on modern Intel chips.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !OpenCL.jpg!
+* There are multiple new features in the OpenCL layer, resulted from our collaboration with Intel Corporation
+** Improved/extended interoperability with DirectX 9, 10, 11. That includes conversions between DX Surface and UMat, with number of copying operations reduced where possible. See opencv/samples/directx.
+** Interoperability with Video Acceleration API on Linux. This feature requires Intel Media Server Studio (https://software.intel.com/en-us/intel-media-server-studio/try-buy) and uses Intel's cl_intel_va_api_media_sharing extension to OpenCL. See opencv/samples/va_intel
+** OpenCL<=>OpenGL interoperability via cl_khr_gl_sharing extension. It's possible now to convert OpenGL textures and OpenGL buffers to/from UMat. See opencv/samples/opengl.
+** OpenCL<=>OpenCL interoperability. It means, people can now use OpenCL-accelerated OpenCV together with their custom OpenCL code and/or other OpenCL libraries. See opencv/samples/opencl for details.
+** Support for Camera2 API in Android 5+. See opencv/samples/android/tutorial-4-opencl, the tutorial that demonstrates 3 ways of processing data from camera:
+*** purely CPU pipeline (3-4 fps on our test device)
+*** OpenCV-based using UMat and transparent API (10-13 fps on the same device)
+*** direct use of OpenCL (28-30fps). This is the fastest method, as you can see, because it uses OpenCL images, whereas more universal T-API has to use OpenCL buffers.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !hal.jpg!
+* HAL (Hardware Acceleration Layer), as a separate OpenCV module, opencv_hal, lived a short yet a bright life; we decided to split it by parts and move the parts into the respective regular OpenCV modules (core, imgproc etc.). It will help us to keep the dependency graph clean and sane.
+* Added 2 examples (see opencv/samples/hal) on how to provide external accelerated versions of the HAL functions; note that an external implementation does not have to implement all of the HAL. The supplied README explains how to build the custom HAL accelerator, and how to build OpenCV with such a custom HAL replacement: https://github.com/Itseez/opencv/tree/master/samples/hal
+* Added some more few functions to the HAL (arithmetic operations, split, merge); much more to come in OpenCV 3.2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+p((((. !github2.png!
+* Over 420 pull requests to opencv and over 100 pull requests to opencv_contrib have been merged in since 3.0.0. Big thanks to all the people who submitted bug fixes, new functionality and other small and big improvements!
+Special thanks goes to all the GSoC 2015 students and mentors, who created a lot of great functionality!
+
+*Contributors*
+
+*opencv*
+<pre>
+git shortlog --no-merges -ns 3.0.0..3.1.0
+   146	Vladislav Vinogradov
+   109	Alexander Alekhin
+   103	Alexander Smorkalov
+    73	Maksim Shabunin
+    68	Ilya Lavrenov
+    48	Roman Donchenko
+    47	StevenPuttemans
+    45	Pavel Rojtberg
+    28	Andrey Pavlenko
+    25	Seon-Wook Park
+    20	Pavel Vlasov
+    20	Suleyman TURKMEN
+    18	Viet Dinh
+    17	Alexey Ershov
+    15	berak
+    14	Vladimir Dudnik
+    13	Artur Wieczorek
+    12	Dan
+    12	Lorena García
+    10	Dikay900
+    10	ippei ito
+     9	Mansour Moufid
+     8	E Braun
+     8	Grigory Serebryakov
+     7	Alexander Karsakov
+     7	Alexander Nitsch
+     7	Vadim Pisarevsky
+     7	Vijay Pradeep
+     6	LaurentBerger
+     6	Marian Zajko
+     6	Nguyen Nguyen
+     6	Philipp Hasper
+     6	flp
+     6	sbokov
+     5	Andreas Stührk
+     5	PhilLab
+     5	Rok Mandeljc
+     5	Ruslan Baratov
+     5	askourik
+     5	songyuncen
+     4	Abe Friesen
+     4	Aman Verma
+     4	Dan Moodie
+     4	Dinar Ahmatnurov
+     4	Dominik Kleiser
+     4	Elad Joseph
+     4	Gleb Gladilov
+     4	Ishant Mrinal Haloi
+     4	Mike Maraya
+     4	Tom Stellard
+     4	Vitaly Tuzov
+     4	edgarriba
+     4	grundman
+     4	hoangviet1985
+     4	themightyoarfish
+     3	Adam Gibson
+     3	Andrey Kamaev
+     3	Camille
+     3	Cédric Rousseau
+     3	Elena Shipunova
+     3	Gregory Morse
+     3	Hajo Nils Krabbenhöft
+     3	Igor Kuzmin
+     3	Maxim Kostin
+     3	Renato Florentino Garcia
+     3	Richard Yoo
+     3	Samuel Martin
+     3	Seunghoon Park
+     3	Teng Cao
+     3	Yan Wang
+     3	a-andre
+     3	jiakai
+     3	unknown
+     2	Aleksandr Petrikov
+     2	Alex Torres
+     2	Alexander Duda
+     2	Anatoly Baksheev
+     2	Andrew Senin
+     2	Anton V. Shokurov
+     2	Ariel Bernal
+     2	Balint Cristian
+     2	Ben Hagen
+     2	Bruno Goncalves
+     2	Daniel Stonier
+     2	Dmitry Melnichenko
+     2	Enes Ateş
+     2	Evgeny Talanin
+     2	GregoryMorse
+     2	Jan S. (Milania1)
+     2	John Stowers
+     2	Leonid Beynenson
+     2	Luis Díaz Más
+     2	Nils Plath
+     2	Nisarg Thakkar
+     2	Philippe FOUBERT
+     2	Pierre Letessier
+     2	Prof. Dr. Rudolf Haussmann
+     2	Rodrigo Benenson
+     2	Sergey Alexandrov
+     2	Sergiu Dotenco
+     2	Tsukasa Sugiura
+     2	Vicente Olivert Riera
+     2	Vincent Rabaud
+     2	Vladimir Kolesnikov
+     2	WilhelmHannemann
+     2	howtobeahacker
+     2	jayceelock
+     2	jisli
+     2	kalistratovag
+     2	lujia
+     2	paul.kim
+     2	qubick
+     2	robertxwu
+     2	theodore
+     1	Aaron Simmons
+     1	Abhijit Kundu
+     1	Adam
+     1	Adam Geitgey
+     1	Adi Shavit
+     1	Adrian Clark
+     1	AfterEight
+     1	Alankar Kotwal
+     1	Alexander Petrikov
+     1	Alexander Stohr
+     1	AlexanderStohr
+     1	Amro
+     1	Andreas Franek
+     1	Antonella Cascitelli
+     1	Anush Elangovan
+     1	Ashley Stacey
+     1	Ashod Nakashian
+     1	Belev
+     1	Benoit Seguin
+     1	Bert
+     1	Boris Daskalov
+     1	Bovaz
+     1	Brian Park
+     1	Chris Kitching
+     1	Chris Mayo
+     1	Christian Richardt
+     1	ComFreek
+     1	Craig Reynolds
+     1	Deanna Hood
+     1	Dmitry Budnikov
+     1	Dmitry Gribanov
+     1	Drew Jetter
+     1	Ehren Metcalfe
+     1	Eric Sommerlade
+     1	Evgeny Agafonchikov
+     1	Firat Kalaycilar
+     1	Florent
+     1	GabrieleDalmazzone
+     1	HelenWong
+     1	Hernan Badino
+     1	Ignas Daukšas
+     1	Ishank gulati
+     1	Jaime Fernandez
+     1	Jan Starzynski
+     1	Jay Bosamiya
+     1	Jeremy Huddleston Sequoia
+     1	Jie Yang
+     1	Joe Howse
+     1	Jonas Vautherin
+     1	Josh Klontz
+     1	Jüri Aedla
+     1	Kauê de Moraes Vestena
+     1	Kazuki Matsuda
+     1	Keita Kita
+     1	Kevin Hughes
+     1	Lectem
+     1	LeonidBeynenson
+     1	Leszek Swirski
+     1	Manfred Georg
+     1	ManuelFreudenreich
+     1	Martijn Liem
+     1	Martin Ueding
+     1	Mat Moore
+     1	Matteo Piovanelli
+     1	Maximilien Cuony
+     1	Miguel Algaba
+     1	Milania1
+     1	Nghia Ho
+     1	Nickolay Polyarniy
+     1	Niklas Frisk
+     1	Nikolay Polyarniy
+     1	Oliver Lumby
+     1	Pastafarianist
+     1	Patrik Huber
+     1	Philip Salvaggio
+     1	Pierre Moulon
+     1	Pierre-Emmanuel Viel
+     1	Raaj
+     1	RafaRuiz
+     1	Rafael Sadowski
+     1	René
+     1	Robbert Klarenbeek
+     1	Rohit Rawat
+     1	S. Garrido
+     1	Samyak Datta
+     1	Sethur
+     1	Simon Heinen
+     1	Stefan Cornelius
+     1	Stephen Mell
+     1	Steven Puttemans
+     1	Thomas Dunker
+     1	Thomas Gabrowski
+     1	Thomas Weisbach
+     1	Tian Zhi
+     1	Tim D. Smith
+     1	Valentin Tsatskin
+     1	ValeryTyumen
+     1	Vipul Sharma
+     1	Vitaliy Lyudvichenko
+     1	Wangyida
+     1	Wenju He
+     1	Yang Fan
+     1	Ying Xiong
+     1	Youssef Kashef
+     1	aletheios
+     1	alexander barakin (aka sash-kan)
+     1	art-programmer
+     1	ausentso
+     1	bhack
+     1	boatx
+     1	brossetti
+     1	comdiv
+     1	doltac
+     1	emiswelt
+     1	greensea
+     1	jormansa
+     1	manuele
+     1	mattip
+     1	mbarann
+     1	micalan
+     1	michaelveth
+     1	niederb
+     1	quentin
+     1	rajithr
+     1	scorneli
+     1	spmallick
+     1	teng88
+     1	thebucc
+     1	ttagu99
+     1	ultrafro
+     1	侯骥
+</pre>
+
+*opencv_contrib*
+
+<pre>
+git shortlog --no-merges -ns 3.0.0..3.1.0
+   169	Vladimir
+    48	Kurnianggoro
+    29	Wangyida
+    19	Muresan Mircea Paul
+    18	lluis
+    17	baisheng lai
+    16	Maksim Shabunin
+    14	Anh Nguyen
+    13	Lluis Gomez-Bigorda
+    10	nunombmoutinho@gmail.com
+     9	Seon-Wook Park
+     9	Vlad Shakhuro
+     9	nmoutinho
+     8	Oded Green
+     8	Patrick Snape
+     8	Zhou Chao
+     8	berak
+     6	xolodilnik
+     5	Baisheng Lai
+     5	Marc-Stefan Cassola
+     5	Pavel Rojtberg
+     5	felix
+     5	sbokov
+     4	Alexander Alekhin
+     4	Alexander Stohr
+     4	StevenPuttemans
+     4	edgarriba
+     3	Balint Cristian
+     3	Francisco Facioni
+     3	Maximilien Cuony
+     3	jiaolong_x220
+     2	Aakash Chopra
+     2	Jan S. (Milania1)
+     2	RobertaRavanelli
+     2	S. Garrido
+     2	Samyak Datta
+     2	Vadim Pisarevsky
+     2	Yang Fan
+     1	103yiran
+     1	Alex Tomala
+     1	Clint Pells
+     1	Dikay900
+     1	DirtyMaster
+     1	Hyunjun Kim
+     1	Jesus Briales
+     1	Jesús Briales
+     1	MMp131316
+     1	Pat O'Keefe
+     1	Philipp Hasper
+     1	Rok Mandeljc
+     1	Suleyman TURKMEN
+     1	Sunglok Choi
+     1	SvetlanaFilicheva
+     1	Vitaliy Lyudvichenko
+     1	Yan Wang
+     1	baudenri
+     1	comdiv
+     1	grundman
+     1	howtobeahacker
+     1	lar-lab-unibo
+     1	m4nh
+     1	manuele
+     1	previ
+     1	tucna
+</pre>
 
 h2. version:3.0
 
