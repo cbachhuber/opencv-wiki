@@ -35,7 +35,6 @@
     - [[Debug in Visual Studio|Debug_in_Visual_Studio_using_NativeViewer]]
     - [[Displaying multiple images|DisplayManyImages]]
     - [[Face detection|FaceDetection]]
-    - [[MSER|Mser]]
     - [[POSIT|Posit]]
     - [[WindowsRT]]
     - [[АИСТ 2013 (ru)|AIST_2013]]
