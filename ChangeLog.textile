@@ -55,7 +55,8 @@ p((((. !images/100px-Apple_iOS_icon.png!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 p((((. !images/android_ocv_small.png!
-* TBD (faster round, Android 5 support, ...)
+* more efficient camera support on Android 5+
+* faster round() on ARM (it's also applicable to iOS); big thanks to Manuele Tamburano and Stefano Fabri for this!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
