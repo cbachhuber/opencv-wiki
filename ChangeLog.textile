@@ -17,7 +17,7 @@ p((((. !images/gsoc2015.jpg!
 ** *Real-time Multi-object Tracking using Kernelized Correlation Filter* - opencv_contrib/tracking module (Laksono Kurnianggoro, Fernando J. Iglesias Garcia)
 ** *Improved and expanded Scene Text Detection* - opencv_contrib/text module (Lluis Gomez, Vadim Pisarevsky)
 ** *Stereo correspondence improvements* - opencv_contrib/stereo module (Mircea Paul Muresan, Sergei Nosov)
-** *Structured-Light System Calibration* - opencv_contrib/structured_light (Roberta Ravanelli, Delia, Stefano Fabri, Claudia Rapuano)
+** *Structured-Light System Calibration* - opencv_contrib/structured_light (Roberta Ravanelli, Delia Passalacqua, Stefano Fabri, Claudia Rapuano)
 ** *Chessboard+ArUco for camera calibration* - opencv_contrib/aruco (Sergio Garrido, Prasanna, Gary Bradski)
 ** *Implementation of universal interface for deep neural network frameworks* - opencv_contrib/dnn module (Vitaliy Lyudvichenko, Anatoly Baksheev)
 ** *Recent advances in edge-aware filtering, improved SGBM stereo algorithm* - opencv/calib3d and opencv_contrib/ximgproc (Alexander Bokov, Maksim Shabunin)
