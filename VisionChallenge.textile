@@ -15,7 +15,7 @@ Location: Room 101
 Time: 11am-12pm
 </pre>
 
-h2. (1) CV Community Top Paper Award: CVPR 2015
+h2. (1) People's Choice Best Paper Award: CVPR 2015
 
 We will tally the people’s vote !images/Vote5.png! for the paper you’d most like to see implemented (you may vote for as many as you want). We'll describe the 5 top winners.
 
@@ -81,7 +81,7 @@ h3. *Winners by Categories (all are winners, this isn't in order of priority):*
 ** Took first place on more correct general table and also has modifications with worse performance, but faster speed.
 ** No pull request yet
 
-*Image registration*	
+*Image registration*
 * Gil Levi and Tal Hassner - LATCH descriptor
 **  State-of-the-art for binary descriptors for accuracy (its speed slower). It also outperforms several floating point descriptors and works much faster.
 ** Pull request done!

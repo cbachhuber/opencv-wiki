@@ -44,6 +44,7 @@
     - [[2014|CVPR2014]]
     - [[2010|OpenSourceComputerVisionCVPR2010]]
 - Google summer of code
+    - [[OpenCV GSoC Application|OpenCV_GSoC_Application]]
     - [[2016|GSoC_2016]]
     - [[2015|GSoC_2015]]
     - [[2014|GSoC_2014]]
