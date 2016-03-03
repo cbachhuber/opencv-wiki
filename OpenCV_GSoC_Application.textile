@@ -4,7 +4,7 @@ h1. OpenCV GSoC Application
 
 *Why does your org want to participate in Google Summer of Code?*
 
-OpenCV (Open Source Computer Vision -- 15M+ downloads) has participated in GSoC since 2010. Computer vision is a large, rapidly evolving field and GSoC has been invaluable in keeping up with new algorithms and code improvements that aid companies around world (including extensive use in Google) to field advance vision applications but also to advance science by providing solidly coded reproducible results to test against (adhering to many Google coding and style conventions). Over the years, we have developed a well honed mentoring system that produces high quality pull requests (see recent ones: https://goo.gl/9X7AAO ) complete with unit tests, documentation and examples of use. Several new publications have come out of this and a student joined with mentors in founding a company, Industrial Perception Inc, sold to Google in 2013. Please see some video compilations of past GSoC contributions: (2015: https://goo.gl/9MCQl8 ) (2014: https://goo.gl/CWJtLt ) (2013: https://goo.gl/5qTtD2 )
+OpenCV (Open Source Computer Vision -- 15M+ downloads) has participated in GSoC since 2010. Computer vision is a large, rapidly evolving field and GSoC has been invaluable in keeping up with new algorithms and code improvements that aid companies around world (including extensive use in Google) to field advance vision applications but also to advance science by providing solidly coded reproducible results to test against (adhering to many Google coding and style conventions). Over the years, we have developed a well honed mentoring system that produces high quality pull requests (see recent ones: [[https://goo.gl/9X7AAO]] ) complete with unit tests, documentation and examples of use. Several new publications have come out of this and a student joined with mentors in founding a company, Industrial Perception Inc, sold to Google in 2013. Please see some video compilations of past GSoC contributions: (2015: [[https://goo.gl/9MCQl8]] ) (2014: [[https://goo.gl/CWJtLt]] ) (2013: [[https://goo.gl/5qTtD2]] )
 
 ----
 
@@ -16,13 +16,13 @@ OpenCV (Open Source Computer Vision -- 15M+ downloads) has participated in GSoC 
 
 *How will you keep mentors engaged with their students?*
 
-All our mentors are known contributors to OpenCV and we always have backup mentors who can swap in, but mainly help newer mentors. There are always backup mentors to swap in to cover summer vacations. Most mentors are either Professors, graduate students or engineering managers that are experienced in managing students and interns. We have weekly meetings on progress and track students on shared Google docs. Mentors are required to have a minimum of one weekly meeting with mentors and email contact is shared and open to admins who monitor contact. The first milestone is to create a pull request and mentors are required to critique it. These pull requests continue throughout the summer until the final pull requests that must be accepted by the mentor if the student is not to fail. Mentors are required to make sure the students pass the build bot, have google unit tests, examples of use and extensive documentation ( http://docs.opencv.org/ ). 
+All our mentors are known contributors to OpenCV and we always have backup mentors who can swap in, but mainly help newer mentors. There are always backup mentors to swap in to cover summer vacations. Most mentors are either Professors, graduate students or engineering managers that are experienced in managing students and interns. We have weekly meetings on progress and track students on shared Google docs. Mentors are required to have a minimum of one weekly meeting with mentors and email contact is shared and open to admins who monitor contact. The first milestone is to create a pull request and mentors are required to critique it. These pull requests continue throughout the summer until the final pull requests that must be accepted by the mentor if the student is not to fail. Mentors are required to make sure the students pass the build bot, have google unit tests, examples of use and extensive documentation ( [[http://docs.opencv.org/]] ).
 
 ----
 
 *How will you help your students stay on schedule to complete their projects?*
 
-Students are required to fill out a schedule in their application. They start the summer with a pull requests that must pass the build bot, documentation, Google unit test and example of use. They must meet with Mentors at least once a week (unless prior excuse) and fill out periodic progress logs and students are failed if they do not have an accepted start, middle and finished end pull request. At the end, students are required to submit a Youtube video showing their results, see for example: (2015: https://goo.gl/9MCQl8 ) (2014: https://goo.gl/CWJtLt ) (2013: https://goo.gl/5qTtD2 ) where each student has their "moment of fame". We have been doing this many years now and have a well tested system to generate good results while training students in proper coding tools and style. We generate further enthusiasm by regularly doing joint conference papers with exceptional students. The admin is well known in the field and getting good references is a further motivation.
+Students are required to fill out a schedule in their application. They start the summer with a pull requests that must pass the build bot, documentation, Google unit test and example of use. They must meet with Mentors at least once a week (unless prior excuse) and fill out periodic progress logs and students are failed if they do not have an accepted start, middle and finished end pull request. At the end, students are required to submit a Youtube video showing their results, see for example: (2015: [[https://goo.gl/9MCQl8]] ) (2014: [[https://goo.gl/CWJtLt]] ) (2013: [[https://goo.gl/5qTtD2]] ) where each student has their "moment of fame". We have been doing this many years now and have a well tested system to generate good results while training students in proper coding tools and style. We generate further enthusiasm by regularly doing joint conference papers with exceptional students. The admin is well known in the field and getting good references is a further motivation.
 
 ----
 
@@ -53,7 +53,7 @@ Yes were were a mentoring org
 
 *What is your success/fail rate per year?*
 
-14 out of 15 projects passed, see https://www.google-melange.com/gsoc/dashboard/google/gsoc2015#mentor_evaluations . Every other project produced solid results -- we have become fairly skilled at mentoring.
+14 out of 15 projects passed, see [[https://www.google-melange.com/gsoc/dashboard/google/gsoc2015#mentor_evaluations]] . Every other project produced solid results -- we have become fairly skilled at mentoring.
 
 ----
 
@@ -78,7 +78,7 @@ No
 *Anything else we should know?*
 
 OpenCV is used extensively inside Google. Contact Google Employee Vincent Rabaul
-vincent.rabaud@gmail.com about where it is used. He is an active contributor. We were rejected in 2009, our first year of applying because one of the GSoC admins somehow thought we were a defunct project. We are adamantly not, see github: https://github.com/Itseez/opencv/pulse and our weekly exec meeting notes: http://code.opencv.org/projects/opencv/wiki/Meeting_notes
+[[vincent.rabaud@gmail.com]] about where it is used. He is an active contributor. We were rejected in 2009, our first year of applying because one of the GSoC admins somehow thought we were a defunct project. We are adamantly not, see github: [[https://github.com/Itseez/opencv/pulse]] and our weekly exec meeting notes: [[Meeting Notes|Meeting_notes]]
 
 ----
 
@@ -86,7 +86,7 @@ h1. OpenCV Profile:
 
 *URL:*
 
-http://code.opencv.org/projects/opencv/wiki
+[[https://github.com/Itseez/opencv/wiki]]
 
 *Tagline:*
 
@@ -106,7 +106,7 @@ Computer vision, machine learning, robotics, virtual reality, real time
 
 *Ideas List:*
 
-http://code.opencv.org/projects/opencv/wiki/GSoC_2016
+[[GSoC 2016 Ideas|GSoC_2016]]
 
 *Short description:*
 
@@ -116,20 +116,20 @@ OpenCV, the Open Source Computer Vision Library includes state of the art comput
 
 OpenCV, the Open Source Computer Vision Library includes state of the art computer vision and machine learning algorithms (including running deep networks) and apps. It is professionally coded and optimized. It can be used in C++, Python, Cuda, OpenCL and Matlab. It runs on: Android, iOS, Windows, Linux and MacOS and many embedded implementations.
 
-The user site is at http://opencv.org/ , The developer site is at: http://code.opencv.org/projects/opencv/wiki/WikiStart . Nightly builds of the documentation are at: http://docs.opencv.org/master/#gsc.tab=0 . Code is at: OpenCV (the core data structures,  optimized algorithms, sample and tutorial code): https://github.com/Itseez/opencv  , opencv_contrib (new algorithms, applications and GSoC contributions and related tutorial and sample code): https://github.com/Itseez/opencv_contrib.git , opencv_extra (extra data and code samples): https://github.com/Itseez/opencv_extra  , downloads for various OS and mobile devices:  http://opencv.org/downloads.html
+The user site is at [[http://opencv.org/]] , The developer site is at: [[https://github.com/Itseez/opencv/wiki]] . Nightly builds of the documentation are at: [[http://docs.opencv.org/master]] . Code is at: OpenCV (the core data structures,  optimized algorithms, sample and tutorial code): [[https://github.com/Itseez/opencv]]  , opencv_contrib (new algorithms, applications and GSoC contributions and related tutorial and sample code): [[https://github.com/Itseez/opencv_contrib.git]] , opencv_extra (extra data and code samples): [[https://github.com/Itseez/opencv_extra]]  , downloads for various OS and mobile devices:  [[http://opencv.org/downloads.html]]
 
-It is also useful to look at the change log: https://github.com/Itseez/opencv/wiki/ChangeLog and instructions to install on various platforms: http://goo.gl/vgrtdz
+It is also useful to look at the change log: [[https://github.com/Itseez/opencv/wiki/ChangeLog]] and instructions to install on various platforms: [[http://goo.gl/vgrtdz]]
 
-Please see our videos for the past 3 years of GSoC contributions: (2015: https://goo.gl/9MCQl8 ) (2014: https://goo.gl/CWJtLt ) (2013: https://goo.gl/5qTtD2 ).
+Please see our videos for the past 3 years of GSoC contributions: (2015: [[https://goo.gl/9MCQl8]] ) (2014: [[https://goo.gl/CWJtLt]] ) (2013: [[https://goo.gl/5qTtD2]] ).
 
-Finally, a book by O'Reilly press on the latest OpenCV will come out by summer: http://shop.oreilly.com/product/0636920044765.do
+Finally, a book by O'Reilly press on the latest OpenCV will come out by summer: [[http://shop.oreilly.com/product/0636920044765.do]]
 
 *Application Instructions:*
 
 Ask to join the OpenCV GSoC Forum List
 Discuss projects below or other ideas with us there (Feb 29 - March 13)
 On March 14th - 25th, Go to the GSoC site and sign up to be a student with OpenCV
-Post the project from below or your own agreed on project on the GSoC to opencv-gsoc-2016@googlegroups.com
+Post the project from below or your own agreed on project on the GSoC to <code>opencv-gsoc-2016@googlegroups.com</code>
 Include Name, google email, age
 Include how you think you are qualified to accomplish this project (skills, courses, relevant background)
 Include Country of origin, school you are enrolled in, Professor you work with (if any)
@@ -146,29 +146,29 @@ h3. IRC channel?
 
 h3. Mailing list?
 
-http://tech.groups.yahoo.com/group/OpenCV/
+[[http://tech.groups.yahoo.com/group/OpenCV/]]
 
 h3. Feed URL?
 
-http://opencv.org/feed
+[[http://opencv.org/feed]]
 
 h3. Google+?
 
-https://plus.google.com/u/1/+OpencvOrg/posts
+[[https://plus.google.com/u/1/+OpencvOrg/posts]]
 
 h3. Twitter?
 
-https://twitter.com/opencvlibrary
+[[https://twitter.com/opencvlibrary]]
 
 h3. Blog?
 
-http://opencv.org/
+[[http://opencv.org/]]
 
 h3. Facebook?
 
-https://www.facebook.com/opencvlibrary
+[[https://www.facebook.com/opencvlibrary]]
 
 
 ----
 
-* [[GSoC 2016|Google Summer of Code 2016 Ideas Page]]
+* [[Google Summer of Code 2016 Ideas Page|GSoC_2016]]
