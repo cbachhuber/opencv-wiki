@@ -1,0 +1,552 @@
+h1. 2016  OpenCV Meeting notes for the year 2016
+
+Template is at http://code.opencv.org/projects/opencv/wiki/Template
+http://code.opencv.org/help/wiki_syntax
+
+[[Meeting_notes]]
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2016-03-01
+
+h3. _*Agenda*_
+
+ * GSoC 2016  We're in!
+
+
+h3. *_Minutes_*
+
+ *  GSoC 2016
+ ** Infrastructure Priorities
+ *** Improved python support (python 3)
+ **** Numpy 3
+ **** NumPy and SciPy support the Python 2.x series, (versions 2.6 and 2.7), as well as Python 3.2 and newer. The first release of NumPy to support Python 3 was NumPy 1.5.0. Python 3 support in SciPy starts with version 0.9.0.
+https://github.com/bytedeco/javacv
+ *** Java and Android  Share buffer between Android and OpenCV  Java utils
+ *** Smaller Android binaries for 3.0
+ *** Android project AOSP, improve 3.0
+ **** https://source.android.com/ Android 5 or 6 for buffers. Or for Tegra
+ *** Everything deepnet. I/O to all the major packages
+ *** Redoing CMake modules independent of core
+ **** Pending pull requests
+ **** Tags for the modules
+ ** Documentation
+ *** missing links
+ *** Helping clean up
+ ** SLAM
+ *** lsd-slam https://github.com/tum-vision/lsd_slam
+ *** lsd-slam monocular, large scale https://github.com/tum-vision/lsd_slam
+ ** Lightfield
+ * Alex Myakov -- Gary talk with
+ *** NumPy and SciPy support the Python 2.x series, (versions 2.6 and 2.7), as well as Python 3.2 and newer. The first release of NumPy to support Python 3 was NumPy 1.5.0. Python 3 support in SciPy starts with version 0.9.0.
+https://github.com/bytedeco/javacv
+
+
+h3. *_Reports_*
+
+ * . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+ * .
+
+*Vincent*
+
+ * .
+
+*Vadim*
+
+ * .
+
+*Grace*
+
+ * .
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2016-02-23
+
+h3. _*Agenda*_
+
+* GSoC 2016
+<pre>
+20 February - 26 February	Google program administrators review organization applications.
+29 February 19:00 UTC	List of accepted mentoring organizations published on the Google Summer of Code 2016 site.
+</pre>
+
+** "GSoC 2016 Official Site":https://developers.google.com/open-source/gsoc/
+** "OpenCV GSoC 2016 Ideas Page":http://code.opencv.org/projects/opencv/wiki/GSoC_2016
+
+h3. *_Minutes_*
+
+ * GSoC 2016
+ ** Get someone to help migrate OpenCV 1.0 to 2.0 and 2.0 to 3.0
+ ** Migration tools
+ *** http://upstream.rosalinux.ru/versions/opencv.html
+ *** https://github.com/lvc
+ ** Need to expand and test read/write of deepnets
+ *** mix of activation and other functions
+ **** batch normalization needed for forward pass
+ * projects (Idea page: http://code.opencv.org/projects/opencv/wiki/GSoC_2016 )
+ ** Lightfields
+ ** 3D
+ ** Deep learning
+ *** Caffe 2 support
+ *** TensorFlow
+ **** Forward pass should work with internal only.
+ **** At a a minimum need to support TensorFlow data format
+ **** Put it into the benchmark https://github.com/soumith/convnet-benchmarks
+ *** Need to expand this module
+ **** easy to add activation layers
+ *** cuDNN is the defacto standard for acceleration, but don't want to build in one company
+ **** OpenCL is tricky
+ ** Support Vulkan https://www.khronos.org/vulkan/  ?
+ *** SPIR https://www.khronos.org/spir "common ground for OpenCL and Vulkan ... not OpenVX (but it needs something for shader support)
+ *** Google going away from OpenCL in TensorFlow? https://github.com/tensorflow/tensorflow/issues/22
+ *** Theano.
+ **** All done with cuDNN from NVidia
+ ***** Batch normalization
+ *** Speed. Do we rely on OpenCL?
+ **** Put results in DNN performance table
+ ***** https://github.com/soumith/convnet-benchmarks
+ ** C++ 11 move. Owning the data
+ *** A type for an image (Hauke)
+ *** Resize with sophisticated color spaces
+ *** take cv::Mat  convert color spaces (Gamma, non linear RGB)
+ *** Const mat. Input array is const reference
+ *** new samples for C.11++ features.
+ **** How to iterate through images using Lambda functions
+ **** C++11 only headers
+ ***** Type def to be C++ 11 const pointer.
+ **** ROS is switching to C++11. Visual studio 2012 and 2013.
+ ** Smaller builds. Sections or static builds
+ ** Drone obstacle avoidance
+ ** JavaCPP OpenCV
+ *** https://github.com/bytedeco/javacpp-presets
+ *** Was issue with TensorFlow due to python link. Auto differentiation. Not a problem for forward pass though
+ ** Tracking planar surface 2D and 3D
+
+
+
+h3. *_Reports_*
+
+ * . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+ * Get payments in!
+
+*Vincent*
+
+ * .
+
+*Vadim*
+
+ * .
+
+*Grace*
+
+ * .
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2016-02-16
+
+h3. _*Agenda*_
+
+ * GSoC 2016
+ * OpenCV.com
+ * People's Choice Best Paper, CVPR
+
+* Vadim is skiing in the Urals
+
+h3. *_Minutes_*
+
+ * GSoC 2016
+ ** We have finished the application:
+ *** !gsoc_applied.png!
+ ** Our Ideas page is here: http://code.opencv.org/projects/opencv/wiki/GSoC_2016
+ *** Gary to expand deep net stuff there:
+ *** Read write to Caffe, Torch, Theano, Tensor Flow and CNTK
+ *** Curate/train a model zoo for built in functions
+ **** topological imagery SLAM
+ *** Drone obstacle avoidance
+ *** Improve projection mapping
+ *** Get and integrate Google robotics protected memory wrappers for images
+ * OpenCV.com
+ ** making progress towards branded functionality cameras
+ * CVPR
+ ** Need to get Rubius interface up and working and diseminated for CVPR
+
+h3. *_Reports_*
+
+ * . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+ * .
+
+*Vincent*
+
+ * .
+
+*Vadim*
+
+ * .
+
+*Grace*
+
+ * .
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+h2. 2016-02-02
+
+h3. _*Agenda*_
+
+ * SLAM
+ * GSoC
+ * Optimization
+ * NUML
+ * 3.1 is out
+ * CVPR
+
+h3. *_Minutes_*
+
+ * GSoC
+ ** "Timeline":https://developers.google.com/open-source/gsoc/timeline?hl=en
+ ** Deep Learning ... forward pass only or ... training??
+ *** Accelerate it
+ *** "Benchmarks":https://github.com/soumith/convnet-benchmarks  Integrate with this
+ *** Accelerate common operators CudaDNN standard operators
+ *** Detection, Segnet, hard code popular models
+ ** Improving existing functionality
+ *** latent SVM
+ *** Stereo
+ *** Calibration on line
+ **** Wide angle cameras
+ **** Update calibration tuning
+ *** support drones
+ *** Bio inspired vision
+ **** background subtraction
+ *** Improve optical flow -- as good as Farnerbeck but faster
+ *** Fast inspection
+ * SLAM
+ ** NVidia http://blogs.nvidia.com/blog/2015/11/17/stereolabs-jetson-tx1/
+ *** "TX1":http://devblogs.nvidia.com/parallelforall/nvidia-jetson-tx1-supercomputer-on-module-drives-next-wave-of-autonomous-machines/
+ ** "Marc":https://www.inf.ethz.ch/personal/marc.pollefeys/
+ ** "The Future of Real-Time SLAM 2015":http://wp.doc.ic.ac.uk/thefutureofslam/programme/
+ ** "Deep Learning vs SLAM":http://www.computervisionblog.com/2016/01/why-slam-matters-future-of-real-time.html
+ ** "Google and Movidius":http://www.embedded-vision.com/industry-analysis/press-releases/google-and-movidius-work-together-enhance-deep-learning-capabilitie
+ ** Smart camera
+ * Optimization
+ ** Vadim writing slides
+ ** OpenCV HAL (Hardware Acceleration Layer) has DFT now
+ *** Complete HAL by Feb/March. Part of OpenCV 3.2
+ ** "C++14":https://groups.google.com/a/isocpp.org/forum/#!forum/sg14
+ * NUML
+ ** NUML compiler to NUML (parser done)
+ ** Improving the generated C code
+ * Intern
+ ** Python samples => tests
+ ** Also more samples
+ * OpenCV 3.1 is out
+ * CVPR
+ ** Need to concentrate on "People's Choice Best Paper"
+ ** "Site":http://cvpr2016.thecvf.com/
+
+ * Vadim out Feb 8-18th
+
+h3. *_Reports_*
+
+ * . Vadim
+
+*OpenCV:*
+
+* OpenCV 3.1 has been released. The announce is here: http://opencv.org/opencv-3-1.html.
+* Immediately after the release we continue our work on OpenCV:
+* Maksim has prepared PR (https://github.com/Itseez/opencv/pull/5846) with some important improvements and fixes from 3.x backported to 2.4.x, most notably fast cvRound() etc. for ARM. People say, the faster round speeds up some code by 20% and even more than that.
+* Alexander has updated binary compatibility checker, so that it will check modifications in OpenCV API since 3.1.
+
+*OpenCV Plans:*
+* Continue expanding OpenCV HAL
+
+*Numl:*
+
+          because of the release preparations, there is little progress on numl, but it's non-zero still:
+
+*numl:*
+# Extended pattern matching to almost match StandardML/OCaml capabilities.
+# Added special constructions for list comprehensions and list literals that are more compact than before.
+# numlyacc. Started conversion of BSD-licensed ml-yacc from SML-NJ/mlton to numl. ~30% is complete. sml2nl is used to do the initial conversion sml=>numl, after which the code is annotated with types and some small corrections are made.
+
+*Numl Plans:*
+* Finish numlyacc, test the pair numllex + numlyacc.
+* add basic OOP capabilities. This is another item in progress.
+* write some slides and initial documentation for the language and the standard library
+* grow the standard library.
+
+*Misc:*
+*Vadim, Alexander will be on vacation starting from the next week.
+
+h3. *_Action Items_*
+
+*Gary*
+
+ * .
+
+*Vincent*
+
+ * .
+
+*Vadim*
+
+ * .
+
+*Grace*
+
+ * .
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2016-01-26
+
+h3. _*Agenda*_
+
+ * GSoC gear up
+ * Hardware Acceleration of vision
+ * Economic ideas
+ *Hardware acceleration layer HAL
+ * Final payments for mentors and for contest need to go out
+
+
+h3. *_Minutes_*
+
+ * New summer of code, Feb 8 "See Timelene":https://developers.google.com/open-source/gsoc/timeline
+ * Economic ideas for OpenCV ...
+ ** OpenCV has been brought current on all tax issues (yeah!)
+ * NUML
+ ** Performance is almost at C level, a few problems, but produces large C files (single C source) when optimization is turned on -O2 or -O3
+ ** See report below
+ ** Month to 2 months
+ ** 1 month to version 1, then
+ *** try wrapping some of opencv
+ *** try wrapping some of tensorflow
+ * Hardware acceleration layer (HAL)
+ ** OpenCV has been improving its layer
+ ** "OpenVX":https://www.khronos.org/openvx/ (starting to grow, "Imagination Pass":https://globenewswire.com/news-release/2016/01/06/799884/0/en/PowerVR-GPUs-From-Imagination-Pass-OpenVX-Conformance-With-Khronos.html
+ * Industrial vision apps "Datalogic":http://www.datalogic.com/eng/products/industrial-automation/machine-vision-pc-16.html , "Cognex":http://www.cognex.com/
+
+h3. *_Reports_*
+
+ * . Vadim
+
+*OpenCV:*
+
+    After NY holidays we resumed the work on OpenCV. The approximate OpenCV 3.2 release time is end of May; before that we will do hackathon. Since it will be before GSoC 2016, not much new functionality should be expected. The major new features will be more or less complete HAL along with many bug fixes found in 3.0/3.1. We also continuously improve our continuous integration infrastructure. Along those lines, we've done the following during the 2 past weeks:
+
+* - build fixes: world with CUDA / precompiled headers for world / include only available modules (via opencv2/opencv.hpp) / python detection issue on Ubuntu 14.04 / fix OSX framework build with contrib
+* - buildbot infrastructure: 2016 copyright / limit (100) number of stored builds&logs / fix iOS nightly build / fix python library path for ARM
+* - prepared proposal for OpenCV add-ons: this is quite important feature, requested by Vincent and other guys. The idea is to let users to build their own modules (or opencv_contrib modules) without rebuilding opencv itself. Alexander Alekhin has prepared the proposal on how to implement this feature.
+* - OpenCV HAL. The 1D DFT API has been finalized and implemented. The first tests showed noticeable speed degradation, so we spend some more time to fix those issues and now the performance is more or less the same as it was before.
+* - There is test build and test run of OpenCV with coverage turned on. We plan to put it to the buildbot and get the test coverage information on regular basis as we did it in Willow Garage times.
+* - ~10 PRs have been reviewed.
+*
+  - Vlad Sovrasov joined our team as intern, he is working on converting some of the Python samples to tests, so we will have additional number of tests and besides we will check quality of Python bindings. So far he created 4 new tests
+
+*OpenCV Plans:*
+* - continue Python samples => tests transformation
+* - add the coverage builder
+* - add 2D DFT HAL API, then proceed with filtering functions
+
+*Numl:*
+
+  Basically we are now working on rewriting numl compiler in numl, which should greatly improve compile time (.nl=>.c) and also serve as a decent regression test.
+* numlyacc parser generator tool is ready. It was able to reproduce it's own grammar parser. numlyacc takes ~6000 lines of code in numl and it's translated to 95000 lines of code in C. The generated C source takes ~3-4 minutes to compile with -O2 optimization (which reduces down to ~10-20 seconds with -O1). Obviously, we will need to split such huge files into smaller ones.
+* The work on converting numl lexical scanner and the parser to numllex and numlyacc is started.
+* The C code generator has been improved to produce smaller .c files without loosing efficiency (there is quite the opposite effect, in fact). In particular, 1 week ago numlyacc output took ~130000 lines of code in C, now it takes ~95000.
+* Prepared some slides summarizing numl progress over the year: https://docs.google.com/presentation/d/1YmFCkvoo5qwtDAd70xyWpIazMFEWExz7aeZ2P4v2m40/edit#slide=id.p3
+* There is the first draft of the output C language AST data structure. In the current compiler C code generator is very sophisticated single-pass procedure. We plan to move to the structured representation of C code and then make a few passes over it. It should help to further improve quality of the output code.
+
+*Numl Plans:*
+* *[done!]* Finish numlyacc, test the pair numllex + numlyacc.
+* convert numl parser to numl, then proceed with type checker, k-normalization and optimizers of the k-form.
+* add basic OOP capabilities. This is another item in progress.
+* write some slides and initial documentation for the language and the standard library
+* grow the standard library.
+
+
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+ * get out GSOC mentor payments
+
+*Vincent*
+
+ * Talk about NUML
+
+*Vadim*
+
+ * Have Sergey send Gary US account info
+
+*Grace*
+
+ * .
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2016-01-19
+
+h3. _*Agenda*_
+
+ * Taxes
+ * OpenCV 3.1 progress
+
+h3. *_Minutes_*
+
+ * Paid OpenCV.org's taxes (yes we have taxes because not all income was paid out in the same year)
+ * OpenCV
+ ** Pulled in 20 pull requests
+ ** We are extending the Hardware Acceleration Layer (HAL) -- an API that HW manufacturers can come under and speed up OpenCV
+ *** Did the complex ones first
+ *** Simpler ones next
+ ** These comply with but go beyond OpenVX (it is 40 functions), but we will cover many more functions
+ *** FFT, larger data types (beyond 8 bits)
+ *** We will allow direct calls later for even more acceleration
+ * NUML
+ ** NUML compiler is being converted to NUML (port of YACC tool is now in NUML)
+ *** Parser is complicated, 500 states, but automatically generated
+ *** Parser is general, can be used for other functions, macros
+ * Vincent in town for two weeks from France
+ ** Meet with OpenCV, Willow and ROS people
+ ** There will be official ARM support, current build bot already tests against ARM (Linux, but not Android)
+ *** This will expand the ARM user population by quite a bit
+ ** Reading up on SYCL (part of Chronos2, higher level than OpenCL)
+ * OSI wants us to change our logo :-(
+ ** Rather than fight, we're probably going to redesign it
+ ** Itseez has a professional designer and/or we could have a contest, but that may lead to conflict problems
+
+h3. *_Reports_*
+
+ * . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+ * .
+
+*Vincent*
+
+ * .
+
+*Vadim*
+
+ * .
+
+*Grace*
+
+ * .
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2016-01-12
+
+h3. _*Agenda*_
+
+ * New year
+
+h3. *_Minutes_*
+
+ * Maxime extending HAL (Hardware Acceleration Layer)
+ ** Fixed API, so OpenCV can be easily accelerated w/o needing any customization
+ * Bug reports and pull requests for 3.0 and 3.1
+ ** Working on
+ * NUML
+ ** NUML compiler converted from C to NUML
+ *** 3 parts, 30K lines. If 30K lines compile and work, it's  a good sign of stability
+ *** Already some bugs fixed
+ *** Smaller footprint to get started
+ ** NUML => C bootstrap. So can port to new platform easily
+ ** Advantages:
+ *** Safe language is safe, can't go out of bounds.
+ *** parallel for is embedded
+ *** matlab kind of productivity, but optimized C run speed
+ **** NUML 20-50x faster than Python
+ *** types are checked at compile time. No number to string adds for example
+ *** Compile speed at speed of C compiler (NUML byte code to C) Bottleneck if C compiler
+ *** 1000 lines of NUML => 10Ks of C code
+ ** Working on this conversion, then tutorial slides
+ *** Can write code in text editor, type NUML and then
+ *** Notebooks
+
+h3. *_Reports_*
+
+ * . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+ * .
+
+*Vincent*
+
+ * .
+
+*Vadim*
+
+ * .
+
+*Grace*
+
+ * .
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+
+
+
+[[Meeting_notes]]
