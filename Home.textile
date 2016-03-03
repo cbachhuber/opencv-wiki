@@ -37,7 +37,7 @@ h3. Development
 
 h2. Issue Tracking
 
-Please note that OpenCV project, as any open-source project, welcomes contributions from users. Either you have implemented some new functionality, or you're able to localize and fix a bug by yourself, please make a "pull request":https://github.com/Itseez/opencv/pulls at the GitHub. It will be "automatically tested":http://pullrequest.opencv.org and reviewed by peers. Check your code for compliance with [[OpenCV Code Style Guide|CodingStyleGuide]] and please explain how your contribution might help others.
+Please note that OpenCV project, as any open-source project, welcomes contributions from users. Either you have implemented some new functionality, or you're able to localize and fix a bug by yourself, please make a "pull request":https://github.com/Itseez/opencv/pulls at the GitHub. It will be "automatically tested":http://pullrequest.opencv.org and reviewed by peers. Check your code for compliance with [[OpenCV Code Style Guide|Coding_Style_Guide]] and please explain how your contribution might help others.
 
 h3. Creating new tickets
 
@@ -61,7 +61,6 @@ h2. Topic Pages
 
 * [[Google Summer of Code 2016 (GSoC 2016) Ideas Page|GSoC_2016]]
 * [[Workshops|Workshops]]
-* [[Tutorials|Tutorials]]
 * [[Vision Challenge Sponsored by OpenCV, CVPR 2015!!|VisionChallenge]]
 * [[New functionality discussion|New_functionality_discussion]]
 * [[CARMA platform, compilation and testing|CARMA_platform_compilation_and_testing]]
