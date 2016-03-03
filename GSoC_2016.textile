@@ -1,24 +1,19 @@
 h1. *Ideas Page for OpenCV Google Summer of Code 2016 (GSoC 2016)*
 
-
 *OpenCV Augmented Reality from ArUco Markers last year. (click image for video showing all 2015 projects)*
 
 !images/AR_Aruco.png!:https://www.youtube.com/watch?v=OUbUFn71S4s
 
-----
 * *Go back to:*
-** "OpenCV Developer Page":http://code.opencv.org/projects/opencv/wiki
+** "OpenCV Developer Page":https://github.com/Itseez/opencv/wiki
 ** "OpenCV User Page":http://opencv.org/
 
 h2. General Information:
 
 * "GSoC 2016 site":https://developers.google.com/open-source/gsoc/
-* Mailing list for OpenCV GSOC 2016: opencv-gsoc-2016@googlegroups.com
-** Group site https://groups.google.com/forum/#!forum/opencv-gsoc-2016
-* IRC Channel:
-<pre>
-#opencv on freenode
-</pre>
+* Mailing list for OpenCV GSOC 2016: <code>opencv-gsoc-2016@googlegroups.com</code>
+** Group site [[https://groups.google.com/forum/#!forum/opencv-gsoc-2016]]
+* IRC Channel: <code>#opencv on freenode</code>
 * *Timelines*
 ** "Timeline for GSoC 2016":https://developers.google.com/open-source/gsoc/timeline
 ** "Major GSoC 2016 Milestones":https://summerofcode.withgoogle.com/
@@ -46,22 +41,18 @@ h2. General Information:
 
 *Resources:*
 
-* "OpenCV Developers Site":http://code.opencv.org/projects/opencv/wiki
+* "OpenCV Developers Site":https://github.com/Itseez/opencv/wiki
 * "OpenCV User's Site":http://opencv.org
-* [[How_to_contribute|How to do a pull request/How to Contribute Code]]
-* Source Code can be found at "GitHub":https://github.com/Itseez/opencv.
-** To get the source code, point your git client to @git://github.com/Itseez/opencv.git@. Here are [[Working_with_OpenCV_git_repository|instructions]].
-<pre>
-git clone git://github.com/Itseez/opencv.git
-</pre>
-** To get user contributions, GSoC code, go to: https://github.com/Itseez/opencv_contrib.git
-<pre>
-git clone git://github.com/Itseez/opencv_contrib.git
-</pre>
-** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: git://code.opencv.org/opencv_attic.git.
-** Also OpenCV Extra was put to a separate repository: git://code.opencv.org/opencv_extra.git.
-* [[OpenCV Development Process]]
-** [[Meeting_notes|Developer meeting notes]]
+* [[How to do a pull request/How to Contribute Code|How_to_contribute]]
+* Source Code can be found at "GitHub":https://github.com/Itseez/opencv
+** To get the source code, point your git client to <code>git://github.com/Itseez/opencv.git</code>. Here are [[instructions|Git]].
+<code>git clone git://github.com/Itseez/opencv.git</code>
+** To get user contributions, GSoC code, go to: [[https://github.com/Itseez/opencv_contrib.git]]
+<code>git clone git://github.com/Itseez/opencv_contrib.git</code>
+** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: <code>git://code.opencv.org/opencv_attic.git</code>.
+** Also OpenCV Extra was put to a separate repository: <code>git://code.opencv.org/opencv_extra<.git</code>.
+* [[OpenCV_Development_Process]]
+** [[Developer meeting notes|Meeting_notes]]
 
 h2. How you will be evaluated if you are an accepted student
 
@@ -83,7 +74,6 @@ h2. How you will be evaluated if you are an accepted student
 ***** "The 2015 Movie":https://www.youtube.com/watch?v=OUbUFn71S4s
 ***** "The 2014 Movie":https://www.youtube.com/watch?v=3f76HCHJJRA
 ***** "The 2013 Movie":https://www.youtube.com/watch?v=_TTtN4frMEA
-
 
 h2. For students interested in applying
 
@@ -117,13 +107,12 @@ h2. For computer vision professionals interested in mentoring
 ** It sounds harder than it is.
 
 
-<pre>
-\/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/
-</pre>
+***
+
 
 h1. 2016 Project Ideas:
 
-*Students may propose their own projects (give us a clear summary and why you can do this project). However, below are some of our priorities for this year* Contact us and/or discuss ideas at https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2016
+*Students may propose their own projects (give us a clear summary and why you can do this project). However, below are some of our priorities for this year* Contact us and/or discuss ideas at [[https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2016]]
 
 _These are not in order of priority_
 
@@ -139,15 +128,15 @@ _These are not in order of priority_
 * Put out structured light to learn the 3D map of what's in front of the camera
 * Project the camera image, suitably rotated and shifted onto the scene
 * Unity or some other program to start transforming the scene for projection mapping
-** See http://www.creativebloq.com/video/projection-mapping-912849 to get ideas of what you can do with this
+** See [[http://www.creativebloq.com/video/projection-mapping-912849]] to get ideas of what you can do with this
 
 *3 Update OpenCV file storage so that it's readable by Python in OpenCV (move to YAML 1.2 Edition 3)*
 * Mentor Prasanna
 * OpenCV C++ writes out its own YAML tags which makes it incompatible with it's own Python and with external python readers
 * Speedup fs reading/writing, add JSON support, add base64 (+RLE) support for large amounts of numerical data
 * References
-** YAML http://www.yaml.org
-** Problem statement: http://stackoverflow.com/questions/11141336/filestorage-for-opencv-python-api
+** YAML [[http://www.yaml.org]]
+** Problem statement: [[http://stackoverflow.com/questions/11141336/filestorage-for-opencv-python-api]]
 
 
 *5 Self-contained video codec(s)*
@@ -191,38 +180,33 @@ _These are not in order of priority_
 *17 Quad Rotor Contrib*
 * Apply much of the above into a quad rotor drone automatic tracking, mapping navigation etc module
 
-
 New 2016 ideas:
 
 * Architecture
 ** Exceptions in OpenCV need to be easily disabled ? (need to check if that's the case or not)
 ** Minimal OpenCV: give the functions you want, it gives you a minimal version of the library.
-** reduce the size of OpenCV on Anddroid
+** reduce the size of OpenCV on Android
 ** create a more C++ type (to be able to deal with constness and separate the pointer from the type)
 ** create an image type (that would also have color information, maybe calibration too) and implement a proper resize algorithm for that type
 
 * Tracking
 ** David Tan’s tracking
-2d: https://www.youtube.com/watch?v=W689ffCMDF4
-3d: https://www.youtube.com/watch?v=TqyFEZzhPbE
+2d: [[https://www.youtube.com/watch?v=W689ffCMDF4]]
+3d: [[https://www.youtube.com/watch?v=TqyFEZzhPbE]]
 
 * misc
-** convexHull is implemented with Sklansky's second, 1982 algorithm, which is incorrect in some case, and suboptimal complexity-wise. cf. http://cgm.cs.mcgill.ca/~athens/cs601/.
-cv::contourArea(cv::convexHull(contour)) for a convex contour is different from cv::contourArea(contour), somtimes by nearly 30%.
-** Lightfield: https://www.youtube.com/watch?v=WU-D4PA5plo
-** a resize algorithm for images taking color into account. http://www.4p8.com/eric.brasseur/gamma.html?
+** convexHull is implemented with Sklansky's second, 1982 algorithm, which is incorrect in some case, and suboptimal complexity-wise. cf. [[http://cgm.cs.mcgill.ca/~athens/cs601/]].
+<code>cv::contourArea(cv::convexHull(contour))</code> for a convex contour is different from <code>cv::contourArea(contour)</code>, somtimes by nearly 30%.
+** Lightfield: [[https://www.youtube.com/watch?v=WU-D4PA5plo]]
+** a resize algorithm for images taking color into account. [[http://www.4p8.com/eric.brasseur/gamma.html]]?
 
 
-
-<pre>
-/\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\ /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\  /\
-</pre>
+***
 
 
 h1. Accepted Projects for OpenCV GSoC 2016:
 
 OpenCV GSoC 2016 students, projects, mentors are below. *WHEN THEY ARE KNOWN*
-
 
 *GSoC Progress. Need Pull requests (don't have to be complete) to pass by July 3rd*
 
@@ -232,13 +216,11 @@ OpenCV GSoC 2016 students, projects, mentors are below. *WHEN THEY ARE KNOWN*
 * Students
 ** opencv-gsoc2016-students
 
-* [[How_to_contribute|How to do a pull request]]
+* [[How to do a pull request|How_to_contribute]]
 
 *Pre-Midterm status:*
 
 Project notes will be compiled "here":https://sites.google.com/a/opencv.org/opencv/gsoc-2016-project-notes .
-
-
 
 h2. Mentors
 
@@ -267,129 +249,123 @@ h2. Mentors
 * Alexander Smorkalov	alexander.smorkalov(+)itseez.com
 * Alexander Bovyrin	alexander.bovyrin(+)itseez.com
 
-
-
 In the below, get rid of the ''-delete-'' to make the emails work.
 
- Anatoly Baksheev
- Researcher, Vision Algorithms on GPU
- Argus/Itseez
- -delete-Anatoly.Baksheev@-delete-itseez.com
+<pre>
+Anatoly Baksheev
+Researcher, Vision Algorithms on GPU
+Argus/Itseez
+-delete-Anatoly.Baksheev@-delete-itseez.com
 
-  Alexander Bovyrin
-  PhD, Senior Researcher
-  Argus/Itseez founder
-  NNU Lecturer
-  -delete-alexander.bovyrin@-delete-itseez.com
+Alexander Bovyrin
+PhD, Senior Researcher
+Argus/Itseez founder
+NNU Lecturer
+-delete-alexander.bovyrin@-delete-itseez.com
 
- Gary Bradski
- Founder, Industrial Perception Inc.
- Consulting Prof. Stanford U.
- OpenCV Founder, Technical Content Owner, GSoC Admin
- Co-author of Learning OpenCV Book
- http://www.willowgarage.com/pages/people/gary-bradski-senior-researcher
- -delete-garybradski@-delete-gmail.com
+Gary Bradski
+Founder, Industrial Perception Inc.
+Consulting Prof. Stanford U.
+OpenCV Founder, Technical Content Owner, GSoC Admin
+Co-author of Learning OpenCV Book
+http://www.willowgarage.com/pages/people/gary-bradski-senior-researcher
+-delete-garybradski@-delete-gmail.com
 
- Antonella Cascitelli
- Grad student, University of Rome
- -delete-antonellacascitelli@gmail.com
+Antonella Cascitelli
+Grad student, University of Rome
+-delete-antonellacascitelli@gmail.com
 
- Eric Christiansen
- PhD, UCSD
- -delete-echristiansen@-delete-cs.ucsd.edu
+Eric Christiansen
+PhD, UCSD
+-delete-echristiansen@-delete-cs.ucsd.edu
 
- Stefano Fabri
- CRR Team leader, University of Rome
- -delete-s.fabri10@gmail.com
+Stefano Fabri
+CRR Team leader, University of Rome
+-delete-s.fabri10@gmail.com
 
- Victor Eruhimov
- OpenCV founding team/Senior Researcher
- Argus/Itseez founder
- NNU Lecturer
- -delete-relrotciv@-delete-googlemail.com
+Victor Eruhimov
+OpenCV founding team/Senior Researcher
+Argus/Itseez founder
+NNU Lecturer
+-delete-relrotciv@-delete-googlemail.com
 
- Adrian Kaehler
- Principle Engineer, Applied Minds
- Co-author of Learning OpenCV Book.
- -delete-therealadrian@-delete-gmail.com
+Adrian Kaehler
+Principle Engineer, Applied Minds
+Co-author of Learning OpenCV Book.
+-delete-therealadrian@-delete-gmail.com
 
- Peter Karasev
- PhD Student, MINERVA Research Group
- Georgia Tech
- -delete-karasevpa@-delete-gmail.com
+Peter Karasev
+PhD Student, MINERVA Research Group
+Georgia Tech
+-delete-karasevpa@-delete-gmail.com
 
- Vadim Pisarevsky
- OpenCV founding team/Czar
- -delete-Vadim.-delete-Pisarevsky@-delete-gmail.com
+Vadim Pisarevsky
+OpenCV founding team/Czar
+-delete-Vadim.-delete-Pisarevsky@-delete-gmail.com
 
- Manuele Tamburrano
- Grad Student, University of Rome
- -delete-manuele.tamburrano@gmail.com
+Manuele Tamburrano
+Grad Student, University of Rome
+-delete-manuele.tamburrano@gmail.com
 
- Vincent Rabaud
- Principle Engineer, Aldebaran Robotics
- -delete-vincent.rabaud@-delete-gmail.com
+Vincent Rabaud
+Principle Engineer, Aldebaran Robotics
+-delete-vincent.rabaud@-delete-gmail.com
 
-  Claudia Rapuano
-  Grad student, University of Rome
-  -delete-c.rapuano@gmail.com
+Claudia Rapuano
+Grad student, University of Rome
+-delete-c.rapuano@gmail.com
 
- Grace Vesom
- Senior Software Engineer, Magic Leap
- -delete-grace.vesom@-delete_gmail.com
+Grace Vesom
+Senior Software Engineer, Magic Leap
+-delete-grace.vesom@-delete_gmail.com
 
- Bence Magyar
- Pal Robotics
- -delete-bence.magyar@-delete-pal-robotics.com
+Bence Magyar
+Pal Robotics
+-delete-bence.magyar@-delete-pal-robotics.com
 
- Pablo Alcantarilla
- Toshiba Research Europe Ltd.
- -delete-pablofdezalc@-delete-gmail.com
+Pablo Alcantarilla
+Toshiba Research Europe Ltd.
+-delete-pablofdezalc@-delete-gmail.com
+</pre>
 
-h3.  Back up Mentors
+h3. Back up Mentors
 
- Mark Asbach
- Fraunhofer IAIS
- Schloss Birlinghoven
- Sankt Augustin, Germany
- http://mmprec.iais.fraunhofer.de/asbach.html
- -delete-mark.asbach@-delete-iais.fraunhofer.de
-
-
- Nicolas Saunier, Ph.D.
- Assistant Professor
- Civil, Geological and Mining Department (CGM)
- École Polytechnique de Montréal
- http://nicolas.saunier.confins.net
- -delete-nicolas.saunier@-delete-polymtl.ca
+<pre>
+Mark Asbach
+Fraunhofer IAIS
+Schloss Birlinghoven
+Sankt Augustin, Germany
+http://mmprec.iais.fraunhofer.de/asbach.html
+-delete-mark.asbach@-delete-iais.fraunhofer.de
 
 
- Alexander Mordvintsev
- Software Engineer
- http://znah.net
- -delete-zzznah@-delete-gmail.com
+Nicolas Saunier, Ph.D.
+Assistant Professor
+Civil, Geological and Mining Department (CGM)
+École Polytechnique de Montréal
+http://nicolas.saunier.confins.net
+-delete-nicolas.saunier@-delete-polymtl.ca
 
- Andrey Morozov
- Software Engineer
- Argus/Itseez
- -delete-andrey.morozov@-delete-itseez.com
+
+Alexander Mordvintsev
+Software Engineer
+http://znah.net
+-delete-zzznah@-delete-gmail.com
+
+Andrey Morozov
+Software Engineer
+Argus/Itseez
+-delete-andrey.morozov@-delete-itseez.com
+</pre>
 
 h2. OpenCV Org. Application to GSoC 2016
 
-[[OpenCV GSoC Application]]
+[[OpenCV_GSoC_Application]]
 
 h2. Previous Years
 
-* 2015 "GSoC 2015 Ideas Page":http://code.opencv.org/projects/opencv/wiki/GSoC_2015
+* 2015 [[GSoC 2015 Ideas Page|GSoC_2015]]
 ** "The 2015 Movie":https://www.youtube.com/watch?v=OUbUFn71S4s
-* 2014 "GSoC 2014 Ideas Page":http://code.opencv.org/projects/opencv/wiki/GSoC_2014
+* 2014 [[GSoC 2014 Ideas Page|GSoC_2014]]
 ** "The 2014 Movie":https://www.youtube.com/watch?v=3f76HCHJJRA
-* 2013 "GSoC 2013 Ideas Page":http://code.opencv.org/projects/gsoc2013/wiki
-** "The 2013 Movie":https://www.youtube.com/watch?v=_TTtN4frMEA
-* 2012 Ideas site http://code.opencv.org/projects/gsoc2012/wiki/Wiki/
-* 2011 Ideas site http://opencv.willowgarage.com/wiki/GSOC_OpenCV2011
-** 2011 Application GSoC page is http://opencv.willowgarage.com/wiki/GSoC2011OpenCVApplication
-* 2010 Ideas site http://opencv.willowgarage.com/wiki/GSOC_OpenCV2010
-** 2010 Application page http://opencv.willowgarage.com/wiki/ApplicationGSOC2010
-
-----
+* "The 2013 Movie":https://www.youtube.com/watch?v=_TTtN4frMEA
