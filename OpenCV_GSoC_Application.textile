@@ -78,7 +78,7 @@ No
 *Anything else we should know?*
 
 OpenCV is used extensively inside Google. Contact Google Employee Vincent Rabaul
-[[vincent.rabaud@gmail.com]] about where it is used. He is an active contributor. We were rejected in 2009, our first year of applying because one of the GSoC admins somehow thought we were a defunct project. We are adamantly not, see github: [[https://github.com/Itseez/opencv/pulse]] and our weekly exec meeting notes: [[Meeting Notes|Meeting_notes]]
+<code>vincent.rabaud@gmail.com</code> about where it is used. He is an active contributor. We were rejected in 2009, our first year of applying because one of the GSoC admins somehow thought we were a defunct project. We are adamantly not, see github: [[https://github.com/Itseez/opencv/pulse]] and our weekly exec meeting notes: [[Meeting Notes|Meeting_notes]]
 
 ----
 
