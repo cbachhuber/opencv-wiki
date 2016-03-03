@@ -2,7 +2,7 @@ h1. *Ideas Page for OpenCV Google Summer of Code 2016 (GSoC 2016)*
 
 *OpenCV Augmented Reality from ArUco Markers last year. (click image for video showing all 2015 projects)*
 
-!wiki/images/AR_Aruco.png!:https://www.youtube.com/watch?v=OUbUFn71S4s
+!images/AR_Aruco.png!:https://www.youtube.com/watch?v=OUbUFn71S4s
 
 * *Go back to:*
 ** "OpenCV Developer Page":https://github.com/Itseez/opencv/wiki
