@@ -7,16 +7,14 @@ OpenCV (Open Source Computer Vision) is a library of programming functions for r
 
 * "Roadmap":https://github.com/Itseez/opencv/milestones
 
+h2. GSoC 2016
 
-h2. GSoC 2015
+!wiki/images/GSOC_2016.jpg!
 
-!wiki/images/GSoCOpenCV2015.jpg!
+* *[[OpenCV Google Summer of Code 2016 Ideas Page|GSoC_2016]]*
+** "OpenCV is in GSoC 2016!":https://summerofcode.withgoogle.com/organizations/?sp-search=OpenCV
 
-* "OpenCV Google Summer of Code 2015 Project Page":GSoC_2015
-* "We are an accepted organization in GSoC 2015!":http://www.google-melange.com/gsoc/org2/google/gsoc2015/opencv
-
-
-"Wiki for Google Summer of Code":https://www.google-melange.com/gsoc/dashboard/google/gsoc2015
+"Google Summer of Code Site for Student and Mentor Sign up":https://developers.google.com/open-source/gsoc/
 
 h2. Resources
 
@@ -30,16 +28,16 @@ h3. Development
 
 * "How to Contribute":How_to_contribute
 * Source Codes can be found at "GitHub":https://github.com/Itseez/opencv. The main OpenCV repository was converted to git and compactified. History now begins with the famous “atomic bomb” commit, that dates back to May the 11th, 2010.
-** To get the source code, point your git client to @git://github.com/Itseez/opencv.git@. Here are "instructions":Git.
-<pre><code>git clone git://github.com/Itseez/opencv.git</code></pre>
+** To get the source code, point your git client to <code>git://github.com/Itseez/opencv.git</code>. Here are [[instructions|Git]].
+<code>git clone git://github.com/Itseez/opencv.git</code>
 ** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: @git://code.opencv.org/opencv_attic.git@.
 ** Also OpenCV Extra was put to a separate repository: @git://code.opencv.org/opencv_extra.git@.
-* "OpenCV Development Process":OpenCV_Development_Process
-** "Developer meeting notes":Meeting_notes
+* [[OpenCV Development Process|OpenCV_Development_Process]]
+** [[Developer meeting notes|Meeting_notes]]
 
 h2. Issue Tracking
 
-Please note that OpenCV project, as any open-source project, welcomes contributions from users. Either you have implemented some new functionality, or you're able to localize and fix a bug by yourself, please make a "pull request":https://github.com/Itseez/opencv/pulls at the GitHub. It will be "automatically tested":http://pullrequest.opencv.org and reviewed by peers. Check your code for compliance with "OpenCV Code Style Guide":CodingStyleGuide and please explain how your contribution might help others.
+Please note that OpenCV project, as any open-source project, welcomes contributions from users. Either you have implemented some new functionality, or you're able to localize and fix a bug by yourself, please make a "pull request":https://github.com/Itseez/opencv/pulls at the GitHub. It will be "automatically tested":http://pullrequest.opencv.org and reviewed by peers. Check your code for compliance with [[OpenCV Code Style Guide|CodingStyleGuide]] and please explain how your contribution might help others.
 
 h3. Creating new tickets
 
@@ -61,9 +59,9 @@ h3. Reporting bugs
 
 h2. Topic Pages
 
-* "Google Summer of Code 2015 (GSoC 2015) Ideas Page":GSoC_2015
-* "Workshops":Workshops
-* "Tutorials":Tutorials
-* "Vision Challenge Sponsored by OpenCV, CVPR 2015!!":VisionChallenge
-* "New functionality discussion":New_functionality_discussion
-* "CARMA platform, compilation and testing":CARMA_platform_compilation_and_testing
+* [[Google Summer of Code 2016 (GSoC 2016) Ideas Page|GSoC_2016]]
+* [[Workshops|Workshops]]
+* [[Tutorials|Tutorials]]
+* [[Vision Challenge Sponsored by OpenCV, CVPR 2015!!|VisionChallenge]]
+* [[New functionality discussion|New_functionality_discussion]]
+* [[CARMA platform, compilation and testing|CARMA_platform_compilation_and_testing]]
