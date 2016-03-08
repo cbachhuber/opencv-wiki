@@ -17,7 +17,8 @@ h3. _*Agenda*_
 
 h3. *_Minutes_*
 
-* .
+* GSoC
+** Send out more mentor invites (9 total so far): "Mentor Invites":https://summerofcode.withgoogle.com/dashboard/org-admin/members/invite/
 
 h3. *_Reports_*
 
@@ -45,7 +46,7 @@ h3. *_Action Items_*
 
 
 <pre>
-<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+        <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
 h2. 2016-03-01
