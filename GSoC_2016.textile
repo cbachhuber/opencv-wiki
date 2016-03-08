@@ -168,6 +168,19 @@ _These are not in order of priority_
 *12. Quad Rotor Contrib*
 * Apply much of the above into a quad rotor drone automatic tracking, mapping navigation etc module
 
+*13. Efficient dense optical flow algorithm*
+* OpenCV will benefit greatly from having some real alternative for the Farneback's dense optical flow algorithm. A few other algorithms that we've implemented (e.g. SimpleFlow, TVL1) are very, very slow. It would be nice to have an algorithm that is at least as fast as Farneback and gives a better quality at the same time.
+
+*14. Speeding up various OpenCV parts (it can be multiple projects).*
+  OpenCV is great library, but some of its algorithms may be made more efficient. Here is a list of things that can be optimized:
+   * text detection module
+   * shape module
+   * bioinspired module
+   * hdr algorithms from ximgproc and xphoto.
+   * non-local-means denoising algorithm from photo module
+   * kaze & akaze features
+   * you name it - proposals are welcome
+
 New 2016 ideas:
 
 * Architecture
