@@ -17,8 +17,33 @@ h3. _*Agenda*_
 
 h3. *_Minutes_*
 
-* GSoC
+* GSoC. Our link: https://summerofcode.withgoogle.com/dashboard/
 ** Send out more mentor invites (9 total so far): "Mentor Invites":https://summerofcode.withgoogle.com/dashboard/org-admin/members/invite/
+** Deep learning Directions
+*** Architectures supported: Caffe (some), Torch (some)
+**** not supported yet: TensorFlow, Theano
+*** How to support serialize weights and data structures?
+**** C++, Python
+**** Convert to different formats: https://github.com/ethereon/caffe-tensorflow
+*** Ask Anatoly Baksh about deep structure for OpenCV
+**** Abstract framework to computational branch
+***** For example: https://www.threadingbuildingblocks.org/tutorial-intel-tbb-flow-graph
+*** Adopt C++11 all header framework? https://github.com/nyanp/tiny-cnn
+*** OrbSLAM, don't want BSD
+*** LSD SLAM ... waiting for response
+*** Student on OpenCL activity
+* Maxim
+** Working on OpenCV HAL
+* Camera calibration by intern
+** Much improved toolset coming
+*** interactive calibration
+*** confidence intervals
+*** Charuco, chessboards, circle boards 
+* NUML
+** 2/3 converted compile
+
+
+
 
 h3. *_Reports_*
 
@@ -30,7 +55,8 @@ h3. *_Action Items_*
 
 *Gary*
 
-* .
+* Contact: https://github.com/nyanp/tiny-cnn
+* Pay everyone!!
 
 *Vincent*
 
