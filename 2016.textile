@@ -24,11 +24,11 @@ h3. *_Minutes_*
 **** not supported yet: TensorFlow, Theano
 *** How to support serialize weights and data structures?
 **** C++, Python
-**** Convert to different formats: https://github.com/ethereon/caffe-tensorflow
+**** "Convert to different formats":https://github.com/ethereon/caffe-tensorflow
 *** Ask Anatoly Baksh about deep structure for OpenCV
 **** Abstract framework to computational branch
-***** For example: https://www.threadingbuildingblocks.org/tutorial-intel-tbb-flow-graph
-*** Adopt C++11 all header framework? https://github.com/nyanp/tiny-cnn
+***** For example: "TBB flow graph":https://www.threadingbuildingblocks.org/tutorial-intel-tbb-flow-graph
+*** Adopt C++11 all header framework? "tiny-cnn":https://github.com/nyanp/tiny-cnn
 *** OrbSLAM, don't want BSD
 *** LSD SLAM ... waiting for response
 *** Student on OpenCL activity
