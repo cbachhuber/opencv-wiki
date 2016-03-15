@@ -181,7 +181,7 @@ _These are not in order of priority_
    * kaze & akaze features
    * you name it - proposals are welcome
 
-*15. Parameter optimization and quality estimation for machine learning methods.*
+*15. Parameter optimization and quality estimation of machine learning methods.*
 
 Now in OpenCV there is a bunch of ML algorithms (SVM, Boosting, Random Trees, etc.). Except for SVM that has trainAuto() method, all other algorithms need all the parameters to be explicitly specified by user. However, it would be convenient to implement some automatic parameter selections for other models as well:
 1) cross-validation for better quality estimation of ML models
