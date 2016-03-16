@@ -11,7 +11,7 @@ h2. GSoC 2016
 
 !wiki/images/GSOC_2016.jpg!
 
-[[ !wiki/images/GSOC_2016.jpg! |GSoC_2016]]
+!wiki/images/GSOC_2016.jpg!:https://github.com/Itseez/opencv/wiki/GSoC_2016
 
 * *[[OpenCV Google Summer of Code 2016 Ideas Page|GSoC_2016]]*
 ** "OpenCV is in GSoC 2016!":https://summerofcode.withgoogle.com/organizations/?sp-search=OpenCV
