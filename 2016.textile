@@ -9,6 +9,60 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2015-03-22
+
+h3. _*Agenda*_
+
+* GSoC
+* 
+
+h3. *_Minutes_*
+
+* GSoC
+** Deepnets ... focus on embedded
+*** Specify high level interface?
+*** Possible packages:
+**** darknet "http://pjreddie.com/darknet/":http://pjreddie.com/darknet/
+****** "https://github.com/pjreddie/darknet":https://github.com/pjreddie/darknet
+****** "http://pjreddie.com/darknet/":http://pjreddie.com/darknet/
+***** Uses CUDA ... but limited to NVidia, don't want that much limitation
+***** Training is not as important, that is well covered by other libraries
+***** Re-implements matrix and a lot of basic stuff
+**** tiny-cnn "https://github.com/nyanp/tiny-cnn":https://github.com/nyanp/tiny-cnn
+***** nyanpn at gmail
+***** Recurrent nets?
+*** Nervana? "http://www.nervanasys.com/":http://www.nervanasys.com/
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2015-03-16
 
 h3. _*Agenda*_
@@ -17,7 +71,8 @@ h3. _*Agenda*_
 
 h3. *_Minutes_*
 
-* .
+* GSoC
+** Embedded deepnets into OpenCV is a theme this year
 
 h3. *_Reports_*
 
