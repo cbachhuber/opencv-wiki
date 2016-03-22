@@ -32,6 +32,8 @@ h3. *_Minutes_*
 ***** nyanpn at gmail
 ***** Recurrent nets?
 *** Nervana? "http://www.nervanasys.com/":http://www.nervanasys.com/
+*** https://summerofcode.withgoogle.com/dashboard
+* First release of NUML out next week
 
 
 h3. *_Reports_*
