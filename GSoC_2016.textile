@@ -188,6 +188,9 @@ Now in OpenCV there is a bunch of ML algorithms (SVM, Boosting, Random Trees, et
 2) GridSearch or/and RandomSearch for parameter optimization
 3) ... possibly some more complicated parameters search techniques (like usage of genetic algorithms, direct optimization methoids or Bayesian optimization, see links in http://blog.dato.com/how-to-evaluate-machine-learning-models-part-4-hyperparameter-tuning)
 
+*16. Improve text recognition accuracy in opencv_contrib/text module.*
+* Currently we have our own implementation of a shallow CNN-based character recognizer but it's slow (CPU only) and based in a paper of 2012. It would be interesting to adapt the module to use one of the several Deep CNN models have been made public during the last year (both for character and word recognition) e.g.[http://www.robots.ox.ac.uk/~vgg/research/text/]. Any other further improvement of the module is also welcome.
+
 New 2016 ideas:
 
 * Architecture
