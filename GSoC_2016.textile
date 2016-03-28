@@ -22,7 +22,7 @@ h2. General Information:
 *** -Feb 19 19:00 UTC: Mentoring organization application deadline.- *Submitted!*
 *** -Feb 29 19:00 UTC: List of accepted Organizations.- *"We are in!!":https://summerofcode.withgoogle.com/organizations/?sp-search=OpenCV*
 *** -Mar 14 16:00 UTC: Student Application period begins!- *"Submit proposals!":https://summerofcode.withgoogle.com/get-started/*
-*** `Mar 25 19:00 UTC: Student Application period ends!- *"95 proposals!":https://github.com/Itseez/opencv/wiki/GSoC_2016*
+*** -Mar 25 19:00 UTC: Student Application period ends!- *"95 proposals!":https://summerofcode.withgoogle.com/dashboard/*
 *** ? Deadline for OpenCV to request # of slots.
 *** ? Google publishes how many slots we get.
 *** ? Try to eliminate duplication of students.
