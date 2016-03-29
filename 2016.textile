@@ -42,7 +42,8 @@ h3. *_Minutes_*
 * adding tiny_cnn
 ** creating a HAL layer
 * Use Caffe just to do work
-** Improve cmake scripts to just use the scripts
+** Improve cmake scripts to find all needed dependencies
+** Add the wingrad 16x16 kernel to tiny_cnn intrinsics? Makes it universal...
 
 h3. *_Reports_*
 
