@@ -20,13 +20,29 @@ h3. *_Minutes_*
 * Deep Learning
 ** What framework to build on?
 *** tiny_cnn
+**** Simple, but extend to standard formats
+**** More functionality
 *** NNPACK
+**** Many dependencies
+**** Only Intel code
 *** Caffe 
 *** Caffe2 (Is Yangqing actually doing this)
 *** Torch models
 *** TensorFlow
 *** -darknet ...- he doesn't answer email
 *** Keras (could just extend this towards embedded)
+*** dnn -- fwd pass module
+**** Accelerate?
+**** Tensor flow support
+**** separate parser from format
+**** Take loader model from dnn and add to tiny_cnn
+***** Take control of the flow path? For optimizing scheduling...
+
+* Approve existing dnn
+* adding tiny_cnn
+** creating a HAL layer
+* Use Caffe just to do work
+** Improve cmake scripts to just use the scripts
 
 h3. *_Reports_*
 
