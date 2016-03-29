@@ -9,7 +9,55 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
-h2. 2015-03-22
+h2. 2016-03-29
+
+h3. _*Agenda*_
+
+* GSoC issues
+
+h3. *_Minutes_*
+
+* Deep Learning
+** What framework to build on?
+*** tiny_cnn
+*** NNPACK
+*** Caffe 
+*** Caffe2 (Is Yangqing actually doing this)
+*** Torch models
+*** TensorFlow
+*** -darknet ...- he doesn't answer email
+*** Keras (could just extend this towards embedded)
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2016-03-22
 
 h3. _*Agenda*_
 
@@ -65,7 +113,7 @@ h3. *_Action Items_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
-h2. 2015-03-16
+h2. 2016-03-16
 
 h3. _*Agenda*_
 
@@ -105,7 +153,7 @@ h3. *_Action Items_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
-h2. 2015-03-08
+h2. 2016-03-08
 
 h3. _*Agenda*_
 
