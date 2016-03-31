@@ -37,7 +37,7 @@
 
      ![](http://answers.opencv.org/upfiles/1421946117452087.png)
 
-     and for the **name** just choose something that you like and correlates that you have the source code of OpenCV library. I chose *opencv\_source*.
+     and for the **name** just choose something that you like and correlates that you have the source code of OpenCV library. I choose `opencv_source`.
 
      ![](http://answers.opencv.org/upfiles/14219464104802502.png)
 
@@ -59,7 +59,7 @@
 
      ![](http://answers.opencv.org/upfiles/14219472711127014.png)
 
- 2. Install the default pre-commit hook by renaming ***opencv\_source/.git/hooks/pre-commit.sample*** to ***opencv\_source/.git/hooks/pre-commit*** - this will prevent you from committing whitespace errors.
+ 2. Install the default pre-commit hook by renaming `opencv_source/.git/hooks/pre-commit.sample` to `opencv_source/.git/hooks/pre-commit` - this will prevent you from committing whitespace errors.
 
      ![](http://answers.opencv.org/upfiles/14219479785080275.png)
 
@@ -75,7 +75,7 @@
 
      ![](http://answers.opencv.org/upfiles/14219487572072251.png)
 
-     We see at the moment that the master branch is active and that it is up-to-date with the 'origin/master'. Moreover, with the last command we see which other branches are available.
+     We see at the moment that the master branch is active and that it is up-to-date with the `origin/master`. Moreover, with the last command we see which other branches are available.
 
  2. According to the [official](http://code.opencv.org/projects/opencv/wiki/How_to_contribute) contribution page you can choose a base branch for your work. You have two options:
 
@@ -112,7 +112,7 @@
 
      `git checkout -b <name>`
 
- 4. Open now your desktop file manager, and go to the path where you have cloned the source code (i.e. *here /home/theodore/documents/git/opencv\_source*). Select the file you want to adapt (in our case it's an adding extra comment to a source code file). In our case, we open up the file ***apps/traincascade/traincascade.cpp***, and we modify it.
+ 4. Open now your desktop file manager, and go to the path where you have cloned the source code (i.e. here `/home/theodore/documents/git/opencv_source`). Select the file you want to adapt (in our case it's an adding extra comment to a source code file). In our case, we open up the file `apps/traincascade/traincascade.cpp`, and we modify it.
 
      ![](http://answers.opencv.org/upfiles/14219524532227249.png)
 
@@ -240,7 +240,7 @@
 
 ## Keeping your Fork Up-to-Date
 
- 1. ***When creating a fork to the GitHub repository, you fork it as it is on that moment. However, when adding pull requests, on a later moment, you might want to add changes to merged stuff. Then you notice all of a sudden your fork doesn't contain new commits from OpenCV repository, so you need to update your fork.***
+ 1. When creating a fork to the GitHub repository, you fork it as it is on that moment. However, when adding pull requests, on a later moment, you might want to add changes to merged stuff. Then you notice all of a sudden your fork doesn't contain new commits from OpenCV repository, so you need to update your fork.
 
      Browse to the folder where you have cloned the repository:
 
