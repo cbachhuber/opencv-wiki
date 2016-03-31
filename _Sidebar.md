@@ -15,6 +15,7 @@
         - [[Contributors]]
         - [[Working with Git|Git]]
         - [[Windows 7 guide|Windows_7_and_TortoiseGit_contribution_guide]]
+        - [[Unix based guide|Linux_contribution_guide]]
     - [[Meeting notes|Meeting_notes]]
         - [[Template]]
         - [[2016]]
