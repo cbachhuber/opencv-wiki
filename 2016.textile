@@ -9,6 +9,48 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2016-04-12
+
+h3. _*Agenda*_
+
+* Gary back from vacation
+* Slots, discussion of tasks.
+* OpenCV.ai
+
+
+h3. *_Minutes_*
+
+* .
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2016-03-29
 
 h3. _*Agenda*_
