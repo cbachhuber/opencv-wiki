@@ -14,13 +14,24 @@ h2. 2016-04-12
 h3. _*Agenda*_
 
 * Gary back from vacation
+* CVPR
 * Slots, discussion of tasks.
 * OpenCV.ai
 
 
 h3. *_Minutes_*
 
-* .
+* NUML
+** Pretty much ready for first release
+*** NUML compiler is working in NUML
+*** working on more efficient C code generation
+** Maxim OpenCV HAL (Hardware acceleration layer)
+*** Arithmetic, filtering, geometric xforms, color xforms all 
+** Apps, update
+** Need to do some PR for it
+* ROS update
+** May release will have 3.1 OpenCV 
+** Ubuntu, x86 and ARM platforms
 
 h3. *_Reports_*
 
