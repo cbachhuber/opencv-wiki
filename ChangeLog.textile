@@ -162,7 +162,7 @@ git shortlog --no-merges -ns 3.0.0..3.1.0
      3	Cédric Rousseau
      3	Elena Shipunova
      3	Gregory Morse
-     3	Hajo Nils Krabbenhöft
+     3	Hajo Nils Krabbenhöft
      3	Igor Kuzmin
      3	Maxim Kostin
      3	Renato Florentino Garcia
@@ -895,7 +895,7 @@ This is brief version of the change log. There is also a separate page with deta
 
 p((((. !images/opencl2.png!
 * OpenCV 3.0 brings more GPU accelerated functions and makes it in much more convenient form than OpenCV 2.4.
-** The new technology is nick-named "Transparent API" and, in brief, is extension of classical OpenCV functions, such as cv::resize(), to use OpenCL underneath. See more details about here: "T-API":opencv3#tapi.
+** The new technology is nick-named "Transparent API" and, in brief, is extension of classical OpenCV functions, such as cv::resize(), to use OpenCL underneath. See more details about it here: "T-API":opencv3#tapi.
 ** Along with OpenCL code refactoring and Transparent API implementation OpenCL kernels were optimized for mainstream platforms, most notably for modern Intel chips (including Iris and Iris Pro) and AMD chips (such as Kaveri). More detailed results are to be provided later.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -908,7 +908,7 @@ p((((. !images/Intel_IPP_logo.png!
 p((((. !images/contrib.jpg!
 * We now have a separate repository for community-contributed code http://github.com/itseez/opencv_contrib. It will help us to combine well-known maturity and stability of classical OpenCV functionality together with innovative algorithms and opens new opportunities for community to share computer vision code. For all the contributed code we provide the same QA infrastructure as for the main OpenCV repository. How to use it?
 # Grab a copy of contribution repository http://github.com/itseez/opencv_contrib along with a copy of OpenCV 3.0 alpha or a fresh master snapshot.
-# Pass <pre>OPENCV_EXTRA_MODULES_PATH=<path_to_contrib_directory>/modules</pre> to CMake.
+# Pass <pre>OPENCV_EXTRA_MODULES_PATH=&lt;path_to_contrib_directory&gt;/modules</pre> to CMake.
 
 * Documentation for the contributed modules is integrated into OpenCV doc tree: http://docs.opencv.org/master
 
