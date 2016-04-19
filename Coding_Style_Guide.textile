@@ -222,16 +222,16 @@ Currently used in OpenCV and recommended formatting style looks as follows:
 <pre><code class="cpp">
 if( a > 5 )
 {
-int b = a*a;
-c = c > b ? c : b + 1;
+    int b = a*a;
+    c = c > b ? c : b + 1;
 }
 else if( abs(a) < 5 )
 {
-c--;
+    c--;
 }
 else
 {
-printf( "a=%d is far to negative\n", a );
+    printf( "a=%d is far to negative\n", a );
 }
 </code></pre>
 
