@@ -25,11 +25,11 @@ h2. General Information:
 *** -Feb 29 19:00 UTC: List of accepted Organizations.- *"We are in!!":https://summerofcode.withgoogle.com/organizations/?sp-search=OpenCV*
 *** -Mar 14 16:00 UTC: Student Application period begins!- *"Submit proposals!":https://summerofcode.withgoogle.com/get-started/*
 *** -Mar 25 19:00 UTC: Student Application period ends!- *"95 proposals!":https://summerofcode.withgoogle.com/dashboard/*
-*** ? Deadline for OpenCV to request # of slots.
-*** ? Google publishes how many slots we get.
-*** ? Try to eliminate duplication of students.
-*** ? IRC for OpenCV to resolve all duplications.
-*** Apr 22 19:00 UTC: Accepted students announced.
+*** -Deadline for OpenCV to request # of slots.-
+*** -Google publishes how many slots we get.- *We have 13 slots!*
+*** -Try to eliminate duplication of students.- *None*
+*** -IRC for OpenCV to resolve all duplications.-
+*** -Apr 22 19:00 UTC: Accepted students announced.- *"Accepted Proposals":https://summerofcode.withgoogle.com/dashboard/projects/all/?sp-page_size=25*
 *** May 23 Let Coding begin!
 *** Jun 20 19:00 UTC: Mid term evaluation begins. *Pull requests must be in*
 *** Jun 27 19:00 UTC: Mid term evaluation ends. *Pull requests must be in*
