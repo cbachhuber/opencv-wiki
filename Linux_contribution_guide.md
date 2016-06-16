@@ -18,7 +18,7 @@
 
  1. Go to [GitHub](https://github.com/)
  2. Login to your account using your Github username and password
- 3. Open the [Itseez OpenCV GitHub](https://github.com/Itseez/opencv) page
+ 3. Open the [Itseez OpenCV GitHub](https://github.com/opencv/opencv) page
  4. Press the fork icon on the right hand top side of the page which will help you to make a personal copy of the OpenCV sourcecode:  
 ![](http://answers.opencv.org/upfiles/14219402369525006.png)
  5. When you are done return back to your own github page where you should find the copied repository:
@@ -248,13 +248,13 @@
 
      Make sure that you are on the "*master*" or "*2.4*"  branch with the ***git status*** or ***git branch*** command, if you are not then switch to it with the ***git checkout master (or 2.4)*** command. Once you are into the parent branch, create the upstream connection to it in order to be able to retrieve all changes by typing:
 
-    `git remote add --track master upstream https://github.com/Itseez/opencv.git` (for master)
+    `git remote add --track master upstream https://github.com/opencv/opencv.git` (for master)
 
     ![](http://answers.opencv.org/upfiles/14219605316165192.png)
 
      or
 
-     `git remote add --track 2.4 upstream https://github.com/Itseez/opencv.git` (for 2.4)
+     `git remote add --track 2.4 upstream https://github.com/opencv/opencv.git` (for 2.4)
 
      ![](http://answers.opencv.org/upfiles/14222897098981103.png)
 

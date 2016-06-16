@@ -4,9 +4,9 @@ h1. OpenCV’s People’s Vote Winning Papers and State of the Art Vision Challe
 
 This is a 2-for-1 "CVPR 2015 Workshop":http://www.pamitc.org/cvpr15/workshops.php covering
 * People’s choice awards for winning papers from CVPR 2015
-** _Vote on the CVPR 2015 papers that you most want to see implemented and we'll pay the winners to implement it in_ "opencv_contrib":https://github.com/Itseez/opencv_contrib
+** _Vote on the CVPR 2015 papers that you most want to see implemented and we'll pay the winners to implement it in_ "opencv_contrib":https://github.com/opencv/opencv_contrib
 * Winning algorithms of the OpenCV Vision Challenge
-** _Start collecting implementations of the best in class algorithms in_ "opencv_contrib":https://github.com/Itseez/opencv_contrib
+** _Start collecting implementations of the best in class algorithms in_ "opencv_contrib":https://github.com/opencv/opencv_contrib
 
 This is a short workshop, one hour before lunch, to announce and describe winners of two separate contests:
 
@@ -22,7 +22,7 @@ We will tally the people’s vote !images/Vote5.png! for the paper you’d most 
 Prizes will be awarded in two stages:
 * A modest award for winning and
 * a larger award for presenting the code as a pull request to OpenCV by December 1st 2015 as Detailed here:
-** https://github.com/Itseez/opencv/wiki/How_to_contribute
+** https://github.com/opencv/opencv/wiki/How_to_contribute
 
 *Prizes:*
 * 1st winner: $500; Submit code: $6000
@@ -58,13 +58,13 @@ There were many favorited tutorials!  They cannot win the Vision Challenge, but 
 
 Results will be listed on OpenCV’s website:
 * (user) http://opencv.org/ and
-* (developer) https://github.com/Itseez/opencv/wiki
+* (developer) https://github.com/opencv/opencv/wiki
 
 h2. (2) State of the Art Vision Challenge
 
 Our aim is to make available state of the art vision in OpenCV. We thus ran a vision challenge to meet or exceed the state of the art in various areas. We will present the results, some of which are quite compelling. The contest details are available at:
 
-https://github.com/Itseez/opencv/wiki/VisionChallenge
+https://github.com/opencv/opencv/wiki/VisionChallenge
 
 *Prizes:*
 * Win: $1000; Submit code: $3000
@@ -133,7 +133,7 @@ h2. Presenters
 
 h1. (1) Details of the People's Choice Winning Paper -- vote using the CVPR app
 
-You may vote for as many papers as you want. This is the people's choice of the algorithms they'd most like to have. We will award the winners and encourage them to submit their working code to "opencv_contrib":https://github.com/Itseez/opencv_contrib
+You may vote for as many papers as you want. This is the people's choice of the algorithms they'd most like to have. We will award the winners and encourage them to submit their working code to "opencv_contrib":https://github.com/opencv/opencv_contrib
 
 h2. Voting instructions:
 
@@ -234,8 +234,8 @@ This may be just the first one of a series of challenges and we want to hear fro
 *A.:* We are not implemented loading-evaluation code for VOT tracking dataset, because it already has its own "toolkit":http://www.votchallenge.net/vot2014/participation.html.
 
 *Q.:* _Where I can find the Dataset Benchmarks?_
-*A.:* They are placed with samples in "modules/datasets/samples":https://github.com/Itseez/opencv_contrib/tree/master/modules/datasets/samples.
+*A.:* They are placed with samples in "modules/datasets/samples":https://github.com/opencv/opencv_contrib/tree/master/modules/datasets/samples.
 
 h3. Back to Developer page:
 
-"OpenCV":https://github.com/Itseez/opencv/wiki
+"OpenCV":https://github.com/opencv/opencv/wiki

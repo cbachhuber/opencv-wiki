@@ -78,7 +78,7 @@ No
 *Anything else we should know?*
 
 OpenCV is used extensively inside Google. Contact Google Employee Vincent Rabaul
-<code>vincent.rabaud@gmail.com</code> about where it is used. He is an active contributor. We were rejected in 2009, our first year of applying because one of the GSoC admins somehow thought we were a defunct project. We are adamantly not, see github: [[https://github.com/Itseez/opencv/pulse]] and our weekly exec meeting notes: [[Meeting Notes|Meeting_notes]]
+<code>vincent.rabaud@gmail.com</code> about where it is used. He is an active contributor. We were rejected in 2009, our first year of applying because one of the GSoC admins somehow thought we were a defunct project. We are adamantly not, see github: [[https://github.com/opencv/opencv/pulse]] and our weekly exec meeting notes: [[Meeting Notes|Meeting_notes]]
 
 ----
 
@@ -86,7 +86,7 @@ h1. OpenCV Profile:
 
 *URL:*
 
-[[https://github.com/Itseez/opencv/wiki]]
+[[https://github.com/opencv/opencv/wiki]]
 
 *Tagline:*
 
@@ -116,9 +116,9 @@ OpenCV, the Open Source Computer Vision Library includes state of the art comput
 
 OpenCV, the Open Source Computer Vision Library includes state of the art computer vision and machine learning algorithms (including running deep networks) and apps. It is professionally coded and optimized. It can be used in C++, Python, Cuda, OpenCL and Matlab. It runs on: Android, iOS, Windows, Linux and MacOS and many embedded implementations.
 
-The user site is at [[http://opencv.org/]] , The developer site is at: [[https://github.com/Itseez/opencv/wiki]] . Nightly builds of the documentation are at: [[http://docs.opencv.org/master]] . Code is at: OpenCV (the core data structures,  optimized algorithms, sample and tutorial code): [[https://github.com/Itseez/opencv]]  , opencv_contrib (new algorithms, applications and GSoC contributions and related tutorial and sample code): [[https://github.com/Itseez/opencv_contrib.git]] , opencv_extra (extra data and code samples): [[https://github.com/Itseez/opencv_extra]]  , downloads for various OS and mobile devices:  [[http://opencv.org/downloads.html]]
+The user site is at [[http://opencv.org/]] , The developer site is at: [[https://github.com/opencv/opencv/wiki]] . Nightly builds of the documentation are at: [[http://docs.opencv.org/master]] . Code is at: OpenCV (the core data structures,  optimized algorithms, sample and tutorial code): [[https://github.com/opencv/opencv]]  , opencv_contrib (new algorithms, applications and GSoC contributions and related tutorial and sample code): [[https://github.com/opencv/opencv_contrib.git]] , opencv_extra (extra data and code samples): [[https://github.com/opencv/opencv_extra]]  , downloads for various OS and mobile devices:  [[http://opencv.org/downloads.html]]
 
-It is also useful to look at the change log: [[https://github.com/Itseez/opencv/wiki/ChangeLog]] and instructions to install on various platforms: [[http://goo.gl/vgrtdz]]
+It is also useful to look at the change log: [[https://github.com/opencv/opencv/wiki/ChangeLog]] and instructions to install on various platforms: [[http://goo.gl/vgrtdz]]
 
 Please see our videos for the past 3 years of GSoC contributions: (2015: [[https://goo.gl/9MCQl8]] ) (2014: [[https://goo.gl/CWJtLt]] ) (2013: [[https://goo.gl/5qTtD2]] ).
 

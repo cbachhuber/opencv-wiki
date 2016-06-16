@@ -21,7 +21,7 @@ h2. Running tests from Eclipse
 
 h2. Test project structure
 
-* Tests in repository: http://github.com/Itseez/opencv/tree/master/modules/java/android_test
+* Tests in repository: http://github.com/opencv/opencv/tree/master/modules/java/android_test
 * class @OpenCVTestCase@ has/implements the all stuff needed for OpenCV testing
 ** all the OpenCV test classes are subclasses of @OpenCVTestCase@
 ** test_1 (candidate for termination) is for adb log formatting, it allows separate tests from different modules.

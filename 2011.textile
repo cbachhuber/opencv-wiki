@@ -3166,7 +3166,7 @@ Buildbot:
 - created a web-site with OpenCV documentation built daily by buildbot, it is available at opencv.itseez.com
 - fixed scripts for the Android builder (this builder doesn't work after rebooting virtual machine)
 - fixed Documentation builder after Vadim's modifications in docs folder (renaming folders, removing BUILD_REFMAN, ...)
-- Created an external page http://buildbot.itseez.com so that anybody can track opencv trunk status.  [Alexander]
+- Created an external page http://pullrequest.opencv.org/ so that anybody can track opencv trunk status.  [Alexander]
 
 TOD:
 - finished re-factoring scripts for training base resizing, fixed bug when camera parameters file doesn't exist in the main training base folder,
@@ -3599,7 +3599,7 @@ _*Vadim*_
 # (Fixing bugs) The bug-fixing hackathon is semi-over. Ilya, Alexander, Maria and me took part in it. Alexander and Maria continue fixing bugs. 37 bugs have been fixed, some more are in progress. The total number of open trac tickets has been decreased to 290. Many of them are enhancement requests, there are quite a few duplicates etc. but we will probably need another hackathon week to clean bug tracker a bit more before the release.
 
 #  (Buildbot, tests, coverage)
-Buildbot has been extended to measure function coverage (see buildbot.itseez.com, report from the "coverage" builder) [Alexander]
+Buildbot has been extended to measure function coverage (see http://pullrequest.opencv.org/buildbot/, report from the "coverage" builder) [Alexander]
 
 Previously disabled highgui tests have been put back into the testing loop [Andrey]
 

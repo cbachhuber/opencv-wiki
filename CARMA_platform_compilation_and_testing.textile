@@ -17,8 +17,8 @@ cp -r thrust/thrust <path to cuda toolkit>/include/thrust
 2. Getting OpenCV sources and testdata:
 
 <pre>
-git clone git://code.opencv.org/opencv.git
-git clone git://code.opencv.org/opencv_extra.git
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_extra.git
 </pre>
 
 3. Build OpenCV for CARMA

@@ -10,8 +10,8 @@ h2. Prerequisites
 * git client
 * cmake tool http://www.cmake.org/
 * Android NDK (revision !r5 or newer) http://developer.android.com/sdk/ndk/index.html
-* OpenCV master: git://code.opencv.org/opencv.git. Github mirror: git://github.com/itseez/opencv.git. You can clone repo with the following command:
-<pre>git clone git://code.opencv.org/opencv.git</pre>
+* OpenCV master: https://github.com/opencv/opencv.git. You can clone repo with the following command:
+<pre>git clone https://github.com/opencv/opencv.git</pre>
 
 h2. Additional requirements for Java wrapper and Android samples
 
@@ -260,7 +260,7 @@ If path is set correctly then you should see line similar to following in cmake 
 Run @make@ command to compile the sources.
 
 Most probably you will need to make changes in file @opencv/modules/androidcamera/camera_wrapper/camera_wrapper.cpp@ to fix compiler errors.
-If you do some changes please post your patch to "OpenCV_issue_tracker":https://github.com/Itseez/opencv/issues to help with OpenCV development.
+If you do some changes please post your patch to "OpenCV_issue_tracker":https://github.com/opencv/opencv/issues to help with OpenCV development.
 
 h3. Example
 

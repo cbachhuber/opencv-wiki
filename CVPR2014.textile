@@ -18,7 +18,7 @@ _8:30-9:00_
 * *Introduction (Gary Bradski)*
 ** Welcome
 ** New book out soon from O'Reilly Learning OpenCV
-** Announcing the "OpenCV Vision Challenge":https://github.com/Itseez/opencv/wiki/VisionChallenge
+** Announcing the "OpenCV Vision Challenge":https://github.com/opencv/opencv/wiki/VisionChallenge
 
 _9:00-9:30_
 * source:OpenCVOverviewCVPR2014.pptx
@@ -112,10 +112,10 @@ h2. Links
 
 * "CVPR 2014 Tutorials":http://www.pamitc.org/cvpr14/tutorials.php
 * "OpenCV Documentation":http://docs.opencv.org/
-* "OpenCV Developer Site":https://github.com/Itseez/opencv/wiki
+* "OpenCV Developer Site":https://github.com/opencv/opencv/wiki
 * "OpenCV User Site":http://opencv.org/
 * "OpenCV Library Downloads":http://opencv.org/downloads.html
-* "How to contribute to OpenCV":https://github.com/Itseez/opencv/wiki/How_to_contribute
+* "How to contribute to OpenCV":https://github.com/opencv/opencv/wiki/How_to_contribute
 
 h2. Lecturers
 
@@ -140,4 +140,4 @@ h2. Back
 
 "Workshops":Workshops
 
-"OpenCV":https://github.com/Itseez/opencv/wiki
+"OpenCV":https://github.com/opencv/opencv/wiki

@@ -31,7 +31,7 @@ h3. Практическая часть
 ## Сократить время работы за счет вынесения подсчета дескрипторов для эталонной картинки из тела цикла.
 ## Попробовать "@BFMatcher@":http://docs.opencv.org/modules/features2d/doc/common_interfaces_of_descriptor_matchers.html#bfmatcher. Внимание: следует использовать метрики сравнения, соответствующие выбранным дескрипторам.
 ## Попробовать другие детекторы особых точек, например SIFT, ORB ("features2d":http://docs.opencv.org/modules/features2d/doc/feature_detection_and_description.html, "nonfree":http://docs.opencv.org/modules/nonfree/doc/feature_detection.html).
-# Дополнительные примеры (https://github.com/Itseez/opencv/blob/2.4/samples/cpp/):
+# Дополнительные примеры (https://github.com/opencv/opencv/blob/2.4/samples/cpp/):
 ## matching_to_many_images.cpp
 ## brief_match_test.cpp
 ## descriptor_extractor_matcher.cpp

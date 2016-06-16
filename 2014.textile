@@ -1,6 +1,6 @@
 h1. 2014 OpenCV Meeting notes for 2014 year
 
-Template is at https://github.com/Itseez/opencv/wiki/Template
+Template is at https://github.com/opencv/opencv/wiki/Template
 http://code.opencv.org/help/wiki_syntax
 
 
@@ -178,7 +178,7 @@ _*Agenda*_
 
 * GSoC we are applied, we find out Feb 24th
 ** Mentors
-** Ideas https://github.com/Itseez/opencv/wiki/GSoC_2014
+** Ideas https://github.com/opencv/opencv/wiki/GSoC_2014
 * Toyota
 * CVPR
 
@@ -252,14 +252,14 @@ _*Agenda*_
 *_Minutes_*
 
 * GSoC 2014
-** "Our ideas page":https://github.com/Itseez/opencv/wiki/GSoC_2014
-*** https://github.com/Itseez/opencv/wiki/GSoC_2014
+** "Our ideas page":https://github.com/opencv/opencv/wiki/GSoC_2014
+*** https://github.com/opencv/opencv/wiki/GSoC_2014
 ** Most projects should be done in OpenCV contrib. From there we can migrate top stuff to core
 *** In 3.0, we are trying to simplify core and put other things in contrib
 *** Sparse matrices -- basic operations can't do with them. Right now, they are just storage structures. They aren't efficient for operations. Dense row or Dense column format for multiplication for example.
 *** Bundle adjustment would be good for the core
-** Guide for "making contribution":https://github.com/Itseez/opencv/wiki/How_to_contribute
-*** https://github.com/Itseez/opencv/wiki/How_to_contribute
+** Guide for "making contribution":https://github.com/opencv/opencv/wiki/How_to_contribute
+*** https://github.com/opencv/opencv/wiki/How_to_contribute
 ** Docs, unit test, example, youtube videos.
 ** Good to just have projects generating example and more docs of existing code such as livmv
 *** "GSoC 2013 Video of Results":http://www.youtube.com/watch?v=_TTtN4frMEA
@@ -1354,7 +1354,7 @@ Timeline:
 Submission Period: Now - May 8th 2015
 Winners Announcement: June 8th 2015 at CVPR 2015
 
-Detailed information can be found here: https://github.com/Itseez/opencv/wiki/VisionChallenge
+Detailed information can be found here: https://github.com/opencv/opencv/wiki/VisionChallenge
 
 Questions and the results should be sent to:
 vision-challenges@opencv.org

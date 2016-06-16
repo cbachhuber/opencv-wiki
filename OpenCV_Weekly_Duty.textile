@@ -14,7 +14,7 @@ h2. Rules
 
 h2. Pull requests
 
-*Note*: It's highly recommended to use "@Watch@ GitHub feature":https://help.github.com/articles/be-social for "opencv":https://github.com/Itseez/opencv and "opencv_extra":https://github.com/Itseez/opencv_extra repo-s during the duty period.
+*Note*: It's highly recommended to use "@Watch@ GitHub feature":https://help.github.com/articles/be-social for "opencv":https://github.com/opencv/opencv and "opencv_extra":https://github.com/opencv/opencv_extra repo-s during the duty period.
 
 Check every PR for its state and do corresponding actions:
 # What should be checked when you see pull request first time:

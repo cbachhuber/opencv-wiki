@@ -20,7 +20,7 @@ h2. Forking OpenCV repository
 Firstly, *configure your GitHub page* to fork the original OpenCV repository:
 
 # Go to GitHub.
-# Open the "Itseez OpenCV page":https://github.com/Itseez/opencv.
+# Open the "Itseez OpenCV page":https://github.com/opencv/opencv.
 # Press the fork icon on the right hand top side of the page:
 
 !images/press_fork_button.png!

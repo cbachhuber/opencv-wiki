@@ -8,9 +8,9 @@ If you are not familiar with the mechanism - do not worry, it's very simple. Kee
 
 h2. Before you start contributing you should
 
-* Check if your bug still exists. This can be done by building the latest [2.4 branch](https://github.com/Itseez/opencv/tree/2.4) or the [latest master branch](https://github.com/Itseez/opencv), and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV2.1 for example.
+* Check if your bug still exists. This can be done by building the latest [2.4 branch](https://github.com/opencv/opencv/tree/2.4) or the [latest master branch](https://github.com/opencv/opencv), and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV2.1 for example.
 
-* Make sure that nobody beat you into fixing or reporting the issue by doing a search on the Github "OpenCV issues page":https://github.com/Itseez/opencv/issues, and making sure that there isn't someone working on it. In the latter case you might provide support or suggestion in the issue or in the linked pull request.
+* Make sure that nobody beat you into fixing or reporting the issue by doing a search on the Github "OpenCV issues page":https://github.com/opencv/opencv/issues, and making sure that there isn't someone working on it. In the latter case you might provide support or suggestion in the issue or in the linked pull request.
 
 * If you have a question about the software, then this is **NOT** the right place. You should open up a question at the [OpenCV Q&A forum](http://answers.opencv.org/questions/). In order to post a decent question from the start, feel free to read the official [forum guidelines](http://answers.opencv.org/faq/).
 
@@ -25,8 +25,8 @@ h3. "Step-by-step" guides for popular systems and clients
 h3. *The instruction in brief*
 
 # Install [[Git]].
-# Register at GitHub. Create your fork of OpenCV repository https://github.com/Itseez/opencv (see https://help.github.com/articles/fork-a-repo for details).
-# Choose a task for youself. It could be a "bugfix":https://github.com/Itseez/opencv/issues, or some new code.
+# Register at GitHub. Create your fork of OpenCV repository https://github.com/opencv/opencv (see https://help.github.com/articles/fork-a-repo for details).
+# Choose a task for youself. It could be a "bugfix":https://github.com/opencv/opencv/issues, or some new code.
 # Choose a base branch for your work. You have two options:
 ## *2.4* - the branch that will be used for future minor releases in the 2.4.x line. Choose it when fixing a bug that's reproducible in this branch, or when making performance optimizations relevant to it. 2.4 has been feature-frozen; as such, new functionality will _not_ be accepted.
 ## *master* - the branch that will be used for the next major release of OpenCV (tentatively, 3.0). Choose it when adding new functionality, or for bugfixes/optimizations that don't apply to 2.4.
@@ -40,8 +40,8 @@ h3. *The instruction in brief*
 # When you are done, push your branch to your GitHub fork; then create a pull request from your branch to the base branch (see https://help.github.com/articles/using-pull-requests for details).
 
 There is an important difference in contributing a bugfix or a new piece of code. For a new piece of code the above procedure is just fine, but for a bugfix, do keep the following in mind:
-* Open up an issue at the "Github issues page":https://github.com/Itseez/opencv/issues/, so that people are aware of the problem and can support you in fixing it.
-* Make sure that you open up an issue at the correct place. Problems related to the main repository are reported [here](https://github.com/Itseez/opencv/issues/), while problems related to the contributed repository are reported [here](https://github.com/Itseez/opencv_contrib/issues/).
+* Open up an issue at the "Github issues page":https://github.com/opencv/opencv/issues/, so that people are aware of the problem and can support you in fixing it.
+* Make sure that you open up an issue at the correct place. Problems related to the main repository are reported [here](https://github.com/opencv/opencv/issues/), while problems related to the contributed repository are reported [here](https://github.com/opencv/opencv_contrib/issues/).
 * Make sure that you provide enough information. You should clearly state which OpenCV version you are using, what your system configuration is (OS, hardware specifications, extra libraries used, ...). The golden rule here is, the more the better.
 
 h2. Making a good pull request
@@ -72,7 +72,7 @@ h2. FAQ
 
 h3. Q1. I was asked to change the target branch for my pull request, but why?
 
-Please read "this":https://github.com/Itseez/opencv/wiki/How_to_contribute#The-instruction-in-brief, read the "Choose a base branch..." section.
+Please read "this":https://github.com/opencv/opencv/wiki/How_to_contribute#The-instruction-in-brief, read the "Choose a base branch..." section.
 
 h3. Q2. I was asked to change the target branch for my pull request, how can I do that?
 

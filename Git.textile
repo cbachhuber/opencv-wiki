@@ -11,7 +11,7 @@ h2. Installing Git
 h2. Using Git
 
 Most developers and contributors will work with their personal copy (a fork) of OpenCV repository at GitHub. That is,
-* In a browser, go to "the OpenCV repository":https://github.com/Itseez/opencv
+* In a browser, go to "the OpenCV repository":https://github.com/opencv/opencv
 * And fork it as described in these Git instruction on "how to fork":https://help.github.com/articles/fork-a-repo
 Then, if you use command-line git utility, you can clone the repository to your computer by running:
 
@@ -42,6 +42,6 @@ h3. Instruction for Windows users:
 ** Run <pre>ssh-keygen -t rsa -C  "Your.Mail@itseez.com"</pre>  with the console. The output will contain information on where it stored the keys.
 ** Go to that directory and open the public key (id_rsa.pub) with any text editor.
 ** Copy contents of the file id_rsa.pub to the Key field on the  http://code.opencv.org/my/account page. Press Create.
-* Clone repository, using 'quick' read-only protocol  (git://code.opencv.org/opencv.git).
+* Clone repository, using 'quick' read-only protocol  (https://github.com/opencv/opencv.git).
 * Launch Git Bash again and go to the folder that you've cloned the repository to ('.git' folder should have appeared there). Run the following command: <pre>git remote set-url origin --push gitolite@code.opencv.org:opencv.git</pre> to be able to push changes to the repository.
 * That's it. You may try making some changes to commit and push them for the test run.

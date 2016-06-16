@@ -682,7 +682,7 @@ h3. *_Reports_*
 
 * OpenCV 3.1 has been released. The announce is here: http://opencv.org/opencv-3-1.html.
 * Immediately after the release we continue our work on OpenCV:
-* Maksim has prepared PR (https://github.com/Itseez/opencv/pull/5846) with some important improvements and fixes from 3.x backported to 2.4.x, most notably fast cvRound() etc. for ARM. People say, the faster round speeds up some code by 20% and even more than that.
+* Maksim has prepared PR (https://github.com/opencv/opencv/pull/5846) with some important improvements and fixes from 3.x backported to 2.4.x, most notably fast cvRound() etc. for ARM. People say, the faster round speeds up some code by 20% and even more than that.
 * Alexander has updated binary compatibility checker, so that it will check modifications in OpenCV API since 3.1.
 
 *OpenCV Plans:*

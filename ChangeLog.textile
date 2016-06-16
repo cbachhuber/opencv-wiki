@@ -86,7 +86,7 @@ p((((. !images/OpenCL.jpg!
 
 p((((. !images/hal.jpg!
 * HAL (Hardware Acceleration Layer), as a separate OpenCV module, opencv_hal, lived a short yet a bright life; we decided to split it by parts and move the parts into the respective regular OpenCV modules (core, imgproc etc.). It will help us to keep the dependency graph clean and sane.
-* Added 2 examples (see opencv/samples/hal) on how to provide external accelerated versions of the HAL functions; note that an external implementation does not have to implement all of the HAL. The supplied README explains how to build the custom HAL accelerator, and how to build OpenCV with such a custom HAL replacement: https://github.com/Itseez/opencv/tree/master/samples/hal
+* Added 2 examples (see opencv/samples/hal) on how to provide external accelerated versions of the HAL functions; note that an external implementation does not have to implement all of the HAL. The supplied README explains how to build the custom HAL accelerator, and how to build OpenCV with such a custom HAL replacement: https://github.com/opencv/opencv/tree/master/samples/hal
 * Added some more few functions to the HAL (arithmetic operations, split, merge); much more to come in OpenCV 3.2
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -906,8 +906,8 @@ p((((. !images/Intel_IPP_logo.png!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 p((((. !images/contrib.jpg!
-* We now have a separate repository for community-contributed code http://github.com/itseez/opencv_contrib. It will help us to combine well-known maturity and stability of classical OpenCV functionality together with innovative algorithms and opens new opportunities for community to share computer vision code. For all the contributed code we provide the same QA infrastructure as for the main OpenCV repository. How to use it?
-# Grab a copy of contribution repository http://github.com/itseez/opencv_contrib along with a copy of OpenCV 3.0 alpha or a fresh master snapshot.
+* We now have a separate repository for community-contributed code http://github.com/opencv/opencv_contrib. It will help us to combine well-known maturity and stability of classical OpenCV functionality together with innovative algorithms and opens new opportunities for community to share computer vision code. For all the contributed code we provide the same QA infrastructure as for the main OpenCV repository. How to use it?
+# Grab a copy of contribution repository http://github.com/opencv/opencv_contrib along with a copy of OpenCV 3.0 alpha or a fresh master snapshot.
 # Pass <pre>OPENCV_EXTRA_MODULES_PATH=&lt;path_to_contrib_directory&gt;/modules</pre> to CMake.
 
 * Documentation for the contributed modules is integrated into OpenCV doc tree: http://docs.opencv.org/master
@@ -1361,9 +1361,9 @@ Here are specific highlights of the 2.4.4 release:
 
 p((((. !images/update.jpg!
 
-* Many people contributed their code in the form of "pull requests":https://github.com/Itseez/opencv/pulls?direction=desc&page=1&sort=created&state=closed. Here are some of the most interesting contributions, that were included into 2.4 branch:
+* Many people contributed their code in the form of "pull requests":https://github.com/opencv/opencv/pulls?direction=desc&page=1&sort=created&state=closed. Here are some of the most interesting contributions, that were included into 2.4 branch:
 ** ">100":http://code.opencv.org/projects/opencv/versions/11 reported problems have been resolved since 2.4.3
-** Oscar Deniz "submitted":https://github.com/Itseez/opencv/pulls?direction=desc&page=1&sort=created&state=closed smile detector and sample.
+** Oscar Deniz "submitted":https://github.com/opencv/opencv/pulls?direction=desc&page=1&sort=created&state=closed smile detector and sample.
 ** Alexander Smorkalov created a "tutorial":http://docs.opencv.org/doc/tutorials/introduction/crosscompilation/arm_crosscompile_with_cmake.html#arm-linux-cross-compile on cross-compilation of OpenCV for Linux on ARM platforms.
 
 h2. version:2.4.3
@@ -1384,11 +1384,11 @@ p((((. !images/ios6.jpg!
 
 p((((. !images/python.png!
 
-* Another our GSoC student, Alexander Mordvintsev, added several new exciting Python samples, including ASIFT, hand-written digit recognition, motion debluring and even the use of Amazon PiCloud. Check https://github.com/Itseez/opencv/tree/master/samples/python2
+* Another our GSoC student, Alexander Mordvintsev, added several new exciting Python samples, including ASIFT, hand-written digit recognition, motion debluring and even the use of Amazon PiCloud. Check https://github.com/opencv/opencv/tree/master/samples/python2
 
 p((((. !images/profile.jpg!
 
-* Yet another GSoC student Attila Novak has trained 2 new cascades, for silverware and profile faces. Check https://github.com/Itseez/opencv/tree/master/data/lbpcascades
+* Yet another GSoC student Attila Novak has trained 2 new cascades, for silverware and profile faces. Check https://github.com/opencv/opencv/tree/master/data/lbpcascades
 
 p((((. !images/denoising.jpg!
 
@@ -1396,7 +1396,7 @@ p((((. !images/denoising.jpg!
 
 p((((. !images/optflow.jpg!
 
-* Yet another result from GSoC (that was a good year indeed!): Yuri Zemlyansky implemented "simple flow" optical flow algorithm; check https://github.com/Itseez/opencv/tree/master/samples/cpp/simpleflow_demo.cpp.
+* Yet another result from GSoC (that was a good year indeed!): Yuri Zemlyansky implemented "simple flow" optical flow algorithm; check https://github.com/opencv/opencv/tree/master/samples/cpp/simpleflow_demo.cpp.
 
 p((((. !images/CUDA.jpg!
 
@@ -1429,7 +1429,7 @@ p((((. !images/bug.png!
 
 p((((. !images/github.jpg!
 
-* OpenCV has never been that social. We are at github now: http://github.com/itseez/opencv. Grab the latest versions from there, submit pull requests.
+* OpenCV has never been that social. We are at github now: http://github.com/opencv/opencv. Grab the latest versions from there, submit pull requests.
 
 p((((. !images/update.jpg!
 
@@ -1679,7 +1679,7 @@ __June, 2011__
 
 h3. General Modifications and Improvements
 
-* Buildbot-based Continuous Integration system is now continuously testing OpenCV snapshots. The current status is available at http://buildbot.itseez.com
+* Buildbot-based Continuous Integration system is now continuously testing OpenCV snapshots. The current status is available at http://pullrequest.opencv.org/
 
 * OpenCV switched to Google Test (http://code.google.com/p/googletest/) engine for regression and correctness tests. Each module now has "test" sub-directory which includes the corresponding tests.
 

@@ -6,7 +6,7 @@ The document is a short guide on code style, used in OpenCV. The core libraries 
 
 h2. Files
 
-All the functionality must be put into one or more _.cpp_ and _.hpp_ files into the appropriate "module of OpenCV":https://github.com/Itseez/opencv/tree/2.4/modules, or a new module should be created if the contributed functionality is a rather large piece of code, or if it does not fit any existing module.
+All the functionality must be put into one or more _.cpp_ and _.hpp_ files into the appropriate "module of OpenCV":https://github.com/opencv/opencv/tree/2.4/modules, or a new module should be created if the contributed functionality is a rather large piece of code, or if it does not fit any existing module.
 
 * All the file names are written in lower case for better compatibility with both POSIX and Windows.
 * C++ interface headers have _.hpp_ extension
@@ -14,11 +14,11 @@ All the functionality must be put into one or more _.cpp_ and _.hpp_ files into 
 * The implementation is put to @opencv/modules/<module_name>/src@, interface is added to the header files in @opencv/modules/<module_name>/include/opencv2/<module_name>@. There is no need to add the files to the module explicitly, just rerun CMake and it will add the files automatically.
 * Sample code in C++, if any, is put to @opencv/samples/cpp@ (with exception of @gpu@ and @ocl@ modules, which have dedicated sample directories), sample code in Python - to @opencv/samples/python2@.
 * Documentation is put to @opencv/modules/<module_name>/doc@, into one of the existing files or a new file/chapter is added there. In the latter case the file name should be listed in the TOC (table of content) file @opencv/modules/<module_name>/doc/<module_name>.rst@
-* Tests are put to @opencv/modules/<module_name>/test@. When a new test source file is added, rerun CMake. If the test needs some data, put it to the separate "top-level directory":http://github.com/Itseez/opencv_extra/tree/master/testdata. For @ml@ module the test data is put to @opencv_extra/testdata/ml@ subdirectory, for other modules - to @opencv_extra/testdata/cv@ subdirectory. Please, limit size of your test data files within a few megabytes, the smaller the better. If some existing test data can be used for your tests (like @lena.jpg@ etc.), please, re-use it.
+* Tests are put to @opencv/modules/<module_name>/test@. When a new test source file is added, rerun CMake. If the test needs some data, put it to the separate "top-level directory":http://github.com/opencv/opencv_extra/tree/master/testdata. For @ml@ module the test data is put to @opencv_extra/testdata/ml@ subdirectory, for other modules - to @opencv_extra/testdata/cv@ subdirectory. Please, limit size of your test data files within a few megabytes, the smaller the better. If some existing test data can be used for your tests (like @lena.jpg@ etc.), please, re-use it.
 
 h2. File Structure
 
-Every source file, except for the samples, starts with BSD-compatible license, which template can be found "here":https://github.com/Itseez/opencv/blob/master/LICENSE. The extra/different copyright clauses are possible, as long as the license stays BSD-compatible.
+Every source file, except for the samples, starts with BSD-compatible license, which template can be found "here":https://github.com/opencv/opencv/blob/master/LICENSE. The extra/different copyright clauses are possible, as long as the license stays BSD-compatible.
 
 Other rules for both header and implementation files include:
 
@@ -88,7 +88,7 @@ Input parameters usually have @const@ qualifiers. Large objects are normally pas
 
 Optional arguments often simplify function usage. Because C++ allows optional arguments in the end of parameters list only, it also may affect decisions on argument order—the most important flags go first and less important—after.
 
-For example function and class declarations, take a look at http://github.com/Itseez/opencv/blob/master/modules/core/include/opencv2/core/core.hpp.
+For example function and class declarations, take a look at http://github.com/opencv/opencv/blob/master/modules/core/include/opencv2/core/core.hpp.
 
 h4. Using @InputArray@, @OutputArray@ etc.
 
@@ -120,7 +120,7 @@ h3. Rationale and principles of the Algorithm-based design
 * We want to keep our tools that parse OpenCV headers simple and robust (such as doc checker and automatic wrapper generators)
 * We want OpenCV to build fast.
 
-To address those goals, we physically separate interface and implementation part of our C++ classes. That is, we only expose interfaces, i.e. classes without constructors, without data members and with all purely virtual methods. The actual implementation is put into classes derived from those interfaces. The actual construction of the class is done by an exposed function. It returns smart pointer to the interface. There can be multiple "constructor" or "factory" functions, not necessarily placed in the same module. Users can add their own implementations of the same interface and provide the corresponding constructor functions. See @calib3d@ "module":https://github.com/Itseez/opencv/blob/master/modules/calib3d/include/opencv2/calib3d.hpp and the stereo correspondence algorithms (stereo matchers) as example of such classes.
+To address those goals, we physically separate interface and implementation part of our C++ classes. That is, we only expose interfaces, i.e. classes without constructors, without data members and with all purely virtual methods. The actual implementation is put into classes derived from those interfaces. The actual construction of the class is done by an exposed function. It returns smart pointer to the interface. There can be multiple "constructor" or "factory" functions, not necessarily placed in the same module. Users can add their own implementations of the same interface and provide the corresponding constructor functions. See @calib3d@ "module":https://github.com/opencv/opencv/blob/master/modules/calib3d/include/opencv2/calib3d.hpp and the stereo correspondence algorithms (stereo matchers) as example of such classes.
 
 h3. Steps to make your class following this style
 

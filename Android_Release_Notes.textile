@@ -255,7 +255,7 @@ _July, 2011_
 
 * Updated "set_of_samples":AndroidSamples. These set contains several tutorials, which allow developer to start from high-level Java interface and to continue with advanced native programming techniques. There are also some additional samples: image manipulations with OpenCV, basic face detection and a simple computer game "fifteen puzzle". Please note that older samples are removed and not supported anymore.
 
-* Continuous integration. Android build is introduced into major OpenCV CI infrastructure http://buildbot.itseez.com. Set of unit-tests for Java API had been developed. Every night buildbot checkouts the latest code, builds it and runs a set of native and Java OpenCV tests.
+* Continuous integration. Android build is introduced into major OpenCV CI infrastructure http://pullrequest.opencv.org/ . Set of unit-tests for Java API had been developed. Every night buildbot checkouts the latest code, builds it and runs a set of native and Java OpenCV tests.
 
 * Other updates
 ** Windows/Linux/MacOS support as a host development platform.

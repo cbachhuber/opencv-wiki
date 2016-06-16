@@ -5,11 +5,11 @@ h1. OpenCV Wiki
 
 OpenCV (Open Source Computer Vision) is a library of programming functions for realtime computer vision. It uses a "BSD license":http://opensource.org/licenses/BSD-3-Clause and hence it's free for both academic and commercial use. It has C++, C, Python and Java (Android) interfaces and supports Windows, Linux, Android, iOS and Mac OS. It has more than 2500 optimized algorithms. Adopted all around the world, OpenCV has more than 9 million downloads growing by nearly 200K/month. Usage ranges from interactive art, to mines inspection, stitching maps on the web on through advanced robotics.
 
-* "Roadmap":https://github.com/Itseez/opencv/milestones
+* "Roadmap":https://github.com/opencv/opencv/milestones
 
 h2. GSoC 2016
 
-!wiki/images/GSOC_2016.jpg!:https://github.com/Itseez/opencv/wiki/GSoC_2016
+!wiki/images/GSOC_2016.jpg!:https://github.com/opencv/opencv/wiki/GSoC_2016
 
 * *[[OpenCV Google Summer of Code 2016 Ideas Page|GSoC_2016]]*
 ** "OpenCV is in GSoC 2016!":https://summerofcode.withgoogle.com/organizations/?sp-search=OpenCV
@@ -27,9 +27,9 @@ h3. General
 h3. Development
 
 * "How to Contribute":How_to_contribute
-* Source Codes can be found at "GitHub":https://github.com/Itseez/opencv. The main OpenCV repository was converted to git and compactified. History now begins with the famous “atomic bomb” commit, that dates back to May the 11th, 2010.
-** To get the source code, point your git client to <code>git://github.com/Itseez/opencv.git</code>. Here are [[instructions|Git]].
-<code>git clone git://github.com/Itseez/opencv.git</code>
+* Source Codes can be found at "GitHub":https://github.com/opencv/opencv. The main OpenCV repository was converted to git and compactified. History now begins with the famous “atomic bomb” commit, that dates back to May the 11th, 2010.
+** To get the source code, point your git client to <code>git://github.com/opencv/opencv.git</code>. Here are [[instructions|Git]].
+<code>git clone git://github.com/opencv/opencv.git</code>
 ** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: @git://code.opencv.org/opencv_attic.git@.
 ** Also OpenCV Extra was put to a separate repository: @git://code.opencv.org/opencv_extra.git@.
 * [[OpenCV Development Process|OpenCV_Development_Process]]
@@ -37,11 +37,11 @@ h3. Development
 
 h2. Issue Tracking
 
-Please note that OpenCV project, as any open-source project, welcomes contributions from users. Either you have implemented some new functionality, or you're able to localize and fix a bug by yourself, please make a "pull request":https://github.com/Itseez/opencv/pulls at the GitHub. It will be "automatically tested":http://pullrequest.opencv.org and reviewed by peers. Check your code for compliance with [[OpenCV Code Style Guide|Coding_Style_Guide]] and please explain how your contribution might help others.
+Please note that OpenCV project, as any open-source project, welcomes contributions from users. Either you have implemented some new functionality, or you're able to localize and fix a bug by yourself, please make a "pull request":https://github.com/opencv/opencv/pulls at the GitHub. It will be "automatically tested":http://pullrequest.opencv.org and reviewed by peers. Check your code for compliance with [[OpenCV Code Style Guide|Coding_Style_Guide]] and please explain how your contribution might help others.
 
 h3. Creating new tickets
 
-All new tickets should be created on GitHub: "opencv":https://github.com/Itseez/opencv/issues and "opencv_contrib":https://github.com/Itseez/opencv_contrib/issues
+All new tickets should be created on GitHub: "opencv":https://github.com/opencv/opencv/issues and "opencv_contrib":https://github.com/opencv/opencv_contrib/issues
 
 "Old issue tracker":http://code.opencv.org/projects/opencv/issues will be moved to read-only state.
 
@@ -51,7 +51,7 @@ h3. Reporting bugs
 
 * Please, specify your platform (Windows 32/64bit, Linux x86/x64/ppc/..., MacOSX 32/64bit/ppc); compiler version; OpenCV version/revision; whether IPP, OpenMP, MMX, SSE ... have been enabled or not, and any other information that let us reproduce the environment, identify and localize the problem.
 
-* A sample code reproducing the problem helps us the most. It would really help if you could implement a unit-test that fails! Please check "samples":https://github.com/Itseez/opencv/tree/master/samples - for the preferred style (small code size, cross-platform).  There is *no need* to provide any project files or makefiles, if it is a short single-file sample, we could build it and run in a minute. If we can reproduce the problem, we can fix it quickly.
+* A sample code reproducing the problem helps us the most. It would really help if you could implement a unit-test that fails! Please check "samples":https://github.com/opencv/opencv/tree/master/samples - for the preferred style (small code size, cross-platform).  There is *no need* to provide any project files or makefiles, if it is a short single-file sample, we could build it and run in a minute. If we can reproduce the problem, we can fix it quickly.
 
 * If your application is complex, and the problem happens somewhere in the middle, often it is still possible to create a short standalone sample:
 ** First, capture and store the data that you pass to the function using FileStorage.
