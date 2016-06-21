@@ -9,6 +9,71 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2016-21-2016
+
+h3. _*Agenda*_
+
+* People's choice best paper
+* GSoC
+* Vadim on vacation
+* Itseez sold, but support will continue
+* Longer plans
+
+h3. *_Minutes_*
+
+* People's choice best paper running this year. There is an app
+** Check on how many algorithms were incorporated, I think it's a fair percentage
+* GSoC
+** tiny_cnn, 
+** can import caffe models now.
+** pooling layer added
+** deconvolution layers added, often used in segmentation
+** Visualization added
+** backend integrated nnpack for accelerated kernels in convolution, arm SSA optimized
+*** from facebook
+** libdnn core in caffee for convolution. But this is entangled in caffe
+*** but then needs opencl or cuda 
+*** how to handle devices, opencl devices and buffers in uniform way. How to integrate? opencl contex
+** opencl for convolution. Kernel autotuning => GPU support
+** quantized kernel to squeeze kernel down. 8 bit weights 
+** It should work for support residual networks
+** Hope to add support to TensorFlow, recurrent network
+* Documentation
+** New macros to help
+** buttons so you can switch to different language
+* FPGA support -- dnn dedicated board, reconfigurable hardware, optimized w/in opencl
+** Maybe contact Xilinx and Intel
+
+
+h3. *_Reports_*
+
+* . Vadim
+** on vacation
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2016-04-12
 
 h3. _*Agenda*_
