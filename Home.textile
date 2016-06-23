@@ -3,7 +3,7 @@ h1. OpenCV Wiki
 
 !http://opencv.org/wp-content/themes/opencv/images/logo.png!
 
-OpenCV (Open Source Computer Vision) is a library of programming functions for realtime computer vision. It uses a "BSD license":http://opensource.org/licenses/BSD-3-Clause and hence it's free for both academic and commercial use. It has C++, C, Python and Java (Android) interfaces and supports Windows, Linux, Android, iOS and Mac OS. It has more than 2500 optimized algorithms. Adopted all around the world, OpenCV has more than 7 million downloads growing by nearly 200K/month. Usage ranges from interactive art, to mines inspection, stitching maps on the web on through advanced robotics.
+OpenCV (Open Source Computer Vision) is a library of programming functions for realtime computer vision. It uses a "BSD license":http://opensource.org/licenses/BSD-3-Clause and hence it's free for both academic and commercial use. It has C++, C, Python and Java (Android) interfaces and supports Windows, Linux, Android, iOS and Mac OS. It has more than 2500 optimized algorithms. Adopted all around the world, OpenCV has more than 9 million downloads growing by nearly 200K/month. Usage ranges from interactive art, to mines inspection, stitching maps on the web on through advanced robotics.
 
 * "Roadmap":https://github.com/Itseez/opencv/milestones
 
