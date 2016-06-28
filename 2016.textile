@@ -9,6 +9,56 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2016-06-28
+
+h3. _*Agenda*_
+
+* GSoC
+* Org
+* Directions
+
+h3. *_Minutes_*
+
+* GSoC 
+** All evaluations are in. 
+** Started with 14, lost one due to conflicts in schedule, failed one at midterm
+** All existing projects look very good
+* Org
+** Some experienced people in other orgs may come in and help replicate a better working model
+* Directions
+** From Google (friends, not official) they want a focus on C++11. Puting strong typeing and explicit memory ownership
+*** This is Google coding style and seems very successful in getting working code going.
+** Maybe make this a focus in coming year -- state of the art C++ support.
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2016-21-2016
 
 h3. _*Agenda*_
