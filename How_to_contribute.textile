@@ -61,7 +61,7 @@ h2. Testing and merging of pull requests
 
 h3. Here is the flow-chart of the process:
 
-!https://docs.google.com/drawings/pub?id=1_m7oVQ4CvoMxZn63N1_TyhhazmLLWY5uLEGUyPCERLo&w=960&h=720!
+[[images/opencv-pr-flow.png]]
 
 h2. Happy End
 
