@@ -92,3 +92,7 @@ Also, you can check for whitespace errors before the commit using this command:
 <pre>
 git diff --check
 </pre>
+
+h3. Q4. How do I contribute to the documentation.
+
+Please refer http://docs.opencv.org/trunk/d4/db1/tutorial_documentation.html
