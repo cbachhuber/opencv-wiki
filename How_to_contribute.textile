@@ -8,11 +8,11 @@ If you are not familiar with the mechanism - do not worry, it's very simple. Kee
 
 h2. Before you start contributing you should
 
-* Check if your bug still exists. This can be done by building the latest [2.4 branch](https://github.com/opencv/opencv/tree/2.4) or the [latest master branch](https://github.com/opencv/opencv), and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV2.1 for example.
+* Check if your bug still exists. This can be done by building the latest "2.4 branch":https://github.com/opencv/opencv/tree/2.4 or the "latest master branch":https://github.com/opencv/opencv, and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV2.1 for example.
 
 * Make sure that nobody beat you into fixing or reporting the issue by doing a search on the Github "OpenCV issues page":https://github.com/opencv/opencv/issues, and making sure that there isn't someone working on it. In the latter case you might provide support or suggestion in the issue or in the linked pull request.
 
-* If you have a question about the software, then this is **NOT** the right place. You should open up a question at the [OpenCV Q&A forum](http://answers.opencv.org/questions/). In order to post a decent question from the start, feel free to read the official [forum guidelines](http://answers.opencv.org/faq/).
+* If you have a question about the software, then this is **NOT** the right place. You should open up a question at the "OpenCV Q&A forum":http://answers.opencv.org/questions/ . In order to post a decent question from the start, feel free to read the official "forum guidelines":http://answers.opencv.org/faq/ .
 
 Before you open up anything on the OpenCV github page, be sure that you are at the right place with your problem.
 
@@ -41,7 +41,7 @@ h3. *The instruction in brief*
 
 There is an important difference in contributing a bugfix or a new piece of code. For a new piece of code the above procedure is just fine, but for a bugfix, do keep the following in mind:
 * Open up an issue at the "Github issues page":https://github.com/opencv/opencv/issues/, so that people are aware of the problem and can support you in fixing it.
-* Make sure that you open up an issue at the correct place. Problems related to the main repository are reported [here](https://github.com/opencv/opencv/issues/), while problems related to the contributed repository are reported [here](https://github.com/opencv/opencv_contrib/issues/).
+* Make sure that you open up an issue at the correct place. Problems related to the main repository are reported "here":https://github.com/opencv/opencv/issues/ , while problems related to the contributed repository are reported "here":https://github.com/opencv/opencv_contrib/issues/ .
 * Make sure that you provide enough information. You should clearly state which OpenCV version you are using, what your system configuration is (OS, hardware specifications, extra libraries used, ...). The golden rule here is, the more the better.
 
 h2. Making a good pull request
@@ -95,4 +95,4 @@ git diff --check
 
 h3. Q4. How do I contribute to the documentation.
 
-Please refer http://docs.opencv.org/trunk/d4/db1/tutorial_documentation.html
+Please refer "Writing documentation for OpenCV":http://docs.opencv.org/trunk/d4/db1/tutorial_documentation.html tutorial.
