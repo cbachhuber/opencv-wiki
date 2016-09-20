@@ -8,7 +8,11 @@ If you are not familiar with the mechanism - do not worry, it's very simple. Kee
 
 h2. Before you start contributing you should
 
-* Check if your bug still exists. This can be done by building the latest "2.4 branch":https://github.com/opencv/opencv/tree/2.4 or the "latest master branch":https://github.com/opencv/opencv, and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV2.1 for example.
+* Make sure you agree to contribute your code under OpenCV (BSD) license.
+
+* If you are submitting a new algorithm implementation, do a quick search over internet to see whether the algorithm is patented or not.
+
+* If you are going to fix a bug, check that it's still exists. This can be done by building the latest "2.4 branch":https://github.com/opencv/opencv/tree/2.4 or the "latest master branch":https://github.com/opencv/opencv, and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV2.1 for example.
 
 * Make sure that nobody beat you into fixing or reporting the issue by doing a search on the Github "OpenCV issues page":https://github.com/opencv/opencv/issues, and making sure that there isn't someone working on it. In the latter case you might provide support or suggestion in the issue or in the linked pull request.
 
