@@ -136,17 +136,14 @@ public:
 virtual void setLambda(double lambda) = 0;
 virtual double getLambda() const = 0;
 ...
+// static method to construct the algorithm instance as a smart pointer to the interface class.
+// there can be several constructors
+static Ptr<MyStereoMatcher> create(<params> ...);
 };
 }}
 </pre>
 
 That is, put there extra methods and properties that your algorithm will have. "Getters" should start with "get" word, "Setters" - with "set". You *do not* need to repeat declarations of virtual methods of @StereoMatcher@, @Algorithm@ etc., since you will implement them in your actual class anyway.
-
-* Also, add the constructor function that will return smart pointer to your base class:
-
-<pre>CV_EXPORTS Ptr<MyStereoMatcher> createMyStereoMatcher(<params...>);</pre>
-
-The constructor name follows @create<classname>[optional_suffix]@ pattern. There can be several constructors if you want.
 
 * In _.cpp_ file put a class that implements your interface and the constructor function:
 
@@ -174,7 +171,7 @@ Mat disp = _disp.getMat();
 double lambda;
 };
 
-Ptr<MyStereoMatcher> createMyStereoMatcher(<args>) { return new MyStereoMatcherImpl(<args>); }
+Ptr<MyStereoMatcher> MyStereoMatcher::create(<args>) { return new MyStereoMatcherImpl(<args>); }
 }}
 </pre>
 
