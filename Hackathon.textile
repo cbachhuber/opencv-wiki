@@ -40,3 +40,4 @@ h3. Links
 
 * "OpenCV hackathon slides":https://docs.google.com/a/itseez.com/presentation/d/1IvUOXAJ7FYO2NhplYTGJ0MvTjzKhJnSRano22yuaho4/edit#slide=id.gae260d7_1_17
 * "About hackathon":http://en.wikipedia.org/wiki/Hackathon
+* "Issues without labels":https://github.com/opencv/opencv/issues?utf8=%E2%9C%93&q=is%3Aissue%20-label%3Abug%20-label%3Afeature%20-label%3ARFC%20-label%3Ainvalid%20-label%3Aincomplete%20-label%3Awontfix%20-label%3A%22question%20(invalid)%22%20is%3Aclosed%20%20-label%3Aduplicate
