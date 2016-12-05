@@ -9,6 +9,54 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2016-12-05
+
+h3. _*Agenda*_
+
+Long (non-break) because access permissions changed while transitioning servers. We're back up and fully running.
+
+* End of Year
+
+h3. *_Minutes_*
+
+* Pay gsoc
+* Pay travel
+* Pay awards
+* Bill google for travel
+
+* Need to see how to incorporate "tiny-dnn documented here":https://docs.google.com/document/d/10hP8H6iypyvEypXG1wcJUhhcXFlfk_-zp3xqyot5TIw/edit#heading=h.vtl93xcz43wq 
+   * And "Git hub for GSOC'16 DNN here":https://github.com/opencv/opencv_contrib/pull/720
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2016-06-28
 
 h3. _*Agenda*_
