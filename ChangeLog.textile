@@ -105,6 +105,354 @@ p((((. !images/github2.png!
 ** 348 bugs and 69 features in opencv master
 ** 47 bugs and 14 features in opencv_contrib
 
+*Contributors*
+
+*opencv*
+
+<pre>
+git shortlog --no-merges -ns 3.1.0..3.2.0
+   244	Alexander Alekhin
+    63	Vitaly Tuzov
+    57	Tomoaki Teshima
+    54	Maksim Shabunin
+    51	Vladislav Sovrasov
+    46	Ilya Lavrenov
+    40	Rostislav Vasilikhin
+    33	k-shinotsuka
+    30	StevenPuttemans
+    29	Pavel Rojtberg
+    24	MYLS
+    18	Marina Noskova
+    17	catree
+    15	Alexander Smorkalov
+    14	Suleyman TURKMEN
+    13	Vladislav Vinogradov
+    13	apavlenko
+    13	berak
+    12	Alexandr Kondratev
+    11	mshabunin
+    10	Dan
+    10	Pavel Vlasov
+    10	Valeriy Van
+    10	atinfinity
+    10	matze
+     9	Li Peng
+     9	abratchik
+     8	Roman Donchenko
+     8	Vadim Pisarevsky
+     7	Aleksandar Atanasov
+     7	Philipp Hasper
+     6	ArkadiuszRaj
+     6	Francisco Facioni
+     6	LaurentBerger
+     6	PkLab.net
+     6	sourin
+     5	E Sommerlade
+     5	Eric Zavesky
+     5	Ishank gulati
+     5	Matthew Self
+     5	Philip
+     5	Tetragramm
+     4	Amro
+     4	Andrey Pavlenko
+     4	Arthur Cinader
+     4	Christoph Spörk
+     4	Dikay900
+     4	Marian Zajko
+     4	alcinos
+     4	daB0bby
+     4	filipsladek
+     4	ohnozzy
+     3	Alexander Karsakov
+     3	Andreas Franek
+     3	Arek
+     3	Arkadiusz Raj
+     3	Dimitrios Katsaros
+     3	Eric Sommerlade
+     3	Gilles Rochefort
+     3	Juha Reunanen
+     3	Marek Smigielski
+     3	Mathieu Barnachon
+     3	Matthew Skolaut
+     3	Philippe FOUBERT
+     3	Sergei Nosov
+     3	Vitaliy Lyudvichenko
+     3	Your Name
+     3	a-andre
+     3	anirudt
+     3	aravind
+     3	kurenai
+     3	panxiaochun
+     3	shruthikashyap
+     3	thierry
+     3	will hunt
+     3	Прун Виктор
+     2	Addison Elliott
+     2	Alexander Shishkov
+     2	Anatoly Orlov
+     2	Asal Mirzaieva
+     2	Bleach666
+     2	Bob Paulin
+     2	Cartucho
+     2	Dan Moodie
+     2	David Wolever
+     2	Declan Moran
+     2	Dmitry Trifonov
+     2	DozyC
+     2	Elad Joseph
+     2	Elif Albuz
+     2	Eric Liao
+     2	Erich Keane
+     2	Hajo Nils Krabbenhöft
+     2	Hannes
+     2	Jan Starzynski
+     2	Joe Howse
+     2	Jose Luis Guardiola
+     2	Josh Lubawy
+     2	Lucas Solomon
+     2	Naba Kumar
+     2	Patrick Snape
+     2	Patrik Huber
+     2	Peter Rekdal Sunde
+     2	Piotr Semenov
+     2	Quentin
+     2	Randy J. Ray
+     2	Robbert Klarenbeek
+     2	Rok Mandeljc
+     2	Sean McBride
+     2	Sergiu Deitsch
+     2	Steven Puttemans
+     2	Susmit
+     2	Teng Cao
+     2	emiswelt
+     2	jiakai
+     2	lewgate
+     2	mschoeneck
+     2	shengyu
+     2	takacsd
+     1	Aaron Simmons
+     1	Adam Rankin
+     1	Alexander Fedorov
+     1	AlexeyAB
+     1	Ankit Yadav
+     1	Anton V. Shokurov
+     1	Anush Elangovan
+     1	Artyom Lebedev
+     1	Balint Cristian
+     1	Bernd Kuhls
+     1	BinMatrix
+     1	Bleach
+     1	Bram Ton
+     1	CSBVision
+     1	Christian Kapeller
+     1	Colin Finck
+     1	Dmitry Mozgin
+     1	Dmitry-Me
+     1	Dustin Spicuzza
+     1	Eduardo Arnold
+     1	Elena Gvozdeva
+     1	Elena Shipunova
+     1	Emanuel Jöbstl
+     1	Eugene Khvedchenya
+     1	Evan Heidtmann
+     1	Feng Zhoutian
+     1	Finfa811
+     1	Fraser Harris
+     1	Graham Fyffe
+     1	Gregory Kramida
+     1	Gregory Morse
+     1	Guillaume Jacob
+     1	Guy Sheffer
+     1	HMM@T430s-x64
+     1	Han Hu
+     1	Ian MacLeod
+     1	Ivar Clemens
+     1	JR Heard
+     1	Jake Kesinger
+     1	Jason von Nieda
+     1	Jcrist99
+     1	Jeff McBride
+     1	Jeroen Kromwijk
+     1	Jiri Horner
+     1	Josep Bosch
+     1	Juan Pablo Aveggio
+     1	Julien Dehos
+     1	Julien Dubiel
+     1	Julien Nabet
+     1	Kai Hugo Hustoft Endresen
+     1	Kerry Billingham
+     1	Kevin Hughes
+     1	Kevin, Hu
+     1	KeySecure
+     1	Kotrix
+     1	Krishnaraj Bhat
+     1	Leonardo BrÃ¡s
+     1	Leonid Volnitsky
+     1	Louis Letourneau
+     1	Luis Roberto Morales Iglesias
+     1	LukeZhu
+     1	Matt Leotta
+     1	Matthew Cook
+     1	Matthieu FT
+     1	Matěj Šmíd
+     1	Michael Shtutman
+     1	Morrison
+     1	Nikolay Polyarniy
+     1	Noel Eck
+     1	Oded Green
+     1	Oliver Schreer
+     1	Oskari Vinko
+     1	Patrick Spettel
+     1	Peter Entwistle
+     1	Philipp Nordhus
+     1	Philippe Renon
+     1	Pierre Dulac
+     1	Pranav Ganorkar
+     1	Prayag Verma
+     1	Péter Trombitás
+     1	Rahul Chhabra
+     1	S. Garrido
+     1	Sean Li
+     1	Sergey Alexandrov
+     1	Simmo Saan
+     1	Simon Hänisch
+     1	Sovrasov
+     1	Stephane Thiell
+     1	Steven E Wright
+     1	Tauranis
+     1	Thierry Fauck
+     1	Thomas Schenker
+     1	Tomi
+     1	Tsukasa Sugiura
+     1	Vadzim Piatrou
+     1	Vincent Rabaud
+     1	WANG Guoqin
+     1	Xiaolei Yu
+     1	Zhenqing, Hu
+     1	Zhigang Gong
+     1	ahb
+     1	arybnikov
+     1	bedbad
+     1	chacha21
+     1	danil-tolkachev
+     1	debjan
+     1	dharezlak
+     1	fegorsch
+     1	ggargov
+     1	guoxuedong
+     1	jacobdang
+     1	joao.faro
+     1	logic1988
+     1	look4pritam
+     1	monoid911
+     1	mpkh
+     1	mrquorr
+     1	mvukad
+     1	parismita
+     1	qiao
+     1	renu285
+     1	rishirajsurti
+     1	robertxwu
+     1	sarthak
+     1	solosuper
+     1	stbnps
+     1	themightyoarfish
+     1	viodetools
+     1	yigitsoy
+     1	yoffy
+     1	Özgür Can
+</pre>
+
+*opencv_contrib*
+
+<pre>
+git shortlog --no-merges -ns 3.1.0..3.2.0
+    43	Vitaliy Lyudvichenko
+    30	Alexander Alekhin
+    29	Anna Petrovicheva
+    25	Vladislav Samsonov
+    25	Vladislav Sovrasov
+    21	Gary Bradski
+    15	Pavel Rojtberg
+    12	berak
+    10	Balint Cristian
+     5	Maksim Shabunin
+     5	Suleyman TURKMEN
+     5	apetrovichev
+     5	lluisgomez
+     4	Alexander Bokov
+     4	Amro
+     4	StevenPuttemans
+     4	mshabunin
+     3	Jinhan Lee
+     3	Patrick Snape
+     3	Rok Mandeljc
+     3	Steve Nicholson
+     3	folz
+     3	vbystricky
+     2	LaurentBerger
+     2	Maximilien Cuony
+     2	Prof. Dr. Rudolf Haussmann
+     2	Vadim Pisarevsky
+     2	Vitaly Tuzov
+     2	Yuki Furuta
+     2	catree
+     2	sbokov
+     1	Aleksandr Rybnikov
+     1	Alexey Spizhevoy
+     1	AmbroiseMoreau
+     1	Amy Winston
+     1	Andrea Merello
+     1	Bartek Pawlik
+     1	Bleach
+     1	Bleach666
+     1	Christian Richardt
+     1	Daniel Ching
+     1	Dikay900
+     1	Eric Zavesky
+     1	Eugene Mamin
+     1	Geoff
+     1	Gregor Kovalcik
+     1	Gregory Kramida
+     1	Gunshi Gupta
+     1	Han Hu
+     1	Konstantin Volokh
+     1	Kotrix
+     1	Kumataro
+     1	Lorena García
+     1	MambaWong
+     1	Marek Smigielski
+     1	Martin Nowak
+     1	Minh Ngo
+     1	Nicu Stiurca
+     1	Pavel Vlasanek
+     1	Rostislav Vasilikhin
+     1	Sarthak Ahuja
+     1	Sunglok Choi
+     1	Thomas Schulz
+     1	VBystricky
+     1	Vasilikhin
+     1	Vladimir
+     1	Wu Jiang
+     1	Zhou Chao
+     1	abratchik
+     1	alessiodore
+     1	andrewk-mccann
+     1	aravind
+     1	baisheng lai
+     1	comdiv
+     1	damir
+     1	edgarriba
+     1	jasjuang
+     1	jhlee525
+     1	lukaszi89
+     1	lych77
+     1	samontab
+     1	sht3ch
+     1	tharunkalwa
+</pre>
+
+
 h2. version:3.1
 
 __December, 2015__
