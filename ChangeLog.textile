@@ -27,7 +27,7 @@ big thanks to all the participants!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !images/thank_you.png!
+p((((. !images/thank_you.jpg!
 
 * There have been many contributions besides GSoC (big thanks to the authors, which names/nicknames are enclosed in parentheses):
 ** DICOM support via GDCM library (look4pritam), PAM format support (DmtKats)
@@ -52,7 +52,7 @@ p((((. !images/thank_you.png!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !images/dnn.png!
+p((((. !{width=200px}images/dnn.png!
 
 * A lot of improvements have been done in our dnn module (https://github.com/opencv/opencv_contrib/tree/master/modules/dnn):
 ** The module has been expanded (in particular, LSTM and many other layers have been added) and refactored to support OpenCL acceleration (which is temporarily disabled) (Vitaly Lyudvichenko)
@@ -73,7 +73,7 @@ p((((. !images/platforms.png!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !images/intel.png!
+p((((. !{width=200px}images/intel.png!
 
 * Intel MKL can now be used to accelerate SVD, LU, camera calibration, as well as DNN module.
 * Added initial support for Intel Compiler (Intel Compiler 2017 has been tested on Windows and Linux)
@@ -90,7 +90,7 @@ p((((. !images/nvidia.png!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !images/openvx.png! !images/hal.jpg!
+p((((. !{width=120px}images/openvx.png! !images/hal.jpg!
 
 * OpenVX 1.x implementations can now be used to accelerate OpenCV, mostly through the HAL mechanism. Build OpenCV with WITH_OPENVX flag turned on and specifty where to find OpenVX (see https://github.com/opencv/opencv/blob/master/cmake/FindOpenVX.cmake for details).
 * Convenient C++ wrappers for OpenVX that simplify joint use of OpenCV + OpenVX have been created by Andrey Pavlenko. See the examples at https://github.com/opencv/opencv/tree/master/samples/openvx, the wrappers are in ivx.hpp header.
