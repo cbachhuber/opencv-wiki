@@ -27,7 +27,7 @@ big thanks to all the participants!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !images/thanks.png!
+p((((. !images/thank_you.png!
 
 * There have been many contributions besides GSoC (big thanks to the authors, which names/nicknames are enclosed in parentheses):
 ** DICOM support via GDCM library (look4pritam), PAM format support (DmtKats)
@@ -82,7 +82,7 @@ p((((. !images/intel.png!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !images/nvidia.jpg!
+p((((. !images/nvidia.png!
 
 * NVidia corporation has donated ARM optimizations for OpenCV, the Carotene library (https://github.com/opencv/opencv/tree/master/3rdparty/carotene).
 * CUDA 8 is now supported.
@@ -90,7 +90,7 @@ p((((. !images/nvidia.jpg!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-p((((. !images/openvx.jpg! !images/hal.jpg!
+p((((. !images/openvx.png! !images/hal.jpg!
 
 * OpenVX 1.x implementations can now be used to accelerate OpenCV, mostly through the HAL mechanism. Build OpenCV with WITH_OPENVX flag turned on and specifty where to find OpenVX (see https://github.com/opencv/opencv/blob/master/cmake/FindOpenVX.cmake for details).
 * Convenient C++ wrappers for OpenVX that simplify joint use of OpenCV + OpenVX have been created by Andrey Pavlenko. See the examples at https://github.com/opencv/opencv/tree/master/samples/openvx, the wrappers are in ivx.hpp header.
