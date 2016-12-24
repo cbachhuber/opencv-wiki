@@ -30,12 +30,12 @@ h2. General Information:
 *** -Try to eliminate duplication of students.- *None*
 *** -IRC for OpenCV to resolve all duplications.-
 *** -Apr 22 19:00 UTC: Accepted students announced.- *"Accepted Proposals,":https://summerofcode.withgoogle.com/organizations/6303577404342272/?sp-page_size=25  " Or here:":https://summerofcode.withgoogle.com/dashboard/projects/all/?sp-page_size=25*
-*** May 23 Let Coding begin!
-*** Jun 20 19:00 UTC: Mid term evaluation begins. *Pull requests must be in*
-*** Jun 27 19:00 UTC: Mid term evaluation ends. *Pull requests must be in*
-*** Aug 23 19:00 UTC: Coding stop; Pull requests must be in; Mentors: final evaluation begins...
-*** Aug 29 19:00 UTC: Final evaluation deadline.
-*** Late October: Mentor Summit!
+*** -May 23 Let Coding begin!-
+*** -Jun 20 19:00 UTC: Mid term evaluation begins. *Pull requests must be in*-
+*** -Jun 27 19:00 UTC: Mid term evaluation ends. *Pull requests must be in*-
+*** -Aug 23 19:00 UTC: Coding stop; Pull requests must be in; Mentors: final evaluation begins...-
+*** -Aug 29 19:00 UTC: Final evaluation deadline.-
+*** -Late October: Mentor Summit!-
 
 *Times:*
 *  UTC to PDT (California uses PST in the winter (from Nov 1st) and PDT in the summer (from March 8)).
