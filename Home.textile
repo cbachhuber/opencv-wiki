@@ -21,7 +21,7 @@ h2. Resources
 h3. General
 
 * "User site":http://opencv.org/, "News":http://opencv.org/category/news and "Help":http://answers.opencv.org.
-* "Documentation:":http://opencv.org/documentation.html, including "Books":http://opencv.org/books.html, "Reference manual":http://docs.opencv.org/, "Tutorials":http://docs.opencv.org/doc/tutorials/tutorials.html and "Cheatsheet (2.4)":http://docs.opencv.org/2.4/opencv_cheatsheet.pdf
+* "Documentation:":http://opencv.org/documentation.html, including "Books":http://opencv.org/books.html, "Reference manual":http://docs.opencv.org/, "Tutorials":http://docs.opencv.org/doc/tutorials/tutorials.html and "Cheatsheet":http://docs.opencv.org/2.4/opencv_cheatsheet.pdf (for 2.4 only)
 * "ChangeLog":ChangeLog for the latest releases
 
 h3. Development
