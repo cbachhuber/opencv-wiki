@@ -36,13 +36,31 @@ h3. *_Minutes_*
 *** Tracking
 *** Computational photography
 *** Camera calibration
+*** Video stabilization ... or improve it
+*** Image stitching 
 ** April tags or Aruco to make a true checkerboard as tags 
 ** Improve Aruco and Charuco code
 ** SLAM ? All efforts have failed. Only if we can find someone far along in a related thesis
 ** Better background subtraction
+*** Deep?  
 *** Current MoG has a flaw -- all pixels independently -- no smoothness, spacial constraints
-** __We have better optical flow now__ --test--
-** Better saliency model
+** --We have better optical flow now--
+** Better saliency model. Improve saliency API
+** Video stabilization, or just improve tutorial
+** Labeling module ...
+*** Improve VATIC (contact authors?)
+**** https://github.com/cvondrick/vatic
+**** http://web.mit.edu/vondrick/vatic/
+** OpenCV for artistic interaction
+*** Natural interaction 
+*** Hand pose? 
+** Text detection improvement ... better datasets. 
+
+* Hard to know quality level of different code in contrib
+** Put quality, optimization in Wiki
+** computational photography
+** SFM
+** Wiki
 
 
 h3. *_Reports_*
