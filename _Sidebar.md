@@ -19,6 +19,7 @@
         - [[Unix based guide|Linux_contribution_guide]]
     - [[Meeting notes|Meeting_notes]]
         - [[Template]]
+        - [[2017]]
         - [[2016]]
         - [[2015]]
         - [[2014]]
