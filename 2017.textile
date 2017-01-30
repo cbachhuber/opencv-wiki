@@ -57,10 +57,11 @@ h3. *_Minutes_*
 ** Text detection improvement ... better datasets. 
 
 * Hard to know quality level of different code in contrib
-** Put quality, optimization in Wiki
+** Put quality, optimization, GPU optimiztion, in Wiki
 ** computational photography
 ** SFM
-** Wiki
+** Make a Wiki to track
+** Tracking with CNN doesn't have GPU optimization
 
 
 h3. *_Reports_*
