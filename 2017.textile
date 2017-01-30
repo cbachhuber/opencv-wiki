@@ -27,9 +27,22 @@ h3. *_Minutes_*
 *** Pedestrian 
 *** Car
 *** Smaller architectures is 50x smaller than Alex net for example
+**** Optimization on mobile -- model has to be compact, just a few GFLOPs, run quantized, code flow should be optimized for the architecture but this is beyond scope for a student
 ** Squeeze net ... tiny_dnn
 *** Gam low power
-*** 
+** Improving Tutorials
+*** How to use the deep learning
+*** Update existing tutorials
+*** Tracking
+*** Computational photography
+*** Camera calibration
+** April tags or Aruco to make a true checkerboard as tags 
+** Improve Aruco and Charuco code
+** SLAM ? All efforts have failed. Only if we can find someone far along in a related thesis
+** Better background subtraction
+*** Current MoG has a flaw -- all pixels independently -- no smoothness, spacial constraints
+** __We have better optical flow now__ --test--
+** Better saliency model
 
 
 h3. *_Reports_*
