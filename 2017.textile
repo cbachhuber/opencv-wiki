@@ -20,8 +20,16 @@ h3. *_Minutes_*
 
 * GSoC
 ** DNN Intel contributing 
-*** Training mini-batch -- can be parallized across samples
+*** Training mini-batch -- can be pluralized across samples
 *** Inference -- one sample
+** Project to detect useful objects
+*** Face
+*** Pedestrian 
+*** Car
+*** Smaller architectures is 50x smaller than Alex net for example
+** Squeeze net ... tiny_dnn
+*** Gam low power
+*** 
 
 
 h3. *_Reports_*
