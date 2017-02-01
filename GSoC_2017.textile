@@ -305,7 +305,7 @@ Grad Student, University of Rome
 -delete-manuele.tamburrano@gmail.com
 
 Vincent Rabaud
-Principle Engineer, Aldebaran Robotics
+Senior Engineer, Google
 -delete-vincent.rabaud@-delete-gmail.com
 
 Claudia Rapuano
