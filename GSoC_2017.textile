@@ -11,31 +11,36 @@ h1. *Project Page for OpenCV Google Summer of Code 2017 (GSoC 2017)*
 h2. General Information:
 
 * "GSoC 2016 site":https://developers.google.com/open-source/gsoc/
-** "OpenCV Organization Profile GSoC 2016":https://summerofcode.withgoogle.com/dashboard/org-admin/org-profile/
-** "Restricted: OpenCV GSoC 2016 Dashboard":https://summerofcode.withgoogle.com/dashboard/
-* Mailing list for OpenCV GSOC 2016: <code>opencv-gsoc-2016@googlegroups.com</code>
-** Group site [[https://groups.google.com/forum/#!forum/opencv-gsoc-2016]]
+* Mailing list for OpenCV GSOC 2017: <code>opencv-gsoc-2017@googlegroups.com</code>
+** Group site [[https://groups.google.com/forum/#!forum/opencv-gsoc-2017]]
 * IRC Channel: <code>#opencv on freenode</code>
 * *Timelines*
-** "Timeline for GSoC 2016":https://developers.google.com/open-source/gsoc/timeline
-** "Major GSoC 2016 Milestones":https://summerofcode.withgoogle.com/
+** "Timeline for GSoC 2017":https://developers.google.com/open-source/gsoc/timeline
+** "Major GSoC 2017 Milestones":https://summerofcode.withgoogle.com/
 
-** *Next important dates:*
-*** -Feb 19 19:00 UTC: Mentoring organization application deadline.- *Submitted!*
-*** -Feb 29 19:00 UTC: List of accepted Organizations.- *"We are in!!":https://summerofcode.withgoogle.com/organizations/?sp-search=OpenCV*
-*** -Mar 14 16:00 UTC: Student Application period begins!- *"Submit proposals!":https://summerofcode.withgoogle.com/get-started/*
-*** -Mar 25 19:00 UTC: Student Application period ends!- *"95 proposals!":https://summerofcode.withgoogle.com/dashboard/*
-*** -Deadline for OpenCV to request # of slots.-
-*** -Google publishes how many slots we get.- *We have 13 slots!*
-*** -Try to eliminate duplication of students.- *None*
-*** -IRC for OpenCV to resolve all duplications.-
-*** -Apr 22 19:00 UTC: Accepted students announced.- *"Accepted Proposals,":https://summerofcode.withgoogle.com/organizations/6303577404342272/?sp-page_size=25  " Or here:":https://summerofcode.withgoogle.com/dashboard/projects/all/?sp-page_size=25*
-*** -May 23 Let Coding begin!-
-*** -Jun 20 19:00 UTC: Mid term evaluation begins. *Pull requests must be in*-
-*** -Jun 27 19:00 UTC: Mid term evaluation ends. *Pull requests must be in*-
-*** -Aug 23 19:00 UTC: Coding stop; Pull requests must be in; Mentors: final evaluation begins...-
-*** -Aug 29 19:00 UTC: Final evaluation deadline.-
-*** -Late October: Mentor Summit!-
+** *Important dates:*
+*** -October 10'16	Program announced-
+*** January 19 16:00 UTC	Mentoring organizations can begin submitting applications to Google
+*** February 9 16:00 UTC	Mentoring organization application deadline
+*** February 10 - 26	Google program administrators review organization applications
+*** February 27 16:00 UTC	List of accepted mentoring organizations published
+*** February 27 - March 20	Potential student participants discuss application ideas with mentoring organizations
+*** March 20 16:00 UTC	Student application period opens
+*** April 3 16:00 UTC	Student application deadline
+*** May 4 16:00 UTC	Accepted student proposals announced
+**** Community Bonding Period	Students get to know mentors, read documentation, get up to speed to begin working on their projects
+*** May 30	Coding officially begins!
+**** Work Period	Students work on their project with guidance from Mentors
+*** June 26 16:00 UTC	Mentors and students can begin submitting Phase 1 evaluations
+*** June 30 16:00 UTC	Phase 1 Evaluation deadline; Google begins issuing student payments
+*** Work Period	Students work on their project with guidance from Mentors
+*** July 24 16:00 UTC	Mentors and students can begin submitting Phase 2 evaluations
+*** Work Period	Students continue working on their project with guidance from Mentors
+*** July 28 16:00 UTC	Phase 2 Evaluation deadline
+*** August 21 - 29 16:00 UTC	Final week: Students submit their final work product and their final mentor evaluation
+*** August 29 - September 5 16:00 UTC	Mentors submit final student evaluations
+*** September 6	Final results of Google Summer of Code 2017 announced
+*** Late October	Mentor Summit at Google
 
 *Times:*
 *  UTC to PDT (California uses PST in the winter (from Nov 1st) and PDT in the summer (from March 8)).
@@ -81,17 +86,17 @@ h2. For students interested in applying
 
 # You *must* already know how to program fluently in C++
 ** Some projects may require Python or Matlab skills
-# Ask to join the "OpenCV GSoC Forum List":https://groups.google.com/forum/#!forum/opencv-gsoc-2016
-** Discuss projects below or other ideas with us there (Feb 29 - March 13)
-# On March 14th - 25th, Go to the "GSoC site":https://developers.google.com/open-source/gsoc/ and sign up to be a student with OpenCV
-# Post the project from below or your own agreed on project on the GSoC to opencv-gsoc-2016@googlegroups.com
+# Ask to join the "OpenCV GSoC Forum List":https://groups.google.com/forum/#!forum/opencv-gsoc-2017
+** Discuss projects below or other ideas with us there between now and March
+# In March, Go to the "GSoC site":https://developers.google.com/open-source/gsoc/ and sign up to be a student with OpenCV
+# Post the project from below or your own agreed on project on the GSoC to opencv-gsoc-2017@googlegroups.com
 ** Include Name, google email, age
 ** Include how you think you are qualified to accomplish this project (skills, courses, relevant background)
 ** Include Country of origin, school you are enrolled in, Professor you work with (if any)
 ** Include a projected timeline and milestones for the project
-# Once (and if!) OpenCV gets accepted as GSoC 2016 org (Feb 29th), and we are told how many slots we will get *and* you've signed up for a project with us (March 14-25th)
-** We will weight the students and projects against mentors and their interests and choose which students/project to pursue.
-** Accepted students will be posted on the GSoC site on April 22nd (and we will notify the accepted students ourselves).
+# Once (and if!) OpenCV gets accepted as GSoC org this year, and we are told how many slots we will get *and* you've signed up for a project with us in March
+** We will weigh the students and projects against the mentors we gather and the mentor's interests and choose which students/project to pursue.
+** Accepted students will be posted on the GSoC site in May (and we will notify the accepted students ourselves).
 
 h2. For computer vision professionals interested in mentoring
 
@@ -100,10 +105,11 @@ h2. For computer vision professionals interested in mentoring
 # We accept or reject you
 # Students submit projects and you
 ** find a project you want to mentor (several students might try for the same project)
-** contact us about it through opencv-gsoc-2016@googlegroups.com so we can be sure there is not someone already handling that project
+** contact us about it through opencv-gsoc-2017@googlegroups.com so we can be sure there is not someone already handling that project
 ** contact the students to assess which one if any are capable of coding that up in a summer.
 # We get a slot allocation from Google, the administrators then _"spend"_ the slots in order of priority
 # Students must finally actually accept to do that project (some sign up for multiple organizations and then choose)
+** Sheesh!
 
 *If* you are accepted as a mentor *and* you find a suitable student *and* we give you a slot *and* the student signs up for it, +*then*+ you are a mentor.
 ** It sounds harder than it is.
@@ -112,33 +118,59 @@ h2. For computer vision professionals interested in mentoring
 ***
 
 
-h1. 2016 Project Ideas:
+h1. 2017 Project Ideas:
 
-*Students may propose their own projects (give us a clear summary and why you can do this project). However, below are some of our priorities for this year* Contact us and/or discuss ideas at [[https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2016]]
+*Students may propose their own projects (give us a clear summary and why you can do this project). However, below are some of our priorities for this year* Contact us and/or discuss ideas at [[https://groups.google.com/forum/?fromgroups#!forum/opencv-gsoc-2017]]
 
-_These are not in order of priority_
+_These are *not* in order of priority_
 
-*1. Google Cardboard*
-* Do visual odometry, SLAM etc for Google Cardboard
+*1. Tutorials
+* We have so much good code in "opencv_contrib":https://github.com/opencv/opencv_contrib that needs better documentation, tutorials, examples of use etc. Particularly:
+** Our deep net library, "tiny-dnn":https://github.com/tiny-dnn/ needs examples of how to 
+*** Setup, build and run on various OS
+*** Training
+*** Testing
+*** Running on mobile
+** DNN -- examples of running models learned in Caffe and Torch. Speed tests
+** Go over and update/improve/expand on existing tutorials
+** Computational Photography
+** Tracking
+** Camera Calibration
+** Video stabilization
+** Image stitching
 
-*2. Deep learning*
-* It would be cool if OpenCV could load and run deep networks trained with popular DNN packages like Caffe, Theano or Torch.
-* GPU/OpenCL optimization and/or other optimizations (that can partly be contributed back to the upstream projects) are also encouraged.
+*2a. Deep learning*
+* OpenCV works with/has an entire deep net library, "tiny-dnn":https://github.com/tiny-dnn/
+** There are plenty of development tasks that we want done
+*** In particular, we'd like to learn *compact* (that can be fit on mobile) models ("see SqueezeNet":https://github.com/DeepScale/SqueezeNet for inspiration that recognize:
+*** People
+*** Cars
+*** Animals, particularly dogs and cats outside and inside.
+*** Face and/or face features
+*** Text
+*** Floors, Walls, Ceilings, Windows, Doors, Tables, Chairs
+*** Others....
 
-*3. Projection mapping (Projected Augmented Reality)*
-* Calibrate a camera to a projector
-* Put out structured light to learn the 3D map of what's in front of the camera
-* Project the camera image, suitably rotated and shifted onto the scene
-* Unity or some other program to start transforming the scene for projection mapping
-** See [[http://www.creativebloq.com/video/projection-mapping-912849]] to get ideas of what you can do with this
+*2b. Running deep learning*
+* OpenCV also has DNN, that runs models learned from Tensor flow or Caffe. Love to extend to torch or other tasks
 
-*4. Update OpenCV file storage so that it's readable by Python in OpenCV (move to YAML 1.2 Edition 3)*
-* Mentor Prasanna
-* OpenCV C++ writes out its own YAML tags which makes it incompatible with it's own Python and with external python readers
-* Speedup fs reading/writing, add JSON support, add base64 (+RLE) support for large amounts of numerical data
-* References
-** YAML [[http://www.yaml.org]]
-** Problem statement: [[http://stackoverflow.com/questions/11141336/filestorage-for-opencv-python-api]]
+*3. Google Cardboard*
+* Do visual odometry, SLAM, tracking etc for Google Cardboard as an OpenCV Android app. Partly this is tutorial -- show others how to do it.
+
+*4. True, robust checkerboard out of "April Tags":http://people.csail.mit.edu/kaess/apriltags/ or "Aruco Tags":https://github.com/opencv/opencv_contrib/tree/master/modules/aruco
+* The code for detecting "Aruco and Charuco":https://github.com/opencv/opencv_contrib/tree/master/modules/aruco tags needs improvement.
+
+*5. Working, well done SLAM
+* We have tried to get in reliable building blocks for SLAM for years. We've made some projects, but it's not there yet.
+* Please don't even think about doing this project unless you are already doing SLAM in your advanced PhD work. This is a hard algorithm to get right and you just won't unless you are already a leading expert!
+
+*6. Improve background subtraction
+* We have a Mixture of Guassian *(MoG)* fitting algorithms that work well, but they fail to take into consideration the variation or effects from nearby pixels. Find a better way. We can suggest approaches. 
+* Extra credit if it can work with a moving camera in a known scene. 
+
+*7. Improve the video stabilization module
+* It works well now. Maybe just improve the tutorial, but try to improve the algorithm.
+* Try to add deep methods.
 
 *5. openh264 support*
 * We are currently use ffmpeg, which is great library, but: 1) its API changes often and 2) it does not have its own h264 encoder and instead uses GPL-ed x264.
