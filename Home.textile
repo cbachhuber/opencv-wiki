@@ -12,7 +12,6 @@ h2. GSoC 2017
 !wiki/images/GSOC_2016.jpg!:https://github.com/opencv/opencv/wiki/GSoC_2016
 
 * *[[OpenCV Google Summer of Code 2017|GSoC_2017]]*
-* *[[OpenCV Google Summer of Code 2016 Ideas Page|GSoC_2016]]*
 
 "Google Summer of Code Site for Student and Mentor Sign up":https://developers.google.com/open-source/gsoc/
 
