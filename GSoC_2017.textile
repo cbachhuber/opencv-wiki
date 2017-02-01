@@ -3,6 +3,7 @@ h1. *Project Page for OpenCV Google Summer of Code 2017 (GSoC 2017)*
 *OpenCV Augmented Reality from ArUco Markers last year. (click image for video showing all 2015 projects)*
 
 !https://scontent.fsnc1-1.fna.fbcdn.net/v/t31.0-8/16422293_10155223299364396_5565138712297690427_o.jpg?oh=6836c9858868bbea7842ce5ee35e8347&oe=59495BEE(OpenCV GSoC 2017)!:https://www.youtube.com/watch?v=OUbUFn71S4s
+* Drawing from Steve Lehar's "Cartoon Epistemology":http://cns-alumni.bu.edu/~slehar/cartoonepist/cartoonepist.html
 
 * *Go back to:*
 ** "OpenCV Developer Page":https://github.com/opencv/opencv/wiki
