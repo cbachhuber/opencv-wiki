@@ -202,10 +202,10 @@ _These are *not* in order of priority_
 
 *14. Extend translation of OpenCV into Java script. OpenCV.js
 * OpenCV.js  OpenCV in javascript. Looks very interesting, has huge scale to run vision inside a browser
-** https://github.com/ucisysarch
+** [[https://github.com/ucisysarch]]
 ** Examples
-*** http://ucisysarch.github.io/opencvjs/examples/img_proc.html 
-*** http://ucisysarch.github.io/opencvjs/examples/face_detect.html
+*** [[http://ucisysarch.github.io/opencvjs/examples/img_proc.html]]
+*** [[http://ucisysarch.github.io/opencvjs/examples/face_detect.html]]
 
 
 
