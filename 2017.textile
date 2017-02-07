@@ -9,6 +9,59 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-02-07
+
+h3. _*Agenda*_
+
+* GSoC
+* OpenCV.js very interesting
+
+
+h3. *_Minutes_*
+
+* OpenCV.js  OpenCV in javascript. Looks very interesting
+** [[https://github.com/ucisysarch]]
+** Examples
+*** [[http://ucisysarch.github.io/opencvjs/examples/img_proc.html]]
+*** [[http://ucisysarch.github.io/opencvjs/examples/face_detect.html]]
+
+* GSoC
+* Our application is complete
+* Developers can put ideas into the "OpenCV ideas page":https://github.com/opencv/opencv/wiki/GSoC_2017
+* Halide? [[http://halide-lang.org/]]
+
+
+h3. *_Reports_*
+
+* . Vadim
+
+
+
+h3. *_Action Items_*
+
+*Gary*
+
+* .
+
+*Vincent*
+
+* .
+
+*Vadim*
+
+* .
+
+*Grace*
+
+* .
+
+
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-01-30
 
 h3. _*Agenda*_
@@ -49,8 +102,8 @@ h3. *_Minutes_*
 ** Video stabilization, or just improve tutorial
 ** Labeling module ...
 *** Improve VATIC (contact authors?)
-**** https://github.com/cvondrick/vatic
-**** http://web.mit.edu/vondrick/vatic/
+**** [[https://github.com/cvondrick/vatic]]
+**** [[http://web.mit.edu/vondrick/vatic/]]
 ** OpenCV for artistic interaction
 *** Natural interaction 
 *** Hand pose? 
