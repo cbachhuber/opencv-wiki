@@ -200,6 +200,14 @@ _These are *not* in order of priority_
 *13. Improve text recognition accuracy in opencv_contrib/text module.*
 * It would be interesting to adapt the module to use one of the several Deep CNN models have been made public during the last year (both for character and word recognition) e.g.[http://www.robots.ox.ac.uk/~vgg/research/text/]. Any other further improvement of the module is also welcome.
 
+*14. Extend translation of OpenCV into Java script. OpenCV.js
+* OpenCV.js  OpenCV in javascript. Looks very interesting, has huge scale to run vision inside a browser
+** https://github.com/ucisysarch
+** Examples
+*** http://ucisysarch.github.io/opencvjs/examples/img_proc.html 
+*** http://ucisysarch.github.io/opencvjs/examples/face_detect.html
+
+
 
 ***
 
