@@ -5,6 +5,28 @@ http://code.opencv.org/help/wiki_syntax
 
 [[Meeting_notes]]
 
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2017-02-14
+
+h3. _*Agenda*_
+
+* GSoC
+
+
+
+h3. *_Minutes_*
+
+* 
+
+* GSoC
+* focusing on organizing tiny_dnn group
+
+h3. *_Reports_*
+
 <pre>
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
