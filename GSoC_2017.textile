@@ -25,7 +25,7 @@ h2. General Information:
 *** -January 19 16:00 UTC	Mentoring organizations begin submitting appls to Google- *DONE*
 *** -February 9 16:00 UTC	Mentoring organization application deadline- *DONE*
 *** -February 10 - 26	Google program administrators review organization applications- *v/*
-*** February 27 16:00 UTC	List of accepted mentoring organizations published
+*** -February 27 16:00 UTC	List of accepted mentoring organizations published- *We are in!!!*
 *** February 27 - March 20	Potential student participants discuss application ideas with mentoring organizations
 *** March 20 16:00 UTC	Student application period opens
 *** April 3 16:00 UTC	Student application deadline
