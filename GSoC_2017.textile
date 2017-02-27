@@ -11,9 +11,11 @@ h1. *Project Page for OpenCV Google Summer of Code 2017 (GSoC 2017)*
 
 h2. General Information:
 
+"We are in!":https://summerofcode.withgoogle.com/organizations/5987197309157376/
+
 * "Program Site for GSoC 2017":https://summerofcode.withgoogle.com/
 ** "General GSoC 2017 site":https://developers.google.com/open-source/gsoc/
-** "OpenCV's GSoC 2017 organization page":https://summerofcode.withgoogle.com/organizations/5987197309157376/
+** "OpenCV's GSoC 2017 organization/acceptance page":https://summerofcode.withgoogle.com/organizations/5987197309157376/
 * Mailing list for OpenCV GSOC 2017: <code>opencv-gsoc-2017@googlegroups.com</code>
 ** Group site [[https://groups.google.com/forum/#!forum/opencv-gsoc-2017]]
 * IRC Channel: <code>#opencv on freenode</code>
