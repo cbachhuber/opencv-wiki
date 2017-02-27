@@ -13,6 +13,7 @@ h2. General Information:
 
 * "Program Site for GSoC 2017":https://summerofcode.withgoogle.com/
 ** "General GSoC 2017 site":https://developers.google.com/open-source/gsoc/
+** "OpenCV's GSoC 2017 organization page":https://summerofcode.withgoogle.com/organizations/5987197309157376/
 * Mailing list for OpenCV GSOC 2017: <code>opencv-gsoc-2017@googlegroups.com</code>
 ** Group site [[https://groups.google.com/forum/#!forum/opencv-gsoc-2017]]
 * IRC Channel: <code>#opencv on freenode</code>
@@ -25,7 +26,7 @@ h2. General Information:
 *** -January 19 16:00 UTC	Mentoring organizations begin submitting appls to Google- *DONE*
 *** -February 9 16:00 UTC	Mentoring organization application deadline- *DONE*
 *** -February 10 - 26	Google program administrators review organization applications- *DONE*
-*** -February 27 16:00 UTC	List of accepted mentoring organizations published- *WE'RE IN!*
+*** -February 27 16:00 UTC	List of accepted mentoring organizations published- *"WE'RE IN!":https://summerofcode.withgoogle.com/organizations/5987197309157376/*
 *** February 27 - March 20	Potential student participants discuss application ideas with mentoring organizations
 *** March 20 16:00 UTC	Student application period opens
 *** April 3 16:00 UTC	Student application deadline
