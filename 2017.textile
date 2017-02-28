@@ -15,11 +15,7 @@ h3. _*Agenda*_
 
 * GSoC
 
-
-
 h3. *_Minutes_*
-
-* 
 
 * GSoC
 * RGBD
@@ -29,6 +25,8 @@ h3. *_Minutes_*
 * Tiny-dnn
 ** Needs mentor
 * Recruit mentors
+** Edgar
+** Original tiny-dnn author
 
 h3. *_Reports_*
 
