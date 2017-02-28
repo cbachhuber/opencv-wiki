@@ -5,6 +5,32 @@ http://code.opencv.org/help/wiki_syntax
 
 [[Meeting_notes]]
 
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2017-02-18
+
+h3. _*Agenda*_
+
+* GSoC
+
+
+
+h3. *_Minutes_*
+
+* 
+
+* GSoC
+* RGBD
+** 3D visualizer add normals and colorized normals
+** VTK toolkit has all the "tools" to do whatever
+*** For example, expose: http://www.vtk.org/Wiki/VTK/Examples/Cxx/Visualization/ElevationBandsWithGlyphs
+* Tiny-dnn
+** Needs mentor
+* Recruit mentors
+
+h3. *_Reports_*
 
 <pre>
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
