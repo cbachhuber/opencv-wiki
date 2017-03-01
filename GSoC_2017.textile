@@ -211,7 +211,7 @@ _These are *not* in order of priority_
 *** [[http://ucisysarch.github.io/opencvjs/examples/img_proc.html]]
 *** [[http://ucisysarch.github.io/opencvjs/examples/face_detect.html]]
 
-*15. Improve 3D visualization for vis
+*15. Improve 3D visualization for vis*
 * The "vis module":https://github.com/opencv/opencv/tree/master/modules/viz is very useful, but it needs:
 ** Easy way to directly enter cv::Mat containing depth or disparity into a point cloud for vis
 ** Point cloud to ply converter
