@@ -145,10 +145,11 @@ _These are *not* in order of priority_
 ** Video stabilization
 ** Image stitching
 
-*2a. Deep learning*
-* OpenCV works with/has an entire deep net library, "tiny-dnn":https://github.com/tiny-dnn/
-** There are plenty of development tasks that we want done
-*** In particular, we'd like to learn *compact* (that can be fit on mobile) models ("see SqueezeNet":https://github.com/DeepScale/SqueezeNet for inspiration that recognize:
+*2a. Deep learning. Improving OpenCV Deep learning functionality*
+* OpenCV works with/has an entire deep net library, "tiny-dnn":https://github.com/tiny-dnn/. Or, there is implemented from scratch DNN module: https://github.com/opencv/opencv_contrib/tree/master/modules/dnn. You are welcome to base your proposal on any of these 2 options. We want better performance, more tests, tutorials, python/java wrappers etc.
+
+*2b. Deep learning. Compact models.*
+* We'd like to learn *compact* (that can be fit on mobile, i.e. models that take a few megabytes of disk or memory space) models ("see SqueezeNet":https://github.com/DeepScale/SqueezeNet for inspiration that recognize:
 *** People
 *** Cars
 *** Animals, particularly dogs and cats outside and inside.
@@ -156,9 +157,6 @@ _These are *not* in order of priority_
 *** Text
 *** Floors, Walls, Ceilings, Windows, Doors, Tables, Chairs
 *** Others....
-
-*2b. Running deep learning*
-* OpenCV also has DNN, that runs models learned from Tensor flow or Caffe. Love to extend to torch or other tasks
 
 *3. Google Cardboard*
 * Do visual odometry, SLAM, tracking etc for Google Cardboard as an OpenCV Android app. Partly this is tutorial -- show others how to do it.
