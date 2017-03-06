@@ -220,6 +220,9 @@ _These are *not* in order of priority_
 * This is very general and always relevant topic. OpenCV is known for decent speed, but there is always room for improvement, especially in the experimental part (opencv_contrib). You are welcome to come up with concrete proposals on optimizing a particular functionality. Optimisation can be done using OpenCL, parallelisation, SSE/AVX or "universal intrinsics":https://github.com/opencv/opencv/tree/master/modules/core/include/opencv2/core/hal. It can also be "algorithmic" optimization, which, despite its name, means that the algorithm basically stays the same, but you find some ways to eliminate some unnecessary computations, unnecessary memory allocations etc.
 * For example, we would be interested in optimizing image processing (imgproc, opencv_contrib/ximgproc), text detection (opencv_contrib/text), TLD tracker (opencv_contrib/tracking), computational photography (photo and opencv_contrib/xphoto), dnn module (opencv_contrib/dnn), feature detectors (features2d and opencv_contrib/xfeatures2d), non-dnn-based object detection (opencv_contrib/dpm and opencv_contrib/xobjdetect). You are welcome to propose for optimization some other functionality, though.
 
+*17. ROI algebra, improving mask creation and manipulation*
+* Algebra on ROI-s implementing union, intersection, exclusion and more. Have to handle  contours, rectangles and circles at least. Proposals are expected to expand on this abstract, come up with a fixed set of methods, be rich enough to justify for a full summer's work and demonstrate their usefulness with examples.
+
 ***
 
 
