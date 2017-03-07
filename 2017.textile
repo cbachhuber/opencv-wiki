@@ -9,6 +9,39 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-03-07
+
+h3. _*Agenda*_
+
+* GSoC -- gather in the mentors
+* Ideas
+
+h3. *_Minutes_*
+
+* Gathering mentors
+   # Vincent
+   # Vadim
+   # Gary
+   # Stefano
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+
+* Ideas
+
+h3. *_Reports_*
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-02-18
 
 h3. _*Agenda*_
