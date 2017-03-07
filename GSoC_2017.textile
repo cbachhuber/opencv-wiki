@@ -207,7 +207,10 @@ _These are *not* in order of priority_
 ** Easy way to directly enter cv::Mat containing depth or disparity into a point cloud for vis
 ** Point cloud to ply converter
 ** Once in vis, automatic color coded surface normal visualization "see here":http://www.vtk.org/Wiki/VTK/Examples/Cxx/Visualization/ElevationBandsWithGlyphs
+*** And "also here":http://www.vtk.org/Wiki/VTK/Examples/Cxx/Points/NormalEstimation
 ** Tutorials showing how to use its features
+*** Add "onto here":http://docs.opencv.org/2.4/doc/tutorials/viz/table_of_content_viz/table_of_content_viz.html
+
 
 *14. Optimizing various stuff*
 * This is very general and always relevant topic. OpenCV is known for decent speed, but there is always room for improvement, especially in the experimental part (opencv_contrib). You are welcome to come up with concrete proposals on optimizing a particular functionality. Optimisation can be done using OpenCL, parallelisation, SSE/AVX or "universal intrinsics":https://github.com/opencv/opencv/tree/master/modules/core/include/opencv2/core/hal. It can also be "algorithmic" optimization, which, despite its name, means that the algorithm basically stays the same, but you find some ways to eliminate some unnecessary computations, unnecessary memory allocations etc.
