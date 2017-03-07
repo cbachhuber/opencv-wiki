@@ -19,19 +19,24 @@ h3. _*Agenda*_
 h3. *_Minutes_*
 
 * Gathering mentors
+
    # Vincent
    # Vadim
    # Gary
    # Stefano
    # Grace
-   # Pras
-   # Reza
+   # Pras?
+   # Reza?
    # Edgar
    # Ethan?
    # Michael?
    # Yida?
-   #
-   #
+   # Antonella
+   # Delia
+   # Maksim
+   # StevenP
+   # Manuele?
+   # noumi?
 
 * Ideas
 ** Generalized ROI
@@ -43,6 +48,8 @@ h3. *_Minutes_*
 ** Normals might be here
 *** http://www.docs.opencv.org/master/d5/dd8/classcv_1_1viz_1_1WCloudNormals.html
 ** Can we encourage improving or developing simpler but important functionality
+** Intel DNN
+*** "Halide language":http://halide-lang.org/
 
 h3. *_Reports_*
 
