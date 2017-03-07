@@ -23,17 +23,26 @@ h3. *_Minutes_*
    # Vadim
    # Gary
    # Stefano
-   #
-   #
-   #
-   #
-   #
-   #
-   #
+   # Grace
+   # Pras
+   # Reza
+   # Edgar
+   # Ethan?
+   # Michael?
+   # Yida?
    #
    #
 
 * Ideas
+** Generalized ROI
+*** see https://github.com/kokkos/array_ref/blob/master/proposals/P0331.rst
+** Optimizations
+** Improve 3D viewer for colorized normals
+** vis improvements
+*** http://www.vtk.org/Wiki/VTK/Examples/Cxx/Points/NormalEstimation
+** Normals might be here
+*** http://www.docs.opencv.org/master/d5/dd8/classcv_1_1viz_1_1WCloudNormals.html
+** Can we encourage improving or developing simpler but important functionality
 
 h3. *_Reports_*
 
