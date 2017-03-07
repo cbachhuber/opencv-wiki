@@ -210,6 +210,7 @@ _These are *not* in order of priority_
 *** And "also here":http://www.vtk.org/Wiki/VTK/Examples/Cxx/Points/NormalEstimation
 ** Tutorials showing how to use its features
 *** Add "onto here":http://docs.opencv.org/2.4/doc/tutorials/viz/table_of_content_viz/table_of_content_viz.html
+** Or, maybe we just need to document/improve and bring out functionality "as in docs here":http://www.docs.opencv.org/master/d5/dd8/classcv_1_1viz_1_1WCloudNormals.html
 
 
 *14. Optimizing various stuff*
