@@ -158,69 +158,62 @@ _These are *not* in order of priority_
 *** Floors, Walls, Ceilings, Windows, Doors, Tables, Chairs
 *** Others....
 
-*3. Google Cardboard*
-* Do visual odometry, SLAM, tracking etc for Google Cardboard as an OpenCV Android app. Partly this is tutorial -- show others how to do it.
-
-*4. True, robust checkerboard out of "April Tags":http://people.csail.mit.edu/kaess/apriltags/ or "Aruco Tags":https://github.com/opencv/opencv_contrib/tree/master/modules/aruco*
+*3. True, robust checkerboard out of "April Tags":http://people.csail.mit.edu/kaess/apriltags/ or "Aruco Tags":https://github.com/opencv/opencv_contrib/tree/master/modules/aruco*
 * The code for detecting "Aruco and Charuco":https://github.com/opencv/opencv_contrib/tree/master/modules/aruco tags needs improvement.
 
-*5. Working, well done SLAM*
+*4. Working, well-done SLAM*
 * We have tried to get in reliable building blocks for SLAM for years. We've made some projects, but it's not there yet.
 * Please don't even think about doing this project unless you are already doing SLAM in your advanced PhD work. This is a hard algorithm to get right and you just won't unless you are already a leading expert!
 
-*6. Improve background subtraction*
+*5. Improve background subtraction*
 * We have a Mixture of Guassian *(MoG)* fitting algorithms that work well, but they fail to take into consideration the correlation between neighbour pixels. Find a better way. We can suggest approaches. 
 * Extra credit if it can detect or even compensate for camera motion. 
 
-*7. Improve the video stabilization module*
+*6. Improve the video stabilization module*
 * It works well now. Maybe just improve the tutorial, but try to improve the algorithm.
 * Try to add deep methods.
 
-*8. Saliency model*
+*7. Saliency model*
 * Improve the saliency relevance
 * Improve the application interface (API).
 
-*9. Text detection*
+*8. Text detection*
 * Improve the text detection module
 ** Test/improve on other datasets
 
-*10. Improve data labeling*
+*9. Improve data labeling*
 * Write better primitives for marking, segmenting, storing image (and possibly 3D!) data
 * But maybe just work with and improve the VATIC code (contact authors?)
 ** https://github.com/cvondrick/vatic
 ** http://web.mit.edu/vondrick/vatic/
 
-*11 OpenCV for interaction*
+*10. OpenCV for interaction*
 * Hand or finger detection
 * gesture recognition
 * human skeleton based on 2d or 3d
 
-*12. Color Calibration and white balance*
-* With McBeth chart and with gray world algorithm (improve exisiting color constancy algorithms)
-* Possibly collect deep learning way of doing this (needs large training set)
+*11. Improve text recognition speed and accuracy in opencv_contrib/text module.*
+* It would be interesting to adapt the module to use one of the several Deep CNN models have been made public during the last year (both for character and word recognition) e.g.[http://www.robots.ox.ac.uk/~vgg/research/text/]. Any other further improvement of the module is also welcome. Last year a DNN has been built that recognizes characters, but it's huge. We are interested in a very compact network (a few megabytes, may be up to 20Mb or so) for character recognition.
 
-*13. Improve text recognition accuracy in opencv_contrib/text module.*
-* It would be interesting to adapt the module to use one of the several Deep CNN models have been made public during the last year (both for character and word recognition) e.g.[http://www.robots.ox.ac.uk/~vgg/research/text/]. Any other further improvement of the module is also welcome.
-
-*14. Extend translation of OpenCV into Java script. OpenCV.js*
+*12. Extend translation of OpenCV into Java script. OpenCV.js*
 * OpenCV.js  OpenCV in javascript. Looks very interesting, has huge scale to run vision inside a browser
 ** [[https://github.com/ucisysarch]]
 ** Examples
 *** [[http://ucisysarch.github.io/opencvjs/examples/img_proc.html]]
 *** [[http://ucisysarch.github.io/opencvjs/examples/face_detect.html]]
 
-*15. Improve 3D visualization for vis*
+*13. Improve 3D visualization for vis*
 * The "vis module":https://github.com/opencv/opencv/tree/master/modules/viz is very useful, but it needs:
 ** Easy way to directly enter cv::Mat containing depth or disparity into a point cloud for vis
 ** Point cloud to ply converter
 ** Once in vis, automatic color coded surface normal visualization "see here":http://www.vtk.org/Wiki/VTK/Examples/Cxx/Visualization/ElevationBandsWithGlyphs
 ** Tutorials showing how to use its features
 
-*16. Optimizing various stuff*
+*14. Optimizing various stuff*
 * This is very general and always relevant topic. OpenCV is known for decent speed, but there is always room for improvement, especially in the experimental part (opencv_contrib). You are welcome to come up with concrete proposals on optimizing a particular functionality. Optimisation can be done using OpenCL, parallelisation, SSE/AVX or "universal intrinsics":https://github.com/opencv/opencv/tree/master/modules/core/include/opencv2/core/hal. It can also be "algorithmic" optimization, which, despite its name, means that the algorithm basically stays the same, but you find some ways to eliminate some unnecessary computations, unnecessary memory allocations etc.
 * For example, we would be interested in optimizing image processing (imgproc, opencv_contrib/ximgproc), text detection (opencv_contrib/text), TLD tracker (opencv_contrib/tracking), computational photography (photo and opencv_contrib/xphoto), dnn module (opencv_contrib/dnn), feature detectors (features2d and opencv_contrib/xfeatures2d), non-dnn-based object detection (opencv_contrib/dpm and opencv_contrib/xobjdetect). You are welcome to propose for optimization some other functionality, though.
 
-*17. ROI algebra, improving mask creation and manipulation*
+*15. ROI algebra, improving mask creation and manipulation*
 * Algebra on ROI-s implementing union, intersection, exclusion and more. Have to handle  contours, rectangles and circles at least. Proposals are expected to expand on this abstract, come up with a fixed set of methods, be rich enough to justify for a full summer's work and demonstrate their usefulness with examples.
 
 ***
