@@ -220,6 +220,10 @@ _These are *not* in order of priority_
 *15. ROI algebra, improving mask creation and manipulation*
 * Algebra on ROI-s implementing union, intersection, exclusion and more. Have to handle  contours, rectangles and circles at least. Proposals are expected to expand on this abstract, come up with a fixed set of methods, be rich enough to justify for a full summer's work and demonstrate their usefulness with examples.
 
+*16. OpenCV in native Java Script: Opencv.js*
+* A javascript version of OpenCV now has more than 1000 functions.
+* Help the authors expand, improve, document and create tutorials for it.
+
 ***
 
 
