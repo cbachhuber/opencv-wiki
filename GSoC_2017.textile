@@ -222,6 +222,7 @@ _These are *not* in order of priority_
 
 *16. OpenCV in native Java Script: Opencv.js*
 * A javascript version of OpenCV now has more than 1000 functions.
+** Yes! OpenCV henceforth will run natively in any browser
 * Help the authors expand, improve, document and create tutorials for it.
 
 ***
