@@ -9,6 +9,32 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-03-14
+
+h3. _*Agenda*_
+
+* GSoC -- gather in the mentors
+* Ideas
+
+h3. *_Minutes_*
+
+* Admins were screwed up by daylight savings, so most of the team missed the meeting. It was decided anyhow that the main useful activity is to review student proposals. Go to:
+** "https://groups.google.com/forum/#!forum/opencv-gsoc-2017":https://groups.google.com/forum/#!forum/opencv-gsoc-2017
+* JPEGXS (sequences) https://jpeg.org/jpegxs/
+* JPEG lightfield https://jpeg.org/items/20170208_cfp_pleno.html
+* GSOC
+** Curved edge detection
+*
+
+h3. *_Reports_*
+
+
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-03-07
 
 h3. _*Agenda*_
