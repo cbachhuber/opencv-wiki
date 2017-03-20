@@ -225,6 +225,12 @@ _These are *not* in order of priority_
 ** Yes! OpenCV henceforth will run natively in any browser
 * Help the authors expand, improve, document and create tutorials for it.
 
+*17. Halide language*
+* Optimizing exists algorithms or some parts using Halide.
+* Extend implementations for GPU targets.
+* Deep learning layers and topologies.
+* Automatic domain-specific scheduling.
+
 ***
 
 
