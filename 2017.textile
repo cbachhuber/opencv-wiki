@@ -9,6 +9,29 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-03-21
+
+h3. _*Agenda*_
+
+* GSoC -- gather in the mentors
+* Ideas
+
+h3. *_Minutes_*
+
+* GSoC
+** Can we develop radically smaller deep networks for text detection. Squeeze nets?
+**
+* DNN will read Torch, Caffe, TensorFlow and run it fast.
+* "Colormap for SFM and multi-view":https://github.com/colmap/colmap is "cool":https://colmap.github.io/ , but its GPL.
+
+* Gary to send out another announcement to post on GSOC site
+** Submit via google doc
+** 
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-03-14
 
 h3. _*Agenda*_
