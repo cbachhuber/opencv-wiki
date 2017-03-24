@@ -104,22 +104,28 @@ h2. For students interested in applying
 # Once (and if!) OpenCV gets accepted as GSoC org this year, and we are told how many slots we will get *and* you've signed up for a project with us in March before the April 3rd deadline: *Then:*
 ** We will weigh the students and projects against the mentors we gather and the mentor's interests and choose which students/project to pursue.
 ** Accepted students will be posted on the GSoC site in May (and we will notify the accepted students ourselves).
+** Students are paid over the summer by Google *IF* the mentor accepts the student's work. There are several milestone based go-nogo points.
 
 h2. For computer vision professionals interested in mentoring
 
-# Go to the "GSoC site":https://developers.google.com/open-source/gsoc/ and sign up.
-# Request to be a mentor for OpenCV there.
-# We accept or reject you
-# Students submit projects and you
-** find a project you want to mentor (several students might try for the same project)
-** contact us about it through opencv-gsoc-2017@googlegroups.com so we can be sure there is not someone already handling that project
-** contact the students to assess which one if any are capable of coding that up in a summer.
-# We get a slot allocation from Google, the administrators then _"spend"_ the slots in order of priority
+# Contact us on the opencv-gsoc googlegroups mailing list above and ask to be a mentor (or we will ask you in some known cases)
+# If we accept you, we will post a request from the Google Summer of Code OpenCV project site asking you to join.
+# You must accept the request and *you are a mentor!*
+# You then:
+** Go to the opencv-gsoc googlegroups mailing list above and look through student project proposals, find a student and project you like and work with them to refine a realistic proposal that they can implement in a summer (you have to judge whether the student is capable -- *absolutely no non-coders in the language you need, typically C++, accepted!* Summer is too short to learn to code and get something done).
+*** you may also find (good) students and get them to apply, perhaps to your pet project idea 
+** Once you find or create a project proposal that you want to mentor
+*** several students might try for the same project
+*** alternatively, you might have to convince a student to change projects to one you like or recruit an external student to join Google Summer of Code and apply to your project
+** But, always encourage students to officially apply through the Google Summer of Code site -- it helps us and them.
+# We later get a slot allocation from Google, the administrators then _"spend"_ the slots in order of priority influenced by whether there's a capable mentor or not for each topic.
 # Students must finally actually accept to do that project (some sign up for multiple organizations and then choose)
 ** Sheesh!
 
-*If* you are accepted as a mentor *and* you find a suitable student *and* we give you a slot *and* the student signs up for it, +*then*+ you are a mentor.
+*If* you are accepted as a mentor *and* you find a suitable student *and* we give you a slot *and* the student signs up for it, +*then*+ you are an actual mentor.
 ** It sounds harder than it is.
+** You get paid a modest stipend over the summer to mentor, typically $500 minus an org fee of 6%. 
+*** Several mentors donate their salary, earning ever better positions in heaven when that comes.
 
 
 ***
