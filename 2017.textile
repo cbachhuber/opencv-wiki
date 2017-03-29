@@ -17,7 +17,21 @@ h3. _*Agenda*_
 
 h3. *_Minutes_*
 
-* 
+* For DNN (just reading and running nets trained in Torch, TenserFlow, Caffe etc), it will translate to Halide and then run taking advantage of the architecture.
+** Going to OpenCL straight can result in unstable code, this way you generate efficient OpenCL for GPU.
+* We have a strong mentor for SLAM this year ... might go with it if we can find the right student.
+* Stereo via flow net
+* Support for Halide? Seems great for basic deepnet stuff, simple image processing
+** See Idea 17 https://github.com/opencv/opencv/wiki/GSoC_2017#2017-project-ideas
+* Would be great to get a model zoo of squeezed, high performance deep nets for DNN or for tiny-dnn, these are highly useful.
+*
+
+
+h3. *_To Dos_*
+
+* -Gary to send out reminder for students to apply to the GSoC site-
+* Gary to remind mentors to start reviewing/deciding on possible/students/topics ... commit. 
+
 
 <pre>
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
