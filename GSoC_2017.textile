@@ -155,6 +155,11 @@ _These are *not* in order of priority_
 
 *2a. Deep learning. Improving OpenCV Deep learning functionality*
 * OpenCV works with/has an entire deep net library, "tiny-dnn":https://github.com/tiny-dnn/. Or, there is implemented from scratch "DNN module":https://github.com/opencv/opencv_contrib/tree/master/modules/dnn. You are welcome to base your proposal on any of these 2 options. We want better performance, more tests, tutorials, python/java wrappers etc.
+* Improving "DNN module":https://github.com/opencv/opencv_contrib/tree/master/modules/dnn ideas:
+** Advanced visualizing of deep learning models (with input-output blobs dimensions, layer types, connections and so on). It can be either based on third-party libraries solution or built on OpenCV's drawing functions own implementation.
+** Quantization of convolution and fully-connected layers. These layers are bottlenecks and by speeding them up it's possible to improve performance in many use cases.
+** Enable supporting of the most popular deep learning architectures: VGG-16, ResNet, SqueezeNet, R-FCN and so on. Implement missed layers, check output accuracy, write samples for online-available models.
+** Optimization of convolution layers - merging operations (Conv + bias + relu + pooing) to give more computation to one thread.
 
 *2b. Deep learning. Compact models.*
 * We'd like to learn *compact* (that can be fit on mobile, i.e. models that take a few megabytes of disk or memory space) models ("see SqueezeNet":https://github.com/DeepScale/SqueezeNet for inspiration that recognize:
