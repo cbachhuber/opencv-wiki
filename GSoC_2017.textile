@@ -29,9 +29,9 @@ h2. General Information:
 *** -February 9 16:00 UTC	Mentoring organization application deadline- *DONE*
 *** -February 10 - 26	Google program administrators review organization applications- *DONE*
 *** -February 27 16:00 UTC	List of accepted mentoring organizations published- *"WE'RE IN!":https://summerofcode.withgoogle.com/organizations/5987197309157376/*
-*** -February 27 - March 20	Potential student participants discuss application ideas with mentoring organizations- *Send proposals to "GSoC site!":https://developers.google.com/open-source/gsoc/*
-*** -March 20 16:00 UTC	Student application period opens- *Send proposals to "GSoC site!":https://developers.google.com/open-source/gsoc/*
-*** April 3 16:00 UTC	Student application deadline
+*** -February 27 - March 20	Potential student participants discuss application ideas with mentoring organizations *Send proposals to "GSoC site!":https://developers.google.com/open-source/gsoc/*-
+*** -March 20 16:00 UTC	Student application period opens *Send proposals to "GSoC site!":https://developers.google.com/open-source/gsoc/*-
+*** -April 3 16:00 UTC	Student application deadline- *DONE! That is, unless you have your own $, too late now*
 *** May 4 16:00 UTC	Accepted student proposals announced
 **** Community Bonding Period	Students get to know mentors, read documentation, get up to speed to begin working on their projects
 *** May 30	Coding officially begins!
