@@ -9,6 +9,26 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-04-11
+
+h3. _*Agenda*_
+
+* GSoC reviews by mentors
+
+h3. *_Minutes_*
+
+* Mentors need to rate the proposals and select people 
+
+
+h3. *_To Dos_*
+
+* 
+
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-03-28
 
 h3. _*Agenda*_
@@ -30,7 +50,7 @@ h3. *_Minutes_*
 h3. *_To Dos_*
 
 * -Gary to send out reminder for students to apply to the GSoC site-
-* Gary to remind mentors to start reviewing/deciding on possible/students/topics ... commit. 
+* -Gary to remind mentors to start reviewing/deciding on possible/students/topics ... commit.-
 
 
 <pre>
