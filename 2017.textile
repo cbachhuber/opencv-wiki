@@ -9,6 +9,50 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-04-18
+
+h3. _*Agenda*_
+
+* Slot requests are in
+* Hallide
+
+h3. *_Minutes_*
+
+* Experiments are ongoing with "Halide":http://halide-lang.org/
+
+<pre><code>Func blur_3x3(Func input) {
+  Func blur_x, blur_y;
+  Var x, y, xi, yi;
+
+  // The algorithm - no storage or order
+  blur_x(x, y) = (input(x-1, y) + input(x, y) + input(x+1, y))/3;
+  blur_y(x, y) = (blur_x(x, y-1) + blur_x(x, y) + blur_x(x, y+1))/3;
+
+  // The schedule - defines order, locality; implies storage
+  blur_y.tile(x, y, xi, yi, 256, 32)
+        .vectorize(xi, 8).parallel(y);
+  blur_x.compute_at(blur_y, x).vectorize(x, 8);
+
+  return blur_y;
+}</code></pre>
+
+*** It's library in C++, but limited operators
+*** Good for image processing, deep nets
+*** Not good if your code needs logical operators w/in the processing loop
+**** The gradients of Canny operator yes, not the line thinning
+** Maybe something out by CVPR
+** Ability to implement kernels in Halide
+* Our slot asks are in
+
+
+
+h3. *_To Dos_*
+
+* 
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-04-11
 
 h3. _*Agenda*_
