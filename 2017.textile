@@ -47,7 +47,9 @@ h3. *_Minutes_*
 ** We find out allocation tomorrow, April 19
 ** We will then have an email conference of the admins
 *** We will scrape the list, if we feel we have too many slots, we'll try to return unneeded ones quickly.
-
+* CVPR 2017
+** Vadim will give a tutorial there
+** Several of us will be there (Vincent, Vadim, Gary)
 
 h3. *_To Dos_*
 
