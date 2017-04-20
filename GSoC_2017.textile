@@ -32,6 +32,7 @@ h2. General Information:
 *** -February 27 - March 20	Potential student participants discuss application ideas with mentoring organizations *Send proposals to "GSoC site!":https://developers.google.com/open-source/gsoc/*-
 *** -March 20 16:00 UTC	Student application period opens *Send proposals to "GSoC site!":https://developers.google.com/open-source/gsoc/*-
 *** -April 3 16:00 UTC	Student application deadline- *DONE! That is, unless you have your own $, too late now*
+*** -April 19 1600 UTC Slots awarded- *Thanks Google!*
 *** May 4 16:00 UTC	Accepted student proposals announced
 **** Community Bonding Period	Students get to know mentors, read documentation, get up to speed to begin working on their projects
 *** May 30	Coding officially begins!
