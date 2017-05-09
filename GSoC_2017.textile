@@ -131,6 +131,65 @@ h2. For computer vision professionals interested in mentoring
 
 ***
 
+h1. 2017 Accepted Projects and Mentors
+
+Alphabetic by project title
+* *Student* 
+** _Project_
+*** _Mentors_
+* *1 Karan Desai*	
+** A Model Zoo for Tiny-dnn
+*** Edgar Riba, Stefano Fabri, Taiga Nomi
+* *2 Laksono Kurnianggoro*
+** API for Facial Landmark Detector
+*** Antonella Cascitelli, Delia Passalacqua
+* *3 Binbin Xu*
+** Computational Occlusion Removal in Image Inpainting
+*** Gary Bradski
+* *4 Gang Song*	
+** Create Web-based Interactive Tutorials and Examples for OpenCV
+*** Sajjad Taheri
+* *5 João Cartucho*	
+** Documentation Improvement w/code examples
+*** Vincent Rabaud
+* *6 Suman Kumar Ghosh*	
+** End to End text detection and recognition
+*** Prasanna
+* *7 sukhad Anand*	
+** Face alignment with opencv
+*** StevenPuttemans
+* *8 Evgenii Zheltonozhskii*	
+** GPU enabled deep learning framework
+*** Edgar Riba, Stefano Fabri
+* *9 Mihai Bujanca*	
+** Implementing and extending DynamicFusion (Newcombe et al 2015)
+*** Reza Amayeh, Zhe Zhang
+* *10 Congxiang Pan*	
+** Improve and Extend the JavaScript Bindings for OpenCV
+*** Sajjad Taheri
+* *11 SHENGXIN QIAN*	
+** Improve Background Subtraction with Aggregated Saliency
+*** Antonella Cascitelli
+* *12 Vladislav Samsonov*	
+** Improvement of the background subtraction algorithm
+*** Maksim Shabunin
+* *13 kv*	
+** Learning compact models for object detection
+*** Vladimir Tyan
+* *14 Nan Yang*	
+** Photometric Calibration
+*** Grace Vesom
+* *15 Pau Rodríguez*	
+** Recurrent Neural Networks on tiny-dnn
+*** Edgar Riba, Taiga Nomi
+* *16 Jiri Horner*	
+** Speeding-up AKAZE features
+*** Bence Magyar, Vadim Pisarevsky, Vladimir Tyan
+* *17 Kuan Wang*	
+** The Fast Bilateral Solver
+*** Bo Li
+
+***
 
 h1. 2017 Project Ideas:
 
