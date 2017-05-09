@@ -13,6 +13,32 @@ h2. 2017-04-18
 
 h3. _*Agenda*_
 
+* GSoC pull requests
+
+h3. *_Minutes_*
+
+* Need to contact Vadim to put together a pull request template.
+* Get students and mentors going
+* Create tracking spreadsheet
+
+
+
+h3. *_To Dos_*
+
+* Gary
+** Get in the pull template, contact 
+** Get cash amount for schwag to Vincent
+** Contact G about $ for "event"
+** Vadim, dinner
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2017-04-18
+
+h3. _*Agenda*_
+
 * Slot requests are in
 * Hallide
 
@@ -53,7 +79,7 @@ h3. *_Minutes_*
 
 h3. *_To Dos_*
 
-* Book CVPR
+* -Book CVPR-
  
 <pre>
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
