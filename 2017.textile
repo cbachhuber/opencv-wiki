@@ -14,18 +14,57 @@ h2. 2017-05-16
 h3. _*Agenda*_
 
 * GSoC pull template
+* Image corruption bug
 
 h3. *_Minutes_*
 
-* 
+* GSoC pull template
+** Need to create a template of how to do a pull request with all unit tests, examples 
+* Image corruption bug
+** We could get money ! (And maybe that would have found the security bug)
+*** https://opensource.googleblog.com/2017/05/oss-fuzz-five-months-later-and.html
+** Vadim on it
+** Need to see Coverity checks
+*** https://scan.coverity.com/
+** Foundation will need to consider all this
+* Projects
+** Docs for all languages, 
+** Doc writer got accepted in MIT
+* tiny_dnn
+** Where does it sit in the deepnet ecosystem?
+*** Simple front end
+*** Reach to good backends
+**** Use xtensor to extend
+***** https://github.com/QuantStack/xtensor
+*** ARM, GPU, Intel ...Easy to use the best for each
+** Will be integrated with GPU for training after this summer of code.
+** Auto difference engine with GPU backend, cudadnn, libdnn, 
+* Projects, OpenCV GSoC 2017:
 
+# API for Facial Landmark Detector
+# Computational Occlusion Removal in Image Inpainting
+# Create Web-based Interactive Tutorials and Examples for OpenCV
+# Documentation Improvement
+# End to End text detection and recognition
+# Face alignment with opencv
+# GPU enabled deep learning framework
+# Implementing and extending DynamicFusion (Newcombe et al 2015)
+# Improve and Extend the JavaScript Bindings for OpenCV
+# Improve Background Subtraction with Aggregated Saliency
+# Improvement of the background subtraction algorithm
+# Learning compact models for object detection
+# Photometric Calibration
+# Recurrent Neural Networks on tiny-dnn
+# Speeding-up AKAZE features
+# The Fast Bilateral Solver
 
 h3. *_To Dos_*
 
 * Gary
 ** Get in the pull template for students
 ** Get cash amount for schwag to Vincent
-
+** Maxim emails for docs
+** Check on tiny_dnn
 
 
 <pre>
