@@ -9,6 +9,35 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-05-23
+
+h3. _*Agenda*_
+
+* GSoC needs
+
+h3. *_Minutes_*
+
+* Deep NN students need GPU cycles
+*** For text detection etc
+** Lambda Labs?
+** Google?
+
+* MRF code
+
+
+h3. *_To Dos_*
+
+* Ask about Intel release of Halide Deep network kernels
+* 501c3 filing
+* Notice to prime students to begin GSoC!
+** Who might need GPU access?
+* Ask for GPU resources for tiny_dnn students
+** Lambda labs with pre-trained model zoo?
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-05-16
 
 h3. _*Agenda*_
@@ -64,7 +93,7 @@ h3. *_To Dos_*
 ** Get in the pull template for students
 ** Get cash amount for schwag to Vincent
 ** Maxim emails for docs
-** Check on tiny_dnn
+** -Check on tiny_dnn-
 
 
 <pre>
