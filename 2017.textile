@@ -9,6 +9,59 @@ http://code.opencv.org/help/wiki_syntax
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-mm-dd
+
+h3. _*Agenda*_
+
+* 
+
+h3. *_Minutes_*
+
+* 
+
+h3. *_To Dos_*
+
+* 
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2017-05-30
+
+h3. _*Agenda*_
+
+* GSoC
+* Foundation
+
+h3. *_Minutes_*
+
+* GSoC
+** Contribution template
+* Foundation
+** Can OpenCV.org hold the domain for tiny_dnn?
+** OpenCV/tiny_dnn.org
+*** Github?
+**** Build bots for github: 
+***** Travis OS X, Linux,
+***** For windows: https://www.appveyor.com/
+** Kernels for near metal applications
+*** Tensor Flow optimization on Intel "TensorFlow On Intel":https://software.intel.com/en-us/articles/tensorflow-optimizations-on-modern-intel-architecture
+*** GTech -- minimum tensor data structure for optimization access across architectures
+**** "Dlpack":https://github.com/dmlc/dlpack
+**** NNVM computation graph for deep nets "NNVM":https://github.com/dmlc/nnvm
+***** "_computation graph optimization such as memory reduction, device allocation and more while being agnostic to the operator interface definition and how operators are executed_"
+***** "Tianqi Chen":https://homes.cs.washington.edu/~tqchen/ driving this https://github.com/tqchen
+
+
+h3. *_To Dos_*
+
+* Write Vadim about tiny_dnn under the opencv domain/github cross links
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-05-23
 
 h3. _*Agenda*_
