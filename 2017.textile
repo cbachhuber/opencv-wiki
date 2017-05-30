@@ -52,6 +52,8 @@ h3. *_Minutes_*
 **** NNVM computation graph for deep nets "NNVM":https://github.com/dmlc/nnvm
 ***** "_computation graph optimization such as memory reduction, device allocation and more while being agnostic to the operator interface definition and how operators are executed_"
 ***** "Tianqi Chen":https://homes.cs.washington.edu/~tqchen/ driving this https://github.com/tqchen
+** Halide framework for opencv, deep in Intel. Best to relate
+** "Intel Scheme (see figure 1)":https://software.intel.com/en-us/articles/accelerating-deep-learning-inference-with-intel-processor-graphics
 
 
 h3. *_To Dos_*
