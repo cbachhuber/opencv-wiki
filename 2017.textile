@@ -34,14 +34,18 @@ h3. *_Minutes_*
 * OpenCV
 ** Tutorial at CVPR
 ** 2 releases will come out
-** 3.3 release candidate out w/in 2 weeks
+** 3.3 release candidate out w/in 2 weeks (hope it includes openvx backend, allows flowgraph for dnn modules)
+** At least 8 core people
 *** DNN from contrib to main
 **** pytorch different from torch
 **** Caffe1 but not yet 2  difference in padding of arrays
 **** Tensorflow and Caffe use different layouts ... need tricks ... also flattened layers
 ***** 1D representations have different orderings. Might be better to wait
+***** Then, there are kernel specializations for specialized hardware ... might take years to settle out
 **** Then there is research in shrinking kernels
-** ganz opencl 
+**** Support various blas version, openvx, 
+***** Regression tests run over many implementations which help insure capability/similarity to run most backends
+** support ganz opencl 
 *** Halide patches in. Block tensors into "voxels" for efficient convolution 
 **** MKL dnn approach
 **** opencl kernels
