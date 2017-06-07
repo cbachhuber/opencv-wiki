@@ -7,7 +7,7 @@ OpenCV (Open Source Computer Vision) is a library of programming functions for r
 
 Two git repositories are of main interest (Developers may want both):
 # "OpenCV":https://github.com/opencv/opencv 
-** The main library with highly used and low level supporting routines, structures etc.
+** The main lib with highly used and low level supporting routines, structures etc.
 # "opencv_contrib":https://github.com/opencv/opencv_contrib 
 ** Newly contributed, often _state of the art_ functions. Dependency on OpenCV.
 
