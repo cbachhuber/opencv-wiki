@@ -24,6 +24,39 @@ h3. *_To Dos_*
       <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-06-13
+
+h3. _*Agenda*_
+* GSoC
+* Contributors
+* DNN
+
+h3. *_Minutes_*
+* GSoC
+** June 26 is phase 1 evaluations
+* DNN (runs embedded deep nets optimized for the hardware)
+** Moving to core
+** Theano group joined to the backend project, tiny-dnn involved in discussion
+*** Common effort for interfaces for kernels, lead by Tianqi Chen with Caffe2 (Yang Qing) etc
+** Halide type backend, University of Washington (also involved with MXNet
+*** dmlc/dlpack https://github.com/dmlc/dlpack
+* tiny-dnn
+** Moving to dmlc/dlpack backend
+** Work well with cv::Mat back and forth
+*** dlpack doesn't seem to like OpenVX
+**** OpenVX closer to 
+** OpenCL kernel for Caffe is involved in dlpack but DNN new kernel in Halide
+* Squeeze net 
+
+h3. *_To Dos_*
+* Note out to get ready
+* Check with student
+* Ask Vadim about dlpack Halide kernels vs DNN Halide kernels
+
+<pre>
+      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-06-06
 
 h3. _*Agenda*_
