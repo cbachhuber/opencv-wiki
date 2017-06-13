@@ -60,7 +60,7 @@ Current layout of source files is:
 
 * main source file: "cvfunction.cpp" - contains code dispatcher (see below) and general implementation
 * shared header file: "cvfunction.hpp" - contains shared declarations used by generic and optimized code
-* several files with optimized code (suffix `_opt_<lowercase optimization name>.cpp`): "cvfunction_opt_avx.cpp".
+* several files with optimized code (suffix `.<lowercase optimization name>.cpp`): "cvfunction.avx.cpp".
 
 There is no requirement to implement all possible optimizations. Add function optimizations with better effort only.
 
