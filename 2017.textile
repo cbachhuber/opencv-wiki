@@ -1,7 +1,7 @@
 h1. 2017  OpenCV Meeting notes
 
 Template is at http://code.opencv.org/projects/opencv/wiki/Template
-http://code.opencv.org/help/wiki_syntax
+"http://code.opencv.org/help/wiki_syntax":http://code.opencv.org/help/wiki_syntax
 
 [[Meeting_notes]]
 
@@ -39,7 +39,7 @@ h3. *_Minutes_*
 ** Theano group joined to the backend project, tiny-dnn involved in discussion
 *** Common effort for interfaces for kernels, lead by Tianqi Chen with Caffe2 (Yang Qing) etc
 ** Halide type backend, University of Washington (also involved with MXNet
-*** dmlc/dlpack https://github.com/dmlc/dlpack
+*** "dmlc/dlpack":https://github.com/dmlc/dlpack
 * tiny-dnn
 ** Moving to dmlc/dlpack backend
 ** Work well with cv::Mat back and forth
