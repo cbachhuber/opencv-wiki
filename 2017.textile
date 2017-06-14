@@ -1,6 +1,6 @@
 h1. 2017  OpenCV Meeting notes
 
-Template is at http://code.opencv.org/projects/opencv/wiki/Template
+Template is at "http://code.opencv.org/projects/opencv/wiki/Template":http://code.opencv.org/projects/opencv/wiki/Template
 "http://code.opencv.org/help/wiki_syntax":http://code.opencv.org/help/wiki_syntax
 
 [[Meeting_notes]]
