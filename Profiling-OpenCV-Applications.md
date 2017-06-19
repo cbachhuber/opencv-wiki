@@ -74,8 +74,8 @@ Runtime options can be specified via environment variables.
 - `OPENCV_TRACE` - enables OpenCV tracing. By default tracing is turned off. It automatically enables on active ITT backend on startup.
 - `OPENCV_TRACE_LOCATION` - storage path to store OpenCV trace.
 - `OPENCV_TRACE_DEPTH_OPENCV` - specify trace depth of OpenCV functions
-  - 0 - infinite call depth
-  - 1 - trace OpenCV entry points (default)
+  - 0 - limit is disabled
+  - 1 - trace OpenCV entry points only, without inner details (default)
 - `OPENCV_TRACE_MAX_CHILDREN` - limit number of traced children (useful to ignore functions with large loops)
 - `OPENCV_TRACE_MAX_CHILDREN_OPENCV` - limit number of traced children for OpenCV calls
 - `OPENCV_TRACE_SYNC_OPENCL` - force `clFinish` calls in the end of OpenCV regions (performance impact, default value is `0`)
