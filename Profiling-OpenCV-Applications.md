@@ -1,13 +1,9 @@
 OpenCV provides a tracing facility for efficient development of Computer Vision Applications.
 
-Tracing framework is built-in directly into the OpenCV source code. To use it, you only need to compile and link your application with modern version of OpenCV. Tracing is enabled by default.
+Tracing framework is built-in directly into the OpenCV source code. To use it, you only need to compile and link your application with modern version of OpenCV.
 
-To profile your application, you can use these [OpenCV Tracing macros](#tracing-macro-list).
-Important macros are:
-- `CV_TRACE_FUNCTION()` - the macro is already inserted into many OpenCV functions. If you want to trace calls of your own function, put it in the beginning of the function body.
-- `CV_TRACE_REGION("process")` - use this for scope-based region tracing (useful for "for loops"). For now it's used very rarely in OpenCV code.
+The tracing is enabled by default at compile time. But it's not engaged by default at runtime, because it impacts the performance.
 
-For usage example please refer to OpenCV example ([application_trace.cpp](https://github.com/alalek/opencv/blob/trace/samples/cpp/application_trace.cpp)) with using of OpenCV Tracing API.
 
 OpenCV tracing relies on the Instrumentation and Tracing Technology (ITT) API, an Intel®-provided profiling framework (https://software.intel.com/en-us/articles/intel-itt-api-open-source).
 
@@ -87,9 +83,13 @@ Runtime options can be specified via environment variables.
 
 ## Tracing macro list
 
-- `CV_TRACE_FUNCTION()` - trace function.
+To profile your application, you can use the following macros, the most important of which are `CV_TRACE_FUNCTION()` and `CV_TRACE_REGION()`:
+
+- `CV_TRACE_FUNCTION()` - the macro is already inserted into many OpenCV functions. If you want to trace calls of your own function, put it in the beginning of the function body.
 - `CV_TRACE_FUNCTION_SKIP_NESTED` - trace current function, but skip all nested regions. Use this for non-critical functions (like data load or validation) to reduce trace log.
 - `CV_TRACE_REGION("myregion")` - C++ scoped region trace.
 - `CV_TRACE_REGION_NEXT("next_step")` - change current region (in the same C++ scope). Useful to trace region consequences (step1/step2/../stepN).
 - `CV_TRACE_ARG(arg)` - trace argument value (or other variable). Supported `double`/`int64`/`int`/`const char*` data types. Currently tracing of argument values is supported for ITT backend only.
 - `CV_TRACE_ARG_VALUE(width_id, "width", size.width())` - expanded version of `CV_TRACE_ARG`.
+
+For usage example please refer to OpenCV example ([application_trace.cpp](https://github.com/alalek/opencv/blob/trace/samples/cpp/application_trace.cpp)) with using of OpenCV Tracing API.
