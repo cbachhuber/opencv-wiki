@@ -2,10 +2,9 @@ OpenCV provides a tracing facility for efficient development of Computer Vision 
 
 Tracing framework is built-in directly into the OpenCV source code. To use it, you only need to compile and link your application with modern version of OpenCV.
 
-The tracing is enabled by default at compile time. But it's not engaged by default at runtime, because it impacts the performance.
+The tracing is enabled by default at compile time. But it's not activated by default at runtime, because it impacts the performance. It's activated when the environment variable `OPENCV_TRACE` is set (`OPENCV_TRACE=1`) or when OpenCV-based app is running within a specialized profiling software supporting Instrumentation and Tracing Technology (ITT).
 
-
-OpenCV tracing relies on the Instrumentation and Tracing Technology (ITT) API, an Intel®-provided profiling framework (https://software.intel.com/en-us/articles/intel-itt-api-open-source).
+OpenCV tracing relies on the ITT API, an Intel®-provided profiling framework (https://software.intel.com/en-us/articles/intel-itt-api-open-source).
 
 You can analyze data generated via the ITT API backend using these tools:
 - Intel® VTune™ Amplifier
