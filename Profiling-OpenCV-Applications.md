@@ -85,7 +85,7 @@ Runtime options can be specified via environment variables.
 To profile your application, you can use the following macros, the most important of which are `CV_TRACE_FUNCTION()` and `CV_TRACE_REGION()`:
 
 - `CV_TRACE_FUNCTION()` - the macro is already inserted into many OpenCV functions. If you want to trace calls of your own function, put it in the beginning of the function body.
-- `CV_TRACE_FUNCTION_SKIP_NESTED` - trace current function, but skip all nested regions. Use this for non-critical functions (like data load or validation) to reduce trace log.
+- `CV_TRACE_FUNCTION_SKIP_NESTED()` - trace current function, but skip all nested regions. Use this for non-critical functions (like data load or validation) to reduce trace log.
 - `CV_TRACE_REGION("myregion")` - C++ scoped region trace.
 - `CV_TRACE_REGION_NEXT("next_step")` - change current region (in the same C++ scope). Useful to trace region consequences (step1/step2/../stepN).
 - `CV_TRACE_ARG(arg)` - trace argument value (or other variable). Supported `double`/`int64`/`int`/`const char*` data types. Currently tracing of argument values is supported for ITT backend only.
