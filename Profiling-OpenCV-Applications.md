@@ -1,6 +1,6 @@
 OpenCV provides a tracing facility for efficient development of Computer Vision Applications.
 
-Tracing framework is built-in directly into the OpenCV source code. To use it, you only need to compile and link your application with modern version of OpenCV.
+Tracing framework is built-in directly into the OpenCV source code. To use it, you only need to compile and link your application with modern version of OpenCV. Tracing is enabled by default.
 
 To profile your application, you can use these [OpenCV Tracing macros](#tracing-macro-list).
 Important macros are:
