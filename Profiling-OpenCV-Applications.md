@@ -1,14 +1,13 @@
-OpenCV provides an tracing facility for efficient development of Computer Vision Applications.
+OpenCV provides a tracing facility for efficient development of Computer Vision Applications.
 
 Tracing framework is built-in directly into the OpenCV source code. To use it, you only need to compile and link your application with modern version of OpenCV.
 
-To profile your application you can use these [OpenCV Tracing macro](#tracing-macro-list).
-Important macro are:
-- `CV_TRACE_FUNCTION()` - put this in the beginning of your function
-- `CV_TRACE_REGION("process")` - use this for scope-based region tracing (useful for "for loops")
+To profile your application, you can use these [OpenCV Tracing macros](#tracing-macro-list).
+Important macros are:
+- `CV_TRACE_FUNCTION()` - the macro is already inserted into many OpenCV functions. If you want to trace calls of your own function, put it in the beginning of the function body.
+- `CV_TRACE_REGION("process")` - use this for scope-based region tracing (useful for "for loops"). For now it's used very rarely in OpenCV code.
 
 For usage example please refer to OpenCV example ([application_trace.cpp](https://github.com/alalek/opencv/blob/trace/samples/cpp/application_trace.cpp)) with using of OpenCV Tracing API.
-
 
 OpenCV tracing relies on the Instrumentation and Tracing Technology (ITT) API, an Intel®-provided profiling framework (https://software.intel.com/en-us/articles/intel-itt-api-open-source).
 
