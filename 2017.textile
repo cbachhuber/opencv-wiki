@@ -24,6 +24,25 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-06-20
+
+h3. _*Agenda*_
+* GSoC
+* Meeting time
+
+h3. *_Minutes_*
+* GSoC
+** All projects going, send in pull request reminder
+* Vadim won't make it, might want to move these meeetings half an hour later
+
+h3. *_To Dos_*
+* Send out pull request reminder
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-06-13
 
 h3. _*Agenda*_
@@ -49,9 +68,9 @@ h3. *_Minutes_*
 * Squeeze net 
 
 h3. *_To Dos_*
-* Note out to get ready
-* Check with student
-* Ask Vadim about dlpack Halide kernels vs DNN Halide kernels
+* -Note out to get ready-
+* -Check with student-
+* -Ask Vadim about dlpack Halide kernels vs DNN Halide kernels-
 
 <pre>
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -101,8 +120,8 @@ h3. *_Minutes_*
 ** atom editor, git and github
 
 h3. *_To Dos_*
-* Ask student to send summary reports regularly (encouraged) ... short
-* Refine the pull request summary
+* -Ask student to send summary reports regularly (encouraged) ... short-
+* -Refine the pull request summary-
 * 
 
 
