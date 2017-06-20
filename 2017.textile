@@ -34,6 +34,9 @@ h3. *_Minutes_*
 * GSoC
 ** All projects going, send in pull request reminder
 * Vadim won't make it, might want to move these meeetings half an hour later
+* DNN next year
+** Might focus on DNN reading tiny-dnn output
+** Model zoo for pragmatic things
 
 h3. *_To Dos_*
 * Send out pull request reminder
