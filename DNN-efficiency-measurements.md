@@ -22,7 +22,7 @@ Best time of single image forward pass (in milliseconds):
 
 #### CPU
 
-|           Model |    Input (CHW) | DNN, default| DNN, Halide | Intel-Caffe, MKL | TensorFlow | Torch, MKL |
+|           Model |    Input (CHW) | DNN, C++    | DNN, Halide (CPU target) | Intel-Caffe, MKL | TensorFlow | Torch, MKL |
 |----------------:|---------------:|------------:|------------:|-----------------:|-----------:|-----------:|
 |       GoogLeNet | 3x227x227, F32 |   **20.01** |          33 |                  |            |            |
 |         AlexNet | 3x227x227, F32 |   **14.68** |        22.4 |             17.5 |            |            |
@@ -33,7 +33,7 @@ Best time of single image forward pass (in milliseconds):
 
 #### GPU (OpenCL 2.0): 
 
-|           Model |    Input (CHW) | DNN, Halide |     clDNN | clCaffe, MKL |
+|           Model |    Input (CHW) | DNN, Halide (OpenCL target) |     clDNN | clCaffe, MKL |
 |----------------:|---------------:|------------:|----------:|-------------:|
 |       GoogLeNet | 3x227x227, F32 |       93.56 |    **28** |          181 |
 |         AlexNet | 3x227x227, F32 |          49 | **14.65** |           27 |
