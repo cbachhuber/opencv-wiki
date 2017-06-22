@@ -1,4 +1,4 @@
-#### Configurations list
+#### Configuration:
 
  **OS:** Linux 4.8.0-34-generic x86_64  
  **OpenCV:** 3.2.0-dev (22th Jun 2017)  
