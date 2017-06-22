@@ -1,10 +1,10 @@
 #### Configurations list
 
  **OS:** Linux 4.8.0-34-generic x86_64  
- **OpenCV:** 3.2.0-dev (22th Jun 2017)
+ **OpenCV:** 3.2.0-dev (22th Jun 2017)  
  **Compiler:** gcc 5.4.0  
  **CPU:** Intel&reg; Core&trade; i7-6700K CPU @ 4.00GHz x 8  
- **GPU:** Intel&reg; HD Graphics 530 (Skylake GT2)
+ **GPU:** Intel&reg; HD Graphics 530 (Skylake GT2)  
  **MKL:** 2017
 
 
