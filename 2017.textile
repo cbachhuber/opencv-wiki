@@ -24,6 +24,60 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-06-27
+
+h3. _*Agenda*_
+* GSoC
+* CVPR
+* DNN (Deep Neural Network) module
+
+h3. *_Minutes_*
+* GSOC
+** Evaluations due by June 28
+* CVPR
+** Most of us get in the Thursday before the tutorial 
+* OpenCV 3.3
+** It planned to be out middle of July
+** But it's ahead of schedule!
+*** Maybe out next week or week after, early part of week
+** Major news is that DNN Module is moving out of "opencv_contrib":https://github.com/opencv/opencv_contrib joining the core of "OpenCV":https://github.com/opencv/opencv in this uppcoming release 3.3
+*** DNN is a module that reads deep net models trained by other frameworks and runs them efficiently
+**** This is especially true on Intel CPUs and Intel GPUs (*Thanks Intel for the support!!!*), but 
+**** DNN will run other networks efficiently in general due to optimized C++ and increasing use of Halide. 
+***** This is still a work in progress (the Halide parts are not intensively optimized yet, still they perform well), but advancing rapidly.
+**** DNN now reads and optimizes run times for the following major CNN libraries:
+***** Caffe
+***** TensorFlow
+***** Torch
+***** By end of summer, it should also cover OpenCV's "tiny_dnn library":https://github.com/tiny-dnn/tiny-dnn
+*** "See the wiki page for DNN Module performance":https://github.com/opencv/opencv/wiki/DNN-efficiency-measurements
+*** For comparison (and we might start to contribute to this) see below:
+**** *NOTE:*
+***** These numbers are either much slower because they on mobile chips, or
+***** they are faster because they use a more powerful GPU.
+**** Excellent site: "Overall performance of CNNs":http://cknowledge.org/repo/web.php?action=index&module_uoa=wfe&native_action=show&native_module_uoa=program.optimization
+
+* Discussed deep neural network frameworks:
+
+|   Framework| State                                                                                   |
+|-----------:|-----------------------------------------------------------------------------------------|
+|     OpenCV | https://github.com/opencv/opencv/commit/d27009c775307e18d28da430862665ef1934d400        |
+|        DNN | https://github.com/opencv/opencv_contrib/commit/e551d15c2b58edce36fe5a5c23072cbe6ce74a93|
+|    clCaffe | https://github.com/BVLC/caffe/commit/483c58f5f46b5959dc0a978882843713daae18f6           |
+| TensorFlow | https://github.com/tensorflow/tensorflow/commit/1ec6ed51182adf8f1b03a3188c16cd8a45ca6c85|
+|      Torch | https://github.com/torch/distro/tree/748f5e3c5c804eebf5715c0b47b1519d60ef4409           |
+|     Halide | https://github.com/halide/Halide/commit/abef1d9bf6cb3f866393fa4c5f48726f728285ee        |
+| LLVM/Clang | 4.0.0                                                                                   |
+
+
+h3. *_To Dos_*
+* Send out notice to review your student
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-06-20
 
 h3. _*Agenda*_
