@@ -38,7 +38,8 @@ h3. *_Minutes_*
 ** "Start evaluations here":https://summerofcode.withgoogle.com/dashboard/
 ** "OpenCV Google Summer of Code 2017 page":https://github.com/opencv/opencv/wiki/GSoC_2017
 * *"CVPR":http://cvpr2017.thecvf.com/program/main_conference*
-** Most of us get in the Thursday before the tutorials. Meet up, we will have a sponsored bar meet somewhere for collected students, TBD
+** Most of us get in the Thursday before the tutorials. Meet up!
+** We will have a sponsored bar meet somewhere for collected students, professionals etc, TBD
 ** OpenCV will be running a tutorial: "OpenCV 3.x New Functionality & Optimizations":http://cvpr2017.thecvf.com/program/tutorials
 * *OpenCV 3.3 Release*
 ** It planned to be out middle of July
