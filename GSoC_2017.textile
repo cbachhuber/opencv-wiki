@@ -36,8 +36,8 @@ h2. General Information:
 *** -May 4 16:00 UTC	Accepted student proposals announced- *Rev your engines as of 1600 UTC!*
 **** -Community Bonding Period	Students get to know mentors, read documentation, get up to speed to begin working on their projects- *Bonded*
 *** -May 30	Coding officially begins!-
-**** Work Period	Students work on their project with guidance from Mentors
-*** June 26 16:00 UTC	Mentors and students can begin submitting Phase 1 evaluations
+**** -Work Period	Students work on their project with guidance from Mentors-
+*** -June 26 16:00 UTC	Mentors and students can begin submitting Phase 1 evaluations-
 *** June 30 16:00 UTC	Phase 1 Evaluation deadline; Google begins issuing student payments
 *** Work Period	Students work on their project with guidance from Mentors
 *** July 24 16:00 UTC	Mentors and students can begin submitting Phase 2 evaluations
