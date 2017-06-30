@@ -22,13 +22,13 @@ Best time of single image forward pass (in milliseconds):
 All computations in float-32.
 
 | Model | DNN, C++ | DNN, Halide | Intel-Caffe, MKL | Intel-Caffe, MKLDNN | TensorFlow | Torch, MKL |
-|----------------:|---------------:|------------:|------------:|-----------------:|----:|-----------:|
+|----------------:|----------:|--------:|---------:|---------:|---------:|-----------:|
 |       GoogLeNet | **20.01** |      33 |      357 |       92 |          |            |
 |         AlexNet | **14.68** |    22.4 |     24.8 |       22 |          |            |
 |       ResNet-50 |     56.82 |      74 |       83 | **30.8** |          |            |
-| SqueezeNet v1.1 |      5.82 |     6.4 |     9.56 | **3.28** |          |            |
+| SqueezeNet v1.1 |      5.27 |     6.4 |     9.56 | **3.28** |          |            |
 |    Inception-5h |     21.05 |      32 |          |          | **17.9** |            |
-|  ENet @ 512x256 |     65.69 |  **41** |          |          |          |        240 |
+|  ENet @ 512x256 |     45.79 |  **41** |          |          |          |        240 |
 
 #### GPU (OpenCL 2.0): 
 All computations in float-32.
@@ -38,7 +38,7 @@ All computations in float-32.
 |       GoogLeNet |  93.56 |    **28** |          181 |
 |         AlexNet |     49 | **14.65** |           27 |
 |       ResNet-50 |    189 |           |      **132** |
-| SqueezeNet v1.1 |   18.3 |   **8.0** |         18.2 |
+| SqueezeNet v1.1 |   15.8 |   **8.0** |         18.2 |
 |    Inception-5h |   89.5 |           |              |
 |  ENet @ 512x256 |  39.67 |           |              |
 
