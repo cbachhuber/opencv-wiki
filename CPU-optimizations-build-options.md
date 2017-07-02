@@ -115,7 +115,7 @@ This "How to" example is based on optimization of Hamming norm algorithm (`core`
 1. Ensure that you have performance tests for [selected functionality](). Please don't waste your time and time of reviewer doing this without good performance tests.
 
 2. Compile OpenCV performance test with different CPU baseline features with disabled dispatching (depends on your platform). I select on `x86-64` platform: `SSE3` (minimal), `SSE4.1`, `SSE4.2`, `AVX`, `AVX2` (max level on my platform), `DETECT` (with `-march=native` compiler option).
-It is better to build these versions of OpenCV configuration in different folders. When run performance tests and build report like [this](images/cpu_dispatch_0_baseline.png):
+It is better to build these versions of OpenCV configuration in different folders. When run performance tests and build report like [this](../images/cpu_dispatch_0_baseline.png):
 [[images/cpu_dispatch_0_baseline.png|Baseline performance]]
 
 3. On this report we can see on the second part (with `--progress` option):
@@ -149,13 +149,17 @@ Refer to [PR](https://github.com/opencv/opencv/pull/9074) commit *"move implemen
     - "sse42.xml": mask optimizations via environment variable: `OPENCV_CPU_DISABLE=AVX2,AVX`
     - "sse3.xml": mask optimizations via environment variable: `OPENCV_CPU_DISABLE=AVX,AVX2,SSE4.2`
 
-10. Result is [here](images/cpu_dispatch_2_dispatch_after.png):
+10. Result is [here](../images/cpu_dispatch_2_dispatch_after.png):
 [[images/cpu_dispatch_2_dispatch_after.png|Dispatched Hamming norm]]
 
 11. We can see that there is no improvements from dispatched AVX optimization, so we can remove it from CMake file: *"optimize size of binaries, drop AVX dispatching"*
     - AVX-related issue is a compiler problem with processing of unrolled loops. Removal of these loops before generation of the first report resolves this strange behavior (slowdown of SSE4.2 code).
 
-For reference, similar [report]((images/cpu_dispatch_1_dispatch_before.png)) for code without patch:
+12. Final result is [here](../images/cpu_dispatch_3_dispatch_after_drop_AVX.png):
+[[images/cpu_dispatch_3_dispatch_after_drop_AVX.png|Final dispatched Hamming norm]]
+
+
+For reference, similar [report](../images/cpu_dispatch_1_dispatch_before.png) for code without patch:
 [[images/cpu_dispatch_1_dispatch_before.png|Dispatching of Hamming norm before patch]]
 
 Additional possible changes:
