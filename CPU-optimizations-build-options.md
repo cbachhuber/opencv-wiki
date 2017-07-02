@@ -107,3 +107,57 @@ Unfortunately, there is no any warning from linker about this.
   ```
   OPENCV_CPU_DISABLE=AVX2,AVX,FP16
   ```
+
+### Optimization developer guide
+
+This "How to" example is based on optimization of Hamming norm algorithm (`core` module, file stat.cpp).
+
+1. Ensure that you have performance tests for [selected functionality](). Please don't waste your time and time of reviewer doing this without good performance tests.
+
+2. Compile OpenCV performance test with different CPU baseline features with disabled dispatching (depends on your platform). I select on `x86-64` platform: `SSE3` (minimal), `SSE4.1`, `SSE4.2`, `AVX`, `AVX2` (max level on my platform), `DETECT` (with `-march=native` compiler option).
+It is better to build these versions of OpenCV configuration in different folders. When run performance tests and build report like [this](images/cpu_dispatch_0_baseline.png):
+[[images/cpu_dispatch_0_baseline.png|Baseline performance]]
+
+3. On this report we can see on the second part (with `--progress` option):
+    - We would gain performance improvement on dispatched
+        * SSE4.2 (`popcount` instruction, **`1.7-1.9`** speedup)
+        * AVX for `norm` function only (**`1.3`** speedup over SSE4.2)
+        * AVX2 (**`~3`** total speedup, **`~1.5`** speedup after SSE4.2/AVX)
+    - Dispatching for SSE4.1 mode is useless.
+    - Dispatching for `NORM_HAMMING2` will not increase speed, so we avoid it.
+
+4. Let's extract implementations of interested functions into separate `.simd.hpp` file "as is". This header file will be processed multiple times - so we will generate binary code with different optimization options using single source file.
+Refer to [PR](https://github.com/opencv/opencv/pull/9074) commit *"move implementations into .hpp file w/o changes"*.
+
+5. After that we should *"create dispatch.cpp file"*. It is simple helper file without algorithm logic, but it contains entry-points for optimized functions and dispatch rules.
+
+6. We need to *"remove useless checks"* from `.hpp` file, because these platform dependent checks is done in compile-time (controlled via defines).
+
+7. On the next step we should *"register dispatched code, fix build"*.
+    - We should register our dispatched code from `.hpp` file via CMake handler. Also we pass list of enabled optimizations: `SSE4_2 AVX AVX2`.
+    - We reusing `popCountTable` multiple times from different compilations units, so we need to make it "external".
+
+8. Mixing of SSE/AVX code during runtime usually provides significant performance impact. To workaround this problem we should use `vzeroupper` instruction. See commit: *"add required CV_AVX_GUARD"*
+
+9. Build performance tests:
+    - separate build directory
+    - check for enabled dispatching levels: "-DCPU_DISPATCH=SSE4_2;AVX;AVX2"
+
+10. Run performance tests:
+    - without restrictions and save results to "avx2.xml"
+    - "avx.xml": mask AVX2 optimizations via environment variable: `OPENCV_CPU_DISABLE=AVX2`
+    - "sse42.xml": mask optimizations via environment variable: `OPENCV_CPU_DISABLE=AVX2,AVX`
+    - "sse3.xml": mask optimizations via environment variable: `OPENCV_CPU_DISABLE=AVX,AVX2,SSE4.2`
+
+10. Result is [here](images/cpu_dispatch_2_dispatch_after.png):
+[[images/cpu_dispatch_2_dispatch_after.png|Dispatched Hamming norm]]
+
+11. We can see that there is no improvements from dispatched AVX optimization, so we can remove it from CMake file: *"optimize size of binaries, drop AVX dispatching"*
+    - AVX-related issue is a compiler problem with processing of unrolled loops. Removal of these loops before generation of the first report resolves this strange behavior (slowdown of SSE4.2 code).
+
+For reference, similar [report]((images/cpu_dispatch_1_dispatch_before.png)) for code without patch:
+[[images/cpu_dispatch_1_dispatch_before.png|Dispatching of Hamming norm before patch]]
+
+Additional possible changes:
+- support `NORM_HAMMING2` too, but this will require additional optimizations (probably for AVX2 code only).
+- we can replace SSE4_2 to POPCNT dispatch level in CMake file.
