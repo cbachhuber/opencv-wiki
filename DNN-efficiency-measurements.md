@@ -19,7 +19,7 @@
 Best time of single image forward pass (in milliseconds):
 
 #### CPU
-All computations in float-32.
+All computations are done in float32.
 
 | Model | DNN, C++ | DNN, Halide | Intel-Caffe, MKL | Intel-Caffe, MKLDNN | TensorFlow | Torch, MKL |
 |----------------:|----------:|--------:|---------:|---------:|---------:|-----------:|
