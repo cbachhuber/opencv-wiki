@@ -23,11 +23,11 @@ All calculations are done in float32.
 
 | Model | DNN, C++ | DNN, Halide | Intel-Caffe, MKL | Intel-Caffe, MKLDNN | TensorFlow | Torch, MKL |
 |----------------:|----------:|--------:|---------:|---------:|---------:|-----------:|
-|       GoogLeNet | **20.01** |      33 |      357 |       92 |          |            |
+|       GoogLeNet | **19.50** |      33 |      357 |       92 |          |            |
 |         AlexNet | **14.68** |    22.4 |     24.8 |       22 |          |            |
-|       ResNet-50 |     56.82 |      74 |       83 | **30.8** |          |            |
-| SqueezeNet v1.1 |      5.27 |     6.4 |     9.56 | **3.28** |          |            |
-|    Inception-5h |     21.05 |      32 |          |          | **17.9** |            |
+|       ResNet-50 |     42.56 |      74 |       83 | **30.8** |          |            |
+| SqueezeNet v1.1 |      4.96 |     6.4 |     9.56 | **3.28** |          |            |
+|    Inception-5h |     19.58 |      32 |          |          | **17.9** |            |
 |  ENet @ 512x256 |     45.79 |  **41** |          |          |          |        240 |
 
 #### GPU (OpenCL 2.0): 
