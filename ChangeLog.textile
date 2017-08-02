@@ -25,7 +25,7 @@ p((((. !images/Intel_IPP_logo.png!
 
 * Upgraded IPPICV from 2015.12 to 2017.2 version brought ~15% improvement in core and imgproc modules (measured as geometrical mean over the corresponding performance tests).
 
-p((((. !!images/speed.jpg!
+p((((. !images/speed.jpg!
 
 * Dynamic dispatching of SSE4.2/AVX/AVX2 code has been implemented. Previously OpenCV had to be built with SSE4.x/AVX/AVX2 support in order to use such optimizations and that made it incompatible with older hardware. Now the OpenCV binaries automatically adapt to the real hardware and make use of new instructions if they are available while retaining compatibility with older hardware. All the existing AVX/AVX2 optimizations in OpenCV have been refactored to use this technology. AVX acceleration of DNN also uses dynamic dispatching.
 
