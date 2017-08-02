@@ -43,7 +43,7 @@ The supported layers:
  * Split
  * TanH
 
-The module includes some SSE, AVX, AVX2 and NEON acceleration for the performance-critical layers. There is also constantly-improved Halide backend. OpenCL (libdnn-based) backend is being developed and should be integrated after OpenCV 3.3 release. Here you may find the up-to-date benchmark results for the module: https://github.com/opencv/opencv/wiki/DNN-Efficiency
+The module includes some SSE, AVX, AVX2 and NEON acceleration for the performance-critical layers. There is also constantly-improved Halide backend. OpenCL (libdnn-based) backend is being developed and should be integrated after OpenCV 3.3 release. Here you may find the up-to-date benchmarking results: [[DNN Efficiency|DNN-Efficiency]]
 
 The following networks have been tested and known to work:
 
