@@ -6,7 +6,7 @@ __August, 2017__
 
 OpenCV 3.3 with accelerated dnn module, moved to the main repository, first-ever appearance of Halide in OpenCV, multiple optimizations and other improvements has been released.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 p((((. !images/dnn.png!
 
