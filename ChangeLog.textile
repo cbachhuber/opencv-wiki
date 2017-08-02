@@ -14,7 +14,7 @@ opencv_dnn module has been moved from the contribution repository (opencv_contri
 
  * High-level API has been modified and is even more convenient now.
  * The regression tests have been expanded, some new tests have been added. Now, there are 46 of them.
- * Many bugs in Torch and TF loaders, as well as some layers have been fixed. Now we check that on a certain set of networks results from OpenCV DNN match the results from the original frameworks.
+ * Many bugs have been fixed in Torch and TF loaders, as well as in some processing layers. Now we check that on a certain set of networks results from OpenCV DNN match or very close to the results from the original frameworks. We also check that the results claimed in the papers for such networks are achievable with OpenCV DNN.
  * Performance has been substantially improved and is now on par with Intel Caffe, TensorFlow and other optimized frameworks. Layer fusion has been implemented and some performance-critical layers have been optimized using AVX, AVX2, SSE and NEON. An external BLAS (OpenBLAS, MKL, ATLAS) is not needed anymore.
  * New samples have been added. See https://github.com/opencv/opencv/tree/master/samples/dnn.
  * The optional Halide-based (see http://halide-lang.org) backend has been added. It can accelerate OpenCV DNN on GPU when the GPU is fast enough.
