@@ -8,6 +8,8 @@
         - [[Building|Building_OpenCV4Android_from_trunk]]
     - [[CiteOpenCV]]
     - [[OpenCVLogo]]
+- [[Deep Learning @ OpenCV|DNN_OpenCV]]
+    - [[DNN Efficiency|DNN-efficiency]]
 - [[OpenCV 3|Opencv3]]
     - [[CPU optimizations|CPU-optimizations-build-options]]
     - [[Profiling OpenCV Applications|Profiling-OpenCV-Applications]]
