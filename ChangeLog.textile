@@ -37,7 +37,7 @@ p((((. !images/speed.jpg!
 
 p((((. !images/cxx11.png!
 
-* OpenCV can now be configured and built as C++ 11 library. Use ENABLE_CXX11 CMake flag. On some modern Linux distributions, like the latest Fedora, it's enabled by default.
+* OpenCV can now be configured and built as C++ 11 library. Pass @-DENABLE_CXX11=ON@ to CMake. On some modern Linux distributions, like the latest Fedora, it's enabled by default.
 * New features for C++ 11 users have been added:
 
 <pre>
@@ -72,7 +72,7 @@ for( auto& pixel: img ) {
 
 p((((. !images/imediasdk.png!
 
-* Support for hardware-accelerated video encoding/decoding using Intel GPUs through Intel Media SDK has been implemented for Linux (in the form of backends for `cv::VideoCapture` and `cv::VideoWriter`).
+* Support for hardware-accelerated video encoding/decoding using Intel GPUs through Intel Media SDK has been implemented for Linux (in the form of backends for @cv::VideoCapture@ and @cv::VideoWriter@).
   ** Encoding and decoding of raw H.264 and MPEG1/2 video streams is supported, media containers are not supported yet.
   ** Note that system kernel should have specific support for hardware as mentioned in the "Media SDK/Server Studio installation guide":https://software.intel.com/en-us/articles/how-to-setup-media-server-studio-on-secondary-os-of-linux. In some cases kernel recompilation will be needed.
   ** See also: "https://github.com/Intel-Media-SDK":https://github.com/Intel-Media-SDK
