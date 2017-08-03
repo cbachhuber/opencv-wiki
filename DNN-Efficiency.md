@@ -33,7 +33,7 @@ All calculations are done in float32.
 #### GPU (OpenCL 2.0): 
 All computations in float-32.
 
-|           Model | DNN, Halide|     clDNN | clCaffe, MKL |
+|           Model | DNN, Halide|     clDNN | clCaffe |
 |----------------:|------------:|----------:|-------------:|
 |       GoogLeNet |  93.56 |    **28** |          181 |
 |         AlexNet |     49 | **14.65** |           27 |
