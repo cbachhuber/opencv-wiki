@@ -1130,8 +1130,6 @@ version:3.0
 
 These are changes since 3.0 rc1.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 ![](images/bug.png)
 
 -   Over 200 bugs reported at
@@ -1140,15 +1138,11 @@ These are changes since 3.0 rc1.
     python wrappers, core, imgproc, photo, features2d, objdetect,
     contrib modules, as well as some performance improvements etc.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 ![](images/threads.jpg)
 
 -   Added pthreads-based backend for cv::parallel_for\_. It means that
     all the parallel processing should be available out-of-the-box on
     any POSIX-compatible OS, including QNX and such. You are welcome to try it out.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ![](images/android_ocv_small.png)
 
@@ -1157,8 +1151,6 @@ These are changes since 3.0 rc1.
     will put it to Google Play.
 -   The other, a bit sad but inevitable news – we had to drop support
     for nativecamera on Android. It used some undocumented API and never worked stable.
-
-
 
 ![](images/daisy.jpg)
 
@@ -1169,8 +1161,6 @@ These are changes since 3.0 rc1.
         binary descriptor that outperforms all presently available in
         OpenCV binary descriptors (ORB, BRIEF, AKAZE etc.)
         and is comparable with heavier and slower SURF.
-
-
 
 ![](images/github2.png)
 
@@ -1188,133 +1178,69 @@ These are changes since 3.0 rc1.
     $ git shortlog —no-merges -ns 3.0.0-rc1..origin/master
     60  Vadim Pisarevsky
     31  laurentBerger
-
     17  Maksim Shabunin
-
     10  cbalint13
-
     7  Maxim Kostin
-
     6  Alexander Smorkalov
-
     6  Ilya Lavrenov
-
     6  StevenPuttemans
-
     6  Vladimir Dudnik
-
     5  Andrey Pavlenko
-
     5  GilLevi
-
     3  Dikay900
-
     3  Philipp Hasper
-
     3  Ruslan Baratov
-
     3  rajithr
-
     3  sgjava
-
     2  Andreas Stührk
-
     2  Christian Richardt
-
     2  Deanna Hood
-
     2  Joe Minichino
-
     2  Luis Díaz Más
-
     2  Mansour Moufid
-
     2  Marek Nogacki
-
     2  Martin Ueding
-
     2  Vladislav Vinogradov
-
     2  Zhigang Gong
-
     2  kalistratovag
-
     1  AfterEight
-
     1  Aleksandr Petrikov
-
     1  Alexander Nitsch
-
     1  Andrew Senin
-
     1  Ashod Nakashian
-
     1  Belev
-
     1  Boris Daskalov
-
     1  Camille
-
     1  Craig Reynolds
-
     1  David Hirvonen
-
     1  Ehren Metcalfe
-
     1  Evgeny Agafonchikov
-
     1  Jüri Aedla
-
     1  Leonid Beynenson
-
     1  Martijn Liem
-
     1  Marvin Smith
-
     1  Michaël Sdika
-
     1  Mike Maraya
-
     1  Milania1
-
     1  Niklas Frisk
-
     1  Owen Healy
-
     1  Patrik Huber
-
     1  Piotr Dobrowolski
-
     1  Roman Donchenko
-
     1  S. Garrido
-
     1  Samed Ozdemir
-
     1  Samuel Martin
-
     1  Samyak Datta
-
     1  Thomas Gabrowski
-
     1  Vicente Olivert Riera
-
     1  Vincent Rabaud
-
     1  Vladimir Kolesnikov
-
     1  aletheios
-
     1  berak
-
     1  jormansa
-
     1  lujia
-
     1  msandler
-
     1  yanlend
-
     1  zenev
 
 #### opencv_contrib
@@ -1336,8 +1262,6 @@ version:3.0 rc
 
 These are changes since 3.0 beta.
 
-
-
 ![](images/compatibility.jpg)
 
 -   Improved compatibility with OpenCV 2.4:
@@ -1350,16 +1274,12 @@ These are changes since 3.0 beta.
     -   the 2.4=&gt;3.0 transition guide has been sketched:
         http://docs.opencv.org/master/db/dfa/tutorial_transition_guide.html
 
-
-
 ![](images/android_ocv_small.png)
 
 -   We did not put OpenCV 3 to Google Play yet, but we prepared
     installable OpenCV 3.0 Manager for Android, which can be installed
     and tried on your device. It can co-exist with OpenCV 2.4 Manager on
     the same device.
-
-
 
 ![](images/winrt_opencv.jpg)
 
@@ -1371,8 +1291,6 @@ These are changes since 3.0 beta.
     -   Also, the WMF video capturing backend
         has been greatly improved.
 
-
-
 ![](images/mjpeg.jpg)
 
 -   Standalone motion jpeg codec has been added to opencv_videoio. It
@@ -1383,8 +1301,6 @@ These are changes since 3.0 beta.
     part has been verified on such streams (avi files with index, where
     each frame is encoded using baseline jpeg) and few random motion
     jpeg clips from net, but we have not tested it thoroughly.
-
-
 
 ![](images/hal.jpg)
 
@@ -1434,7 +1350,6 @@ These are changes since 3.0 beta.
 ### Contributors
 
 #### opencv
-
 
     $ git shortlog —no-merges -ns 3.0.0-beta..origin/master
     95  Vladislav Vinogradov
@@ -1596,8 +1511,6 @@ These are changes since 3.0 alpha.
     Thanks Alexander Alekhin, Alexander Karsakov, Elena Gvozdeva,
     Vladimir Bystritsky, Sergey Sivolgin and other guys who did that!
 
-
-
 ![](images/neon.png)
 
 -   About 40 commonly used image processing functions have been
@@ -1605,15 +1518,11 @@ These are changes since 3.0 alpha.
     so OpenCV 3.0 beta should run noticeably faster on modern ARM chips. Big thanks to Ilya Lavrenov for the
     amazing job!
 
-
-
 ![](images/java_logo.svg.png)
 
 -   Java bindings have been substantially improved. We now have bindings
     for the updated features2d, background subtractor classes, a part of
     opencv_contrib etc. Thanks to Maksim Shabunin for the improvements!
-
-
 
 ![](images/Intel_IPP_logo.png)
 
@@ -1621,8 +1530,6 @@ These are changes since 3.0 alpha.
     Intel® Integrated Performance Primitives (Intel® [IPP](opencv3#ipp)) by default. OpenCV 3.0 beta
     includes a subset of **Intel® IPP 8.2.1**
     with additional optimization for AVX2.
-
-
 
 ![](images/github2.png)
 
@@ -1761,16 +1668,12 @@ with detailed review of [OpenCV_3.0](opencv3)
         Intel chips (including Iris and Iris Pro) and AMD chips (such as Kaveri). More detailed
         results are to be provided later.
 
-
-
 ![](images/Intel_IPP_logo.png)
 
 -   On x86 and x64 platforms OpenCV binaries include and use a subset of
     Intel® Integrated Performance Primitives (Intel® [IPP](opencv3#ipp)) by default. Intel Corporation
     granted OpenCV Foundation and all our users the right to use those
     functions free of charge for both non-commercial and commercial use.
-
-
 
 ![](images/contrib.jpg)
 
@@ -1784,24 +1687,15 @@ with detailed review of [OpenCV_3.0](opencv3)
 -   Grab a copy of contribution repository
     http://github.com/opencv/opencv_contrib along with a copy of OpenCV
     3.0 alpha or a fresh master snapshot.
--   Pass
-
-        OPENCV_EXTRA_MODULES_PATH=<path_to_contrib_directory>/modules
-
-    to CMake.
-
+-   Pass `OPENCV_EXTRA_MODULES_PATH=<path_to_contrib_directory>/modules` to CMake.
 -   Documentation for the contributed modules is integrated into OpenCV
     doc tree: http://docs.opencv.org/master
-
-
 
 ![](images/buildbot.png)
 
 -   We completely revised our QA infrastructure (big thanks to Alexander
     Alekhin), which now covers not only the main repository, but also
     the contrib repository as well: http://pullrequest.opencv.org.
-
-
 
 ![](images/gsoc2013.jpg) ![](images/gsoc2014.jpg)
 
@@ -1839,8 +1733,6 @@ with detailed review of [OpenCV_3.0](opencv3)
     -   Line descriptors and matchers by Biagio Montesano and Manuele
         Tamburrano
 
-
-
 ![](images/thank_you.jpg)
 
 -   There are many other contributions, besides GSoC programs. Here is
@@ -1868,7 +1760,7 @@ with detailed review of [OpenCV_3.0](opencv3)
     -   Five-point pose estimation algorithm by Bo Li
 
 Also, big thanks to all the Itseez guys who reviewed patches, watched
-bug reports and helped OpenCV in many other ways:\
+bug reports and helped OpenCV in many other ways:
 Alexander Shishkov (who also maintains opencv.org site), Andrey
 Pavlenko, Alexander Alekhin, Alexander Smorkalov, Roman Donchenko,
 Kirill Kornyakov, Andrey Kamaev, Sergey Sivolgin, Vladimir Bystritsky,
@@ -1880,7 +1772,6 @@ Beynenson, Dmitry Retinsky, Maria Dimashova, Ilya Lysenkov, Andrey
 Morozov, Victor Eruhimov, Alexander Bovyrin, Sergey Molinov, Gary
 Bradski, Vincent Rabaud, Harris Gasparakis, Stefano Fabri and many
 others.
-
 
 
 ![](images/attention.png)
@@ -1898,13 +1789,17 @@ others.
         bindings (opencv_contrib/matlab); motion templates & simple
         flow (opencv_contrib/optflow).
     -   In OpenCV 3 we write
+    -
         ```.cpp
         #include “opencv2/core.hpp”
         ```
+
         instead of
+
         ```.cpp
         #include “opencv2/core/core.hpp”
         ```
+
         The old method should also work.
     -   ML module has been completely revised (and at the moment the
         functionality is not 100% match for OpenCV 2.4.x), you will need
@@ -2232,20 +2127,19 @@ version:2.4.6
     `opencv/platforms` directory
 -   fixed bug with incorrect saved video from camera through
     CvVideoCamera
--   added `` `rotateVideo` `` flag to the `CvVideoCamera` class to
+-   added `rotateVideo` flag to the `CvVideoCamera` class to
     control camera preview rotation on device rotation
 -   added functions to convert between `UIImage` and `cv::Mat` (just
     include `opencv2/highgui/ios.h`)
 
 ![](images/bug.png)
 
--   [numerous
-    bug-fixes](http://code.opencv.org/projects/opencv/issues?query_id=52)
+-   [numerous bug-fixes](http://code.opencv.org/projects/opencv/issues?query_id=52)
     across all the library
 
 ![](images/android_ocv_small.png)
 
--   see also \[\[Android_Release_Notes\]\]
+-   see also [Android_Release_Notes](Android_Release_Notes)
 
 ### Contributors
 
@@ -2288,7 +2182,7 @@ version:2.4.5
 
 ![](images/winrt_opencv.jpg)
 
--   Experimental WinRT support (build for \[\[WindowsRT\]\] guide)
+-   Experimental WinRT support (build for [WindowsRT](WindowsRT) guide)
 
 ![](images/superres.jpg)
 
@@ -2340,8 +2234,7 @@ version:2.4.4
 -   This is the biggest news in 2.4.4 – we’ve got full-featured OpenCV
     Java bindings on a desktop, not only Android! In fact you can use
     any JVM language, including functional
-    Java or handy Groovy. Big thanks to [Eric
-    Christiansen](https://plus.google.com/u/0/114834902961564956461) for
+    Java or handy Groovy. Big thanks to [Eric Christiansen](https://plus.google.com/u/0/114834902961564956461) for
     the contribution! Check the
     [tutorial](http://docs.opencv.org/doc/tutorials/introduction/desktop_java/java_dev_intro.html)
     for details and code samples.
@@ -2349,7 +2242,7 @@ version:2.4.4
 ![](images/android_ocv_small.png)
 
 -   Android application framework, samples, tutorials, OpenCV Manager
-    are updated, see \[\[Android_Release_Notes\]\] for details.
+    are updated, see [Android_Release_Notes](Android_Release_Notes) for details.
 
 ![](images/CUDA.jpg)
 
@@ -2686,12 +2579,8 @@ before as well as after 2.4 release.
     now the primary site for OpenCV development and http://opencv.org
     will be the official OpenCV user site.
 
-<!-- -->
-
 -   Some of the old functionality from the modules `imgproc`, `video`,
     `calib3d`, `features2d`, `objdetect` has been moved to legacy.
-
-<!-- -->
 
 -   CMake scripts have been substantially modified. Now it’s very easy
     to add new modules – just put the directory with include, src, doc
@@ -2713,13 +2602,9 @@ before as well as after 2.4 release.
     -   one can save algorithm parameters to XML/YAML file and
         then load them.
 
-<!-- -->
-
 -   A new ffmpeg wrapper has been created that features multi-threaded
     decoding, more robust video positioning etc. It’s used with ffmpeg
     starting with 0.7.x versions.
-
-<!-- -->
 
 -   `features2d` API has been cleaned up.
     There are no more numerous classes with duplicated functionality.
@@ -2728,64 +2613,44 @@ before as well as after 2.4 release.
     using which you can detect keypoints and compute the descriptors in
     a single call. This is also more efficient.
 
-<!-- -->
-
 -   SIFT and SURF
     have been moved to a separate module named `nonfree` to indicate
     possible legal issues of using those algorithms in
     user applications. Also, SIFT performance
     has been substantially improved (by factor of 3-4x).
 
-<!-- -->
-
 -   The current state-of-art textureless detection algorithm, Line-Mod
     by S. Hinterstoisser, has been contributed by Patrick Mihelich. See
     `objdetect/objdetect.hpp`, class `Detector`.
-
-<!-- -->
 
 -   3 face recognition algorithms have been contributed by
     Philipp Wagner. Please, check `opencv/contrib/contrib.hpp`,
     `FaceRecognizer` class, and `opencv/samples/cpp/facerec_demo.cpp`.
 
-<!-- -->
-
 -   2 algorithms for solving PnP problem have been added. Please, check
     `flags` parameter in `solvePnP` and `solvePnPRansac` functions.
-
-<!-- -->
 
 -   Enhanced `LogPolar` implementation (that uses Blind-Spot model) has
     been contributed by Fabio Solari and Manuela Chessa, see
     `opencv/contrib/contrib.hpp`, `LogPolar_*` classes and
     `opencv/samples/cpp/logpolar_bsm.cpp` sample.
 
-<!-- -->
-
 -   A stub module `photo` has been created to support a quickly growing
     “computational photography” area. Currently, it only contains
     `inpainting` algorithm, moved from `imgproc`, but it’s planned to
     add much more functionality.
-
-<!-- -->
 
 -   Another module `videostab` (beta version) has been added that solves
     a specific yet very important task of video stabilization. The
     module is under active development. Please, check
     `opencv/samples/cpp/videostab.cpp` sample.
 
-<!-- -->
-
 -   `findContours` can now find contours on a 32-bit integer image of
     labels (not only on a black-and-white 8-bit image). This is a step
     towards more convenient connected component analysis.
 
-<!-- -->
-
 -   `Canny` edge detector can now be run on color images, which results
     in better edge maps
-
-<!-- -->
 
 -   Python bindings can now be used within python threads, so one can
     write multi-threaded computer vision applications in Python.
@@ -2797,14 +2662,10 @@ before as well as after 2.4 release.
     -   PyrLK – both Dense and Sparse variations
     -   Farneback
 
-<!-- -->
-
 -   New feature detectors and descriptors:
     -   `GoodFeaturesToTrack`
     -   FAST/ORB
         which is patent free replacement of SURF.
-
-<!-- -->
 
 -   Overall GPU module enhancements:
     -   The module now requires CUDA 4.1 or
@@ -2813,17 +2674,11 @@ before as well as after 2.4 release.
     -   Added border extrapolation support for many functions;
     -   Improved performance.
 
-<!-- -->
-
 -   `pyrUp`/`pyrDown` implementations.
-
-<!-- -->
 
 -   Matrix multiplication on GPU (wrapper for
     the CUBLAS library). This is optional,
     user need to compile OpenCV with CUBLAS support.
-
-<!-- -->
 
 -   `OpenGL back-end` has been implemented for `highgui` module, that
     allows to display `GpuMat` directly without downloading them to
@@ -2831,15 +2686,13 @@ before as well as after 2.4 release.
 
 ### OpenCV4Android
 
-See the \[\[Android_Release_Notes\]\].
+See the [Android_Release_Notes].
 
 ### Performance
 
 -   A few OpenCV functions, like color conversion, morphology, data type
     conversions, brute-force feature matcher have been optimized using
     TBB and/or SSE intrinisics.
-
-<!-- -->
 
 -   Along with regression tests, now many OpenCV functions have got
     performance tests. Now for most modules one can build
@@ -2848,7 +2701,7 @@ See the \[\[Android_Release_Notes\]\].
     tests, as well as the normal regression tests, you will need to get
     (a rather big) http://code.opencv.org/svn/opencv/trunk/opencv_extra
     directory and set environment variable `OPENCV_TEST_DATA_PATH` to
-    “`<your_copy_of_opencv_extra>/testdata`”.
+    `<your_copy_of_opencv_extra>/testdata`.
 
 ### Bug fixes
 
@@ -2862,9 +2715,9 @@ See the \[\[Android_Release_Notes\]\].
     `Algorithm::create`) can fail because linker excludes the “unused”
     object files. To avoid this problem, create classes explicitly, e.g
 
-<!-- -->
-
+    ```.cpp
     Ptr<DescriptorExtractor> d = new BriefDescriptorExtractor;
+    ```
 
 2.3.1
 -----
@@ -2885,27 +2738,17 @@ port of features2d.
     `opencv_contrib` module). See the new retina sample
     and https://sites.google.com/site/benoitalexandrevision/.
 
-<!-- -->
-
 -   Support for Ximea cameras (http://www.ximea.com/) in `highgui` has
     been contributed by Ximea developers.
-
-<!-- -->
 
 -   Planar subdivisions construction (Delaunay triangulation and
     Voronoi tessellation) have been ported to C++. See the new
     `delaunay2.cpp` sample.
 
-<!-- -->
-
 -   Several new Python samples have been added.
-
-<!-- -->
 
 -   `FLANN` in OpenCV has been upgraded to v1.6. Also, added Python
     bindings for `FLANN`.
-
-<!-- -->
 
 -   We now support the latest FFMPEG (0.8.x)
     that features multi-threaded decoding. Reading videos in OpenCV has
@@ -2947,8 +2790,6 @@ port of features2d.
 
 -   A few more bugs reported in the OpenCV bug tracker have been fixed.
 
-<!-- -->
-
 -   Documentation has been improved a lot! The new reference manual
     combines information for C++ and C interfaces, the OpenCV 1.x-style
     Python bindings and the new C++-style Python bindings. It has also
@@ -2969,8 +2810,6 @@ The installation package is probably to come in the next version.
 -   VS2005 should build OpenCV 2.3 out of the box, including
     `DirectShow` support.
 
-<!-- -->
-
 -   ffmpeg bindings are now available for all Windows users via
     compiler- and configuration- and\
     version-independent `opencv_ffmpeg.dll` (for 32-bit compilers) and
@@ -2987,8 +2826,6 @@ The installation package is probably to come in the next version.
     testing OpenCV snapshots. The current status is available at
     http://pullrequest.opencv.org/
 
-<!-- -->
-
 -   OpenCV switched to Google
     Test (http://code.google.com/p/googletest/) engine for regression
     and correctness tests. Each module now has “test” sub-directory
@@ -3000,10 +2837,8 @@ The installation package is probably to come in the next version.
     instead of `cv::Mat` references. It retains compatibility with the
     existing code and yet brings more natural support for STL vectors and potentially other “foreign” data
     structures to OpenCV. See
-    http://docs.opencv.org/modules/core/doc/intro.html\#inputarray-and-outputarray
+    http://docs.opencv.org/modules/core/doc/intro.html#inputarray-and-outputarray
     for details.
-
-<!-- -->
 
 -   `core`
     -   `LAPACK` is not used by OpenCV anymore. The change decreased the
@@ -3015,31 +2850,22 @@ The installation package is probably to come in the next version.
     -   Arithmetic operations now support mixed-type operands and
         arbitrary number of channels.
 
-<!-- -->
-
 -   `features2d`
     -   Completely new patent-free `BRIEF` and `ORB` feature descriptors
         have been added.
     -   Very fast LSH matcher for `BRIEF` and
         `ORB` descriptors will be added in 2.3.1.
 
-<!-- -->
-
 -   `calib3d`
-    -   A new calibration pattern, [circles
-        grid](http://code.opencv.org/svn/opencv/branches/2.3/opencv/doc/acircles_pattern.png),
+    -   A new calibration pattern, [circles         grid](http://code.opencv.org/svn/opencv/branches/2.3/opencv/doc/acircles_pattern.png),
         has been added. See findCirclesGrid() function and the updated
         calibration.cpp sample. With the new pattern calibration
         accuracy is usually much higher.
 
-<!-- -->
-
 -   `highgui`
-    -   \[Windows\] `videoInput` is now a part of `highgui`. If there
+    -   Windows `videoInput` is now a part of `highgui`. If there
         are any problems with compiling `highgui`, set
         `WITH_VIDEOINPUT=OFF` in CMake.
-
-<!-- -->
 
 -   `stitching`
     -   `opencv_stitching` is a beta version of new application that
@@ -3072,26 +2898,20 @@ The installation package is probably to come in the next version.
     port (which is actually not a separate branch of OpenCV, it’s the
     same code tree with additional build scripts) has been greatly
     improved, a few demos developed. Camera support has been added as
-    well.\
-    See \[\[Android_Release_Notes\#231-beta1\]\] for details.
+    well.
+    See [Android_Release_Notes#231-beta1] for details.
 
 ### Documentation
 
 -   OpenCV documentation is now written in `ReStructured Text` and built
     using `Sphinx` (http://sphinx.pocoo.org).
 
-<!-- -->
-
 -   It’s not a single reference manual now, it’s 4 reference manuals
     (OpenCV 2.x C++ API, OpenCV 2.x Python
     API, OpenCV 1.x C API, OpenCV 1.x Python API), the emerging user guide and a set of
     tutorials for beginners.
 
-<!-- -->
-
 -   Style and grammar of the main reference manual (OpenCV 2.x C++ API) have been thoroughly checked and fixed.
-
-<!-- -->
 
 -   Online up-to-date version of the manual is available at
     http://docs.opencv.org
@@ -3116,8 +2936,6 @@ The installation package is probably to come in the next version.
 
 -   Documentation (especially on the new Python bindings) is still
     being updated. Watch http://docs.opencv.org for updates.
-
-<!-- -->
 
 -   Android port does not provide Java interface for OpenCV. It is going
     to be added to [2.3
@@ -3168,8 +2986,9 @@ names) and update the include paths.
 It is still possible to use `#include <cv.h>` etc. but the recommended
 notation is:
 
+    ```.cpp
     #include "opencv2/imgproc/imgproc.hpp"
-    ...
+    ```
 
 Please, check the new C and C++ samples
 (http://code.opencv.org/svn/opencv/trunk/opencv/samples), which now
@@ -3181,13 +3000,8 @@ include the new-style headers.
     SWIG-based Python wrappers are not
     included anymore.
 
-<!-- -->
-
 -   OpenCV can now be built for Android (GSoC 2010 project), thanks to
-    Ethan Rublee; and there are some samples too. Please, check
-    \[\[OpenCV4Android\]\]
-
-<!-- -->
+    Ethan Rublee; and there are some samples too. Please, check [OpenCV4Android]
 
 -   The completely new `opencv_gpu` acceleration module has been created
     with support by NVIDIA. See below
@@ -3215,8 +3029,6 @@ include the new-style headers.
     -   `cv::exp` and `cv::log` are now much faster thanks to
         SSE2 optimization.
 
-<!-- -->
-
 -   `imgproc`
     -   color conversion functions have been rewritten;
     -   RGB→Lab & RGB→Luv performance has been
@@ -3232,8 +3044,6 @@ include the new-style headers.
         codes are `CV_RGB2HSV_FULL` etc.
     -   special variant of `initUndistortRectifyMap` for wide-angle
         cameras has been added: `initWideAngleProjMap()`
-
-<!-- -->
 
 -   `features2d`
     -   the unified framework for keypoint extraction, computing the
@@ -3262,44 +3072,27 @@ include the new-style headers.
         parallelized using TBB (the patch is
         by imahon and yvo2m)
 
-<!-- -->
-
 -   `objdetect`
     -   LatentSVM object detector, implementing P. Felzenszwalb
         algorithm, has been contributed by Nizhniy Novgorod State
         University (NNSU) team. See
         `opencv/samples/c/latentsvmdetect.cpp`
 
-<!-- -->
-
 -   `calib3d`
-    -   The new rational distortion model:
+    -   The new rational distortion model has been introduced. It is useful for calibration of cameras with
+        wide-angle lenses.
+        Because of the increased number of parameters to optimize you need to
+        supply more data to robustly estimate all of them. Or, simply initialize
+        the distortion vectors with zeros and pass `CV_CALIB_RATIONAL_MODEL` to
+        enable the new model
+        `CV_CALIB_FIX_K3 + CV_CALIB_FIX_K4 + CV_CALIB_FIX_K5` or other such
+        combinations to selectively enable or disable certain coefficients.
 
-`x' = x * (1` + `k`~1~ \* `r`\^2\^ + `k`~2~ \* `r`\^4\^ + `k`~3~
-\* `r`\^6\^`)/(1` + `k`~4~ \* `r`\^2\^ + `k`~5~ \* `r`\^4\^ +
-`k`~6~ \* `r`\^6\^`) +` *&lt;tangential_distortion for @x@&gt;*,\
-`y' = y * (1` + `k`~1~ \* `r`\^2\^ + `k`~2~ \* `r`\^4\^ + `k`~3~
-\* `r`\^6\^`)/(1` + `k`~4~ \* `r`\^2\^ + `k`~5~ \* `r`\^4\^ +
-`k`~6~ \* `r`\^6\^`) +` *&lt;tangential_distortion for @y@&gt;*
-
-has been introduced. It is useful for calibration of cameras with
-wide-angle lenses.\
-Because of the increased number of parameters to optimize you need to
-supply more data to robustly estimate all of them. Or, simply initialize
-the distortion vectors with zeros and pass `CV_CALIB_RATIONAL_MODEL` to
-enable the new model
-`CV_CALIB_FIX_K3 + CV_CALIB_FIX_K4 + CV_CALIB_FIX_K5` or other such
-combinations to selectively enable or disable certain coefficients.
-
--   rectification of trinocular camera setup, where all 3 heads are on
-    the same line, is added. see `samples/cpp/3calibration.cpp`
-
-<!-- -->
+    -   rectification of trinocular camera setup, where all 3 heads are on
+        the same line, is added. see `samples/cpp/3calibration.cpp`
 
 -   `ml`
     -   Gradient boosting trees model has been contributed by NNSU team.
-
-<!-- -->
 
 -   `highgui`
     -   Experimental Qt backend for OpenCV has been added as a result of
@@ -3310,7 +3103,7 @@ combinations to selectively enable or disable certain coefficients.
         and radio buttons, interactive zooming, panning of the images
         displayed in `highgui` windows, “save as” etc. Please, check the
         youtube videos where Yannick demonstrates the new features:
-        http://www.youtube.com/user/MrFrenchCookie\#p/u
+        http://www.youtube.com/user/MrFrenchCookie#p/u
     -   The new API is described here:
         http://docs.opencv.org/modules/highgui/doc/qt_new_functions.html
         To make use of the new API, you need
@@ -3322,29 +3115,23 @@ combinations to selectively enable or disable certain coefficients.
         now supported.
     -   You can now set the mode for IEEE1394 cameras on Linux.
 
-<!-- -->
-
 -   `contrib`
     -   Chamfer matching algorithm has been contributed by Marius Muja,
         Antonella Cascitelli, Marco Di Stefano and Stefano Fabri. See
         `samples/cpp/chamfer.cpp`
 
-<!-- -->
-
--   `gpu`\
+-   `gpu`
     This is completely new part of OpenCV, created with the support by
-    NVIDIA.\
+    NVIDIA.
     Note that the package is at alpha, probably early beta state, so use
     it with care and check OpenCV SVN
     for updates.
 
 In order to use it, you need to have the latest NVidia CUDA SDK installed, and
-build OpenCV with CUDA support
-(`-DWITH_CUDA=ON` CMake flag).
+build OpenCV with CUDA support (`-DWITH_CUDA=ON` CMake flag).
 
 All the functionality is put to `cv::gpu` namespace. The full list of
-functions and classes can be found at\
-`opencv/modules/gpu/include/opencv2/gpu/gpu.hpp`, and here are some
+functions and classes can be found at `opencv/modules/gpu/include/opencv2/gpu/gpu.hpp`, and here are some
 major components of the API:
 
 -   image arithmetics, filtering operations, morphology, geometrical
@@ -3352,10 +3139,8 @@ major components of the API:
 -   3 stereo correspondence algorithms: Block Matching, Belief
     Propagation and Constant-Space Belief Propagation.
 -   HOG-based object detector. It runs more
-    than order of magnitude faster than the CPU version!\
+    than order of magnitude faster than the CPU version!
     See `opencv/samples/gpu`
-
-<!-- -->
 
 -   `python` bindings\
     A lot more of OpenCV 2.x functionality is now covered by
@@ -3370,12 +3155,14 @@ They will be automatically created by the functions.
 
 Here is a micro example:
 
+    ```.py
     import cv
 
     a=cv.imread("lena.jpg",0)
     b=cv.canny(a, 50, 100, apertureSize=3)
     cv.imshow("test",b)
     cv.waitKey(0)
+    ```
 
 In the sample `a` and `b` are normal `numpy` arrays, so the whole power
 of `numpy` and `scipy` can now be combined with OpenCV functionality.
@@ -3384,8 +3171,6 @@ of `numpy` and `scipy` can now be combined with OpenCV functionality.
 
 -   Links to wiki pages have been added to each function description,
     see http://opencv.willowgarage.com
-
-<!-- -->
 
 -   All the samples have been documented with default output ‘’(0 or
     incomplete number of parameters)’’ set to print out “howto” run
@@ -3397,8 +3182,6 @@ of `numpy` and `scipy` can now be combined with OpenCV functionality.
 -   Over 300 issues have been resolved. Most of the issues (closed and
     still open) are listed at
     http://code.opencv.org/projects/opencv/issues?set_filter=1
-
-<!-- -->
 
 -   The old bug tracker at
     https://sourceforge.net/projects/opencvlibrary/ is now closed
