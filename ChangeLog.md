@@ -2804,14 +2804,14 @@ major components of the API:
 
     Here is a micro example:
 
-        ```.py
-        import cv
+    ```.py
+    import cv
 
-        a=cv.imread("lena.jpg",0)
-        b=cv.canny(a, 50, 100, apertureSize=3)
-        cv.imshow("test",b)
-        cv.waitKey(0)
-        ```
+    a=cv.imread("lena.jpg",0)
+    b=cv.canny(a, 50, 100, apertureSize=3)
+    cv.imshow("test",b)
+    cv.waitKey(0)
+    ```
 
     In the sample `a` and `b` are normal `numpy` arrays, so the whole power
     of `numpy` and `scipy` can now be combined with OpenCV functionality.
