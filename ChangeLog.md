@@ -80,6 +80,243 @@ repository (opencv) and was significantly improved:
 
     -   See also: [https://github.com/Intel-Media-SDK](https://github.com/Intel-Media-SDK)
 
+### Contributors
+
+#### opencv
+
+```
+210	Alexander Alekhin
+ 36	Vladislav Sovrasov
+ 35	Tomoaki Teshima
+ 31	Vitaly Tuzov
+ 26	Maksim Shabunin
+ 21	Fangjun KUANG
+ 17	chacha21
+ 14	LaurentBerger
+ 12	berak
+ 11	Rostislav Vasilikhin
+ 11	catree
+ 10	dkurt
+  8	Matthias Grundmann
+  8	Pavel Rojtberg
+  8	Pyotr Chekmaryov
+  8	Vadim Pisarevsky
+  8	Woody Chow
+  7	Aleksandr Rybnikov
+  7	atinfinity
+  6	Hamdi Sahloul
+  6	vskarlsruhe
+  5	Jiri Horner
+  5	KUANG, Fangjun
+  5	Michele Cancilla
+  5	StevenPuttemans
+  4	Dal Rupnik
+  4	Naba Kumar
+  4	Pavel Vlasov
+  4	chrizandr
+  4	saskatchewancatch
+  3	Claudio
+  3	Jaime O. Rios
+  3	Peter Würtz
+  3	PkLab.net
+  3	Suleyman TURKMEN
+  3	Wenju He
+  3	Yuriy Solovyov
+  3	abratchik
+  3	nnorwitz
+  3	oulenz
+  2	Alexander Broemmer
+  2	Artem Lukoyanov
+  2	Chaoshuai Lu
+  2	Drew Hintz
+  2	Kerry Billingham
+  2	LukeZhu
+  2	Matt Bennett
+  2	Philipp Hasper
+  2	Rink Springer
+  2	Sergiu Deitsch
+  2	Tetragramm
+  2	Tong Ke
+  2	Utkarsh Sinha
+  2	jveitchmichaelis
+  2	lewisjb
+  2	mshabunin
+  2	tribta
+  2	utibenkei
+  2	ville-v
+  2	ziggy90127
+  1	Adeel
+  1	Adeel Ahmad
+  1	Alessandro Gentilini
+  1	Alexander Duda
+  1	Amro
+  1	André Mewes
+  1	Anupam Sobti
+  1	Arek
+  1	Arkadiusz Raj
+  1	Arnaud Brejeon
+  1	BadrinathS
+  1	Bragadeesh
+  1	Brian Armstrong
+  1	Bryce Evans
+  1	Cartucho
+  1	Christof Kaufmann
+  1	David Carlier
+  1	Dinar
+  1	Dinar Ahmatnurov
+  1	Dmitry Kurtaev
+  1	Duncan Barber
+  1	Egor Pugin
+  1	Fernando Iglesias Garcia
+  1	Frank de Brabander
+  1	Gabriel B. Nunes
+  1	Guilherme William Guedes
+  1	Hans Gaiser
+  1	Ilija Puaca
+  1	Ismo Puustinen
+  1	James Clarke
+  1	Jejos
+  1	Jeremy Maitin-Shepard
+  1	Jinay Patel
+  1	Jiří Sejkora
+  1	Jon Eyolfson
+  1	Jose Gómez
+  1	Juha Reunanen
+  1	Julian Exner
+  1	Julian Tanke
+  1	Kene Udeh
+  1	Kuan-Yi Li
+  1	Kyle Fleming
+  1	Lorena García
+  1	Louie Helm
+  1	Mark Szumowski
+  1	Martin Ganeff
+  1	Neil Shipp
+  1	Neio Zhou
+  1	Nicholas Nadeau
+  1	Ninad P.Chaudhari
+  1	Paolo Perkovic
+  1	Pascal Thomet
+  1	Patrik Huber
+  1	Piotr Semenov
+  1	PkLab
+  1	Raj Natarajan
+  1	Robert Bragg
+  1	Robin Chavignat
+  1	Ryan Pavlik
+  1	Ryuhei Mori
+  1	Sadika Sumanapala
+  1	Satoshi Tanaka
+  1	Sergey
+  1	Shuyu Liang
+  1	Sixela David
+  1	Steve
+  1	Steven Puttemans
+  1	Tim King
+  1	Tony Lian
+  1	Tony Theodore
+  1	Vadzim Piatrou
+  1	Werner Palfinger
+  1	Yakun Wang
+  1	Yuval Langer
+  1	Zhiwei Su
+  1	brian-armstrong-discord
+  1	cDc
+  1	cclauss
+  1	daB0bby
+  1	gylns
+  1	hailong-wang
+  1	huangqinjin
+  1	insoow
+  1	ionut
+  1	jexner
+  1	jqly
+  1	krishraghuram
+  1	kvaghel1
+  1	likan999
+  1	logic1988
+  1	mrquorr
+  1	mschoeneck
+  1	msk-repo01
+  1	n001519
+  1	neok-m4700
+  1	orisano
+  1	puqeko
+  1	q
+  1	remi
+  1	rmensing
+  1	sovrasov
+  1	umbraclet16
+  1	vartenkov
+  1	wykvictor
+  1	wzw
+  1	xuning0
+  1	ylemkimon
+  1	zongwave
+```
+
+#### opencv_contrib
+
+```
+44	Vladislav Sovrasov
+24	Alexander Alekhin
+14	Aleksandr Rybnikov
+11	Hamdi Sahloul
+11	dkurt
+ 9	Vadim Pisarevsky
+ 7	berak
+ 6	LaurentBerger
+ 5	Maksim Shabunin
+ 4	Balint Cristian
+ 4	arrybn
+ 3	Dmitry Kurtaev
+ 3	Li Peng
+ 3	Pavel Rojtberg
+ 3	Pavel Vlasanek
+ 3	Philipp Hasper
+ 3	Suleyman TURKMEN
+ 3	jexner
+ 2	Kumataro
+ 2	Steven Puttemans
+ 2	Vladislav Samsonov
+ 2	Woody Chow
+ 2	atinfinity
+ 2	lhelontra
+ 2	mshabunin
+ 2	np-csu
+ 2	olivierpascal
+ 1	Diego
+ 1	Edgar Riba
+ 1	Erik Sandrén
+ 1	Erwan Normand
+ 1	Haaris
+ 1	Jcrist99
+ 1	Jeremy Nicola
+ 1	Julian Exner
+ 1	Justin Hotchkiss Palermo
+ 1	Kiran Pradeep
+ 1	Leonardo lontra
+ 1	Lorena García
+ 1	Max-Wang
+ 1	Natsuki Kawai
+ 1	Rostislav Vasilikhin
+ 1	Sergey
+ 1	StevenPuttemans
+ 1	Tham
+ 1	Yorwba
+ 1	Yuriy Obukh
+ 1	abratchik
+ 1	catree
+ 1	goldstar616
+ 1	logic1988
+ 1	nyanp
+ 1	oqtvs
+ 1	saskatchewancatch
+ 1	szk1509
+ 1	utibenkei
+```
+
+
 version:3.2
 -----------
 
