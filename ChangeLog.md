@@ -6,67 +6,41 @@ version:3.3
 
 *August, 2017*
 
-OpenCV 3.3 with accelerated dnn module, moved to the main repository,
-first-ever appearance of Halide in OpenCV, multiple optimizations and
-other improvements has been released.
+OpenCV 3.3 with accelerated dnn module, moved to the main repository, first-ever appearance of
+Halide in OpenCV, multiple optimizations and other improvements has been released.
 
 ![](images/dnn.png)
 
-opencv_dnn module has been moved from the contribution repository
-(opencv_contrib) to the main repository (opencv) and was significantly
-improved:
+opencv_dnn module has been moved from the contribution repository (opencv_contrib) to the main
+repository (opencv) and was significantly improved:
 
--   High-level API has been modified and is
-    even more convenient now.
--   The regression tests have been expanded, some new tests have
-    been added. Now, there are 46 of them.
--   Many bugs have been fixed in Torch and TF loaders, as well as in
-    some processing layers. Now we check that on a certain set of
-    networks the results from OpenCV DNN match
-    or very close to the results from the original frameworks. We also
-    check that the results claimed in the papers for such networks are
-    achievable with OpenCV DNN.
--   Performance has been substantially improved. Layer fusion has been
-    implemented and some performance-critical layers have been optimized
-    using AVX, AVX2, SSE and NEON. An
-    external BLAS (OpenBLAS, MKL, ATLAS) is not
-    needed anymore.
--   New
-    [samples](https://github.com/opencv/opencv/tree/master/samples/dnn)
-    in C++ and Python have been added.
--   The optional [Halide](http://halide-lang.org) backend has
-    been added. It can accelerate OpenCV DNN
-    on GPU when the GPU is fast enough.
+-   High-level API has been modified and is even more convenient now.
 
-See [Deep Learning in OpenCV](https://github.com/opencv/opencv/wiki/Deep-Learning-in-OpenCV)
-for details about the module.
+-   The regression tests have been expanded, some new tests have been added. Now, there are 46 of them.
+
+-   Many bugs have been fixed in Torch and TF loaders, as well as in some processing layers. Now we check that on a certain set of networks the results from OpenCV DNN match or very close to the results from the original frameworks. We also check that the results claimed in the papers for such networks are achievable with OpenCV DNN.
+
+-   Performance has been substantially improved. Layer fusion has been implemented and some performance-critical layers have been optimized using AVX, AVX2, SSE and NEON. An external BLAS (OpenBLAS, MKL, ATLAS) is not needed anymore.
+
+-   New [samples](https://github.com/opencv/opencv/tree/master/samples/dnn) in C++ and Python have been added.
+
+-   The optional [Halide](http://halide-lang.org) backend has been added. It can accelerate OpenCV DNN on GPU when the GPU is fast enough.
+
+    See [Deep Learning in OpenCV](https://github.com/opencv/opencv/wiki/Deep-Learning-in-OpenCV)
+    for details about the module.
 
 ![](images/Intel_IPP_logo.png)
 
--   Upgraded IPPICV from 2015.12 to 2017.2
-    version brought ~15% speed improvement into core and imgproc
-    modules (measured as geometrical mean over the corresponding
-    performance tests).
+-   Upgraded IPPICV from 2015.12 to 2017.2 version brought ~15% speed improvement into core and imgproc modules (measured as geometrical mean over the corresponding performance tests).
 
 ![](images/speed.jpg)
 
--   Dynamic dispatching of SSE4.2/AVX/AVX2
-    code has been implemented. Previously, OpenCV had to be built with
-    SSE4.x/AVX/AVX2 turned on in order to use
-    such optimizations and that made it incompatible with
-    older hardware. Now the OpenCV binaries automatically adapt to the
-    real hardware and make use of new instructions if they are available
-    while retaining compatibility with older hardware. All the existing
-    AVX/AVX2 optimizations in OpenCV have been
-    refactored to use this technology. AVX
-    acceleration of DNN also uses
-    dynamic dispatching.
+-   Dynamic dispatching of SSE4.2/AVX/AVX2 code has been implemented. Previously, OpenCV had to be built with SSE4.x/AVX/AVX2 turned on in order to use such optimizations and that made it incompatible with older hardware. Now the OpenCV binaries automatically adapt to the real hardware and make use of new instructions if they are available while retaining compatibility with older hardware. All the existing AVX/AVX2 optimizations in OpenCV have been refactored to use this technology. AVX acceleration of DNN also uses dynamic dispatching.
 
 ![](images/cxx11.png)
 
--   OpenCV can now be configured and built as C++ 11 library. Pass
-    `-DENABLE_CXX11=ON` to CMake. On some modern Linux distributions,
-    like the latest Fedora, it’s enabled by default.
+-   OpenCV can now be configured and built as C++ 11 library. Pass `-DENABLE_CXX11=ON` to CMake. On some modern Linux distributions, like the latest Fedora, it’s enabled by default.
+
 -   New features for C++ 11 users have been added:
 
     ```.cpp
@@ -98,15 +72,12 @@ for details about the module.
 
 ![](images/imediasdk.png)
 
--   Support for hardware-accelerated video encoding/decoding using Intel
-    GPUs through Intel Media SDK has been
-    implemented for Linux (in the form of backends for
-    `cv::VideoCapture` and `cv::VideoWriter`).
-    -   Encoding and decoding of raw H.264 and MPEG1/2 video streams is
-        supported, media containers are not supported yet.
-    -   Note that system kernel should have specific support for
-        hardware as mentioned in the [Media SDK/Server Studio installation         guide](https://software.intel.com/en-us/articles/how-to-setup-media-server-studio-on-secondary-os-of-linux).
-        In some cases kernel recompilation will be needed.
+-   Support for hardware-accelerated video encoding/decoding using Intel GPUs through Intel Media SDK has been implemented for Linux (in the form of backends for `cv::VideoCapture` and `cv::VideoWriter`).
+
+    -   Encoding and decoding of raw H.264 and MPEG1/2 video streams is supported, media containers are not supported yet.
+
+    -   Note that system kernel should have specific support for hardware as mentioned in the [Media SDK/Server Studio installation         guide](https://software.intel.com/en-us/articles/how-to-setup-media-server-studio-on-secondary-os-of-linux). In some cases kernel recompilation will be needed.
+
     -   See also: [https://github.com/Intel-Media-SDK](https://github.com/Intel-Media-SDK)
 
 version:3.2
@@ -114,63 +85,40 @@ version:3.2
 
 *December, 2016*
 
-Long-awaited update to OpenCV 3.x release series, with tons of
-improvements and bug fixes. Big thanks to everyone who particpated! If
-you contributed something but your name is missing, please, let us know.
+Long-awaited update to OpenCV 3.x release series, with tons of improvements and bug fixes. Big
+thanks to everyone who particpated! If you contributed something but your name is missing, please,
+let us know.
 
 
 ![](images/gsoc2016.jpg)
 
--   Results from 11 GSoC 2016 projects have been submitted to the
-    library, 9 of them have been integrated already, 2 still pending
-    (the numbers below are the id’s of the Pull Requests in opencv or
-    opencv_contrib repository):
-    -   Ambroise Moreau (Delia Passalacqua) – sinusoidal patterns for
-        structured light and phase unwrapping module (711)
-    -   Alexander Bokov (Maksim Shabunin) – DIS optical flow (excellent dense optical
-        flow algorithm that is both significantly better and
-        significantly faster than Farneback’s algorithm – our baseline),
-        and learning-based color constancy algorithms implementation
-        (689, 708, 722, 736, 745, 747)
+-   Results from 11 GSoC 2016 projects have been submitted to the library, 9 of them have been integrated already, 2 still pending (the numbers below are the id’s of the Pull Requests in opencv or opencv_contrib repository):
+    -   Ambroise Moreau (Delia Passalacqua) – sinusoidal patterns for structured light and phase unwrapping module (711)
+    -   Alexander Bokov (Maksim Shabunin) – DIS optical flow (excellent dense optical flow algorithm that is both significantly better and significantly faster than Farneback’s algorithm – our baseline), and learning-based color constancy algorithms implementation (689, 708, 722, 736, 745, 747)
     -   Tyan Vladimir (Antonella Cascitelli) – CNN based tracking algorithm (GOTURN) (718, 899)
-    -   Vladislav Samsonov (Ethan Rublee) – PCAFlow and Global Patch
-        Collider algorithms implementation (710, 752)
-    -   João Cartucho (Vincent Rabaud) – Multi-language OpenCV Tutorials
-        in Python, C++ and Java (7041)
-    -   Jiri Horner (Bo Li) – New camera model and parallel processing
-        for stitching pipeline (6933)
-    -   Vitaliy Lyudvichenko (Anatoly Baksheev) – Optimizations and
-        improvements of dnn module (707, 750)
-    -   Iric Wu (Vadim Pisarevsky) – Base64 and JSON support for file storage (6697,
-        6949, 7088). Use names like `“myfilestorage.xml?base64”` when
-        writing file storage to store big chunks of numerical data in
-        base64-encoded form.
-    -   Edgar Riba (Manuele Tamburrano, Stefano Fabri) – tiny_dnn
-        improvements and integration (720: pending)
-    -   Yida Wang (Manuele Tamburrano, Stefano Fabri) – Quantization and
-        semantic saliency detection with tiny_dnn
+    -   Vladislav Samsonov (Ethan Rublee) – PCAFlow and Global Patch Collider algorithms implementation (710, 752)
+    -   João Cartucho (Vincent Rabaud) – Multi-language OpenCV Tutorials in Python, C++ and Java (7041)
+    -   Jiri Horner (Bo Li) – New camera model and parallel processing for stitching pipeline (6933)
+    -   Vitaliy Lyudvichenko (Anatoly Baksheev) – Optimizations and improvements of dnn module (707, 750)
+    -   Iric Wu (Vadim Pisarevsky) – Base64 and JSON support for file storage (6697, 6949, 7088). Use names like `“myfilestorage.xml?base64”` when writing file storage to store big chunks of numerical data in base64-encoded form.
+    -   Edgar Riba (Manuele Tamburrano, Stefano Fabri) – tiny_dnn improvements and integration (720: pending)
+    -   Yida Wang (Manuele Tamburrano, Stefano Fabri) – Quantization and semantic saliency detection with tiny_dnn
     -   Anguelos Nicolaou (Lluis Gomez) – Word-spotting CNN based algorithm (761: pending)
 
-big thanks to all the participants!
+    big thanks to all the participants!
 
 
 ![](images/thank_you.jpg)
 
--   There have been many contributions besides GSoC (big thanks to the
-    authors, which names/nicknames are enclosed in parentheses):
+-   There have been many contributions besides GSoC (big thanks to the authors, which names/nicknames are enclosed in parentheses):
     -   DICOM support via GDCM library (look4pritam), PAM format support (DmtKats)
-    -   Support GigE cameras via Aravis SDK
-        (thanks to ArkadiuszRaj)
-    -   Interactive camera calibration app, see
-        https://github.com/opencv/opencv/tree/master/apps/interactive-calibration,
-        and QR matrix decomposition (Vlad Sovrasov)
+    -   Support GigE cameras via Aravis SDK (thanks to ArkadiuszRaj)
+    -   Interactive camera calibration app, see https://github.com/opencv/opencv/tree/master/apps/interactive-calibration, and QR matrix decomposition (Vlad Sovrasov)
     -   OpenCL accelerations exposed to Python (Nikolay Polyarniy)
     -   Instrumentation framework for performance testing (Pavel Vlasov)
-    -   Many improvements in tests (Maksim Shabunin, Alexander Alekhin
-        and many other people)
+    -   Many improvements in tests (Maksim Shabunin, Alexander Alekhin and many other people)
     -   Weighted median filter (Zhou Chao)
-    -   VGG descriptor, BoostDesc descriptor
-        (Balint Cristian)
+    -   VGG descriptor, BoostDesc descriptor (Balint Cristian)
     -   Selective search segmentation (Maximilien Cuony)
     -   Paillou and Deriche Filter (Laurent Berger)
     -   Bilateral texture filter (jhlee525)
@@ -183,99 +131,48 @@ big thanks to all the participants!
     -   Freetype2 support (@Kumataro)
     -   etc.
 
-
 ![](images/dnn.png)
 
--   A lot of improvements have been done in our dnn module
-    (https://github.com/opencv/opencv_contrib/tree/master/modules/dnn):
-    -   The module has been expanded (in particular, LSTM and many other layers have been added)
-        and refactored to support OpenCL acceleration (which is
-        temporarily disabled) (Vitaly Lyudvichenko)
-    -   External BLAS implementations are
-        detected and used to accelerate convolutions
-        (Vitaly Lyudvichenko)
-    -   Added semantic segmentation support + sample, see
-        https://github.com/opencv/opencv_contrib/blob/master/modules/dnn/samples/fcn_semsegm.cpp
-        (Vladimir Bystricky)
-    -   Single Shot MultiBox Detector: added missing layers + sample,
-        see
-        https://github.com/opencv/opencv_contrib/blob/master/modules/dnn/samples/ssd_object_detection.cpp
-        (Anna Petrovicheva)
-    -   Added importer of TensorFlow models + sample; see
-        https://github.com/opencv/opencv_contrib/blob/master/modules/dnn/samples/tf_inception.cpp
-        (Alexander Rybnikov)
-
-
+-   A lot of improvements have been done in our dnn module (https://github.com/opencv/opencv_contrib/tree/master/modules/dnn):
+    -   The module has been expanded (in particular, LSTM and many other layers have been added) and refactored to support OpenCL acceleration (which is temporarily disabled) (Vitaly Lyudvichenko)
+    -   External BLAS implementations are detected and used to accelerate convolutions (Vitaly Lyudvichenko)
+    -   Added semantic segmentation support + sample, see https://github.com/opencv/opencv_contrib/blob/master/modules/dnn/samples/fcn_semsegm.cpp (Vladimir Bystricky)
+    -   Single Shot MultiBox Detector: added missing layers + sample, see https://github.com/opencv/opencv_contrib/blob/master/modules/dnn/samples/ssd_object_detection.cpp (Anna Petrovicheva)
+    -   Added importer of TensorFlow models + sample; see https://github.com/opencv/opencv_contrib/blob/master/modules/dnn/samples/tf_inception.cpp (Alexander Rybnikov)
 
 ![](images/platforms.png)
 
--   There are also many updates to make sure that OpenCV compiles and
-    runs on modern OSes with modern compilers:
-    -   Ubuntu 16.04 LTS with GCC 5.×. GCC 6.x
-        is supported too.
-    -   OSX 10.11 – 10.12 with XCode 8.x; in
-        particular, we now use the new AVFoundation backend on OSX. Thanks to yoffy, Matthew Self and
-        Ryan Govostes.
+-   There are also many updates to make sure that OpenCV compiles and runs on modern OSes with modern compilers:
+    -   Ubuntu 16.04 LTS with GCC 5.×. GCC 6.x is supported too.
+    -   OSX 10.11 – 10.12 with XCode 8.x; in particular, we now use the new AVFoundation backend on OSX. Thanks to yoffy, Matthew Self and Ryan Govostes.
     -   Visual Studio 2015; VS 2017 will likely work too.
     -   Better support for AArch64 on Linux and Android
 
-
-
 ![](images/intel.png)
 
--   Intel MKL can now be used to accelerate
-    SVD, LU, camera calibration, as well as
-    DNN module.
--   Added initial support for Intel Compiler (Intel Compiler 2017 has
-    been tested on Windows and Linux)
--   Many SSE optimizations have been done; big
-    thanks to K-Shinotsuka, Tomoaki Teshima, mschoeneck and many
-    other people.
--   Several OpenCL kernels, specially optimized for Intel GPUs, have
-    been contributed by Peng Li and others.
-
-
+-   Intel MKL can now be used to accelerate SVD, LU, camera calibration, as well as DNN module.
+-   Added initial support for Intel Compiler (Intel Compiler 2017 has been tested on Windows and Linux)
+-   Many SSE optimizations have been done; big thanks to K-Shinotsuka, Tomoaki Teshima, mschoeneck and many other people.
+-   Several OpenCL kernels, specially optimized for Intel GPUs, have been contributed by Peng Li and others.
 
 ![](images/nvidia.png)
 
--   NVidia corporation has donated ARM
-    optimizations for OpenCV, the Carotene
-    library (https://github.com/opencv/opencv/tree/master/3rdparty/carotene).
+-   NVidia corporation has donated ARM optimizations for OpenCV, the Carotene library (https://github.com/opencv/opencv/tree/master/3rdparty/carotene).
 -   CUDA 8 is now supported.
--   There is also the new tutorial on installing OpenCV on Tegra
-    platforms by Randy J. Ray:
-    http://docs.opencv.org/master/d6/d15/tutorial_building_tegra_cuda.html,
-    which could probably be useful for other mobile platforms running
-    Linux as well.
-
+-   There is also the new tutorial on installing OpenCV on Tegra platforms by Randy J. Ray: http://docs.opencv.org/master/d6/d15/tutorial_building_tegra_cuda.html, which could probably be useful for other mobile platforms running Linux as well.
 
 
 ![](images/openvx.png) ![](images/hal.jpg)
 
--   OpenVX 1.x implementations can now be used to accelerate OpenCV,
-    mostly through the HAL mechanism. Build
-    OpenCV with WITH_OPENVX flag turned on and specifty where to find
-    OpenVX (see
-    https://github.com/opencv/opencv/blob/master/cmake/FindOpenVX.cmake
-    for details).
--   Convenient C++ wrappers for OpenVX that simplify joint use of
-    OpenCV + OpenVX have been created by Andrey Pavlenko. See the
-    examples at
-    https://github.com/opencv/opencv/tree/master/samples/openvx, the
-    wrappers are in ivx.hpp header.
--   External BLAS+Lapack implementations (such as MKL, OpenBLAS, Atlas or Apple’s
-    Accelerate framework) can now be used to accelerate SVD decomposition, LU decomposition etc.
--   HAL has been extended to support much more
-    functions such as image warping, color conversion,
-    filtering operations.
-
-
+-   OpenVX 1.x implementations can now be used to accelerate OpenCV, mostly through the HAL mechanism. Build OpenCV with WITH_OPENVX flag turned on and specifty where to find OpenVX (see https://github.com/opencv/opencv/blob/master/cmake/FindOpenVX.cmake for details).
+-   Convenient C++ wrappers for OpenVX that simplify joint use of OpenCV + OpenVX have been created by Andrey Pavlenko. See the examples at https://github.com/opencv/opencv/tree/master/samples/openvx, the wrappers are in ivx.hpp header.
+-   External BLAS+Lapack implementations (such as MKL, OpenBLAS, Atlas or Apple’s Accelerate framework) can now be used to accelerate SVD decomposition, LU decomposition etc.
+-   HAL has been extended to support much more functions such as image warping, color conversion, filtering operations.
 
 ![](images/github2.png)
 
 -   This release features a record number of PRs and bug fixed:
-    -   778 + 191 PRs merged into opencv + opencv_contrib master since
-        3.1.0
+    -   778 + 191 PRs merged into opencv + opencv_contrib master since 3.1.0
     -   348 bugs and 69 features in opencv master
     -   47 bugs and 14 features in opencv_contrib
 
@@ -628,181 +525,85 @@ version:3.1
 
 *December, 2015*
 
-This is the first stabilization update in 3.x series. It shall be
-reminded that since OpenCV 3.0 we’ve changed the version enumeration
-scheme, so that 3.1 is the same sort of update to 3.0 as 2.4.1 was to
-2.4.0.
-
-
+This is the first stabilization update in 3.x series. It shall be reminded that since OpenCV 3.0
+we’ve changed the version enumeration scheme, so that 3.1 is the same sort of update to 3.0 as 2.4.1
+was to 2.4.0.
 
 ![](images/gsoc2015.jpg)
 
--   There have been many successful projects this year (student
-    and mentor(s) are listed after the project name), and the results
-    are available as a part of OpenCV 3.1 (partially in the main
-    repository, but mostly opencv_contrib):
-    -   **Omnidirectional Cameras Calibration and Stereo 3D
-        Reconstruction** – opencv_contrib/ccalib module (Baisheng Lai,
-        Bo Li)
-    -   **Structure From Motion** – opencv_contrib/sfm module (Edgar
-        Riba, Vincent Rabaud)
-    -   **Improved Deformable Part-based Models** – opencv_contrib/dpm
-        module (Jiaolong Xu, Bence Magyar)
-    -   **Real-time Multi-object Tracking using Kernelized Correlation
-        Filter** – opencv_contrib/tracking module (Laksono
-        Kurnianggoro, Fernando J. Iglesias Garcia)
-    -   **Improved and expanded Scene Text Detection** –
-        opencv_contrib/text module (Lluis Gomez, Vadim Pisarevsky)
-    -   **Stereo correspondence improvements** – opencv_contrib/stereo
-        module (Mircea Paul Muresan, Sergei Nosov)
-    -   **Structured-Light System Calibration** –
-        opencv_contrib/structured_light (Roberta Ravanelli, Delia
-        Passalacqua, Stefano Fabri, Claudia Rapuano)
-    -   **Chessboard+ArUco for camera calibration** –
-        opencv_contrib/aruco (Sergio Garrido, Prasanna, Gary Bradski)
-    -   **Implementation of universal interface for deep neural network
-        frameworks** – opencv_contrib/dnn module (Vitaliy Lyudvichenko,
-        Anatoly Baksheev)
-    -   **Recent advances in edge-aware filtering, improved SGBM stereo algorithm** – opencv/calib3d and
-        opencv_contrib/ximgproc (Alexander Bokov, Maksim Shabunin)
-    -   **Improved ICF detector, waldboost
-        implementation** – opencv_contrib/xobjdetect (Vlad Shakhuro,
-        Alexander Bovyrin)
-    -   **Multi-target TLD tracking** –
-        opencv_contrib/tracking module (Vladimir Tyan,
-        Antonella Cascitelli)
-    -   **3D pose estimation using CNNs** – opencv_contrib/cnn_3dobj
-        (Yida Wang, Manuele Tamburrano, Stefano Fabri)
-
-
+-   There have been many successful projects this year (student and mentor(s) are listed after the project name), and the results are available as a part of OpenCV 3.1 (partially in the main repository, but mostly opencv_contrib):
+    -   **Omnidirectional Cameras Calibration and Stereo 3D Reconstruction** – opencv_contrib/ccalib module (Baisheng Lai, Bo Li)
+    -   **Structure From Motion** – opencv_contrib/sfm module (Edgar Riba, Vincent Rabaud)
+    -   **Improved Deformable Part-based Models** – opencv_contrib/dpm module (Jiaolong Xu, Bence Magyar)
+    -   **Real-time Multi-object Tracking using Kernelized Correlation Filter** – opencv_contrib/tracking module (Laksono Kurnianggoro, Fernando J. Iglesias Garcia)
+    -   **Improved and expanded Scene Text Detection** – opencv_contrib/text module (Lluis Gomez, Vadim Pisarevsky)
+    -   **Stereo correspondence improvements** – opencv_contrib/stereo module (Mircea Paul Muresan, Sergei Nosov)
+    -   **Structured-Light System Calibration** – opencv_contrib/structured_light (Roberta Ravanelli, Delia Passalacqua, Stefano Fabri, Claudia Rapuano)
+    -   **Chessboard+ArUco for camera calibration** – opencv_contrib/aruco (Sergio Garrido, Prasanna, Gary Bradski)
+    -   **Implementation of universal interface for deep neural network frameworks** – opencv_contrib/dnn module (Vitaliy Lyudvichenko, Anatoly Baksheev)
+    -   **Recent advances in edge-aware filtering, improved SGBM stereo algorithm** – opencv/calib3d and opencv_contrib/ximgproc (Alexander Bokov, Maksim Shabunin)
+    -   **Improved ICF detector, waldboost implementation** – opencv_contrib/xobjdetect (Vlad Shakhuro, Alexander Bovyrin)
+    -   **Multi-target TLD tracking** – opencv_contrib/tracking module (Vladimir Tyan, Antonella Cascitelli)
+    -   **3D pose estimation using CNNs** – opencv_contrib/cnn_3dobj (Yida Wang, Manuele Tamburrano, Stefano Fabri)
 
 ![](images/thank_you.jpg)
 
--   Besides GSoC, we have multiple contributions from the community;
-    below is the partial list of contributed functionality:
+-   Besides GSoC, we have multiple contributions from the community; below is the partial list of contributed functionality:
     -   plot module – Nuno Moutinho
     -   ni-black thresholding algorithm – ximgproc, Samyak Datta
     -   Superpixel segmentation using Linear Spectral Clustering, SLIC superpixels – ximgproc, Balint Cristian
-    -   HDF (HDF5) support module – Balint
-        Cristian
-    -   Depth to external RGB camera
-        registration – rgbd, Pat O’Keefe
+    -   HDF (HDF5) support module – Balint Cristian
+    -   Depth to external RGB camera registration – rgbd, Pat O’Keefe
     -   Computing normals for a point cloud – rgbd, Félix Martel-Denis
     -   Fuzzy image processing module – Pavel Vlasanek
     -   Rolling guidance filter – ximgproc, Zhou Chao
     -   3x faster SimpleFlow – optflow, Francisco Facioni
-    -   Code and docs for CVPR 15’ paper “DNNs
-        are easily fooled” – Anh Nguyen
-    -   Efficient Graph-based image segmentation algorithm – ximgproc,
-        Maximilien Cuony
+    -   Code and docs for CVPR 15’ paper “DNNs are easily fooled” – Anh Nguyen
+    -   Efficient Graph-based image segmentation algorithm – ximgproc, Maximilien Cuony
     -   Sparse-to-dense optical flow – optflow, Sergey Bokov
-    -   Unscented Kalman Filter (UKF) and
-        Augmented UKF – tracking, Svetlana
-        Filicheva
+    -   Unscented Kalman Filter (UKF) and Augmented UKF – tracking, Svetlana Filicheva
     -   Fast Hough Transform – ximgproc, xolodilnik
     -   Improved performance of haartraining – Teng Cao
     -   Python samples made compatible with Python 3 – bastelflp
 
-
-
 ![](images/100px-Apple_iOS_icon.png)
 
--   The iOS framework (opencv2.framework) can now be configured to
-    include both opencv and opencv_contrib functionality. Previously,
-    there were 2 separate frameworks, but because of the include
-    directory names (“opencv2/…”, regardless of whether some module is
-    from opencv or from opencv_contrib), the produced opencv_contrib
-    was unusable.
-
-
+-   The iOS framework (opencv2.framework) can now be configured to include both opencv and opencv_contrib functionality. Previously, there were 2 separate frameworks, but because of the include directory names (“opencv2/…”, regardless of whether some module is from opencv or from opencv_contrib), the produced opencv_contrib was unusable.
 
 ![](images/android_ocv_small.png)
 
 -   more efficient camera support on Android 5+
--   faster round() on ARM (it’s also
-    applicable to iOS); big thanks to Manuele Tamburano and Stefano
-    Fabri for this!
-
-
+-   faster round() on ARM (it’s also applicable to iOS); big thanks to Manuele Tamburano and Stefano Fabri for this!
 
 ![](images/win10.png) ![](images/elcapitan.png)
 
--   OpenCV 3.1 supports fresh OSes from Microsoft and Apple, as well as
-    the newest development tools (VS2015 and Xcode 7, respectively).
-
-
+-   OpenCV 3.1 supports fresh OSes from Microsoft and Apple, as well as the newest development tools (VS2015 and Xcode 7, respectively).
 
 ![](images/Intel_IPP_logo.png)
 
--   IPPICV (a specially-for-opencv
-    free-of-charge subset of IPP (https://software.intel.com/en-us/intel-ipp)
-    that has been kindly provided by Intel Corporation) is now based on
-    IPP 9.0.1, which should make OpenCV even
-    faster on modern Intel chips.
-
-
+-   IPPICV (a specially-for-opencv free-of-charge subset of IPP (https://software.intel.com/en-us/intel-ipp) that has been kindly provided by Intel Corporation) is now based on IPP 9.0.1, which should make OpenCV even faster on modern Intel chips.
 
 ![](images/OpenCL.jpg)
 
--   There are multiple new features in the OpenCL layer, resulted from
-    our collaboration with Intel Corporation
-    -   Improved/extended interoperability with DirectX 9, 10, 11. That
-        includes conversions between DX Surface and UMat, with number of
-        copying operations reduced where possible.
-        See opencv/samples/directx.
-    -   Interoperability with Video Acceleration API on Linux. This feature requires Intel
-        Media Server
-        Studio (https://software.intel.com/en-us/intel-media-server-studio/try-buy)
-        and uses Intel’s cl_intel_va_api_media_sharing extension
-        to OpenCL. See opencv/samples/va_intel
-    -   OpenCL&lt;=&gt;OpenGL interoperability via
-        cl_khr_gl_sharing extension. It’s possible now to convert
-        OpenGL textures and OpenGL buffers to/from UMat.
-        See opencv/samples/opengl.
-    -   OpenCL&lt;=&gt;OpenCL interoperability. It means, people can now
-        use OpenCL-accelerated OpenCV together with their custom OpenCL
-        code and/or other OpenCL libraries. See opencv/samples/opencl
-        for details.
-    -   Support for Camera2 API in Android 5+.
-        See opencv/samples/android/tutorial-4-opencl, the tutorial that
-        demonstrates 3 ways of processing data from camera:
-        -   purely CPU pipeline (3-4 fps on
-            our test device)
+-   There are multiple new features in the OpenCL layer, resulted from our collaboration with Intel Corporation
+    -   Improved/extended interoperability with DirectX 9, 10, 11. That includes conversions between DX Surface and UMat, with number of copying operations reduced where possible. See opencv/samples/directx.
+    -   Interoperability with Video Acceleration API on Linux. This feature requires Intel Media Server Studio (https://software.intel.com/en-us/intel-media-server-studio/try-buy) and uses Intel’s cl_intel_va_api_media_sharing extension to OpenCL. See opencv/samples/va_intel
+    -   OpenCL&lt;=&gt;OpenGL interoperability via cl_khr_gl_sharing extension. It’s possible now to convert OpenGL textures and OpenGL buffers to/from UMat. See opencv/samples/opengl.
+    -   OpenCL&lt;=&gt;OpenCL interoperability. It means, people can now use OpenCL-accelerated OpenCV together with their custom OpenCL code and/or other OpenCL libraries. See opencv/samples/opencl for details.
+    -   Support for Camera2 API in Android 5+. See opencv/samples/android/tutorial-4-opencl, the tutorial that demonstrates 3 ways of processing data from camera:
+        -   purely CPU pipeline (3-4 fps on our test device)
         -   OpenCV-based using UMat and transparent API (10-13 fps on the same device)
-        -   direct use of OpenCL (28-30fps). This is the fastest method,
-            as you can see, because it uses OpenCL images, whereas more
-            universal T-API has to use
-            OpenCL buffers.
-
-
+        -   direct use of OpenCL (28-30fps). This is the fastest method, as you can see, because it uses OpenCL images, whereas more universal T-API has to use OpenCL buffers.
 
 ![](images/hal.jpg)
 
--   HAL (Hardware Acceleration Layer), as a
-    separate OpenCV module, opencv_hal, lived a short yet a bright
-    life; we decided to split it by parts and move the parts into the
-    respective regular OpenCV modules (core, imgproc etc.). It will help
-    us to keep the dependency graph clean and sane.
--   Added 2 examples (see opencv/samples/hal) on how to provide external
-    accelerated versions of the HAL functions;
-    note that an external implementation does not have to implement all
-    of the HAL. The supplied README explains how to build the custom HAL accelerator, and how to build OpenCV with
-    such a custom HAL replacement:
-    https://github.com/opencv/opencv/tree/master/samples/hal
--   Added some more few functions to the HAL
-    (arithmetic operations, split, merge); much more to come in OpenCV
-    3.2
-
-
+-   HAL (Hardware Acceleration Layer), as a separate OpenCV module, opencv_hal, lived a short yet a bright life; we decided to split it by parts and move the parts into the respective regular OpenCV modules (core, imgproc etc.). It will help us to keep the dependency graph clean and sane.
+-   Added 2 examples (see opencv/samples/hal) on how to provide external accelerated versions of the HAL functions; note that an external implementation does not have to implement all of the HAL. The supplied README explains how to build the custom HAL accelerator, and how to build OpenCV with such a custom HAL replacement: https://github.com/opencv/opencv/tree/master/samples/hal
+-   Added some more few functions to the HAL (arithmetic operations, split, merge); much more to come in OpenCV 3.2
 
 ![](images/github2.png)
 
--   Over 420 pull requests to opencv and over 100 pull requests to
-    opencv_contrib have been merged in since 3.0.0. Big thanks to all
-    the people who submitted bug fixes, new functionality and other
-    small and big improvements!
-    Special thanks goes to all the GSoC 2015 students and mentors, who
-    created a lot of great functionality!
+-   Over 420 pull requests to opencv and over 100 pull requests to opencv_contrib have been merged in since 3.0.0. Big thanks to all the people who submitted bug fixes, new functionality and other small and big improvements! Special thanks goes to all the GSoC 2015 students and mentors, who created a lot of great functionality!
 
 ### Contributors
 
@@ -1132,44 +933,27 @@ These are changes since 3.0 rc1.
 
 ![](images/bug.png)
 
--   Over 200 bugs reported at
-    http://code.opencv.org/projects/opencv/issues have
-    been resolved/closed. It includes many fixes in docs, build scripts,
-    python wrappers, core, imgproc, photo, features2d, objdetect,
-    contrib modules, as well as some performance improvements etc.
+-   Over 200 bugs reported at http://code.opencv.org/projects/opencv/issues have been resolved/closed. It includes many fixes in docs, build scripts, python wrappers, core, imgproc, photo, features2d, objdetect, contrib modules, as well as some performance improvements etc.
 
 ![](images/threads.jpg)
 
--   Added pthreads-based backend for cv::parallel_for\_. It means that
-    all the parallel processing should be available out-of-the-box on
-    any POSIX-compatible OS, including QNX and such. You are welcome to try it out.
+-   Added pthreads-based backend for cv::parallel_for\_. It means that all the parallel processing should be available out-of-the-box on any POSIX-compatible OS, including QNX and such. You are welcome to try it out.
 
 ![](images/android_ocv_small.png)
 
--   OpenCV Manager on Android has been completely rewritten in Java and
-    now supports both OpenCV 2.4 and 3.0. After a bit more testing we
-    will put it to Google Play.
--   The other, a bit sad but inevitable news – we had to drop support
-    for nativecamera on Android. It used some undocumented API and never worked stable.
+-   OpenCV Manager on Android has been completely rewritten in Java and now supports both OpenCV 2.4 and 3.0. After a bit more testing we will put it to Google Play.
+-   The other, a bit sad but inevitable news – we had to drop support for nativecamera on Android. It used some undocumented API and never worked stable.
 
 ![](images/daisy.jpg)
 
 -   Many excellent contributions in opencv_contrib/xfeatures2d:
     -   Christian Balint contributed long-awaited DAISY features
     -   He also contributed improved version of rotation-invariant BRISK descriptor by Gil Levi
-    -   Gil Levi contributed very nice LATCH
-        binary descriptor that outperforms all presently available in
-        OpenCV binary descriptors (ORB, BRIEF, AKAZE etc.)
-        and is comparable with heavier and slower SURF.
+    -   Gil Levi contributed very nice LATCH binary descriptor that outperforms all presently available in OpenCV binary descriptors (ORB, BRIEF, AKAZE etc.) and is comparable with heavier and slower SURF.
 
 ![](images/github2.png)
 
--   Over 80 pull requests have been merged in since 3.0 rc. Big thanks
-    to all the people who submitted bug fixes, new functionality and
-    other small and big improvements! This time special thanks goes to
-    Philip (Dikay900) who did (and still does) excellent job on porting
-    various bug fixes and other small improvements from 2.4
-    to master/3.0. Thank you, Philip!
+-   Over 80 pull requests have been merged in since 3.0 rc. Big thanks to all the people who submitted bug fixes, new functionality and other small and big improvements! This time special thanks goes to Philip (Dikay900) who did (and still does) excellent job on porting various bug fixes and other small improvements from 2.4 to master/3.0. Thank you, Philip!
 
 ### Contributors
 
@@ -1265,55 +1049,28 @@ These are changes since 3.0 beta.
 ![](images/compatibility.jpg)
 
 -   Improved compatibility with OpenCV 2.4:
-    -   2.4.11 now includes “opencv2/core.hpp” and other such headers in
-        addition to standard “opencv2/core/core.hpp”.
-    -   smart pointers (Ptr&lt;&gt;) can now be created in both 2.4 and
-        3.0 style (new ClassName(params) vs makePtr(params))
-    -   trained and stored stat models from opencv_ml 2.4 can now be
-        loaded and used by opencv_ml 3.0 as-is.
-    -   the 2.4=&gt;3.0 transition guide has been sketched:
-        http://docs.opencv.org/master/db/dfa/tutorial_transition_guide.html
+    -   2.4.11 now includes “opencv2/core.hpp” and other such headers in addition to standard “opencv2/core/core.hpp”.
+    -   smart pointers (Ptr&lt;&gt;) can now be created in both 2.4 and 3.0 style (new ClassName(params) vs makePtr(params))
+    -   trained and stored stat models from opencv_ml 2.4 can now be loaded and used by opencv_ml 3.0 as-is.
+    -   the 2.4=&gt;3.0 transition guide has been sketched: http://docs.opencv.org/master/db/dfa/tutorial_transition_guide.html
 
 ![](images/android_ocv_small.png)
 
--   We did not put OpenCV 3 to Google Play yet, but we prepared
-    installable OpenCV 3.0 Manager for Android, which can be installed
-    and tried on your device. It can co-exist with OpenCV 2.4 Manager on
-    the same device.
+-   We did not put OpenCV 3 to Google Play yet, but we prepared installable OpenCV 3.0 Manager for Android, which can be installed and tried on your device. It can co-exist with OpenCV 2.4 Manager on the same device.
 
 ![](images/winrt_opencv.jpg)
 
--   There are multiple improvements and bug-fixes for WinRT port (as
-    well as Windows 8.x port) of OpenCV by Microsoft guys (big thanks to
-    Max Kostin!)
-    -   In particular, parallel_for is enabled on WinRT, so the code
-        should run much faster on multi-core devices
-    -   Also, the WMF video capturing backend
-        has been greatly improved.
+-   There are multiple improvements and bug-fixes for WinRT port (as well as Windows 8.x port) of OpenCV by Microsoft guys (big thanks to Max Kostin!)
+    -   In particular, parallel_for is enabled on WinRT, so the code should run much faster on multi-core devices
+    -   Also, the WMF video capturing backend has been greatly improved.
 
 ![](images/mjpeg.jpg)
 
--   Standalone motion jpeg codec has been added to opencv_videoio. It
-    does *not* need ffmpeg or any other 3rd-party lib. According to our
-    measurements, it’s also much faster than ffmpeg, especially on ARM. For the decoder you should have JPEG support enabled (through built-in or
-    external libjpeg). How to use it? To encode motion jpeg video, use
-    .avi file extension and CV_FOURCC(‘M’, ‘J’, ‘P’, ‘G’). The decoder
-    part has been verified on such streams (avi files with index, where
-    each frame is encoded using baseline jpeg) and few random motion
-    jpeg clips from net, but we have not tested it thoroughly.
+-   Standalone motion jpeg codec has been added to opencv_videoio. It does *not* need ffmpeg or any other 3rd-party lib. According to our measurements, it’s also much faster than ffmpeg, especially on ARM. For the decoder you should have JPEG support enabled (through built-in or external libjpeg). How to use it? To encode motion jpeg video, use .avi file extension and CV_FOURCC(‘M’, ‘J’, ‘P’, ‘G’). The decoder part has been verified on such streams (avi files with index, where each frame is encoded using baseline jpeg) and few random motion jpeg clips from net, but we have not tested it thoroughly.
 
 ![](images/hal.jpg)
 
--   Preliminary version of OpenCV HAL,
-    low-level acceleration API beneath OpenCV,
-    has been introduced. Currently it includes just a few math
-    functions, but will grow soon. It also includes so-called “universal
-    intrinsics”, inspired by NEON=&gt;SSE
-    conversion header by Victoria Zhislina from
-    Intel: https://software.intel.com/en-us/blogs/2012/12/12/from-arm-neon-to-intel-mmxsse-automatic-porting-solution-tips-and-tricks
-    The idea is that one can use a single SIMD
-    code branch that will compile to either SSE or NEON
-    instructions depending on the target platform. For example,
+-   Preliminary version of OpenCV HAL, low-level acceleration API beneath OpenCV, has been introduced. Currently it includes just a few math functions, but will grow soon. It also includes so-called “universal intrinsics”, inspired by NEON=&gt;SSE conversion header by Victoria Zhislina from Intel: https://software.intel.com/en-us/blogs/2012/12/12/from-arm-neon-to-intel-mmxsse-automatic-porting-solution-tips-and-tricks The idea is that one can use a single SIMD code branch that will compile to either SSE or NEON instructions depending on the target platform. For example,
 
     ```.cpp
     // a, b and c are floating-point arrays
@@ -1338,14 +1095,9 @@ These are changes since 3.0 beta.
     Using such intrinsics one can write accelerated code, debug it on
     desktop and then run it without any changes on ARM and get reasonable performance.
 
-
-
 ![](images/github2.png)
 
--   Over 500 pull requests have been merged in since 3.0 beta. Big
-    thanks to all the people who submitted bug fixes, new functionality
-    and other small and big improvements! OpenCV becomes more and more a
-    community-driven project and we are pleased to see that!
+-   Over 500 pull requests have been merged in since 3.0 beta. Big thanks to all the people who submitted bug fixes, new functionality and other small and big improvements! OpenCV becomes more and more a community-driven project and we are pleased to see that!
 
 ### Contributors
 
@@ -1502,41 +1254,23 @@ These are changes since 3.0 alpha.
 
 ![](images/opencl2.png)
 
--   Performance of OpenCL-accelerated code on Intel Iris Graphics and
-    Intel Iris Pro Graphics has been improved by 10%-230%. That includes
-    faster Canny edge detector, Laplacian, StereoBM, BruteForceMatcher,
-    BackgroundSubtractorMOG2, StitchingWarpers etc. New OpenCL kernels
-    were implemented for several functions: HoughLines, HoughLinesP,
-    cvtColor (selected modes), Gemm, DFT.
-    Thanks Alexander Alekhin, Alexander Karsakov, Elena Gvozdeva,
-    Vladimir Bystritsky, Sergey Sivolgin and other guys who did that!
+-   Performance of OpenCL-accelerated code on Intel Iris Graphics and Intel Iris Pro Graphics has been improved by 10%-230%. That includes faster Canny edge detector, Laplacian, StereoBM, BruteForceMatcher, BackgroundSubtractorMOG2, StitchingWarpers etc. New OpenCL kernels were implemented for several functions: HoughLines, HoughLinesP, cvtColor (selected modes), Gemm, DFT. Thanks Alexander Alekhin, Alexander Karsakov, Elena Gvozdeva, Vladimir Bystritsky, Sergey Sivolgin and other guys who did that!
 
 ![](images/neon.png)
 
--   About 40 commonly used image processing functions have been
-    optimized using vector NEON instructions,
-    so OpenCV 3.0 beta should run noticeably faster on modern ARM chips. Big thanks to Ilya Lavrenov for the
-    amazing job!
+-   About 40 commonly used image processing functions have been optimized using vector NEON instructions, so OpenCV 3.0 beta should run noticeably faster on modern ARM chips. Big thanks to Ilya Lavrenov for the amazing job!
 
 ![](images/java_logo.svg.png)
 
--   Java bindings have been substantially improved. We now have bindings
-    for the updated features2d, background subtractor classes, a part of
-    opencv_contrib etc. Thanks to Maksim Shabunin for the improvements!
+-   Java bindings have been substantially improved. We now have bindings for the updated features2d, background subtractor classes, a part of opencv_contrib etc. Thanks to Maksim Shabunin for the improvements!
 
 ![](images/Intel_IPP_logo.png)
 
--   On x86 and x64 platforms OpenCV binaries include and use a subset of
-    Intel® Integrated Performance Primitives (Intel® [IPP](opencv3#ipp)) by default. OpenCV 3.0 beta
-    includes a subset of **Intel® IPP 8.2.1**
-    with additional optimization for AVX2.
+-   On x86 and x64 platforms OpenCV binaries include and use a subset of Intel® Integrated Performance Primitives (Intel® [IPP](opencv3#ipp)) by default. OpenCV 3.0 beta includes a subset of **Intel® IPP 8.2.1** with additional optimization for AVX2.
 
 ![](images/github2.png)
 
--   Over 200 pull requests have been merged in since 3.0 alpha. Big
-    thanks to all the people who submitted bug fixes, new functionality
-    and other small and big improvements! OpenCV becomes more and more a
-    community-driven project and we are pleased to see that!
+-   Over 200 pull requests have been merged in since 3.0 alpha. Big thanks to all the people who submitted bug fixes, new functionality and other small and big improvements! OpenCV becomes more and more a community-driven project and we are pleased to see that!
 
 ### Contributors
 
@@ -1653,143 +1387,76 @@ version:3.0 alpha
 
 *August, 2014*
 
-This is brief version of the change log. There is also a separate page
-with detailed review of [OpenCV_3.0](opencv3)
+This is brief version of the change log. There is also a separate page with detailed review of [OpenCV_3.0](opencv3)
 
 ![](images/opencl2.png)
 
--   OpenCV 3.0 brings more GPU accelerated
-    functions and makes it in much more convenient form than OpenCV 2.4.
-    -   The new technology is nick-named “Transparent API” and, in brief, is extension of
-        classical OpenCV functions, such as cv::resize(), to use
-        OpenCL underneath. See more details about it here: [T-API](opencv3#tapi).
-    -   Along with OpenCL code refactoring and Transparent API implementation OpenCL kernels were
-        optimized for mainstream platforms, most notably for modern
-        Intel chips (including Iris and Iris Pro) and AMD chips (such as Kaveri). More detailed
-        results are to be provided later.
+-   OpenCV 3.0 brings more GPU accelerated functions and makes it in much more convenient form than OpenCV 2.4.
+    -   The new technology is nick-named “Transparent API” and, in brief, is extension of classical OpenCV functions, such as cv::resize(), to use OpenCL underneath. See more details about it here: [T-API](opencv3#tapi).
+    -   Along with OpenCL code refactoring and Transparent API implementation OpenCL kernels were optimized for mainstream platforms, most notably for modern Intel chips (including Iris and Iris Pro) and AMD chips (such as Kaveri). More detailed results are to be provided later.
 
 ![](images/Intel_IPP_logo.png)
 
--   On x86 and x64 platforms OpenCV binaries include and use a subset of
-    Intel® Integrated Performance Primitives (Intel® [IPP](opencv3#ipp)) by default. Intel Corporation
-    granted OpenCV Foundation and all our users the right to use those
-    functions free of charge for both non-commercial and commercial use.
+-   On x86 and x64 platforms OpenCV binaries include and use a subset of Intel® Integrated Performance Primitives (Intel® [IPP](opencv3#ipp)) by default. Intel Corporation granted OpenCV Foundation and all our users the right to use those functions free of charge for both non-commercial and commercial use.
 
 ![](images/contrib.jpg)
 
--   We now have a separate repository for community-contributed
-    code http://github.com/opencv/opencv_contrib. It will help us to
-    combine well-known maturity and stability of classical OpenCV
-    functionality together with innovative algorithms and opens new
-    opportunities for community to share computer vision code. For all
-    the contributed code we provide the same QA infrastructure as for
-    the main OpenCV repository. How to use it?
--   Grab a copy of contribution repository
-    http://github.com/opencv/opencv_contrib along with a copy of OpenCV
-    3.0 alpha or a fresh master snapshot.
+-   We now have a separate repository for community-contributed code http://github.com/opencv/opencv_contrib. It will help us to combine well-known maturity and stability of classical OpenCV functionality together with innovative algorithms and opens new opportunities for community to share computer vision code. For all the contributed code we provide the same QA infrastructure as for the main OpenCV repository. How to use it?
+-   Grab a copy of contribution repository http://github.com/opencv/opencv_contrib along with a copy of OpenCV 3.0 alpha or a fresh master snapshot.
 -   Pass `OPENCV_EXTRA_MODULES_PATH=<path_to_contrib_directory>/modules` to CMake.
--   Documentation for the contributed modules is integrated into OpenCV
-    doc tree: http://docs.opencv.org/master
+-   Documentation for the contributed modules is integrated into OpenCV doc tree: http://docs.opencv.org/master
 
 ![](images/buildbot.png)
 
--   We completely revised our QA infrastructure (big thanks to Alexander
-    Alekhin), which now covers not only the main repository, but also
-    the contrib repository as well: http://pullrequest.opencv.org.
+-   We completely revised our QA infrastructure (big thanks to Alexander Alekhin), which now covers not only the main repository, but also the contrib repository as well: http://pullrequest.opencv.org.
 
 ![](images/gsoc2013.jpg) ![](images/gsoc2014.jpg)
 
--   OpenCV 3.0 and its contribution repository feature a lot of new
-    functionality created by our GSoC students during the past 2 years,
-    namely:
+-   OpenCV 3.0 and its contribution repository feature a lot of new functionality created by our GSoC students during the past 2 years, namely:
     -   Text detection and recognition by Lluis Gomez and Stefano Fabri
     -   HDR by Fedor Morozov
-    -   KAZE/A-KAZE
-        by Eugene Khvedchenya, the algorithm author Pablo Alcantarilla
-        and some improvements by F. Morozov.
-    -   Smart segmentation and edge-aware filters by Vitaly
-        Lyudvichenko, Yuri Gitman, Alexander Shishkov and Alexander
-        Mordvintsev
-    -   Car detection using Waldboost, ACF by
-        Vlad Shakhuro and Nikita Manovich
-    -   TLD tracker and several common-use
-        optimization algorithms by Alex Leontiev
+    -   KAZE/A-KAZE by Eugene Khvedchenya, the algorithm author Pablo Alcantarilla and some improvements by F. Morozov.
+    -   Smart segmentation and edge-aware filters by Vitaly Lyudvichenko, Yuri Gitman, Alexander Shishkov and Alexander Mordvintsev
+    -   Car detection using Waldboost, ACF by Vlad Shakhuro and Nikita Manovich
+    -   TLD tracker and several common-use optimization algorithms by Alex Leontiev
     -   Matlab bindings by Hilton Bristow, with support from Mathworks.
-    -   Greatly extended Python bindings, including Python 3 support,
-        and several OpenCV+Python tutorials by Alexander Mordvintsev,
-        Abid Rahman and others.
-    -   3D Visualization using VTK by Ozan
-        Tonkal and Anatoly Baksheev.
+    -   Greatly extended Python bindings, including Python 3 support, and several OpenCV+Python tutorials by Alexander Mordvintsev, Abid Rahman and others.
+    -   3D Visualization using VTK by Ozan Tonkal and Anatoly Baksheev.
     -   RGBD module by Vincent Rabaud
     -   Line Segment Detector by Daniel Angelov
-    -   Many useful Computational Photography algorithms by Siddharth
-        Kherada
-    -   Shape descriptors, matching and morphing shapes (shape module)
-        by Juan Manuel Perez Rua and Ilya Lysenkov
-    -   Long-term tracking + saliency-based improvements
-        (tracking module) by Antonella Cascitelli and Francesco Puja
-    -   Another good pose estimation algorithm and the tutorial on pose
-        estimation by Edgar Riba and Alexander Shishkov
-    -   Line descriptors and matchers by Biagio Montesano and Manuele
-        Tamburrano
+    -   Many useful Computational Photography algorithms by Siddharth Kherada
+    -   Shape descriptors, matching and morphing shapes (shape module) by Juan Manuel Perez Rua and Ilya Lysenkov
+    -   Long-term tracking + saliency-based improvements (tracking module) by Antonella Cascitelli and Francesco Puja
+    -   Another good pose estimation algorithm and the tutorial on pose estimation by Edgar Riba and Alexander Shishkov
+    -   Line descriptors and matchers by Biagio Montesano and Manuele Tamburrano
 
 ![](images/thank_you.jpg)
 
--   There are many other contributions, besides GSoC programs. Here is
-    incomplete list (PLEASE, mail to admin at
-    opencv.org if your name is missing here):
-    -   Myriads of improvements in various parts of the library by
-        Steven Puttemans; thank you a lot, Steven!
-    -   Several NEON optimizations by Adrian
-        Stratulat, Cody Rigney, Alexander Petrikov, Yury Gorbachev
-        and others.
+-   There are many other contributions, besides GSoC programs. Here is incomplete list (PLEASE, mail to admin at opencv.org if your name is missing here):
+    -   Myriads of improvements in various parts of the library by Steven Puttemans; thank you a lot, Steven!
+    -   Several NEON optimizations by Adrian Stratulat, Cody Rigney, Alexander Petrikov, Yury Gorbachev and others.
     -   Fast foreach loop over cv::Mat by Kazuki Matsuda
-    -   Image alignment (ECC algorithm) by
-        Georgios Evangelidis
+    -   Image alignment (ECC algorithm) by Georgios Evangelidis
     -   GDAL image support by Marvin Smith
     -   RGBD module by Vincent Rabaud
     -   Fisheye camera model by Ilya Krylov
-    -   OSX framework build script by Eugene
-        Khvedchenya
-    -   multiple FLANN improvements by
-        Pierre-Emmanuel Viel
+    -   OSX framework build script by Eugene Khvedchenya
+    -   multiple FLANN improvements by Pierre-Emmanuel Viel
     -   Improved WinRT support by Gregory Morse
-    -   Latent SVM Cascade by Evgeniy Kozhinov
-        and NNSU team (awaiting integration)
+    -   Latent SVM Cascade by Evgeniy Kozhinov and NNSU team (awaiting integration)
     -   Logistic regression by Rahul Kavi
     -   Five-point pose estimation algorithm by Bo Li
 
-Also, big thanks to all the Itseez guys who reviewed patches, watched
-bug reports and helped OpenCV in many other ways:
-Alexander Shishkov (who also maintains opencv.org site), Andrey
-Pavlenko, Alexander Alekhin, Alexander Smorkalov, Roman Donchenko,
-Kirill Kornyakov, Andrey Kamaev, Sergey Sivolgin, Vladimir Bystritsky,
-Sergey Nosov, Nikita Manovich, Evgeniy Talanin, Elena Gvozdeva,
-Alexander Karsakov, Konstantin Matskevich, Ilya Lavrenov, Anna Kogan,
-Ivan Korolev, Dinar Ahmatnurov, Andrey Senin, Vlad Vinogradov, Alexey
-Spizhevoy, Anatoly Baksheev, Marina Kolpakova, Daniil Osokin, Leonid
-Beynenson, Dmitry Retinsky, Maria Dimashova, Ilya Lysenkov, Andrey
-Morozov, Victor Eruhimov, Alexander Bovyrin, Sergey Molinov, Gary
-Bradski, Vincent Rabaud, Harris Gasparakis, Stefano Fabri and many
-others.
-
+Also, big thanks to all the Itseez guys who reviewed patches, watched bug reports and helped OpenCV in many other ways:
+Alexander Shishkov (who also maintains opencv.org site), Andrey Pavlenko, Alexander Alekhin, Alexander Smorkalov, Roman Donchenko, Kirill Kornyakov, Andrey Kamaev, Sergey Sivolgin, Vladimir Bystritsky, Sergey Nosov, Nikita Manovich, Evgeniy Talanin, Elena Gvozdeva, Alexander Karsakov, Konstantin Matskevich, Ilya Lavrenov, Anna Kogan, Ivan Korolev, Dinar Ahmatnurov, Andrey Senin, Vlad Vinogradov, Alexey Spizhevoy, Anatoly Baksheev, Marina Kolpakova, Daniil Osokin, Leonid Beynenson, Dmitry Retinsky, Maria Dimashova, Ilya Lysenkov, Andrey Morozov, Victor Eruhimov, Alexander Bovyrin, Sergey Molinov, Gary Bradski, Vincent Rabaud, Harris Gasparakis, Stefano Fabri and many others.
 
 ![](images/attention.png)
 
--   Although OpenCV 3 can be viewed as refined OpenCV 2 and is similar
-    to the latter, this new version is not completely
-    backward-compatible with OpenCV 2. Here are some major changes:
-    -   Some functionality has been moved to opencv_contrib repository
-        or just disappeared. After revision, we may put a part of
-        disappeared functionality back to opencv (or opencv_contrib).
-    -   Note that among the moved functionality is Face Recognition (now
-        a separate module opencv_contrib/face); SIFT, SURF, FREAK, Star feature detectors and
-        descriptors (now a part of opencv_contrib/xfeatures2d); text
-        detector (now a part of module opencv_contrib/text); matlab
-        bindings (opencv_contrib/matlab); motion templates & simple
-        flow (opencv_contrib/optflow).
+-   Although OpenCV 3 can be viewed as refined OpenCV 2 and is similar to the latter, this new version is not completely backward-compatible with OpenCV 2. Here are some major changes:
+    -   Some functionality has been moved to opencv_contrib repository or just disappeared. After revision, we may put a part of disappeared functionality back to opencv (or opencv_contrib).
+    -   Note that among the moved functionality is Face Recognition (now a separate module opencv_contrib/face); SIFT, SURF, FREAK, Star feature detectors and descriptors (now a part of opencv_contrib/xfeatures2d); text detector (now a part of module opencv_contrib/text); matlab bindings (opencv_contrib/matlab); motion templates & simple flow (opencv_contrib/optflow).
     -   In OpenCV 3 we write
-    -
+
         ```.cpp
         #include “opencv2/core.hpp”
         ```
@@ -1801,18 +1468,10 @@ others.
         ```
 
         The old method should also work.
-    -   ML module has been completely revised (and at the moment the
-        functionality is not 100% match for OpenCV 2.4.x), you will need
-        to update your code.
-    -   Similarly to ML, many high-level algorithms have been refactored
-        to follow “open interface-hidden implementation” concept and
-        this refactoring work will continue after alpha.
-    -   To lower the footprint, highgui module has been split into 3
-        parts: imgcodecs, videoio and highgui itself (thanks
-        to Vladimir). You may need to update your code.
-    -   After massive functionality migration to opencv_contrib and
-        other major changes some Python bindings may be missing. We will
-        fix it by OpenCV 3.0 beta.
+    -   ML module has been completely revised (and at the moment the functionality is not 100% match for OpenCV 2.4.x), you will need to update your code.
+    -   Similarly to ML, many high-level algorithms have been refactored to follow “open interface-hidden implementation” concept and this refactoring work will continue after alpha.
+    -   To lower the footprint, highgui module has been split into 3 parts: imgcodecs, videoio and highgui itself (thanks to Vladimir). You may need to update your code.
+    -   After massive functionality migration to opencv_contrib and other major changes some Python bindings may be missing. We will fix it by OpenCV 3.0 beta.
 
 version:2.4.9
 -------------
@@ -1821,24 +1480,16 @@ version:2.4.9
 
 ![](images/opencl2.png)
 
--   Several improvements in OpenCL optimizations (`ocl::sum`,
-    `ocl::countNonZero`, `ocl::minMax`, bitwise operationss, Haar face
-    detector, etc)
+-   Several improvements in OpenCL optimizations (`ocl::sum`, `ocl::countNonZero`, `ocl::minMax`, bitwise operationss, Haar face detector, etc)
 
 ![](images/android_ocv_small.png)
 
--   Multiple fixes in Naitve Camera (NativeCameraView,
-    cv::VideoCapture);
+-   Multiple fixes in Naitve Camera (NativeCameraView, cv::VideoCapture);
 -   Improved CUDA support for all CUDA-enabled SoCs.
 
 ![](images/viz.jpg)
 
--   **New** VTK-based 3D visualization module
-    `viz` stabilized and back-ported to 2.4 branch.
-    The module provides a very convenient way to display and position
-    clouds, meshes, cameras and trajectories, and simple widgets (cube,
-    line, circle, etc.).
-    Full demo video can be found at [Itseez Youtube channel](http://www.youtube.com/watch?v=75Ytgy3QT9s)
+-   **New** VTK-based 3D visualization module `viz` stabilized and back-ported to 2.4 branch. The module provides a very convenient way to display and position clouds, meshes, cameras and trajectories, and simple widgets (cube, line, circle, etc.). Full demo video can be found at [Itseez Youtube channel](http://www.youtube.com/watch?v=75Ytgy3QT9s)
 
 -   Numerous bugfixes in code and docs from community
 
@@ -3142,30 +2793,28 @@ major components of the API:
     than order of magnitude faster than the CPU version!
     See `opencv/samples/gpu`
 
--   `python` bindings\
-    A lot more of OpenCV 2.x functionality is now covered by
-    Python bindings.
+-   `python` bindings. A lot more of OpenCV 2.x functionality is now covered by Python bindings.
 
-These new wrappers require `numpy` to be installed\
-(see http://opencv.willowgarage.com/wiki/InstallGuide for details).
+    These new wrappers require `numpy` to be installed\
+    (see http://opencv.willowgarage.com/wiki/InstallGuide for details).
 
-Likewise the C++ API, in the new Python
-bindings you do not need to allocate output arrays.\
-They will be automatically created by the functions.
+    Likewise the C++ API, in the new Python
+    bindings you do not need to allocate output arrays.\
+    They will be automatically created by the functions.
 
-Here is a micro example:
+    Here is a micro example:
 
-    ```.py
-    import cv
+        ```.py
+        import cv
 
-    a=cv.imread("lena.jpg",0)
-    b=cv.canny(a, 50, 100, apertureSize=3)
-    cv.imshow("test",b)
-    cv.waitKey(0)
-    ```
+        a=cv.imread("lena.jpg",0)
+        b=cv.canny(a, 50, 100, apertureSize=3)
+        cv.imshow("test",b)
+        cv.waitKey(0)
+        ```
 
-In the sample `a` and `b` are normal `numpy` arrays, so the whole power
-of `numpy` and `scipy` can now be combined with OpenCV functionality.
+    In the sample `a` and `b` are normal `numpy` arrays, so the whole power
+    of `numpy` and `scipy` can now be combined with OpenCV functionality.
 
 ### Documentation, Samples
 
