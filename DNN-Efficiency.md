@@ -8,7 +8,7 @@
 |            | State                                                                                   |
 |-----------:|-----------------------------------------------------------------------------------------|
 |     OpenCV | https://github.com/opencv/opencv/commit/b46f5b1b386663ea2df9ec70f65d1668cbf154d1        |
-|Intel-Caffe | https://github.com/intel/caffe/commit/b8cb4f59e2ada03b1f9209e768cb03af763068a3          |
+|Intel-Caffe | https://github.com/intel/caffe/commit/3bbc9f11d9dffbb96f8944ebb6303ecba48b4188          |
 |    clCaffe | https://github.com/BVLC/caffe/commit/483c58f5f46b5959dc0a978882843713daae18f6           |
 | TensorFlow | https://github.com/tensorflow/tensorflow/commit/1ec6ed51182adf8f1b03a3188c16cd8a45ca6c85|
 |      Torch | https://github.com/torch/distro/tree/748f5e3c5c804eebf5715c0b47b1519d60ef4409           |
@@ -23,10 +23,10 @@ All calculations are done in float32.
 
 | Model | DNN, C++ | DNN, Halide | Intel-Caffe, MKL | Intel-Caffe, MKLDNN | TensorFlow | Torch, MKL |
 |----------------:|----------:|--------:|---------:|---------:|---------:|-----------:|
-|       GoogLeNet | **19.50** |      33 |      357 |       92 |          |            |
-|         AlexNet | **14.68** |    22.4 |     24.8 |       22 |          |            |
-|       ResNet-50 |     42.56 |      74 |       83 | **30.8** |          |            |
-| SqueezeNet v1.1 |      4.96 |     6.4 |     9.56 | **3.28** |          |            |
+|       GoogLeNet |     19.50 |      33 |    11.44 |  **9.6** |          |            |
+|         AlexNet |     14.68 |    22.4 | **12.6** |       13 |          |            |
+|       ResNet-50 |     42.56 |      74 |     26.8 | **24.5** |          |            |
+| SqueezeNet v1.1 |      4.96 |     6.4 |     3.54 | **3.35** |          |            |
 |    Inception-5h |     19.58 |      32 |          |          | **17.9** |            |
 |  ENet @ 512x256 |     45.79 |  **41** |          |          |          |        240 |
 
