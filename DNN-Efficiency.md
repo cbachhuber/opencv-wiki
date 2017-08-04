@@ -22,7 +22,7 @@ Best time of single image forward pass (in milliseconds):
 All calculations are done in float32.
 
 | Model | DNN, C++ | DNN, Halide | Intel-Caffe, MKLDNN | TensorFlow | Torch w. MKL |
-|----------------:|----------:|--------:|---------:|---------:|---------:|-----------:|
+|----------------:|----------:|--------:|---------:|---------:|---------:|
 |       GoogLeNet |     19.50 |      33 |  **9.6** |          |          |
 |         AlexNet |     14.68 |    22.4 |       13 |          |          |
 |       ResNet-50 |     42.56 |      74 | **24.5** |          |          |
