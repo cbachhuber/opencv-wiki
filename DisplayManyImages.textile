@@ -4,22 +4,30 @@ h1. How to Display more than one image in a single window:
 There is no inbuilt support to display more than one image in OpenCV. Here is a function illustrating how to display more than one image in a single window using Intel OpenCV. The method used is to set the ROIs of a Single Big image and then resizing and copying the input images on to the Single Big Image.
 
 <pre><code class="cpp">
-#include <cv.h>
-#include <highgui.h>
+#include <opencv2/opencv.hpp>
 
 #include <stdio.h>
 #include <stdarg.h>
 
+using namespace cv;
+using namespace std;
+
 /*Function///////////////////////////////////////////////////////////////
 
-Name:       cvShowManyImages
+Name:       ShowManyImages
 
-Purpose:    This is a function illustrating how to display more than one
+Purpose:
+
+This is a function illustrating how to display more than one
 image in a single window using Intel OpenCV
 
-Parameters: char *title: Title of the window to be displayed
-int nArgs:   Number of images to be displayed
-...:         IplImage*, which contains the images
+Parameters:
+
+string title: Title of the window to be displayed
+int    nArgs: Number of images to be displayed
+Mat    img1: First Mat, which contains the first image
+...
+Mat    imgN: First Mat, which contains the Nth image
 
 Language:   C++
 
@@ -31,19 +39,13 @@ It resizes the image without modifying the width/height ratio..
 
 This function can be called like this:
 
-cvShowManyImages("Images", 2, img1, img2);
-or
-cvShowManyImages("Images", 5, img2, img2, img3, img4, img5);
+ShowManyImages("Images", 5, img2, img2, img3, img4, img5);
 
 This function can display upto 12 images in a single window.
-It does not check whether the arguments are of type IplImage* or not.
+It does not check whether the arguments are of type Mat or not.
 The maximum window size is 700 by 660 pixels.
 Does not display anything if the number of arguments is less than
 one or greater than 12.
-
-If you pass a pointer that is not IplImage*, Error will occur.
-Take care of the number of arguments you pass, and the type of arguments,
-which should be of type IplImage* ONLY.
 
 Idea was from [[BettySanchi]] of OpenCV Yahoo! Groups.
 
@@ -62,14 +64,7 @@ cegparamesh[at]gmail[dot]com
 ...
 ///////////////////////////////////////////////////////////////////////*/
 
-void cvShowManyImages(char* title, int nArgs, ...) {
-
-// img - Used for getting the arguments
-IplImage *img;
-
-// [[DispImage]] - the image in which input images are to be copied
-IplImage *DispImage;
-
+void ShowManyImages(string title, int nArgs, ...) {
 int size;
 int i;
 int m, n;
@@ -86,43 +81,43 @@ int max;
 // If the number of arguments is lesser than 0 or greater than 12
 // return without displaying
 if(nArgs <= 0) {
-printf("Number of arguments too small....\n");
-return;
+    printf("Number of arguments too small....\n");
+    return;
 }
-else if(nArgs > 12) {
-printf("Number of arguments too large....\n");
-return;
+else if(nArgs > 14) {
+    printf("Number of arguments too large, can only handle maximally 12 images at a time ...\n");
+    return;
 }
 // Determine the size of the image,
 // and the number of rows/cols
 // from number of arguments
 else if (nArgs == 1) {
-w = h = 1;
-size = 300;
+    w = h = 1;
+    size = 300;
 }
 else if (nArgs == 2) {
-w = 2; h = 1;
-size = 300;
+    w = 2; h = 1;
+    size = 300;
 }
 else if (nArgs == 3 || nArgs == 4) {
-w = 2; h = 2;
-size = 300;
+    w = 2; h = 2;
+    size = 300;
 }
 else if (nArgs == 5 || nArgs == 6) {
-w = 3; h = 2;
-size = 200;
+    w = 3; h = 2;
+    size = 200;
 }
 else if (nArgs == 7 || nArgs == 8) {
-w = 4; h = 2;
-size = 200;
+    w = 4; h = 2;
+    size = 200;
 }
 else {
-w = 4; h = 3;
-size = 150;
+    w = 4; h = 3;
+    size = 150;
 }
 
 // Create a new 3 channel image
-[[DispImage]] = cvCreateImage( cvSize(100 + size*w, 60 + size*h), 8, 3 );
+Mat DispImage = Mat::zeros(Size(100 + size*w, 60 + size*h), CV_8UC3);
 
 // Used to get the arguments passed
 va_list args;
@@ -130,103 +125,86 @@ va_start(args, nArgs);
 
 // Loop for nArgs number of arguments
 for (i = 0, m = 20, n = 20; i < nArgs; i++, m += (20 + size)) {
+    // Get the Pointer to the IplImage
+    Mat img = va_arg(args, Mat);
 
-// Get the Pointer to the IplImage
-img = va_arg(args, IplImage*);
+    // Check whether it is NULL or not
+    // If it is NULL, release the image, and return
+    if(img.empty()) {
+        printf("Invalid arguments");
+        return;
+    }
 
-// Check whether it is NULL or not
-// If it is NULL, release the image, and return
-if(img == 0) {
-printf("Invalid arguments");
-cvReleaseImage(&DispImage);
-return;
-}
+    // Find the width and height of the image
+    x = img.cols;
+    y = img.rows;
 
-// Find the width and height of the image
-x = img->width;
-y = img->height;
+    // Find whether height or width is greater in order to resize the image
+    max = (x > y)? x: y;
 
-// Find whether height or width is greater in order to resize the image
-max = (x > y)? x: y;
+    // Find the scaling factor to resize the image
+    scale = (float) ( (float) max / size );
 
-// Find the scaling factor to resize the image
-scale = (float) ( (float) max / size );
+    // Used to Align the images
+    if( i % w == 0 && m!= 20) {
+        m = 20;
+        n+= 20 + size;
+    }
 
-// Used to Align the images
-if( i % w == 0 && m!= 20) {
-m = 20;
-n+= 20 + size;
-}
-
-// Set the image ROI to display the current image
-cvSetImageROI(DispImage, cvRect(m, n, (int)( x/scale ), (int)( y/scale )));
-
-// Resize the input image and copy the it to the Single Big Image
-cvResize(img, DispImage);
-
-// Reset the ROI in order to display the next image
-cvResetImageROI(DispImage);
+    // Set the image ROI to display the current image
+    // Resize the input image and copy the it to the Single Big Image
+    Rect ROI(m, n, (int)( x/scale ), (int)( y/scale ));
+    Mat temp; resize(img,temp, Size(ROI.width, ROI.height));
+    temp.copyTo(DispImage(ROI));
 }
 
 // Create a new window, and show the Single Big Image
-cvNamedWindow( title, 1 );
-cvShowImage( title, DispImage);
-
-cvWaitKey();
-cvDestroyWindow(title);
+namedWindow( title, 1 );
+imshow( title, DispImage);
+waitKey();
 
 // End the number of arguments
 va_end(args);
-
-// Release the Image Memory
-cvReleaseImage(&DispImage);
 }
-
 </code></pre>
 
 You can use this function as in this sample program:
 
-<pre><code class="cpp">int main() {
+<pre><code class="cpp">
+int main() {
 
-IplImage *img1 = cvLoadImage("Image01.jpg");
+Mat img1 = imread("image.png");
+Mat img2 = imread("image.png");
+Mat img3 = imread("image.png");
+Mat img4 = imread("image.png");
+Mat img5 = imread("image.png");
+Mat img6 = imread("image.png");
 
-IplImage *img2 = cvLoadImage("Image02.jpg");
-
-IplImage *img3 = cvLoadImage("Image03.jpg");
-
-IplImage *img4 = cvLoadImage("Image04.jpg");
-
-IplImage *img5 = cvLoadImage("Image05.jpg");
-
-IplImage *img6 = cvLoadImage("Image06.jpg");
-
-cvShowManyImages("Image", 6, img1, img2, img3, img4, img5, img6);
+ShowManyImages("Image", 6, img1, img2, img3, img4, img5, img6);
 
 return 0;
 
 }
-
 </code></pre>
 
-The method used is to set the ROIs of a Single Big image and then resizing and copying the input images on to the Single Big Image.
-
-This function does not stretch the image... It resizes the image without modifying the width/height ratio..
+The method used is to set the ROIs of a Single Big image and then resizing and copying the input images on to the Single Big Image. This function does not stretch the image... It resizes the image without modifying the width/height ratio..
 
 This function can be called like this:
 
-<pre><code class="cpp">    cvShowManyImages("Image", 2, img1, img2);</code></pre>
+<pre><code class="cpp">    ShowManyImages("Image", 2, img1, img2);</code></pre>
 
 or
 
-<pre><code class="cpp">    cvShowManyImages("Image", 6, img1, img2, img3, img4, img5, img6);</code></pre>
+<pre><code class="cpp">    ShowManyImages("Image", 6, img1, img2, img3, img4, img5, img6);</code></pre>
 
 upto 12 images.
 
-This function can display upto 12 images in a single window. It does not check whether the arguments are of type IplImage* or not. The maximum window size is 700 by 660 pixels. Does not display anything if the number of arguments is less than one or greater than 12.
+This function can display upto 12 images in a single window. The maximum window size is 700 by 660 pixels. Does not display anything if the number of arguments is less than one or greater than 12.
 
-If you pass a pointer that is not IplImage*, Error will occur. Take care of the number of arguments you pass, and the type of arguments, which should be of type IplImage* ONLY.
+If you pass a pointer that is not Mat, Error will occur. Take care of the number of arguments you pass, and the type of arguments, which should be of type Mat ONLY.
 
 Idea was from BettySanchi of OpenCV Yahoo! Groups.
+Adapted by @StevenPuttemans, moderator of OpenCV Q&A.
 
 If you have trouble compiling and/or executing this code, I would like to hear about it.
 
