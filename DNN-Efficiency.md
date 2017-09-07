@@ -45,9 +45,9 @@ Actual measurements in progress: https://github.com/opencv/opencv/pull/9313
 > |  ENet @ 512x256 |  39.67 |           |              |
 
 #### References
-* OpenCV's deep learning module, https://github.com/opencv/opencv_contrib/tree/master/modules/dnn.
+* OpenCV's deep learning module, https://github.com/opencv/opencv/tree/master/modules/dnn.
 * Intel-Caffe, https://github.com/intel/caffe.
-* clCaffe, https://github.com/BVLC/caffe/tree/opencl.
+* clCaffe, https://github.com/01org/caffe.
 * clDNN, https://github.com/01org/clDNN.
 * TensorFlow, https://www.tensorflow.org/.
 * Torch, http://torch.ch/.
