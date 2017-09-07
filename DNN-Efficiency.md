@@ -24,10 +24,10 @@ All calculations are done in float32.
 Actual measurements in progress: https://github.com/opencv/opencv/pull/9313
 > | Model | DNN, C++ | DNN, Halide | Intel-Caffe, MKLDNN | TensorFlow | Torch w. MKL |
 > |----------------:|----------:|--------:|---------:|---------:|---------:|
-> |       GoogLeNet |     19.50 |      33 |  **9.6** |          |          |
-> |         AlexNet |     14.68 |    22.4 |       13 |          |          |
-> |       ResNet-50 |     42.56 |      74 | **24.5** |          |          |
-> | SqueezeNet v1.1 |      4.96 |     6.4 | **3.35** |          |          |
+> |       GoogLeNet |     19.50 |      33 |  **9.31**|          |          |
+> |         AlexNet |     14.68 |    22.4 | **11.95**|          |          |
+> |       ResNet-50 |     42.56 |      74 | **22.54**|          |          |
+> | SqueezeNet v1.1 |      4.96 |     6.4 | **3.01** |          |          |
 > |    Inception-5h |     19.58 |      32 |          | **17.9** |          |
 > |  ENet @ 512x256 |     45.79 |  **41** |          |          |      240 |
 
@@ -37,10 +37,10 @@ All computations in float-32.
 Actual measurements in progress: https://github.com/opencv/opencv/pull/9313
 > |           Model | DNN, Halide|     clDNN | clCaffe |
 > |----------------:|------------:|----------:|-------------:|
-> |       GoogLeNet |  93.56 |    **28** |          181 |
-> |         AlexNet |     49 | **14.65** |           27 |
-> |       ResNet-50 |    189 |           |      **132** |
-> | SqueezeNet v1.1 |   15.8 |   **8.0** |         18.2 |
+> |       GoogLeNet |  93.56 |      28.0 |    **18.59** |
+> |         AlexNet |     49 | **14.65** |        15.22 |
+> |       ResNet-50 |    189 |           |    **57.77** |
+> | SqueezeNet v1.1 |   15.8 |       8.0 |     **5.58** |
 > |    Inception-5h |   89.5 |           |              |
 > |  ENet @ 512x256 |  39.67 |           |              |
 
