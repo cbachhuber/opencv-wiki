@@ -15,10 +15,50 @@ h3. _*Agenda*_
 * 
 
 h3. *_Minutes_*
-* 
+*
 
 h3. *_To Dos_*
 * 
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2017-09-12
+
+h3. _*Agenda*_
+* Python
+* deep connection cv
+* GSoC
+
+h3. *_Minutes_*
+* Python
+** Can build for opencv_contrib
+** make sure ffmpeg found for highgui
+** pip didn't install opencv that could read mp4... on linux,
+*** might have to do it from scratch
+* deep connection with cv
+** take simple operators and train deep net
+*** optimize
+*** replace
+** see Vladlen Koltun's work http://vladlen.info/
+*** Fast Image Processing with Fully-Convolutional Networks
+**** http://vladlen.info/publications/learning-inpaint-image-compression/
+** Need to think of what form this should be and where to store networks
+** Think about low level optimization for networks (TVM): 
+*** https://github.com/tqchen/tvm/blob/master/docs/faq.md
+*** people have already forked tiny-dnn for FPGA
+*** ways to express kernels on different hardware
+*** Exchanging networks between frameworks
+**** https://github.com/onnx/onnx
+* GSoC
+** Waiting on tax form W9
+** "Final spreadsheet":https://docs.google.com/spreadsheets/d/1xq8G2CqKvPzomBwsslNr2sP0FBygBVpfUQyOUtZ-Nro/edit#gid=1645794771 (not public, for mentors):
+*** 
+
+h3. *_To Dos_*
+* Gary, finish W9
+* Vincent to solicit videos from people
 
 <pre>
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
