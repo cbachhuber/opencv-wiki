@@ -19,20 +19,6 @@ h3. *_Minutes_*
 
 h3. *_To Dos_*
 * 
-<pre>
-<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-</pre>
-
-h2. 2017-mm-dd
-
-h3. _*Agenda*_
-* 
-
-h3. *_Minutes_*
-*
-
-h3. *_To Dos_*
-* 
 
 <pre>
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -62,7 +48,7 @@ h3. *_Minutes_*
 *** About 60 pull requests in main and in contrib, going through them now
 
 h3. *_To Dos_*
-* 
+* W9 form
 
 
 <pre>
