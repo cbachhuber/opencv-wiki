@@ -19,6 +19,51 @@ h3. *_Minutes_*
 
 h3. *_To Dos_*
 * 
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2017-mm-dd
+
+h3. _*Agenda*_
+* 
+
+h3. *_Minutes_*
+*
+
+h3. *_To Dos_*
+* 
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
+h2. 2017-09-19
+
+h3. _*Agenda*_
+* Next GSoC
+* Python documentation
+
+h3. *_Minutes_*
+* Advance Tiny-dnn
+* Replace things with DNN
+* Shrinking nets in 2 different ways
+** Need something for loading third party data/nets
+** Support for vectorized matrices
+** Want standardized compressed model
+** Then: Tensorflow vs Pytorch ... Keras
+* Python interface
+** Pybind 11 ... interfacing C++ code w/Python
+*** They may need to expose more Mat functionality to Python
+** numpy w/OpenCV
+** Conda ... need to support old Visual Studio version???
+* GSoC getting projects in
+** Mentors can contact Vadim for accepted pulls
+*** About 60 pull requests in main and in contrib, going through them now
+
+h3. *_To Dos_*
+* 
+
 
 <pre>
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
