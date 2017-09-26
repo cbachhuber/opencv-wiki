@@ -24,6 +24,53 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-09-26
+
+h3. _*Agenda*_
+* GSoC starts again
+* Javascript
+* DNN
+
+h3. *_Minutes_*
+* *GSoC*
+** Basic themes
+*** _Ever better Python integration -- pybind next for cv::Mat to make it seemless_
+*** _ Vision kernels to Halide -- ever more optimized_
+*** _More support for DNN -- more kernels, functionality, moved to learned, memory efficient nets_
+** Payoneer payment is in ... didn't miss the deadline!
+** Image processing kernels => Halide
+*** So that we can automatically generate vectorized code
+*** And an OpenCL backend
+*** Can generate OpenGL, Cuda, and many more kernals
+** Python bindings ... boost python
+*** C++ bindings OpenCV cv::Mat to pybind so that we are more seemless in Python
+**** Exposing more of cv::Mat
+**** computational photography
+** Waiting for final videos from GSoC
+* *Javascript bindings are now integrated into OpenCV main supported code!* 
+** ... big win from this years GSoC and lots of thanks to *Intel* And... 
+** Super thanks to *Mohammad Haghighat* for kicking this off and seeing it through
+* *16b floating point format*
+** We are adding for OpenCV so that it can run more memory efficient floating point operations, particularly for deepnets
+* *DNN*
+** TensorFlow, Caffe, Torch, and some darknet
+** For GSoC, theme of squeezing memory down for model zoo of very memory efficient nets
+*** Fixed point networks, memory tuning, etc. (last CVPR). 100Mb down to 5Mb
+**** Not just quantization. Represent each product of weights as product of 3 factorized matrices UVD
+***** U and V consist of -1, 0, 1 and diagonal 
+** CPU optimization already
+** GPU optimization merged soon ... OpenCL, but tuned so far for integrated GPU
+*** So, if there is OpenCL optimization, it can be backported in
+
+h3. *_To Dos_*
+* Complete legal transformation of OpenCV. Take Fenwick and West up on their offer
+
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-09-19
 
 h3. _*Agenda*_
@@ -48,7 +95,7 @@ h3. *_Minutes_*
 *** About 60 pull requests in main and in contrib, going through them now
 
 h3. *_To Dos_*
-* W9 form
+* --W9 form-- Done! Payoneer payments are in
 
 
 <pre>
