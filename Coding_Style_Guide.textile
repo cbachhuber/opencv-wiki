@@ -80,11 +80,11 @@ Functions should not use return value for signaling about critical errors, such 
 
 h3. Types of arguments
 
-Argument types are preferably chosen from the already existing set of OpenCV types: @Mat@ for raster images and matrices, @vector<Mat>@ for collection of images, @vector<Point>@, @vector<Point2f>@, @vector<Point3f>@, @vector<KeyPoint>@ for point sets, contours or collections of key points, @Scalar@ for 1- to 4-element numerical tuples (like colors, quaternions etc.) It is not recommended to use plain pointers and counters, because it makes the interface lower-level, meaning more probable typing errors, memory leaks etc. For passing complex objects into functions, methods, please, consider `Ptr<>` smart pointer template class.
+Argument types are preferably chosen from the already existing set of OpenCV types: @Mat@ for raster images and matrices, @vector<Mat>@ for collection of images, @vector<Point>@, @vector<Point2f>@, @vector<Point3f>@, @vector<KeyPoint>@ for point sets, contours or collections of key points, @Scalar@ for 1- to 4-element numerical tuples (like colors, quaternions etc.) It is not recommended to use plain pointers and counters, because it makes the interface lower-level, meaning more probable typing errors, memory leaks etc. For passing complex objects into functions, methods, please, consider @Ptr<>@ smart pointer template class.
 
 A consistent argument order is important because it becomes easier to remember the order and it helps programmer to avoid errors, connecting with wrong argument order. The usual order is: &lt;input parameters&gt;, &lt;output parameters&gt;, &lt;flags and optional parameters&gt;.
 
-Input parameters usually have @const@ qualifiers. Large objects are normally passed by a constant reference; primitive types and small structures (int, double, Point, Rect) are passed by value.
+Input parameters usually have @const@ qualifiers. Large objects are normally passed by a constant reference; primitive types and small structures (@int, double, Point, Rect@) are passed by value.
 
 Optional arguments often simplify function usage. Because C++ allows optional arguments in the end of parameters list only, it also may affect decisions on argument order—the most important flags go first and less important—after.
 
