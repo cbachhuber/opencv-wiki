@@ -38,10 +38,13 @@ h3. *_Minutes_*
 4. We've added support for networks with FP16 (half-precision) weights to DNN model importers. In Caffe such models are supported through experimental patch from NVidia. In TF there is official support for FP16. We only support the latter. Since there is no full support for FP16 in OpenCV in general and in DNN in particular, we convert such models to FP32 on-fly. This let us to compress some of the models, e.g. object detection (MobileNet-SSD) and face detection (Reset-10+SSD) by factor of 2. E.g. face detection network is just 5Mb. We measured the detection accuracy on some popular databases and found no differences in results. So far so good. Processing the networks in FP16 arithmetics on GPUs with FP16 support (most modern GPUs from Intel, AMD and NVidia support FP16) could be the logical next step.
 
 
-* Checkout the "Amazon/Microsoft compiler work (NNVM)":https://aws.amazon.com/it/blogs/ai/introducing-nnvm-compiler-a-new-open-end-to-end-compiler-for-ai-frameworks/
+* Checkout the "Amazon--Microsoft compiler work":https://aws.amazon.com/it/blogs/ai/introducing-nnvm-compiler-a-new-open-end-to-end-compiler-for-ai-frameworks/ called NNVM Compiler
+* But, also see "clDNN for working on Intel and AMD architectures":https://github.com/01org/clDNN
+* In general, we'll want OpenCV to run on as many frameworks as possible. Halide seems a possible, write once run many, but there are many people doing many things and there is also TensorFlow which was once part of the Amazon post.
 
 h3. *_To Dos_*
 * Complete legal transformation of OpenCV. Take Fenwick and West up on their offer
+* Drive
 
 <pre>
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
