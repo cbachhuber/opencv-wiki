@@ -24,17 +24,24 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
-h2. 2017-09-09
+h2. 2017-09-10
 
 h3. _*Agenda*_
-* GSoC
+* General progress
+* Accelerations
 
 h3. *_Minutes_*
-*
+
+1. In September we've set a record on the number of PRs merged and issues closed, 6.1 and 5.5 per working day, respectively.
+2. We will release OpenCV 3.3.1 this or next week.
+3. OpenCL acceleration of dnn module has been integrated, and its performance is better than Halide or previous OpenCL backend offer, but it's still not as fast as the best implementations (e.g. clDNN). But we clearly see where the performance can be improved. In particular, layer fusion can give some noticeable performance improvements.
+4. We've added support for networks with FP16 (half-precision) weights to DNN model importers. In Caffe such models are supported through experimental patch from NVidia. In TF there is official support for FP16. We only support the latter. Since there is no full support for FP16 in OpenCV in general and in DNN in particular, we convert such models to FP32 on-fly. This let us to compress some of the models, e.g. object detection (MobileNet-SSD) and face detection (Reset-10+SSD) by factor of 2. E.g. face detection network is just 5Mb. We measured the detection accuracy on some popular databases and found no differences in results. So far so good. Processing the networks in FP16 arithmetics on GPUs with FP16 support (most modern GPUs from Intel, AMD and NVidia support FP16) could be the logical next step.
+
+
+* Checkout the AWS post https://aws.amazon.com/it/blogs/ai/introducing-nnvm-compiler-a-new-open-end-to-end-compiler-for-ai-frameworks/
 
 h3. *_To Dos_*
-* 
-
+* Complete legal transformation of OpenCV. Take Fenwick and West up on their offer
 
 <pre>
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
