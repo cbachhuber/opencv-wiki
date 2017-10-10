@@ -39,6 +39,8 @@ h3. *_Minutes_*
 
 
 * Checkout the "Amazon--Microsoft compiler work":https://aws.amazon.com/it/blogs/ai/introducing-nnvm-compiler-a-new-open-end-to-end-compiler-for-ai-frameworks/ called NNVM Compiler
+** This flow looks very similar to TensorFlow framework -- graph, optimize, compile, but is completely centric to TensorFlow
+** Washington U wanted to standardize PyTorch, Tiny-DNN, Caffe ... but after GSoC ended, lost momentum. 
 * But, also see "clDNN for working on Intel and AMD architectures":https://github.com/01org/clDNN
 * In general, we'll want OpenCV to run on as many frameworks as possible. Halide seems a possible, write once run many, but there are many people doing many things and there is also TensorFlow which was once part of the Amazon post.
 
