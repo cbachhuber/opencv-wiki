@@ -35,14 +35,14 @@ Actual measurements in progress: https://github.com/opencv/opencv/pull/9313
 All computations in float-32.
 
 Actual measurements in progress: https://github.com/opencv/opencv/pull/9313
-> |           Model | DNN, Halide|     clDNN | clCaffe |
-> |----------------:|------------:|----------:|-------------:|
-> |       GoogLeNet |  93.56 |      28.0 |    **18.59** |
-> |         AlexNet |     49 | **14.65** |        15.22 |
-> |       ResNet-50 |    189 |           |    **57.77** |
-> | SqueezeNet v1.1 |   15.8 |       8.0 |     **5.58** |
-> |    Inception-5h |   89.5 |           |              |
-> |  ENet @ 512x256 |  39.67 |           |              |
+> |           Model | DNN, OpenCL backend | DNN, Halide|     clDNN |   clCaffe |
+> |----------------:|--------------------:|-----------:|----------:|----------:|
+> |       GoogLeNet |               35.69 |      93.56 |      28.0 | **18.59** |
+> |         AlexNet |               18.79 |         49 | **14.65** |     15.22 |
+> |       ResNet-50 |               91.30 |        189 |           | **57.77** |
+> | SqueezeNet v1.1 |               13.78 |       15.8 |       8.0 |  **5.58** |
+> |    Inception-5h |           **39.41** |       89.5 |           |           |
+> |  ENet @ 512x256 |               41.61 |      39.67 |           |           |
 
 #### References
 * OpenCV's deep learning module, https://github.com/opencv/opencv/tree/master/modules/dnn.
