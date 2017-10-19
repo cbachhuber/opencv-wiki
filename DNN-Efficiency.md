@@ -42,7 +42,7 @@ Actual measurements in progress: https://github.com/opencv/opencv/pull/9313
 > |       ResNet-50 |               91.30 |        189 |           | **57.77** |
 > | SqueezeNet v1.1 |               13.78 |       15.8 |       8.0 |  **5.58** |
 > |    Inception-5h |           **39.41** |       89.5 |           |           |
-> |  ENet @ 512x256 |               41.61 |      39.67 |           |           |
+> |  ENet @ 512x256 |               41.61 |  **39.67** |           |           |
 
 #### References
 * OpenCV's deep learning module, https://github.com/opencv/opencv/tree/master/modules/dnn.
