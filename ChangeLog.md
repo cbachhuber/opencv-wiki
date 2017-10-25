@@ -22,6 +22,8 @@ opencv_dnn has been further improved and extended; new samples have been added:
 
 ![](images/speed.jpg)
 
+-   OpenCV has been optimised for PPC64 (64-bit PowerPC) architecture by mapping the universal intrinsics to VSX. Big thanks to Sayed Adel for the patches.
+
 -   OpenCL acceleration path of the bioinspired module has been restored. See the bioinspired-based HDR/Background segmentation [example](https://github.com/opencv/opencv_contrib/blob/master/modules/bioinspired/samples/retinaDemo.cpp). On Iris Pro HD5200 we get ~5x acceleration over the CPU branch.
 
 -   KFC tracker has been accelerated by ~40%.
