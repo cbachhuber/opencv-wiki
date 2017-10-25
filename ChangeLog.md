@@ -11,10 +11,9 @@ OpenCV 3.3.1 with extended dnn module, most of GSoC 2017 results integrated and 
 ![](images/gsoc.png)
 
 -   Results of several GSoC 2017 projects have been integrated:
-
-  -- multi-language (e.g. C++/Python/Java) tutorials by João Cartucho, mentored by Vincent Rabaud
-  -- AKAZE acceleration by Jiri Horner, mentored by Bence Magyar
-  -- End-to-end text detection and recognition by Suman Kumar Ghosh, mentored by Prasanna Krishnasamy
+  - multi-language (e.g. C++/Python/Java) tutorials by João Cartucho, mentored by Vincent Rabaud
+  - AKAZE acceleration by Jiri Horner, mentored by Bence Magyar
+  - End-to-end text detection and recognition by Suman Kumar Ghosh, mentored by Prasanna Krishnasamy
 
 ![](images/JS.png)
 
