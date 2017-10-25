@@ -1,6 +1,35 @@
 OpenCV Change Logs
 ==================
 
+version:3.3.1
+-------------
+
+*October, 2017*
+
+OpenCV 3.3.1 with extended dnn module, most of GSoC 2017 results integrated and other improvements has been released.
+
+![](images/dnn.png)
+
+opencv_dnn has been further improved and extended; new samples have been added:
+
+-   Face detection sample and the light-weight Resnet-10 + SSD based network have been added. See [the example](https://github.com/opencv/opencv/blob/master/samples/dnn/resnet_ssd_face_python.py) for details. The detector runs around 20-50FPS on a normal desktop/laptop, and the network is just 10MB (FP32) or even 5MB (FP16).
+
+-   The partial Darknet parser, enough to parse YOLO models, as well as the layers to support a few variations of YOLO object detection networks have been integrated. See the corresponding [sample](https://github.com/opencv/opencv/blob/master/samples/dnn/yolo_object_detection.cpp).
+
+-   Preliminary support for FP16 networks has been added. We do not do computations in FP16 yet, we convert FP16 coeffs to FP32 when loading the networks. In the case of Caffe we rely on the following [fork](https://github.com/NVIDIA/caffe), whereas in the case of TF we use the official version.
+
+-   Several new layers have been added to support text detection, image colorization and some other networks.
+
+![](images/speed.jpg)
+
+-   OpenCL acceleration path of the bioinspired module has been restored. See the bioinspired-based HDR/Background segmentation [example](https://github.com/opencv/opencv_contrib/blob/master/modules/bioinspired/samples/retinaDemo.cpp). On Iris Pro HD5200 we get ~5x acceleration over the CPU branch.
+
+-   KFC tracker has been accelerated by ~40%.
+
+![](images/imediasdk.png)
+
+-   Hardware-accelerated video encoding/decoding via MediaSDK is now available on Windows too.
+
 version:3.3
 -----------
 
