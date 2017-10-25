@@ -8,6 +8,20 @@ version:3.3.1
 
 OpenCV 3.3.1 with extended dnn module, most of GSoC 2017 results integrated and other improvements has been released.
 
+![](images/gsoc.png)
+
+-   Results of several GSoC 2017 projects have been integrated:
+
+  - multi-language (e.g. C++/Python/Java) tutorials by João Cartucho, mentored by Vincent Rabaud
+  - AKAZE acceleration by Jiri Horner, mentored by Bence Magyar
+  - End-to-end text detection and recognition by Suman Kumar Ghosh, mentored by Prasanna Krishnasamy
+
+![](images/JS.png)
+
+One of GSoC 2017 projects that deserves a dedicated section in the change log:
+
+- Javascript interface to OpenCV (via Emscripten technology) and interactive Web-based OpenCV tutorials by Gang Song and Congxiang Pan. This small yet powerful team was supervised by Sajjad Taheri, Ningxin Hu and Mohammad R Haghighat. 
+
 ![](images/dnn.png)
 
 opencv_dnn has been further improved and extended; new samples have been added:
