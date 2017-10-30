@@ -46,6 +46,135 @@ opencv_dnn has been further improved and extended; new samples have been added:
 
 -   Hardware-accelerated video encoding/decoding via MediaSDK is now available on Windows too.
 
+### Contributors
+
+#### opencv
+
+```
+87  Alexander Alekhin
+32  Dmitry Kurtaev
+20  Vladislav Sovrasov
+19  Rostislav Vasilikhin
+19  tribta
+14  Suleyman TURKMEN
+10  saskatchewancatch
+ 9  Tomoaki Teshima
+ 8  Maksim Shabunin
+ 6  Ningxin Hu
+ 5  LaurentBerger
+ 5  berak
+ 4  Pavel Rojtberg
+ 4  Steven Puttemans
+ 4  Vitaly Tuzov
+ 3  Pavel Vlasov
+ 3  KUANG Fangjun
+ 3  Boris Fomitchev
+ 3  Igor Wodiany
+ 2  Ryan Fox
+ 2  Nishant Arora
+ 2  Emanuele Ruffaldi
+ 2  Wu Zhiwen
+ 2  Tony0
+ 2  RAJ NATARAJAN
+ 2  Adi Shavit
+ 2  Christof Kaufmann
+ 2  Aleksandr Rybnikov
+ 2  Sayed Adel
+ 2  stalin18
+ 2  Jiri Horner
+ 2  Jasper Shemilt
+ 2  Zoltán Mizsei
+ 2  blendin
+ 1  Ricardo Ribalda Delgado
+ 1  Sayan Sinha
+ 1  Sebastian Höffner
+ 1  Sergey Alexandrov
+ 1  Vivek Wisdom
+ 1  Vladislav Vinogradov
+ 1  Woody Chow
+ 1  Yaron Inger
+ 1  bradford barr
+ 1  catree
+ 1  jodrescher
+ 1  joncrall
+ 1  jrobble
+ 1  lzx1413
+ 1  mevatron
+ 1  pengli
+ 1  tz70s
+ 1  vipinanand4
+ 1  678098
+ 1  woody.chow
+ 1  Adam Rankin
+ 1  Alex Zatsman
+ 1  AlexeyAB
+ 1  Arvid Piehl Lauritsen Böttiger
+ 1  Balint Cristian
+ 1  Benoit Blanchon
+ 1  Bisaloo
+ 1  Camille Barneaud
+ 1  Congxiang Pan
+ 1  David Geldreich
+ 1  Deric Crago
+ 1  Faheel Ahmad
+ 1  Geoff McIver
+ 1  Gregory Morse
+ 1  Guillaume Jacob
+ 1  James Perkins
+ 1  Jeremy Maitin-Shepard
+ 1  John Hany
+ 1  KUANG, Fangjun
+ 1  Kerry Billingham
+ 1  Khem Raj
+ 1  Kim Lindberg Schwaner
+ 1  Lewis B
+ 1  Li Peng
+ 1  Maarten de Vries
+ 1  Martin Seyferth
+ 1  Mattia Rizzolo
+ 1  Patel, Nilaykumar K
+ 1  Peter Fischer
+ 1  Peter J. Stieber
+ 1  Philipp Hasper
+ 1  Pranit Bauva
+ 1  Raymond Kirk
+```
+
+#### opencv_contrib
+
+```
+19  Alexander Alekhin
+19  Vladislav Sovrasov
+13  Anguelos Nicolaou
+ 4  Suleyman TURKMEN
+ 3  Vitaly Tuzov
+ 3  acyen
+ 3  jaco
+ 2  Woody Chow
+ 2  Maksim Shabunin
+ 2  LaurentBerger
+ 2  Andrew Hundt
+ 2  Fernando Martin
+ 1  baudenri
+ 1  f3rm4rf3r
+ 1  jasjuang
+ 1  jrobble
+ 1  klchang
+ 1  Ahmed Yarub Hani
+ 1  woody.chow
+ 1  Albert
+ 1  Cristian Duguet
+ 1  Dmitry Kurtaev
+ 1  Felix Wehnert
+ 1  Francis Charette Migneault
+ 1  Gregor Kovalčík
+ 1  Jaykob
+ 1  Linus Ericsson
+ 1  Nuzhny007
+ 1  Piotr Majkrzak
+ 1  atinfinity
+```
+
 version:3.3
 -----------
 
