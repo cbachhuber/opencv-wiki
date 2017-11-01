@@ -8,15 +8,19 @@ OpenCV goal is to provide effective processors support, including separate optim
 Some OpenCV functions contains multiple code paths specialized for different processors features / instruction sets.
 Selection of executed code path is based on auto-detection of available processor features.
 
-### CMake options
+**Note**: Build options described here don't control behavior of CPU-based optimizations from Intel® Integrated Performance Primitives (Intel® IPP, https://software.intel.com/en-us/intel-ipp).
 
-These options are available since OpenCV &lt;next release&gt;.
+### Customizing CMake options
+
+These options are available since OpenCV 3.3 (released in Aug 2017).
 
 Build options allow to specify **minimal** and **dispatched** optimization features sets:
 
 * **Minimal** is required set of processor features. Executable will not run if some of these options are not available on target processor.
 
 * **Dispatched** optimizations are additional code paths compiled into executable. They will be executed on supported processors only.
+
+By default, OpenCV on x86_64 uses SSE3 as basic instruction set and enables dispatched optimizations for SSE4.2, AVX, AVX2 instruction sets. This configuration provides the best effort on wide range of users platforms.
 
 OpenCV uses these CMake variables to control supported optimization features:
 
