@@ -15,7 +15,7 @@ ffmpeg -i video.avi -vcodec copy -an -bsf:v h264_mp4toannexb video.264
 ffmpeg -i in.mkv -c:v copy -bsf hevc_mp4toannexb out.h265
 ```
 
-Then you can use _VideoCapture_ object to decode the resulting file:
+Then you can use [VideoCapture](https://docs.opencv.org/master/d8/dfe/classcv_1_1VideoCapture.html) object to decode the resulting file:
 ```.cpp
 VideoCapture cap(“video.264”, CAP_INTEL_MFX);
 ```
@@ -23,7 +23,7 @@ VideoCapture cap(“video.264”, CAP_INTEL_MFX);
 The file extension is important, because it will be used to [determine](https://github.com/opencv/opencv/blob/ec2409157857a5dabf159e6c052ec001e7110bf5/modules/videoio/src/cap_mfx_reader.cpp#L21-L31) the codec. It can be one of `.264`, `.h264`, `.mp2`, `.mpeg2`, `.265` or `.hevc`.
 
 ### Encoding
-Use the _VideoWriter_ object:
+Use the [VideoWriter](https://docs.opencv.org/master/dd/d9e/classcv_1_1VideoWriter.html) object:
 ```.cpp
 int fourcc = VideoWriter::fourcc('H', '2', '6', '4');
 VideoWriter writer(filename, CAP_INTEL_MFX, fourcc, fps, frameSize, isColor);
