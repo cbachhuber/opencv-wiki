@@ -13,6 +13,7 @@
 - [[OpenCV 3|Opencv3]]
     - [[CPU optimizations|CPU-optimizations-build-options]]
     - [[Profiling OpenCV Applications|Profiling-OpenCV-Applications]]
+    - [[MediaSDK-encode-decode-backend]]
 - [[Development process|OpenCV_Development_Process]]
     - [[Hackathon]]
     - [[How to contribute|How_to_contribute]]
