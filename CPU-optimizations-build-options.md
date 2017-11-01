@@ -112,7 +112,7 @@ Unfortunately, there is no any warning from linker about this.
 
 This "How to" example is based on optimization of Hamming norm algorithm (`core` module, file stat.cpp).
 
-1. Ensure that you have performance tests for [selected functionality](). Please don't waste your time and time of reviewer doing this without good performance tests.
+1. Ensure that you have performance tests for [selected functionality](https://github.com/opencv/opencv/pull/9063). Please don't waste your time and time of reviewer doing this without good performance tests.
 
 2. Compile OpenCV performance test with different CPU baseline features with disabled dispatching (depends on your platform). I select on `x86-64` platform: `SSE3` (minimal), `SSE4.1`, `SSE4.2`, `AVX`, `AVX2` (max level on my platform), `DETECT` (with `-march=native` compiler option).
 It is better to build these versions of OpenCV configuration in different folders. When run performance tests and build report like [this](../images/cpu_dispatch_0_baseline.png):
