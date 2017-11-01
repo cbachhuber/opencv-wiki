@@ -7,7 +7,7 @@
     cmake --build .
     ```
 ### Decoding
-Media containers are not supported yet, so it only possible to decode raw video stream stored to a file. It can be done with FFmpeg ([source1](https://stackoverflow.com/questions/19300350/extracting-h264-raw-video-stream-from-mp4-or-flv-with-ffmpeg-generate-an-invalid), [source2](https://superuser.com/questions/678897/extract-hevc-bitstream-with-ffmpeg)):
+Media containers are not supported yet, so it is only possible to decode raw video stream stored in a file. It can be extracted from a container manually using the FFmpeg tool ([source1](https://stackoverflow.com/questions/19300350/extracting-h264-raw-video-stream-from-mp4-or-flv-with-ffmpeg-generate-an-invalid), [source2](https://superuser.com/questions/678897/extract-hevc-bitstream-with-ffmpeg)) or any other tools:
 ```.sh
 # H264
 ffmpeg -i video.avi -vcodec copy -an -bsf:v h264_mp4toannexb video.264
