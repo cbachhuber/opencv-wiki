@@ -24,6 +24,58 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-11-06
+
+h3. _*Agenda*_
+* Back again after some mutual scheduling missmatches. Meetings moved to Monday, 9:30am California time
+* 3.3.1 release
+* GSoC 2018
+** Ideas for next year
+
+h3. *_Minutes_*
+
+* OpenCV 3.3.1 has been finally released! 
+** https://github.com/opencv/opencv/wiki/ChangeLog  
+** quite a lot of good stuff there, including: 
+*** results of a few GSoC projects. 
+**** A few more have been merged in right after the release, and other are still being evaluated.
+*** the new deep learning-based face detection
+*** YOLO support
+*** OpenCL acceleration of DNN (for now it support Intel GPUs only)
+*** We are slowly advancing in developing our "mini Halide" thing: 
+**** https://github.com/vpisarev/Halide/tree/mini_master
+** OpenCV 3.4 should be out in December. The main goals for it are:
+*** merge most of the remaining GSoC PRs (partly done already).
+*** further improve deep learning module in terms of supported topologies. 
+*** polish OpenCL acceleration; 
+*** improve CPU performance as well.
+*** make it solid enough, as it will possibly be the last major OpenCV 3.x release.
+*** deprecate C API and 
+*** maybe some other things that will be removed from OpenCV 4.0.
+** Some other highlights
+*** R3 of Intel SDK
+*** Deep learning face detector
+*** GPU accelerations
+*** Some of Google of Code
+*** Some security fixes finally
+* Ideas for 2018
+** Start the wiki for this
+** Medial Axis transform
+** Gamma correction
+** HighGUI QT: LGPL. Add improvements, maybe replace the QT dependency
+** Documentation for opencv_contrib! Need better organization and to toss non-supported stuff
+** Pre-trained, memory reduced
+** More docs on use of DNN
+
+h3. *_To Dos_*
+* Gary Make GSoC Wiki
+** Payments
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-10-10
 
 h3. _*Agenda*_
