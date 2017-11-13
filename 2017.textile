@@ -24,6 +24,49 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-11-13
+
+h3. _*Agenda*_
+* Report
+* GSoC 2018
+
+* Vadim back from vacation
+* Gary back from NYC
+
+h3. *_Minutes_*
+* Report
+** 3.3.1 is now out and working
+** 3.4 is due out end of year, maybe early Jan
+*** Stabilize DNN
+**** Support for new topologies
+*** Optimized for GPU, but mainly Intel... 
+**** We could use NVidia people to carry this through, it is not meant to be specific
+** 4.0 in summer
+*** Halide support
+*** DNN expansion
+*** Move from traditional algorithms to optimized in speed and size dnn
+**** face detection
+**** pedestrian detection
+* Better support for data sets?
+** Deal with Unity or Unreal??
+* Pull request ONNX in TensorFlow ... if accepted, makes exchange much easier
+** Probably should support
+*** https://github.com/onnx/onnx
+* GSoC
+** Take some area
+*** Prepare some dataset in a standard format
+*** Evaluate models
+*** Use DNN to run pretrained model to collect performance statistics over these datasets
+
+
+h3. *_To Dos_*
+* Gary Make GSoC Wiki
+** Payments
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-11-06
 
 h3. _*Agenda*_
