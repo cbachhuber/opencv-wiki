@@ -24,6 +24,46 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-11-27
+
+h3. _*Agenda*_
+* Next release
+* GSoC
+* Deep plans
+
+h3. *_Minutes_*
+* 3.4 scheduled for December 4th
+* GSoC
+** Halide
+*** We will develop samples of Halide's use
+** Better media support
+*** Better video capture and writing
+*** HW accelerated decoding and encoding
+** Improvements to HighGUI
+*** Based on OpenGL?
+** DNN
+*** Curated networks, memory reduced
+**** Almost any compression involves tuning
+***** Convert float to fixed point
+***** Then must tune (addons to tensor flow)
+****** Maybe we will contribute these back to tensorflow
+***** Factorized networks
+*** Compression algorithms
+* OpenCV 4.0
+** Many nets require specialized layers
+*** Method to just run these layers w/o modification
+
+h3. *_To Dos_*
+* Gary Make GSoC'18 Wiki
+** Payments'17
+** complete org
+* Vadim find mail from guy who implemented many QT like features in OpenGL
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-11-13
 
 h3. _*Agenda*_
