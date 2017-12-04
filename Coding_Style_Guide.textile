@@ -2,7 +2,7 @@
 
 h1. The OpenCV Coding Style Guide
 
-The document is a short guide on code style, used in OpenCV. The core libraries (@core@, @imgproc@, etc) are written in C++, so the document concerns only the codes written in C++.
+The document is a short guide on code style, used in OpenCV. The core libraries (@core@, @imgproc@, etc) are written in C++, so the document concerns only the С++ code style.
 
 h2. Files
 
