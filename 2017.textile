@@ -24,6 +24,40 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-12-04
+
+h3. _*Agenda*_
+* GSoC
+
+h3. *_Minutes_*
+
+*  New release
+** December 15 3.4 release candidate
+** December 22 Final Christmass present release
+** GSoC projects integrated
+** Background segmentation
+** Multi-language documentation
+** OpenCL improvements, especially deepnets
+** deepnets
+*** If it uses OpenCL accelerations (now, kernels only have to be compiled once)
+*** More topologies support for DNN
+*** Mobile nets, SSD object detectors
+*** Face detection ... much better than Viola Jones 5MB in 16 bit floating point
+**** Next year: text, face
+***** Compression tool w/in tensor flow framework, maybe submitted back to TensorFlow
+****** Train model, factorization compression tool, tuning pass
+
+h3. *_To Dos_*
+* Gary Make GSoC'18 Wiki
+** Payments'17
+** complete org
+* Vadim find mail from guy who implemented many QT like features in OpenGL
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-11-27
 
 h3. _*Agenda*_
