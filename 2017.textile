@@ -46,6 +46,8 @@ h3. *_Minutes_*
 **** Next year: text, face
 ***** Compression tool w/in tensor flow framework, maybe submitted back to TensorFlow
 ****** Train model, factorization compression tool, tuning pass
+****** Keras
+****** TNTK
 
 h3. *_To Dos_*
 * Gary Make GSoC'18 Wiki
