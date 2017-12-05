@@ -3,12 +3,12 @@ h1. Opencv3
 h2. Transparent API
 
 The transparent OpenCV API allows application developers to automatically utilize various kinds of accelerators (GPUs, APUs, DSPs etc.) that may be available on the host platform. No or little changes to OpenCV-based applications may be needed to engage the acceleration. Starting with OpenCV 3.0, OpenCL kernels are integrated inside OpenCV API: one does not need to specify `cv::ocl::Canny`, `cv::gpu::Canny` etc; `cv::Canny` just works on both CPU and GPU. Because of that `ocl` module became redundant and was removed.
-A separate guide on this topic is being prepared, but you are welcome to take a look at and try out our "Transparent API samples":https://github.com/opencv/opencv/tree/master/samples/tapi> to see how it works.
+A separate guide on this topic is being prepared, but you are welcome to take a look at and try out our "Transparent API samples":https://github.com/opencv/opencv/tree/master/samples/tapi to see how it works.
 
 
 h2. Intel® IPP
 
-OpenCV 3.0 supports optimization on x86 and x64 platforms with Intel® Integrated Performance Primitives (Intel® IPP, https://software.intel.com/en-us/intel-ipp) by using either:
+OpenCV 3.0 supports optimization on x86 and x64 platforms with Intel® Integrated Performance Primitives ("Intel® IPP":https://software.intel.com/en-us/intel-ipp) by using either:
  a) standalone Intel® IPP that should be installed separately or
  b) special subset of Intel® IPP 8.1.1 functions for image processing and computer vision, called IPPICV, that contain more than 700 functions and support AVX2, SSE4.x, SSE2 instructions sets. Intel Corporation granted OpenCV Foundation and all our users the right to use IPPICV libraries free of charge for both non-commercial and commercial use. Optimization with IPPICV is enabled by default on the supported platforms. Intel® IPP optimization (with both standalone and IPPICV libraries) is available for the following platforms:
 * Windows (32-bit and 64-bit)
@@ -45,4 +45,4 @@ h3. Etc.
 
 h2. Migrating from OpenCV 2 to OpenCV 3.
 
-See the following guide: https://docs.opencv.org/master/db/dfa/tutorial_transition_guide.html
+See the following "guide":https://docs.opencv.org/master/db/dfa/tutorial_transition_guide.html
