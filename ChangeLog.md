@@ -40,7 +40,7 @@ opencv_dnn has been further improved and extended; new samples have been added:
 
 -   OpenCL acceleration path of the bioinspired module has been restored. See the bioinspired-based HDR/Background segmentation [example](https://github.com/opencv/opencv_contrib/blob/master/modules/bioinspired/samples/retinaDemo.cpp). On Iris Pro HD5200 we get ~5x acceleration over the CPU branch.
 
--   KFC tracker has been accelerated by ~40%.
+-   KCF tracker has been accelerated by ~40%.
 
 ![](images/imediasdk.png)
 
