@@ -16,7 +16,7 @@ OpenCV 3.0 supports optimization on x86 and x64 platforms with Intel® Integrate
 * Mac OS (32-bit and 64-bit)
 * Android (32-bit)
 
-In OpenCV 3.0 Intel® IPP usage was revised and extended with new 58 family functions that should give visible performance improvement on all supported platforms and instructions sets. As an example, the overall performance gain is about 40% comparing OpenCV with and without Intel® IPP 8.1.1/IPPICV usage and running on Intel Haswell processor. Some of numbers are provided in the chart below (represented as performance ratio of IPP-optimized function w.r.t OpenCV implementation, where 1 means no speed-up and the higher is the number - the better).
+In OpenCV 3.0 Intel® IPP usage was revised and extended with new 58 family functions that should give visible performance improvement on all supported platforms and instructions sets. As an example, the overall performance gain is about 40% comparing OpenCV with and without Intel® IPP 8.1.1/IPPICV usage and running on Intel Haswell processor. Some of numbers are provided in the chart below (represented as the performance ratio of IPP-optimized function w.r.t OpenCV implementation, where 1 means no speed-up and the higher is the number - the better).
 
 !images/ocv3_ipp_speedup.jpg!
 
