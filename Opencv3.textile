@@ -2,7 +2,7 @@ h1. Opencv3
 
 h2. Transparent API
 
-The transparent OpenCV API allows application developers to automatically utilize various kinds of accelerators (GPUs, APUs, DSPs etc.) that may be available on the host platform. No or little changes to OpenCV-based applications may be needed to engage the acceleration. Starting with OpenCV 3.0 OpenCL kernels were integrated inside OpenCV API: it does not need to specify `cv::ocl::Canny`, `cv::gpu::Canny` etc; `cv::Canny` just works on both CPU and GPU. Because of that `ocl` module became redundant and was removed.
+The transparent OpenCV API allows application developers to automatically utilize various kinds of accelerators (GPUs, APUs, DSPs etc.) that may be available on the host platform. No or little changes to OpenCV-based applications may be needed to engage the acceleration. Starting with OpenCV 3.0, OpenCL kernels are integrated inside OpenCV API: one does not need to specify `cv::ocl::Canny`, `cv::gpu::Canny` etc; `cv::Canny` just works on both CPU and GPU. Because of that `ocl` module became redundant and was removed.
 A separate guide on this topic is being prepared, but you are welcome to take a look at and try out our Transparent API samples <https://github.com/opencv/opencv/tree/master/samples/tapi> to see how it works.
 
 
