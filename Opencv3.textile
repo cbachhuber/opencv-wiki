@@ -45,4 +45,4 @@ h3. Etc.
 
 h2. Migrating from OpenCV 2 to OpenCV 3.
 
-
+See the following guide: https://docs.opencv.org/master/db/dfa/tutorial_transition_guide.html
