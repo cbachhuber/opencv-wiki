@@ -8,7 +8,9 @@ A separate guide on this topic is being prepared, but you are welcome to take a 
 
 h2. Intel® IPP
 
-OpenCV 3.0 supports optimization on x86 and x64 platforms with Intel® Integrated Performance Primitives (Intel® IPP, https://software.intel.com/en-us/intel-ipp) by two ways: with standalone Intel® IPP that should be installed separately and with special subset of Intel® IPP 8.1.1 functions for image processing and computer vision, IPP-ICV libraries, that contain more than 700 functions and support AVX2, SSE4.x, SSE2 instructions sets. Intel Corporation granted OpenCV Foundation and all our users the right to use IPP-ICV libraries free of charge for both non-commercial and commercial use. Optimization with IPP-ICV is enabled by default on the supported platforms. Intel® IPP optimization (with both standalone and IPP-ICV libraries) is available for the following platforms:
+OpenCV 3.0 supports optimization on x86 and x64 platforms with Intel® Integrated Performance Primitives (Intel® IPP, https://software.intel.com/en-us/intel-ipp) by using either:
+ a) a standalone Intel® IPP that should be installed separately or
+ b) a special subset of Intel® IPP 8.1.1 functions for image processing and computer vision, IPPICV libraries, that contain more than 700 functions and support AVX2, SSE4.x, SSE2 instructions sets. Intel Corporation granted OpenCV Foundation and all our users the right to use IPP-ICV libraries free of charge for both non-commercial and commercial use. Optimization with IPPICV is enabled by default on the supported platforms. Intel® IPP optimization (with both standalone and IPPICV libraries) is available for the following platforms:
 * Windows (32-bit and 64-bit)
 * Linux (32-bit and 64-bit)
 * Mac OS (32-bit and 64-bit)
