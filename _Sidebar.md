@@ -37,8 +37,8 @@
     - [[Weekly Duty|OpenCV_Weekly_Duty]]
     - [[QA|QA_in_OpenCV]]
         - [[Android tests|Android_Java_API_tests]]
-        - [[Using preformance tests|HowToUsePerfTests]]
-        - [[Writing preformance tests|HowToWritePerfTests]]
+        - [[Using performance tests|HowToUsePerfTests]]
+        - [[Writing performance tests|HowToWritePerfTests]]
 - Tutorials
     - [[CARMA platform|CARMA_platform_compilation_and_testing]]
     - [[Debug in Visual Studio|Debug_in_Visual_Studio_using_NativeViewer]]
@@ -59,4 +59,4 @@
     - [[2011 - image collage|ImageCollageGSoC2011]]
 - [[Vision challenge|VisionChallenge]]
 - [[Workshops]]
-    - [[OpenCV_Talks]]   
+    - [[OpenCV_Talks]]
