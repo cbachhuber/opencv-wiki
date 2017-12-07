@@ -11,6 +11,7 @@
 - [[Deep Learning in OpenCV|Deep-Learning-in-OpenCV]]
     - [[DNN Efficiency|DNN-efficiency]]
 - [[OpenCV 3|Opencv3]]
+    - [[OpenCL optimizations|OpenCL-optimizations]]
     - [[CPU optimizations|CPU-optimizations-build-options]]
     - [[Profiling OpenCV Applications|Profiling-OpenCV-Applications]]
     - [[MediaSDK encode/decode backend|MediaSDK-encode-decode-backend]]
