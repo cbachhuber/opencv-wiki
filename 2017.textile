@@ -24,6 +24,54 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-12-11
+
+h3. _*Agenda*_
+* Code release
+* GSoC
+
+h3. *_Minutes_*
+* Releases
+** Final release 3.4 on 22nd on Dec
+*** Dynamic fusion ... has run issues (uber GPU card, or there are memory leaks)
+*** Multi language bindings
+**** Python function signatures for documentation
+*** background subtraction is in
+*** Tiny-dnn:
+**** Refactoring tensor backend (opencv mat, extended)
+***** Using Extensor (C++ header only numpy like)
+***** Refactoring of the library
+****** Integrate with OpenCV CVM project
+*** Javascript bindings in
+*** Text detection (deep net based)
+*** learning compact models for object detection (pending)
+*** deep gaze (pending)
+*** obstruction free photometric calibration
+*** AKAZE feature optimization
+** May be last 3.X release, on to 4
+*** Work in Halide
+**** Much more limited, but fast
+**** Make more like functional language
+** Better doc for contrib
+* GSoC'18
+** make page
+** ideas
+*** highGUI
+*** ONNX
+* Foundation
+** Set up and pay
+
+h3. *_To Dos_*
+* Gary Make GSoC'18 Wiki
+** Payments'17
+** complete org
+* Vadim find mail from guy who implemented many QT like features in OpenGL
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-12-04
 
 h3. _*Agenda*_
