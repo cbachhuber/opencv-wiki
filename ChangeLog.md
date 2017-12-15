@@ -20,7 +20,7 @@ opencv_dnn has been further improved and extended:
 
 -   Faster R-CNN support and the corresponding [example](https://github.com/opencv/opencv/blob/master/samples/dnn/faster_rcnn.cpp).
 
-![](https://user-images.githubusercontent.com/25801568/33999487-a60f9580-e0fb-11e7-9d54-36b69b4b75cb.png)
+![](images/faster_rcnn.jpg)
 
 -   A few more iGPU-accelerated kernels have been added. Big thanks to Peng Li and his team for the contribution.
 
