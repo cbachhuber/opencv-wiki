@@ -18,11 +18,11 @@ The results of yet another GSoC 2017 OpenCV project on implementing new backgrou
 
 opencv_dnn has been further improved and extended:
 
--   Faster R-CNN support and the corresponding [example](https://github.com/opencv/opencv/blob/master/samples/dnn/faster_rcnn.cpp).
+-   Added faster R-CNN support and the corresponding [example](https://github.com/opencv/opencv/blob/master/samples/dnn/faster_rcnn.cpp).
 
 ![](images/faster_rcnn.jpg)
 
--   A few more iGPU-accelerated kernels have been added. Big thanks to Peng Li and his team for the contribution.
+-   Also, added a few more iGPU-accelerated kernels. Big thanks to Peng Li and his team for the contribution.
 
 ![](images/OpenCL.jpg)
 
