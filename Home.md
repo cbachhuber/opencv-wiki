@@ -4,7 +4,7 @@ OpenCV Wiki
 GSoC 2017
 ---------
 
-**We have been accepted for summer 2017!**
+:tada: **We have been accepted for summer 2017!** :tada:
 
 - [OpenCV Google Summer of Code 2017](GSoC_2017)
 
