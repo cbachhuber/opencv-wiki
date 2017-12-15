@@ -22,6 +22,7 @@ opencv_dnn has been further improved and extended:
 
 ![](images/faster_rcnn.jpg)
 
+-   Javascript bindings have been extended to cover DNN module. See the corresponding [tutorial](https://docs.opencv.org/master/d5/d86/tutorial_dnn_javascript.html)
 -   Also, DNN has been further accelerated for iGPU using OpenCL. Big thanks to Peng Li and his team for the contribution.
 
 ![](images/OpenCL.jpg)
