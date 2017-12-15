@@ -40,6 +40,7 @@ opencv_dnn has been further improved and extended:
 -   [Excellent tutorial](http://pullrequest.opencv.org/buildbot/export/pr/10304/docs/d9/dab/tutorial_homography.html) (TODO: update the  link) on how to compute and use homography matrix in OpenCV has been added. Big thanks to Catree.
 -   [The guide](https://github.com/opencv/opencv/wiki/MediaSDK-encode-decode-backend) on how to use OpenCV with Intel Media SDK in order to get hardware-accelerated video decoding/encoding has been written by Maksim Shabunin.
 -   [Another guide](https://github.com/opencv/opencv/wiki/Profiling-OpenCV-Applications) has been added a few months ago by Alexander Alekhin, but was not mentioned before, on how to profile OpenCV-based applications using Intel Tracing Technology tool.
+-   Quite comprehensive set of [tutorials](https://docs.opencv.org/master/d5/d10/tutorial_js_root.html) on how to use OpenCV within a browser (via javascript bindings) has been created during GSoC 2017 
 
 ![](images/github2.png)
 
