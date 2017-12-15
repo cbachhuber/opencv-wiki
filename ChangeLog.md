@@ -1,6 +1,128 @@
 OpenCV Change Logs
 ==================
 
+version:3.4
+-------------
+
+*December, 2017*
+
+OpenCV 3.4 (NY 2018 edition) is about to be released, with further extended dnn module, some other new functionality, improvements and bug fixes.
+
+![](images/gsoc.png)
+
+The results of yet another GSoC 2017 OpenCV project on implementing new background subtraction algorithms have been integrated. Please, check [the script] (https://github.com/opencv/opencv_contrib/blob/master/modules/bgsegm/samples/evaluation.py), the algorithms `LSBP-*` and `GSOC-*`.
+
+![](images/GSoC2017-bgfg.jpg)
+
+![](images/dnn.png)
+
+opencv_dnn has been further improved and extended:
+
+-   Faster R-CNN support and the corresponding [example](https://github.com/opencv/opencv/blob/master/samples/dnn/faster_rcnn.cpp).
+
+![](https://user-images.githubusercontent.com/25801568/33999487-a60f9580-e0fb-11e7-9d54-36b69b4b75cb.png)
+
+-   A few more iGPU-accelerated kernels have been added. Big thanks to Peng Li and his team for the contribution.
+
+![](images/speed.jpg)
+
+-   Bit-exact 8-bit resize has been implemented (currently supported only bilinear interpolation and single-channel images). Use `INTER_LINEAR_EXACT` interpolation mode. In many places in the library we've switched to this new resize. `Bit-exact` means that on any platform with any compiler etc. you will get absolutely the same results for the same scale factor values, there will be no difference (even +/-1) in pixel values in the output image.
+
+### Contributors
+
+#### opencv
+
+```
+    86  Alexander Alekhin
+    21  Maksim Shabunin
+    18  Dmitry Kurtaev
+    16  elenagvo
+    11  Li Peng
+     9  Vitaly Tuzov
+     7  Suleyman TURKMEN
+     6  Sayed Adel
+     6  catree
+     5  Vladislav Sovrasov
+     5  Wu Zhiwen
+     4  Pavel Rojtberg
+     4  Vadim Pisarevsky
+     4  Tomoaki Teshima
+     4  LaurentBerger
+     3  Rostislav Vasilikhin
+     3  tribta
+     2  Fakabbir Amin
+     2  Bhanudutta
+     2  Shinya Ishikawa
+     2  dtmoodie
+     2  Ryan Fox
+     2  Mattia Rizzolo
+     1  Nickola
+     1  Pushkal Katara
+     1  Riyuzakii
+     1  Roman Cattaneo
+     1  Shresth Verma
+     1  Simon Guo
+     1  Wei Hao
+     1  Wu, Zhiwen
+     1  alessandro faria
+     1  berak
+     1  gdkessler
+     1  klchang
+     1  woody.chow
+     1  zhijackchen
+     1  zhongwuzw
+     1  Muhammad Abdullah
+     1  Alexander Nesterov
+     1  Amro
+     1  Andrey Smorodov
+     1  Arthur Pastel
+     1  Cartucho
+     1  Christof Kaufmann
+     1  David Geldreich
+     1  Elena Gvozdeva
+     1  Florian Echtler
+     1  Hamdi Sahloul
+     1  Haritha
+     1  Iago Suárez
+     1  Igor Wodiany
+     1  Ivan Pozdeev
+     1  Jacob MacRitchie
+     1  James Perkins
+     1  Jcrist99
+     1  Jonathan Viney
+     1  Juha Reunanen
+     1  KUANG Fangjun
+     1  Mikhail Paulyshka
+     1  Akhilesh Kumar
+```
+
+#### opencv_contrib
+
+```
+    20  sghoshcvc
+    18  Vladislav Sovrasov
+     6  Alexander Alekhin
+     5  Hamdi Sahloul
+     4  Suman Ghosh
+     3  berak
+     3  LaurentBerger
+     2  Maksim Shabunin
+     2  Pavel Rojtberg
+     2  Suleyman TURKMEN
+     1  kushalvyaskv
+     1  Adam Gradzki
+     1  sukhad-app
+     1  Anup Parikh
+     1  Egor Pugin
+     1  Leonardo lontra
+     1  Oleg Kalachev
+     1  Vitaly Tuzov
+     1  cDc
+     1  fiammante
+     1  klchang
+     1  kurnianggoro
+```
+
 version:3.3.1
 -------------
 
