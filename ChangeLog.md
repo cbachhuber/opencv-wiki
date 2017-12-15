@@ -33,6 +33,13 @@ opencv_dnn has been further improved and extended:
 
 -   Bit-exact 8-bit resize has been implemented (currently supported only bilinear interpolation and single-channel images). Use `INTER_LINEAR_EXACT` interpolation mode. In many places in the library we've switched to this new resize. `Bit-exact` means that on any platform with any compiler etc. you will get absolutely the same results for the same scale factor values, there will be no difference (even +/-1) in pixel values in the output image.
 
+![](images/rtfm.png)
+
+-   Now the [reference guide](https://docs.opencv.org/master/) includes function/method prototypes for the Python bindings, e.g. type "convexHull" in the search field and you will see the C++ declaration and how would you call the function from Python. That was another GSoC 2017 project. Big thanks to Cartucho and Vincent Rabaud. 
+-   [Excellent tutorial](http://pullrequest.opencv.org/buildbot/export/pr/10304/docs/d9/dab/tutorial_homography.html) (TODO: update the  link) on how to compute and use homography matrix in OpenCV has been added. Big thanks to Catree.
+-   [The guide](https://github.com/opencv/opencv/wiki/MediaSDK-encode-decode-backend) on how to use OpenCV with Intel Media SDK in order to get hardware-accelerated video decoding/encoding has been written by Maksim Shabunin.
+-   [Another guide](https://github.com/opencv/opencv/wiki/Profiling-OpenCV-Applications) has been added a few months ago by Alexander Alekhin, but was not mentioned before, on how to profile OpenCV-based applications using Intel Tracing Technology tool.
+
 ![](images/github2.png)
 
 -   ~250 patches have been merged since OpenCV 3.3.1
