@@ -22,7 +22,7 @@ opencv_dnn has been further improved and extended:
 
 ![](images/faster_rcnn.jpg)
 
--   Also, added a few more iGPU-accelerated kernels. Big thanks to Peng Li and his team for the contribution.
+-   Also, DNN has been further accelerated for iGPU using OpenCL. Big thanks to Peng Li and his team for the contribution.
 
 ![](images/OpenCL.jpg)
 
