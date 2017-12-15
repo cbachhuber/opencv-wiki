@@ -28,6 +28,11 @@ opencv_dnn has been further improved and extended:
 
 -   Bit-exact 8-bit resize has been implemented (currently supported only bilinear interpolation and single-channel images). Use `INTER_LINEAR_EXACT` interpolation mode. In many places in the library we've switched to this new resize. `Bit-exact` means that on any platform with any compiler etc. you will get absolutely the same results for the same scale factor values, there will be no difference (even +/-1) in pixel values in the output image.
 
+![](images/github2.png)
+
+-   ~250 patches have been merged since OpenCV 3.3.1
+-   over 200 issues have been closed
+
 ### Contributors
 
 #### opencv
