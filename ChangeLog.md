@@ -24,6 +24,11 @@ opencv_dnn has been further improved and extended:
 
 -   A few more iGPU-accelerated kernels have been added. Big thanks to Peng Li and his team for the contribution.
 
+![](images/OpenCL.jpg)
+
+-   On-disk caching of precompiled OpenCL kernels has been finally implemented. It noticeably reduces initialization time of applications that use a lot of kernels.
+-   Also, it's now possible to load and run pre-compiled OpenCL kernels via T-API. It can be useful on embedded platforms without OpenCL JIT compiler available. For details, see the following [guide](https://github.com/opencv/opencv/wiki/OpenCL-optimizations) on OpenCL acceleration in OpenCV.
+
 ![](images/speed.jpg)
 
 -   Bit-exact 8-bit resize has been implemented (currently supported only bilinear interpolation and single-channel images). Use `INTER_LINEAR_EXACT` interpolation mode. In many places in the library we've switched to this new resize. `Bit-exact` means that on any platform with any compiler etc. you will get absolutely the same results for the same scale factor values, there will be no difference (even +/-1) in pixel values in the output image.
