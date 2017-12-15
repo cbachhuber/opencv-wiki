@@ -10,9 +10,9 @@ OpenCV 3.4 (NY 2018 edition) is about to be released, with further extended dnn 
 
 ![](images/gsoc.png)
 
-The results of yet another GSoC 2017 OpenCV project on implementing new background subtraction algorithms have been integrated. Please, check [the script] (https://github.com/opencv/opencv_contrib/blob/master/modules/bgsegm/samples/evaluation.py), the algorithms `LSBP-*` and `GSOC-*`.
+The results of yet another GSoC 2017 OpenCV project on implementing new background subtraction algorithms have been integrated. Please, check [the script](https://github.com/opencv/opencv_contrib/blob/master/modules/bgsegm/samples/evaluation.py), the algorithms `LSBP-*` and `GSOC-*`.
 
-![](images/GSoC2017-bgfg.jpg)
+![](images/GSoC2017_bgfg.jpg)
 
 ![](images/dnn.png)
 
