@@ -14,13 +14,15 @@ GSoC 2017
 General resources
 -----------------
 
-- [Official site](https://opencv.org/) - read about the library, subscribe to the [news](https://opencv.org/news.html), browse [releases](https://opencv.org/releases.html) and study the [license](https://opencv.org/license.html)
+- :globe_with_meridians: [Official site](https://opencv.org/) - read about the library, subscribe to the [news](https://opencv.org/news.html), browse [releases](https://opencv.org/releases.html) and study the [license](https://opencv.org/license.html)
 
-- [Q&A forum](http://answers.opencv.org) - ask questions and share your knowledge by answering others' questions
+- :speech_balloon: [Q&A forum](http://answers.opencv.org) - ask questions and share your knowledge by answering others' questions
 
-- [Documentation](https://docs.opencv.org/) - latest releases: [3.3.1](https://docs.opencv.org/3.3.1) and [2.4.13.4](https://docs.opencv.org/2.4.13.4); nightly releases: [master branch](https://docs.opencv.org/master) and [2.4 branch](https://docs.opencv.org/2.4)
+- :books: [Documentation](https://docs.opencv.org/):
+    - latest releases: [3.3.1](https://docs.opencv.org/3.3.1) and [2.4.13.4](https://docs.opencv.org/2.4.13.4)
+    - nightly releases: [master branch](https://docs.opencv.org/master) and [2.4 branch](https://docs.opencv.org/2.4)
 
-- [Changelog](ChangeLog) - highlights for each library release
+- :hammer_and_wrench: [Changelog](ChangeLog) - highlights for each library release
 
 Development
 -----------
