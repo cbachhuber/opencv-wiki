@@ -15,6 +15,7 @@
     - [[CPU optimizations|CPU-optimizations-build-options]]
     - [[Profiling OpenCV Applications|Profiling-OpenCV-Applications]]
     - [[MediaSDK encode/decode backend|MediaSDK-encode-decode-backend]]
+    - [[Building more compact applications with OpenCV|Compact-build-advice]]
 - Development process
     - [[How to contribute|How_to_contribute]]
     - [[Coding style guide|Coding_Style_Guide]]
