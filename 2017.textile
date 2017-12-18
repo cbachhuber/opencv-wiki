@@ -24,6 +24,44 @@ h3. *_To Dos_*
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 </pre>
 
+h2. 2017-12-18
+
+h3. _*Agenda*_
+* new release
+* GSoC
+* Org
+
+h3. *_Minutes_*
+* Release
+** 3.4 release is out
+*** Some GSoC is in, especially
+**** Background subtraction techniques
+**** Python documentation
+**** Dynamic fusion ... lots of problems with the code. Have to decide if we can re-write or abandon
+* Org
+** Have a chance for bigger funding. On Gary to put it together
+** Goal is to get funding for full time staff
+** Fenwick and West legal team
+** Run workshops, education course
+* ROS
+** 3.4 to be incorporated in next version of ROS ... April or May
+
+* *Vacations*
+** We are all off to the 4 corners of the world (even though it doesn't have corners)
+*** Next meeting is Jan 8th 2018!
+
+h3. *_To Dos_*
+* Gary Make GSoC'18 Wiki
+** Payments'17
+** complete org
+* Vadim find mail from guy who implemented many QT like features in OpenGL
+
+
+
+<pre>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+</pre>
+
 h2. 2017-12-11
 
 h3. _*Agenda*_
