@@ -17,4 +17,4 @@ The logo was designed in 2006 by AdiShavit.
 
 ### Vector image
 
-![](images/OpenCV_Logo_with_text_svg_version.svg?sanitize=true)
+![](https://raw.githubusercontent.com/wiki/opencv/opencv/images/OpenCV_Logo_with_text_svg_version.svg?sanitize=true)
