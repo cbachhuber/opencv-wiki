@@ -16,7 +16,6 @@
     - [[Profiling OpenCV Applications|Profiling-OpenCV-Applications]]
     - [[MediaSDK encode/decode backend|MediaSDK-encode-decode-backend]]
 - Development process
-    - [[Hackathon]]
     - [[How to contribute|How_to_contribute]]
         - [[Coding style guide|Coding_Style_Guide]]
         - [[Contributors]]
