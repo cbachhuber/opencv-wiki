@@ -45,8 +45,8 @@ All computations in float-32.
 |    Inception-5h |           **22.68** |      92.33 |           |
 |  ENet @ 512x256 |           **34.89** |      48.92 |           |
 |  OpenFace (nn4.small2) |    **10.55** |      37.59 |           |
-| MobileNet-SSD @ 300x300<br>20 classes, Caffe      |      _172.13_ (before #10341) | **100.31** |    369.91 |
-| MobileNet-SSD @ 300x300<br>90 classes, TensorFlow |      _203.47_ (before #10341) |  **93.34** |           |
+| MobileNet-SSD @ 300x300<br>20 classes, Caffe      |      _172.13_ (before #10341)<br>**_26.66_** (with #10341) | 100.31 |    369.91 |
+| MobileNet-SSD @ 300x300<br>90 classes, TensorFlow |      _203.47_ (before #10341)<br>**_45.11_** (with #10341) |  93.34 |           |
 
 
 #### Scripts
