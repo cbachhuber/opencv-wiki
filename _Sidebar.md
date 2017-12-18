@@ -1,6 +1,6 @@
 - [[Home]]
     - [[Changelog|ChangeLog]] ([[older|ChangeLog_v10-v21]])
-    - [[New functionality discussion|New_functionality_discussion]]
+    - New functionality discussion
         - [[RGBD]]
         - [[Documentation improvement plan]]
     - [[Android|OpenCV4Android]]
