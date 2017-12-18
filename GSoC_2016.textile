@@ -53,8 +53,7 @@ h2. General Information:
 <code>git clone git://github.com/opencv/opencv_contrib.git</code>
 ** The rest of the history plus matches between git commits and SVN revisions are stored at a separate "OpenCV Attic" repository: <code>git://code.opencv.org/opencv_attic.git</code>.
 ** Also OpenCV Extra was put to a separate repository: <code>git://code.opencv.org/opencv_extra<.git</code>.
-* [[OpenCV_Development_Process]]
-** [[Developer meeting notes|Meeting_notes]]
+* [[Developer meeting notes|Meeting_notes]]
 
 h2. How you will be evaluated if you are an accepted student
 

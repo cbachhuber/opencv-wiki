@@ -1,5 +1,0 @@
-h1. OpenCV Development Process
-
-Here you can learn how OpenCV development is organized.
-
-* [[OpenCV_Weekly_Duty]]
