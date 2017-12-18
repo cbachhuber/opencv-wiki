@@ -1,2 +1,1 @@
-------------------------------
-OpenCV wiki
+© Copyright 2017, OpenCV team
