@@ -17,8 +17,9 @@
     - [[MediaSDK encode/decode backend|MediaSDK-encode-decode-backend]]
 - Development process
     - [[How to contribute|How_to_contribute]]
-        - [[Coding style guide|Coding_Style_Guide]]
-        - [[Contributors]]
+    - [[Coding style guide|Coding_Style_Guide]]
+    - [[Contributors]]
+    - Tech guides:
         - [[Working with Git|Git]]
         - [[Windows 7 guide|Windows_7_and_TortoiseGit_contribution_guide]]
         - [[Unix based guide|Linux_contribution_guide]]
@@ -34,7 +35,6 @@
         - [[2010]]
         - [[2009]]
         - [[2008]]
-    - [[Weekly Duty|OpenCV_Weekly_Duty]]
     - [[QA|QA_in_OpenCV]]
         - [[Android tests|Android_Java_API_tests]]
         - [[Using performance tests|HowToUsePerfTests]]
