@@ -56,7 +56,7 @@ import numpy as np
 import tensorflow as tf
 import time
 
-with tf.gfile.FastGFile('/home/dkurtaev/opencv_extra/testdata/dnn/ssd_mobilenet_v1_coco.pb') as f:
+with tf.gfile.FastGFile('opencv_extra/testdata/dnn/ssd_mobilenet_v1_coco.pb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
 
@@ -96,7 +96,7 @@ require 'image'
 
 torch.setdefaulttensortype('torch.FloatTensor')
 
-net = torch.load('/home/dkurtaev/opencv_extra/testdata/dnn/openface_nn4.small2.v1.t7')
+net = torch.load('opencv_extra/testdata/dnn/openface_nn4.small2.v1.t7')
 
 input = torch.FloatTensor(torch.LongStorage({1, 3, 96, 96}))
 
