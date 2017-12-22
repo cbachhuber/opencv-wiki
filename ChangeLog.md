@@ -6,6 +6,8 @@ version:3.4
 
 *December, 2017*
 
+![](images/opencv_ny.jpg)
+
 OpenCV 3.4 (NY 2018 edition) is about to be released, with further extended dnn module, some other new functionality, improvements and bug fixes.
 
 ![](images/gsoc.png)
