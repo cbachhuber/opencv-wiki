@@ -25,7 +25,7 @@ opencv_dnn has been further improved and extended:
 ![](images/faster_rcnn.jpg)
 
 -   Javascript bindings have been extended to cover DNN module. See the corresponding [tutorial](https://docs.opencv.org/master/d5/d86/tutorial_dnn_javascript.html)
--   Also, DNN has been further accelerated for iGPU using OpenCL. Big thanks to Peng Li and his team for the contribution.
+-   Also, DNN has been further accelerated for iGPU using OpenCL. In particular, MobileNet-SSD networks now run ~7 times faster than in OpenCV 3.3.1. Big thanks to Peng Li and his team for the contribution.
 
 ![](images/OpenCL.jpg)
 
