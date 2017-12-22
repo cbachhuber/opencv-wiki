@@ -76,8 +76,6 @@ For example, function `cv::cvtColor` can perform variety of conversions from `BG
 
 These flags should be provided during library and application building and linking. Static libraries produced in this mode can be less portable, you can find more details in the corresponding compiler documentation section.
 
-> :grey_exclamation: **Note:** build process will be much slower.
-
 Read more:
 - https://gcc.gnu.org/wiki/LinkTimeOptimization
 - https://llvm.org/docs/LinkTimeOptimization.html
@@ -86,7 +84,7 @@ Read more:
 
 **Compiler option**: `-Os`
 
-**OpenCV option**: _none_
+**OpenCV option**: _none_ - not supported in mainline
 
 Compiler will use optimizations targeted for size reduction at the cost of application performance.
 
