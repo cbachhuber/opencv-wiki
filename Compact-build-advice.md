@@ -72,9 +72,11 @@ Advanced
 
 In this mode the compiler will produce object files containing intermediate code instead of machine code. This representation then will be used by the linker during final application link stage to exclude non executed branches.
 
-For example, function `cv::cvtColor` can do dosens of conversions from `BGR2Gray` to more complex `BayerBG2BGR` and application which uses this function will need all of the underlying implementations. With link time optimization it is possible to determine all modes which can be passed to the `cvtColor` in this concrete binary and to leave only those implementations which are actually used.
+For example, function `cv::cvtColor` can perform variety of conversions from `BGR2Gray` to more complex `BayerBG2BGR` and application which uses this function will need all of the underlying implementations. With link time optimization it is possible to determine all modes which can be passed to the `cvtColor` in this concrete binary and to leave only those implementations which are actually used.
 
 These flags should be provided during library and application building and linking. Static libraries produced in this mode can be less portable, you can find more details in the corresponding compiler documentation section.
+
+> :grey_exclamation: **Note:** build process will be much slower.
 
 Read more:
 - https://gcc.gnu.org/wiki/LinkTimeOptimization
@@ -84,7 +86,7 @@ Read more:
 
 **Compiler option**: `-Os`
 
-**OpenCV option**: _none_ - not supported in mainline
+**OpenCV option**: _none_
 
 Compiler will use optimizations targeted for size reduction at the cost of application performance.
 
