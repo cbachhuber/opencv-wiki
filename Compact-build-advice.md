@@ -1,9 +1,9 @@
 How to build more compact OpenCV applications on Linux
 ======================================================
 
-The OpenCV library can be built in two variants: dynamic (shared libraries) and static (achives). Default mode on most platforms is _dynamic_ and to switch to another mode one can turn `BUILD_SHARED_LIBS` cmake option off.
+The OpenCV library can be built in two variants: dynamic (shared libraries) and static (archives). Default mode on most platforms is _dynamic_ and to switch to another mode one can turn `BUILD_SHARED_LIBS` cmake option off.
 
-Both modes have their own use cases, advandages and limitations:
+Both modes have their own use cases, advantages and limitations:
 
 Shared libraries (`-DBUILD_SHARED_LIBS=ON`):
 
