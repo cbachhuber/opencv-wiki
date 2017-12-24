@@ -8,7 +8,7 @@ version:3.4
 
 ![](images/opencv_ny.jpg)
 
-OpenCV 3.4 (NY 2018 edition) is about to be released, with further extended dnn module, some other new functionality, improvements and bug fixes.
+OpenCV 3.4 (NY 2018 edition) has been released, with further extended _dnn_ module, some other new functionality, improvements and bug fixes.
 
 ![](images/gsoc.png)
 
@@ -39,7 +39,7 @@ opencv_dnn has been further improved and extended:
 ![](images/rtfm.png)
 
 -   Now the [reference guide](https://docs.opencv.org/master/) includes function/method prototypes for the Python bindings, e.g. type "convexHull" in the search field and you will see the C++ declaration and the Python wrapper spec below. That was another GSoC 2017 project. Big thanks to Cartucho and Vincent Rabaud. 
--   [Excellent tutorial](http://pullrequest.opencv.org/buildbot/export/pr/10304/docs/d9/dab/tutorial_homography.html) (TODO: update the  link) on how to compute and use homography matrix in OpenCV has been added. Big thanks to Catree.
+-   [Excellent tutorial](https://docs.opencv.org/3.4.0/d9/dab/tutorial_homography.html) on how to compute and use homography matrix in OpenCV has been added. Big thanks to Catree.
 -   [The guide](https://github.com/opencv/opencv/wiki/MediaSDK-encode-decode-backend) on how to use OpenCV with Intel Media SDK in order to get hardware-accelerated video decoding/encoding has been written by Maksim Shabunin.
 -   [Another guide](https://github.com/opencv/opencv/wiki/Profiling-OpenCV-Applications) has been added a few months ago by Alexander Alekhin, but was not mentioned before, on how to profile OpenCV-based applications using Intel Tracing Technology tool.
 -   Quite comprehensive set of [tutorials](https://docs.opencv.org/master/d5/d10/tutorial_js_root.html) on how to use OpenCV within a browser (via javascript bindings) has been created during GSoC 2017 
@@ -54,94 +54,100 @@ opencv_dnn has been further improved and extended:
 #### opencv
 
 ```
-    86  Alexander Alekhin
-    21  Maksim Shabunin
-    18  Dmitry Kurtaev
-    16  elenagvo
-    11  Li Peng
-     9  Vitaly Tuzov
-     7  Suleyman TURKMEN
-     6  Sayed Adel
-     6  catree
-     5  Vladislav Sovrasov
-     5  Wu Zhiwen
-     4  Pavel Rojtberg
-     4  Vadim Pisarevsky
-     4  Tomoaki Teshima
-     4  LaurentBerger
-     3  Rostislav Vasilikhin
-     3  tribta
-     2  Fakabbir Amin
-     2  Bhanudutta
-     2  Shinya Ishikawa
-     2  dtmoodie
-     2  Ryan Fox
-     2  Mattia Rizzolo
-     1  Nickola
-     1  Pushkal Katara
-     1  Riyuzakii
-     1  Roman Cattaneo
-     1  Shresth Verma
-     1  Simon Guo
-     1  Wei Hao
-     1  Wu, Zhiwen
-     1  alessandro faria
-     1  berak
-     1  gdkessler
-     1  klchang
-     1  woody.chow
-     1  zhijackchen
-     1  zhongwuzw
-     1  Muhammad Abdullah
-     1  Alexander Nesterov
-     1  Amro
-     1  Andrey Smorodov
-     1  Arthur Pastel
-     1  Cartucho
-     1  Christof Kaufmann
-     1  David Geldreich
-     1  Elena Gvozdeva
-     1  Florian Echtler
-     1  Hamdi Sahloul
-     1  Haritha
-     1  Iago Suárez
-     1  Igor Wodiany
-     1  Ivan Pozdeev
-     1  Jacob MacRitchie
-     1  James Perkins
-     1  Jcrist99
-     1  Jonathan Viney
-     1  Juha Reunanen
-     1  KUANG Fangjun
-     1  Mikhail Paulyshka
-     1  Akhilesh Kumar
+103	Alexander Alekhin
+ 25	Dmitry Kurtaev
+ 23	Maksim Shabunin
+ 17	Li Peng
+ 17	elenagvo
+ 14	Vitaly Tuzov
+ 10	Suleyman TURKMEN
+ 10	catree
+  8	Tomoaki Teshima
+  6	Sayed Adel
+  5	LaurentBerger
+  5	Vladislav Sovrasov
+  5	Wu Zhiwen
+  4	Pavel Rojtberg
+  4	Rostislav Vasilikhin
+  4	Vadim Pisarevsky
+  3	tribta
+  2	Bhanudutta
+  2	Fakabbir Amin
+  2	Mattia Rizzolo
+  2	Ryan Fox
+  2	Shinya Ishikawa
+  2	berak
+  2	dtmoodie
+  1	Akhilesh Kumar
+  1	Alexander Nesterov
+  1	Alexander Rybnikov
+  1	Amro
+  1	Andrey Smorodov
+  1	Arthur Pastel
+  1	Cartucho
+  1	Christof Kaufmann
+  1	David Geldreich
+  1	Elena Gvozdeva
+  1	Florian Echtler
+  1	Hamdi Sahloul
+  1	Haritha
+  1	Iago Suárez
+  1	Igor Wodiany
+  1	Ivan Pozdeev
+  1	Jacob MacRitchie
+  1	James Perkins
+  1	Jcrist99
+  1	Jiri Horner
+  1	Jonathan Viney
+  1	Juha Reunanen
+  1	KUANG Fangjun
+  1	Mikhail Paulyshka
+  1	Muhammad Abdullah
+  1	Nickola
+  1	Pushkal Katara
+  1	Riyuzakii
+  1	Roman Cattaneo
+  1	Shresth Verma
+  1	Simon Guo
+  1	Wei Hao
+  1	Wu, Zhiwen
+  1	alessandro faria
+  1	gdkessler
+  1	klchang
+  1	woody.chow
+  1	wxzs5
+  1	zhijackchen
+  1	zhongwuzw
 ```
 
 #### opencv_contrib
 
 ```
-    20  sghoshcvc
-    18  Vladislav Sovrasov
-     6  Alexander Alekhin
-     5  Hamdi Sahloul
-     4  Suman Ghosh
-     3  berak
-     3  LaurentBerger
-     2  Maksim Shabunin
-     2  Pavel Rojtberg
-     2  Suleyman TURKMEN
-     1  kushalvyaskv
-     1  Adam Gradzki
-     1  sukhad-app
-     1  Anup Parikh
-     1  Egor Pugin
-     1  Leonardo lontra
-     1  Oleg Kalachev
-     1  Vitaly Tuzov
-     1  cDc
-     1  fiammante
-     1  klchang
-     1  kurnianggoro
+20	sghoshcvc
+18	Vladislav Sovrasov
+ 9	Alexander Alekhin
+ 6	Vitaly Tuzov
+ 6	berak
+ 5	Hamdi Sahloul
+ 5	Maksim Shabunin
+ 4	Pavel Rojtberg
+ 4	Suman Ghosh
+ 3	LaurentBerger
+ 3	Leonardo BrÃ¡s
+ 2	Suleyman TURKMEN
+ 1	Adam Gradzki
+ 1	Anup Parikh
+ 1	Dmitry Kurtaev
+ 1	Egor Pugin
+ 1	Leonardo lontra
+ 1	Oleg Kalachev
+ 1	Vladislav Samsonov
+ 1	cDc
+ 1	fiammante
+ 1	klchang
+ 1	kurnianggoro
+ 1	kushalvyaskv
+ 1	sukhad-app
 ```
 
 version:3.3.1
