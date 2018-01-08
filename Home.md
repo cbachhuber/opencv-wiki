@@ -24,6 +24,8 @@ General resources
 
 - :hammer_and_wrench: [Changelog](ChangeLog) - highlights for each library release
 
+- :telephone_receiver: [Meeting Notes](Meeting_notes)
+
 Development
 -----------
 
