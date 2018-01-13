@@ -1,10 +1,11 @@
 OpenCV Wiki
 ===========
 
-GSoC 2017
+GSoC 2018 -- under construction, don't click yet
 ---------
 
-:tada: **We have been accepted for summer 2017!** :tada:
+
+[![test image](https://github.com/garybradski/opencv_contrib/blob/master/doc/tutorials/ximgproc/prediction/images/OpenCV_GSoC2018.png)](GSoC_2017)
 
 - [OpenCV Google Summer of Code 2017](GSoC_2017)
 
