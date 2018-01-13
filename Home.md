@@ -1,7 +1,7 @@
 OpenCV Wiki
 ===========
 
-GSoC 2018 -- under construction, don't click yet
+GSoC 2018
 ---------
 
 
