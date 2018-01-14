@@ -143,14 +143,23 @@ Finally, a book by O'Reilly press on the latest OpenCV is newly out: https://www
 ### Proposal Tags
 
 computer vision
+
 deep learning
+
 computational photography
+
 optimization
+
 tutorials
+
 applications
+
 slam
+
 background subtraction
+
 calibration
+
 text detection
 
 ### IRC channel?
