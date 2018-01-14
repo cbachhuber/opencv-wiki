@@ -128,9 +128,9 @@ Finally, a book by O'Reilly press on the latest OpenCV is newly out: https://www
 
 1. You **must** already know how to program fluently in C++
     - Some projects may require Python or Matlab skills
-2. Ask to join the [OpenCV GSoC Forum List](https://groups.google.com/forum/#!forum/opencv-gsoc-2018)
+2. Ask to join the OpenCV GSoC Forum List https://groups.google.com/forum/#!forum/opencv-gsoc-2018
     - Discuss projects below or other ideas with us there between now and March
-3. In March, Go to the [GSoC site](https://developers.google.com/open-source/gsoc/) and sign up to be a student with OpenCV
+3. In March, Go to the GSoC site https://developers.google.com/open-source/gsoc/ and sign up to be a student with OpenCV
 4. Post the project from below or your own agreed on project on the GSoC to opencv-gsoc-2018@googlegroups.com
     - Include Name, google email, age
     - Include how you think you are qualified to accomplish this project (skills, courses, relevant background)
