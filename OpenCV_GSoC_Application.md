@@ -159,7 +159,10 @@ text detection
 
 ### Mailing list?
 
-http://tech.groups.yahoo.com/group/OpenCV/
+https://groups.yahoo.com/neo/groups/OpenCV/info
+
+http://answers.opencv.org/questions/
+
 opencv-gsoc-2018@googlegroups.co
 
 ### Feed URL?
