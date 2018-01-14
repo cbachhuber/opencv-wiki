@@ -163,7 +163,7 @@ https://groups.yahoo.com/neo/groups/OpenCV/info
 
 http://answers.opencv.org/questions/
 
-opencv-gsoc-2018@googlegroups.co
+opencv-gsoc-2018@googlegroups.com
 
 ### Feed URL?
 
