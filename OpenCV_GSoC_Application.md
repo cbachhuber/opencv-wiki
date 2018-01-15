@@ -3,7 +3,7 @@ OpenCV GSoC Application
 
 ### Why does your org want to participate in Google Summer of Code?
 
-OpenCV (Open Source Computer Vision Library — 15M+ downloads) has been in GSoC since 2010. Computer vision is a large, rapidly evolving field and GSoC has been invaluable in keeping up with new algorithms and code improvements that aid companies around world (including extensive use in Google) to field advance vision applications but also to advance science by providing solidly coded reproducible results to test against (adhering to many Google coding and style conventions). Over the years, we have developed a well honed mentoring system that produces high quality pull requests (see recent ones: https://github.com/opencv) complete with unit tests, docs and examples of use. Several new publications have come out of this and a student joined with mentors in founding a company, Industrial Perception Inc, sold to Google in 2013 and 2016. See some video compilations of past GSoC contributions: (2015: https://youtu.be/OUbUFn71S4s) (2014: https://youtu.be/3f76HCHJJRA) (2013: https://youtu.be/_TTtN4frMEA).
+OpenCV (Open Source Computer Vision Library — 15M+ downloads) has been in GSoC since 2010. Computer vision is a large, rapidly evolving field and GSoC has been invaluable in keeping up with new algorithms and code improvements that aid companies around world (including extensive use in Google) to field advance vision applications but also to advance science by providing solidly coded reproducible results to test against (adhering to many Google coding and style conventions). Over the years, we have developed a well honed mentoring system that produces high quality pull requests (see recent ones: https://github.com/opencv/opencv_contrib/tree/master/modules) complete with unit tests, docs and examples of use. Several new publications have come out of this and a student joined with mentors in founding a company, Industrial Perception Inc, sold to Google in 2013 and And last year we founded a new one with 2 mentors and a former student: Arraiy.com . See some video compilations of past GSoC contributions: (2015: https://youtu.be/OUbUFn71S4s) (2014: https://youtu.be/3f76HCHJJRA) (2013: https://youtu.be/_TTtN4frMEA).
 
 ### How many potential mentors have agreed to mentor this year?
 
@@ -37,6 +37,7 @@ Yes were were a mentoring org
 
 | Year | Success | Total |
 |:----:|:-------:|:-----:|
+| 2017 | 14      | 17    |
 | 2016 | 11      | 12    |
 | 2015 | 14      | 15    |
 | 2014 | 15      | 15    |
@@ -59,10 +60,16 @@ No
 
 1999
 
+### Where does the source code live?
+
+https://github.com/opencv/opencv
+
+https://github.com/opencv/opencv_contrib/tree/master/modules
+
 ### Anything else we should know?
 
 OpenCV is used extensively inside Google.See googler Vincent Rabaud
-vincent.rabaud@gmail.com. He is an active contributor. We are a very active library (average 280,000 downloads/month) under intense development (see the change logs: https://github.com/opencv/opencv/wiki/ChangeLog, and meeting notes https://github.com/opencv/opencv/wiki/Meeting_notes). We are used in virtually every university that has a CS department. 2 repositories on github: opencv (core alg) and opencv_contrib (new stuff).
+vincent.rabaud@gmail.com. He is an active contributor. You may also contact another long time mentor who joined Google recently in Fei-Fei Li's group: Grace Vesom grace.vesom@gmail.com. We are a very active library (average 280,000 downloads/month) under intense development (see the change logs: https://github.com/opencv/opencv/wiki/ChangeLog, and meeting notes https://github.com/opencv/opencv/wiki/Meeting_notes). We are used in virtually every university that has a CS department. 2 repositories on github: opencv (core alg) and opencv_contrib (new stuff). https://github.com/opencv/opencv , https://github.com/opencv/opencv_contrib/tree/master/modules
 
 ------------------------------------------------------------------------
 
@@ -91,11 +98,25 @@ Graphics/Video/Audio/Virtual Reality
 
 ### Technology Tags:
 
-Vision, Deep Learning, C++, Python
+c/c++
+
+python 3
+
+javascript
+
+Hadoop
 
 ### Topic Tags:
 
-Computer vision, deep learning, robotics, virtual reality, real time
+computer vision
+
+deep learning
+
+robotics
+
+graphics
+
+real time
 
 ### Ideas List:
 
@@ -165,6 +186,8 @@ text detection
 ### IRC channel?
 
 `#opencv` on freenode
+
+https://github.com/opencv/opencv/wiki/GSoC_2018
 
 ### Mailing list?
 
