@@ -1,5 +1,3 @@
-**WIP**
-
 This wiki describes how to work with object detection models trained using [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
 ## Run network in TensorFlow
@@ -26,7 +24,7 @@ with tf.Session() as sess:
     tf.import_graph_def(graph_def, name='')
 
     # Read and preprocess an image.
-    img = cv.imread('004545.jpg')
+    img = cv.imread('example.jpg')
     rows = img.shape[0]
     cols = img.shape[1]
     inp = cv.resize(img, (300, 300))
@@ -65,50 +63,67 @@ You can use one of the configs that has been tested in OpenCV. Choose it depends
 
 | Model | Version | ||
 |-------|-------------|----|----|
-| MobileNet-SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz) | |
+| MobileNet-SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz) | [config](https://gist.github.com/dkurt/45118a9c57c38677b65d6953ae62924a) |
 | Inception v2 SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz) | [config](https://github.com/opencv/opencv_extra/tree/master/testdata/dnn/ssd_inception_v2_coco_2017_11_17.pbtxt) |
 | MobileNet-SSD | TensorFlow < 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_mobilenet_v1_coco.pbtxt) |
 
+### Generate a config file
+Use [tf_text_graph.py]() script to generate a text graph representation. If your model has different values of `num_classes`, `min_scale`, `max_scale`, `num_layers` or `aspect_ratios` comparing to [origin configuration files](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs), specify it in the script arguments.
 
-
-### Get a text graph representation
-You can use the following script to make a text graph representation. It removes weights nodes and some unused fields.
+Try to run the model using OpenCV:
 
 ```python
-import tensorflow as tf
+import cv2 as cv
 
-# Read the graph.
-with tf.gfile.FastGFile('graph.pb') as f:
-    graph_def = tf.GraphDef()
-    graph_def.ParseFromString(f.read())
+cvNet = cv.dnn.readNetFromTensorflow('frozen_inference_graph.pb', 'graph.pbtxt')
 
-# Remove Const nodes.
-for i in reversed(range(len(graph_def.node))):
-    if graph_def.node[i].op == 'Const':
-        del graph_def.node[i]
-    for attr in ['T', 'data_format', 'Tshape', 'N', 'Tidx', 'Tdim',
-                 'use_cudnn_on_gpu', 'Index', 'Tperm', 'is_training',
-                 'Tpaddings']:
-        if attr in graph_def.node[i].attr:
-            del graph_def.node[i].attr[attr]
+img = cv.imread('example.jpg')
+rows = img.shape[0]
+cols = img.shape[1]
+cvNet.setInput(cv.dnn.blobFromImage(img, 1.0/127.5, (300, 300), (127.5, 127.5, 127.5), swapRB=True, crop=False))
+cvOut = cvNet.forward()
 
-# Save as text.
-tf.train.write_graph(graph_def, "", "graph.pbtxt", as_text=True)
+for detection in cvOut[0,0,:,:]:
+    score = float(detection[2])
+    if score > 0.3:
+        left = detection[3] * cols
+        top = detection[4] * rows
+        right = detection[5] * cols
+        bottom = detection[6] * rows
+        cv.rectangle(img, (int(left), int(top)), (int(right), int(bottom)), (23, 230, 210), thickness=2)
+
+cv.imshow('img', img)
+cv.waitKey()
 ```
-### Generate a config file
-Run `optimize_for_inference.py` tool to make your model simpler:
+
+![](https://user-images.githubusercontent.com/25801568/35520173-58e6f99c-0527-11e8-80fc-8a32d1923e04.png)
+
+### Troubleshooting
+If you have problems at `readNetFromTensorflow` or at `forward` stages, perhaps, your model requires some of the following transformations before making a text graph:
+
+1. Try to run `optimize_for_inference.py` tool to make your model simpler:
 ```bash
 python ~/tensorflow/tensorflow/python/tools/optimize_for_inference.py \
   --input frozen_inference_graph.pb \
   --output opt_graph.pb \
   --input_names image_tensor \
   --output_names "num_detections,detection_scores,detection_boxes,detection_classes" \
+  --placeholder_type_enum 4 \
   --frozen_graph
 ```
 
-Run a [graph transformation tool](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/graph_transforms/README.md#using-the-graph-transform-tool) to fuse constant nodes.
+2. Try fuse constant nodes by a [graph transformation tool](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/graph_transforms/README.md#using-the-graph-transform-tool).
 
-Run [tf_text_graph.py]() script. If your model has different values of `num_classes`, `min_scale`, `max_scale`, `num_layers` or `aspect_ratios` comparing to [origin configuration files](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs), specify it in the script arguments.
+```bash
+~/tensorflow/bazel-bin/tensorflow/tools/graph_transforms/transform_graph \
+  --in_graph=frozen_inference_graph.pb \
+  --out_graph=opt_graph.pb \
+  --inputs=image_tensor \
+  --outputs="num_detections,detection_scores,detection_boxes,detection_classes" \
+  --transforms="fold_constants(ignore_errors=True)"
+```
+
+You you have difficulties with your model feel free to ask for help at http://answers.opencv.org.
 
 ## References
 * [TensorFlow library](https://www.tensorflow.org/)
