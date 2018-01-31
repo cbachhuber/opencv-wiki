@@ -64,11 +64,11 @@ You can use one of the configs that has been tested in OpenCV. Choose it depends
 | Model | Version | ||
 |-------|-------------|----|----|
 | MobileNet-SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz) | [config](https://gist.github.com/dkurt/45118a9c57c38677b65d6953ae62924a) |
-| Inception v2 SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz) | [config](https://github.com/opencv/opencv_extra/tree/master/testdata/dnn/ssd_inception_v2_coco_2017_11_17.pbtxt) |
+| Inception v2 SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz) | [config](https://github.com/dkurt/opencv_extra/blob/tf_ave_pooling/testdata/dnn/ssd_inception_v2_coco_2017_11_17.pbtxt) |
 | MobileNet-SSD | TensorFlow < 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_mobilenet_v1_coco.pbtxt) |
 
 ### Generate a config file
-Use [tf_text_graph_ssd.py](https://github.com/opencv/opencv/tree/master/samples/dnn/tf_text_graph_ssd.py) script to generate a text graph representation. If your model has different values of `num_classes`, `min_scale`, `max_scale`, `num_layers` or `aspect_ratios` comparing to [origin configuration files](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs), specify it in the script arguments.
+Use [tf_text_graph_ssd.py](https://github.com/dkurt/opencv/blob/dnn_tool_ssd_text_graph/samples/dnn/tf_text_graph_ssd.py) script to generate a text graph representation. If your model has different values of `num_classes`, `min_scale`, `max_scale`, `num_layers` or `aspect_ratios` comparing to [origin configuration files](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs), specify it in the script arguments.
 
 Try to run the model using OpenCV:
 
