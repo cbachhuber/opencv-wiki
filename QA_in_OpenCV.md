@@ -4,7 +4,7 @@ QA in OpenCV
 C++ tests
 ---------
 
-You can start from the section 9 in [OpenCV Coding Style Guide](https://github.com/opencv/opencv/wiki/CodingStyleGuide).
+You can start from the section 9 in [OpenCV Coding Style Guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide).
 
 Same tests are used on every supported platform: Windows, Linux, MacOS and Android. Majority of testing is performed using C++ API, because it is the preffered language in the OpenCV project. These tests are implemented on top of [Google Test](https://github.com/google/googletest) unit-testing framework.
 

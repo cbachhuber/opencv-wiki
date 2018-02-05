@@ -1,5 +1,3 @@
-
-
 h1. The OpenCV Coding Style Guide
 
 The document is a short guide on code style, used in OpenCV. The core libraries (@core@, @imgproc@, etc) are written in C++, so the document concerns only the С++ code style.
@@ -18,25 +16,32 @@ All the functionality must be put into one or more _.cpp_ and _.hpp_ files into 
 
 h2. File Structure
 
-Every source file, except for the samples, starts with BSD-compatible license, which template can be found "here":https://github.com/opencv/opencv/blob/master/LICENSE. The extra/different copyright clauses are possible, as long as the license stays BSD-compatible.
+Every source file, except for the samples, starts with license header:
+
+<pre>
+// This file is a part of OpenCV project.
+// It is subject to the license terms in the LICENSE file found in the top-level directory
+// of this distribution and at http://opencv.org/license.html.
+</pre>
+
+OpenCV code license (BSD-compatible) can be found "here":https://github.com/opencv/opencv/blob/master/LICENSE. 
+The extra/different copyright clauses are possible (including adding your name into created file), as long as the license stays BSD-compatible.
 
 Other rules for both header and implementation files include:
 
 * All the functionality must be put into @cv@ namespace, or, possibly, some nested namespace, e.g. @cv::vslam@
 * Code lines should not be very long. Normally, they should be limited to 100 characters.
 * No tabulation should be used. Set your editor to use spaces instead.
-* Only English text (ASCII) is allowed. Do not put comments or string literals in other languages.
 * Indentation is 4 spaces.
+* Only English text (ASCII) is allowed. Do not put comments or string literals in other languages.
 * Header files must use guarding macros, protecting the files from repeated inclusion:
 
 <pre>
-#ifndef _OPENCV_module_name_header_name_HPP_
-#define _OPENCV_module_name_header_name_HPP_
-#ifdef __cplusplus
+#ifndef OPENCV_module_name_header_name_HPP
+#define OPENCV_module_name_header_name_HPP
 namespace cv { namespace mynamespace {
 ...
 }}
-#endif
 #endif
 </pre>
 
@@ -255,9 +260,9 @@ Use the existing documentation as example. You are also welcome to provide tutor
 
 h2. Implementing tests
 
-* For tests we use "GoogleTest":http://code.google.com/p/googletest/ framework. Please, check the documentation at the project site.
+* For tests we use "GoogleTest":https://github.com/google/googletest framework. Please, check the documentation at the project site.
 * Each test source file should include @test_precomp.hpp@ first.
-* All the test code is put to @cvtest@ namespace.
+* All the test code is put to @opencv_test@ namespace.
 * Declare your Google tests as following:
 
 <pre>
@@ -267,6 +272,10 @@ TEST(<module_name>_<tested_class_or_function>, <test_type>) { <test_body> }
 For example: <pre><code>TEST(Imgproc_Watershed, regression) { ... } </code></pre>
 
 * To access test data, use @cvtest::TS::ptr()->get_data_path()@ method. For example, if you put your test file to @opencv_extra/testdata/cv/myfacetracker/clip.avi@, you can use @cvtest::TS::ptr()->get_data_path() + "myfacetracker/clip.avi"@ to get full path to the file. To make it work properly, set the environment variable @OPENCV_TEST_DATA_PATH@ to @<your_local_copy_of_opencv_extra>/testdata@
+* Avoid including C++ standard library headers, like @vector@, @list@, @map@, @limits@, @iostream@, etc.
+* Avoid @using namespace std@. Use @std::@ if necessary (common types are imported into @opencv_test@ namespace).
+* Don't use @std::tr1@ namespace.
+* Don't include OpenCV headers for @core@/@imgproc@/@highgui@. These headers are included by @ts.hpp@.
 
 h2. Appendixes
 
@@ -288,7 +297,7 @@ The document is not a complete style guide. Far more detailed and well-written p
 * Do not use tabulation. Indentation is 4 spaces. Lines should not be much longer than ~100 characters.
 * Keep consistent formatting style in each particular source file (especially if you modify the existing code).
 * Each source file includes @"precomp.hpp"@ as the first header.
-* The code is put into cv or nested namespace (cv::vslam etc.). Test code is put into cvtest namespace.
+* The code is put into cv or nested namespace (cv::vslam etc.). Test code is put into opencv_test namespace.
 * Only English should be used in comments and string literals.
 * External function names and data type names are written in mixed case. Classes start with capital letter, functions start with small letter. External macros are written in upper case.
 * Use @CV_EXPORTS@ macro within external functions and classes declarations. Use @CV_EXPORTS_W@ for Python- and Java- wrappable API.
