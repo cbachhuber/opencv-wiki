@@ -1,5 +1,3 @@
-**WIP**
-
 [Intel's Deep Learning Inference Engine](https://software.intel.com/en-us/inference-engine-devguide) is a part of 
 [Intel&reg; Computer Vision SDK](https://software.intel.com/en-us/computer-vision-sdk). You can use it as a computational backend for OpenCV deep learning module.
 
@@ -19,9 +17,15 @@
 
   * Microsoft Windows
   ```
+  cmake ^
+    -DWITH_INF_ENGINE=ON ^
+    -DINTEL_CVSDK_DIR=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5852 ^
+    -DIE_PLUGINS_PATH=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5852\\lib\\intel64\\Release ^
+    -DENABLE_CXX11=ON ^
+    ...
   ```
 
   Add path to Intel's Inference Engine plugins into PATH variable:
   ```
-  set PATH=
+  set PATH=C:\Intel\DeepLearning-DeploymentToolkit_1.0.5852\bin\intel64\Release;%PATH% 
   ```
