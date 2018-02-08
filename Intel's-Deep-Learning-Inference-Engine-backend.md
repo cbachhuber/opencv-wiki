@@ -29,3 +29,7 @@
   ```
   set PATH=C:\Intel\DeepLearning-DeploymentToolkit_1.0.5852\bin\intel64\Release;%PATH% 
   ```
+* Enable Intel's Inference Engine backend right after `cv::dnn::readNetFrom*` invocation:
+  ```cpp
+  net.setPreferableBackend(DNN_BACKEND_INFERENCE_ENGINE);
+  ```
