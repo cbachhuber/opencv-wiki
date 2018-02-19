@@ -1,14 +1,6 @@
 OpenCV Wiki
 ===========
 
-GSoC 2018
----------
-
-
-- [![OpenCV Ideas Page](https://github.com/garybradski/opencv_contrib/blob/master/doc/tutorials/ximgproc/prediction/images/OpenCV__GSoC2018.png)](GSoC_2018)[_(OpenCV Google Summer of Code 2018)_](GSoC_2018)
-- [Google Summer of Code site for Student and Mentor Signup](https://developers.google.com/open-source/gsoc/)
-
-
 General resources
 -----------------
 
