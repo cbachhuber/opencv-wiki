@@ -12,8 +12,6 @@ OpenCV 3.4.1 has been just released, with further extended _dnn_ module, multipl
 
 - Added support for quantized TensorFlow networks. We are now able to load 8-bit matrices of weights. The computations are still done in FP32 (with plans to add FP16 path), but even now it's possible to compress the networks so that they consume less disk space. For example, our [face detector](https://github.com/opencv/opencv/blob/master/samples/dnn/resnet_ssd_face.cpp) can be modified to read and use our 8-bit quantized ResNet-based [face detection network](https://github.com/opencv/opencv_3rdparty/raw/8033c2bc31b3256f0d461c919ecc01c2428ca03b/opencv_face_detector_uint8.pb) (pass it and this [description file](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/opencv_face_detector.pbtxt) into `cv::dnn::readNetFromTensorFlow()`). And the face detection network takes just 2.7Mb.
 
-- Added AVX-512 acceleration to the performance kernels, such as convolution and fully-connected layers.
-
 - OpenCV is now able to use [Intel DL inference engine](https://software.intel.com/en-us/computer-vision-sdk) as DNN acceleration backend. It gives quite noticeable performance boost on many models:
 
 | Model | CPU, default backend | CPU, Inference Engine backend, MKL-DNN plugin | Model Optimizer + Inference Engine, MKL-DNN plugin (a standalone application) |
