@@ -1,6 +1,64 @@
 OpenCV Change Logs
 ==================
 
+version:3.4.1
+-------------
+
+*February, 2018*
+
+OpenCV 3.4.1 has been just released, with further extended _dnn_ module, multiple bug fixes and other small and big improvements.
+
+![](images/dnn.png)
+
+- Added support for quantized TensorFlow networks. We are now able to load 8-bit matrices of weights. The computations are still done in FP32 (with plans to add FP16 path), but even now it's possible to compress the networks so that they consume less disk space. For example, our [face detector](https://github.com/opencv/opencv/blob/master/samples/dnn/resnet_ssd_face.cpp) can be modified to read and use our 8-bit quantized ResNet-based [face detection network](https://github.com/opencv/opencv_3rdparty/raw/8033c2bc31b3256f0d461c919ecc01c2428ca03b/opencv_face_detector_uint8.pb) (pass it and this [description file](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/opencv_face_detector.pbtxt) into `cv::dnn::readNetFromTensorFlow()`). And the face detection network takes just 2.7Mb.
+
+- Added AVX-512 acceleration to the performance kernels, such as convolution and fully-connected layers.
+
+- OpenCV is now able to use [Intel DL inference engine](https://software.intel.com/en-us/computer-vision-sdk) as DNN acceleration backend. It gives quite noticeable performance boost on many models:
+
+| Model | CPU, default backend | CPU, Inference Engine backend, MKL-DNN plugin | Model Optimizer + Inference Engine, MKL-DNN plugin (a standalone application) |
+|---|---|---|---|
+| AlexNet | 14.44ms | 12.09ms (x1.19) | 12.05ms |
+| GoogLeNet | 15.26ms | 8.92ms (x1.71) | 8.75ms |
+| ResNet-50 | 35.78ms | 19.53ms (x1.83) | 19.4ms |
+| SqueezeNet v1.1 | 4.01ms | 2.60ms (x1.54) | 2.5ms |
+| MobileNet-SSD from Caffe | 21.62ms | 8.89ms (x2.43) | |
+| DenseNet-121 | 61.71ms | 28.21ms (x2.18) | |
+| OpenPose (COCO) @ 368x368 | 885.57ms | 544.05ms (x1.62) | |
+| OpenPose (MPI) @ 368x368 | 879.13ms | 533.96ms (x1.64) | |
+| OpenPose (MPI, 4 stages) @ 368x368 | 605.63ms | 378.49ms (x1.60) | |
+| OpenFace | 3.84ms | 2.59ms (x1.48) | |
+
+- Added AVX-512 acceleration to the performance kernels, such as convolution and fully-connected layers. Some networks, such as SSD object detection and ENet, have been accelerated by ~20%.
+
+- OpenCL backend has been expanded to cover more layers. The layer fusion has also been improved to increase the speed even further.
+
+- Several bugs in various layers have been fixed; in particular, SSD priors are now computed slightly differently so that we can more accurate bounding boxes when running SSD on variable-size images.
+
+![](images/OpenCL.jpg)
+
+-   On-disk caching of precompiled OpenCL kernels has been fixed to comply with OpenCL standard. Correspondingly, it now works well with the new Intel OpenCL (NEO) drivers.
+-   Certain cases with UMat deadlock when copying UMats in different threads has been fixed.
+
+![](images/github2.png)
+
+-   ~248 patches have been merged since OpenCV 3.4.0
+-   203 issues have been closed
+
+### Contributors
+
+#### opencv
+
+```
+TBD
+```
+
+#### opencv_contrib
+
+```
+TBD
+```
+
 version:3.4
 -------------
 
