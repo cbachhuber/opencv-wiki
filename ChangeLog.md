@@ -29,7 +29,7 @@ OpenCV 3.4.1 has been just released, with further extended _dnn_ module, multipl
 
 - Added AVX-512 acceleration to the performance kernels, such as convolution and fully-connected layers. Some networks, such as SSD object detection and ENet, have been accelerated by ~20%.
 
-- OpenCL backend has been expanded to cover more layers. The layer fusion has also been improved to increase the speed even further.
+- OpenCL backend has been expanded to cover more layers. The layer fusion has also been improved to increase the speed even further. It shall be reminded that in order to enable OpenCL backend (if it's available on the host machine) one should call the method `my_dnn_net.setPreferableTarget(cv::dnn::DNN_TARGET_OPENCL)` before the inference, where `my_dnn_net` is the network loaded using `cv::dnn::readNetFromCaffe()`, `cv::dnn::readNetFromTensorFlow()` etc. 
 
 - Several bugs in various layers have been fixed; in particular, SSD priors are now computed slightly differently so that we can more accurate bounding boxes when running SSD on variable-size images.
 
