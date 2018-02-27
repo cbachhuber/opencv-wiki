@@ -42,23 +42,133 @@ OpenCV 3.4.1 has been just released, with further extended _dnn_ module, multipl
 -   On-disk caching of precompiled OpenCL kernels has been fixed to comply with OpenCL standard. Correspondingly, it now works well with the new Intel OpenCL (NEO) drivers.
 -   Certain cases with UMat deadlock when copying UMats in different threads has been fixed.
 
+![](images/android_ocv_small.png)
+
+- Supported Android NDK16
+- Added build.gradle into OpenCV 4 Android SDK
+- Added initial support of Camera2 API via JavaCamera2View interface
+
+![](images/cxx.png)
+
+- C++11: added support of multi-dimentional `cv::Mat` creation via C++ initializers lists:
+
+    ```.cpp
+    auto K = Mat_<double>({3, 3}, {0, -1, 0, -1, 5, -1, 0, -1, 0});
+    ```
+
+- C++17: OpenCV source code and tests comply C++17 standard
+
 ![](images/github2.png)
+
+- opencv_contrib: added [GMS matching](https://github.com/opencv/opencv_contrib/pull/1532)
+- opencv_contrib: added [CSR-DCF tracker](https://github.com/opencv/opencv_contrib/pull/1552)
+- opencv_contrib: several improvements in OVIS module (OGRE 3D based visualizer)
 
 -   ~248 patches have been merged since OpenCV 3.4.0
 -   203 issues have been closed
+
 
 ### Contributors
 
 #### opencv
 
 ```
-TBD
+$ git shortlog --no-merges -ns 3.4.0..3.4.1
+    98  Alexander Alekhin
+    27  Dmitry Kurtaev
+    27  Li Peng
+    27  Maksim Shabunin
+    10  Fangjun Kuang
+     6  Vitaly Tuzov
+     6  luz.paz
+     5  Namgoo Lee
+     4  Tomoaki Teshima
+     3  Arjan van de Ven
+     3  Glue Crow
+     3  LaurentBerger
+     3  Sayed Adel
+     3  Suleyman TURKMEN
+     2  Alessandro de Oliveira Faria (A.K.A.CABELO)
+     2  Arthur Williams
+     2  Gregory Morse
+     2  Hamdi Sahloul
+     2  Pavel Rojtberg
+     2  Rostislav Vasilikhin
+     2  Steven
+     2  Woody Chow
+     2  berak
+     2  csukuangfj
+     2  oqtvs
+     2  victor-ludorum
+     2  wxzs5
+     1  Aaron Bray
+     1  Aditya Rohan
+     1  Alexander Nesterov
+     1  Ali Sentas
+     1  Ce Zheng
+     1  Chris Hall
+     1  Coralie RACHEX
+     1  Csaba Keszegh
+     1  David Koller
+     1  Elena Gvozdeva
+     1  Eric Wang
+     1  Erik Man
+     1  Florian Echtler
+     1  GlueCrow
+     1  Harshal Nishar
+     1  Jozef Mlich
+     1  Jun Zhao
+     1  Li, Peng
+     1  Mark Harfouche
+     1  Moshe
+     1  PalkoNazar
+     1  Patrik Huber
+     1  Philipp Hasper
+     1  Ryo Suzuki
+     1  Rémi Ratajczak
+     1  SarenT
+     1  Stanislaw Halik
+     1  Sui Libin
+     1  Tom Becker
+     1  Travers
+     1  Vinay Sharma
+     1  Ya-Chiu Wu
+     1  catree
+     1  denmatfoton
+     1  elenagvo
+     1  jasjuang
+     1  mworchel
+     1  razerhell
+     1  sergeybe
+     1  take1014
+     1  tobycollins
+     1  woody.chow
+     1  yuki takehara
 ```
 
 #### opencv_contrib
 
 ```
-TBD
+$ git shortlog --no-merges -ns 3.4.0..3.4.1
+    10  Pavel Rojtberg
+     4  Hamdi Sahloul
+     3  Alexander Alekhin
+     3  KUANG Fangjun
+     2  Maksim Shabunin
+     2  Vitaly Tuzov
+     2  berak
+     2  catree
+     1  Adam
+     1  Andrej Muhič
+     1  Fangjun Kuang
+     1  John Cant
+     1  Kv Manohar
+     1  Plamen Dimitrov
+     1  Suleyman TURKMEN
+     1  Yujun Shi
+     1  adrianheron
+     1  caseymcc
+     1  klchang
 ```
 
 version:3.4
