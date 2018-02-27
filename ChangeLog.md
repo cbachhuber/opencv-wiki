@@ -31,7 +31,7 @@ OpenCV 3.4.1 has been just released, with further extended _dnn_ module, multipl
 
 - SSD-based models trained and retrained in [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) can be easier imported by a single invocation of [python script](https://github.com/opencv/opencv/blob/master/samples/dnn/tf_text_graph_ssd.py) making a text graph representation. Read a [wiki page](https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API) for details.
 
-- Performance of pthreads backend of `cv::parallel_for_()` (which is used by default unless you installed TBB or chose OpenMP) has been greatly improved on many core machines, in particular 10-core Core i9. That let us to increase performance of DNN inference quite significantly (up to 6x) on such machines. 
+- Performance of pthreads backend of `cv::parallel_for_()` (which is used by default on Linux/Android, unless you installed TBB or chose OpenMP) has been greatly improved on many core machines, in particular 10-core Core i9. That let us to increase performance of DNN inference quite significantly (up to 6x) on such machines. 
 
 - OpenCL backend has been expanded to cover more layers. The layer fusion has also been improved to increase the speed even further. It shall be reminded that in order to enable OpenCL backend (if it's available on the host machine) one should call the method `my_dnn_net.setPreferableTarget(cv::dnn::DNN_TARGET_OPENCL)` before the inference, where `my_dnn_net` is the network loaded using `cv::dnn::readNetFromCaffe()`, `cv::dnn::readNetFromTensorFlow()` etc. 
 
