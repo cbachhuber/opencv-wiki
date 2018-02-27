@@ -27,7 +27,7 @@ OpenCV 3.4.1 has been just released, with further extended _dnn_ module, multipl
 | OpenPose (MPI, 4 stages) @ 368x368 | 605.63ms | 378.49ms (x1.60) | |
 | OpenFace | 3.84ms | 2.59ms (x1.48) | |
 
-- Added AVX-512 acceleration to the performance-critical kernels, such as convolution and fully-connected layers. Some networks, such as SSD object detection and ENet, have been accelerated by ~20%.
+- Added AVX-512 acceleration to the performance-critical kernels, such as convolution and fully-connected layers. Some networks, such as SSD object detection and ENet semantical segmentation, have been accelerated by ~20%.
 
 - SSD-based models trained and retrained in [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) can be easier imported by a single invocation of [python script](https://github.com/opencv/opencv/blob/master/samples/dnn/tf_text_graph_ssd.py) making a text graph representation. Read a [wiki page](https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API) for details.
 
