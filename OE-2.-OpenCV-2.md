@@ -28,4 +28,4 @@ OpenCV 2.4.x decline is happening, so there is no real alternatives, there are n
 
 ## References
 
-TBD
+1. [OpenCV 2.4.x branch](https://github.com/opencv/opencv/tree/2.4)
