@@ -21,6 +21,7 @@
 - Development process
     - [[How to contribute|How_to_contribute]]
     - [[Coding style guide|Coding_Style_Guide]]
+    - [[Evolution Proposals|Evolution_Proposals]]
     - [[Contributors]]
     - Tech guides:
         - [[Working with Git|Git]]
