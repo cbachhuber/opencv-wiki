@@ -9,7 +9,7 @@ The pool of evolution proposals can then be used to plan GSoC projects, as the l
 # The list of evolution proposals
 
 * [OE-0 - The Template](OE-0.-Template)
-* [OE-1 - OpenCV C API Maintainance](OE-1.-C-API)
+* [OE-1 - OpenCV OpenCV 1.x C API Maintainance](OE-1.-C-API)
 * [OE-2 - OpenCV 2.x Maintainance](OE-2.-OpenCV-2)
 * [OE-3 - OpenCV 3.x Maintainance](OE-3.-OpenCV-3)
 * [OE-4 - OpenCV 4.0](OE-4.-OpenCV-4)
