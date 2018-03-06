@@ -16,7 +16,7 @@ Here are some fundamental reasons (not sorted by importance):
 * Disclaiming binary compatibility and moving to source-level compatibility. Several years ago we stated that OpenCV will stay binary-compatible between major releases. Technically, it was a necessary thing for OpenCV Manager for Android, but it also was seemingly useful thing for binary OpenCV packages for Linux. Apparently, neither of these two is that important. App developers do not rely on independently-updated package and Linux distro maintainers prefer to do just some security updates. For them the difference between, say, 3.0 and 3.1 is too radical. So we can have more freedom and yet provide a reasonable level of compatibility by relaxing the "binary compatibility" claim to "source compatibility".
 * (mini-)Halide as a part of OpenCV.
 * Big revision of functionality and modules content. It's deep learning era now and we need to react.
-* Compact OpenCV. The library became quite heavy, we need to strip it down and probably JIT some kernels instead of having them all. Stripping down equals broken compatibility, so we will need a major version number increase.
+* Compact OpenCV. The library became quite heavy, we need to strip it down and probably JIT-compile some kernels instead of having them all pre-compiled and wasting space. Stripping down equals broken compatibility, so we will need a major version number increase.
 * Possibly big revision of DNN module. It grew fast during 2016, 2017 and 2018. We need to do some refactoring and do not want to be limited too much by the compatibility aspects.
 
 ## Proposed solution
