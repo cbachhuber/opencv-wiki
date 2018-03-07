@@ -1,7 +1,7 @@
 ## Maintaining OpenCV 2.4.x
 
 * Author: Vadim Pisarevsky
-* Link: TBD
+* Link: [The feature request](https://github.com/opencv/opencv/issues/11001)
 * Status: **Draft**
 * Platforms: All
 * Complexity: a few man-weeks per year
