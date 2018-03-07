@@ -1,7 +1,7 @@
 ## Getting rid of C API in OpenCV
 
 * Author: Vadim Pisarevsky
-* Link: TBD
+* Link: [The feature request](https://github.com/opencv/opencv/issues/11000)
 * Status: **Draft**
 * Platforms: All
 * Complexity: a few man-weeks
