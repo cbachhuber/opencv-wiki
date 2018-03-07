@@ -1,7 +1,7 @@
 ## Planning OpenCV 4.0
 
 * Author: Vadim Pisarevsky
-* Link: TBD
+* Link: [The feature request](https://github.com/opencv/opencv/issues/11023)
 * Status: **Draft**
 * Platforms: **All**
 * Complexity: many man-weeks
