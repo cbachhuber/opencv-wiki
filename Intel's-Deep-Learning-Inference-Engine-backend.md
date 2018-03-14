@@ -19,15 +19,15 @@
   ```
   cmake ^
     -DWITH_INF_ENGINE=ON ^
-    -DINTEL_CVSDK_DIR=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5852 ^
-    -DIE_PLUGINS_PATH=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5852\\lib\\intel64\\Release ^
+    -DINTEL_CVSDK_DIR=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5855 ^
+    -DIE_PLUGINS_PATH=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5855\\lib\\intel64\\Release ^
     -DENABLE_CXX11=ON ^
     ...
   ```
 
   Add path to Intel's Inference Engine plugins into PATH variable:
   ```
-  set PATH=C:\Intel\DeepLearning-DeploymentToolkit_1.0.5852\bin\intel64\Release;%PATH% 
+  set PATH=C:\Intel\DeepLearning-DeploymentToolkit_1.0.5855\bin\intel64\Release;%PATH% 
   ```
 * Enable Intel's Inference Engine backend right after `cv::dnn::readNetFrom*` invocation:
   ```cpp
