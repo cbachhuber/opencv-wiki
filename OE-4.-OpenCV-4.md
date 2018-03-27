@@ -31,7 +31,7 @@ Because of the broken compatibility some code may need tweaking to support OpenC
 
 ## Possible alternatives
 
-Sooner or later, we will need to release the new major OpenCV version. Because it evolves fast and because there are available resources, it's very good moment to do it during 2018.
+Sooner or later, we will need to release the new major OpenCV version. Because the library evolves fast and because we now have enough resources, it's very good moment to do it during 2018.
 
 So, the alternative to keep developing OpenCV 3.x is not that attractive.
 
