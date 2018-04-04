@@ -10,15 +10,15 @@ Before you start contributing you should
 
 -   Make sure you agree to contribute your code under OpenCV (BSD) license.
 
--   If you are submitting a new algorithm implementation, do a quick search over internet to see whether the algorithm is patented or not.
+-   If you are submitting a new algorithm implementation, do a quick search over internet to see whether the algorithm is patented or not. **Note:** All new algorithms should go into [opencv_contrib](https://github.com/opencv/opencv_contrib) repository by default.
 
--   If you are going to fix a bug, check that it's still exists. This can be done by building the latest [2.4 branch](https://github.com/opencv/opencv/tree/2.4) or the [latest master branch](https://github.com/opencv/opencv), and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV 2.1 for example.
+-   If you are going to fix a bug, check that it's still exists. This can be done by building the latest [2.4](https://github.com/opencv/opencv/tree/2.4)/[3.4](https://github.com/opencv/opencv/tree/3.4) branch or the [latest master branch](https://github.com/opencv/opencv), and make sure that the error is still reproducable there. We do not fix bugs that only affect deprecated versions like OpenCV 2.1 for example.
 
 -   Make sure that nobody beat you into fixing or reporting the issue by doing a search on the Github [OpenCV issues page](https://github.com/opencv/opencv/issues), and making sure that there isn't someone working on it. In the latter case you might provide support or suggestion in the issue or in the linked pull request.
 
 -   If you have a question about the software, then this is **NOT** the right place. You should open up a question at the [OpenCV Q&A forum](http://answers.opencv.org/questions/). In order to post a decent question from the start, feel free to read the official [forum guidelines](http://answers.opencv.org/faq/).
 
-Before you open up anything on the OpenCV github page, be sure that you are at the right place with your problem.
+Before you open up anything on the OpenCV GitHub page, be sure that you are at the right place with your problem.
 
 
 "Fork & Pull Request model" for code contribution
@@ -33,16 +33,17 @@ Before you open up anything on the OpenCV github page, be sure that you are at t
 1.  Install [[Git]].
 2.  Register at GitHub. Create your fork of OpenCV repository https://github.com/opencv/opencv (see https://help.github.com/articles/fork-a-repo for details).
 3.  Choose a task for youself. It could be a [bugfix](https://github.com/opencv/opencv/issues?q=is%3Aissue+is%3Aopen+label%3Abug) or some new code.
-4.  Choose a base branch for your work. You have two options:
-    1.  **2.4** - the branch that will be used for future minor releases in the 2.4.x line. Choose it when fixing a bug that's reproducible in this branch, or when making performance optimizations relevant to it. 2.4 has been feature-frozen; as such, new functionality will *not* be accepted.
-    2.  **master** - the branch that will be used for the next major release of OpenCV. Choose it when adding new functionality, or for bugfixes/optimizations that don't apply to the 2.4.
+4.  Choose a base branch for your work. You have these options:
+    1.  **2.4** - maintenance 2.4.x releases. Submit fixes critical bugs only.
+    2.  **3.4** - the branch that will be used for future releases in the 3.4.x line. Choose it when fixing a bug that's reproducible in this branch, or when making performance optimizations relevant to it.
+    3.  **master** - the branch that will be used for the next major release of OpenCV. Choose it when adding new functionality, or for bugfixes/optimizations that don't apply to the 2.4/3.4.
 5.  Clone your fork to your computer. **You can install the default pre-commit hook by renaming `opencv/.git/hooks/pre-commit.sample` to `opencv/.git/hooks/pre-commit` - this will prevent you from committing whitespace errors.**
 6.  Create a new branch (with a meaningful name) from the base branch you chose.
 7.  Modify/add the code following our [[Coding_Style_Guide]].
 8.  Run testsuite locally:
     1.  get the required sample data by cloning https://github.com/opencv/opencv_extra (choose corresponding branch)
-    2.  export `OPENCV_TEST_DATA_PATH=<path_to_opencv_extra>/testdata`
-    3.  execute each test binary from the build directory, e.g. `bin/opencv_test_core`
+    2.  `export OPENCV_TEST_DATA_PATH=<path_to_opencv_extra>/testdata`
+    3.  execute each test binary from the build directory, e.g. `./bin/opencv_test_core`
 9.  When you are done, push your branch to your GitHub fork; then create a pull request from your branch to the base branch (see https://help.github.com/articles/using-pull-requests for details).
 
 
@@ -73,7 +74,7 @@ Testing and merging pull requests
 Happy End
 ---------
 
-1. As soon as the reviewer is fine with the pull request and BuildBot likes your code, the special comment :+1: or :shipit: is put, which signals OpenCV maintainers that they can merge your pull request.
+1. As soon as the reviewer is fine with the pull request and BuildBot likes your code, the special approval comment :+1: or :shipit: is put, which signals OpenCV maintainers that they can merge your pull request.
 2. The last, but not least. Make sure you got credits. We try to memorize all the contributions and list major ones in the [[ChangeLog]] and release announcements, but we may forget to do that, unintentionally. Please, do not hesitate to remind us, and we will update opencv.org and the ChangeLog accordingly.
 
 FAQ
@@ -81,11 +82,11 @@ FAQ
 
 ### Q1. I was asked to change the target branch for my pull request, but why?
 
-Please read [this](https://github.com/opencv/opencv/wiki/How_to_contribute#The-instruction-in-brief), read the "Choose a base branch..." section.
+Please read [this](How_to_contribute#the-instruction-in-brief), read the "Choose a base branch..." section.
 
 ### Q2. I was asked to change the target branch for my pull request, how can I do that?
 
-You can use `git cherry-pick` command to move individual commits between branches. Here is the overall algorithm: you close the existing pull request, you create a new branch properly (from either _2.4_ or _master_), you cherry-pick necessary commits into it, push changes to your GitHub branch, then make a new pull request.
+You can use `git cherry-pick` command to move individual commits between branches. Here is the overall algorithm: you backup your current branch, re-create a new branch properly (from either _2.4_, _3.4_ or _master_), cherry-pick necessary commits from backup branch onto re-create branch, change **base** branch of your pull request (via GitHub), finally push changes to your GitHub repository (with `--force/-f` option).
 
 ### Q3. I was asked to remove whitespace issues, how can I do that?
 
@@ -106,4 +107,4 @@ git diff --check
 
 ### Q4. How do I contribute to the documentation.
 
-Please refer [Writing documentation for OpenCV](http://docs.opencv.org/trunk/d4/db1/tutorial_documentation.html) tutorial.
+Please refer [Writing documentation for OpenCV](http://docs.opencv.org/master/d4/db1/tutorial_documentation.html) tutorial.
