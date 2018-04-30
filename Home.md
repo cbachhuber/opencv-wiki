@@ -31,6 +31,9 @@ Development
     - [opencv.org](https://github.com/opencv-infrastructure/opencv.org/issues) - problems with the official site
     - [answers.opencv.org](https://github.com/opencv-infrastructure/answers.opencv.org/issues) - problems with the Q&A forum
 
+- New feature ideas :bulb::
+    - [OpenCV Evolution](https://github.com/opencv/opencv/wiki/Evolution-Proposals)
+
 - Contributions (_"pull requests"_):
     - [opencv](https://github.com/opencv/opencv/pulls)
     - [opencv_contrib](https://github.com/opencv/opencv_contrib/pulls)
