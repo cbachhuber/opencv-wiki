@@ -12,6 +12,14 @@
   $ cmake .. -DCMAKE_BUILD_TYPE=Release && make -j4
   ```
 
+  * Microsoft Windows
+  ```
+  > cd C:\Intel\computer_vision_sdk_2018.1.249\deployment_tools\inference_engine\samples
+  > mkdir build && cd build
+  > "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=RELEASE -G "Visual Studio 14 Win64" ..
+  > "C:\Program Files\CMake\bin\cmake.exe" --build . --config Release -- /m:4
+  ```
+
 * Build OpenCV specifying paths to installed libraries and plugins.
 
   * Ubuntu
@@ -24,15 +32,15 @@
     ...
   ```
 
->  * Microsoft Windows
->  ```
->  cmake ^
->    -DWITH_INF_ENGINE=ON ^
->    -DINTEL_CVSDK_DIR=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5855 ^
->    -DIE_PLUGINS_PATH=C:\\Intel\\DeepLearning-DeploymentToolkit_1.0.5855\\lib\\intel64\\Release ^
->    -DENABLE_CXX11=ON ^
->    ...
->  ```
+  * Microsoft Windows
+  ```
+  cmake ^
+    -DWITH_INF_ENGINE=ON ^
+    -DINTEL_CVSDK_DIR="C:\\Intel\\computer_vision_sdk_2018.1.249\\deployment_tools\\inference_engine" ^
+    -DIE_PLUGINS_PATH="C:\\Intel\\computer_vision_sdk_2018.1.249\\deployment_tools\\inference_engine\\lib\\intel64\\Release;C:\\Intel\\computer_vision_sdk_2018.1.249\\deployment_tools\\inference_engine\\bin\\intel64\\Release" ^
+    -DENABLE_CXX11=ON ^
+    ...
+  ```
 
 * Enable Intel's Inference Engine backend right after `cv::dnn::readNet` invocation:
   ```cpp
