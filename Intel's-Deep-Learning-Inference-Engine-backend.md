@@ -50,3 +50,11 @@
   ```
 
 * You may also import [pre-trained models](https://software.intel.com/openvino-toolkit/documentation/pretrained-models) passing paths to `.bin` and `.xml` files to `cv::dnn::readNet` function.
+
+* Troubleshooting
+
+  If you run your network on CPU specify path to OpenMP by
+  ```
+  LD_PRELOAD=/opt/intel/computer_vision_sdk/deployment_tools/inference_engine/external/mkltiny_lnx/lib/libiomp5.so
+  ```
+  Set `OMP_WAIT_POLICY` to `PASSIVE` to prevent efficiency gaps due networks partitioning if there are layers unsupported by Inference Engine backend or you have several networks with this preferable backend.
