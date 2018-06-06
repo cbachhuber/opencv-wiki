@@ -1,7 +1,7 @@
 [Intel's Deep Learning Inference Engine](https://software.intel.com/inference-engine-devguide) is a part of 
 [Intel&reg; OpenVINO&trade; toolkit](https://software.intel.com/openvino-toolkit). You can use it as a computational backend for OpenCV deep learning module.
 
-* Download and install [Intel&reg; OpenVINO&trade; toolkit](https://software.seek.intel.com/openvino-toolkit).
+* Download and install [Intel&reg; OpenVINO&trade; toolkit](https://software.seek.intel.com/openvino-toolkit). **Important note: if you want to transfer the installed Inference Engine binaries to another machine w/o running OpenVINO installer there, you need [the redistributable files of Intel C++ compiler](https://software.intel.com/en-us/articles/intel-compilers-redistributable-libraries-by-version) (use the latest update, 64-bit version), otherwise the Inference Engine or some of its essential plugins will refuse to load and run, which may result in an app crash.
 
 * Build `cpu_extension` library which contains extra layers implementations.
 
@@ -22,7 +22,7 @@
   > set PATH=C:\Intel\computer_vision_sdk_2018.1.249\deployment_tools\inference_engine\bin\intel64\Release;%PATH%
   ```
 
-* Build OpenCV specifying paths to installed libraries and plugins.
+* OpenVINO R2 and later comes with OpenCV built with DL IE support, so you can skip this step. Otherwise, or if you want to grab and build the latest OpenCV from source, build OpenCV as following:
 
   * Ubuntu
   ```
