@@ -55,11 +55,12 @@
 
 * Then, optionally you can also set the device to use for the inference (by default it will use CPU):
   ```cpp
-  net.setPreferableTarget(DNN_TARGET_OPENCL); // the possible options are
-                                              // DNN_TARGET_CPU,
-                                              // DNN_TARGET_OPENCL, 
-                                              // DNN_TARGET_OPENCL_FP16,
-                                              // DNN_TARGET_MYRIAD
+  net.setPreferableTarget(DNN_TARGET_OPENCL);
+         // the possible options are
+         // DNN_TARGET_CPU,
+         // DNN_TARGET_OPENCL, 
+         // DNN_TARGET_OPENCL_FP16 (fall back to OPENCL if the hardware does not support FP16),
+         // DNN_TARGET_MYRIAD
   ```
 
 * You may also import [pre-trained models](https://software.intel.com/openvino-toolkit/documentation/pretrained-models) passing paths to `.bin` and `.xml` files to `cv::dnn::readNet` function.
