@@ -59,7 +59,8 @@
          // the possible options are
          // DNN_TARGET_CPU,
          // DNN_TARGET_OPENCL, 
-         // DNN_TARGET_OPENCL_FP16 (fall back to OPENCL if the hardware does not support FP16),
+         // DNN_TARGET_OPENCL_FP16
+         //   (fall back to OPENCL if the hardware does not support FP16),
          // DNN_TARGET_MYRIAD
   ```
 
