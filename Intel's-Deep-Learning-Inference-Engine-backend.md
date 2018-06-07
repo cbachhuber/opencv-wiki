@@ -21,7 +21,7 @@
   > set PATH=C:\Intel\computer_vision_sdk_2018.1.249\deployment_tools\inference_engine\bin\intel64\Release;%PATH%
   ```
 
-* OpenVINO R2 and later comes with OpenCV built with DL IE support, so you can skip this step if you use fresh enough version. Otherwise, or if you want to grab and build the latest OpenCV from source, build OpenCV as following:
+* OpenVINO 2018 R2 and later comes with OpenCV built with DL IE support, so you can skip this step if you use fresh enough version. Otherwise, or if you want to grab and build the latest OpenCV from source, build OpenCV as following:
 
   * Ubuntu
   ```
