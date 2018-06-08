@@ -4,9 +4,10 @@ The module has no any extra dependencies, except for libprotobuf, and libprotobu
 
 The supported frameworks:
 
- * Caffe 1
- * TensorFlow
- * Torch/PyTorch
+ * [Caffe](http://caffe.berkeleyvision.org/)
+ * [TensorFlow](https://www.tensorflow.org/)
+ * [Torch](http://torch.ch/)
+ * [Darknet](https://pjreddie.com/darknet/)
 
 The supported layers:
 
