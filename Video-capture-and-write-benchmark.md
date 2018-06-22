@@ -32,7 +32,7 @@ sudo apt install \
 sudo apt install libavcodec-dev
 ```
 
-**Note**: to use gstreamer-MediaSDK plugin you should install [MediaSDK](https://software.intel.com/en-us/media-sdk) and build the plugin from sources. Official repository https://github.com/intel/gstreamer-media-SDK have several forks, for example https://github.com/ishmael1985/gstreamer-media-SDK which can have some issues fixed, but may be less tested. Building instruction can be found in instructions of the respective repository. Another plugin variant - https://github.com/Intel-Media-SDK/gstreamer-plugins - is not supported by the benchmark tool yet.
+**Note**: to use gstreamer-MediaSDK plugin you should install [MediaSDK](https://software.intel.com/en-us/media-sdk) and build the plugin from sources. Official repository https://github.com/intel/gstreamer-media-SDK have several forks, for example https://github.com/ishmael1985/gstreamer-media-SDK which can have some issues fixed, but may be less tested. Building instruction can be found in instructions of the respective repository. Another plugin variants: https://github.com/Intel-Media-SDK/gstreamer-plugins and https://github.com/GStreamer/gst-plugins-bad/tree/master/sys/msdk - are not supported by the benchmark tool yet.
 
 ### Build
 
