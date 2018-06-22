@@ -18,15 +18,14 @@ This is a program implemented as OpenCV sample application which allows user to 
 
 ### Prerequisites
 
-In order to use all supported modes of the benchmark tool you should install several libraries, mostly GStreamer plugins. You can use the apt package management tools to update your local package index. Afterwards, you can download and install gstreamer's programs:
+In order to use all supported modes of the benchmark tool you should install several libraries, mostly GStreamer plugins. In Ubuntu 17 at can be done with the following commands:
 
 ```.sh
 # GStreamer library and plugins
 sudo apt install \
     libgstreamer1.0-dev \
-    gstreamer1.0-plugins-good libgstreamer-plugins-good1.0-dev \
-    gstreamer1.0-plugins-base libgstreamer-plugins-base1.0-dev \
-    gstreamer1.0-plugins-bad libgstreamer-plugins-bad1.0-dev \
+    gstreamer1.0-plugins-{base,good,bad} \
+    libgstreamer-plugins-{base,good,bad}1.0-dev \
     gstreamer1.0-libav \
     gstreamer1.0-vaapi
 # FFmpeg dev package
@@ -37,7 +36,7 @@ sudo apt install libavcodec-dev
 
 ### Build
 
-To build the benchmark configure and build OpenCV as follows (Linux):
+To build the benchmark tool configure and build OpenCV as follows (Linux):
 ```.sh
 # configure
 cmake -DBUILD_EXAMPLES=ON -DWITH_GSTREAMER=ON -DWITH_FFMPEG=ON <path_to_opencv_source>
@@ -57,7 +56,7 @@ The benchmark tool supports two modes: _decode_ and _encode_; and several backen
 
 **Backend option:** _gst-default_ or _ffmpeg_
 
-VideoCapture/VideoWriter object created using file name, OpenCV builds processing pipelines automatically:
+VideoCapture/VideoWriter object is created using file name, OpenCV builds processing pipelines automatically:
 ```.cpp
 VideoCapture cap(file_name, CAP_GSTREAMER);
 // or
@@ -74,6 +73,7 @@ VideoCapture cap(
     "filesrc location=<filename> ! avidemux ! decodebin ! appsink",
     CAP_GSTREAMER);
 ```
+**Note:** the pipeline built in this mode is mostly equivalent to the one produced internally by OpenCV in the _gst-default_ mode.
 
 #### HW-accelerated configuration (GStreamer)
 
