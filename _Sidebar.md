@@ -16,6 +16,7 @@
     - [[OpenCL optimizations|OpenCL-optimizations]]
     - [[CPU optimizations|CPU-optimizations-build-options]]
     - [[Profiling OpenCV Applications|Profiling-OpenCV-Applications]]
+    - [[Video capture and write benchmark|Video-capture-and-write-benchmark]]
     - [[MediaSDK encode/decode backend|MediaSDK-encode-decode-backend]]
     - [[Building more compact applications with OpenCV|Compact-build-advice]]
 - Development process
