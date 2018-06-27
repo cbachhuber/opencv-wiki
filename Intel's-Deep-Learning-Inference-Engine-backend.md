@@ -91,11 +91,11 @@
 
     * Microsoft Windows
     ```
-    > cd C:\Intel\computer_vision_sdk_2018.1.249\deployment_tools\inference_engine\samples
+    > cd C:\Intel\computer_vision_sdk_2018.2.300\deployment_tools\inference_engine\samples
     > mkdir build && cd build
     > "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=RELEASE -G "Visual Studio 14 Win64" ..
     > "C:\Program Files\CMake\bin\cmake.exe" --build . --config Release -- /m:4
-    > set PATH=C:\Intel\computer_vision_sdk_2018.1.249\deployment_tools\inference_engine\bin\intel64\Release;%PATH%
+    > set PATH=C:\Intel\computer_vision_sdk_2018.2.300\deployment_tools\inference_engine\bin\intel64\Release;%PATH%
     ```
     
     Replace existing `cpu_extension` libraries such `libcpu_extension_avx2.so` or `libcpu_extension_sse4.so` to a different folder to exclude them from search.
