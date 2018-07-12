@@ -1,6 +1,152 @@
 OpenCV Change Logs
 ==================
 
+version:3.4.2
+-------------
+
+*July, 2018*
+
+OpenCV 3.4.2 has been released, with further extended dnn module, documentation improvements, some other new functionality and bug fixes.
+
+OpenCV 3.4.x development is switched from "master" to "3.4" branch.
+"master" branch is used for development of upcoming OpenCV 4.x releases.
+
+Bugfixes / optimizations / small improvemets should go into "3.4" branch.
+We will merge changes from "3.4" into "master" regularly (weekly/bi-weekly).
+
+![](images/dnn.png)
+
+-   DNN improvements: TBD
+
+![](images/rtfm.png)
+
+-   Excellent tutorials improvements. Python / Java examples are merged into C++ tutorials. Big thanks to [Catree](https://github.com/opencv/opencv/pulls?q=is%3Apr+author%3Acatree+is%3Aclosed+label%3A%22category%3A+documentation%22).
+
+![](images/win10.png)
+
+-   Video I/O: improved support of Microsoft Media Foundation (MSMF)
+
+### Contributors
+
+<details>
+<summary>opencv (83 contributors)</summary>
+
+```
+$ git shortlog --no-merges -ns 3.4.1..3.4.2
+   192  Alexander Alekhin
+    64  Dmitry Kurtaev
+    22  Tomoaki Teshima
+    19  Maksim Shabunin
+    19  Vitaly Tuzov
+    14  catree
+     8  Vadim Pisarevsky
+     7  yuki takehara
+     6  Namgoo Lee
+     6  Sayed Adel
+     5  Li Peng
+     5  berak
+     4  Alexander Nesterov
+     4  cclauss
+     4  k-shinotsuka
+     4  shimat
+     3  Adam Rankin
+     3  Dan Mašek
+     3  Kuang Fangjun
+     3  Rostislav Vasilikhin
+     3  shengyu
+     2  Alexander Enaldiev
+     2  Naoto Mizuno
+     2  Pavel Vlasov
+     2  cDc
+     2  corley
+     2  lopespt
+     2  take1014
+     1  Aleksandr Tischenko
+     1  Andrei Costinescu
+     1  Anthony Wertz
+     1  Arkadiusz Raj
+     1  Ben John
+     1  Collen Jones
+     1  Damien Picard
+     1  David
+     1  Eugene Mikhantiev
+     1  Ilya A. Volynets-Evenbakh
+     1  Jan Gaura
+     1  Jonathan Martens
+     1  Kyle D. Patterson
+     1  LaurentBerger
+     1  Li, Peng
+     1  Michael Firman
+     1  Nesterov Alexander
+     1  Paul Jurczak
+     1  Pavel Rojtberg
+     1  Peter Rekdal Sunde
+     1  RAJKIRAN NATARAJAN
+     1  Rajkiran Natarajan
+     1  Ryan Wong
+     1  Sancho McCann
+     1  Simon Que
+     1  Sonny Kurniawan
+     1  Spark Echo
+     1  Suleyman TURKMEN
+     1  Sérgio M. Basto
+     1  Tristan Konolige
+     1  Vishwa Prakash H V
+     1  Vlad Kraevskiy
+     1  Vladislav Sovrasov
+     1  Wu Zhiwen
+     1  abhi-jha
+     1  atinfinity
+     1  branka-plateiq
+     1  cabelo
+     1  codingforfun
+     1  exoson
+     1  gnthibault
+     1  ilovezfs
+     1  jchazalon
+     1  kinchungwong
+     1  ltqusst
+     1  matech96
+     1  miqlas
+     1  native-api
+     1  rockzhan
+     1  tlanclos
+     1  vasiliev-vb
+     1  vishwesh5
+     1  whizzzkid
+     1  y0umu
+     1  zuoshaobo
+```
+
+</details>
+
+<details>
+<summary>opencv_contrib (17 contributors)</summary>
+
+```
+$ git shortlog --no-merges -ns 3.4.1..3.4.2
+    36  Alexander Alekhin
+    12  Pavel Rojtberg
+     6  berak
+     3  Vitaly Tuzov
+     2  LaurentBerger
+     2  Maksim Shabunin
+     2  catree
+     1  Aleksandr Tischenko
+     1  Alireza Davoudi
+     1  Colin
+     1  Dmitry Kurtaev
+     1  Kushashwa Ravi Shrimali
+     1  Lizeth Huertas
+     1  SongChiYoung
+     1  Stepanenko Andrey
+     1  gmedan
+     1  yomna-safaa
+```
+
+</details>
+
+
 version:3.4.1
 -------------
 
