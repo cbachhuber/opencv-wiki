@@ -16,7 +16,15 @@ We will merge changes from "3.4" into "master" regularly (weekly/bi-weekly).
 
 ![](images/dnn.png)
 
--   DNN improvements: TBD
+-   DNN improvements
+
+    - Added a new computational target `DNN_TARGET_OPENCL_FP16` for half-precision floating point arithmetic of deep learning networks using OpenCL. Just use `net.setPreferableTarget(DNN_TARGET_OPENCL_FP16)`.
+    - Extended support of Intel's Inference Engine backend to run models on GPU (OpenCL FP32/FP16) and VPU (Myriad 2, FP16) devices. See [an installation guide](Intel%27s-Deep-Learning-Inference-Engine-backend) for details.
+    - Enabled import of [Intel's OpenVINO pre-trained networks](https://software.intel.com/openvino-toolkit/documentation/pretrained-models) from intermediate representation (IR).
+    - Introduced custom layers support which let you define unimplemented layers or override existing ones. Learn more in [a corresponding tutorial](https://docs.opencv.org/3.4/dc/db1/tutorial_dnn_custom_layers.html).
+    - Implemented a new deep learning [sample](https://github.com/opencv/opencv/blob/3.4/samples/dnn/text_detection.cpp) inspired by [EAST: An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2).
+    - Added a support of YOLOv3 and image classification models from [Darknet framework](https://pjreddie.com/darknet/).
+    - Reduced top DNN's memory consumption and improvements in support of networks from TensorFlow and Keras.
 
 ![](images/rtfm.png)
 
