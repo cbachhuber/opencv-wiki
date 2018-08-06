@@ -40,7 +40,7 @@
          // DNN_BACKEND_OPENCV (the default C++ implementation)
          // DNN_BACKEND_HALIDE (Halide-based implementation)
   ```
-  note that the inference engine backend is used by default since OpenCV 3.4.2 when OpenCV is built with the Inference engine support, so the method call above is not necessary. Also, the Inference engine backend is the only available option (also enabled by default) when the loaded model is represented in OpenVINO&trade; Model Optimizer format.
+  note that the inference engine backend is used by default since OpenCV 3.4.2 (OpenVINO 2018.R2) when OpenCV is built with the Inference engine support, so the method call above is not necessary. Also, the Inference engine backend is the only available option (also enabled by default) when the loaded model is represented in OpenVINO&trade; Model Optimizer format.
 
 * Then, optionally you can also set the device to use for the inference (by default it will use CPU):
   ```cpp
