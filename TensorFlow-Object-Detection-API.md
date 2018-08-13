@@ -14,7 +14,7 @@ import tensorflow as tf
 import cv2 as cv
 
 # Read the graph.
-with tf.gfile.FastGFile('frozen_inference_graph.pb') as f:
+with tf.gfile.FastGFile('frozen_inference_graph.pb', 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
 
