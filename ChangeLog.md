@@ -1,6 +1,85 @@
 OpenCV Change Logs
 ==================
 
+version:3.4.3
+-------------
+
+*August, 2018*
+
+OpenCV 3.4.3 has been released, with further extended dnn module, documentation improvements, some other new functionality and bug fixes.
+
+**TBD**
+
+
+### Contributors
+
+<details>
+<summary>opencv (35 contributors)</summary>
+
+```
+$ git shortlog --no-merges -ns 3.4.2..3.4.3
+    68  Alexander Alekhin
+    24  Dmitry Kurtaev
+    21  Maksim Shabunin
+    10  berak
+     5  Kuang Fangjun
+     4  Alexander Nesterov
+     4  catree
+     3  Sayed Adel
+     3  Suleyman TURKMEN
+     3  Vadim Pisarevsky
+     2  Li Peng
+     2  Tomoaki Teshima
+     2  Vitaly Tuzov
+     2  luz.paz
+     1  Bahram Dahi
+     1  Colin Smith
+     1  Hamdi Sahloul
+     1  Hiro Kobayashi
+     1  Kaartic Sivaraam
+     1  Karpushin Vladislav
+     1  Lucas Teixeira
+     1  Maxim Smirnov
+     1  Paul92
+     1  Pierre Jeambrun
+     1  Rostislav Vasilikhin
+     1  Sacha
+     1  Teng Yiliang
+     1  Triplesalt
+     1  amatyuko
+     1  asciian
+     1  logic1988
+     1  miaow1988
+     1  tompollok
+     1  yom
+     1  zarelaky
+```
+
+</details>
+
+<details>
+<summary>opencv_contrib (13 contributors)</summary>
+
+```
+$ git shortlog --no-merges -ns 3.4.2..3.4.3
+     8  Alexander Alekhin
+     3  Pavel Rojtberg
+     1  Anton Shutikhin
+     1  Hamdi Sahloul
+     1  Jan Beich
+     1  LaurentBerger
+     1  Li-Chi Huang
+     1  Maksim Shabunin
+     1  berak
+     1  bini
+     1  dianlujitao
+     1  gdemarcq
+     1  trobro
+```
+
+</details>
+
+
 version:3.4.2
 -------------
 
