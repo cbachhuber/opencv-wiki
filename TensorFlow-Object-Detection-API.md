@@ -63,12 +63,27 @@ You can use one of the configs that has been tested in OpenCV. Choose it depends
 
 | Model | Version | ||
 |-------|-------------|----|----|
-| MobileNet-SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz) | [config](https://gist.github.com/dkurt/45118a9c57c38677b65d6953ae62924a) |
-| Inception v2 SSD | TensorFlow >= 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_inception_v2_coco_2017_11_17.pbtxt) |
-| MobileNet-SSD | TensorFlow < 1.4 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_mobilenet_v1_coco.pbtxt) |
+| MobileNet-SSD v1 | 2017_11_17 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_mobilenet_v1_coco_2017_11_17.pbtxt)
+| MobileNet-SSD v1 PPN | 2018_07_03 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_mobilenet_v1_ppn_coco.pbtxt)
+| MobileNet-SSD v2 | 2018_03_29 | [weights](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_mobilenet_v2_coco_2018_03_29.pbtxt)
+| Inception-SSD v2 | 2017_11_17 | [weights](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/ssd_inception_v2_coco_2017_11_17.pbtxt)
+| Faster-RCNN Inception v2 | 2018_01_28 | [weights](http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/faster_rcnn_inception_v2_coco_2018_01_28.pbtxt)
+| Faster-RCNN ResNet-50 | 2018_01_28 | [weights](http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/faster_rcnn_resnet50_coco_2018_01_28.pbtxt)
+| Mask-RCNN Inception v2 | 2018_01_28 | [weights](http://download.tensorflow.org/models/object_detection/mask_rcnn_inception_v2_coco_2018_01_28.tar.gz) | [config](https://github.com/opencv/opencv_extra/blob/master/testdata/dnn/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt)
+
 
 ### Generate a config file
-Use [tf_text_graph_ssd.py](https://github.com/opencv/opencv/blob/master/samples/dnn/tf_text_graph_ssd.py) script to generate a text graph representation. If your model has different values of `num_classes`, `min_scale`, `max_scale`, `num_layers` or `aspect_ratios` comparing to [origin configuration files](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs), specify it in the script arguments.
+Use one of scripts which generate a text graph representation for a frozen `.pb` model depends on it's architecture:
+* [tf_text_graph_ssd.py](https://github.com/opencv/opencv/blob/master/samples/dnn/tf_text_graph_ssd.py)
+* [tf_text_graph_faster_rcnn.py](https://github.com/opencv/opencv/blob/master/samples/dnn/tf_text_graph_faster_rcnn.py)
+* [tf_text_graph_mask_rcnn.py](https://github.com/opencv/opencv/blob/master/samples/dnn/tf_text_graph_mask_rcnn.py)
+
+Pass a [configuration file](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs) which was used for training to help script determine hyper-parameters.
+
+```
+python tf_text_graph_faster_rcnn.py --input /path/to/model.pb --config /path/to/example.config --output /path/to/graph.pbtxt
+```
+
 
 Try to run the model using OpenCV:
 
@@ -80,7 +95,7 @@ cvNet = cv.dnn.readNetFromTensorflow('frozen_inference_graph.pb', 'graph.pbtxt')
 img = cv.imread('example.jpg')
 rows = img.shape[0]
 cols = img.shape[1]
-cvNet.setInput(cv.dnn.blobFromImage(img, 1.0/127.5, (300, 300), (127.5, 127.5, 127.5), swapRB=True, crop=False))
+cvNet.setInput(cv.dnn.blobFromImage(img, size=(300, 300), swapRB=True, crop=False))
 cvOut = cvNet.forward()
 
 for detection in cvOut[0,0,:,:]:
@@ -97,6 +112,8 @@ cv.waitKey()
 ```
 
 ![](https://user-images.githubusercontent.com/25801568/35520173-58e6f99c-0527-11e8-80fc-8a32d1923e04.png)
+
+For Mask-RCNN model, use [mask_rcnn.py](https://github.com/opencv/opencv/blob/master/samples/dnn/mask_rcnn.py).
 
 ### Troubleshooting
 If you have problems at `readNetFromTensorflow` or at `forward` stages, perhaps, your model requires some of the following transformations before making a text graph:
