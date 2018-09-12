@@ -8,6 +8,7 @@ The supported frameworks:
  * [TensorFlow](https://www.tensorflow.org/)
  * [Torch](http://torch.ch/)
  * [Darknet](https://pjreddie.com/darknet/)
+ * Models in [ONNX](https://onnx.ai/) format
 
 The supported layers:
 
