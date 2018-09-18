@@ -18,7 +18,7 @@ The pool of evolution proposals can then be used to plan GSoC projects, as the l
 * [OE-11 - Add Logging](OE-11.-Logging)
 * [OE-12 - Bring Lapack back](OE-12.-Lapack)
 * ~~[OE-13 - ONNX Importer in DNN](OE-13.-DNN-ONNX-Importer)~~
-* [OE-14 - FP16 Path in DNN](OE-14.-DNN-FP16)
+* ~~[OE-14 - FP16 Path in DNN](OE-14.-DNN-FP16)~~
 * [OE-15 - Bit-Exactness](OE-15.-Bit-Exactness)
 * [OE-16 - Mini-Halide in OpenCV](OE-16.-Mini-Halide)
 * [OE-17 - New Filter Engine](OE-17.-New-Filter-Engine)
