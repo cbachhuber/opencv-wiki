@@ -1,6 +1,37 @@
 OpenCV Change Logs
 ==================
 
+version:4.0.0
+-------------
+
+**4.0.0-alpha**: *September, 2018*
+
+We are glad to announce OpenCV 4.0 alpha release, the first intermediate release before 4.0 final.
+
+**TBD**
+
+
+### Contributors
+
+<details>
+<summary>opencv</summary>
+
+```
+TBD
+```
+
+</details>
+
+<details>
+<summary>opencv_contrib</summary>
+
+```
+TBD
+```
+
+</details>
+
+
 version:3.4.3
 -------------
 
