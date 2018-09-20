@@ -6,7 +6,7 @@ version:4.0.0
 
 **4.0.0-alpha**: *September, 2018*
 
-We are glad to announce OpenCV 4.0 alpha release, the first intermediate release before 4.0 final.
+We are glad to announce OpenCV 4.0 alpha release, the first intermediate release before 4.0 gold.
 
 ![](images/cxx11.png)
 
@@ -27,6 +27,14 @@ We are glad to announce OpenCV 4.0 alpha release, the first intermediate release
 -   Performance improvements
 
     - A few hundreds of basic kernels in OpenCV have been rewritten using so-called "wide universal intrinsics". Those intrinsics map to SSE2, SSE4, AVX2, NEON or VSX intrinsics, depending on the target platform and the compile flags. It should translate to noticeably better performance, even for some already optimized functions. For example, if you configure and compile OpenCV with `CPU_BASELINE=AVX2` CMake flag, you can get extra 15-30% speed improvement for certain image processing operations. By OpenCV 4.0 gold we plan to translate many more kernels to such intrinsics and also employ our dynamic dispatching mechanism, so that for example AVX2-optimized kernels could be selected on-fly if the actual hardware supports such instructions.
+
+![](images/qrcode.png)
+
+-   QR code detector has been added to opencv/objdetect module together with live sample. By 4.0 gold we plan to add QR code decoder so that we have a complete solution.
+
+![](images/kinfu.png)
+
+-   The popular Kinect Fusion has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live sample work, we updated our Kinect 2 support in opencv/videoio module.
 
 ### Contributors
 
