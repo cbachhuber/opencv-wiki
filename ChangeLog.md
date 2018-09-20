@@ -8,8 +8,25 @@ version:4.0.0
 
 We are glad to announce OpenCV 4.0 alpha release, the first intermediate release before 4.0 final.
 
-**TBD**
+![](images/cxx11.png)
 
+-   OpenCV is now C++11 library and requires C++11-compliant compiler. Note that OpenCV 3.x can also be built as C++11 library by passing -`DENABLE_CXX11=ON` flag to CMake. Now this is the only option so the flag is not needed and is not available anymore.
+
+    - Thanks to the extended C++11 standard library, we could get rid of hand-crafted `cv::String` and `cv::Ptr`. Now `cv::String == std::string` and `cv::Ptr` is a thin wrapper on top of `std::shared_ptr`. For the default on Linux/BSD parallel_for_ we now use `std::thread`s instead of pthreads.
+
+![](images/dnn.png)
+
+-   DNN improvements
+
+    - Added support for Mask-RCNN model
+    - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles).
+    - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/en-us/openvino-toolkit) support by utilizing more layers from DLDT.
+
+![](images/speed.jpg)
+
+-   Performance improvements
+
+    - A few hundreds of basic kernels in OpenCV have been rewritten using so-called "wide universal intrinsics". Those intrinsics map to SSE2, SSE4, AVX2, NEON or VSX intrinsics, depending on the target platform and the compile flags. It should translate to noticeably better performance, even for some already optimized functions. For example, if you configure and compile OpenCV with `CPU_BASELINE=AVX2` CMake flag, you can get extra 15-30% speed improvement for certain image processing operations. By OpenCV 4.0 gold we plan to translate many more kernels to such intrinsics and also employ our dynamic dispatching mechanism, so that for example AVX2-optimized kernels could be selected on-fly if the actual hardware supports such instructions.
 
 ### Contributors
 
