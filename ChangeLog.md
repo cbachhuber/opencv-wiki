@@ -17,7 +17,112 @@ We are glad to announce OpenCV 4.0 alpha release, the first intermediate release
 <summary>opencv</summary>
 
 ```
-TBD
+git shortlog --no-merges -ns 10ba6a93a6fee952fb7812b28989eb209d4f49a1..4.0.0-alpha
+   250	Alexander Alekhin
+    80	Dmitry Kurtaev
+    36	Maksim Shabunin
+    29	Hamdi Sahloul
+    24	Vitaly Tuzov
+    18	berak
+    17	Tomoaki Teshima
+    16	catree
+    15	Vadim Pisarevsky
+    11	Suleyman TURKMEN
+    10	Sayed Adel
+     8	Kuang Fangjun
+     7	Alexander Nesterov
+     7	Li Peng
+     5	Pavel Rojtberg
+     5	Rostislav Vasilikhin
+     5	cyy
+     5	take1014
+     5	yuki takehara
+     4	cclauss
+     3	Namgoo Lee
+     3	k-shinotsuka
+     3	shengyu
+     2	Alexander Enaldiev
+     2	George Mironov
+     2	Karpushin Vladislav
+     2	Lubov Batanina
+     2	Mark Harfouche
+     2	Pavel Vlasov
+     2	Vlad Karpushin
+     2	Wu Zhiwen
+     2	gkaneto
+     2	luz.paz
+     2	pasbi
+     1	Adam Rankin
+     1	Alessandro de Oliveira Faria (A.K.A.CABELO)
+     1	Alexander Duda
+     1	Andrew Mroczkowski
+     1	Arnaud Brejeon
+     1	Bahram Dahi
+     1	CJ Smith
+     1	CYTing1998
+     1	Colin Smith
+     1	Damien Picard
+     1	David
+     1	Fangjun Kuang
+     1	Florian Echtler
+     1	Forrest Reiling
+     1	Gaetano Checinski
+     1	HarshDolhare
+     1	Hiro Kobayashi
+     1	Jakub Golinowski
+     1	Jiri Horner
+     1	Kaartic Sivaraam
+     1	Khem Raj
+     1	Kyle D. Patterson
+     1	LaurentBerger
+     1	Li, Peng
+     1	Lucas Teixeira
+     1	Marat K
+     1	Maxim Smirnov
+     1	Michael Firman
+     1	Nesterov Alexander
+     1	Nobuo Tsukamoto
+     1	Paul Jurczak
+     1	Paul92
+     1	Peter Jozsa
+     1	Peter Leitzen
+     1	Peter Rekdal Sunde
+     1	Philipp Hasper
+     1	Pierre Jeambrun
+     1	Ryan Wong
+     1	Sacha
+     1	Sancho McCann
+     1	Sergey Nuzhny
+     1	Simon Que
+     1	Spark Echo
+     1	Takuho NAKANO
+     1	Teng Yiliang
+     1	Todor Tomov
+     1	Triplesalt
+     1	Vlad Kraevskiy
+     1	Vladislav Sovrasov
+     1	Wenfeng CAI
+     1	Zhenqing Hu
+     1	abhi-jha
+     1	amatyuko
+     1	asciian
+     1	branka-plateiq
+     1	cDc
+     1	cabelo
+     1	exoson
+     1	gnthibault
+     1	ilovezfs
+     1	jsxyhelu
+     1	logic1988
+     1	matech96
+     1	miaow1988
+     1	rockzhan
+     1	tompollok
+     1	vishwesh5
+     1	woody.chow
+     1	yom
+     1	zarelaky
+     1	zuoshaobo
 ```
 
 </details>
@@ -26,7 +131,38 @@ TBD
 <summary>opencv_contrib</summary>
 
 ```
-TBD
+git shortlog --no-merges -ns 3c536ef4fa882bd64e9f3966412e863d1eeac01a..4.0.0-alpha
+    27	Alexander Alekhin
+     9	Pavel Rojtberg
+     5	LaurentBerger
+     4	Hamdi Sahloul
+     3	berak
+     2	Maksim Shabunin
+     2	Rostislav Vasilikhin
+     2	Suleyman TURKMEN
+     2	Vitaly Tuzov
+     2	catree
+     1	Anton Shutikhin
+     1	Colin
+     1	Dietrich Büsching
+     1	Jan Beich
+     1	Jiri Horner
+     1	Khem Raj
+     1	Kushashwa Ravi Shrimali
+     1	Li-Chi Huang
+     1	SongChiYoung
+     1	Unknown
+     1	Vadim Pisarevsky
+     1	Vladislav Sovrasov
+     1	bini
+     1	d.bouron
+     1	dianlujitao
+     1	fegorsch
+     1	gdemarcq
+     1	gmedan
+     1	simonreich
+     1	trobro
+     1	yarglawaldeg
 ```
 
 </details>
