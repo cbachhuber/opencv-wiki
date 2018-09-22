@@ -12,24 +12,34 @@
 
 * OpenCV from source
   * Ubuntu
-  ```
-  cmake \
-    -DWITH_INF_ENGINE=ON \
-    -DINTEL_CVSDK_DIR="/opt/intel/computer_vision_sdk/deployment_tools/" \
-    -DIE_PLUGINS_PATH="/opt/intel/computer_vision_sdk/deployment_tools/inference_engine/lib/ubuntu_16.04/intel64/" \
-    -DENABLE_CXX11=ON \
-    ...
-  ```
+
+    Setup environment variables to detect Inference Engine:
+    ```
+    source /opt/intel/computer_vision_sdk/bin/setupvars.sh
+    ```
+
+    Build OpenCV with extra flags:
+    ```
+    cmake \
+      -DWITH_INF_ENGINE=ON \
+      -DENABLE_CXX11=ON \
+      ...
+    ```
 
   * Microsoft Windows
-  ```
-  cmake ^
-    -DWITH_INF_ENGINE=ON ^
-    -DINTEL_CVSDK_DIR="C:\\Intel\\computer_vision_sdk_2018.1.249\\deployment_tools\\inference_engine" ^
-    -DIE_PLUGINS_PATH="C:\\Intel\\computer_vision_sdk_2018.1.249\\deployment_tools\\inference_engine\\lib\\intel64\\Release" ^
-    -DENABLE_CXX11=ON ^
-    ...
-  ```
+    
+      Setup environment variables to detect Inference Engine:
+      ```
+      C:\Intel\computer_vision_sdk_2018.3.343\bin\setupvars.bat
+      ```
+
+      Build OpenCV with extra flags:
+      ```
+      cmake ^
+        -DWITH_INF_ENGINE=ON ^
+        -DENABLE_CXX11=ON ^
+        ...
+      ```
 
 ### Usage
 
