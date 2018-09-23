@@ -18,9 +18,10 @@ We are glad to announce OpenCV 4.0 alpha release, the first intermediate release
 
 -   DNN improvements
 
-    - Added support for Mask-RCNN model
-    - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles).
-    - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/en-us/openvino-toolkit) support by utilizing more layers from DLDT.
+    - Added support for Mask-RCNN model. Follow a [guide](TensorFlow-Object-Detection-API) and use a [python sample](https://github.com/opencv/opencv/blob/master/samples/dnn/mask_rcnn.py).
+    - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles). Thanks [Lubov Batanina](https://github.com/l-bat) for her first-time contribution to OpenCV!
+    - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/openvino-toolkit) support by utilizing more layers from DLDT.
+    - API changes: by default, `blobFromImage` methods family do not swap red and blue channels and do not crop an image.
 
 ![](images/speed.jpg)
 
