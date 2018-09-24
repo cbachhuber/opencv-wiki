@@ -35,7 +35,7 @@ We are glad to announce OpenCV 4.0 alpha release, the first intermediate release
 
 ![](images/kinfu.png)
 
--   The popular Kinect Fusion has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live sample work, we updated our Kinect 2 support in opencv/videoio module.
+-   The popular Kinect Fusion algorithm has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live [sample](https://github.com/opencv/opencv_contrib/blob/master/modules/rgbd/samples/kinfu_demo.cpp) work, we updated our Kinect 2 support in opencv/videoio module.
 
 ### Contributors
 
