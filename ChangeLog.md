@@ -19,19 +19,19 @@ We are glad to announce OpenCV 4.0 alpha release, the first intermediate release
 -   DNN improvements
 
     - Added support for Mask-RCNN model. Follow a [guide](TensorFlow-Object-Detection-API) and use a [python sample](https://github.com/opencv/opencv/blob/master/samples/dnn/mask_rcnn.py).
-    - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles). Thanks [Lubov Batanina](https://github.com/l-bat) for her first-time contribution to OpenCV!
+    - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles). Thanks to [Lubov Batanina](https://github.com/l-bat) for her first-time contribution to OpenCV!
     - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/openvino-toolkit) support by utilizing more layers from DLDT.
-    - API changes: by default, `blobFromImage` methods family do not swap red and blue channels and do not crop an image.
+    - API changes: by default, `blobFromImage` methods family do not swap red and blue channels and do not crop the input image. Beware that this API change has also been propagated to OpenCV 3.4 branch.
 
 ![](images/speed.jpg)
 
 -   Performance improvements
 
-    - A few hundreds of basic kernels in OpenCV have been rewritten using so-called "wide universal intrinsics". Those intrinsics map to SSE2, SSE4, AVX2, NEON or VSX intrinsics, depending on the target platform and the compile flags. It should translate to noticeably better performance, even for some already optimized functions. For example, if you configure and compile OpenCV with `CPU_BASELINE=AVX2` CMake flag, you can get extra 15-30% speed improvement for certain image processing operations. By OpenCV 4.0 gold we plan to translate many more kernels to such intrinsics and also employ our dynamic dispatching mechanism, so that for example AVX2-optimized kernels could be selected on-fly if the actual hardware supports such instructions.
+    - A few hundreds of basic kernels in OpenCV have been rewritten using so-called "wide universal intrinsics". Those intrinsics map to SSE2, SSE4, AVX2, NEON or VSX intrinsics, depending on the target platform and the compile flags. It should translate to noticeably better performance, even for some already optimized functions. For example, if you configure and compile OpenCV with `CPU_BASELINE=AVX2` CMake flag, you can get extra 15-30% speed improvement for certain image processing operations. By OpenCV 4.0 gold we plan to translate many more kernels to such intrinsics and also employ our dynamic dispatching mechanism, so that on x64 platform AVX2-optimized kernels are always built-in and could be selected on-fly if the actual hardware supports such instructions (without having to change `CPU_BASELINE`).
 
 ![](images/qrcode.png)
 
--   QR code detector has been added to opencv/objdetect module together with live sample. By 4.0 gold we plan to add QR code decoder so that we have a complete solution.
+-   QR code detector has been added to opencv/objdetect module together with live [sample](https://github.com/opencv/opencv/blob/master/samples/cpp/live_detect_qrcode.cpp). By 4.0 gold we plan to add QR code decoder so that we have a complete solution.
 
 ![](images/kinfu.png)
 
