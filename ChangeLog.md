@@ -31,7 +31,7 @@ We are glad to announce OpenCV 4.0 alpha release, the first intermediate release
 
 ![](images/qrcode.png)
 
--   QR code detector has been added to opencv/objdetect module together with live [sample](https://github.com/opencv/opencv/blob/master/samples/cpp/live_detect_qrcode.cpp). By 4.0 gold we plan to add QR code decoder so that we have a complete solution.
+-   QR code detector has been added to opencv/objdetect module together with live [sample](https://github.com/opencv/opencv/blob/master/samples/cpp/live_detect_qrcode.cpp). By 4.0 gold we plan to add QR code decoder so that we have a complete solution. Thanks to our intern Alexander Nesterov for this important contribution!
 
 ![](images/kinfu.png)
 
