@@ -68,7 +68,7 @@ It is important to design function interface is a way, consistent with the rest 
 
 h3. Functionality
 
-The functionality must be well defined and non-redundant. The function should be easy embedded into different processing pipelines that use other OpenCV functions.
+The functionality must be well defined and non-redundant. The function should be easily embedded into different processing pipelines that use other OpenCV functions.
 
 h3. Name
 
