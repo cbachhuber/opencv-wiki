@@ -9,10 +9,10 @@ All the functionality must be put into one or more _.cpp_ and _.hpp_ files into 
 * All the file names are written in lower case for better compatibility with both POSIX and Windows.
 * C++ interface headers have _.hpp_ extension
 * Implementation files have _.cpp_ extension
-* The implementation is put to @opencv/modules/<module_name>/src@, interface is added to the header files in @opencv/modules/<module_name>/include/opencv2/<module_name>@. There is no need to add the files to the module explicitly, just rerun CMake and it will add the files automatically.
-* Sample code in C++, if any, is put to @opencv/samples/cpp@ (with exception of @gpu@ and @ocl@ modules, which have dedicated sample directories), sample code in Python - to @opencv/samples/python2@.
-* Documentation is put to @opencv/modules/<module_name>/doc@, into one of the existing files or a new file/chapter is added there. In the latter case the file name should be listed in the TOC (table of content) file @opencv/modules/<module_name>/doc/<module_name>.rst@
-* Tests are put to @opencv/modules/<module_name>/test@. When a new test source file is added, rerun CMake. If the test needs some data, put it to the separate "top-level directory":http://github.com/opencv/opencv_extra/tree/master/testdata. For @ml@ module the test data is put to @opencv_extra/testdata/ml@ subdirectory, for other modules - to @opencv_extra/testdata/cv@ subdirectory. Please, limit size of your test data files within a few megabytes, the smaller the better. If some existing test data can be used for your tests (like @lena.jpg@ etc.), please, re-use it.
+* The implementation is put into @opencv/modules/<module_name>/src@, interface is added to the header files in @opencv/modules/<module_name>/include/opencv2/<module_name>@. There is no need to add the files to the module explicitly, just rerun CMake and it will add the files automatically.
+* Sample code in C++, if any, is put into @opencv/samples/cpp@ (with exception of @gpu@ and @ocl@ modules, which have dedicated sample directories), sample code in Python - to @opencv/samples/python2@.
+* Documentation is put into @opencv/modules/<module_name>/doc@, into one of the existing files or a new file/chapter is added there. In the latter case the file name should be listed in the TOC (table of content) file @opencv/modules/<module_name>/doc/<module_name>.rst@
+* Tests are put to @opencv/modules/<module_name>/test@. When a new test source file is added, rerun CMake. If the test needs some data, put it to the separate "top-level directory":http://github.com/opencv/opencv_extra/tree/master/testdata. For @ml@ module the test data is put into @opencv_extra/testdata/ml@ subdirectory, for other modules - to @opencv_extra/testdata/cv@ subdirectory. Please, limit size of your test data files within a few megabytes, the smaller the better. If some existing test data can be used for your tests (like @lena.jpg@ etc.), please, re-use it.
 
 h2. File Structure
 
@@ -262,7 +262,7 @@ h2. Implementing tests
 
 * For tests we use "GoogleTest":https://github.com/google/googletest framework. Please, check the documentation at the project site.
 * Each test source file should include @test_precomp.hpp@ first.
-* All the test code is put to @opencv_test@ namespace.
+* All the test code is put into @opencv_test@ namespace.
 * Declare your Google tests as following:
 
 <pre>
