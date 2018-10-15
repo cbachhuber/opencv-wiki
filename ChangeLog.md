@@ -5,6 +5,7 @@ version:4.0.0
 -------------
 
 **4.0.0-alpha**: *September, 2018*
+
 **4.0.0-beta**: *October, 2018*
 
 We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/beta:
