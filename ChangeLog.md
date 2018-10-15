@@ -5,8 +5,9 @@ version:4.0.0
 -------------
 
 **4.0.0-alpha**: *September, 2018*
+**4.0.0-beta**: *October, 2018*
 
-We are glad to announce OpenCV 4.0 alpha release, the first intermediate release before 4.0 gold.
+We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/beta:
 
 ![](images/cxx11.png)
 
@@ -27,15 +28,15 @@ We are glad to announce OpenCV 4.0 alpha release, the first intermediate release
 
 -   Performance improvements
 
-    - A few hundreds of basic kernels in OpenCV have been rewritten using so-called "wide universal intrinsics". Those intrinsics map to SSE2, SSE4, AVX2, NEON or VSX intrinsics, depending on the target platform and the compile flags. It should translate to noticeably better performance, even for some already optimized functions. For example, if you configure and compile OpenCV with `CPU_BASELINE=AVX2` CMake flag, you can get extra 15-30% speed improvement for certain image processing operations. By OpenCV 4.0 gold we plan to translate many more kernels to such intrinsics and also employ our dynamic dispatching mechanism, so that on x64 platform AVX2-optimized kernels are always built-in and could be selected on-fly if the actual hardware supports such instructions (without having to change `CPU_BASELINE`). Big thanks to Sayed Adel for VSX backend and the initial (but rather complete!) AVX2 backend of the wide universal intrinsics!
+    - A few hundreds of basic kernels in OpenCV have been rewritten using so-called "wide universal intrinsics". Those intrinsics map to SSE2, SSE4, AVX2, NEON or VSX intrinsics, depending on the target platform and the compile flags. It should translate to noticeably better performance, even for some already optimized functions. For example, if you configure and compile OpenCV with `CPU_BASELINE=AVX2` CMake flag, you can get extra 15-30% speed improvement for certain image processing operations. By OpenCV 4.0 gold we plan to translate many more kernels to such intrinsics and also employ our dynamic dispatching mechanism, so that on x64 platform AVX2-optimized kernels are always built-in and could be selected on-fly if the actual hardware supports such instructions (without having to change `CPU_BASELINE`). Big thanks to Sayed Adel for VSX backend and the initial (but rather complete!) AVX2 backend of the wide universal intrinsics! Big thanks to Vitaly Tuzov for conversion of many functions in OpenCV to wide universal intrinsics.
 
 ![](images/qrcode.png)
 
--   QR code detector has been added to opencv/objdetect module together with live [sample](https://github.com/opencv/opencv/blob/master/samples/cpp/live_detect_qrcode.cpp). By 4.0 gold we plan to add QR code decoder so that we have a complete solution. Thanks to our intern Alexander Nesterov for this important contribution!
+-   QR code detector and decoder have been added to opencv/objdetect module together with live [sample](https://github.com/opencv/opencv/blob/master/samples/cpp/live_detect_qrcode.cpp). Currently, the decoder is built on top of QUirc library (which snapshot we put into opencv). Thanks to our intern Alexander Nesterov for this important contribution!
 
 ![](images/kinfu.png)
 
--   The popular Kinect Fusion algorithm has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live [sample](https://github.com/opencv/opencv_contrib/blob/master/modules/rgbd/samples/kinfu_demo.cpp) work, we updated our Kinect 2 support in opencv/videoio module.
+-   The popular Kinect Fusion algorithm has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live [sample](https://github.com/opencv/opencv_contrib/blob/master/modules/rgbd/samples/kinfu_demo.cpp) work, we updated our Kinect 2 support in opencv/videoio module. Thanks to Rostislav Vasilikhin for the excellent work!
 
 ### Contributors
 
