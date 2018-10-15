@@ -37,7 +37,7 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 
 ![](images/kinfu.png)
 
--   The popular Kinect Fusion algorithm has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live [sample](https://github.com/opencv/opencv_contrib/blob/master/modules/rgbd/samples/kinfu_demo.cpp) work, we updated our Kinect 2 support in opencv/videoio module. Thanks to Rostislav Vasilikhin for the excellent work!
+-   The popular Kinect Fusion algorithm has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live [sample](https://github.com/opencv/opencv_contrib/blob/master/modules/rgbd/samples/kinfu_demo.cpp) work, we updated our Kinect 2 support in opencv/videoio module. In 4.0 beta the code has been accelerated for iGPU, which resulted in 3x performance boost in the high-resolution case (512x512x512 integration volume). Thanks to Rostislav Vasilikhin for the excellent work!
 
 ### Contributors
 
