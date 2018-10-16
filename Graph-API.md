@@ -1,7 +1,7 @@
 What it is?
 ===========
 
-* OpenCV 4.0 comes with a new experimental Graph API module (see opencv/modules/gapi). This is a new experimental API which allows to enable offload and optimizations for image processing / CV algorithms on pipeline level.
+* OpenCV 4.0 comes with a new experimental Graph API module (see [opencv/modules/gapi](https://github.com/opencv/opencv/tree/master/modules/gapi)). This is a new experimental API which allows to enable offload and optimizations for image processing / CV algorithms on pipeline level.
 
 * The idea behind G-API is to declare image processing task in form of expressions and then submit it for execution – using a number of available backends. At the moment, there’s reference “CPU” (OpenCV-based) and experimental “Fluid’ backends available, with OpenCL (GPU) and other backends coming up next.
 
