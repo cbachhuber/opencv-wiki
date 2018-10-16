@@ -36,6 +36,10 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 
     - Fixed OpenCL target for AMD and NVIDIA GPUs. Now you may enable `DNN_TARGET_OPENCL` for your model without extra environment variables. Please note that `DNN_TARGET_OPENCL_FP16` is tested on Intel GPUs only so it still requires additional flags.
 
+![](images/gapi.png)
+
+- Completely new module [opencv_gapi](https://github.com/opencv/opencv/tree/master/modules/gapi) has been added. It implements engine for very efficient image processing, based on lazy evaluation and on-fly processing graph construction (hence is the name Graph API or G-API). See [[Graph API (G-API)|Graph-API]] for details.
+
 ![](images/speed.jpg)
 
 -   Performance improvements
