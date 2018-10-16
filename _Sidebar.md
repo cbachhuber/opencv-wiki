@@ -13,7 +13,7 @@
     - [[TensorFlow Object Detection API|TensorFlow Object Detection API]]
     - [[Intel's Deep Learning Inference Engine backend|Intel's Deep Learning Inference Engine backend]]
 - [[OpenCV 4|Opencv4]]
-    - [[Graph API (G-API)|G-API]]
+    - [[Graph API (G-API)|Graph-API]]
 - [[OpenCV 3|Opencv3]]
     - [[OpenCL optimizations|OpenCL-optimizations]]
     - [[CPU optimizations|CPU-optimizations-build-options]]
