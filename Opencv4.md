@@ -11,4 +11,4 @@ OpenCV 4.0 is the evolution of OpenCV 3.0. We follow the same design principles 
 Graph API
 ---------
 
-The new engine for constructing efficient image processing has been introduced. See [[Graph API (G-API)]|[G-API]] for details.
+The new engine for constructing efficient image processing has been introduced. See [[Graph API (G-API)|G-API]] for details.
