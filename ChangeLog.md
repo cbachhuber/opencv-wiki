@@ -38,7 +38,7 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 
 ![](images/gapi.png)
 
-- Completely new module [opencv_gapi](https://github.com/opencv/opencv/tree/master/modules/gapi) has been added. It implements engine for very efficient image processing, based on lazy evaluation and on-fly processing graph construction (hence is the name Graph API or G-API). See [[Graph API (G-API)|Graph-API]] for details.
+- Completely new module [opencv_gapi](https://github.com/opencv/opencv/tree/master/modules/gapi) has been added. It is the engine for very efficient image processing, based on lazy evaluation and on-fly construction of the processing graph (hence the name Graph API or G-API). See [[Graph API (G-API)|Graph-API]] for details.
 
 ![](images/speed.jpg)
 
