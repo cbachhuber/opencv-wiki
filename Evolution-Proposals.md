@@ -14,7 +14,7 @@ The pool of evolution proposals can then be used to plan GSoC projects, as the l
 * [OE-3 - OpenCV 3.x Maintainance](OE-3.-OpenCV-3)
 * [OE-4 - OpenCV 4.0](OE-4.-OpenCV-4)
 * OE-5 to OE-9 are reserved for OpenCV 5.0 to 9.0
-* [OE-10 - FP16 Support](OE-10.-FP16)
+* ~~[OE-10 - FP16 Support](OE-10.-FP16)~~
 * [OE-11 - Add Logging](OE-11.-Logging)
 * [OE-12 - Bring Lapack back](OE-12.-Lapack)
 * ~~[OE-13 - ONNX Importer in DNN](OE-13.-DNN-ONNX-Importer)~~
