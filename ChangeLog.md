@@ -25,10 +25,9 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 
 -   DNN improvements
 
-    - OpenCV has been tested with DLDT that has been recently released as [open-source](https://github.com/opencv/dldt). DLDT brings noticeable CPU and iGPU acceleration of DNN inference. Here is the guide: https://github.com/opencv/opencv/wiki/Intel%27s-Deep-Learning-Inference-Engine-backend.
     - Added support for Mask-RCNN model. Follow a [guide](TensorFlow-Object-Detection-API) and use a [python sample](https://github.com/opencv/opencv/blob/master/samples/dnn/mask_rcnn.py).
     - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles). Thanks to [Lubov Batanina](https://github.com/l-bat) for her first-time contribution to OpenCV!
-    - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/openvino-toolkit) support by utilizing more layers from DLDT.
+    - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/openvino-toolkit) support by utilizing more layers from DLDT. BTW, DLDT has been recently been released as [open-source](https://github.com/opencv/dldt). See [the guide](Intel's-Deep-Learning-Inference-Engine) backend how to build and use OpenCV with DLDT support.
     - API changes: by default, `blobFromImage` methods family do not swap red and blue channels and do not crop the input image. Beware that this API change has also been propagated to OpenCV 3.4 branch.
     - Experimental Vulkan backend has been added for the platforms where OpenCL is not available: https://github.com/opencv/opencv/pull/12703
     - Added shortcuts for the most popular deep learning networks supported by OpenCV. You may specify an alias name of model to skip pre-processing parameters and even paths to models! In example, instead of
