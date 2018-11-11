@@ -8,10 +8,13 @@ version:4.0.0
 
 **4.0.0-beta**: *October, 2018*
 
+**4.0.0-rc**: *November, 2018*
+
 We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/beta:
 
 ![](images/cxx11.png)
 
+-   A lot of C API from OpenCV 1.x has been removed. The affected modules are objdetect, photo, video, videoio, imgcodecs, calib3d.
 -   OpenCV is now C++11 library and requires C++11-compliant compiler. Note that OpenCV 3.x can also be built as C++11 library by passing `-DENABLE_CXX11=ON` flag to CMake. Now this is the only option so the flag is not needed and is not available anymore.
 
     - Thanks to the extended C++11 standard library, we could get rid of hand-crafted `cv::String` and `cv::Ptr`. Now `cv::String == std::string` and `cv::Ptr` is a thin wrapper on top of `std::shared_ptr`. Also, on Linux/BSD for `cv::parallel_for_` we now use `std::thread`'s instead of pthreads.
