@@ -15,6 +15,7 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 ![](images/cxx11.png)
 
 -   A lot of C API from OpenCV 1.x has been removed. The affected modules are objdetect, photo, video, videoio, imgcodecs, calib3d.
+-   Persistence (storing and loading structured data to/from XML, YAML or JSON) in the core module has been completely reimplemented in C++ and lost the C API as well. For now base64 support is not complete (only loading base64-encoded XML and YAML is supported, encoding is not supported at all). Also, random access of sequences stored in a `FileNode` is slow O(N) operation; use `cv::FileNodeIterator` for much faster sequential access. On the positive side, loaded `FileStorage` takes 3-6x less memory than in the previous implementation.
 -   OpenCV is now C++11 library and requires C++11-compliant compiler. Note that OpenCV 3.x can also be built as C++11 library by passing `-DENABLE_CXX11=ON` flag to CMake. Now this is the only option so the flag is not needed and is not available anymore.
 
     - Thanks to the extended C++11 standard library, we could get rid of hand-crafted `cv::String` and `cv::Ptr`. Now `cv::String == std::string` and `cv::Ptr` is a thin wrapper on top of `std::shared_ptr`. Also, on Linux/BSD for `cv::parallel_for_` we now use `std::thread`'s instead of pthreads.
@@ -27,7 +28,7 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
     - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles). Thanks to [Lubov Batanina](https://github.com/l-bat) for her first-time contribution to OpenCV!
     - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/openvino-toolkit) support by utilizing more layers from DLDT.
     - API changes: by default, `blobFromImage` methods family do not swap red and blue channels and do not crop the input image. Beware that this API change has also been propagated to OpenCV 3.4 branch.
-    
+    - Experimental Vulkan backend has been added for the platforms where OpenCL is not available: https://github.com/opencv/opencv/pull/12703
     - Added shortcuts for the most popular deep learning networks supported by OpenCV. You may specify an alias name of model to skip pre-processing parameters and even paths to models! In example, instead of
       ```
       python object_detection.py --model opencv_face_detector.caffemodel --config opencv_face_detector.prototxt --mean 104 177 123 --width 300 --height 300
@@ -37,7 +38,7 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
       python object_detection.py opencv_fd
       ```
 
-    - Fixed OpenCL target for AMD and NVIDIA GPUs. Now you may enable `DNN_TARGET_OPENCL` for your model without extra environment variables. Please note that `DNN_TARGET_OPENCL_FP16` is tested on Intel GPUs only so it still requires additional flags.
+    - Fixed OpenCL acceleration on AMD and NVIDIA GPUs. Now you may enable `DNN_TARGET_OPENCL` for your model without extra environment variables. Please note that `DNN_TARGET_OPENCL_FP16` is tested on Intel GPUs only, so it still requires additional flags.
 
 ![](images/gapi.png)
 
