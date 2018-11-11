@@ -25,6 +25,7 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 
 -   DNN improvements
 
+    - OpenCV has been tested with DLDT that has been recently released as [open-source](https://github.com/opencv/dldt). DLDT brings noticeable CPU and iGPU acceleration of DNN inference. Here is the guide: https://github.com/opencv/opencv/wiki/Intel%27s-Deep-Learning-Inference-Engine-backend.
     - Added support for Mask-RCNN model. Follow a [guide](TensorFlow-Object-Detection-API) and use a [python sample](https://github.com/opencv/opencv/blob/master/samples/dnn/mask_rcnn.py).
     - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles). Thanks to [Lubov Batanina](https://github.com/l-bat) for her first-time contribution to OpenCV!
     - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/openvino-toolkit) support by utilizing more layers from DLDT.
