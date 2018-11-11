@@ -29,7 +29,7 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
     - Integrated ONNX parser. We now support many popular classification networks. YOLO object detection network in partially supported as well (ONNX version of YOLO lacks some final layers that actually give you the list of rectangles). Thanks to [Lubov Batanina](https://github.com/l-bat) for her first-time contribution to OpenCV!
     - Further improved performance of DNN module when it's built with [Intel DLDT](https://software.intel.com/openvino-toolkit) support by utilizing more layers from DLDT.
     - API changes: by default, `blobFromImage` methods family do not swap red and blue channels and do not crop the input image. Beware that this API change has also been propagated to OpenCV 3.4 branch.
-    - Experimental <font color="red">Vulkan</font> backend has been added for the platforms where OpenCL is not available: https://github.com/opencv/opencv/pull/12703
+    - Experimental **Vulkan** backend has been added for the platforms where OpenCL is not available: https://github.com/opencv/opencv/pull/12703
     - Added shortcuts for the most popular deep learning networks supported by OpenCV. You may specify an alias name of model to skip pre-processing parameters and even paths to models! In example, instead of
       ```
       python object_detection.py --model opencv_face_detector.caffemodel --config opencv_face_detector.prototxt --mean 104 177 123 --width 300 --height 300
