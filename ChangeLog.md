@@ -59,6 +59,11 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 
 -   The popular Kinect Fusion algorithm has been implemented, optimized for CPU and GPU (OpenCL), and integrated into opencv_contrib/rgbd module. To make the live [sample](https://github.com/opencv/opencv_contrib/blob/master/modules/rgbd/samples/kinfu_demo.cpp) work, we updated our Kinect 2 support in opencv/videoio module. In 4.0 beta the code has been accelerated for iGPU, which resulted in 3x performance boost in the high-resolution case (512x512x512 integration volume). Thanks to Rostislav Vasilikhin for the excellent work!
 
+![](images/optflow2.jpg)
+
+- Very efficient and yet high-quality DIS dense optical flow algorithm has been moved from opencv_contrib to opencv, video module. See the [example](https://github.com/opencv/opencv/blob/master/samples/cpp/dis_opticalflow.cpp). Thanks to Alexander Bokov, our GSoC student, who implemented this algorithm, and Peng Li, who optimized it for GPU.
+- At the same time, slower TV L1 optical flow algorithm has been moved from opencv to [opencv_contrib](https://github.com/opencv/opencv_contrib/tree/master/modules/optflow).
+
 ### Contributors
 
 <details>
