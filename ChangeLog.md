@@ -8,9 +8,11 @@ version:4.0.0
 
 **4.0.0-beta**: *October, 2018*
 
-**4.0.0-rc**: *November, 2018*
+**4.0.0 final**: *November, 2018*
 
-We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/beta:
+We are glad to announce OpenCV 4.0 release.
+
+Here is what's new:
 
 ![](images/cxx11.png)
 
@@ -50,10 +52,11 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 -   Performance improvements
 
     - A few hundreds of basic kernels in OpenCV have been rewritten using so-called "wide universal intrinsics". Those intrinsics map to SSE2, SSE4, AVX2, NEON or VSX intrinsics, depending on the target platform and the compile flags. It should translate to noticeably better performance, even for some already optimized functions. For example, if you configure and compile OpenCV with `CPU_BASELINE=AVX2` CMake flag, you can get extra 15-30% speed improvement for certain image processing operations. By OpenCV 4.0 gold we plan to translate many more kernels to such intrinsics and also employ our dynamic dispatching mechanism, so that on x64 platform AVX2-optimized kernels are always built-in and could be selected on-fly if the actual hardware supports such instructions (without having to change `CPU_BASELINE`). Big thanks to Sayed Adel for VSX backend and the initial (but rather complete!) AVX2 backend of the wide universal intrinsics! Big thanks to Vitaly Tuzov for conversion of many functions in OpenCV to wide universal intrinsics.
+    - Support for IPP 2019 has beed added with IPPICV component upgrade.
 
 ![](images/qrcode.png)
 
--   QR code detector and decoder have been added to opencv/objdetect module together with live [sample](https://github.com/opencv/opencv/blob/master/samples/cpp/live_detect_qrcode.cpp). Currently, the decoder is built on top of QUirc library (which snapshot we put into opencv). Thanks to our intern Alexander Nesterov for this important contribution!
+-   QR code detector and decoder have been added to opencv/objdetect module together with live [sample](https://github.com/opencv/opencv/blob/master/samples/cpp/qrcode.cpp). Currently, the decoder is built on top of QUirc library (which snapshot we put into opencv). Thanks to our intern Alexander Nesterov for this important contribution!
 
 ![](images/kinfu.png)
 
@@ -64,161 +67,231 @@ We are moving towards OpenCV 4.0 gold. Here is what's new in OpenCV 4.0 alpha/be
 - Very efficient and yet high-quality DIS dense optical flow algorithm has been moved from opencv_contrib to opencv, video module. See the [example](https://github.com/opencv/opencv/blob/master/samples/cpp/dis_opticalflow.cpp). Thanks to Alexander Bokov, our GSoC student, who implemented this algorithm, and Peng Li, who optimized it for GPU.
 - At the same time, slower TV L1 optical flow algorithm has been moved from opencv to [opencv_contrib](https://github.com/opencv/opencv_contrib/tree/master/modules/optflow).
 
+
 ### Contributors
 
 <details>
-<summary>opencv</summary>
+<summary>opencv (155 contributors)</summary>
 
 ```
-git shortlog --no-merges -ns 10ba6a93a6fee952fb7812b28989eb209d4f49a1..4.0.0-alpha
-   250	Alexander Alekhin
-    80	Dmitry Kurtaev
-    36	Maksim Shabunin
-    29	Hamdi Sahloul
-    24	Vitaly Tuzov
-    18	berak
-    17	Tomoaki Teshima
-    16	catree
-    15	Vadim Pisarevsky
-    11	Suleyman TURKMEN
-    10	Sayed Adel
-     8	Kuang Fangjun
-     7	Alexander Nesterov
-     7	Li Peng
-     5	Pavel Rojtberg
-     5	Rostislav Vasilikhin
-     5	cyy
-     5	take1014
-     5	yuki takehara
-     4	cclauss
-     3	Namgoo Lee
-     3	k-shinotsuka
-     3	shengyu
-     2	Alexander Enaldiev
-     2	George Mironov
-     2	Karpushin Vladislav
-     2	Lubov Batanina
-     2	Mark Harfouche
-     2	Pavel Vlasov
-     2	Vlad Karpushin
-     2	Wu Zhiwen
-     2	gkaneto
-     2	luz.paz
-     2	pasbi
-     1	Adam Rankin
-     1	Alessandro de Oliveira Faria (A.K.A.CABELO)
-     1	Alexander Duda
-     1	Andrew Mroczkowski
-     1	Arnaud Brejeon
-     1	Bahram Dahi
-     1	CJ Smith
-     1	CYTing1998
-     1	Colin Smith
-     1	Damien Picard
-     1	David
-     1	Fangjun Kuang
-     1	Florian Echtler
-     1	Forrest Reiling
-     1	Gaetano Checinski
-     1	HarshDolhare
-     1	Hiro Kobayashi
-     1	Jakub Golinowski
-     1	Jiri Horner
-     1	Kaartic Sivaraam
-     1	Khem Raj
-     1	Kyle D. Patterson
-     1	LaurentBerger
-     1	Li, Peng
-     1	Lucas Teixeira
-     1	Marat K
-     1	Maxim Smirnov
-     1	Michael Firman
-     1	Nesterov Alexander
-     1	Nobuo Tsukamoto
-     1	Paul Jurczak
-     1	Paul92
-     1	Peter Jozsa
-     1	Peter Leitzen
-     1	Peter Rekdal Sunde
-     1	Philipp Hasper
-     1	Pierre Jeambrun
-     1	Ryan Wong
-     1	Sacha
-     1	Sancho McCann
-     1	Sergey Nuzhny
-     1	Simon Que
-     1	Spark Echo
-     1	Takuho NAKANO
-     1	Teng Yiliang
-     1	Todor Tomov
-     1	Triplesalt
-     1	Vlad Kraevskiy
-     1	Vladislav Sovrasov
-     1	Wenfeng CAI
-     1	Zhenqing Hu
-     1	abhi-jha
-     1	amatyuko
-     1	asciian
-     1	branka-plateiq
-     1	cDc
-     1	cabelo
-     1	exoson
-     1	gnthibault
-     1	ilovezfs
-     1	jsxyhelu
-     1	logic1988
-     1	matech96
-     1	miaow1988
-     1	rockzhan
-     1	tompollok
-     1	vishwesh5
-     1	woody.chow
-     1	yom
-     1	zarelaky
-     1	zuoshaobo
+git shortlog --no-merges -ns 964a4d75b44a3c4c2425b9ed8c4c25c4e6db79ca..4.0.0
+   387  Alexander Alekhin
+    99  Dmitry Kurtaev
+    45  Hamdi Sahloul
+    44  Maksim Shabunin
+    35  Vitaly Tuzov
+    26  berak
+    25  Tomoaki Teshima
+    25  Vadim Pisarevsky
+    23  catree
+    19  Suleyman TURKMEN
+    15  Sayed Adel
+    11  Alexander Nesterov
+    11  Pavel Rojtberg
+    10  Rostislav Vasilikhin
+     9  Dmitry Matveev
+     8  Kuang Fangjun
+     7  Li Peng
+     6  Wu Zhiwen
+     6  take1014
+     5  cyy
+     5  yuki takehara
+     4  Evgeny Latkin
+     4  LaurentBerger
+     4  cclauss
+     3  Apoorv Goel
+     3  Karpushin Vladislav
+     3  Lubov Batanina
+     3  Michał Janiszewski
+     3  Namgoo Lee
+     3  Ruslan Garnov
+     3  Wenfeng CAI
+     3  k-shinotsuka
+     3  shengyu
+     3  tompollok
+     2  Adam Radomski
+     2  Alexander Duda
+     2  Alexander Enaldiev
+     2  Andrew Mroczkowski
+     2  Antonio Borondo
+     2  AsyaPronina
+     2  Dmitry Budnikov
+     2  George Mironov
+     2  Jiri Horner
+     2  Mansoo Kim
+     2  Mark Harfouche
+     2  Pavel Vlasov
+     2  Peter Rekdal Sunde
+     2  Sean McBride
+     2  Vlad Karpushin
+     2  Vladislav Sovrasov
+     2  fegorsch
+     2  gkaneto
+     2  luz.paz
+     2  pasbi
+     1  Adam Rankin
+     1  Alessandro de Oliveira Faria (A.K.A.CABELO)
+     1  Alexey Nikolaev
+     1  Ali Yasin Eser
+     1  Anush Elangovan
+     1  Apoorv
+     1  Arnaud Brejeon
+     1  Bahram Dahi
+     1  CJ Smith
+     1  CYTing1998
+     1  Christopher Gundler
+     1  Colin Smith
+     1  Damien Picard
+     1  David
+     1  Diego Barrios Romero
+     1  Emanuele Ruffaldi
+     1  Fangjun Kuang
+     1  Florian Echtler
+     1  Forrest Reiling
+     1  Gaetano Checinski
+     1  Georgy Mironov
+     1  HarshDolhare
+     1  Henry
+     1  Hiro Kobayashi
+     1  Ilari Venäläinen
+     1  Ivan Pozdeev
+     1  Jakub Golinowski
+     1  Jean Carass
+     1  Kaartic Sivaraam
+     1  Khem Raj
+     1  Kyle D. Patterson
+     1  Latkin, Yevgeny I
+     1  Li, Peng
+     1  Loic Devulder
+     1  Loic Petit
+     1  Lucas Teixeira
+     1  Marat K
+     1  Marco A. Gutierrez
+     1  Matt Bennett
+     1  Maxim Smirnov
+     1  Menghui Xie
+     1  Michael Firman
+     1  Nesterov Alexander
+     1  Nobuo Tsukamoto
+     1  Patrick Cox
+     1  Paul Jurczak
+     1  Paul Shin
+     1  Paul92
+     1  Peter Jozsa
+     1  Peter Leitzen
+     1  Peter Whidden
+     1  Philipp Hasper
+     1  Pierre Jeambrun
+     1  Reid Kleckner
+     1  Ryan Wong
+     1  Sacha
+     1  Sam Radhakrishnan
+     1  Sancho McCann
+     1  Sergey Nuzhny
+     1  Simon Que
+     1  Spark Echo
+     1  Takuho NAKANO
+     1  Teng Yiliang
+     1  Todor Tomov
+     1  Triplesalt
+     1  Vlad Kraevskiy
+     1  WuZhiwen
+     1  Zhenqing Hu
+     1  abhi-jha
+     1  amatyuko
+     1  asciian
+     1  branka-plateiq
+     1  cDc
+     1  cabelo
+     1  chacha21
+     1  drkoller
+     1  exoson
+     1  gineshidalgo99
+     1  gnthibault
+     1  huangqinjin
+     1  ilovezfs
+     1  jasjuang
+     1  jsxyhelu
+     1  kamino410
+     1  logic1988
+     1  lqy123000
+     1  matech96
+     1  maver1
+     1  miaow1988
+     1  rockzhan
+     1  root
+     1  soonbro
+     1  ssnover95
+     1  tellowkrinkle
+     1  unknown
+     1  vishwesh5
+     1  wanghanmin
+     1  woody.chow
+     1  yom
+     1  zarelaky
+     1  zuoshaobo
 ```
 
 </details>
 
 <details>
-<summary>opencv_contrib</summary>
+<summary>opencv_contrib (43 contributors)</summary>
 
 ```
-git shortlog --no-merges -ns 3c536ef4fa882bd64e9f3966412e863d1eeac01a..4.0.0-alpha
-    27	Alexander Alekhin
-     9	Pavel Rojtberg
-     5	LaurentBerger
-     4	Hamdi Sahloul
-     3	berak
-     2	Maksim Shabunin
-     2	Rostislav Vasilikhin
-     2	Suleyman TURKMEN
-     2	Vitaly Tuzov
-     2	catree
-     1	Anton Shutikhin
-     1	Colin
-     1	Dietrich Büsching
-     1	Jan Beich
-     1	Jiri Horner
-     1	Khem Raj
-     1	Kushashwa Ravi Shrimali
-     1	Li-Chi Huang
-     1	SongChiYoung
-     1	Unknown
-     1	Vadim Pisarevsky
-     1	Vladislav Sovrasov
-     1	bini
-     1	d.bouron
-     1	dianlujitao
-     1	fegorsch
-     1	gdemarcq
-     1	gmedan
-     1	simonreich
-     1	trobro
-     1	yarglawaldeg
+git shortlog --no-merges -ns aaf8fffcfbe1b80f9653b21d2095bc9037d418be..4.0.0
+    49  Alexander Alekhin
+    18  Hamdi Sahloul
+    16  Pavel Rojtberg
+     8  LaurentBerger
+     8  Tomoaki Teshima
+     6  berak
+     5  Maksim Shabunin
+     5  Vadim Pisarevsky
+     4  Rostislav Vasilikhin
+     4  Suleyman TURKMEN
+     3  Jukka Komulainen
+     3  soyer
+     3  tompollok
+     2  Lubos
+     2  Vitaly Tuzov
+     2  catree
+     1  Anton Shutikhin
+     1  Antonio Borondo
+     1  Colin
+     1  Dietrich Büsching
+     1  Jan Beich
+     1  Jeff Bail
+     1  Jiri Horner
+     1  Khem Raj
+     1  Kushashwa Ravi Shrimali
+     1  Li-Chi Huang
+     1  Mohammad Haghighat
+     1  Sayed Adel
+     1  SongChiYoung
+     1  Unknown
+     1  Varvrar
+     1  Vladislav Sovrasov
+     1  YTY
+     1  bini
+     1  d.bouron
+     1  dianlujitao
+     1  fegorsch
+     1  gdemarcq
+     1  gmedan
+     1  kartoffelsalat
+     1  simonreich
+     1  trobro
+     1  yarglawaldeg
 ```
 
 </details>
+
+version:3.4.4
+-------------
+
+*November, 2018*
+
+OpenCV 3.4.4 has been released. This is a mantenance release. New features are landed in OpenCV 4.0.
 
 
 version:3.4.3
@@ -227,8 +300,6 @@ version:3.4.3
 *August, 2018*
 
 OpenCV 3.4.3 has been released, with further extended dnn module, documentation improvements, some other new functionality and bug fixes.
-
-**TBD**
 
 
 ### Contributors
