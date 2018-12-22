@@ -1,6 +1,26 @@
 OpenCV Change Logs
 ==================
 
+
+
+version:4.0.1
+-------------
+
+*December, 2018*
+
+New Year's update for OpenCV 4.0 has been released.
+
+
+
+version:3.4.5
+-------------
+
+*December, 2018*
+
+OpenCV 3.4.5 has been released. Bug fixes, optimizations and other enhancements are propagated into OpenCV 4.0.1.
+
+
+
 version:4.0.0
 -------------
 
