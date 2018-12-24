@@ -10,6 +10,74 @@ version:4.0.1
 
 New Year's update for OpenCV 4.0 has been released.
 
+### Contributors
+
+<details>
+<summary>opencv (38 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.0.0..4.0.1
+    44  Alexander Alekhin
+    16  Dmitry Kurtaev
+    12  Vitaly Tuzov
+    10  Maksim Shabunin
+     7  Evgeny Latkin
+     5  Dmitry Budnikov
+     3  Ruslan Garnov
+     2  1over
+     2  Adrian Kashivskyy
+     2  LaurentBerger
+     2  Quentin Chateau
+     2  Rostislav Vasilikhin
+     2  Sayed Adel
+     2  Tomoaki Teshima
+     2  vishwesh5
+     1  Alexander Nesterov
+     1  Bram
+     1  Dan Mašek
+     1  Dmitry Matveev
+     1  Etienne Brateau
+     1  Kartik Mohta
+     1  Madan Ram
+     1  Matthias Winkelmann
+     1  Namgoo Lee
+     1  Pavel Rojtberg
+     1  Peter J. Stieber
+     1  Rijubrata Bhaumik
+     1  Sean McBride
+     1  Sergiu Deitsch
+     1  Thad House
+     1  Tsukasa Sugiura
+     1  Vasiliy Sorokin
+     1  Wu Zhiwen
+     1  WuZhiwen
+     1  berak
+     1  huangqinjin
+     1  okriof
+     1  pascal
+```
+
+</details>
+
+<details>
+<summary>opencv_contrib (10 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.0.0..4.0.1
+     3  Pavel Rojtberg
+     2  huangqinjin
+     1  Alexander Alekhin
+     1  LinkeyLeo
+     1  Suleyman TURKMEN
+     1  YTY
+     1  Yuriy Obukh
+     1  indianocean10000
+     1  vishwesh5
+     1  塚本信男
+```
+
+</details>
+
 
 
 version:3.4.5
