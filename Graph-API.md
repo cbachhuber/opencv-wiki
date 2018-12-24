@@ -13,4 +13,9 @@ What it is?
 
 * G-API GPU backend implements the majority of available functions and allows to run OpenCL kernels on available OpenCL-programmable devices. At the moment, GPU backend is based on OpenCV Transparent API; in future versions it will be extended to support integration of arbitrary OpenCL kernels (and likely be renamed to "OpenCL backend").
 
+Materials
+============
+
 * A [tutorial](https://docs.opencv.org/4.0.0/df/d7e/tutorial_table_of_content_gapi.html) and some [documentation chapters](https://docs.opencv.org/4.0.0/d0/d1e/gapi.html) are already available!
+
+* Check out [these slides](files/2018-12-24-GAPI_Overview.pdf) as a compact introduction to G-API.
