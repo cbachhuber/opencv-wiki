@@ -34,4 +34,4 @@ _If you can not do it by yourself, please ask maintainers for help._
   * `git remote update upstream` (assuming _upstream_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to `opencv/opencv` GitHub repository)
   * `git rebase -i --onto upstream/3.4 upstream/master`
   * editor will be opened, check list of commits - there should be only your commits, save and exit
-  * `git push --force origin <your-branch>` (assuming _origin_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to `<username>/opencv` GitHub repository)
+  * `git push --force origin <your-branch>` (assuming _origin_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to `<your-username>/opencv` GitHub repository)
