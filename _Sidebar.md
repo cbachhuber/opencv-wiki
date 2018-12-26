@@ -24,6 +24,7 @@
 - Development process
     - [[How to contribute|How_to_contribute]]
     - [[Coding style guide|Coding_Style_Guide]]
+    - [[Branches]]
     - [[Evolution Proposals|Evolution-Proposals]]
     - [[Contributors]]
     - Tech guides:
