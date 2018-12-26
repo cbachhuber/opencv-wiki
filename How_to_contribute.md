@@ -33,10 +33,7 @@ Before you open up anything on the OpenCV GitHub page, be sure that you are at t
 1.  Install [[Git]].
 2.  Register at GitHub. Create your fork of OpenCV repository https://github.com/opencv/opencv (see https://help.github.com/articles/fork-a-repo for details).
 3.  Choose a task for youself. It could be a [bugfix](https://github.com/opencv/opencv/issues?q=is%3Aissue+is%3Aopen+label%3Abug) or some new code.
-4.  Choose a base branch for your work. You have these options:
-    1.  **2.4** - maintenance 2.4.x releases. Submit fixes critical bugs only.
-    2.  **3.4** - the branch that will be used for future releases in the 3.4.x line. Choose it when fixing a bug that's reproducible in this branch, or when making performance optimizations relevant to it.
-    3.  **master** - the branch that will be used for the next major release of OpenCV. Choose it when adding new functionality, or for bugfixes/optimizations that don't apply to the 2.4/3.4.
+4.  Choose a base branch for your work. More details about branches and policies are here: [[Branches]]
 5.  Clone your fork to your computer. **You can install the default pre-commit hook by renaming `opencv/.git/hooks/pre-commit.sample` to `opencv/.git/hooks/pre-commit` - this will prevent you from committing whitespace errors.**
 6.  Create a new branch (with a meaningful name) from the base branch you chose.
 7.  Modify/add the code following our [[Coding_Style_Guide]].
