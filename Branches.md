@@ -25,6 +25,7 @@ This is current development branch for 4.x releases.
 
 _If you can not do it by yourself, please ask maintainers for help._
 
+* do not close existing pull request
 * change "base" branch of the pull request
   * press "Edit" button near the pull request title
   * choose "3.4" from the dropdown list
