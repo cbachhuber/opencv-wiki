@@ -1,1 +1,1 @@
-© Copyright 2018, OpenCV team
+© Copyright 2019, OpenCV team
