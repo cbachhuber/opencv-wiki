@@ -7,6 +7,7 @@ h3. Leadership meeting
  * Grace Vesom
  * Vincent Rabaud
  * Stefano Fabri
+ * Satya Mallick
 
 
 Sometimes:
