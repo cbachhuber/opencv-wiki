@@ -32,7 +32,7 @@
         - [[Windows 7 guide|Windows_7_and_TortoiseGit_contribution_guide]]
         - [[Unix based guide|Linux_contribution_guide]]
     - [[Meeting notes|Meeting_notes]]
-        - [[Template]]
+        - [[2019]]
         - [[2018]]
         - [[2017]]
         - [[2016]]
@@ -62,6 +62,7 @@
     - [[2010|OpenSourceComputerVisionCVPR2010]]
 - Google summer of code
     - [[OpenCV GSoC Application|OpenCV_GSoC_Application]]
+    - [[2019|GSoC_2019]]
     - [[2018|GSoC_2018]]
     - [[2017|GSoC_2017]]
     - [[2016|GSoC_2016]]
