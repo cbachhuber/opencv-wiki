@@ -81,8 +81,7 @@ https://github.com/opencv/opencv_contrib/tree/master/modules
 ### Anything else we should know?
 
 OpenCV is used extensively inside Google.See googler Vincent Rabaud
-vincent.rabaud@gmail.com. He is an active contributor. You may also contact another long time mentor who joined Google recently in Fei-Fei Li's group: Grace Vesom grace.vesom@gmail.com. We are a very active library (average 280,000 downloads/month) under intense development (see the change logs: https://github.com/opencv/opencv/wiki/ChangeLog, and meeting notes https://github.com/opencv/opencv/wiki/Meeting_notes). We are used in virtually every university that has a CS department. 2 repositories on github: opencv (core alg) and opencv_contrib (new stuff). https://github.com/opencv/opencv , https://github.com/opencv/opencv_contrib/tree/master/modules
-
+vincent.rabaud@gmail.com. He is an active contributor. We are a very active library (average 280,000 downloads/month) under intense development (see the change logs: https://github.com/opencv/opencv/wiki/ChangeLog, and meeting notes https://github.com/opencv/opencv/wiki/Meeting_notes). We are used in virtually every university and every business that deals with computer vision.
 ------------------------------------------------------------------------
 
 OpenCV Profile:
@@ -94,7 +93,7 @@ https://opencv.org
 
 ### Tagline:
 
-Open Source Computer Vision and Machine Learning Library
+Open Source Computer Vision and Deep Learning Library
 
 ### Image Logo
 
@@ -120,9 +119,7 @@ Hadoop
 
 ### Topic Tags:
 
-computer vision
-
-deep learning
+vision, machine learning, Robotics, deep learning
 
 robotics
 
@@ -132,7 +129,7 @@ real time
 
 ### Ideas List:
 
-https://github.com/opencv/opencv/wiki/GSoC_2018
+https://github.com/opencv/opencv/wiki/GSoC_2019
 
 ### Short description:
 
@@ -140,7 +137,7 @@ OpenCV, the Open Source Computer Vision Library includes state of the art comput
 
 ### Long Description:
 
-OpenCV, the Open Source Computer Vision Library includes state of the art computer vision and deep learning algorithms (including running deep networks) and apps. It is professionally coded and optimized. It can be used in C++, Python, Cuda, OpenCL and Matlab. It runs on: Android, iOS, Windows, Linux and MacOS and many embedded implementations.
+OpenCV, the Open Source Computer Vision Library includes state of the art computer vision and deep learning algorithms (including running deep networks) and apps. It is professionally coded and optimized. It can be used in C++, Python, javascipt, Cuda, OpenCL and Matlab. It runs on: Android, iOS, Windows, Linux and MacOS and many embedded implementations such as Raspberry Pi.
 
 - The user site is at https://opencv.org/
 - The developer site is at: https://github.com/opencv/opencv/wiki
@@ -153,25 +150,25 @@ OpenCV, the Open Source Computer Vision Library includes state of the art comput
 
 It is also useful to look at the change log: https://github.com/opencv/opencv/wiki/ChangeLog and instructions to install on various platforms: https://docs.opencv.org/3.3.1/df/d65/tutorial_table_of_content_introduction.html
 
-Please see our videos for the past several years of GSoC contributions: (2015: https://youtu.be/OUbUFn71S4s) (2014: https://youtu.be/3f76HCHJJRA) (2013: https://youtu.be/_TTtN4frMEA).
+Please see our videos for the past several years of GSoC contributions: (2017: https://docs.opencv.org/master/da/d9d/tutorial_dnn_yolo.html) (2015: https://youtu.be/OUbUFn71S4s) (2014: https://youtu.be/3f76HCHJJRA) (2013: https://youtu.be/_TTtN4frMEA).
 
-Finally, a book by O'Reilly press on the latest OpenCV is newly out: https://www.amazon.com/Learning-OpenCV-Computer-Vision-Library/dp/1491937998
-
+Many books on OpenCV, google: books opencv
 ### Application Instructions:
 
-1. You **must** already know how to program fluently in C++
-    - Some projects may require Python or Matlab skills
-2. Ask to join the OpenCV GSoC Forum List https://groups.google.com/forum/#!forum/opencv-gsoc-2018
-    - Discuss projects below or other ideas with us there between now and March
-3. In March, Go to the GSoC site https://developers.google.com/open-source/gsoc/ and sign up to be a student with OpenCV
-4. Post the project from below or your own agreed on project on the GSoC to opencv-gsoc-2018@googlegroups.com
-    - Include Name, google email, age
-    - Include how you think you are qualified to accomplish this project (skills, courses, relevant background)
-    - Include Country of origin, school you are enrolled in, Professor you work with (if any)
-    - Include a projected timeline and milestones for the project
-5. Once (and if!) OpenCV gets accepted as GSoC org this year, and we are told how many slots we will get **and** you've signed up for a project with us in March
+1.  You **must** already know how to program fluently in C++ (or Python if applicable)
+    - See https://github.com/opencv/opencv/wiki/GSoC_2019#for-students-interested-in-applying for details.
+2.  Ask to join the opencv-gsoc mailing list https://groups.google.com/forum/#!forum/opencv-gsoc-2019
+    - Discuss project ideas from https://github.com/opencv/opencv/wiki/GSoC_2019#opencv-project-ideas-list or your own ideas with OpenCV mentors on the list.
+    - Proposals must follow: https://google.github.io/gsocguides/mentor/defining-a-project-ideas-list
+3.  Sign up with GSoC and with OpenCV
+4.  When (and if!) OpenCV gets accepted as GSoC org this year, and we are told how many slots we will get **and** you've signed up for a project with us, **Then:**
     - We will weigh the students and projects against the mentors we gather and the mentor's interests and choose which students/project to pursue.
-    - Accepted students will be posted on the GSoC site in May (and we will notify the accepted students ourselves).
+    - Accepted students will be posted on the GSoC site  and we will notify the accepted students ourselves afterwards.
+
+* Please only propose projects that you already know how to do. 
+     - It is impossible for a mentor to train you in how to do the task while helping you do it. 
+     - Mentors exist to keep you on track, and ensure good code, but not to teach you a new area of vision, AI. To improve your coding but not teach you a language.
+     - Documentation, tests and tutorial are as vital as the code. We'd rather have rougher code then miss these items because if these are not in place, your code will be useless to everyone.
 
 ### Proposal Tags
 
@@ -211,11 +208,6 @@ opencv-gsoc-2018@googlegroups.com
 
 ### Feed URL?
 
-https://opencv.org/feed
-
-### Google+?
-
-https://plus.google.com/u/1/+OpencvOrg/posts
 
 ### Twitter?
 
