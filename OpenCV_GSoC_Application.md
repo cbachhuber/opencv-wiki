@@ -3,7 +3,13 @@ OpenCV GSoC Application
 
 ### Why does your org want to participate in Google Summer of Code?
 
-OpenCV (Open Source Computer Vision Library — 15M+ downloads) has been in GSoC since 2010. Computer vision is a large, rapidly evolving field and GSoC has been invaluable in keeping up with new algorithms and code improvements that aid companies around world (including extensive use in Google) to field advance vision applications but also to advance science by providing solidly coded reproducible results to test against (adhering to many Google coding and style conventions). Over the years, we have developed a well honed mentoring system that produces high quality pull requests (see recent ones: https://github.com/opencv/opencv_contrib/tree/master/modules) complete with unit tests, docs and examples of use. Several new publications have come out of this and a student joined with mentors in founding a company, Industrial Perception Inc, sold to Google in 2013 and And last year we founded a new one with 2 mentors and a former student: Arraiy.com . See some video compilations of past GSoC contributions: (2015: https://youtu.be/OUbUFn71S4s) (2014: https://youtu.be/3f76HCHJJRA) (2013: https://youtu.be/_TTtN4frMEA).
+OpenCV (Open Source Computer Vision Library 19M+ downloads) is a library of computer and deep learning vision routines.
+
+GSoC has been invaluable to OpenCV because the fields of computer vision and deep learning are rapidly evolving and the "extra hands" help the library stay current with the latest routines.
+
+Coding for OpenCV benefits the students with visible modern code https://github.com/opencv/opencv/wiki/Coding_Style_Guide in a hot field. The admin co-founded a company with one former GSoC student that sold to Google in 2013 (Industrial Perception Inc), we've co-written papers with advanced students and have placed students and mentors in various companies, including Google (https://www.linkedin.com/in/vincent-rabaud-3b592268/?originalSubdomain=fr).
+
+Some video of past GSoC contributions: (2017: https://docs.opencv.org/master/da/d9d/tutorial_dnn_yolo.html) (2015: https://youtu.be/OUbUFn71S4s) (2014: https://youtu.be/3f76HCHJJRA) (2013: https://youtu.be/_TTtN4frMEA).
 
 ### How many potential mentors have agreed to mentor this year?
 
@@ -19,11 +25,11 @@ Students are required to fill out a schedule in their application. They start th
 
 ### How will you get your students involved in your community during GSoC?
 
-Open, ongoing communication is held on a mailing list dedicated to that year's GSoC and Github provides further community chatter. Many of us attend the big vision conferences and meet ups are held there. There is an IRC channel for questions and comments as well as an active community email list with much Q&A. All work, students and mentors are listed on an open page that stays "forever" so that they can find each other. In addition, this year we are going to encourage ongoing updates to our Facebook page and a contest to develop next batch of schwag. Top students often get hired as interns in companies the administrators run or advise.
+Open, ongoing communication is held on a mailing list dedicated to that year's GSoC and Github provides further community chatter. Many of us attend the big vision conferences over the summer (CVPR)  and meet ups are held there. There is an IRC channel for questions and comments as well as an active community email list with much Q&A where we will encourage students to ask and answer questions. All work, students and mentors are listed on an open page that stays "forever" so that they can find each other. This year we are going to encourage ongoing social media updates of visual results to Facebook, Instagram, LinkedIn and Snap Chat. We often co-write papers with top students.
 
 ### How will you keep your students involved with your community after GSoC?
 
-The main way is by getting them completely familiar and comfortable with Github and the ease of doing small changes and PRs, especially in documentation and tutorials. Since OpenCV 3.0 was refactored into a very modular way of contributing code in opencv_contrib https://github.com/opencv/opencv_contrib, this makes it more likely that students will contribute their own published work as pull requests. In addition, students often do joint papers with mentors which means ongoing communication and contribution. Many students become intern and later hire "targets" by managers in companies that use/contribute to OpenCV. OpenCV is far and away the largest computer vision library with about 280,000 downloads per month and so they know that contributions are a competitive advantage/resume item for future jobs. In addition, it's a good way to get good references from well known people working in the field.
+The main way is by getting them completely familiar and comfortable with Github and the ease of doing small changes and PRs, especially in documentation and tutorials. Since OpenCV 3.0 (now 4.0) is refactored into very modular components, contributing code in opencv_contrib https://github.com/opencv/opencv_contrib, is easier/more self-contained/easy to maintain. This makes it more likely that students will continue to contribute their own published work as pull requests. In addition, students often do joint papers with mentors which means ongoing communication and contribution. Many students become intern and later hire "targets" by managers in companies that use/contribute to OpenCV. OpenCV is far and away the largest computer vision library with about 280,000 downloads per month and so they know that contributions are a competitive advantage/resume item for future jobs. In addition, it's a good way to get good references from well known people working in the field.
 
 ### Were you a mentoring org before?
 
@@ -46,15 +52,21 @@ Yes were were a mentoring org
 | 2011 | 9       | 11    |
 | 2010 | 8       | 9     |
 
-(2016 11/12; 2015 14/15; 2014 15/15; 2013 12/13; 2012 10/11; 2011 9/11; 2010 8/9)
+(2017 14/17; 2016 11/12; 2015 14/15; 2014 15/15; 2013 12/13; 2012 10/11; 2011 9/11; 2010 8/9)
 
 ### Were we ever rejected?
 
-2009
+2018, 2009
+
+### Reference
+
+* Vincent Rabaud
+* vincent dot rabaud at gmail
+
 
 ### Are you part of an umbrella org?
 
-No
+Yes, OSVF.org
 
 ### What year was the project started?
 
