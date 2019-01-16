@@ -241,7 +241,9 @@ Other styles might be also accepted if only the above rule is met. That is, if o
 
 h2. Portability, External Dependencies
 
-Formally, the code must comply with the C++ 98 standard. It's not recommended yet to use C++ 11 or TR1 extensions at the implementation level and it's forbidden to use it in the external headers.
+OpenCV 4.0+ code must comply the C++ 11 standard.
+The code of OpenCV 3.x and older versions must comply with the C++98 standard.
+Using of C++ extensions should be avoided and it's forbidden in to use it the external headers.
 
 One should get rid of compiler-dependent or platform-dependent constructions and system calls, such as:
 
