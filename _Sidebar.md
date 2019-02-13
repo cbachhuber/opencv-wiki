@@ -63,7 +63,7 @@
 - Google summer of code
     - [[OpenCV_GSoC|OpenCV_GSoC]]
     - [[OpenCV GSoC Application|OpenCV_GSoC_Application]]
-    - [[2019|GSoC_2019]]
+    - [[2019 Idea List|GSoC_2019]]
     - [[2018|GSoC_2018]]
     - [[2017|GSoC_2017]]
     - [[2016|GSoC_2016]]
