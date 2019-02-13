@@ -19,7 +19,7 @@ General resources
 Development
 -----------
 
-- :computer: OpenCV Google Summer of Code 2019 [[Project Ideas List | GSoC_2019]] :computer:
+- :computer: **[[OpenCV GSoC Ideas List 2019 | GSoC_2019]]** :computer:
 
 - Repositories:
     - [opencv](https://github.com/opencv/opencv) - main repository, contains core types and functions, stable algorithms, build scripts and tools
