@@ -60,7 +60,7 @@
     - [[2015|OpenCV_Tutorial_CVPR_2015]]
     - [[2014|CVPR2014]]
     - [[2010|OpenSourceComputerVisionCVPR2010]]
-- [[OpenCV Google Summer of Code | OpenCV_GSoC]]
+- [[OpenCV GSoC | OpenCV_GSoC]]
     - [[2019 Ideas List|GSoC_2019]]
     - [[OpenCV GSoC Application|OpenCV_GSoC_Application]]
     - Previous Idea lists
