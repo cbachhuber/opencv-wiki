@@ -44,7 +44,7 @@
         - [[2010]]
         - [[2009]]
         - [[2008]]
-    - [[QA|QA_in_OpenCV]]
+    - [[QA for OpenCV|QA_in_OpenCV]]
         - [[Android tests|Android_Java_API_tests]]
         - [[Using performance tests|HowToUsePerfTests]]
         - [[Writing performance tests|HowToWritePerfTests]]
