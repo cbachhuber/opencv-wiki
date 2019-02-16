@@ -19,7 +19,7 @@ General resources
 Development
 -----------
 
-- :computer: **[[OpenCV GSoC Ideas List 2019 | GSoC_2019]]** :computer:
+- **[[:computer:OpenCV GSoC Ideas List 2019:computer: | GSoC_2019]]**
 
 - Repositories:
     - [opencv](https://github.com/opencv/opencv) - main repository, contains core types and functions, stable algorithms, build scripts and tools
