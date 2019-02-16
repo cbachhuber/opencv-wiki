@@ -62,7 +62,7 @@
     - [[2010|OpenSourceComputerVisionCVPR2010]]
 - [[OpenCV GSoC | OpenCV_GSoC]]
     - [[2019 Ideas List|GSoC_2019]]
-    - [[OpenCV GSoC Application|OpenCV_GSoC_Application]]
+    - [[Our Application|OpenCV_GSoC_Application]]
     - Previous Idea lists
         - [[2018|GSoC_2018]]
         - [[2017|GSoC_2017]]
