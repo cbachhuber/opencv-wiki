@@ -31,5 +31,5 @@ The pool of evolution proposals can then be used to plan GSoC projects, as the l
 * [OE-24 - Revised HighGUI Module](OE-24.-Module-HighGUI)
 * [OE-25 - H/W Accelerated Video I/O](OE-25.-Fast-VideoIO)
 * [OE-26 - Revise Samples](OE-26.-Samples)
-* ~~[OE-27 - Wide Universal Intrinsics](OE-27.-Wide-Universal-Intrinsics)~~
+* [OE-27 - Wide Universal Intrinsics](OE-27.-Wide-Universal-Intrinsics)
 * [[OE-28 - Image Stitching|OE-28.-Image Stitching]]
