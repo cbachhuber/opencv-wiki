@@ -27,9 +27,9 @@ The pool of evolution proposals can then be used to plan GSoC projects, as the l
 * [OE-20 - Calibration Module](OE-20.-Module-Calibration)
 * [OE-21 - Tracking Module](OE-21.-Module-Tracking)
 * [OE-22 - Point Cloud Module](OE-22.-Module-Point-Cloud)
-* [OE-23 - Graph API Module](OE-23.-Module-GAPI)
+* ~~[OE-23 - Graph API Module](OE-23.-Module-GAPI)~~
 * [OE-24 - Revised HighGUI Module](OE-24.-Module-HighGUI)
 * [OE-25 - H/W Accelerated Video I/O](OE-25.-Fast-VideoIO)
 * [OE-26 - Revise Samples](OE-26.-Samples)
-* [OE-27 - Wide Universal Intrinsics](OE-27.-Wide-Universal-Intrinsics)
+* ~~[OE-27 - Wide Universal Intrinsics](OE-27.-Wide-Universal-Intrinsics)~~
 * [[OE-28 - Image Stitching|OE-28.-Image Stitching]]
