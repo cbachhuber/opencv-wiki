@@ -155,45 +155,4 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
 
 ### Troubleshooting
 
-  If you run your network on CPU specify path to OpenMP by
-  ```
-  LD_PRELOAD=/opt/intel/computer_vision_sdk/deployment_tools/inference_engine/external/mkltiny_lnx/lib/libiomp5.so
-  ```
-  Set `OMP_WAIT_POLICY` to `PASSIVE` to prevent efficiency gaps due networks partitioning if there are layers unsupported by Inference Engine backend or you have several networks with this preferable backend.
-
-* OpenVINO 2018 R2
-  ```
-  error: (-215:Assertion failed) prior_width > 0 in function 'DecodeBBox'
-  ```
-  Modify the following line at `ext_priorbox_clustered.cpp` and `ext_priorbox.cpp` in `/path/to/deployment_tools/inference_engine/samples/extension/` folder:
-
-  ```cpp
-  addConfig({{ConfLayout::ANY, true}, {ConfLayout::ANY, true}}, {{ConfLayout::PLN, true}});
-  ```
-  to
-  ```cpp
-  addConfig({{ConfLayout::ANY, true}, {ConfLayout::ANY, true}}, {{ConfLayout::PLN, false}});
-  ```
-
-
-  Rebuild `cpu_extension` library which contains extra layers implementations.
-
-    * Ubuntu
-    ```
-    $ cd /opt/intel/computer_vision_sdk/deployment_tools/inference_engine/samples
-    $ mkdir build && cd build
-    $ cmake .. -DCMAKE_BUILD_TYPE=Release && make -j4
-    $ export 
-  LD_LIBRARY_PATH=/opt/intel/computer_vision_sdk/deployment_tools/inference_engine/samples/build/intel64/Release/lib/:$LD_LIBRARY_PATH
-    ```
-
-    * Microsoft Windows
-    ```
-    > cd C:\Intel\computer_vision_sdk_2018.2.300\deployment_tools\inference_engine\samples
-    > mkdir build && cd build
-    > "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=RELEASE -G "Visual Studio 14 Win64" ..
-    > "C:\Program Files\CMake\bin\cmake.exe" --build . --config Release -- /m:4
-    > set PATH=C:\Intel\computer_vision_sdk_2018.2.300\deployment_tools\inference_engine\bin\intel64\Release;%PATH%
-    ```
-    
-    Replace existing `cpu_extension` libraries such `libcpu_extension_avx2.so` or `libcpu_extension_sse4.so` to a different folder to exclude them from search.
+  Set `OMP_WAIT_POLICY` to `PASSIVE` to prevent efficiency gaps due networks partitioning if there are layers unsupported by Inference Engine backend or you have several networks with preferable backend `DNN_TARGET_CPU`.
