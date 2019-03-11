@@ -70,9 +70,6 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
   # Install Inference Engine
   RUN wget --no-check-certificate https://download.01.org/openvinotoolkit/2018_R5/packages/l_openvino_toolkit_ie_p_2018.5.445.tgz && \
       tar -xf l_openvino_toolkit_ie_p_2018.5.445.tgz
-
-  RUN useradd ocv
-  USER ocv
   ```
 
 2. Build a Docker image
