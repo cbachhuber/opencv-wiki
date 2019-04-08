@@ -2,6 +2,176 @@ OpenCV Change Logs
 ==================
 
 
+version:4.1.0
+-------------
+
+*April, 2019*
+
+Spring update for OpenCV 4.x has been released.
+
+Highlights of this release:
+
+![](images/dnn.png)
+
+- DNN module:
+
+    - **TBD**
+
+![](images/speed.jpg)
+
+-   Performance improvements:
+
+    - More optimization using AVX2 instruction set.
+    - Automatic runtime dispatching is available for large set of functions from `core` and `imgproc` modules.
+
+![](images/android_ocv_small.png)
+
+- Android support:
+    - VideoCapture C++ interface supports [Android Media NDK (21+) video I/O file capture back-end](https://github.com/opencv/opencv/pull/14005)
+
+![](images/github2.png)
+
+- And many other great patches from OpenCV community:
+
+    - [Matplotlib Perceptually Uniform Sequential colormaps](https://github.com/opencv/opencv/pull/13587)
+    - [Add keypoints matching visualization for real-time pose estimation tutorial](https://github.com/opencv/opencv/pull/13835)
+    - [Add Hand-Eye calibration methods](https://github.com/opencv/opencv/pull/13880)
+    - [Java: improved support for multidimensional arrays (Mat)](https://github.com/opencv/opencv/pull/13956)
+    - opencv_contrib: [Robust local optical flow (RLOF) implementations](https://github.com/opencv/opencv_contrib/pull/1940)
+    - opencv_contrib: [Implementation of Quasi Dense Stereo algorithm](https://github.com/opencv/opencv_contrib/pull/1941)
+    - opencv_contrib: [New module: Image Quality Analysis (IQA) API](https://github.com/opencv/opencv_contrib/pull/1990)
+    - opencv_contrib: [BRISQUE No Reference Image Quality Assessment (IQA) API](https://github.com/opencv/opencv_contrib/pull/2015)
+
+
+### Contributors
+
+<details>
+<summary>opencv (77 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.0.1..4.1.0
+   118	Alexander Alekhin
+    32	Dmitry Kurtaev
+    16	Vitaly Tuzov
+    13	Maksim Shabunin
+    11	Namgoo Lee
+     9	Rostislav Vasilikhin
+     7	Quentin Chateau
+     6	Sayed Adel
+     6	smirnov-alexey
+     5	Alexander Nesterov
+     5	Alexey Smirnov
+     5	LaurentBerger
+     4	Giles Payne
+     4	Pavel Rojtberg
+     3	Andrey Golubev
+     3	Brad Kelly
+     3	Liubov Batanina
+     3	Ruslan Garnov
+     3	berak
+     3	catree
+     2	Christoph Rackwitz
+     2	Kohei Yoshida
+     2	Lee Jaehwan
+     2	Pedro Ferreira da Costa
+     2	Stefan Dragnev
+     2	Suleyman TURKMEN
+     2	Wu Zhiwen
+     2	klemens
+     2	npochhi
+     2	zuoshaobo
+     1	103yiran
+     1	AKAMath
+     1	Adrian Renner
+     1	AnastasiaaSenina
+     1	Arnaud Brejeon
+     1	Augusto Fraga Giachero
+     1	Ayush Pandey
+     1	BALACHANDAR S
+     1	Bharat123Rox
+     1	CUI Hao (Lab)
+     1	Christopher N. Hesse
+     1	David Carlier
+     1	Easton Liu
+     1	ExpandingDev
+     1	George Wilson
+     1	Gregor Mittag
+     1	Hannah McLaughlin
+     1	Jaewoo Song
+     1	Jim Zhou
+     1	JoeHowse
+     1	Josh Veitch-Michaelis
+     1	Juha Reunanen
+     1	Kangning Song
+     1	Lindsay Roberts
+     1	Lubov Batanina
+     1	Lucas Towers
+     1	Matthew K. Gumbel
+     1	Nicolae Rosia
+     1	Oleh
+     1	Otto Seiskari
+     1	Pierre Chatelier
+     1	RAJKIRAN NATARAJAN
+     1	Rajkiran Natarajan
+     1	Ramez Rafla
+     1	Raphael Graf
+     1	Richard Veale
+     1	Scott Ramsby
+     1	Thang Tran
+     1	Thomas Peters
+     1	WuZhiwen
+     1	atinfinity
+     1	cftang
+     1	iPanda
+     1	mehlukas
+     1	rpici
+     1	winice
+     1	x3lif
+```
+
+</details>
+
+<details>
+<summary>opencv_contrib (22 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.0.1..4.1.0
+     8  Namgoo Lee
+     4  Pavel Rojtberg
+     3  Alexander Alekhin
+     3  clunietp
+     2  Hamdi Sahloul
+     2  Maksim Shabunin
+     2  Raphael Graf
+     1  Charles Taylor
+     1  Dimitrios Psychogyios
+     1  Dmitry Kurtaev
+     1  JoeHowse
+     1  Julian Seuffert
+     1  Richard Veale
+     1  Sreejith S
+     1  Ted Steiner
+     1  Tomoaki Teshima
+     1  berak
+     1  iindovina
+     1  kushashwa ravi shrimali
+     1  shimat
+     1  tsenst
+     1  utkarshg6
+```
+
+</details>
+
+
+
+version:3.4.6
+-------------
+
+*April, 2019*
+
+OpenCV 3.4.6 has been released. Bug fixes, optimizations and other enhancements are propagated into OpenCV 4.1.0.
+
+
 
 version:4.0.1
 -------------
