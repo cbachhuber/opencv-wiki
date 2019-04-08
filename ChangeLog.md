@@ -21,7 +21,7 @@ Highlights of this release:
         - Myriad X (Intel&reg; Neural Compute Stick 2) is now supported and tested.
         - Automatic IR network reshaping for different inputs.
         - Improved samples to work with models from [OpenVINO Open Model Zoo](https://github.com/opencv/open_model_zoo)
-    - New networks from TensorFlow Object Detection API: Faster-RCNNs, SSDs and Mask-RCNN with dilated convolutions, FPN SSD 
+    - New networks from TensorFlow Object Detection API: Faster-RCNNs, SSDs and Mask-RCNN with dilated convolutions, FPN SSD
 
 
 ![](images/speed.jpg)
@@ -44,6 +44,7 @@ Highlights of this release:
     - [Add keypoints matching visualization for real-time pose estimation tutorial](https://github.com/opencv/opencv/pull/13835)
     - [Add Hand-Eye calibration methods](https://github.com/opencv/opencv/pull/13880)
     - [Java: improved support for multidimensional arrays (Mat)](https://github.com/opencv/opencv/pull/13956)
+    - [Dynamically loaded videoio backends (FFmpeg, GStreamer)](https://github.com/opencv/opencv/pull/13677)
     - opencv_contrib: [Robust local optical flow (RLOF) implementations](https://github.com/opencv/opencv_contrib/pull/1940)
     - opencv_contrib: [Implementation of Quasi Dense Stereo algorithm](https://github.com/opencv/opencv_contrib/pull/1941)
     - opencv_contrib: [New module: Image Quality Analysis (IQA) API](https://github.com/opencv/opencv_contrib/pull/1990)
@@ -820,9 +821,9 @@ OpenCV 3.4.1 has been just released, with further extended _dnn_ module, multipl
 
 - SSD-based models trained and retrained in [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) can be easier imported by a single invocation of [python script](https://github.com/opencv/opencv/blob/master/samples/dnn/tf_text_graph_ssd.py) making a text graph representation. Read a [wiki page](https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API) for details.
 
-- Performance of pthreads backend of `cv::parallel_for_()` (which is used by default on Linux/Android, unless you installed TBB or chose OpenMP) has been greatly improved on many core machines, in particular 10-core Core i9. That let us to increase performance of DNN inference quite significantly (up to 6x) on such machines. 
+- Performance of pthreads backend of `cv::parallel_for_()` (which is used by default on Linux/Android, unless you installed TBB or chose OpenMP) has been greatly improved on many core machines, in particular 10-core Core i9. That let us to increase performance of DNN inference quite significantly (up to 6x) on such machines.
 
-- OpenCL backend has been expanded to cover more layers. The layer fusion has also been improved to increase the speed even further. It shall be reminded that in order to enable OpenCL backend (if it's available on the host machine) one should call the method `my_dnn_net.setPreferableTarget(cv::dnn::DNN_TARGET_OPENCL)` before the inference, where `my_dnn_net` is the network loaded using `cv::dnn::readNetFromCaffe()`, `cv::dnn::readNetFromTensorFlow()` etc. 
+- OpenCL backend has been expanded to cover more layers. The layer fusion has also been improved to increase the speed even further. It shall be reminded that in order to enable OpenCL backend (if it's available on the host machine) one should call the method `my_dnn_net.setPreferableTarget(cv::dnn::DNN_TARGET_OPENCL)` before the inference, where `my_dnn_net` is the network loaded using `cv::dnn::readNetFromCaffe()`, `cv::dnn::readNetFromTensorFlow()` etc.
 
 - Several bugs in various layers have been fixed; in particular, SSD priors are now computed slightly differently so that we can more accurate bounding boxes when running SSD on variable-size images.
 
@@ -997,11 +998,11 @@ opencv_dnn has been further improved and extended:
 
 ![](images/rtfm.png)
 
--   Now the [reference guide](https://docs.opencv.org/master/) includes function/method prototypes for the Python bindings, e.g. type "convexHull" in the search field and you will see the C++ declaration and the Python wrapper spec below. That was another GSoC 2017 project. Big thanks to Cartucho and Vincent Rabaud. 
+-   Now the [reference guide](https://docs.opencv.org/master/) includes function/method prototypes for the Python bindings, e.g. type "convexHull" in the search field and you will see the C++ declaration and the Python wrapper spec below. That was another GSoC 2017 project. Big thanks to Cartucho and Vincent Rabaud.
 -   [Excellent tutorial](https://docs.opencv.org/3.4.0/d9/dab/tutorial_homography.html) on how to compute and use homography matrix in OpenCV has been added. Big thanks to Catree.
 -   [The guide](https://github.com/opencv/opencv/wiki/MediaSDK-encode-decode-backend) on how to use OpenCV with Intel Media SDK in order to get hardware-accelerated video decoding/encoding has been written by Maksim Shabunin.
 -   [Another guide](https://github.com/opencv/opencv/wiki/Profiling-OpenCV-Applications) has been added a few months ago by Alexander Alekhin, but was not mentioned before, on how to profile OpenCV-based applications using Intel Tracing Technology tool.
--   Quite comprehensive set of [tutorials](https://docs.opencv.org/master/d5/d10/tutorial_js_root.html) on how to use OpenCV within a browser (via javascript bindings) has been created during GSoC 2017 
+-   Quite comprehensive set of [tutorials](https://docs.opencv.org/master/d5/d10/tutorial_js_root.html) on how to use OpenCV within a browser (via javascript bindings) has been created during GSoC 2017
 
 ![](images/github2.png)
 
@@ -1119,7 +1120,7 @@ OpenCV 3.3.1 with extended dnn module, most of GSoC 2017 results integrated and 
 ![](images/gsoc.png)
 
 Results of several GSoC 2017 projects have been integrated:
-  
+
   - multi-language (e.g. C++/Python/Java) tutorials by João Cartucho, mentored by Vincent Rabaud
   - AKAZE acceleration by Jiri Horner, mentored by Bence Magyar
   - End-to-end text detection and recognition by Suman Kumar Ghosh, mentored by Prasanna Krishnasamy
@@ -1128,7 +1129,7 @@ Results of several GSoC 2017 projects have been integrated:
 
 One of GSoC 2017 projects that deserves a dedicated section in the change log:
 
-- Javascript interface to OpenCV (via Emscripten technology) and interactive Web-based OpenCV tutorials by Gang Song and Congxiang Pan. This small yet powerful team was supervised by Sajjad Taheri, Ningxin Hu and Mohammad R Haghighat. 
+- Javascript interface to OpenCV (via Emscripten technology) and interactive Web-based OpenCV tutorials by Gang Song and Congxiang Pan. This small yet powerful team was supervised by Sajjad Taheri, Ningxin Hu and Mohammad R Haghighat.
 
 ![](images/dnn.png)
 
