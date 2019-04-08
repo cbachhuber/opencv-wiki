@@ -18,6 +18,7 @@ Highlights of this release:
     - Reduced peak memory consumption for some models up to 30%.
     - Inference Engine
         - Inference Engine 2018R3 is now a minimal supported version of IE.
+        - Myriad X (Intel&reg; Neural Compute Stick 2) is now supported and tested.
         - Automatic IR network reshaping for different inputs.
         - Improved samples to work with models from [OpenVINO Open Model Zoo](https://github.com/opencv/open_model_zoo)
     - New networks from TensorFlow Object Detection API: Faster-RCNNs, SSDs and Mask-RCNN with dilated convolutions, FPN SSD 
