@@ -14,7 +14,7 @@ OpenVINO 2018 R2 and later comes with OpenCV built with DL IE support, so you ca
 
 Setup environment variables to detect Inference Engine:
 ```
-source /opt/intel/computer_vision_sdk/bin/setupvars.sh
+source /opt/intel/openvino/bin/setupvars.sh
 ```
 
 Build OpenCV with extra flags:
@@ -29,7 +29,7 @@ cmake \
 
 Setup environment variables to detect Inference Engine:
 ```
-C:\Intel\computer_vision_sdk_2018.3.343\bin\setupvars.bat
+"C:\Program Files (x86)\IntelSWTools\openvino\bin\setupvars.bat"
 ```
 
 Build OpenCV with extra flags:
@@ -68,8 +68,8 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
       libgstreamer-plugins-base1.0-dev:armhf
 
   # Install Inference Engine
-  RUN wget --no-check-certificate https://download.01.org/openvinotoolkit/2018_R5/packages/l_openvino_toolkit_ie_p_2018.5.445.tgz && \
-      tar -xf l_openvino_toolkit_ie_p_2018.5.445.tgz
+  RUN wget --no-check-certificate https://download.01.org/opencv/2019/openvinotoolkit/l_openvino_toolkit_raspbi_p_2019.1.094.tgz && \
+      tar -xf l_openvino_toolkit_raspbi_p_2019.1.094.tgz
   ```
 
 2. Build a Docker image
@@ -87,7 +87,7 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
 
   ```bash
   docker tag 13404dac3614 debian_9_armhf:latest
-  docker run -i -t -v /absolute/path/to/opencv:/opencv debian_9_armhf /bin/bash
+  docker run -it -v /absolute/path/to/opencv:/opencv debian_9_armhf /bin/bash
   ```
 
 4. Build
@@ -111,14 +111,14 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
         -DENABLE_NEON=ON \
         -DCPU_BASELINE="NEON" \
         -DWITH_INF_ENGINE=ON \
-        -DINF_ENGINE_LIB_DIRS="/inference_engine_vpu_arm/deployment_tools/inference_engine/lib/raspbian_9/armv7l" \
+        -DINF_ENGINE_LIB_DIRS="/inference_engine_vpu_arm/deployment_tools/inference_engine/lib/armv7l" \
         -DINF_ENGINE_INCLUDE_DIRS="/inference_engine_vpu_arm/deployment_tools/inference_engine/include" \
         -DCMAKE_FIND_ROOT_PATH="/inference_engine_vpu_arm/" \
         -DENABLE_CXX11=ON ..
   make -j4 && make install
   ```
 
-5. Copy `opencv_install` to the board. Follow https://software.intel.com/articles/OpenVINO-Install-RaspberryPI to install OpenVINO distribution for Raspberry Pi. Then type the following commands to specify new location of OpenCV:
+5. Copy `opencv_install` to the board. Follow http://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_raspbian.html to install OpenVINO distribution for Raspberry Pi. Then type the following commands to specify new location of OpenCV:
 
   ```bash
   export PYTHONPATH=/path/to/opencv_install/lib/python2.7/dist-packages/cv2/python-2.7/:$PYTHONPATH
@@ -148,8 +148,10 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
          // DNN_TARGET_MYRIAD
   ```
 
-* You may also import [pre-trained models](https://software.intel.com/openvino-toolkit/documentation/pretrained-models) passing paths to `.bin` and `.xml` files to `cv::dnn::readNet` function.
+* You may also import [pre-trained models](http://docs.openvinotoolkit.org/latest/_docs_Pre_Trained_Models.html) from [Open Model Zoo](https://github.com/opencv/open_model_zoo) passing paths to `.bin` and `.xml` files to `cv::dnn::readNet` function.
 
 ### Troubleshooting
+
+* OpenVINO 2018R5 and older:
 
   Set `OMP_WAIT_POLICY` to `PASSIVE` to prevent efficiency gaps due networks partitioning if there are layers unsupported by Inference Engine backend or you have several networks with preferable backend `DNN_TARGET_CPU`.
