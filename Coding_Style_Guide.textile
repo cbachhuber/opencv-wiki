@@ -295,13 +295,13 @@ The document is not a complete style guide. Far more detailed and well-written p
 * Filenames are written in lower-case letters.
 * Headers have _.hpp_ extension.
 * Implementation files have _.cpp_ extension
-* Every file includes BSD-compatible license in the beginning
+* Every file includes BSD-compatible license in the beginning. Note that now we do not place the whole license text, but just reference it.
 * Do not use tabulation. Indentation is 4 spaces. Lines should not be much longer than ~100 characters.
 * Keep consistent formatting style in each particular source file (especially if you modify the existing code).
 * Each source file includes @"precomp.hpp"@ as the first header.
 * The code is put into cv or nested namespace (cv::vslam etc.). Test code is put into opencv_test namespace.
 * Only English should be used in comments and string literals.
-* External function names and data type names are written in mixed case. Classes start with capital letter, functions start with small letter. External macros are written in upper case.
+* External function names and data type names are written in mixed case. Classes start with capital letter, functions start with small letter (unless they are named after an algorithm author). External macros are written in upper case.
 * Use @CV_EXPORTS@ macro within external functions and classes declarations. Use @CV_EXPORTS_W@ for Python- and Java- wrappable API.
 * Do not use conditional compilation in headers.
 * Keep the external interface as compact as possible. Do not export internal-use classes or functions which are not essential and could be hidden.
@@ -309,7 +309,8 @@ The document is not a complete style guide. Far more detailed and well-written p
 * Try to make your code easily wrappable for Python, Java etc. That is, try not to introduce new types. Limit the use of callbacks.
 * Consider use of InputArray/InputOutputArray/OutputArray for array parameters.
 * Use @CV_Error@ to report about incorrect parameters and/or use @CV_Assert@ to verify some conditions, e.g. @CV_Assert(inputImage.type() == CV_8UC3)@.
-* Be compliant with the C/C++ standards. Avoid compiler-dependent, OS-dependent and platform-dependent constructions. Do not use C++ 11 and/or TR1 extensions yet.
-* Try not to use malloc/free, new/delete. Use @cv::Mat@, @std::vector@, @std::map@, @cv::AutoBuffer@, @cv::Ptr@ instead. Those classes handle the memory automatically.
+* Be compliant with the C/C++ standards. Avoid compiler-dependent, OS-dependent and platform-dependent constructions.
+* Do not use C++ 11 yet (upd. for OpenCV 4.0 and above do use C++ 11. However, if you plan to submit bug fixes that should propagate to OpenCV 3.x or 2.4.x, stick with C++ 98 standard).
+* Do not use malloc/free, new/delete. Use @cv::Mat@, @std::vector@, @std::map@, @cv::AutoBuffer@, @cv::Ptr@ instead. Those classes handle the memory automatically.
 * Provide GTest-based tests for your code.
-* Provide documentation for your code as Doxygen comments. Tutorials are welcome.
+* Provide documentation for your code as Doxygen comments. Tutorials and samples are welcome.
