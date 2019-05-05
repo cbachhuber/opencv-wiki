@@ -75,18 +75,12 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
 2. Build a Docker image
 
   ```bash
-  docker image build debian_9_armhf
+  docker image build -t debian_9_armhf debian_9_armhf
   ```
 
-  Example output:
-  ```
-  Successfully built 13404dac3614
-  ```
-
-3. Tag a build and run Docker container mounting source code folder from host.
+3. Run Docker container mounting source code folder from host.
 
   ```bash
-  docker tag 13404dac3614 debian_9_armhf:latest
   docker run -it -v /absolute/path/to/opencv:/opencv debian_9_armhf /bin/bash
   ```
 
