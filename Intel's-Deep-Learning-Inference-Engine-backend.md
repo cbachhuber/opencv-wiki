@@ -115,8 +115,8 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
 5. Copy `opencv_install` to the board. Follow http://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_raspbian.html to install OpenVINO distribution for Raspberry Pi. Then type the following commands to specify new location of OpenCV:
 
   ```bash
-  export PYTHONPATH=/path/to/opencv_install/lib/python2.7/dist-packages/cv2/python-2.7/:$PYTHONPATH
-  export PYTHONPATH=/path/to/opencv_install/lib/python3.5/dist-packages/cv2/python-3.5/:$PYTHONPATH
+  export PYTHONPATH=/path/to/opencv_install/lib/python2.7/dist-packages/:$PYTHONPATH
+  export PYTHONPATH=/path/to/opencv_install/lib/python3.5/dist-packages/:$PYTHONPATH
   export LD_LIBRARY_PATH=/path/to/opencv_install/lib/:$LD_LIBRARY_PATH
   ```
 
