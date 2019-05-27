@@ -25,7 +25,6 @@ Development
     - [opencv](https://github.com/opencv/opencv) - main repository, contains core types and functions, stable algorithms, build scripts and tools
     - [opencv_contrib](https://github.com/opencv/opencv_contrib) - contains experimental and unstable algorithms, needs main repository for building
     - [opencv_extra](https://github.com/opencv/opencv_extra) - contains data for tests and miscellaneous files
-    - [opencv.org](https://github.com/opencv-infrastructure/opencv.org) - sources for the official site
 
 - Issue trackers:
     - [opencv](https://github.com/opencv/opencv/issues) - general problems with the library and stable modules, build-related problems
@@ -40,7 +39,6 @@ Development
     - [opencv](https://github.com/opencv/opencv/pulls)
     - [opencv_contrib](https://github.com/opencv/opencv_contrib/pulls)
     - [opencv_extra](https://github.com/opencv/opencv_extra/pulls)
-    - [opencv.org](https://github.com/opencv-infrastructure/opencv.org/pulls)
 
 - [Contribution guide](How_to_contribute) and [coding style guide](Coding_Style_Guide)
 
