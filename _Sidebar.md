@@ -28,6 +28,7 @@
     - [[QA for OpenCV|QA_in_OpenCV]]
         - [[Using performance tests|HowToUsePerfTests]]
         - [[Writing performance tests|HowToWritePerfTests]]
+        - [[CI configuration|CI-configuration]]
 - [[OpenCV GSoC | OpenCV_GSoC]]
     - [[2019 Ideas List|GSoC_2019]]
     - [[Our Application|OpenCV_GSoC_Application]]
