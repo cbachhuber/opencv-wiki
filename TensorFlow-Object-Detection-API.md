@@ -113,36 +113,9 @@ cv.waitKey()
 
 ![](https://user-images.githubusercontent.com/25801568/35520173-58e6f99c-0527-11e8-80fc-8a32d1923e04.png)
 
-For Mask-RCNN model, use [mask_rcnn.py](https://github.com/opencv/opencv/blob/master/samples/dnn/mask_rcnn.py).
-
-### Troubleshooting
-If you have problems at `readNetFromTensorflow` or at `forward` stages, perhaps, your model requires some of the following transformations before making a text graph:
-
-1. Try to run `optimize_for_inference.py` tool to make your model simpler:
-```bash
-python ~/tensorflow/tensorflow/python/tools/optimize_for_inference.py \
-  --input frozen_inference_graph.pb \
-  --output opt_graph.pb \
-  --input_names image_tensor \
-  --output_names "num_detections,detection_scores,detection_boxes,detection_classes" \
-  --placeholder_type_enum 4 \
-  --frozen_graph
-```
-
-2. Try fuse constant nodes by a [graph transformation tool](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/graph_transforms/README.md#using-the-graph-transform-tool).
-
-```bash
-~/tensorflow/bazel-bin/tensorflow/tools/graph_transforms/transform_graph \
-  --in_graph=frozen_inference_graph.pb \
-  --out_graph=opt_graph.pb \
-  --inputs=image_tensor \
-  --outputs="num_detections,detection_scores,detection_boxes,detection_classes" \
-  --transforms="fold_constants(ignore_errors=True)"
-```
-
-You you have difficulties with your model feel free to ask for help at http://answers.opencv.org.
-
 ## References
 * [TensorFlow library](https://www.tensorflow.org/)
 * [COCO dataset](http://cocodataset.org/#home)
 * [Google Protobuf](https://developers.google.com/protocol-buffers/)
+* OpenCV object detection sample: [C++](https://github.com/opencv/opencv/blob/master/samples/dnn/object_detection.cpp), [Python](https://github.com/opencv/opencv/blob/master/samples/dnn/object_detection.py)
+* [OpenCV Mask R-CNN sample](https://github.com/opencv/opencv/blob/master/samples/dnn/mask_rcnn.py)
