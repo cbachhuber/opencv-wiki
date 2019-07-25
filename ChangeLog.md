@@ -2,6 +2,193 @@ OpenCV Change Logs
 ==================
 
 
+version:4.1.1
+-------------
+
+*July, 2019*
+
+Summer update for OpenCV 4.x has been released.
+
+Highlights of this release:
+
+![](images/dnn.png)
+
+- DNN module:
+
+    - TBD
+
+
+![](images/speed.jpg)
+
+- Performance improvements:
+
+    - AVX512 SIMD backend for wide universal intrinsics (w.u.i.)
+    - More optimizations using wide universal intrinsics
+
+
+![](images/android_ocv_small.png)
+
+- Android support:
+
+    - Added CameraActivity utility class to automate Camera permission handling on Android
+    - Changed default C++ runtime: c++_static -> c++_shared
+    - Unified code for frame size selection between JavaCamera2View / JavaCameraView
+
+
+![](images/github2.png)
+
+- And many other great patches from OpenCV community:
+
+    - Added IPPE method for planar pose estimation in solvePnP ( https://github.com/opencv/opencv/pull/14362 )
+    - Added solvePnPRefineLM and solvePnPRefineVVS ( https://github.com/opencv/opencv/pull/14431 )
+    - Logging revamp ( https://github.com/opencv/opencv/pull/13909 by @kinchungwong )
+    - opencv_contrib: [Tracking-by-Matching approach](https://github.com/opencv/opencv_contrib/pull/2182)
+    - opencv_contrib: added [AR samples into ovis module](https://github.com/opencv/opencv_contrib/pull/2150)
+
+
+- Breaking changes:
+
+    - solveP3P, solvePnP and solvePnPGeneric return result in double precision unless the parameters are not empty
+
+
+### Contributors
+
+<details>
+<summary>opencv (82 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.1.0..4.1.1
+   129	Alexander Alekhin
+    32	Dmitry Kurtaev
+    19	Maksim Shabunin
+    14	Vitaly Tuzov
+    11	Lubov Batanina
+    11	Ruslan Garnov
+     8	Andrey Golubev
+     7	atalaman
+     6	Ahmed Ashour
+     5	Anton Potapov
+     5	Rostislav Vasilikhin
+     5	Thang Tran
+     4	Liubov Batanina
+     4	catree
+     3	Alexey Smirnov
+     3	LaurentBerger
+     3	SchultzC
+     3	Stefan Brüns
+     3	Tomoaki Teshima
+     3	arnaudbrejeon
+     3	mehlukas
+     2	Chip Kerchner
+     2	David Carlier
+     2	Diego
+     2	Giles Payne
+     2	Hugo Lindström
+     2	Jan Starzynski
+     2	Pavel Rojtberg
+     2	Sayed Adel
+     2	Suleyman TURKMEN
+     2	gal0is
+     2	utibenkei
+     1	Adam Rankin
+     1	Alexander Nesterov
+     1	Alexey Nikolaev
+     1	Allan Rodriguez
+     1	Apoorv Goel
+     1	AsyaPronina
+     1	Cameron Martin
+     1	Chip Kerchner Chip.Kerchner@ibm.com
+     1	Dal Rupnik
+     1	Daniel Ingram
+     1	Fady Essam
+     1	Feng Chen
+     1	Guillaume Jacob
+     1	James Bowley
+     1	Joe Howse
+     1	Kang
+     1	Kang Yifei
+     1	Kohei Yoshida
+     1	Lukas Mehl
+     1	Madhav
+     1	Manolis Stamatogiannakis
+     1	Manthan Keim
+     1	Nick Yang
+     1	Nuzhny007
+     1	Rafa Gomez-Jordana
+     1	Ryan Wong
+     1	Sergiu Deitsch
+     1	Sheel-Patel
+     1	StefanBruens
+     1	Ted Steiner
+     1	Tomasz Gorochowik
+     1	Vishal Chiluka
+     1	Yashas Samaga B L
+     1	anton-potapov
+     1	armenpoghosov
+     1	bommo1
+     1	dianlujitao
+     1	jxu
+     1	kiwixz
+     1	kupferb
+     1	lain
+     1	masa-iwm
+     1	michal-kowalczyk
+     1	ostarling
+     1	rasmus25
+     1	seungju
+     1	take1014
+     1	tribta
+     1	vdgussem
+     1	wenzhao
+```
+
+</details>
+
+<details>
+<summary>opencv_contrib (25 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.1.0..4.1.1
+     6	Alexander Alekhin
+     4	Pavel Rojtberg
+     3	dnandha
+     2	Ahmed Ashour
+     2	LaurentBerger
+     2	Leonid Beynenson
+     2	Rostislav Vasilikhin
+     2	Tomoaki Teshima
+     1	Andrew
+     1	James Bowley
+     1	Krutika Bapat
+     1	Lizeth Huertas
+     1	RAJKIRAN NATARAJAN
+     1	Suleyman TURKMEN
+     1	Tobias Senst
+     1	Vishal Chiluka
+     1	aj28faty
+     1	berak
+     1	bitsun
+     1	catree
+     1	clunietp
+     1	lichun
+     1	mehlukas
+     1	sebastian
+     1	tegusi
+```
+
+</details>
+
+
+
+version:3.4.7
+-------------
+
+*July, 2019*
+
+OpenCV 3.4.7 has been released. Bug fixes, optimizations and other enhancements are propagated into OpenCV 4.1.1.
+
+
+
 version:4.1.0
 -------------
 
