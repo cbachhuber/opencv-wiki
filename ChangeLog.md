@@ -15,7 +15,12 @@ Highlights of this release:
 
 - DNN module:
 
-    - TBD
+    - 3D convolution networks initial support. There are Convolution, BatchNorm, Pooling, Eltwise layers implemented. Deconvolution3D layer is supported with `DNN_BACKEND_INFERENCE_ENGINE` only for now. Check [Action recognition sample](https://github.com/opencv/opencv/blob/4.1.1/samples/dnn/action_recognition.py).
+    - Intel Inference Engine backend:
+      - 2018R5 release is now minimal supported version
+      - Asynchornous inference support. Use `cv::dnn::Net::forwardAsync` which returns `std::future<Mat>` instance. Check updated object detection samples for details: [C++](https://github.com/opencv/opencv/blob/4.1.1/samples/dnn/object_detection.cpp), [Python](https://github.com/opencv/opencv/blob/4.1.1/samples/dnn/object_detection.py)
+    - Deep learning networks visualization diagrams using dot files (`cv::dnn::Net::dumpToFile`).
+    - A lot of improvements for ONNX and TenforFlow importers.
 
 
 ![](images/speed.jpg)
