@@ -19,6 +19,15 @@ Highlights of this release:
     - Intel Inference Engine backend:
       - 2018R5 release is now minimal supported version
       - Asynchornous inference support. Use `cv::dnn::Net::forwardAsync` which returns `std::future<Mat>` instance. Check updated object detection samples for details: [C++](https://github.com/opencv/opencv/blob/4.1.1/samples/dnn/object_detection.cpp), [Python](https://github.com/opencv/opencv/blob/4.1.1/samples/dnn/object_detection.py)
+
+        OpenCV face detection network efficiency on a single Intel Neural Compute Stick 2:
+
+        | sync | x3 asynchronous forwards | 
+        |---|---|
+        | 26.43 FPS | 53.2 FPS (x2.01) |
+
+        details: https://github.com/opencv/opencv/pull/14516
+
     - Deep learning networks visualization diagrams using dot files (`cv::dnn::Net::dumpToFile`).
     - A lot of improvements for ONNX and TenforFlow importers.
 
