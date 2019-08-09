@@ -19,10 +19,10 @@ Submitting G-API PRs
 G-API supports so-called STANDALONE mode build which is not validated by default.
 Please put the below lines to the PR description to validate that this mode is not broken by the PR:
 ```
-build_gapi_standalone:Linux x64=ade-0.1.1d
-build_gapi_standalone:Win64=ade-0.1.1d
-build_gapi_standalone:Mac=ade-0.1.1d
-build_gapi_standalone:Linux x64 Debug=ade-0.1.1d
+build_gapi_standalone:Linux x64=ade-0.1.1f
+build_gapi_standalone:Win64=ade-0.1.1f
+build_gapi_standalone:Mac=ade-0.1.1f
+build_gapi_standalone:Linux x64 Debug=ade-0.1.1f
 ```
 Note: ADE version may change, refer to the latest correct one (see `DownloadADE.cmake`).
 
