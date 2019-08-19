@@ -40,14 +40,14 @@ cmake ^
   ...
 ```
 
-#### Raspbian Stretch
+#### Raspbian Buster
 
 Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detects `armv7l` CPU architecture (starts from Raspberry Pi 2 model B).
 
-1. Create a folder named `debian_9_armhf` with a file `Dockerfile` with the following content:
+1. Create a folder named `debian_armhf` with a file `Dockerfile` with the following content:
 
   ```docker
-  FROM debian:stretch
+  FROM debian:buster
 
   USER root
 
@@ -68,20 +68,20 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
       libgstreamer-plugins-base1.0-dev:armhf
 
   # Install Inference Engine
-  RUN wget --no-check-certificate https://download.01.org/opencv/2019/openvinotoolkit/l_openvino_toolkit_raspbi_p_2019.1.094.tgz && \
-      tar -xf l_openvino_toolkit_raspbi_p_2019.1.094.tgz
+  RUN wget --no-check-certificate https://download.01.org/opencv/2019/openvinotoolkit/R2/l_openvino_toolkit_runtime_raspbian_p_2019.2.242.tgz && \
+      tar -xf l_openvino_toolkit_runtime_raspbian_p_2019.2.242.tgz
   ```
 
 2. Build a Docker image
 
   ```bash
-  docker image build -t debian_9_armhf debian_9_armhf
+  docker image build -t debian_armhf debian_armhf
   ```
 
 3. Run Docker container mounting source code folder from host.
 
   ```bash
-  docker run -it -v /absolute/path/to/opencv:/opencv debian_9_armhf /bin/bash
+  docker run -it -v /absolute/path/to/opencv:/opencv debian_armhf /bin/bash
   ```
 
 4. Build
@@ -99,15 +99,15 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
         -DPKG_CONFIG_EXECUTABLE="/usr/bin/arm-linux-gnueabihf-pkg-config" \
         -DPYTHON2_INCLUDE_PATH="/usr/include/python2.7" \
         -DPYTHON2_NUMPY_INCLUDE_DIRS="/usr/local/lib/python2.7/dist-packages/numpy/core/include" \
-        -DPYTHON3_INCLUDE_PATH="/usr/include/python3.5" \
-        -DPYTHON3_NUMPY_INCLUDE_DIRS="/usr/local/lib/python3.5/dist-packages/numpy/core/include" \
-        -DPYTHON3_CVPY_SUFFIX=".cpython-35m-arm-linux-gnueabihf.so" \
+        -DPYTHON3_INCLUDE_PATH="/usr/include/python3.7" \
+        -DPYTHON3_NUMPY_INCLUDE_DIRS="/usr/local/lib/python3.7/dist-packages/numpy/core/include" \
+        -DPYTHON3_CVPY_SUFFIX=".cpython-37m-arm-linux-gnueabihf.so" \
         -DENABLE_NEON=ON \
         -DCPU_BASELINE="NEON" \
         -DWITH_INF_ENGINE=ON \
-        -DINF_ENGINE_LIB_DIRS="/inference_engine_vpu_arm/deployment_tools/inference_engine/lib/armv7l" \
-        -DINF_ENGINE_INCLUDE_DIRS="/inference_engine_vpu_arm/deployment_tools/inference_engine/include" \
-        -DCMAKE_FIND_ROOT_PATH="/inference_engine_vpu_arm/" \
+        -DINF_ENGINE_LIB_DIRS="/l_openvino_toolkit_runtime_raspbian_p_2019.2.242/inference_engine/lib/armv7l" \
+        -DINF_ENGINE_INCLUDE_DIRS="/l_openvino_toolkit_runtime_raspbian_p_2019.2.242/inference_engine/include" \
+        -DCMAKE_FIND_ROOT_PATH="/l_openvino_toolkit_runtime_raspbian_p_2019.2.242" \
         -DENABLE_CXX11=ON ..
   make -j4 && make install
   ```
@@ -116,7 +116,7 @@ Use Docker to cross-compile OpenCV for Raspberry Pi. Check that `uname -m` detec
 
   ```bash
   export PYTHONPATH=/path/to/opencv_install/lib/python2.7/dist-packages/:$PYTHONPATH
-  export PYTHONPATH=/path/to/opencv_install/lib/python3.5/dist-packages/:$PYTHONPATH
+  export PYTHONPATH=/path/to/opencv_install/lib/python3.7/dist-packages/:$PYTHONPATH
   export LD_LIBRARY_PATH=/path/to/opencv_install/lib/:$LD_LIBRARY_PATH
   ```
 
