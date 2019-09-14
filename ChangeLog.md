@@ -216,12 +216,12 @@ Highlights of this release:
 
 - DNN module:
 
-    - Reduced peak memory consumption for some models up to 30%.
-    - Inference Engine
-        - Inference Engine 2018R3 is now a minimal supported version of IE.
+    - Reduced peak memory consumption for some models by up to 30%.
+    - Updated and improved integration with Intel Inference Engine:
+        - Inference Engine 2018R3 is now the oldest supported version.
         - Myriad X (Intel&reg; Neural Compute Stick 2) is now supported and tested.
-        - Automatic IR network reshaping for different inputs.
-        - Improved samples to work with models from [OpenVINO Open Model Zoo](https://github.com/opencv/open_model_zoo)
+        - Implemented automatic reshaping (for the input images of different resolutions) of networks represented in IE IR format.
+        - Extended OpenCV DNN samples to support various models from [OpenVINO Open Model Zoo](https://github.com/opencv/open_model_zoo)
     - New networks from TensorFlow Object Detection API: Faster-RCNNs, SSDs and Mask-RCNN with dilated convolutions, FPN SSD
 
 
@@ -239,7 +239,7 @@ Highlights of this release:
 
 ![](images/github2.png)
 
-- And many other great patches from OpenCV community:
+- Integrated many great patches from OpenCV community:
 
     - [Matplotlib Perceptually Uniform Sequential colormaps](https://github.com/opencv/opencv/pull/13587)
     - [Add keypoints matching visualization for real-time pose estimation tutorial](https://github.com/opencv/opencv/pull/13835)
