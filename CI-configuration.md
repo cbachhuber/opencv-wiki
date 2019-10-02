@@ -172,9 +172,9 @@ disable_ipp=ON
 - DNN testing (OpenVINO or new layers, tests set changes):
 ```
 force_builders=Custom,Custom Win,Custom Mac
-build_image:Custom=ubuntu-openvino-2019r1:16.04
-build_image:Custom Win=openvino-2019r1
-build_image:Custom Mac=openvino-2019r1
+build_image:Custom=ubuntu-openvino-2019r2.0:16.04
+build_image:Custom Win=openvino-2019r2.0
+build_image:Custom Mac=openvino-2019r2.0
 
 test_modules:Custom=dnn,python2,python3,java
 test_modules:Custom Win=dnn,python2,python3,java
