@@ -17,7 +17,8 @@ Highlights of this release:
 
     - Intel(R) Inference Engine backend (OpenVINO(TM)):
       - 2019R3 has been supported
-      - support modern IE Core API
+      - Support modern IE Core API
+      - New approach for unsupported layers management. Now all the OpenCV layers fallbacks are implemented as IE custom layers which helps to improve efficiency due less graph partitioning.
 
     - High-level API which introduces `dnn::Model` class and set of task-specific classes such `dnn::ClassificationModel`, `dnn::DetectionModel`, `dnn::SegmentationModel`. It supports automatic pre- and post-processing for deep learning networks.
 
