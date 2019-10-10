@@ -19,7 +19,7 @@ Highlights of this release:
       - 2019R3 has been supported
       - support modern IE Core API
 
-    - **TBD**
+    - High-level API which introduces `dnn::Model` class and set of task-specific classes such `dnn::ClassificationModel`, `dnn::DetectionModel`, `dnn::SegmentationModel`. It supports automatic pre- and post-processing for deep learning networks.
 
 
 ![](images/speed.jpg)
