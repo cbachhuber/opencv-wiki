@@ -15,10 +15,10 @@ Highlights of this release:
 
 - DNN module:
 
-    - Intel(R) Inference Engine backend (OpenVINO(TM)):
+    - Intel® Inference Engine backend (OpenVINO™):
       - 2019R3 has been supported
       - Support modern IE Core API
-      - New approach for unsupported layers management. Now all the OpenCV layers fallbacks are implemented as IE custom layers which helps to improve efficiency due less graph partitioning.
+      - New approach for custom layers management. Now all the OpenCV layers fallbacks are implemented as IE custom layers which helps to improve efficiency due less graph partitioning.
 
     - High-level API which introduces `dnn::Model` class and set of task-specific classes such `dnn::ClassificationModel`, `dnn::DetectionModel`, `dnn::SegmentationModel`. It supports automatic pre- and post-processing for deep learning networks.
 
@@ -30,7 +30,7 @@ Highlights of this release:
     - MSA SIMD implementation has been contributed for MIPS platforms: https://github.com/opencv/opencv/pull/15422
     - OpenCV.js optimization (threading and SIMD as part of GSoC project): https://github.com/opencv/opencv/pull/15371
     - More optimizations using SIMD intrinsics: dotProd, FAST corners, HOG, LK pyramid (VSX), norm, warpPerspective, etc
-    - Fixed detection of Cascade Lake
+    - Fixed detection of Cascade Lake CPUs
 
 
 ![](images/github2.png)
