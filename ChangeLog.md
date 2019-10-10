@@ -2,6 +2,183 @@ OpenCV Change Logs
 ==================
 
 
+version:4.1.2
+-------------
+
+*October, 2019*
+
+Fall update for OpenCV 4.x has been released.
+
+Highlights of this release:
+
+![](images/dnn.png)
+
+- DNN module:
+
+    - Intel(R) Inference Engine backend (OpenVINO(TM)):
+      - 2019R3 has been supported
+      - support modern IE Core API
+
+    - **TBD**
+
+
+![](images/speed.jpg)
+
+- Performance improvements and platforms support:
+
+    - MSA SIMD implementation has been contributed for MIPS platforms: https://github.com/opencv/opencv/pull/15422
+    - OpenCV.js optimization (threading and SIMD as part of GSoC project): https://github.com/opencv/opencv/pull/15371
+    - More optimizations using SIMD intrinsics: dotProd, FAST corners, HOG, LK pyramid (VSX), norm, warpPerspective, etc
+    - Fixed detection of Cascade Lake
+
+
+![](images/github2.png)
+
+- And many other great patches from OpenCV community:
+
+    - GUI: support topmost window mode (Win32/COCOA): https://github.com/opencv/opencv/pull/14872
+    - Java: fix Mat.toString() for higher dimensions: https://github.com/opencv/opencv/pull/15181
+    - Implementation of colormap "Turbo" https://github.com/opencv/opencv/pull/15388
+    - QR-Code detection accuracy improvement: https://github.com/opencv/opencv/pull/15356
+    - GSoC: Add learning-based super-resolution module: https://github.com/opencv/opencv_contrib/pull/2229 and https://github.com/opencv/opencv_contrib/pull/2231
+    - Detection accuracy improvement of the white marker aruco corners: https://github.com/opencv/opencv_contrib/pull/2236
+    - Added pattern generator tool for aruco: https://github.com/opencv/opencv_contrib/pull/2250
+    - and special thanks to [@sturkmen72](http://github.com/sturkmen72) for improvind and cleaning up code of samples/tutorials
+
+- Breaking changes:
+
+    - fixed values thresholding accuracy in calcHist()
+
+
+### Contributors
+
+<details>
+<summary>opencv (74 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.1.1..4.1.2
+    55  Alexander Alekhin
+    18  Dmitry Kurtaev
+    16  Maksim Shabunin
+     8  Vitaly Tuzov
+     7  Paul E. Murphy
+     6  Andrey Golubev
+     6  Lubov Batanina
+     5  Suleyman TURKMEN
+     4  AsyaPronina
+     4  luz.paz
+     3  Anton Potapov
+     3  Chip Kerchner
+     3  ChipKerchner
+     3  Sebastián Gurin
+     3  smirnov-alexey
+     2  Braedy Kuzma
+     2  Dmitry Budnikov
+     2  Hugo Lindström
+     2  John Smith
+     2  Marcin Tolysz
+     2  Talamanov, Anatoliy
+     2  TheGoddessInari
+     2  Tomoaki Teshima
+     2  Victor Romero
+     2  Zyrin
+     2  atinfinity
+     2  dab0bby
+     2  ilbalance
+     1  APrigarina
+     1  Alexey Smirnov
+     1  Andrew Ryrie
+     1  Brandon
+     1  Daniel Kapusi
+     1  David Carlier
+     1  Diego
+     1  Dmitry Matveev
+     1  Douwe Gelling
+     1  Elms
+     1  Everton Constantino
+     1  Evgeny Latkin
+     1  Giles Payne
+     1  Ilya Lavrenov
+     1  Jaime
+     1  Jake Howard
+     1  Kazuma Furuhashi
+     1  LaurentBerger
+     1  Mark Harfouche
+     1  Martti Laine
+     1  Matt Bennett
+     1  Matthias Gehre
+     1  OrestChura
+     1  Philippe FOUBERT
+     1  Pinaev Danil
+     1  Prakhar Varshney
+     1  Rosen Penev
+     1  Sayed Adel
+     1  Sean McBride
+     1  Sebastián Gurín
+     1  Thang Tran
+     1  Vishal Chiluka
+     1  Wenzhao Xiang
+     1  Wise86
+     1  andrey-golubev
+     1  ann
+     1  berak
+     1  collin
+     1  craterkamath
+     1  dcouwenh
+     1  fishjam
+     1  huihut
+     1  mipsopen-fwu
+     1  takacsd
+     1  xitong
+     1  yaohai [姚海]
+```
+
+</details>
+
+<details>
+<summary>opencv_contrib (24 contributors)</summary>
+
+```
+git shortlog --no-merges -ns 4.1.1..4.1.2
+     4  Alexander Alekhin
+     2  Maksim Shabunin
+     2  Marcin Tolysz
+     2  Tomoaki Teshima
+     1  Daniel Canelhas
+     1  Fanny Monori
+     1  Geert Willems
+     1  Graham Reeves
+     1  Josh Chien
+     1  Moeed
+     1  Nicolas Abril
+     1  Nuzhny007
+     1  Paul Debus
+     1  Rajkiran Natarajan
+     1  SSE4
+     1  Suleyman TURKMEN
+     1  Tobias Senst
+     1  Vishal Bhaskar Chiluka
+     1  Xavier Weber
+     1  adilfaqah
+     1  berak
+     1  clunietp
+     1  kqwyf
+     1  lizeth huertas
+```
+
+</details>
+
+
+
+version:3.4.8
+-------------
+
+*October, 2019*
+
+OpenCV 3.4.8 has been released. Bug fixes, optimizations and other enhancements are propagated into OpenCV 4.1.2.
+
+
+
 version:4.1.1
 -------------
 
