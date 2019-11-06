@@ -16,7 +16,14 @@ This is branch for 2.4.x releases.
 This is branch for 3.4.x releases.
 
 * ABI compatibility must be preserved
-* We will merge changes from _3.4_ into _master_ regularly (weekly/bi-weekly), so if your pull request is applicable to both branches, you should choose _3.4_ branch as base, not _master_.
+* We will merge changes from _3.4_ into _master_ regularly (weekly/bi-weekly), so if your pull request is applicable to both branches, you should choose _3.4_ branch as base, not _master_. There is no regular process for backporting patches from _master_ branch.
+* Target this branch in case of these patches:
+  * bug fixes
+  * optimizations
+  * documentation improvements
+  * samples improvements or adding new samples for existed functionality
+  * small improvements or new features which don't break compatibility with previous releases
+  * and other patches which are applicable for _3.4_ branch
 
 ### master
 
