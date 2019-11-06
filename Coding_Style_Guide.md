@@ -284,3 +284,57 @@ Implementing tests
 - Avoid `using namespace std`. Use `std::` if necessary (common types are imported into `opencv_test` namespace).
 - Don't use `std::tr1` namespace.
 - Don't include OpenCV headers for `core`/`imgproc`/`highgui` modules. These headers are included by `ts.hpp`.
+
+
+Python samples
+--------------
+
+Python samples can be executed in two modes:
+- standalone
+- throught `demo.py`. This helper script imports samples .py files (one file per sample)
+
+Please follow this template for OpenCV samples on Python:
+
+```.py
+#!/usr/bin/env python
+
+'''
+Brief description (what is demostrated).
+Usage example, parameters
+'''
+
+# Python 2/3 compatibility
+from __future__ import print_function
+
+import numpy as np
+import cv2 as cv
+
+import sys
+
+
+def main():
+    # use sys.argv to parse arguments
+    # ...
+
+
+if __name__ == '__main__':
+    print(__doc__)
+    main()
+    cv.destroyAllWindows()
+
+```
+
+If you need to store global variables (using UI callbacks), then it is better to add application class and store them there:
+
+
+```.py
+class App():
+
+    def run(self):
+        # ... use "self.tuned_parameter" instead of global variable
+
+if __name__ == '__main__':
+    print(__doc__)
+    App().run()
+    cv.destroyAllWindows()
+```
