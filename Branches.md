@@ -7,13 +7,13 @@ The OpenCV repository has several branches with different contribution policies.
 
 ### 2.4
 
-This is the branch for 2.4.x releases.
+This is the branch for [2.4.x](https://github.com/opencv/opencv/tree/2.4) releases.
 
 * Only critical bugfixes will be accepted
 
 ### 3.4
 
-This is the branch for 3.4.x releases.
+This is the branch for [3.4.x](https://github.com/opencv/opencv/tree/3.4) releases.
 
 * ABI compatibility must be preserved
 * We will merge changes from _3.4_ into _master_ regularly (weekly/bi-weekly), so if your pull request is applicable to both branches, you should choose _3.4_ branch as base, not _master_. There is no regular process for backporting patches from _master_ branch.
@@ -21,33 +21,33 @@ This is the branch for 3.4.x releases.
   * bug fixes
   * optimizations
   * documentation improvements
-  * samples improvements or adding new samples for existed functionality
+  * sample improvements or adding new samples for existing functionality
   * small improvements or new features which don't break compatibility with previous releases
-  * and other patches which are applicable for _3.4_ branch
+  * and other patches which are applicable for the _3.4_ branch
 
 ### master
 
-This is current development branch for 4.x releases.
+This is the current development branch for 4.x releases.
 
 * API compatibility must be preserved
-* If your pull request is also applicable to _3.4_ branch, you should choose that branch as "base"
-* If you've already created pull request based on _master_ branch, but it is also applicable to _3.4_ branch you will be asked to rebase it to 3.4, see the instruction in the following section.
+* If your pull request is also applicable to the _3.4_ branch, you should choose that branch as "base"
+* If you've already created pull request based on the _master_ branch, but it is also applicable to _3.4_, you will be asked to rebase it to 3.4, see the instruction in the following section.
 
 ### Rebase pull request from _master_ to _3.4_
 
-_If you can not do it by yourself, please ask maintainers for help._
+_If you can not do this by yourself, please ask maintainers for help._
 
-* do not close existing pull request
-* change "base" branch of the pull request
-  * press "Edit" button near the pull request title
+* do not close the existing pull request
+* change the "base" branch of the pull request
+  * press the "Edit" button near the pull request title
   * choose "3.4" from the dropdown list
-* rebase your commits from master onto 3.4 branch
+* rebase your commits from master onto 3.4
   * `git checkout <your-branch>`
-  * (optional) create backup branch: `git branch <your-branch>-backup`
-  * `git remote update upstream` (assuming _upstream_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to `opencv/opencv` GitHub repository)
+  * (optional) create a backup branch: `git branch <your-branch>-backup`
+  * `git remote update upstream` (assuming _upstream_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to the `opencv/opencv` GitHub repository)
   * `git rebase -i --onto upstream/3.4 upstream/master`
-  * editor will be opened, check list of commits - there should be only your commits, save and exit
-  * `git push --force origin <your-branch>` (assuming _origin_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to `<your-username>/opencv` GitHub repository)
+  * an editor will be opened. Please check the list of commits - there should be only your commits - save and exit
+  * `git push --force origin <your-branch>` (assuming _origin_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to `<your-username>/opencv` forked GitHub repository)
 
 ### Related articles
 
