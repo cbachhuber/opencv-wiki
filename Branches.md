@@ -1,9 +1,13 @@
 The OpenCV repository has several branches with different contribution policies.
 
-### Common rules for all branches
+Common rules for all branches
+-----------------------------
 
 * Your development branch name must differ from the names of branches in the central OpenCV repository, i.e. your branch must not be named _2.4_, _3.4_ or _master_ (it's a technical requirement specific to our continuous integration system)
 * Multiple related commits should be [squashed](http://git-scm.com/book/en/Git-Tools-Rewriting-History#Squashing-Commits) into one. A pull request must contain either a single commit, or several unrelated commits.
+
+Branches and contribution policies in OpenCV
+--------------------------------------------
 
 ### 2.4
 
@@ -27,13 +31,14 @@ This is the branch for [3.4.x](https://github.com/opencv/opencv/tree/3.4) releas
 
 ### master
 
-This is the current development branch for 4.x releases.
+This is the current development branch for [4.x](https://github.com/opencv/opencv/tree/master) releases.
 
 * API compatibility must be preserved
 * If your pull request is also applicable to the _3.4_ branch, you should choose that branch as "base"
 * If you've already created pull request based on the _master_ branch, but it is also applicable to _3.4_, you will be asked to rebase it to 3.4, see the instruction in the following section.
 
-### Rebase pull request from _master_ to _3.4_
+Rebasing a pull request from _master_ to _3.4_
+----------------------------------------------
 
 _If you can not do this by yourself, please ask maintainers for help._
 
@@ -49,7 +54,8 @@ _If you can not do this by yourself, please ask maintainers for help._
   * an editor will be opened. Please check the list of commits - there should be only your commits - save and exit
   * `git push --force origin <your-branch>` (assuming _origin_ [is pointing](https://help.github.com/articles/configuring-a-remote-for-a-fork/) to `<your-username>/opencv` forked GitHub repository)
 
-### Related articles
+Related articles
+----------------
 
 * [GitHub Flow](https://guides.github.com/introduction/flow/) guide
 * [Forking Projects](https://guides.github.com/activities/forking/) guide
